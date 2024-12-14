@@ -19,9 +19,9 @@ jobs:
       - name: Install packages
         run: bun install
       - name: Lint Check
-        run: bun lint
+        run: bun run lint
       - name: Build Check
-        run: bun build
+        run: bun run build
   deploy:
     if: ${{ github.actor == 'dependabot[bot]' }}
     needs: ci-check
