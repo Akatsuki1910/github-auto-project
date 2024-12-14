@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "lint": "biome format --write ./src",
+    "lint": "biome check --write ./src",
     "build": "bun run bun.build.ts"
   },
   "dependencies": {

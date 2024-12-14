@@ -1,1 +1,3 @@
-window.alert("Hello, TypeScript!");
+window.addEventListener("DOMContentLoaded", () => {
+  console.log("Hello, World!");
+});
