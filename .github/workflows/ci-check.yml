@@ -1,0 +1,28 @@
+name: ci-check
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - main
+
+jobs:
+  ci-check:
+    runs-on: ubuntu-latest
+    # if: ${{ github.actor != 'dependabot[bot]' }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install packages
+        run: bun install
+      - name: Lint Check
+        run: bun lint
+      - name: Build Check
+        run: bun build
+  deploy:
+    if: ${{ github.actor == 'dependabot[bot]' }}
+    needs: ci-check
+    uses: ./.github/workflows/deploy.yml
