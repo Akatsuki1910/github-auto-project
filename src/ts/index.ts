@@ -12,6 +12,8 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       } else if (value === "C") {
         display.value = "";
+      } else if (value === "←" || value === "&larr;") {
+        display.value = display.value.slice(0, -1);
       } else {
         display.value += value;
       }

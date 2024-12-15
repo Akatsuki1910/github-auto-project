@@ -116,7 +116,8 @@ ${fs.readFileSync("src/style/style.scss", "utf-8")}
 
 		const branchName = `feature/auto-${Date.now()}`;
 
-		await git.checkoutLocalBranch(branchName);
+		await git.fetch();
+		// await git.checkoutLocalBranch(branchName);
 
 		fs.writeFileSync("src/index.html", d.html);
 		fs.writeFileSync("src/ts/index.ts", d.ts);
@@ -125,6 +126,7 @@ ${fs.readFileSync("src/style/style.scss", "utf-8")}
 		await git.add(".");
 		await git.commit(d.description);
 		await git.push("origin", branchName);
+		console.log("pushed");
 		const a = await octokit.rest.pulls.create({
 			owner: "akatsuki1910",
 			repo: "github-auto-project",
