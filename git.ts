@@ -122,7 +122,7 @@ ${fs.readFileSync("src/style/style.scss", "utf-8")}
 	await git.add(".");
 	await git.commit(d.description);
 	await git.push("origin", branchName);
-	await octokit.rest.pulls.create({
+	const a = await octokit.rest.pulls.create({
 		owner: "akatsuki1910",
 		repo: "github-auto-project",
 		head: branchName,
@@ -130,4 +130,6 @@ ${fs.readFileSync("src/style/style.scss", "utf-8")}
 		title: d.title,
 		body: d.description,
 	});
+
+	console.log(a.status, a.data, a.url);
 })();
