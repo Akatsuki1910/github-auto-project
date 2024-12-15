@@ -35,6 +35,22 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       } else if (value === "π") {
         display.value += Math.PI;
+      } else if (value === "!") {
+        try {
+          const num = parseInt(display.value);
+          if (isNaN(num) || num < 0) {
+            display.value = "Error";
+          } else {
+            let result = 1;
+            for (let i = 1; i <= num; i++) {
+              result *= i;
+            }
+            display.value = String(result);
+          }
+        } catch (error) {
+          display.value = "Error";
+        }
+
       } else {
         display.value += value;
       }

@@ -26,9 +26,6 @@ const setGithubApp = async (env: {
 	return installationOctokit;
 };
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-const octokit = await setGithubApp(process.env as any);
-
 const createText = async (key: string, prompt: string) => {
 	const genAI = new GoogleGenerativeAI(key);
 	const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
@@ -40,6 +37,9 @@ const createText = async (key: string, prompt: string) => {
 (async () => {
 	try {
 		console.log("start");
+		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+		const octokit = await setGithubApp(process.env as any);
+		console.log("octokit", octokit);
 
 		const key = process.env.GEMINI_API_KEY;
 		const prompt = `
