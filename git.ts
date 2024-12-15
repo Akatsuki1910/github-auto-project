@@ -114,6 +114,11 @@ ${fs.readFileSync("src/style/style.scss", "utf-8")}
 	const branchName = `feature/auto-${Date.now()}`;
 
 	await git.checkoutLocalBranch(branchName);
+
+	fs.writeFileSync("src/index.html", d.html);
+	fs.writeFileSync("src/ts/index.ts", d.ts);
+	fs.writeFileSync("src/style/style.scss", d.css);
+
 	await git.add(".");
 	await git.commit(d.description);
 	await git.push("origin", branchName);
