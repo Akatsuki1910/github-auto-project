@@ -38,6 +38,8 @@ const createText = async (key: string, prompt: string) => {
 
 (async () => {
 	try {
+		console.log("start");
+
 		const key = process.env.GEMINI_API_KEY;
 		const prompt = `
 下記に幾つかの要求のポリシーを示します。これに従って回答してください。
@@ -135,5 +137,7 @@ ${fs.readFileSync("src/style/style.scss", "utf-8")}
 		console.log(a.status, a.data, a.url);
 	} catch (e) {
 		console.error(e);
+	} finally {
+		console.log("end");
 	}
 })();
