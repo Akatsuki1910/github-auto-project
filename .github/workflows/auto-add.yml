@@ -1,0 +1,25 @@
+name: auto add
+
+on:
+  workflow_call: {}
+  workflow_dispatch: {}
+  schedule:
+    - cron: '0 * * * *'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@v2
+
+      - name: Install packages
+        run: bun install
+
+      - name: Run auto-add
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: bun run auto-add
