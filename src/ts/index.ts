@@ -16,10 +16,20 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = display.value.slice(0, -1);
       } else if (value === "+/-") {
         display.value = String(parseFloat(display.value) * -1);
+      } else if (value === "√") {
+        try {
+          const num = parseFloat(display.value);
+          if (num < 0) {
+            display.value = "Error";
+          } else {
+            display.value = String(Math.sqrt(num));
+          }
+        } catch (e) {
+          display.value = "Error";
+        }
       } else {
         display.value += value;
       }
     });
   });
-  console.log("Hello, World!");
 });
