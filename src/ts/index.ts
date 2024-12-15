@@ -14,10 +14,12 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = "";
       } else if (value === "←" || value === "&larr;") {
         display.value = display.value.slice(0, -1);
+      } else if (value === "+/-") {
+        display.value = String(parseFloat(display.value) * -1);
       } else {
         display.value += value;
       }
     });
   });
-  console.log("Hello, World!"); // 既存機能を維持
+  console.log("Hello, World!");
 });

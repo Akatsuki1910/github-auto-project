@@ -114,7 +114,8 @@ ${fs.readFileSync("src/style/style.scss", "utf-8")}
 
 		const git = simpleGit().clean(CleanOptions.FORCE);
 
-		const branchName = `feature/auto-${Date.now()}`;
+		// const branchName = `feature/auto-${Date.now()}`;
+		const branchName = "feature/auto-1734253417926";
 
 		await git.fetch();
 		// await git.checkoutLocalBranch(branchName);
