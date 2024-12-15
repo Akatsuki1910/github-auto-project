@@ -50,7 +50,13 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           display.value = "Error";
         }
-
+      } else if (value === "x²") {
+        try {
+          const num = parseFloat(display.value);
+          display.value = String(Math.pow(num, 2));
+        } catch (e) {
+          display.value = "Error";
+        }
       } else {
         display.value += value;
       }

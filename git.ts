@@ -12,7 +12,7 @@ const setGithubApp = async (env: {
 }) => {
 	console.log(env);
 	const app = new App({
-		appId: env.GH_APPID,
+		appId: Number(env.GH_APPID),
 		privateKey: env.GH_PRIVATE_KEY,
 		oauth: {
 			clientId: env.GH_CLIENT_ID,
