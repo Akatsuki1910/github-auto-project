@@ -1,6 +1,7 @@
 window.addEventListener("DOMContentLoaded", () => {
   const display = document.getElementById("display") as HTMLInputElement;
   const buttons = document.querySelectorAll("#calculator button");
+  let bracketOpen = false;
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const value = button.textContent;
@@ -12,8 +13,12 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       } else if (value === "C") {
         display.value = "";
+        bracketOpen = false;
       } else if (value === "←" || value === "&larr;") {
         display.value = display.value.slice(0, -1);
+        if (display.value.endsWith("(")) {
+          bracketOpen = false;
+        }
       } else if (value === "+/-") {
         display.value = String(parseFloat(display.value) * -1);
       } else if (value === "√") {
@@ -56,6 +61,14 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = String(Math.pow(num, 2));
         } catch (e) {
           display.value = "Error";
+        }
+      } else if (value === "( )") {
+        if (!bracketOpen) {
+          display.value += "(";
+          bracketOpen = true;
+        } else {
+          display.value += ")";
+          bracketOpen = false;
         }
       } else {
         display.value += value;

@@ -10,7 +10,6 @@ const setGithubApp = async (env: {
 	GH_CLIENT_SECRET: string;
 	GH_INSTALLATION_ID: string;
 }) => {
-	console.log(env);
 	const app = new App({
 		appId: Number(env.GH_APPID),
 		privateKey: env.GH_PRIVATE_KEY,
@@ -26,6 +25,9 @@ const setGithubApp = async (env: {
 	return installationOctokit;
 };
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+const octokit = await setGithubApp(process.env as any);
+
 const createText = async (key: string, prompt: string) => {
 	const genAI = new GoogleGenerativeAI(key);
 	const model = genAI.getGenerativeModel({ model: "gemini-1.5-pro" });
@@ -37,9 +39,6 @@ const createText = async (key: string, prompt: string) => {
 (async () => {
 	try {
 		console.log("start");
-		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-		const octokit = await setGithubApp(process.env as any);
-		console.log("octokit", octokit);
 
 		const key = process.env.GEMINI_API_KEY;
 		const prompt = `
@@ -133,16 +132,16 @@ ${fs.readFileSync("src/style/style.scss", "utf-8")}
 		const rateLimit = await octokit.rest.rateLimit.get();
 		console.log("Remaining requests:", rateLimit.data.rate.remaining);
 
-		// const a = await octokit.rest.pulls.create({
-		// 	owner: "Akatsuki1910",
-		// 	repo: "github-auto-project",
-		// 	head: branchName,
-		// 	base: "main",
-		// 	title: d.title,
-		// 	body: d.description,
-		// });
+		const a = await octokit.rest.pulls.create({
+			owner: "Akatsuki1910",
+			repo: "github-auto-project",
+			head: branchName,
+			base: "main",
+			title: d.title,
+			body: d.description,
+		});
 
-		// console.log(a.status, a.data, a.url);
+		console.log(a.status, a.data, a.url);
 	} catch (e) {
 		console.error(e);
 	} finally {

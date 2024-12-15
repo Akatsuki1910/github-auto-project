@@ -1,19 +1,20 @@
 {
-	"scripts": {
-		"auto-add": "bun run git.ts",
-		"lint": "biome check --write ./src",
-		"build": "bun run bun.build.ts"
-	},
-	"dependencies": {
-		"@google/generative-ai": "^0.21.0",
-		"octokit": "^4.0.2",
-		"simple-git": "^3.27.0",
-		"typescript": "^5.7.2"
-	},
-	"devDependencies": {
-		"@types/bun": "^1.1.14",
-		"biome": "^0.3.3",
-		"bun-plugin-html": "^2.2.4",
-		"sass": "^1.83.0"
-	}
+  "scripts": {
+    "auto-add": "bun run git.ts",
+    "lint": "biome check --write ./src",
+    "build": "bun run bun.build.ts"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@octokit/request-error": "^6.1.5",
+    "octokit": "^4.0.2",
+    "simple-git": "^3.27.0",
+    "typescript": "^5.7.2"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.1.14",
+    "biome": "^0.3.3",
+    "bun-plugin-html": "^2.2.4",
+    "sass": "^1.83.0"
+  }
 }
