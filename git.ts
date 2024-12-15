@@ -1,3 +1,4 @@
+import console from "console";
 import fs from "fs";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 import { App } from "octokit";
@@ -22,11 +23,9 @@ const setGithubApp = async (env: {
 	const installationOctokit = await app.getInstallationOctokit(
 		Number(env.GH_INSTALLATION_ID),
 	);
+
 	return installationOctokit;
 };
-
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-const octokit = await setGithubApp(process.env as any);
 
 const createText = async (key: string, prompt: string) => {
 	const genAI = new GoogleGenerativeAI(key);
@@ -40,66 +39,68 @@ const createText = async (key: string, prompt: string) => {
 	try {
 		console.log("start");
 
+		// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+		const octokit = await setGithubApp(process.env as any);
+
 		const key = process.env.GEMINI_API_KEY;
 		const prompt = `
-下記に幾つかの要求のポリシーを示します。これに従って回答してください。
+		下記に幾つかの要求のポリシーを示します。これに従って回答してください。
 
-- 回答は下記JSON SCHEMAに合致するJSON形式で実施してください。
-- 他の受け答えや回答は不要です。
-- 返答はJSONのみで返してください。codebaseの表記に沿う必要はありません。
+		- 回答は下記JSON SCHEMAに合致するJSON形式で実施してください。
+		- 他の受け答えや回答は不要です。
+		- 返答はJSONのみで返してください。codebaseの表記に沿う必要はありません。
 
-{
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "properties": {
-    "html": {
-      "type": "string"
-    },
-    "ts": {
-      "type": "string"
-    },
-    "css": {
-      "type": "string"
-    },
-    "description": {
-      "type": "string"
-    },
-    "title": {
-      "type": "string"
-    }
-  }
-}
+		{
+		  "$schema": "http://json-schema.org/draft-07/schema#",
+		  "type": "object",
+		  "properties": {
+		    "html": {
+		      "type": "string"
+		    },
+		    "ts": {
+		      "type": "string"
+		    },
+		    "css": {
+		      "type": "string"
+		    },
+		    "description": {
+		      "type": "string"
+		    },
+		    "title": {
+		      "type": "string"
+		    }
+		  }
+		}
 
+		- 上記JSON SCHEMAのプロパティの意味は下記です
+		  - html: HTMLコード ファイルパスは'/src/index.html'です
+		  - css: SCSSコード ファイルパスは'/src/style/style.scss'です
+		  - ts: TypeScriptコード ファイルパスは'/src/ts/index.ts'です
+		  - description: PRの説明文
+		  - title: PRのタイトル
 
-- 上記JSON SCHEMAのプロパティの意味は下記です
-  - html: HTMLコード ファイルパスは'/src/index.html'です
-  - css: SCSSコード ファイルパスは'/src/style/style.scss'です
-  - ts: TypeScriptコード ファイルパスは'/src/ts/index.ts'です
-  - description: PRの説明文
-  - title: PRのタイトル
+		以下の<codebase/>はコード内容です。
 
-以下の<codebase/>はコード内容です。
+		--------------------------------------------------------
 
---------------------------------------------------------
+		<codebase>
+		\`\`\`html
+		${fs.readFileSync("src/index.html", "utf-8")}
+		\`\`\`
 
-<codebase>
-\`\`\`html
-${fs.readFileSync("src/index.html", "utf-8")}
-\`\`\`
+		\`\`\`ts
+		${fs.readFileSync("src/ts/index.ts", "utf-8")}
+		\`\`\`
 
-\`\`\`ts
-${fs.readFileSync("src/ts/index.ts", "utf-8")}
-\`\`\`
+		\`\`\`css
+		${fs.readFileSync("src/style/style.scss", "utf-8")}
+		\`\`\`
+		</codebase>
 
-\`\`\`css
-${fs.readFileSync("src/style/style.scss", "utf-8")}
-\`\`\`
-</codebase>
-
-これらをコード踏まえ、下記の要求に合致するコードを生成してください。
-- 絶対条件として、電卓が表示されるページを作成してください。
-- 既存コードから何か1つ機能を追加してください
-`;
+		これらをコード踏まえ、下記の要求に合致するコードを生成してください。
+		- 絶対条件として、電卓が表示されるページを作成してください。
+		- 既存コードから何か1つ機能を追加してください
+		`;
 		const text = (await createText(key ?? "", prompt))
 			.replace("```json\n", "")
 			.replace("```", "");
@@ -116,6 +117,7 @@ ${fs.readFileSync("src/style/style.scss", "utf-8")}
 
 		const branchName = `feature/auto-${Date.now()}`;
 
+		await git.fetch();
 		await git.checkoutLocalBranch(branchName);
 
 		fs.writeFileSync("src/index.html", d.html);
@@ -125,16 +127,15 @@ ${fs.readFileSync("src/style/style.scss", "utf-8")}
 		await git.add(".");
 		await git.commit(d.description);
 		await git.push("origin", branchName);
-		const a = await octokit.rest.pulls.create({
-			owner: "akatsuki1910",
+
+		await octokit.rest.pulls.create({
+			owner: "Akatsuki1910",
 			repo: "github-auto-project",
 			head: branchName,
 			base: "main",
 			title: d.title,
 			body: d.description,
 		});
-
-		console.log(a.status, a.data, a.url);
 	} catch (e) {
 		console.error(e);
 	} finally {
