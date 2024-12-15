@@ -22,4 +22,4 @@ jobs:
         run: |
           echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" > .env
           echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" > .env
-          bun run auto-add
+          bun run git.ts
