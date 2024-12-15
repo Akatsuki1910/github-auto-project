@@ -27,12 +27,14 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (e) {
           display.value = "Error";
         }
-      } else if (value === "%s") {
+      } else if (value === "%") {
         try {
           display.value = String(parseFloat(display.value) / 100);
         } catch (e) {
           display.value = "Error";
         }
+      } else if (value === "π") {
+        display.value += Math.PI;
       } else {
         display.value += value;
       }

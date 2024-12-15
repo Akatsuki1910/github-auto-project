@@ -10,6 +10,7 @@ const setGithubApp = async (env: {
 	GH_CLIENT_SECRET: string;
 	GH_INSTALLATION_ID: string;
 }) => {
+	console.log(env);
 	const app = new App({
 		appId: env.GH_APPID,
 		privateKey: env.GH_PRIVATE_KEY,
@@ -132,16 +133,16 @@ ${fs.readFileSync("src/style/style.scss", "utf-8")}
 		const rateLimit = await octokit.rest.rateLimit.get();
 		console.log("Remaining requests:", rateLimit.data.rate.remaining);
 
-		const a = await octokit.rest.pulls.create({
-			owner: "Akatsuki1910",
-			repo: "github-auto-project",
-			head: branchName,
-			base: "main",
-			title: d.title,
-			body: d.description,
-		});
+		// const a = await octokit.rest.pulls.create({
+		// 	owner: "Akatsuki1910",
+		// 	repo: "github-auto-project",
+		// 	head: branchName,
+		// 	base: "main",
+		// 	title: d.title,
+		// 	body: d.description,
+		// });
 
-		console.log(a.status, a.data, a.url);
+		// console.log(a.status, a.data, a.url);
 	} catch (e) {
 		console.error(e);
 	} finally {
