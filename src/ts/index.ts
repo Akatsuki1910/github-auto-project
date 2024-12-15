@@ -14,9 +14,9 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (value === "C") {
         display.value = "";
         bracketOpen = false;
-      } else if (value === "←" || value === "&larr;") {
+      } else if (value === "←" || value === "&larr;" ) {
         display.value = display.value.slice(0, -1);
-        if (display.value.endsWith("(")) {
+         if (display.value.endsWith("(")) {
           bracketOpen = false;
         }
       } else if (value === "+/-") {
@@ -69,6 +69,12 @@ window.addEventListener("DOMContentLoaded", () => {
         } else {
           display.value += ")";
           bracketOpen = false;
+        }
+      } else if (value === "log") {
+        try {
+          display.value = String(Math.log10(parseFloat(display.value)));
+        } catch (e) {
+          display.value = "Error";
         }
       } else {
         display.value += value;
