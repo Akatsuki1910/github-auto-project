@@ -37,8 +37,9 @@ const createText = async (key: string, prompt: string) => {
 };
 
 (async () => {
-	const key = process.env.GEMINI_API_KEY;
-	const prompt = `
+	try {
+		const key = process.env.GEMINI_API_KEY;
+		const prompt = `
 下記に幾つかの要求のポリシーを示します。これに従って回答してください。
 
 - 回答は下記JSON SCHEMAに合致するJSON形式で実施してください。
@@ -97,39 +98,42 @@ ${fs.readFileSync("src/style/style.scss", "utf-8")}
 - 絶対条件として、電卓が表示されるページを作成してください。
 - 既存コードから何か1つ機能を追加してください
 `;
-	const text = (await createText(key ?? "", prompt))
-		.replace("```json\n", "")
-		.replace("```", "");
+		const text = (await createText(key ?? "", prompt))
+			.replace("```json\n", "")
+			.replace("```", "");
 
-	const d = JSON.parse(text) as {
-		html: string;
-		ts: string;
-		css: string;
-		description: string;
-		title: string;
-	};
+		const d = JSON.parse(text) as {
+			html: string;
+			ts: string;
+			css: string;
+			description: string;
+			title: string;
+		};
 
-	const git = simpleGit().clean(CleanOptions.FORCE);
+		const git = simpleGit().clean(CleanOptions.FORCE);
 
-	const branchName = `feature/auto-${Date.now()}`;
+		const branchName = `feature/auto-${Date.now()}`;
 
-	await git.checkoutLocalBranch(branchName);
+		await git.checkoutLocalBranch(branchName);
 
-	fs.writeFileSync("src/index.html", d.html);
-	fs.writeFileSync("src/ts/index.ts", d.ts);
-	fs.writeFileSync("src/style/style.scss", d.css);
+		fs.writeFileSync("src/index.html", d.html);
+		fs.writeFileSync("src/ts/index.ts", d.ts);
+		fs.writeFileSync("src/style/style.scss", d.css);
 
-	await git.add(".");
-	await git.commit(d.description);
-	await git.push("origin", branchName);
-	const a = await octokit.rest.pulls.create({
-		owner: "akatsuki1910",
-		repo: "github-auto-project",
-		head: branchName,
-		base: "main",
-		title: d.title,
-		body: d.description,
-	});
+		await git.add(".");
+		await git.commit(d.description);
+		await git.push("origin", branchName);
+		const a = await octokit.rest.pulls.create({
+			owner: "akatsuki1910",
+			repo: "github-auto-project",
+			head: branchName,
+			base: "main",
+			title: d.title,
+			body: d.description,
+		});
 
-	console.log(a.status, a.data, a.url);
+		console.log(a.status, a.data, a.url);
+	} catch (e) {
+		console.error(e);
+	}
 })();
