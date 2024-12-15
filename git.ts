@@ -128,8 +128,12 @@ ${fs.readFileSync("src/style/style.scss", "utf-8")}
 		await git.commit(d.description);
 		await git.push("origin", branchName);
 		console.log("pushed");
+
+		const rateLimit = await octokit.rest.rateLimit.get();
+		console.log("Remaining requests:", rateLimit.data.rate.remaining);
+
 		const a = await octokit.rest.pulls.create({
-			owner: "akatsuki1910",
+			owner: "Akatsuki1910",
 			repo: "github-auto-project",
 			head: branchName,
 			base: "main",

@@ -27,6 +27,12 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (e) {
           display.value = "Error";
         }
+      } else if (value === "%s") {
+        try {
+          display.value = String(parseFloat(display.value) / 100);
+        } catch (e) {
+          display.value = "Error";
+        }
       } else {
         display.value += value;
       }
