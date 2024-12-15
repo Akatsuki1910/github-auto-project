@@ -9,9 +9,6 @@ on:
 jobs:
   run:
     runs-on: ubuntu-latest
-    env:
-      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v4
 
@@ -21,10 +18,8 @@ jobs:
       - name: Install packages
         run: bun install
 
-      - name: Set ENV
+      - name: Run auto-add
         run: |
           echo "GEMINI_API_KEY=${{ secrets.GEMINI_API_KEY }}" > .env
           echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" > .env
-
-      - name: Run auto-add
-        run: bun run auto-add
+          bun run auto-add
