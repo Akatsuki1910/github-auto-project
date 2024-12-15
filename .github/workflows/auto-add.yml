@@ -27,4 +27,4 @@ jobs:
           echo "GITHUB_TOKEN=${{ secrets.GITHUB_TOKEN }}" > .env
 
       - name: Run auto-add
-        run: bun --env-file=.env run auto-add
+        run: bun run auto-add

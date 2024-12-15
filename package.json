@@ -1,6 +1,6 @@
 {
 	"scripts": {
-		"auto-add": "bun run git.ts",
+		"auto-add": "bun --env-file=.env run git.ts",
 		"lint": "biome check --write ./src",
 		"build": "bun run bun.build.ts"
 	},
