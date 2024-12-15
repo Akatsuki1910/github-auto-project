@@ -1,9 +1,32 @@
 import fs from "fs";
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { Octokit } from "octokit";
+import { App } from "octokit";
 import { CleanOptions, simpleGit } from "simple-git";
 
-const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+const setGithubApp = async (env: {
+	GH_APPID: string;
+	GH_PRIVATE_KEY: string;
+	GH_CLIENT_ID: string;
+	GH_CLIENT_SECRET: string;
+	GH_INSTALLATION_ID: string;
+}) => {
+	const app = new App({
+		appId: env.GH_APPID,
+		privateKey: env.GH_PRIVATE_KEY,
+		oauth: {
+			clientId: env.GH_CLIENT_ID,
+			clientSecret: env.GH_CLIENT_SECRET,
+		},
+	});
+
+	const installationOctokit = await app.getInstallationOctokit(
+		Number(env.GH_INSTALLATION_ID),
+	);
+	return installationOctokit;
+};
+
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+const octokit = await setGithubApp(process.env as any);
 
 const createText = async (key: string, prompt: string) => {
 	const genAI = new GoogleGenerativeAI(key);
