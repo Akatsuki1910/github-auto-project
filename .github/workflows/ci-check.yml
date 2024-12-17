@@ -23,6 +23,6 @@ jobs:
       - name: Build Check
         run: bun run build
   deploy:
-    if: ${{ github.actor == 'dependabot[bot]' }}
+    if: ${{ github.actor == 'dependabot[bot]' || github.actor == 'auto-add' }}
     needs: ci-check
     uses: ./.github/workflows/deploy.yml
