@@ -14,6 +14,8 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           currentInput = "Error";
         }
+      } else if (buttonText === "←" || buttonText === "&larr;") {
+        currentInput = currentInput.slice(0, -1);
       } else {
         currentInput += buttonText;
       }
