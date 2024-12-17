@@ -1,10 +1,11 @@
 name: auto add
+run-name: auto add run by @${{ github.actor }}
 
 on:
   workflow_call:
   workflow_dispatch:
   schedule:
-    - cron: '0 * * * *'
+    - cron: '*/30 * * * *'
 
 permissions:
   pull-requests: write
