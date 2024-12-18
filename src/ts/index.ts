@@ -49,6 +49,13 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           currentInput = "Error";
         }
+      } else if (buttonText === "x²") {
+        try {
+          const num = parseFloat(currentInput);
+          currentInput = (num * num).toString();
+        } catch (error) {
+          currentInput = "Error";
+        }
       } else {
         currentInput += buttonText;
       }
