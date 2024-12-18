@@ -76,6 +76,8 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "M+") {
         memory += parseFloat(currentInput) || 0;
         currentInput = "";
+      } else if (buttonText === "MRC") {
+        currentInput += memory.toString();
       } else {
         currentInput += buttonText;
       }
