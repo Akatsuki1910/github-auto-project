@@ -20,6 +20,8 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       } else if (buttonText === "←" || buttonText === "&larr;") {
         currentInput = currentInput.slice(0, -1);
+      } else if (buttonText === "+/-") {
+        currentInput = (parseFloat(currentInput) * -1).toString();
       } else {
         currentInput += buttonText;
       }
@@ -34,6 +36,5 @@ window.addEventListener("DOMContentLoaded", () => {
     calculationHistory = [];
     historyElement.textContent = "";
   });
-
 
 });
