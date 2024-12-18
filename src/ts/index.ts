@@ -23,4 +23,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // 既存コードからの機能追加: ページタイトルを更新
   document.title = "Simple Calculator";
+
+  // backspace機能追加
+  const clearButton = document.getElementById("clear") as HTMLButtonElement;
+  clearButton.addEventListener("dblclick", () => {
+    currentInput = currentInput.slice(0, -1);
+    display.value = currentInput;
+  });
 });
