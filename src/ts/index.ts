@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const historyElement = document.getElementById("history") as HTMLParagraphElement;
   let calculationHistory = [];
   let memory = 0;
+  let isInverse = false;
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -58,6 +59,8 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.sign(parseFloat(currentInput)).toString();
       } else if (buttonText === "floor") {
         currentInput = Math.floor(parseFloat(currentInput)).toString();
+      } else if (buttonText === "Inv") {
+        isInverse = !isInverse;
       } else {
         currentInput += buttonText;
       }
