@@ -61,6 +61,8 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.floor(parseFloat(currentInput)).toString();
       } else if (buttonText === "x²") {
         currentInput = Math.pow(parseFloat(currentInput), 2).toString();
+      } else if (buttonText === "x³") {
+        currentInput = Math.pow(parseFloat(currentInput), 3).toString();
       } else if (buttonText === "tan") {
         currentInput = Math.tan(parseFloat(currentInput)).toString();
       } else if (buttonText === "ln") {
