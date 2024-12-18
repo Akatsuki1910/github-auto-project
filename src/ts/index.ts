@@ -90,6 +90,8 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           currentInput = "Error";
         }
+      } else if (buttonText === "^") {
+        currentInput += "**";
       } else {
         currentInput += buttonText;
       }
