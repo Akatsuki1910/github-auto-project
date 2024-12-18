@@ -56,6 +56,8 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.round(parseFloat(currentInput)).toString();
       } else if (buttonText === "sign"){
         currentInput = Math.sign(parseFloat(currentInput)).toString();
+      } else if (buttonText === "floor") {
+        currentInput = Math.floor(parseFloat(currentInput)).toString();
       } else {
         currentInput += buttonText;
       }
