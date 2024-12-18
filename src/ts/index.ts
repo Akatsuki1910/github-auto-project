@@ -78,6 +78,9 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = "";
       } else if (buttonText === "MRC") {
         currentInput += memory.toString();
+      } else if (buttonText === "sin") {
+        currentInput += "Math.sin(";
+        bracketOpen = true;  //sin入力後は括弧を開いた状態にする
       } else {
         currentInput += buttonText;
       }
