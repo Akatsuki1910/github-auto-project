@@ -99,6 +99,7 @@ const createText = async (key: string, prompt: string) => {
 
 		これらをコード踏まえ、下記の要求に合致するコードを生成してください。
 		- 絶対条件として、電卓が表示されるページを作成してください。
+  		- webページで見たり触れたりできるようにしてください。
 		- 既存コードから何か1つ機能を追加してください
 		`;
 		const text = (await createText(key ?? "", prompt))
