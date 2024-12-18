@@ -92,6 +92,13 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       } else if (buttonText === "^") {
         currentInput += "**";
+      } else if (buttonText === "1/x") {
+        try {
+          const num = parseFloat(currentInput);
+          currentInput = (1/num).toString();
+        } catch(error) {
+          currentInput = "Error";
+        }
       } else {
         currentInput += buttonText;
       }
