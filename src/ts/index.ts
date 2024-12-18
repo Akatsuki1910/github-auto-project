@@ -52,6 +52,8 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "MRC") {
         currentInput += memory;
         memory = 0; // MRC後メモリクリア
+      } else if (buttonText === "sign"){
+        currentInput = Math.sign(parseFloat(currentInput)).toString();
       } else {
         currentInput += buttonText;
       }
