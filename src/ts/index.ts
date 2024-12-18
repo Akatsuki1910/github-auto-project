@@ -22,7 +22,15 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = currentInput.slice(0, -1);
       } else if (buttonText === "+/-") {
         currentInput = (parseFloat(currentInput) * -1).toString();
-      } else {
+      } else if (buttonText === "√") {
+        try {
+          const result = Math.sqrt(parseFloat(currentInput));
+          currentInput = result.toString();
+        } catch (error) {
+          currentInput = "Error";
+        }
+      }
+       else {
         currentInput += buttonText;
       }
       display.value = currentInput;
