@@ -2,6 +2,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const display = document.getElementById("display") as HTMLInputElement;
   const buttons = document.querySelectorAll("#calculator button");
   let currentInput = "";
+  const historyElement = document.getElementById("history") as HTMLParagraphElement;
+  let calculationHistory = [];
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -11,6 +13,8 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "=") {
         try {
           currentInput = eval(currentInput).toString();
+          calculationHistory.push(currentInput);
+          historyElement.textContent = calculationHistory.join(", ");
         } catch (error) {
           currentInput = "Error";
         }
