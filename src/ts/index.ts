@@ -99,6 +99,12 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch(error) {
           currentInput = "Error";
         }
+      } else if (buttonText === "|x|") {
+        try {
+          currentInput = Math.abs(parseFloat(currentInput)).toString();
+        } catch (error) {
+          currentInput = "Error";
+        }
       } else {
         currentInput += buttonText;
       }
