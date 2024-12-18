@@ -32,6 +32,12 @@ window.addEventListener("DOMContentLoaded", () => {
           }
       } else if (buttonText === "π"){
           currentInput += Math.PI;
+      } else if (buttonText === "log") {
+        try {
+          currentInput = Math.log10(eval(currentInput)).toString();
+        } catch (error) {
+          currentInput = "Error";
+        }
       } else {
         currentInput += buttonText;
       }
