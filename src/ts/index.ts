@@ -29,8 +29,14 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           currentInput = "Error";
         }
-      }
-       else {
+      } else if (buttonText === "%\") {
+        try {
+          const result = parseFloat(currentInput) / 100;
+          currentInput = result.toString();
+        } catch (error) {
+          currentInput = "Error";
+        }
+      } else {
         currentInput += buttonText;
       }
       display.value = currentInput;
