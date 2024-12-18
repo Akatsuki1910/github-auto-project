@@ -24,13 +24,9 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = currentInput.slice(0, -1);
       } else if (buttonText === "+/-") {
         currentInput = (parseFloat(currentInput) * -1).toString();
-      }
-      // 以下追加機能
-      else if (buttonText === "e") {
+      } else if (buttonText === "e") {
         currentInput += Math.E;
-      }
-      // ここまで
-      else if (buttonText === "√") {
+      } else if (buttonText === "√") {
         try {
           const result = Math.sqrt(parseFloat(currentInput));
           currentInput = result.toString();
@@ -46,8 +42,11 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       } else if (buttonText === "π") {
         currentInput += Math.PI;
-      } 
-      // ...（その他既存コード）
+      } else if (buttonText === "ceil") {
+        currentInput = Math.ceil(parseFloat(currentInput)).toString();
+      } else {
+        currentInput += buttonText;
+      }
 
       display.value = currentInput;
     });
