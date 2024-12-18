@@ -46,6 +46,12 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.ceil(parseFloat(currentInput)).toString();
       } else if (buttonText === "rand") {
         currentInput += Math.random();
+      } else if (buttonText === "M+") {
+        memory += parseFloat(currentInput);
+        currentInput = "";
+      } else if (buttonText === "MRC") {
+        currentInput += memory;
+        memory = 0; // MRC後メモリクリア
       } else {
         currentInput += buttonText;
       }
