@@ -59,10 +59,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.sign(parseFloat(currentInput)).toString();
       } else if (buttonText === "floor") {
         currentInput = Math.floor(parseFloat(currentInput)).toString();
+      } else if (buttonText === "x²") {
+        currentInput = Math.pow(parseFloat(currentInput), 2).toString();
       } else if (buttonText === "tan") {
-        currentInput += Math.tan(parseFloat(currentInput));
-      }
-       else if (buttonText === "Inv") {
+        currentInput = Math.tan(parseFloat(currentInput)).toString();
+      } else if (buttonText === "Inv") {
         isInverse = !isInverse;
       } else {
         currentInput += buttonText;
