@@ -84,6 +84,12 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "cos") {
         currentInput += "Math.cos(";
         bracketOpen = true;
+      } else if (buttonText === "round") {
+        try {
+          currentInput = Math.round(parseFloat(currentInput)).toString();
+        } catch (error) {
+          currentInput = "Error";
+        }
       } else {
         currentInput += buttonText;
       }
