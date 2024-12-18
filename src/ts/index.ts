@@ -69,6 +69,8 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.log(parseFloat(currentInput)).toString();
       } else if (buttonText === "∛x") {
         currentInput = Math.cbrt(parseFloat(currentInput)).toString();
+      } else if (buttonText === "expm1") {
+        currentInput = Math.expm1(parseFloat(currentInput)).toString();
       } else if (buttonText === "Inv") {
         isInverse = !isInverse;
       } else {
