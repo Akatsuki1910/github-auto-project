@@ -5,6 +5,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let bracketOpen = false;
   const historyElement = document.getElementById("history") as HTMLParagraphElement;
   let calculationHistory = [];
+  let memory = 0;
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -19,7 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           currentInput = "Error";
         }
-      } else if (buttonText === "←" || buttonText === "&larr;") {
+      } else if (buttonText === "←" || buttonText === "&larr;" ) {
         currentInput = currentInput.slice(0, -1);
       } else if (buttonText === "+/-") {
         currentInput = (parseFloat(currentInput) * -1).toString();
@@ -72,6 +73,9 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "( )") {
         currentInput += bracketOpen ? ")" : "(";
         bracketOpen = !bracketOpen;
+      } else if (buttonText === "M+") {
+        memory += parseFloat(currentInput) || 0;
+        currentInput = "";
       } else {
         currentInput += buttonText;
       }
