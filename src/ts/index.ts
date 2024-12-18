@@ -2,6 +2,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const display = document.getElementById("display") as HTMLInputElement;
   const buttons = document.querySelectorAll("#calculator button");
   let currentInput = "";
+  let bracketOpen = false;
   const historyElement = document.getElementById("history") as HTMLParagraphElement;
   let calculationHistory = [];
 
@@ -68,6 +69,9 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           currentInput = "Error";
         }
+      } else if (buttonText === "( )") {
+        currentInput += bracketOpen ? ")" : "(";
+        bracketOpen = !bracketOpen;
       } else {
         currentInput += buttonText;
       }
