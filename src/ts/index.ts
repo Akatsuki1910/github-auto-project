@@ -38,6 +38,17 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       } else if (buttonText === "π") {
         currentInput += Math.PI;
+      } else if (buttonText === "x!") {
+        try {
+          const num = parseInt(currentInput);
+          if (isNaN(num)) {
+            currentInput = "Error";
+          } else {
+            currentInput = factorial(num).toString();
+          }
+        } catch (error) {
+          currentInput = "Error";
+        }
       } else {
         currentInput += buttonText;
       }
@@ -53,4 +64,10 @@ window.addEventListener("DOMContentLoaded", () => {
     historyElement.textContent = "";
   });
 
+  function factorial(n: number): number {
+    if (n === 0) {
+      return 1;
+    }
+    return n * factorial(n - 1);
+  }
 });
