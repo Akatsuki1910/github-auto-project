@@ -44,6 +44,8 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += Math.PI;
       } else if (buttonText === "ceil") {
         currentInput = Math.ceil(parseFloat(currentInput)).toString();
+      } else if (buttonText === "rand") {
+        currentInput += Math.random();
       } else {
         currentInput += buttonText;
       }
