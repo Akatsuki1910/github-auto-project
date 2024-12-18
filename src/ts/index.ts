@@ -23,19 +23,15 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       } else if (buttonText === "←" || buttonText === "&larr;" ) {
         currentInput = currentInput.slice(0, -1);
-      }
-        // 以下追加
       } else if (buttonText === "x<sup>y</sup>") {
         currentInput += "**";
-      } // 以上追加
-      else if (buttonText === "+/-") {
+      } else if (buttonText === "+/-") {
         currentInput = (parseFloat(currentInput) * -1).toString();
-      } 
-      // ... (rest of the code remains the same)
+      } else {
+        currentInput += buttonText;
+      }
 
       display.value = currentInput;
     });
   });
-
-  // ... (rest of the code remains the same)
 });
