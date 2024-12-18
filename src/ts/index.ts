@@ -24,12 +24,14 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += "**";
       } else if (buttonText === "+/-") {
         currentInput = (parseFloat(currentInput) * -1).toString();
-      }else if (buttonText === "% ") {
+      }else if (buttonText === "%") {
           try{
             currentInput = (parseFloat(currentInput) /100).toString();
           }catch(error){
             currentInput = "Error";
           }
+      } else if (buttonText === "π"){
+          currentInput += Math.PI;
       } else {
         currentInput += buttonText;
       }
