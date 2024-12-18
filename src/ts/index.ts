@@ -63,6 +63,8 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.pow(parseFloat(currentInput), 2).toString();
       } else if (buttonText === "tan") {
         currentInput = Math.tan(parseFloat(currentInput)).toString();
+      } else if (buttonText === "ln") {
+        currentInput = Math.log(parseFloat(currentInput)).toString();
       } else if (buttonText === "Inv") {
         isInverse = !isInverse;
       } else {
