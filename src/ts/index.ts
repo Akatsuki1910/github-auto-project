@@ -44,6 +44,12 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           currentInput = "Error";
         }
+      } else if (buttonText === "sin") {
+        try {
+          currentInput = Math.sin(eval(currentInput)).toString();
+        } catch (error) {
+          currentInput = "Error";
+        }
       } else {
         currentInput += buttonText;
       }
