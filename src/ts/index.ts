@@ -2,11 +2,8 @@ window.addEventListener("DOMContentLoaded", () => {
   const display = document.getElementById("display") as HTMLInputElement;
   const buttons = document.querySelectorAll("#calculator button");
   let currentInput = "";
-  let bracketOpen = false;
   const historyElement = document.getElementById("history") as HTMLParagraphElement;
   let calculationHistory = [];
-  let memory = 0;
-  let isInverse = false;
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -27,6 +24,12 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += "**";
       } else if (buttonText === "+/-") {
         currentInput = (parseFloat(currentInput) * -1).toString();
+      }else if (buttonText === "% ") {
+          try{
+            currentInput = (parseFloat(currentInput) /100).toString();
+          }catch(error){
+            currentInput = "Error";
+          }
       } else {
         currentInput += buttonText;
       }
