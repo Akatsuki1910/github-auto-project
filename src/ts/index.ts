@@ -113,6 +113,12 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           currentInput = "Error";
         }
+      } else if (buttonText === "√x") {
+          try {
+            currentInput = Math.sqrt(eval(currentInput)).toString();
+          } catch (error) {
+            currentInput = "Error";
+          }
       } else {
         currentInput += buttonText;
       }
