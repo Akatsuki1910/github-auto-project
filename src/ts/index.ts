@@ -36,7 +36,17 @@ window.addEventListener("DOMContentLoaded", () => {
         } else if (buttonText === "←") {
         currentInput = currentInput.slice(0, -1);
         display.value = currentInput;
-      } else {
+      } else if (buttonText === "M+") {
+        memory += parseFloat(display.value);
+      } else if (buttonText === "MC") {
+        memory = 0;
+      } else if (buttonText === "MR") {
+        display.value = memory.toString();
+        currentInput = memory.toString();
+      } else if (buttonText === "MS") {
+        memory = parseFloat(display.value);
+      }
+       else {
         currentInput += buttonText;
         display.value = currentInput;
       }
