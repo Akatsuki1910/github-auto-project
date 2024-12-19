@@ -56,6 +56,12 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           currentInput = "Error";
         }
+      } else if (buttonText === "round") {
+        try {
+          currentInput = Math.round(eval(currentInput)).toString();
+        } catch (error) {
+          currentInput = "Error";
+        }
       } else {
         currentInput += buttonText;
       }
