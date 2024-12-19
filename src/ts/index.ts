@@ -101,6 +101,12 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           currentInput = "Error";
         }
+      } else if (buttonText === "x³") {
+        try {
+          currentInput = Math.pow(eval(currentInput), 3).toString();
+        } catch (error) {
+          currentInput = "Error";
+        }
       } else {
         currentInput += buttonText;
       }
