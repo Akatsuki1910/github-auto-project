@@ -12,10 +12,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
-      // ... (rest of the button click logic)
+      const buttonText = button.textContent;
 
+      // ... (rest of the button click logic)
             } else if (buttonText === "History"){
                 historyContainer.style.display = historyContainer.style.display === "none" ? "block" : "none";
+                historyElement.textContent = calculationHistory.join("\n"); // 履歴を見やすく改行区切りで表示
             }
     });
   });
@@ -27,7 +29,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   historyBtn.addEventListener("click", () => {
       historyContainer.style.display = historyContainer.style.display === "none" ? "block" : "none";
-      historyElement.textContent = calculationHistory.join(", ");
+      historyElement.textContent = calculationHistory.join("\n"); // 履歴を見やすく改行区切りで表示
   });
 
   // ... (rest of the code)

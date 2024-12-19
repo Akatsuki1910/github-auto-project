@@ -34,6 +34,7 @@ button {
 #history{
   width: 300px;
   margin: 10px auto;
+  white-space: pre-wrap; /* 複数行表示を有効化 */
 }
 #historyContainer{
     width: 300px;
