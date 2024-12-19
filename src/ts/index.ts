@@ -22,14 +22,14 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       } else if (buttonText === "←" || buttonText === "&larr;" ) {
         currentInput = currentInput.slice(0, -1);
-      } else if (buttonText === "x²") {
-        currentInput += "**2"; // x²の計算を追加
+      }
+       else if (buttonText === "x²") {
+        currentInput += "**2"; 
       } else if (buttonText === "x<sup>y</sup>") {
         currentInput += "**";
-      }
-       else if (buttonText === "+/-") {
+      } else if (buttonText === "+/-") {
         currentInput = (parseFloat(currentInput) * -1).toString();
-      }else if (buttonText === "%") {
+      } else if (buttonText === "%") {
           try{
             currentInput = (parseFloat(currentInput) /100).toString();
           }catch(error){
@@ -84,7 +84,7 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += memory;
       } else if (buttonText === "MS") {
         memory = parseFloat(currentInput);
-      } else if (buttonText === "ceil") {
+        } else if (buttonText === "ceil") {
         try {
           currentInput = Math.ceil(eval(currentInput)).toString();
         } catch (error) {
@@ -128,6 +128,16 @@ window.addEventListener("DOMContentLoaded", () => {
           } catch (error) {
             currentInput = "Error";
           }
+      }else if (buttonText === "x!") {
+        try {
+          const num = eval(currentInput);
+          if (num < 0 || !Number.isInteger(num)) {
+              throw new Error("Factorial is not defined for negative or non-integer numbers.");
+          }
+            currentInput = factorial(num).toString();
+        } catch (error) {
+            currentInput = "Error";
+        }
       } else {
         currentInput += buttonText;
       }
@@ -135,4 +145,11 @@ window.addEventListener("DOMContentLoaded", () => {
       display.value = currentInput;
     });
   });
+
+  function factorial(n: number): number {
+        if (n === 0) {
+          return 1;
+        }
+        return n * factorial(n - 1);
+      }
 });
