@@ -85,6 +85,8 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           currentInput = "Error";
         }
+      } else if (buttonText === "rand") {
+        currentInput += Math.random();
       } else {
         currentInput += buttonText;
       }
