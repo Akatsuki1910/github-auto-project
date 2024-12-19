@@ -40,28 +40,9 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "+/-") {
         currentInput = (parseFloat(currentInput) * -1).toString();
         display.value = currentInput;      
-      } else if (buttonText === "x!") {
-        // ... (factorial calculation)
-      } else if (buttonText === "x²") {
-        // ... (square calculation)
-      } else if (buttonText === "round") {
-        // ... (round calculation)
-      } else if (buttonText === "sin") {
-        // ... (sin calculation)
-      } else if (buttonText === "cos") {
-        // ... (cos calculation)
-      } else if (buttonText === "log") {
-        // ... (log calculation)
-      } else if (buttonText === "exp") {
-        try {
-          const num = parseFloat(currentInput);
-          const result = Math.exp(num);
-          display.value = result.toString();
-          calculationHistory.push(`exp(${currentInput})=${result}`);
-          currentInput = result.toString();
-        } catch (error) {
-          display.value = "Error";
-        }
+      } else if (buttonText === "^") {
+        currentInput += "**";
+        display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
