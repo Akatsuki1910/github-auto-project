@@ -51,6 +51,8 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "MR") {
         currentInput += memory.toString();
         display.value = currentInput;
+      } else if (buttonText === "MC") {
+        memory = 0; // メモリクリア
       } else {
         currentInput += buttonText;
         display.value = currentInput;
