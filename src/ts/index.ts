@@ -152,6 +152,12 @@ window.addEventListener("DOMContentLoaded", () => {
           }, () => {
             alert("Failed to copy to clipboard.");
           });
+      } else if (buttonText === "10<sup>x</sup>") {
+        try {
+          currentInput = Math.pow(10, eval(currentInput)).toString();
+        } catch (error) {
+          currentInput = "Error";
+        }
 
       }else {
         currentInput += buttonText;
