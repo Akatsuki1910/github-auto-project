@@ -90,6 +90,8 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += memory;
       } else if (buttonText === "MS") {
         memory = parseFloat(currentInput);
+      } else if (buttonText === "M+") {
+        memory += parseFloat(currentInput);      
         } else if (buttonText === "ceil") {
         try {
           currentInput = Math.ceil(eval(currentInput)).toString();
@@ -159,7 +161,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  function factorial(n: number): number {
+  function factorial(n) {
         if (n === 0) {
           return 1;
         }
