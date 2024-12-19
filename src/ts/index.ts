@@ -159,6 +159,13 @@ window.addEventListener("DOMContentLoaded", () => {
           currentInput = "Error";
         }
 
+      } else if (buttonText === "max") {
+        try {
+          const numbers = currentInput.split(',').map(Number);
+          currentInput = Math.max(...numbers).toString();
+        } catch (error) {
+          currentInput = "Error";
+        }
       }else {
         currentInput += buttonText;
       }
