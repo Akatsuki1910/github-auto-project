@@ -144,7 +144,14 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
             currentInput = "Error";
         }
-      } else {
+      } else if (buttonText === "Copy") {
+          navigator.clipboard.writeText(display.value).then(() => {
+            alert("Copied to clipboard: " + display.value);
+          }, () => {
+            alert("Failed to copy to clipboard.");
+          });
+
+      }else {
         currentInput += buttonText;
       }
 
