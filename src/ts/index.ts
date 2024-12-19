@@ -48,6 +48,9 @@ window.addEventListener("DOMContentLoaded", () => {
         memory += parseFloat(display.value);
         display.value = "";
         currentInput = "";
+      } else if (buttonText === "MR") {
+        currentInput += memory.toString();
+        display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
