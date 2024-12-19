@@ -166,6 +166,13 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           currentInput = "Error";
         }
+      } else if (buttonText === "min") {
+        try {
+          const numbers = currentInput.split(',').map(Number);
+          currentInput = Math.min(...numbers).toString();
+        } catch (error) {
+          currentInput = "Error";
+        }
       }else {
         currentInput += buttonText;
       }
