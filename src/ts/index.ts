@@ -90,6 +90,16 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           display.value = "Error";
         }
+      } else if (buttonText === "cos") {
+        try {
+          const num = parseFloat(currentInput);
+          const result = Math.cos(num);
+          display.value = result.toString();
+          calculationHistory.push(`cos(${currentInput})=${result}`);
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+        }
       } else {
         currentInput += buttonText;
         display.value = currentInput;
