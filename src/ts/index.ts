@@ -73,6 +73,12 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += memory;
       } else if (buttonText === "MS") {
         memory = parseFloat(currentInput);
+      } else if (buttonText === "ceil") {
+        try {
+          currentInput = Math.ceil(eval(currentInput)).toString();
+        } catch (error) {
+          currentInput = "Error";
+        }
       } else {
         currentInput += buttonText;
       }
