@@ -80,6 +80,16 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           display.value = "Error";
         }
+      } else if (buttonText === "sin") {
+        try {
+          const num = parseFloat(currentInput);
+          const result = Math.sin(num);
+          display.value = result.toString();
+          calculationHistory.push(`sin(${currentInput})=${result}`);
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+        }
       } else {
         currentInput += buttonText;
         display.value = currentInput;
