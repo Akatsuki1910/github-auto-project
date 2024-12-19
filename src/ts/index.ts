@@ -53,6 +53,9 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = currentInput;
       } else if (buttonText === "MC") {
         memory = 0; // メモリクリア
+      } else if (buttonText === "ceil") {
+        currentInput = Math.ceil(eval(currentInput)).toString();
+        display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
