@@ -5,6 +5,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let bracketOpen = false;
   const historyElement = document.getElementById("history") as HTMLParagraphElement;
   let calculationHistory = [];
+  let memory = 0;
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -66,6 +67,8 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "( )"){
           currentInput += bracketOpen ? ")" : "(";
           bracketOpen = !bracketOpen;      
+      } else if (buttonText === "MC") {
+        memory = 0;
       } else {
         currentInput += buttonText;
       }
