@@ -87,6 +87,12 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       } else if (buttonText === "rand") {
         currentInput += Math.random();
+      } else if (buttonText === "sign") {
+        try {
+          currentInput = Math.sign(eval(currentInput)).toString();
+        } catch (error) {
+          currentInput = "Error";
+        }
       } else {
         currentInput += buttonText;
       }
