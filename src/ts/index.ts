@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const historyContainer = document.getElementById("historyContainer");
   const historyBtn = document.getElementById("historyBtn");
   const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;
+  let memory = 0;
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -43,6 +44,10 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "^") {
         currentInput += "**";
         display.value = currentInput;
+      } else if (buttonText === "M+") {
+        memory += parseFloat(display.value);
+        display.value = "";
+        currentInput = "";
       } else {
         currentInput += buttonText;
         display.value = currentInput;
