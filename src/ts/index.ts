@@ -100,6 +100,16 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           display.value = "Error";
         }
+      } else if (buttonText === "log") {
+        try {
+          const num = parseFloat(currentInput);
+          const result = Math.log10(num);
+          display.value = result.toString();
+          calculationHistory.push(`log(${currentInput})=${result}`);
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+        }
       } else {
         currentInput += buttonText;
         display.value = currentInput;
