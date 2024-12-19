@@ -40,6 +40,26 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "+/-") {
         currentInput = (parseFloat(currentInput) * -1).toString();
         display.value = currentInput;      
+      } else if (buttonText === "x!") {
+        try {
+          const num = parseInt(currentInput);
+          if (isNaN(num)) {
+            throw new Error("Invalid input for factorial");
+          }
+          if (num < 0) {
+            throw new Error("Factorial is not defined for negative numbers");
+          }
+          let result = 1;
+          for (let i = 1; i <= num; i++) {
+            result *= i;
+          }
+          display.value = result.toString();
+          calculationHistory.push(`${currentInput}!=${result}`);
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+          console.error(error); // エラー内容をコンソールに表示
+        }
       } else {
         currentInput += buttonText;
         display.value = currentInput;
