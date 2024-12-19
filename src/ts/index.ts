@@ -28,12 +28,12 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = "";
       } else if (buttonText === "History"){
           historyContainer.style.display = historyContainer.style.display === "none" ? "block" : "none";
-          historyElement.textContent = calculationHistory.join("\n"); 
+          historyElement.textContent = calculationHistory.join("\n");
       } else if (buttonText === "Copy") {
           navigator.clipboard.writeText(display.value).then(() => {
             alert("Copied to clipboard: " + display.value);
           });
-        } else if (buttonText === "←") {
+      } else if (buttonText === "←") {
         currentInput = currentInput.slice(0, -1);
         display.value = currentInput;
       } else if (buttonText === "M+") {
@@ -45,8 +45,10 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = memory.toString();
       } else if (buttonText === "MS") {
         memory = parseFloat(display.value);
-      }
-       else {
+      } else if (buttonText === "+/-") {
+        currentInput = (parseFloat(currentInput) * -1).toString();
+        display.value = currentInput;      
+      } else {
         currentInput += buttonText;
         display.value = currentInput;
       }
