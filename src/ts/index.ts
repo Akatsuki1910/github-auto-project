@@ -22,9 +22,12 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       } else if (buttonText === "←" || buttonText === "&larr;" ) {
         currentInput = currentInput.slice(0, -1);
+      } else if (buttonText === "x²") {
+        currentInput += "**2"; // x²の計算を追加
       } else if (buttonText === "x<sup>y</sup>") {
         currentInput += "**";
-      } else if (buttonText === "+/-") {
+      }
+       else if (buttonText === "+/-") {
         currentInput = (parseFloat(currentInput) * -1).toString();
       }else if (buttonText === "%") {
           try{
@@ -37,18 +40,18 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "e"){
           currentInput += Math.E;
       } else if (buttonText === "log") {
-        try {
-          currentInput = Math.log10(eval(currentInput)).toString();
-        } catch (error) {
-          currentInput = "Error";
-        }
-      } else if (buttonText === "exp") {
-        try{
-          currentInput = Math.exp(eval(currentInput)).toString();
-        } catch (error) {
-          currentInput = "Error";
-        }
-      } else if (buttonText === "sin") {
+          try {
+            currentInput = Math.log10(eval(currentInput)).toString();
+          } catch (error) {
+            currentInput = "Error";
+          }
+        } else if (buttonText === "exp") {
+          try{
+            currentInput = Math.exp(eval(currentInput)).toString();
+          } catch (error) {
+            currentInput = "Error";
+          }
+        } else if (buttonText === "sin") {
         try {
           currentInput = Math.sin(eval(currentInput)).toString();
         } catch (error) {
@@ -72,7 +75,7 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           currentInput = "Error";
         }
-      } else if (buttonText === "( )"){
+      } else if(buttonText === "( )"){
           currentInput += bracketOpen ? ")" : "(";
           bracketOpen = !bracketOpen;      
       } else if (buttonText === "MC") {
