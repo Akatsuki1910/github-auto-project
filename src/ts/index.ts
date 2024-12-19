@@ -69,6 +69,8 @@ window.addEventListener("DOMContentLoaded", () => {
           bracketOpen = !bracketOpen;      
       } else if (buttonText === "MC") {
         memory = 0;
+      } else if (buttonText === "MR") {
+        currentInput += memory;
       } else {
         currentInput += buttonText;
       }
