@@ -60,6 +60,16 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = "Error";
           console.error(error); // エラー内容をコンソールに表示
         }
+      } else if (buttonText === "x²") {
+        try {
+          const num = parseFloat(currentInput);
+          const result = num * num;
+          display.value = result.toString();
+          calculationHistory.push(`${currentInput}²=${result}`);
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+        }
       } else {
         currentInput += buttonText;
         display.value = currentInput;
