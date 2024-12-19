@@ -71,6 +71,8 @@ window.addEventListener("DOMContentLoaded", () => {
         memory = 0;
       } else if (buttonText === "MR") {
         currentInput += memory;
+      } else if (buttonText === "MS") {
+        memory = parseFloat(currentInput);
       } else {
         currentInput += buttonText;
       }
