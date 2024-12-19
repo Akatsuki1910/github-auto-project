@@ -14,11 +14,32 @@ window.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
 
-      // ... (rest of the button click logic)
-            } else if (buttonText === "History"){
-                historyContainer.style.display = historyContainer.style.display === "none" ? "block" : "none";
-                historyElement.textContent = calculationHistory.join("\n"); // 履歴を見やすく改行区切りで表示
-            }
+      if (buttonText === "=") {
+        try {
+          const result = eval(currentInput);
+          display.value = result.toString();
+          calculationHistory.push(`${currentInput}=${result}`); // 計算履歴に追加
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+        }
+      } else if (buttonText === "C") {
+        currentInput = "";
+        display.value = "";
+      } else if (buttonText === "History"){
+          historyContainer.style.display = historyContainer.style.display === "none" ? "block" : "none";
+          historyElement.textContent = calculationHistory.join("\n"); 
+      } else if (buttonText === "Copy") {
+          navigator.clipboard.writeText(display.value).then(() => {
+            alert("Copied to clipboard: " + display.value);
+          });
+        } else if (buttonText === "←") {
+        currentInput = currentInput.slice(0, -1);
+        display.value = currentInput;
+      } else {
+        currentInput += buttonText;
+        display.value = currentInput;
+      }
     });
   });
 
@@ -29,8 +50,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
   historyBtn.addEventListener("click", () => {
       historyContainer.style.display = historyContainer.style.display === "none" ? "block" : "none";
-      historyElement.textContent = calculationHistory.join("\n"); // 履歴を見やすく改行区切りで表示
+      historyElement.textContent = calculationHistory.join("\n");
   });
-
-  // ... (rest of the code)
 });
