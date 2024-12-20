@@ -80,6 +80,9 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "e") {
         currentInput += Math.E;
         display.value = currentInput;
+      } else if (buttonText === "ln") {
+        currentInput = Math.log(eval(currentInput)).toString();
+        display.value = currentInput;      
       } else {
         currentInput += buttonText;
         display.value = currentInput;
