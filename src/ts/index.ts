@@ -25,6 +25,9 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "C") {
         currentInput = "";
         display.value = "";
+      } else if (buttonText === "CE") {
+        currentInput = "";
+        display.value = "";
       } else if (buttonText === "History"){
           historyContainer.style.display = historyContainer.style.display === "none" ? "block" : "none";
           historyElement.textContent = calculationHistory.join("\n");
@@ -56,42 +59,6 @@ window.addEventListener("DOMContentLoaded", () => {
       }
        else if (buttonText === "trunc") {
         currentInput = Math.trunc(eval(currentInput)).toString();
-        display.value = currentInput;      
-      } else if (buttonText === "round"){
-        currentInput = Math.round(eval(currentInput)).toString();
-        display.value = currentInput;      
-      } else if (buttonText === "ceil") {
-        currentInput = Math.ceil(eval(currentInput)).toString();
-        display.value = currentInput;
-      } else if (buttonText === "floor") {
-        currentInput = Math.floor(eval(currentInput)).toString();
-        display.value = currentInput;
-      } else if (buttonText === "1/x") {
-        try {
-          const result = 1 / eval(currentInput);
-          display.value = result.toString();
-          calculationHistory.push(`1/(${currentInput})=${result}`);
-          currentInput = result.toString();
-        } catch (error) {
-          display.value = "Error";
-        }
-      } else if (buttonText === "sign"){
-          currentInput = Math.sign(eval(currentInput)).toString();
-          display.value = currentInput;
-      } else if (buttonText === "abs") {
-        currentInput = Math.abs(eval(currentInput)).toString();
-        display.value = currentInput;
-      } else if (buttonText === "rand") {
-        currentInput += Math.random().toString();
-        display.value = currentInput;      
-      } else if (buttonText === "e") {
-        currentInput += Math.E;
-        display.value = currentInput;
-      } else if (buttonText === "ln") {
-        currentInput = Math.log(eval(currentInput)).toString();
-        display.value = currentInput;      
-      } else if (buttonText === "tan"){
-        currentInput = Math.tan(eval(currentInput)).toString();
         display.value = currentInput;      
       } else {
         currentInput += buttonText;
