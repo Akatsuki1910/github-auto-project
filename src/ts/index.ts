@@ -14,28 +14,23 @@ window.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
 
-      if (buttonText === "x³") {
+      // ... (既存のコード)
+      if (buttonText === "mod") {
         try {
-          const result = Math.pow(eval(currentInput), 3);
-          display.value = result.toString();
-          calculationHistory.push(`${currentInput}³=${result}`);
-          currentInput = result.toString();
-          lastAnswer = result;
+          const operands = currentInput.split("mod");
+          if (operands.length === 2) {
+            const operand1 = eval(operands[0]);
+            const operand2 = eval(operands[1]);
+            const result = operand1 % operand2;
+            display.value = result.toString();
+            calculationHistory.push(`${operand1} mod ${operand2} = ${result}`);
+            currentInput = result.toString();
+          } else {
+            display.value = "Error";
+          }
         } catch (error) {
           display.value = "Error";
         }
-      } else if (buttonText === "∛") {
-        try {
-          const result = Math.cbrt(eval(currentInput));
-          display.value = result.toString();
-          calculationHistory.push(`∛(${currentInput})=${result}`);
-          currentInput = result.toString();
-          lastAnswer = result;
-        } catch (error) {
-          display.value = "Error";
-        }
-      } else if (buttonText === "=") {
-          // ... (既存のコード)
       }
       // ... (既存のコード)
     });
