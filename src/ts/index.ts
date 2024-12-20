@@ -13,6 +13,11 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
+      if (buttonText === "DEL") {
+        currentInput = currentInput.slice(0, -1);
+        display.value = currentInput;
+        return;
+      }
 
       if (buttonText === "()") {
         if (currentInput.includes("(")) {
