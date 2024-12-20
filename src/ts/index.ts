@@ -15,18 +15,18 @@ window.addEventListener("DOMContentLoaded", () => {
       const buttonText = button.textContent;
 
       // ... (既存のコード)
-      if (buttonText === "cbrt") {
+      if (buttonText === "|x|") {
         try {
-          const result = Math.cbrt(eval(currentInput));
+          const result = Math.abs(eval(currentInput));
           display.value = result.toString();
-          calculationHistory.push(`cbrt(${currentInput}) = ${result}`);
+          calculationHistory.push(`|${currentInput}| = ${result}`);
           currentInput = result.toString();
           lastAnswer = result;
         } catch (error) {
           display.value = "Error";
         }
       }
-      // ... (既存のコード)
+       // ... (既存のコード)
     });
   });
 
