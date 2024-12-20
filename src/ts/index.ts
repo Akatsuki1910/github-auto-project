@@ -13,7 +13,6 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
-
       if (buttonText === "MC") {
           memory = 0; 
           return;
@@ -47,6 +46,19 @@ window.addEventListener("DOMContentLoaded", () => {
           calculationHistory.push(`${currentInput} = ${result}`);
           historyElement.textContent = calculationHistory.join('\n');
         } catch (error) {
+          display.value = "Error";
+        }
+        return;
+      }
+      if (buttonText === "x³") {
+        try {
+          const result = Math.pow(parseFloat(currentInput), 3);
+          display.value = result.toString();
+          currentInput = result.toString();
+          calculationHistory.push(`${currentInput} = ${result}`);
+          historyElement.textContent = calculationHistory.join('\n');
+        }
+        catch (error) {
           display.value = "Error";
         }
         return;
