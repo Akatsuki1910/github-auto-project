@@ -77,6 +77,9 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "rand") {
         currentInput += Math.random().toString();
         display.value = currentInput;      
+      } else if (buttonText === "e") {
+        currentInput += Math.E;
+        display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
