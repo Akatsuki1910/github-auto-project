@@ -7,32 +7,10 @@ window.addEventListener("DOMContentLoaded", () => {
   const historyContainer = document.getElementById("historyContainer");
   const historyBtn = document.getElementById("historyBtn");
   const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;
-  let memory = 0;
-  let lastAnswer = 0;
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
-      if (buttonText === "DEL") {
-        currentInput = currentInput.slice(0, -1);
-        display.value = currentInput;
-        return;
-      }
-
-      if (buttonText === "()") {
-        if (currentInput.includes("(")) {
-          currentInput += ")";
-        } else {
-          currentInput += "(";
-        }
-        display.value = currentInput;
-        return;
-      }
-
-      if (buttonText === "x<sup>y</sup>") {
-        currentInput += "**";
-        display.value = currentInput;
-      }
 
       if (buttonText === "=") {
         try {
@@ -40,32 +18,45 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = result.toString();
           calculationHistory.push(`${currentInput}=${result}`);
           historyElement.textContent = calculationHistory.join('\n');
-          lastAnswer = result;
         } catch (error) {
           display.value = "Error";
         }
         currentInput = "";
-
         return;
       }
-      if (buttonText === "Ans"){
-        currentInput += lastAnswer;
+
+      if (buttonText === "C") {
+        currentInput = "";
         display.value = currentInput;
-         return;
+        return;
       }
-      
+
+      if (buttonText === "←") {
+        currentInput = currentInput.slice(0, -1);
+        display.value = currentInput;
+        return;
+      }
+      // 1/xの機能追加
+      if (buttonText === "1/x") {
+        try {
+          const result = 1 / eval(currentInput);
+          display.value = result.toString();
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+          currentInput = "";
+        }
+        return;
+      }
+
       if (/[0-9]/.test(buttonText) || buttonText === "." || buttonText === "+" || buttonText === "-" || buttonText === "*" || buttonText === "/" || buttonText === "%" || buttonText === "(" || buttonText === ")") {
         currentInput += buttonText;
-        display.value = currentInput; 
+        display.value = currentInput;
       }
-     if(buttonText === "C"){
-            currentInput = "";
-            display.value = currentInput;  
-    }
-
     });
   });
- historyBtn.addEventListener("click", () => {
+
+  historyBtn.addEventListener("click", () => {
     if (historyContainer.style.display === "none") {
       historyContainer.style.display = "block";
     } else {
