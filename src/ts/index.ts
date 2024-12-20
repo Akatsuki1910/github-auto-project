@@ -60,6 +60,11 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         return;
       }
+      if (buttonText === "π") {
+        currentInput += Math.PI;
+        display.value = currentInput;
+        return;
+      }
 
       if (/[0-9]/.test(buttonText) || buttonText === "." || buttonText === "+" || buttonText === "-" || buttonText === "*" || buttonText === "/" || buttonText === "%" || buttonText === "(" || buttonText === ")") {
         currentInput += buttonText;
