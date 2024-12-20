@@ -64,6 +64,9 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "Ans") { // Ansボタンの処理を追加
         currentInput += lastAnswer.toString();
         display.value = currentInput;
+      } else if (buttonText === "Base2") {
+        currentInput = parseInt(currentInput).toString(2);
+        display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
