@@ -65,6 +65,21 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = currentInput;
         return;
       }
+      if (buttonText === "!") {
+        try {
+          const num = eval(currentInput);
+          if (num < 0 || !Number.isInteger(num)) {
+            throw new Error("Factorial is not defined for negative or non-integer numbers.");
+          }
+          const result = factorial(num);
+          display.value = result.toString();
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+          currentInput = "";
+        }
+        return;
+      }
 
       if (/[0-9]/.test(buttonText) || buttonText === "." || buttonText === "+" || buttonText === "-" || buttonText === "*" || buttonText === "/" || buttonText === "%" || buttonText === "(" || buttonText === ")") {
         currentInput += buttonText;
@@ -97,4 +112,11 @@ window.addEventListener("DOMContentLoaded", () => {
       console.error("Copy failed: ", err);
     });
   });
+
+  function factorial(n: number): number {
+    if (n === 0) {
+      return 1;
+    }
+    return n * factorial(n - 1);
+  }
 });
