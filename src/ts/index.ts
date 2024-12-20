@@ -24,16 +24,52 @@ window.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // ... (既存のコード)
       if (buttonText === "x<sup>y</sup>") {
         currentInput += "**";
         display.value = currentInput;
       }
-     
-      // ... (既存のコード)
+
+      if (buttonText === "=") {
+        try {
+          const result = eval(currentInput);
+          display.value = result.toString();
+          calculationHistory.push(`${currentInput}=${result}`);
+          historyElement.textContent = calculationHistory.join('\n');
+          lastAnswer = result;
+        } catch (error) {
+          display.value = "Error";
+        }
+        currentInput = "";
+
+        return;
+      }
+      if (buttonText === "Ans"){
+        currentInput += lastAnswer;
+        display.value = currentInput;
+         return;
+      }
+      
+      if (/[0-9]/.test(buttonText) || buttonText === "." || buttonText === "+" || buttonText === "-" || buttonText === "*" || buttonText === "/" || buttonText === "%" || buttonText === "(" || buttonText === ")") {
+        currentInput += buttonText;
+        display.value = currentInput; 
+      }
+     if(buttonText === "C"){
+            currentInput = "";
+            display.value = currentInput;  
+    }
+
     });
   });
+ historyBtn.addEventListener("click", () => {
+    if (historyContainer.style.display === "none") {
+      historyContainer.style.display = "block";
+    } else {
+      historyContainer.style.display = "none";
+    }
+  });
 
-  // ... (既存のコード)
-
+  clearHistoryBtn.addEventListener("click", () => {
+    calculationHistory = [];
+    historyElement.textContent = "";
+  });
 });
