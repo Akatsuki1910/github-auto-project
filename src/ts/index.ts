@@ -26,7 +26,18 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = "Error";
         }
       }
-       // ... (既存のコード)
+       if (buttonText === "10<sup>x</sup>") {
+        try {
+          const result = 10 ** eval(currentInput);
+          display.value = result.toString();
+          calculationHistory.push(`10^(${currentInput}) = ${result}`);
+          currentInput = result.toString();
+          lastAnswer = result;
+        } catch (error) {
+          display.value = "Error";
+        }
+      }
+      // ... (既存のコード)
     });
   });
 
