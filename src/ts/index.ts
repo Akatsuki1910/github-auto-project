@@ -8,26 +8,20 @@ window.addEventListener("DOMContentLoaded", () => {
   const historyBtn = document.getElementById("historyBtn");
   const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;
   let memory = 0;
-  let lastAnswer = 0; 
+  let lastAnswer = 0;
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
 
       // ... (既存のコード)
-      if (buttonText === "mod") {
+      if (buttonText === "expm1") {
         try {
-          const operands = currentInput.split("mod");
-          if (operands.length === 2) {
-            const operand1 = eval(operands[0]);
-            const operand2 = eval(operands[1]);
-            const result = operand1 % operand2;
-            display.value = result.toString();
-            calculationHistory.push(`${operand1} mod ${operand2} = ${result}`);
-            currentInput = result.toString();
-          } else {
-            display.value = "Error";
-          }
+          const result = Math.exp(eval(currentInput)) -1;
+          display.value = result.toString();
+          calculationHistory.push(`expm1(${currentInput}) = ${result}`);
+          currentInput = result.toString();
+          lastAnswer = result;
         } catch (error) {
           display.value = "Error";
         }
