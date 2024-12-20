@@ -39,6 +39,18 @@ window.addEventListener("DOMContentLoaded", () => {
         }
           return;
       }
+      if (buttonText === "ln") {
+        try {
+          const result = Math.log(parseFloat(currentInput));
+          display.value = result.toString();
+          currentInput = result.toString();
+          calculationHistory.push(`${currentInput} = ${result}`);
+          historyElement.textContent = calculationHistory.join('\n');
+        } catch (error) {
+          display.value = "Error";
+        }
+        return;
+      }
 
       // ...(他のif文)
     });
