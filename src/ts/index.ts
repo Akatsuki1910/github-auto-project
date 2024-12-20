@@ -37,6 +37,17 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = "Error";
         }
       }
+       if (buttonText === "2<sup>x</sup>") {
+        try {
+          const result = 2 ** eval(currentInput);
+          display.value = result.toString();
+          calculationHistory.push(`2^(${currentInput}) = ${result}`);
+          currentInput = result.toString();
+          lastAnswer = result;
+        } catch (error) {
+          display.value = "Error";
+        }
+      }
       // ... (既存のコード)
     });
   });
