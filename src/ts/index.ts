@@ -37,6 +37,17 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = currentInput;
         return;
       }
+      if (buttonText === "x²") {
+        try {
+          const result = Math.pow(eval(currentInput), 2);
+          display.value = result.toString();
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+          currentInput = "";
+        }
+        return;
+      }
 
       if (buttonText === "√") {
         try {
