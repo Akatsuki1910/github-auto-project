@@ -8,7 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const historyBtn = document.getElementById("historyBtn");
   const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;
   let memory = 0;
-  let lastAnswer = 0; // 前回の計算結果を保存する変数
+  let lastAnswer = 0; 
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -18,9 +18,9 @@ window.addEventListener("DOMContentLoaded", () => {
         try {
           const result = eval(currentInput);
           display.value = result.toString();
-          calculationHistory.push(`${currentInput}=${result}`); // 計算履歴に追加
+          calculationHistory.push(`${currentInput}=${result}`); 
           currentInput = result.toString();
-          lastAnswer = result; // 計算結果を保存
+          lastAnswer = result; 
         } catch (error) {
           display.value = "Error";
         }
@@ -57,15 +57,18 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += memory.toString();
         display.value = currentInput;
       } else if (buttonText === "MC") {
-        memory = 0; // メモリクリア
+        memory = 0; 
       } else if (buttonText === "trunc") {
         currentInput = Math.trunc(eval(currentInput)).toString();
         display.value = currentInput;      
-      } else if (buttonText === "Ans") { // Ansボタンの処理を追加
+      } else if (buttonText === "Ans") {
         currentInput += lastAnswer.toString();
         display.value = currentInput;
       } else if (buttonText === "Base2") {
         currentInput = parseInt(currentInput).toString(2);
+        display.value = currentInput;
+      } else if (buttonText === "Base10") { // 10進数に変換
+        currentInput = parseInt(currentInput, 2).toString();
         display.value = currentInput;
       } else {
         currentInput += buttonText;
