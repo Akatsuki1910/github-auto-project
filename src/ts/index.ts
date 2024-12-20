@@ -59,6 +59,15 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "floor") {
         currentInput = Math.floor(eval(currentInput)).toString();
         display.value = currentInput;
+      } else if (buttonText === "1/x") {
+        try {
+          const result = 1 / eval(currentInput);
+          display.value = result.toString();
+          calculationHistory.push(`1/(${currentInput})=${result}`);
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+        }
       } else {
         currentInput += buttonText;
         display.value = currentInput;
