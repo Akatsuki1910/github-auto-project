@@ -70,6 +70,10 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "Base10") { // 10進数に変換
         currentInput = parseInt(currentInput, 2).toString();
         display.value = currentInput;
+      } else if (buttonText === "max") {
+        const numbers = currentInput.split(',').map(Number);
+        currentInput = Math.max(...numbers).toString();
+        display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
