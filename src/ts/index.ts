@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const historyContainer = document.getElementById("historyContainer");
   const historyBtn = document.getElementById("historyBtn");
   const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;
+  const copyBtn = document.getElementById("copy") as HTMLButtonElement;
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -36,10 +37,10 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = currentInput;
         return;
       }
-      // 1/xの機能追加
-      if (buttonText === "1/x") {
+
+      if (buttonText === "√") {
         try {
-          const result = 1 / eval(currentInput);
+          const result = Math.sqrt(eval(currentInput));
           display.value = result.toString();
           currentInput = result.toString();
         } catch (error) {
@@ -52,6 +53,10 @@ window.addEventListener("DOMContentLoaded", () => {
       if (/[0-9]/.test(buttonText) || buttonText === "." || buttonText === "+" || buttonText === "-" || buttonText === "*" || buttonText === "/" || buttonText === "%" || buttonText === "(" || buttonText === ")") {
         currentInput += buttonText;
         display.value = currentInput;
+      }
+      if (buttonText === "+/-") {
+          currentInput = display.value.startsWith('-') ? display.value.substring(1) : "-" + display.value;
+          display.value = currentInput;       
       }
     });
   });
@@ -67,5 +72,13 @@ window.addEventListener("DOMContentLoaded", () => {
   clearHistoryBtn.addEventListener("click", () => {
     calculationHistory = [];
     historyElement.textContent = "";
+  });
+
+  copyBtn.addEventListener("click", () => {
+    navigator.clipboard.writeText(display.value).then(() => {
+      alert("Copied to clipboard!");
+    }).catch(err => {
+      console.error("Copy failed: ", err);
+    });
   });
 });
