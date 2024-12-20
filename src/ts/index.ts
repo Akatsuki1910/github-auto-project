@@ -53,6 +53,10 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = currentInput;
       } else if (buttonText === "MC") {
         memory = 0; // メモリクリア
+      }
+       else if (buttonText === "trunc") {
+        currentInput = Math.trunc(eval(currentInput)).toString();
+        display.value = currentInput;      
       } else if (buttonText === "round"){
         currentInput = Math.round(eval(currentInput)).toString();
         display.value = currentInput;      
