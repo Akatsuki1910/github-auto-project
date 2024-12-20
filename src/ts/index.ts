@@ -23,6 +23,10 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = currentInput;
           return;
       }
+      if (buttonText === "MS") {
+          memory = parseFloat(display.value); // メモリ保存
+          return;
+      }
      // ...(他のif文)
     });
   });
