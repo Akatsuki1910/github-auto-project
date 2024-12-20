@@ -15,19 +15,32 @@ window.addEventListener("DOMContentLoaded", () => {
       const buttonText = button.textContent;
 
       if (buttonText === "MC") {
-          memory = 0; // メモリクリア
+          memory = 0; 
           return;
       }
        if (buttonText === "MR") {
-          currentInput += memory; // メモリ呼び出し
+          currentInput += memory; 
           display.value = currentInput;
           return;
       }
       if (buttonText === "MS") {
-          memory = parseFloat(display.value); // メモリ保存
+          memory = parseFloat(display.value);
           return;
       }
-     // ...(他のif文)
+      if (buttonText === "exp"){
+        try {
+          const result = Math.exp(parseFloat(currentInput));
+          display.value = result.toString();
+          currentInput = result.toString();
+          calculationHistory.push(`${currentInput} = ${result}`);
+          historyElement.textContent = calculationHistory.join('\n');
+        } catch (error) {
+          display.value = "Error";
+        }
+          return;
+      }
+
+      // ...(他のif文)
     });
   });
 
