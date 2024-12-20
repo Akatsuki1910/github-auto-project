@@ -68,6 +68,9 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           display.value = "Error";
         }
+      } else if (buttonText === "sign"){
+          currentInput = Math.sign(eval(currentInput)).toString();
+          display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
