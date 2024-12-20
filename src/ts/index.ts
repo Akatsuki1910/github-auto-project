@@ -56,6 +56,9 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "ceil") {
         currentInput = Math.ceil(eval(currentInput)).toString();
         display.value = currentInput;
+      } else if (buttonText === "floor") {
+        currentInput = Math.floor(eval(currentInput)).toString();
+        display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
