@@ -67,13 +67,17 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "Base2") {
         currentInput = parseInt(currentInput).toString(2);
         display.value = currentInput;
-      } else if (buttonText === "Base10") { // 10進数に変換
+      } else if (buttonText === "Base10") { 
         currentInput = parseInt(currentInput, 2).toString();
         display.value = currentInput;
       } else if (buttonText === "max") {
         const numbers = currentInput.split(',').map(Number);
         currentInput = Math.max(...numbers).toString();
         display.value = currentInput;
+       } else if (buttonText === "min") {
+        const numbers = currentInput.split(',').map(Number);
+        currentInput = Math.min(...numbers).toString();
+        display.value = currentInput;      
       } else {
         currentInput += buttonText;
         display.value = currentInput;
