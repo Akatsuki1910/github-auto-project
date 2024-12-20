@@ -15,39 +15,51 @@ window.addEventListener("DOMContentLoaded", () => {
       const buttonText = button.textContent;
 
       // ... (既存のコード)
+      if (buttonText === "log10") {
+        try {
+          const result = Math.log10(eval(currentInput));
+          display.value = result.toString();
+          calculationHistory.push(`log10(${currentInput}) = ${result}`);
+          currentInput = result.toString();
+          lastAnswer = result;
+        } catch (error) {
+          display.value = "Error";
+        }
+      }
+      // ... (既存のコード)
       if (buttonText === "|x|") {
-        try {
-          const result = Math.abs(eval(currentInput));
-          display.value = result.toString();
-          calculationHistory.push(`|${currentInput}| = ${result}`);
-          currentInput = result.toString();
-          lastAnswer = result;
-        } catch (error) {
-          display.value = "Error";
+          try {
+            const result = Math.abs(eval(currentInput));
+            display.value = result.toString();
+            calculationHistory.push(`|${currentInput}| = ${result}`);
+            currentInput = result.toString();
+            lastAnswer = result;
+          } catch (error) {
+            display.value = "Error";
+          }
         }
-      }
        if (buttonText === "10<sup>x</sup>") {
-        try {
-          const result = 10 ** eval(currentInput);
-          display.value = result.toString();
-          calculationHistory.push(`10^(${currentInput}) = ${result}`);
-          currentInput = result.toString();
-          lastAnswer = result;
-        } catch (error) {
-          display.value = "Error";
+          try {
+            const result = 10 ** eval(currentInput);
+            display.value = result.toString();
+            calculationHistory.push(`10^(${currentInput}) = ${result}`);
+            currentInput = result.toString();
+            lastAnswer = result;
+          } catch (error) {
+            display.value = "Error";
+          }
         }
-      }
        if (buttonText === "2<sup>x</sup>") {
-        try {
-          const result = 2 ** eval(currentInput);
-          display.value = result.toString();
-          calculationHistory.push(`2^(${currentInput}) = ${result}`);
-          currentInput = result.toString();
-          lastAnswer = result;
-        } catch (error) {
-          display.value = "Error";
+          try {
+            const result = 2 ** eval(currentInput);
+            display.value = result.toString();
+            calculationHistory.push(`2^(${currentInput}) = ${result}`);
+            currentInput = result.toString();
+            lastAnswer = result;
+          } catch (error) {
+            display.value = "Error";
+          }
         }
-      }
       // ... (既存のコード)
     });
   });
