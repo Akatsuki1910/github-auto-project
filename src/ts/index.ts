@@ -14,7 +14,6 @@ window.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
 
-      // ３乗の計算機能を追加
       if (buttonText === "x³") {
         try {
           const result = Math.pow(eval(currentInput), 3);
@@ -25,10 +24,20 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           display.value = "Error";
         }
+      } else if (buttonText === "∛") {
+        try {
+          const result = Math.cbrt(eval(currentInput));
+          display.value = result.toString();
+          calculationHistory.push(`∛(${currentInput})=${result}`);
+          currentInput = result.toString();
+          lastAnswer = result;
+        } catch (error) {
+          display.value = "Error";
+        }
       } else if (buttonText === "=") {
           // ... (既存のコード)
-      } // ... (既存のコード)
-      
+      }
+      // ... (既存のコード)
     });
   });
 
