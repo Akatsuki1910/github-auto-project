@@ -15,16 +15,9 @@ window.addEventListener("DOMContentLoaded", () => {
       const buttonText = button.textContent;
 
       // ... (既存のコード)
-      if (buttonText === "log1p") {
-        try {
-          const result = Math.log1p(eval(currentInput));
-          display.value = result.toString();
-          calculationHistory.push(`log1p(${currentInput}) = ${result}`);
-          currentInput = result.toString();
-          lastAnswer = result;
-        } catch (error) {
-          display.value = "Error";
-        }
+      if (buttonText === "x<sup>y</sup>") {
+        currentInput += "**";
+        display.value = currentInput;
       }
      
       // ... (既存のコード)
