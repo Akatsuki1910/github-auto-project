@@ -14,6 +14,16 @@ window.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
 
+      if (buttonText === "()") {
+        if (currentInput.includes("(")) {
+          currentInput += ")";
+        } else {
+          currentInput += "(";
+        }
+        display.value = currentInput;
+        return;
+      }
+
       // ... (既存のコード)
       if (buttonText === "x<sup>y</sup>") {
         currentInput += "**";
