@@ -15,11 +15,11 @@ window.addEventListener("DOMContentLoaded", () => {
       const buttonText = button.textContent;
 
       // ... (既存のコード)
-      if (buttonText === "expm1") {
+      if (buttonText === "cbrt") {
         try {
-          const result = Math.exp(eval(currentInput)) -1;
+          const result = Math.cbrt(eval(currentInput));
           display.value = result.toString();
-          calculationHistory.push(`expm1(${currentInput}) = ${result}`);
+          calculationHistory.push(`cbrt(${currentInput}) = ${result}`);
           currentInput = result.toString();
           lastAnswer = result;
         } catch (error) {
