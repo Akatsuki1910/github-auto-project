@@ -14,13 +14,16 @@ window.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
 
-      // 既存のコード...
       if (buttonText === "MC") {
           memory = 0; // メモリクリア
           return;
       }
-      // ...(他のif文)
+       if (buttonText === "MR") {
+          currentInput += memory; // メモリ呼び出し
+          display.value = currentInput;
+          return;
       }
+     // ...(他のif文)
     });
   });
 
