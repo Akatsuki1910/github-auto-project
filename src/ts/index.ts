@@ -80,6 +80,17 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         return;
       }
+      if (buttonText === "round") {
+        try {
+          const result = Math.round(eval(currentInput));
+          display.value = result.toString();
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+          currentInput = "";
+        }
+        return;
+      }
 
       if (/[0-9]/.test(buttonText) || buttonText === "." || buttonText === "+" || buttonText === "-" || buttonText === "*" || buttonText === "/" || buttonText === "%" || buttonText === "(" || buttonText === ")") {
         currentInput += buttonText;
