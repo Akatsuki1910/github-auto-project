@@ -9,47 +9,23 @@ window.addEventListener("DOMContentLoaded", () => {
   const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;
   const copyBtn = document.getElementById("copy") as HTMLButtonElement;
   let memory = 0;
+  let parenthesesOpen = false;
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
       // ... (既存のコード)
-      if (buttonText === "x<sup>y</sup>") {
-          currentInput += "**";
-          display.value = currentInput;
+      if (buttonText === "( )") {
+        if (!parenthesesOpen) {
+          currentInput += "(";
+          parenthesesOpen = true;
+        } else {
+          currentInput += ")";
+          parenthesesOpen = false;
+        }
+        display.value = currentInput;
       }
       // ... (その他の既存コード)
-      if (buttonText === "tan") {
-        try {
-          const number = parseFloat(currentInput);
-          const result = Math.tan(number);
-          display.value = result.toString();
-          currentInput = result.toString();
-          calculationHistory.push(`tan(${number}) = ${result}`);
-          historyElement.textContent = calculationHistory.join('\n');
-        } catch (error) {
-          display.value = "Error";
-        }
-      }
-      if (buttonText === "log") {
-        try {
-          const number = parseFloat(currentInput);
-          const result = Math.log10(number);
-          display.value = result.toString();
-          currentInput = result.toString();
-          calculationHistory.push(`log(${number}) = ${result}`);
-          historyElement.textContent = calculationHistory.join('\n');
-        } catch (error) {
-          display.value = "Error";
-        }
-      }
-      if (buttonText === "rand") {
-        const randomNumber = Math.random();
-        display.value = randomNumber.toString();
-        currentInput = randomNumber.toString();
-        calculationHistory.push(`rand = ${randomNumber}`);
-        historyElement.textContent = calculationHistory.join('\n');
-      }
     });
   });
 
