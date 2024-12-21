@@ -42,6 +42,18 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = "Error";
         }
       }
+       if (buttonText === "sin") {
+        try {
+          const number = parseFloat(currentInput);
+          const result = Math.sin(number);
+          display.value = result.toString();
+          currentInput = result.toString();
+          calculationHistory.push(`sin(${number}) = ${result}`);
+          historyElement.textContent = calculationHistory.join('\n');
+        } catch (error) {
+          display.value = "Error";
+        }
+      }
 
     });
   });
