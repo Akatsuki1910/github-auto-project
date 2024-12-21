@@ -17,15 +17,23 @@ window.addEventListener("DOMContentLoaded", () => {
       if (buttonText === "C") {
         currentInput = "";
         display.value = "";
-      } else if(buttonText === "←"){
+      } else if (buttonText === "←") {
         currentInput = currentInput.slice(0, -1);
         display.value = currentInput;
+      } else if (buttonText === "=") {
+        try {
+          const result = eval(currentInput);
+          display.value = result.toString();
+          calculationHistory.push(currentInput + " = " + result);
+          historyElement.textContent = calculationHistory.join('\n');
+          currentInput = "";
+        } catch (error) {
+          display.value = "Error";
+        }
       } else {
-          currentInput += buttonText; 
+        currentInput += buttonText;
         display.value = currentInput;
       }
-      
-      // ここに他のボタンの処理を追加
     });
   });
 });
