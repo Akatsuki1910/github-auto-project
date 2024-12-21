@@ -31,6 +31,18 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = "Error";
         }
       }
+      if (buttonText === "log") {
+        try {
+          const number = parseFloat(currentInput);
+          const result = Math.log10(number);
+          display.value = result.toString();
+          currentInput = result.toString();
+          calculationHistory.push(`log(${number}) = ${result}`);
+          historyElement.textContent = calculationHistory.join('\n');
+        } catch (error) {
+          display.value = "Error";
+        }
+      }
     });
   });
 
