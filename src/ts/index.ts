@@ -14,6 +14,17 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
+      // ceil関数の実装
+      if (buttonText === "ceil") {
+        try {
+          const num = parseFloat(currentInput);
+          currentInput = Math.ceil(num).toString();
+          display.value = currentInput;
+        } catch (error) {
+          display.value = "Error";
+        }
+        return;
+      }
       if (buttonText === "tan") {
         try {
           const num = parseFloat(currentInput);
@@ -24,7 +35,6 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         return;
       }
-      // ログ機能の追加
       if (buttonText === "exp") {
           try {
             const num = parseFloat(currentInput);
