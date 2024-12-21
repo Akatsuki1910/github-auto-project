@@ -14,6 +14,17 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
+      // ログ機能の追加
+      if (buttonText === "log") {
+        try {
+          const num = parseFloat(currentInput);
+          currentInput = Math.log10(num).toString();
+          display.value = currentInput;
+        } catch (error) {
+          display.value = "Error";
+        }
+        return;
+      }
       if (buttonText === "sin") {
         try {
           const num = parseFloat(currentInput);
@@ -34,7 +45,6 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         return;
       }
-      // 括弧の追加
       if (buttonText === "( )") {
         currentInput += parenthesesOpen ? ")" : "(";
         parenthesesOpen = !parenthesesOpen;
@@ -56,9 +66,6 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = currentInput;
         return;
       }
-      // ... (その他の既存コード)
     });
   });
-
-  // ...(既存のコード)
 });
