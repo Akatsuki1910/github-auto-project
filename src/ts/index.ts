@@ -14,44 +14,10 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
-      if (buttonText === "floor") {
-        try {
-          const num = parseFloat(currentInput);
-          currentInput = Math.floor(num).toString();
-          display.value = currentInput;
-        } catch (error) {
-          display.value = "Error";
-        }
-        return;
-      }
-      if (buttonText === "ceil") {
-        try {
-          const num = parseFloat(currentInput);
-          currentInput = Math.ceil(num).toString();
-          display.value = currentInput;
-        } catch (error) {
-          display.value = "Error";
-        }
-        return;
-      }
-      if (buttonText === "sign") {
-        try {
-          const num = parseFloat(currentInput);
-          currentInput = (num * -1).toString();
-          display.value = currentInput;
-        } catch (error) {
-          display.value = "Error";
-        }
-        return;
-      }
-      if (buttonText === "abs") {
-        try {
-          const num = parseFloat(currentInput);
-          currentInput = Math.abs(num).toString();
-          display.value = currentInput;
-        } catch (error) {
-          display.value = "Error";
-        }
+      //...
+      if (buttonText === "rand") {
+        currentInput = Math.random().toString();
+        display.value = currentInput;
         return;
       }
       // ここに他のボタンの処理を追加
