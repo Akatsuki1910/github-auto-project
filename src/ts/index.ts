@@ -31,6 +31,11 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = "Error";
         }
       }
+      if (buttonText === "x<sup>y</sup>") {
+        currentInput += "**";
+        display.value = currentInput;
+        return;
+      }
       // ... (その他の既存コード)
     });
   });
