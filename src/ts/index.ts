@@ -14,6 +14,19 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
+      // 2進数、8進数、16進数変換機能追加
+      if (buttonText === "Base") {
+        const num = parseInt(currentInput);
+        if (!isNaN(num)) {
+          const binary = num.toString(2);
+          const octal = num.toString(8);
+          const hex = num.toString(16);
+          alert(`Binary: ${binary}\nOctal: ${octal}\nHexadecimal: ${hex}`);
+        } else {
+          alert("Invalid number for base conversion.");
+        }
+        return;
+      }
       if (buttonText === "Eval") {
         try {
           const result = eval(currentInput);
