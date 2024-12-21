@@ -14,6 +14,14 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
+      // 括弧の追加
+      if (buttonText === "( )") {
+        currentInput += parenthesesOpen ? ")" : "(";
+        parenthesesOpen = !parenthesesOpen;
+        display.value = currentInput;
+        return;
+      }
+
       if (buttonText === "1/x") {
         try {
           const num = parseFloat(currentInput);
@@ -23,7 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = "Error";
         }
       }
-       // ... (その他の既存コード)
+      // ... (その他の既存コード)
     });
   });
 
