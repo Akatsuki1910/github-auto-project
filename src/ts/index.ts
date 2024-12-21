@@ -19,6 +19,15 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += Math.E;
         display.value = currentInput;
       }
+        if (buttonText === "10ˣ") {
+          try {
+            const num = parseFloat(currentInput);
+            currentInput = Math.pow(10, num).toString();
+            display.value = currentInput;
+          } catch (error) {
+            display.value = "Error";
+          }
+        }      
       // ... (その他の既存コード)
     });
   });
