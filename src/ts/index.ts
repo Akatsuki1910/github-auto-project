@@ -13,62 +13,24 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
-      if (buttonText === "MC") {
-          memory = 0; 
-          return;
-      }
-       if (buttonText === "MR") {
-          currentInput += memory; 
-          display.value = currentInput;
-          return;
-      }
-      if (buttonText === "MS") {
-          memory = parseFloat(display.value);
-          return;
-      }
-      if (buttonText === "exp"){
+      // ... (既存のコード)
+      if (buttonText === "sign") {
         try {
-          const result = Math.exp(parseFloat(currentInput));
+          const number = parseFloat(currentInput);
+          const result = Math.sign(number);
           display.value = result.toString();
           currentInput = result.toString();
-          calculationHistory.push(`${currentInput} = ${result}`);
-          historyElement.textContent = calculationHistory.join('\n');
-        } catch (error) {
-          display.value = "Error";
-        }
-          return;
-      }
-      if (buttonText === "ln") {
-        try {
-          const result = Math.log(parseFloat(currentInput));
-          display.value = result.toString();
-          currentInput = result.toString();
-          calculationHistory.push(`${currentInput} = ${result}`);
+          calculationHistory.push(`sign(${number}) = ${result}`);
           historyElement.textContent = calculationHistory.join('\n');
         } catch (error) {
           display.value = "Error";
         }
         return;
       }
-      if (buttonText === "x³") {
-        try {
-          const result = Math.pow(parseFloat(currentInput), 3);
-          display.value = result.toString();
-          currentInput = result.toString();
-          calculationHistory.push(`${currentInput} = ${result}`);
-          historyElement.textContent = calculationHistory.join('\n');
-        }
-        catch (error) {
-          display.value = "Error";
-        }
-        return;
-      }
-
-      // ...(他のif文)
     });
   });
 
-  // ...(既存のコード)
+    // ...(既存のコード)
 
   function factorial(n: number): number {
     if (n === 0) {
