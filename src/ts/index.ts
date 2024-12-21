@@ -34,6 +34,16 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         return;
       }
+      if (buttonText === "sign") {
+        try {
+          const num = parseFloat(currentInput);
+          currentInput = (num * -1).toString();
+          display.value = currentInput;
+        } catch (error) {
+          display.value = "Error";
+        }
+        return;
+      }
       // ここに他のボタンの処理を追加
     });
   });
