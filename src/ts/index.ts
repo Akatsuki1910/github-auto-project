@@ -14,88 +14,17 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
-      // ceil関数の実装
-      if (buttonText === "ceil") {
+      if (buttonText === "floor") {
         try {
           const num = parseFloat(currentInput);
-          currentInput = Math.ceil(num).toString();
+          currentInput = Math.floor(num).toString();
           display.value = currentInput;
         } catch (error) {
           display.value = "Error";
         }
         return;
       }
-      if (buttonText === "tan") {
-        try {
-          const num = parseFloat(currentInput);
-          currentInput = Math.tan(num).toString();
-          display.value = currentInput;
-        } catch (error) {
-          display.value = "Error";
-        }
-        return;
-      }
-      if (buttonText === "exp") {
-          try {
-            const num = parseFloat(currentInput);
-            currentInput = Math.exp(num).toString();
-            display.value = currentInput;
-          } catch (error) {
-            display.value = "Error";
-          }
-          return;
-        }
-        if (buttonText === "log") {
-          try {
-            const num = parseFloat(currentInput);
-            currentInput = Math.log10(num).toString();
-            display.value = currentInput;
-          } catch (error) {
-            display.value = "Error";
-          }
-          return;
-        }
-        if (buttonText === "sin") {
-          try {
-            const num = parseFloat(currentInput);
-            currentInput = Math.sin(num).toString();
-            display.value = currentInput;
-          } catch (error) {
-            display.value = "Error";
-          }
-          return;
-        }
-        if (buttonText === "cos") {
-          try {
-            const num = parseFloat(currentInput);
-            currentInput = Math.cos(num).toString();
-            display.value = currentInput;
-          } catch (error) {
-            display.value = "Error";
-          }
-          return;
-        }
-      if (buttonText === "( )") {
-        currentInput += parenthesesOpen ? ")" : "(";
-        parenthesesOpen = !parenthesesOpen;
-        display.value = currentInput;
-        return;
-      }
-
-      if (buttonText === "1/x") {
-        try {
-          const num = parseFloat(currentInput);
-          currentInput = (1 / num).toString();
-          display.value = currentInput;
-        } catch (error) {
-          display.value = "Error";
-        }
-      }
-      if (buttonText === "x<sup>y</sup>") {
-        currentInput += "**";
-        display.value = currentInput;
-        return;
-      }
+      // ここに他のボタンの処理を追加
     });
   });
 });
