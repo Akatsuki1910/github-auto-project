@@ -14,57 +14,9 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
-      if (buttonText === "Base") {
-        const num = parseInt(currentInput);
-        if (!isNaN(num)) {
-          const binary = num.toString(2);
-          const octal = num.toString(8);
-          const hex = num.toString(16);
-          alert(`Binary: ${binary}\nOctal: ${octal}\nHexadecimal: ${hex}`);
-        } else {
-          alert("Invalid number for base conversion.");
-        }
-        return;
-      }
-      if (buttonText === "Eval") {
-        try {
-          const result = eval(currentInput);
-          currentInput = result.toString();
-          display.value = currentInput;
-          calculationHistory.push(`${currentInput} = ${result}`);
-          historyElement.textContent = calculationHistory.join('\n');
-        } catch (error) {
-          display.value = "Error";
-        }
-        return;
-      }
-      if (buttonText === "Random") {
-        const randomNumber = Math.random();
-        currentInput += randomNumber.toString();
-        display.value = currentInput;
-        return;
-      }
-      if (buttonText === "Fibonacci") {
-        let prev = 0;
-        let current = 1;
-        let sequence = "";
-        for (let i = 0; i < 10; i++) {
-          sequence += prev + " ";
-          const next = prev + current;
-          prev = current;
-          current = next;
-        }
-        alert(sequence);
-      }
       // ... (既存のコード)
-      if (buttonText === "( )") {
-        if (!parenthesesOpen) {
-          currentInput += "(";
-          parenthesesOpen = true;
-        } else {
-          currentInput += ")";
-          parenthesesOpen = false;
-        }
+      if (buttonText === "e") {
+        currentInput += Math.E;
         display.value = currentInput;
       }
       // ... (その他の既存コード)
@@ -72,10 +24,4 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // ...(既存のコード)
-  function factorial(n) {
-    if (n === 0) {
-      return 1;
-    }
-    return n * factorial(n - 1);
-  }
 });
