@@ -45,6 +45,13 @@ window.addEventListener("DOMContentLoaded", () => {
           currentInput = result.toString();
         } catch (error) {
           display.value = "Error";
+        }      
+      } else if (buttonText === "+/-") {
+        try{
+            currentInput = eval(currentInput + "*-1").toString();
+             display.value = currentInput;
+        }catch(e){
+             display.value = "Error";         
         }
       } else {
         currentInput += buttonText;
