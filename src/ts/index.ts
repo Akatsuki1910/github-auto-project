@@ -14,7 +14,6 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
-      // 2進数、8進数、16進数変換機能追加
       if (buttonText === "Base") {
         const num = parseInt(currentInput);
         if (!isNaN(num)) {
@@ -45,6 +44,18 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = currentInput;
         return;
       }
+      if (buttonText === "Fibonacci") {
+        let prev = 0;
+        let current = 1;
+        let sequence = "";
+        for (let i = 0; i < 10; i++) {
+          sequence += prev + " ";
+          const next = prev + current;
+          prev = current;
+          current = next;
+        }
+        alert(sequence);
+      }
       // ... (既存のコード)
       if (buttonText === "( )") {
         if (!parenthesesOpen) {
@@ -56,12 +67,11 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         display.value = currentInput;
       }
-     // ... (その他の既存コード)
+      // ... (その他の既存コード)
     });
   });
 
-    // ...(既存のコード)
-
+  // ...(既存のコード)
   function factorial(n) {
     if (n === 0) {
       return 1;
