@@ -14,12 +14,16 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
-      //...
+      // ...
       if (buttonText === "rand") {
         currentInput = Math.random().toString();
         display.value = currentInput;
         return;
       }
+        if (buttonText === "e"){
+            currentInput += Math.E;
+            display.value = currentInput;
+        }
       // ここに他のボタンの処理を追加
     });
   });
