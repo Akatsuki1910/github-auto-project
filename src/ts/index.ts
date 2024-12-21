@@ -46,6 +46,15 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = "Error";
         }
       }
+      if (buttonText === "mod") {
+        try {
+          const num = parseFloat(currentInput);
+          currentInput = (num % 1).toString();
+          display.value = currentInput;
+        } catch (error) {
+          display.value = "Error";
+        }
+      }
       // ... (その他の既存コード)
     });
   });
