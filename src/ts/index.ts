@@ -14,6 +14,10 @@ window.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
       // ... (既存のコード)
+      if (buttonText === "x<sup>y</sup>") {
+          currentInput += "**";
+          display.value = currentInput;
+      }
       if (buttonText === "abs") {
         try {
           const number = parseFloat(currentInput);
