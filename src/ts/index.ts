@@ -43,6 +43,13 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = "Error";
         }
       }
+      if (buttonText === "rand") {
+        const randomNumber = Math.random();
+        display.value = randomNumber.toString();
+        currentInput = randomNumber.toString();
+        calculationHistory.push(`rand = ${randomNumber}`);
+        historyElement.textContent = calculationHistory.join('\n');
+      }
     });
   });
 
