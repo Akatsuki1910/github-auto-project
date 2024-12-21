@@ -14,48 +14,16 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
-      // ... (既存のコード)
-      if (buttonText === "e") {
-        currentInput += Math.E;
-        display.value = currentInput;
-      }
-        if (buttonText === "10ˣ") {
-          try {
-            const num = parseFloat(currentInput);
-            currentInput = Math.pow(10, num).toString();
-            display.value = currentInput;
-          } catch (error) {
-            display.value = "Error";
-          }
-        }      
-        if (buttonText === "x2") {
-          try {
-            const num = parseFloat(currentInput);
-            currentInput = (num * 2).toString();
-            display.value = currentInput;
-          } catch (error) {
-            display.value = "Error";
-          }
-        }
-       if (buttonText === "∛") {
+      if (buttonText === "1/x") {
         try {
           const num = parseFloat(currentInput);
-          currentInput = Math.cbrt(num).toString();
+          currentInput = (1 / num).toString();
           display.value = currentInput;
         } catch (error) {
           display.value = "Error";
         }
       }
-      if (buttonText === "mod") {
-        try {
-          const num = parseFloat(currentInput);
-          currentInput = (num % 1).toString();
-          display.value = currentInput;
-        } catch (error) {
-          display.value = "Error";
-        }
-      }
-      // ... (その他の既存コード)
+       // ... (その他の既存コード)
     });
   });
 
