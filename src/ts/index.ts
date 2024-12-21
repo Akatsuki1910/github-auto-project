@@ -18,55 +18,19 @@ window.addEventListener("DOMContentLoaded", () => {
           currentInput += "**";
           display.value = currentInput;
       }
-      if (buttonText === "abs") {
+      // ... (その他の既存コード)
+      if (buttonText === "tan") {
         try {
           const number = parseFloat(currentInput);
-          const result = Math.abs(number);
+          const result = Math.tan(number);
           display.value = result.toString();
           currentInput = result.toString();
-          calculationHistory.push(`abs(${number}) = ${result}`);
+          calculationHistory.push(`tan(${number}) = ${result}`);
           historyElement.textContent = calculationHistory.join('\n');
         } catch (error) {
           display.value = "Error";
         }
       }
-      if (buttonText === "floor") {
-        try {
-          const number = parseFloat(currentInput);
-          const result = Math.floor(number);
-          display.value = result.toString();
-          currentInput = result.toString();
-          calculationHistory.push(`floor(${number}) = ${result}`);
-          historyElement.textContent = calculationHistory.join('\n');
-        } catch (error) {
-          display.value = "Error";
-        }
-      }
-       if (buttonText === "sin") {
-        try {
-          const number = parseFloat(currentInput);
-          const result = Math.sin(number);
-          display.value = result.toString();
-          currentInput = result.toString();
-          calculationHistory.push(`sin(${number}) = ${result}`);
-          historyElement.textContent = calculationHistory.join('\n');
-        } catch (error) {
-          display.value = "Error";
-        }
-      }
-      if (buttonText === "cos") {
-        try {
-          const number = parseFloat(currentInput);
-          const result = Math.cos(number);
-          display.value = result.toString();
-          currentInput = result.toString();
-          calculationHistory.push(`cos(${number}) = ${result}`);
-          historyElement.textContent = calculationHistory.join('\n');
-        } catch (error) {
-          display.value = "Error";
-        }
-      }
-
     });
   });
 
