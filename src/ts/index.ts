@@ -37,6 +37,15 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
           }
         }
+       if (buttonText === "∛") {
+        try {
+          const num = parseFloat(currentInput);
+          currentInput = Math.cbrt(num).toString();
+          display.value = currentInput;
+        } catch (error) {
+          display.value = "Error";
+        }
+      }
       // ... (その他の既存コード)
     });
   });
