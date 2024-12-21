@@ -14,8 +14,20 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
-      // ...
-      if (buttonText === "rand") {
+      if (buttonText === "eval") {
+        try {
+          const result = eval(currentInput);
+          display.value = result.toString();
+          calculationHistory.push(`${currentInput}=${result}`);
+          historyElement.textContent = calculationHistory.join('\n');
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+        }
+        return;
+      }
+      // ... (rest of the code remains the same)
+        if (buttonText === "rand") {
         currentInput = Math.random().toString();
         display.value = currentInput;
         return;
