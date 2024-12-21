@@ -14,6 +14,16 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
+      if (buttonText === "sin") {
+        try {
+          const num = parseFloat(currentInput);
+          currentInput = Math.sin(num).toString();
+          display.value = currentInput;
+        } catch (error) {
+          display.value = "Error";
+        }
+        return;
+      }
       // 括弧の追加
       if (buttonText === "( )") {
         currentInput += parenthesesOpen ? ")" : "(";
