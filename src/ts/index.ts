@@ -34,6 +34,16 @@ window.addEventListener("DOMContentLoaded", () => {
           }
           return;
       }
+      if (buttonText === "trunc") {
+        try {
+          currentInput = Math.trunc(parseFloat(currentInput)).toString();
+          display.value = currentInput;
+        }
+        catch (error) {
+          display.value = "Error";
+        }
+          return;
+      }
       // ... (既存のコード)
        if (buttonText === "( )") {
         if (!parenthesesOpen) {
