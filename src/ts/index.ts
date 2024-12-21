@@ -44,6 +44,16 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         return;
       }
+      if (buttonText === "abs") {
+        try {
+          const num = parseFloat(currentInput);
+          currentInput = Math.abs(num).toString();
+          display.value = currentInput;
+        } catch (error) {
+          display.value = "Error";
+        }
+        return;
+      }
       // ここに他のボタンの処理を追加
     });
   });
