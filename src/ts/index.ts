@@ -26,16 +26,24 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         return;
       }
-      // ... (rest of the code remains the same)
-        if (buttonText === "rand") {
+      if (buttonText === "rand") {
         currentInput = Math.random().toString();
         display.value = currentInput;
         return;
       }
-        if (buttonText === "e"){
+      if (buttonText === "e"){
             currentInput += Math.E;
             display.value = currentInput;
+      }
+       if (buttonText === "ln") {
+        try {
+          const result = Math.log(parseFloat(currentInput));
+          display.value = result.toString();
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
         }
+      }
       // ここに他のボタンの処理を追加
     });
   });
