@@ -26,6 +26,12 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         return;
       }
+      if (buttonText === "Random") {
+        const randomNumber = Math.random();
+        currentInput += randomNumber.toString();
+        display.value = currentInput;
+        return;
+      }
       // ... (既存のコード)
       if (buttonText === "( )") {
         if (!parenthesesOpen) {
