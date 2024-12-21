@@ -14,38 +14,20 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
-
-      if (buttonText === "1/x") {
+      if (buttonText === "Eval") {
         try {
-          const result = 1 / parseFloat(currentInput);
+          const result = eval(currentInput);
           currentInput = result.toString();
           display.value = currentInput;
+          calculationHistory.push(`${currentInput} = ${result}`);
+          historyElement.textContent = calculationHistory.join('\n');
         } catch (error) {
           display.value = "Error";
         }
         return;
       }
-      if (buttonText === "ceil") {
-          try {
-            currentInput = Math.ceil(parseFloat(currentInput)).toString();
-            display.value = currentInput;
-          } catch (error) {
-            display.value = "Error";
-          }
-          return;
-      }
-      if (buttonText === "trunc") {
-        try {
-          currentInput = Math.trunc(parseFloat(currentInput)).toString();
-          display.value = currentInput;
-        }
-        catch (error) {
-          display.value = "Error";
-        }
-          return;
-      }
       // ... (既存のコード)
-       if (buttonText === "( )") {
+      if (buttonText === "( )") {
         if (!parenthesesOpen) {
           currentInput += "(";
           parenthesesOpen = true;
@@ -61,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ...(既存のコード)
 
-  function factorial(n: number): number {
+  function factorial(n) {
     if (n === 0) {
       return 1;
     }
