@@ -26,14 +26,30 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = result.toString();
           calculationHistory.push(currentInput + " = " + result);
           historyElement.textContent = calculationHistory.join('\n');
-          currentInput = "";
+          currentInput = result.toString(); //結果を次の計算に使えるようにする
         } catch (error) {
           display.value = "Error";
         }
+      } else if (buttonText === "log<sub>10</sub>"){
+          currentInput += "Math.log10(";
+          display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
       }
     });
   });
+
+  historyBtn.addEventListener("click", () => {
+      if(historyContainer.style.display === "none"){
+          historyContainer.style.display = "block";
+      } else {
+          historyContainer.style.display = "none";
+      }
+  });
+    
+  clearHistoryBtn.addEventListener("click", () => {
+    calculationHistory = [];
+    historyElement.textContent = "";
+  })
 });
