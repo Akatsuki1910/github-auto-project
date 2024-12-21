@@ -24,6 +24,16 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         return;
       }
+      if (buttonText === "cos") {
+        try {
+          const num = parseFloat(currentInput);
+          currentInput = Math.cos(num).toString();
+          display.value = currentInput;
+        } catch (error) {
+          display.value = "Error";
+        }
+        return;
+      }
       // 括弧の追加
       if (buttonText === "( )") {
         currentInput += parenthesesOpen ? ")" : "(";
