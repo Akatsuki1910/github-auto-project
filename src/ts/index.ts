@@ -26,7 +26,18 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = "Error";
         }
       }
-      
+      if (buttonText === "floor") {
+        try {
+          const number = parseFloat(currentInput);
+          const result = Math.floor(number);
+          display.value = result.toString();
+          currentInput = result.toString();
+          calculationHistory.push(`floor(${number}) = ${result}`);
+          historyElement.textContent = calculationHistory.join('\n');
+        } catch (error) {
+          display.value = "Error";
+        }
+      }
 
     });
   });
