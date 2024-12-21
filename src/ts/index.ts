@@ -54,6 +54,18 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = "Error";
         }
       }
+      if (buttonText === "cos") {
+        try {
+          const number = parseFloat(currentInput);
+          const result = Math.cos(number);
+          display.value = result.toString();
+          currentInput = result.toString();
+          calculationHistory.push(`cos(${number}) = ${result}`);
+          historyElement.textContent = calculationHistory.join('\n');
+        } catch (error) {
+          display.value = "Error";
+        }
+      }
 
     });
   });
