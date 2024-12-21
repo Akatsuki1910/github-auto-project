@@ -33,6 +33,9 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "log<sub>10</sub>"){
           currentInput += "Math.log10(";
           display.value = currentInput;
+      } else if (buttonText === "log<sub>2</sub>"){
+          currentInput += "Math.log2(";
+          display.value = currentInput;          
       } else {
         currentInput += buttonText;
         display.value = currentInput;
