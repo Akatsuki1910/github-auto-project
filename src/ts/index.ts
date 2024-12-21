@@ -14,11 +14,10 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
-
-      if (buttonText === "exp") {
+      if (buttonText === "tan") {
         try {
           const num = parseFloat(currentInput);
-          currentInput = Math.exp(num).toString();
+          currentInput = Math.tan(num).toString();
           display.value = currentInput;
         } catch (error) {
           display.value = "Error";
@@ -26,36 +25,46 @@ window.addEventListener("DOMContentLoaded", () => {
         return;
       }
       // ログ機能の追加
-      if (buttonText === "log") {
-        try {
-          const num = parseFloat(currentInput);
-          currentInput = Math.log10(num).toString();
-          display.value = currentInput;
-        } catch (error) {
-          display.value = "Error";
+      if (buttonText === "exp") {
+          try {
+            const num = parseFloat(currentInput);
+            currentInput = Math.exp(num).toString();
+            display.value = currentInput;
+          } catch (error) {
+            display.value = "Error";
+          }
+          return;
         }
-        return;
-      }
-      if (buttonText === "sin") {
-        try {
-          const num = parseFloat(currentInput);
-          currentInput = Math.sin(num).toString();
-          display.value = currentInput;
-        } catch (error) {
-          display.value = "Error";
+        if (buttonText === "log") {
+          try {
+            const num = parseFloat(currentInput);
+            currentInput = Math.log10(num).toString();
+            display.value = currentInput;
+          } catch (error) {
+            display.value = "Error";
+          }
+          return;
         }
-        return;
-      }
-      if (buttonText === "cos") {
-        try {
-          const num = parseFloat(currentInput);
-          currentInput = Math.cos(num).toString();
-          display.value = currentInput;
-        } catch (error) {
-          display.value = "Error";
+        if (buttonText === "sin") {
+          try {
+            const num = parseFloat(currentInput);
+            currentInput = Math.sin(num).toString();
+            display.value = currentInput;
+          } catch (error) {
+            display.value = "Error";
+          }
+          return;
         }
-        return;
-      }
+        if (buttonText === "cos") {
+          try {
+            const num = parseFloat(currentInput);
+            currentInput = Math.cos(num).toString();
+            display.value = currentInput;
+          } catch (error) {
+            display.value = "Error";
+          }
+          return;
+        }
       if (buttonText === "( )") {
         currentInput += parenthesesOpen ? ")" : "(";
         parenthesesOpen = !parenthesesOpen;
