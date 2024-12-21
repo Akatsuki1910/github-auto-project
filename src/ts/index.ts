@@ -14,36 +14,17 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
-      if (buttonText === "eval") {
-        try {
-          const result = eval(currentInput);
-          display.value = result.toString();
-          calculationHistory.push(`${currentInput}=${result}`);
-          historyElement.textContent = calculationHistory.join('\n');
-          currentInput = result.toString();
-        } catch (error) {
-          display.value = "Error";
-        }
-        return;
-      }
-      if (buttonText === "rand") {
-        currentInput = Math.random().toString();
+      if (buttonText === "C") {
+        currentInput = "";
+        display.value = "";
+      } else if(buttonText === "←"){
+        currentInput = currentInput.slice(0, -1);
         display.value = currentInput;
-        return;
+      } else {
+          currentInput += buttonText; 
+        display.value = currentInput;
       }
-      if (buttonText === "e"){
-            currentInput += Math.E;
-            display.value = currentInput;
-      }
-       if (buttonText === "ln") {
-        try {
-          const result = Math.log(parseFloat(currentInput));
-          display.value = result.toString();
-          currentInput = result.toString();
-        } catch (error) {
-          display.value = "Error";
-        }
-      }
+      
       // ここに他のボタンの処理を追加
     });
   });
