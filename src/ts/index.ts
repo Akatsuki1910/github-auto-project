@@ -14,19 +14,20 @@ window.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
       // ... (既存のコード)
-      if (buttonText === "sign") {
+      if (buttonText === "abs") {
         try {
           const number = parseFloat(currentInput);
-          const result = Math.sign(number);
+          const result = Math.abs(number);
           display.value = result.toString();
           currentInput = result.toString();
-          calculationHistory.push(`sign(${number}) = ${result}`);
+          calculationHistory.push(`abs(${number}) = ${result}`);
           historyElement.textContent = calculationHistory.join('\n');
         } catch (error) {
           display.value = "Error";
         }
-        return;
       }
+      
+
     });
   });
 
