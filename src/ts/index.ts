@@ -36,6 +36,16 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "log<sub>2</sub>"){
           currentInput += "Math.log2(";
           display.value = currentInput;          
+      } else if (buttonText === "truncate") {
+        try {
+          const result = Math.trunc(eval(currentInput));
+          display.value = result.toString();
+          calculationHistory.push(currentInput + " = " + result);
+          historyElement.textContent = calculationHistory.join('\n');
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+        }
       } else {
         currentInput += buttonText;
         display.value = currentInput;
