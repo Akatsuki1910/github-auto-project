@@ -24,6 +24,16 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         return;
       }
+      if (buttonText === "ceil") {
+        try {
+          const num = parseFloat(currentInput);
+          currentInput = Math.ceil(num).toString();
+          display.value = currentInput;
+        } catch (error) {
+          display.value = "Error";
+        }
+        return;
+      }
       // ここに他のボタンの処理を追加
     });
   });
