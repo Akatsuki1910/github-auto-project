@@ -14,6 +14,17 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
+
+      if (buttonText === "exp") {
+        try {
+          const num = parseFloat(currentInput);
+          currentInput = Math.exp(num).toString();
+          display.value = currentInput;
+        } catch (error) {
+          display.value = "Error";
+        }
+        return;
+      }
       // ログ機能の追加
       if (buttonText === "log") {
         try {
