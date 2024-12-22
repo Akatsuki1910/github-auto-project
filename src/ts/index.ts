@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const historyContainer = document.getElementById("historyContainer");
   const historyBtn = document.getElementById("historyBtn");
   const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;
-  const copyBtn = document.getElementById("copy") as HTMLButtonElement;
+    const copyBtn = document.getElementById("copy") as HTMLButtonElement;
   let memory = 0;
 
   buttons.forEach(button => {
@@ -34,7 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           display.value = "Error";
         }
-      } else if (buttonText === "Copy"){
+        } else if (buttonText === "Copy"){
            navigator.clipboard.writeText(display.value).then(() => {
              alert('Copied to clipboard!');
            });
@@ -72,6 +72,8 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           display.value = "Error: " + error.message;
         }
+      } else if (buttonText === "log10") {
+        currentInput = display.value = String(Math.log10(Number(display.value)));
       } else {
         currentInput += buttonText;
         display.value = currentInput;
