@@ -29,6 +29,9 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           display.value = "Error";
         }
+      } else if (buttonText === "min"){
+          currentInput += "Math.min(";
+          display.value = currentInput;
       } else if (buttonText === "log<sub>10</sub>"){
           currentInput += "Math.log10(";
           display.value = currentInput;
