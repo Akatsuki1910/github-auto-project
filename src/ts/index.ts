@@ -44,6 +44,14 @@ window.addEventListener("DOMContentLoaded", () => {
         // Do nothing to prevent adding multiple decimal points
       } else if (buttonText === "%") {
         currentInput = display.value = String(Number(display.value) / 100); // 追加: パーセント計算機能
+      } else if (buttonText === "1/x") {
+        try {
+          const result = 1 / eval(currentInput);
+          display.value = result;
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+        }
       } else {
         currentInput += buttonText;
         display.value = currentInput;
