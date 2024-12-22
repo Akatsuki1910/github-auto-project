@@ -80,6 +80,8 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = display.value = String(Math.floor(Number(display.value))); // floorを追加
      } else if (buttonText === "x³") {
         currentInput = display.value = String(Math.pow(Number(display.value), 3));
+      } else if (buttonText === "2<sup>x</sup>") {
+        currentInput = display.value = String(Math.pow(2, Number(display.value)));
       } else {
         currentInput += buttonText;
         display.value = currentInput;
