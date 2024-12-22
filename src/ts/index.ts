@@ -107,6 +107,9 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "expm1") {
           currentInput += "Math.expm1(";
           display.value = currentInput;    
+      } else if (buttonText === "max"){
+          currentInput += "Math.max(";
+          display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
