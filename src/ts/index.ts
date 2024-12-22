@@ -13,22 +13,48 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
-      // ここに追加機能を実装
       if (buttonText === "AC") {
         currentInput = "";
         display.value = "";
-        calculationHistory = []; //履歴もクリア
+        calculationHistory = [];
         historyElement.textContent = "";
       } else if (buttonText === "C") {
         currentInput = "";
         display.value = "";
-      // 以下は既存のコード
       } else if (buttonText === "←") {
-          // ... (既存コード)
+        currentInput = currentInput.slice(0, -1);
+        display.value = currentInput;
+      } else if (buttonText === "=") {
+        try {
+          const result = eval(currentInput);
+          display.value = result;
+          calculationHistory.push(currentInput + " = " + result);
+          historyElement.textContent = calculationHistory.join("\n");
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+        }
+      } else if (buttonText === "Copy"){
+           navigator.clipboard.writeText(display.value).then(() => {
+             alert('Copied to clipboard!');
+           });
+      } else {
+        currentInput += buttonText;
+        display.value = currentInput;
       }
-      // ... (既存コード)
     });
   });
 
-  // ... (既存コード)
+    historyBtn.addEventListener("click", () => {
+    if (historyContainer.style.display === "none") {
+      historyContainer.style.display = "block";
+    } else {
+      historyContainer.style.display = "none";
+    }
+  });
+
+  clearHistoryBtn.addEventListener("click", () => {
+    calculationHistory = [];
+    historyElement.textContent = "";
+  });
 });
