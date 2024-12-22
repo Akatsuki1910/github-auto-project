@@ -56,6 +56,8 @@ window.addEventListener("DOMContentLoaded", () => {
           currentInput = display.value = String(Math.ceil(Number(display.value)));
       } else if (buttonText === "√") {
         currentInput = display.value = String(Math.sqrt(Number(display.value)));
+      } else if (buttonText === "±") {
+        currentInput = display.value = String(Number(display.value) * -1);       
       } else {
         currentInput += buttonText;
         display.value = currentInput;
