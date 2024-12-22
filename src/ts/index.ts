@@ -107,7 +107,17 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           display.value = "Error";
         }
-      } else if (buttonText === "expm1") {
+      } else if (buttonText === "∛") {
+        try {
+          const result = Math.cbrt(eval(currentInput));
+          display.value = result.toString();
+          calculationHistory.push("∛(" + currentInput + ") = " + result);
+          historyElement.textContent = calculationHistory.join('\n');
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+        }
+      }else if (buttonText === "expm1") {
           currentInput += "Math.expm1(";
           display.value = currentInput;    
       } else if (buttonText === "max"){
