@@ -8,6 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const historyBtn = document.getElementById("historyBtn");
   const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;
   const copyBtn = document.getElementById("copy") as HTMLButtonElement;
+  let parenthesisOpen = false;
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -43,6 +44,10 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "+/-") {
         currentInput = String(parseFloat(currentInput || "0") * -1) // 符号反転
         display.value = currentInput;
+      } else if (buttonText === "()") {
+        currentInput += parenthesisOpen ? ")" : "(";
+        parenthesisOpen = !parenthesisOpen;  // トグル
+        display.value = currentInput;      
       } else {
         currentInput += buttonText;
         display.value = currentInput;
