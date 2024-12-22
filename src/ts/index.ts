@@ -84,8 +84,17 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
           }
         }
-      }
-       else {
+      } else if (buttonText === "x2") {
+        try {
+          const result = eval(currentInput) * 2;
+          display.value = result.toString();
+          calculationHistory.push(currentInput + " * 2 = " + result);
+          historyElement.textContent = calculationHistory.join('\n');
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+        }
+      } else {
         currentInput += buttonText;
         display.value = currentInput;
       }
