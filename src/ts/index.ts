@@ -39,7 +39,9 @@ window.addEventListener("DOMContentLoaded", () => {
              alert('Copied to clipboard!');
            });
       } else if (buttonText === "+/-") {
-        currentInput = display.value = String(Number(display.value) * -1); // added +/- functionality
+         currentInput = display.value = String(Number(display.value) * -1);
+      } else if (buttonText === "." && currentInput.includes('.')) {
+        // Do nothing to prevent adding multiple decimal points
       } else {
         currentInput += buttonText;
         display.value = currentInput;
