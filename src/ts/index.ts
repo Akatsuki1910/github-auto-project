@@ -38,6 +38,8 @@ window.addEventListener("DOMContentLoaded", () => {
            navigator.clipboard.writeText(display.value).then(() => {
              alert('Copied to clipboard!');
            });
+      } else if (buttonText === "+/-") {
+        currentInput = display.value = String(Number(display.value) * -1); // added +/- functionality
       } else {
         currentInput += buttonText;
         display.value = currentInput;
