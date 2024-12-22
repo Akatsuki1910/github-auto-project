@@ -9,7 +9,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;
   const copyBtn = document.getElementById("copy") as HTMLButtonElement;
   let memory = 0;
-  let parenthesesOpen = false;
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -26,7 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = result.toString();
           calculationHistory.push(currentInput + " = " + result);
           historyElement.textContent = calculationHistory.join('\n');
-          currentInput = result.toString(); //結果を次の計算に使えるようにする
+          currentInput = result.toString(); 
         } catch (error) {
           display.value = "Error";
         }
@@ -48,11 +47,17 @@ window.addEventListener("DOMContentLoaded", () => {
         }      
       }else if (buttonText === "+/-") {
           currentInput = eval(currentInput + "*-1").toString();
-          display.value = currentInput;
+          display.value = currentInput;         
       } else if (buttonText === "Copy"){
           navigator.clipboard.writeText(display.value).then(() => {
              alert("Copied to clipboard: " + display.value);
          });
+      } else if (buttonText === "(") {
+          currentInput += "(";
+          display.value = currentInput;
+      } else if (buttonText === ")"){
+          currentInput += ")";
+          display.value = currentInput;          
       } else {
         currentInput += buttonText;
         display.value = currentInput;
