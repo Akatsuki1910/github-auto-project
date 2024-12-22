@@ -56,6 +56,10 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += "Math.log(";
         parenthesisOpen = true;
         display.value = currentInput;      
+      } else if (buttonText === "floor") {
+        currentInput += "Math.floor(";
+        parenthesisOpen = true;      
+        display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
