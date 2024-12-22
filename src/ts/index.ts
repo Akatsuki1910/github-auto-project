@@ -104,6 +104,9 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           display.value = "Error";
         }
+      } else if (buttonText === "expm1") {
+          currentInput += "Math.expm1(";
+          display.value = currentInput;    
       } else {
         currentInput += buttonText;
         display.value = currentInput;
