@@ -76,7 +76,9 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = display.value = String(Math.log10(Number(display.value)));
       } else if (buttonText === "sign") {    //signボタンの処理を追加
             currentInput = display.value = String(Math.sign(Number(display.value)));
-      }else {
+      } else if (buttonText === "floor") {
+        currentInput = display.value = String(Math.floor(Number(display.value))); // floorを追加
+      } else {
         currentInput += buttonText;
         display.value = currentInput;
       }
