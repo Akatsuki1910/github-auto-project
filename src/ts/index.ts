@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "." && currentInput.includes('.')) {
         // Do nothing to prevent adding multiple decimal points
       } else if (buttonText === "%") {
-        currentInput = display.value = String(Number(display.value) / 100); // 追加: パーセント計算機能
+        currentInput = display.value = String(Number(display.value) / 100); 
       } else if (buttonText === "1/x") {
         try {
           const result = 1 / eval(currentInput);
@@ -54,6 +54,8 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       } else if (buttonText === "ceil") {
           currentInput = display.value = String(Math.ceil(Number(display.value)));
+      } else if (buttonText === "√") {
+        currentInput = display.value = String(Math.sqrt(Number(display.value)));
       } else {
         currentInput += buttonText;
         display.value = currentInput;
