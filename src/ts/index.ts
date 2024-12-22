@@ -94,6 +94,16 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           display.value = "Error";
         }
+      } else if (buttonText === "x³") {
+        try {
+          const result = eval(currentInput) ** 3;
+          display.value = result.toString();
+          calculationHistory.push(currentInput + "³ = " + result);
+          historyElement.textContent = calculationHistory.join('\n');
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+        }
       } else {
         currentInput += buttonText;
         display.value = currentInput;
