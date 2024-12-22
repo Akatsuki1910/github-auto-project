@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = result.toString();
           calculationHistory.push(currentInput + " = " + result);
           historyElement.textContent = calculationHistory.join('\n');
-          currentInput = result.toString(); 
+          currentInput = result.toString();
         } catch (error) {
           display.value = "Error";
         }
@@ -58,6 +58,16 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === ")"){
           currentInput += ")";
           display.value = currentInput;          
+      } else if (buttonText === "10<sup>x</sup>") {
+        try {
+          const result = 10 ** eval(currentInput);
+          display.value = result.toString();
+          calculationHistory.push("10^(" + currentInput + ") = " + result);
+          historyElement.textContent = calculationHistory.join('\n');
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+        }
       } else {
         currentInput += buttonText;
         display.value = currentInput;
