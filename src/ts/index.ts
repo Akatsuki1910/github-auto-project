@@ -39,7 +39,10 @@ window.addEventListener("DOMContentLoaded", () => {
            });
       } else if (buttonText === "π") {
         currentInput += Math.PI;
-        display.value = currentInput; // Added this line to update the display
+        display.value = currentInput; 
+      } else if (buttonText === "+/-") {
+        currentInput = String(parseFloat(currentInput || "0") * -1) // 符号反転
+        display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
