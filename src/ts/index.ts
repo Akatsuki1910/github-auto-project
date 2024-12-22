@@ -60,12 +60,32 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = display.value = String(Number(display.value) * -1);       
       } else if (buttonText === "10<sup>x</sup>") {
         currentInput = display.value = String(Math.pow(10, Number(display.value)));
+      } else if (buttonText === "!") {
+        try {
+          const num = Number(eval(currentInput));
+          if (!Number.isInteger(num) || num < 0) {
+            throw new Error("Factorial is only defined for non-negative integers.");
+          }
+          const result = factorial(num);
+          display.value = result.toString();
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error: " + error.message;
+        }
       } else {
         currentInput += buttonText;
         display.value = currentInput;
       }
     });
   });
+
+  function factorial(n: number): number {
+    if (n === 0) {
+      return 1;
+    } else {
+      return n * factorial(n - 1);
+    }
+  }
 
     historyBtn.addEventListener("click", () => {
     if (historyContainer.style.display === "none") {
