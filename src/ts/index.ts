@@ -82,6 +82,8 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = display.value = String(Math.pow(Number(display.value), 3));
       } else if (buttonText === "2<sup>x</sup>") {
         currentInput = display.value = String(Math.pow(2, Number(display.value)));
+      } else if (buttonText === "x⁴") {
+        currentInput = display.value = String(Math.pow(Number(display.value), 4));
       } else {
         currentInput += buttonText;
         display.value = currentInput;
