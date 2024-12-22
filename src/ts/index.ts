@@ -68,7 +68,24 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           display.value = "Error";
         }
-      } else {
+      } else if (buttonText === "Base") {
+        const base = prompt("Enter the base (2-36):");
+        if (base) {
+          try {
+            const parsedBase = parseInt(base, 10);
+            if (parsedBase >= 2 && parsedBase <= 36) {
+              const result = parseInt(currentInput, 10).toString(parsedBase);
+              display.value = result;
+              currentInput = result;
+            } else {
+              display.value = "Invalid base";
+            }
+          } catch (error) {
+            display.value = "Error";
+          }
+        }
+      }
+       else {
         currentInput += buttonText;
         display.value = currentInput;
       }
