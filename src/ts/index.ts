@@ -46,13 +46,13 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           display.value = "Error";
         }      
-      } else if (buttonText === "+/-") {
-        try{
-            currentInput = eval(currentInput + "*-1").toString();
-             display.value = currentInput;
-        }catch(e){
-             display.value = "Error";         
-        }
+      }else if (buttonText === "+/-") {
+          currentInput = eval(currentInput + "*-1").toString();
+          display.value = currentInput;
+      } else if (buttonText === "Copy"){
+          navigator.clipboard.writeText(display.value).then(() => {
+             alert("Copied to clipboard: " + display.value);
+         });
       } else {
         currentInput += buttonText;
         display.value = currentInput;
