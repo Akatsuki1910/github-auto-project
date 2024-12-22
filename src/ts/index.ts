@@ -66,6 +66,10 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "mod") {
         currentInput += "%";
         display.value = currentInput;
+      } else if (buttonText === "log<sub>10</sub>") {
+        currentInput += "Math.log10(";  // 追加：log10ボタンの処理
+        parenthesisOpen = true;        
+        display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
