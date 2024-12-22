@@ -39,7 +39,7 @@ window.addEventListener("DOMContentLoaded", () => {
              alert('Copied to clipboard!');
            });
       } else if (buttonText === "+/-") {
-         currentInput = display.value = String(Number(display.value) * -1);
+        currentInput = display.value = String(Number(display.value) * -1); // 符号反転
       } else if (buttonText === "." && currentInput.includes('.')) {
         // Do nothing to prevent adding multiple decimal points
       } else if (buttonText === "%") {
