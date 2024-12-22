@@ -113,6 +113,16 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "max"){
           currentInput += "Math.max(";
           display.value = currentInput;
+      } else if (buttonText === "2<sup>x</sup>") {
+        try {
+          const result = 2 ** eval(currentInput);
+          display.value = result.toString();
+          calculationHistory.push("2^(" + currentInput + ") = " + result);
+          historyElement.textContent = calculationHistory.join('\n');
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error";
+        }
       } else {
         currentInput += buttonText;
         display.value = currentInput;
