@@ -70,6 +70,10 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += "Math.log10(";  // 追加：log10ボタンの処理
         parenthesisOpen = true;        
         display.value = currentInput;
+      } else if (buttonText === "sin") {
+        currentInput += "Math.sin(";
+        parenthesisOpen = true;
+        display.value = currentInput;      
       } else {
         currentInput += buttonText;
         display.value = currentInput;
