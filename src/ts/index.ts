@@ -52,6 +52,8 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           display.value = "Error";
         }
+      } else if (buttonText === "floor") {
+        currentInput = display.value = String(Math.floor(Number(display.value)));
       } else {
         currentInput += buttonText;
         display.value = currentInput;
