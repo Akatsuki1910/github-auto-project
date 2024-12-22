@@ -60,6 +60,9 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += "Math.floor(";
         parenthesisOpen = true;      
         display.value = currentInput;
+      } else if (buttonText === "x<sup>y</sup>") {
+        currentInput += "**";
+        display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
