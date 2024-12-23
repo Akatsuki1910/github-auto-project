@@ -41,8 +41,8 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "π") {
         currentInput += Math.PI;
         display.value = currentInput; 
-      } else if (buttonText === "+/-") {
-        currentInput = String(parseFloat(currentInput || "0") * -1) // 符号反転
+      } else if (buttonText === "+/-") { // 符号反転
+        currentInput = String(parseFloat(currentInput || "0") * -1);
         display.value = currentInput;
       } else if (buttonText === "()" ) {
         currentInput += parenthesisOpen ? ")" : "(";
@@ -53,9 +53,9 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += randNum.toString();
         display.value = currentInput;
       } else if (buttonText === "exp") {
-        currentInput += "Math.exp(";
-        parenthesisOpen = true;
-        display.value = currentInput;
+          currentInput += "Math.exp(";
+          parenthesisOpen = true; // expボタンが押されたら括弧を開く
+          display.value = currentInput;
       } else if (buttonText === "ln") {
         currentInput += "Math.log(";
         parenthesisOpen = true;
