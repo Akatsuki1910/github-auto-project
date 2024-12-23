@@ -89,6 +89,15 @@ window.addEventListener("DOMContentLoaded", () => {
           currentInput += randomNumber;
           display.value = currentInput;
           break;
+        case "x³":
+          try {
+            const result = Math.pow(eval(currentInput), 3);
+            display.value = result.toString();
+            currentInput = result.toString();
+          } catch (error) {
+            display.value = "Error";
+          }
+          break;
         default:
           currentInput += buttonText;
           display.value = currentInput;
