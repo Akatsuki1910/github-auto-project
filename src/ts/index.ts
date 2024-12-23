@@ -55,13 +55,17 @@ window.addEventListener("DOMContentLoaded", () => {
           parenthesisOpen = false;
           display.value = currentInput;      
       } else if (buttonText === "±") {
-          currentInput = String(parseFloat(currentInput || "0") * -1); // 単項プラスマイナス演算子
+          currentInput = String(parseFloat(currentInput || "0") * -1);
           display.value = currentInput;
-      } else if (buttonText === "AC") { // all clear
+      } else if (buttonText === "AC") {
         currentInput = '';
         display.value = '';
-        calculationHistory = []; 
-        historyElement.textContent = ''; 
+        calculationHistory = [];
+        historyElement.textContent = '';
+      } else if (buttonText === "rand") {
+        const randomNumber = Math.random();
+        currentInput += randomNumber;
+        display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
