@@ -65,6 +65,10 @@ window.addEventListener("DOMContentLoaded", () => {
         case "MC": // Memory Clear
           memory = 0;
           break;
+        case "exp":
+          currentInput += "Math.exp(";
+          display.value = currentInput;          
+          break;
         default:
           currentInput += buttonText;
           display.value = currentInput;
