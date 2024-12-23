@@ -7,9 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const historyContainer = document.getElementById("historyContainer");
   const historyBtn = document.getElementById("historyBtn");
   const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;
-  const copyBtn = document.getElementById("copy") as HTMLButtonElement;  
-  let parenthesisOpen = false;
-  let memory = 0;
+  const copyBtn = document.getElementById("copy") as HTMLButtonElement;
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -39,36 +37,14 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "Clear History"){
         calculationHistory = [];
         historyElement.textContent = "";
-      } else if (buttonText === "M+") {
-        memory += parseFloat(display.value);
-      } else if (buttonText === "MR") {
-        currentInput += memory;
-        display.value = currentInput;
-      } else if (buttonText === "MC") {
-        memory = 0;
-      } else if (buttonText === "("){
-          currentInput += '(';
-          parenthesisOpen = true;
-          display.value = currentInput;
-      } else if (buttonText === ")"){
-          currentInput += ')';
-          parenthesisOpen = false;
-          display.value = currentInput;      
       } else if (buttonText === "±") {
-          currentInput = String(parseFloat(currentInput || "0") * -1);
-          display.value = currentInput;
+        currentInput = String(parseFloat(currentInput || "0") * -1);  // 0を入力していない場合のエラー回避
+        display.value = currentInput;
       } else if (buttonText === "AC") {
         currentInput = '';
         display.value = '';
         calculationHistory = [];
         historyElement.textContent = '';
-      } else if (buttonText === "rand") {
-        const randomNumber = Math.random();
-        currentInput += randomNumber;
-        display.value = currentInput;
-      } else if (buttonText === "e") {
-        currentInput += Math.E;
-        display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
