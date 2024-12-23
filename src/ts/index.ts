@@ -78,6 +78,10 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += "Math.cos(";
         parenthesisOpen = true;
         display.value = currentInput;      
+      } else if (buttonText === "tan") {
+        currentInput += "Math.tan(";
+        parenthesisOpen = true;
+        display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
