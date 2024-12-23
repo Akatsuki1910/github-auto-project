@@ -67,11 +67,15 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += "%";
         display.value = currentInput;
       } else if (buttonText === "log<sub>10</sub>") {
-        currentInput += "Math.log10(";  // 追加：log10ボタンの処理
+        currentInput += "Math.log10(";
         parenthesisOpen = true;        
         display.value = currentInput;
       } else if (buttonText === "sin") {
         currentInput += "Math.sin(";
+        parenthesisOpen = true;
+        display.value = currentInput;      
+      } else if (buttonText === "cos") {
+        currentInput += "Math.cos(";
         parenthesisOpen = true;
         display.value = currentInput;      
       } else {
