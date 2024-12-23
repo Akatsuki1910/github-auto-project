@@ -44,7 +44,7 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "+/-") {
         currentInput = String(parseFloat(currentInput || "0") * -1) // 符号反転
         display.value = currentInput;
-      } else if (buttonText === "()") {
+      } else if (buttonText === "()" ) {
         currentInput += parenthesisOpen ? ")" : "(";
         parenthesisOpen = !parenthesisOpen;  // トグル
         display.value = currentInput;      
@@ -82,6 +82,10 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += "Math.tan(";
         parenthesisOpen = true;
         display.value = currentInput;
+      } else if (buttonText === "|x|") {
+        currentInput += "Math.abs(";
+        parenthesisOpen = true;
+        display.value = currentInput;      
       } else {
         currentInput += buttonText;
         display.value = currentInput;
