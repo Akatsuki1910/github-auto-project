@@ -15,16 +15,16 @@ window.addEventListener("DOMContentLoaded", () => {
       const buttonText = button.textContent;
       switch (buttonText) {
         // ... (rest of the switch cases)
-        case "x2":
+        case "∛":
           try {
             const currentValue = parseFloat(display.value);
-            const doubledValue = currentValue * 2;
-            display.value = doubledValue.toString();
-            currentInput = doubledValue.toString();
+            const cubeRootValue = Math.cbrt(currentValue);
+            display.value = cubeRootValue.toString();
+            currentInput = cubeRootValue.toString();
           } catch (error) {
             display.value = "Error";
           }
-          break;        
+          break;
         default:
           currentInput += buttonText;
           display.value = currentInput;
