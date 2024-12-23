@@ -54,6 +54,9 @@ window.addEventListener("DOMContentLoaded", () => {
           currentInput += ')';
           parenthesisOpen = false;
           display.value = currentInput;      
+      } else if (buttonText === "±") {
+        currentInput = String(parseFloat(currentInput || "0") * -1);
+        display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
