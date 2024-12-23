@@ -52,6 +52,15 @@ window.addEventListener("DOMContentLoaded", () => {
         const randNum = Math.random();
         currentInput += randNum.toString();
         display.value = currentInput;
+      } else if (buttonText === "ceil"){
+        try {
+            currentInput += "Math.ceil(";
+            parenthesisOpen = true;  
+            display.value = currentInput;
+        } catch (error) {
+            display.value = "Error";
+        }      
+
       } else if (buttonText === "exp") {
           currentInput += "Math.exp(";
           parenthesisOpen = true; // expボタンが押されたら括弧を開く
