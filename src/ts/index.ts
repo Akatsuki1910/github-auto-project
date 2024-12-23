@@ -2,6 +2,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const display = document.getElementById("display") as HTMLInputElement;
   const buttons = document.querySelectorAll("#calculator button");
   let currentInput = "";
+  let history = [];
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -12,6 +13,7 @@ window.addEventListener("DOMContentLoaded", () => {
             const result = eval(display.value);
             display.value = result.toString();
             currentInput = result.toString();
+            history.push(currentInput); //履歴に追加
           } catch (error) {
             display.value = "Error";
           }
