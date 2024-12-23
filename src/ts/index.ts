@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const historyContainer = document.getElementById("historyContainer");
   const historyBtn = document.getElementById("historyBtn");
   const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;
-  const copyBtn = document.getElementById("copy") as HTMLButtonElement;
+  const copyBtn = document.getElementById("copy") as HTMLButtonElement;  
   let parenthesisOpen = false;
   let memory = 0;
 
@@ -55,14 +55,13 @@ window.addEventListener("DOMContentLoaded", () => {
           parenthesisOpen = false;
           display.value = currentInput;      
       } else if (buttonText === "±") {
-        currentInput = String(parseFloat(currentInput || "0") * -1);
-        display.value = currentInput;      
+          currentInput = String(parseFloat(currentInput || "0") * -1); // 単項プラスマイナス演算子
+          display.value = currentInput;
       } else if (buttonText === "AC") { // all clear
         currentInput = '';
         display.value = '';
-        calculationHistory = []; // 追加：履歴もクリア
-        historyElement.textContent = ''; // 追加：履歴表示もクリア
-
+        calculationHistory = []; 
+        historyElement.textContent = ''; 
       } else {
         currentInput += buttonText;
         display.value = currentInput;
