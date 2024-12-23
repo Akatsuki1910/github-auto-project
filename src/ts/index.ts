@@ -23,7 +23,16 @@ window.addEventListener("DOMContentLoaded", () => {
           } catch (error) {
             display.value = "Error";
           }
-          break;          
+          break;  
+        case "+/-":
+          try {
+            const currentValue = parseFloat(display.value);
+            display.value = (-currentValue).toString();
+            currentInput = display.value;
+          } catch (error) {
+            display.value = "Error";
+          }        
+          break;        
         default:
           currentInput += buttonText;
           display.value = currentInput;
