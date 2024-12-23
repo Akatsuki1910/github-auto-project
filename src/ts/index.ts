@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;
   const copyBtn = document.getElementById("copy") as HTMLButtonElement;
   let parenthesisOpen = false;
+  let memory = 0;
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -99,6 +100,8 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += "Math.abs(";
         parenthesisOpen = true;
         display.value = currentInput;      
+      } else if (buttonText === "M+") {
+        memory += parseFloat(display.value);
       } else {
         currentInput += buttonText;
         display.value = currentInput;
