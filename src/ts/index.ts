@@ -2,13 +2,11 @@ window.addEventListener("DOMContentLoaded", () => {
   const display = document.getElementById("display") as HTMLInputElement;
   const buttons = document.querySelectorAll("#calculator button");
   let currentInput = "";
-  // ... (other code remains the same)
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
       switch (buttonText) {
-        // ... (other cases)
         case "Eval":
           try {
             const result = eval(display.value);
@@ -17,6 +15,12 @@ window.addEventListener("DOMContentLoaded", () => {
           } catch (error) {
             display.value = "Error";
           }
+          break;
+          case "±":
+          if(display.value !== ""){
+          display.value = (-parseFloat(display.value)).toString();
+          currentInput = display.value;
+          }          
           break;
         default:
           currentInput += buttonText;
