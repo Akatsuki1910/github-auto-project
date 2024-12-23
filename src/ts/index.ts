@@ -66,6 +66,9 @@ window.addEventListener("DOMContentLoaded", () => {
         const randomNumber = Math.random();
         currentInput += randomNumber;
         display.value = currentInput;
+      } else if (buttonText === "e") {
+        currentInput += Math.E;
+        display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
