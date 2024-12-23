@@ -48,6 +48,10 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += parenthesisOpen ? ")" : "(";
         parenthesisOpen = !parenthesisOpen;  // トグル
         display.value = currentInput;      
+      } else if (buttonText === "rand") {
+        const randNum = Math.random();
+        currentInput += randNum.toString();
+        display.value = currentInput;
       } else if (buttonText === "exp") {
         currentInput += "Math.exp(";
         parenthesisOpen = true;
