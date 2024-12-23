@@ -115,7 +115,11 @@ window.addEventListener("DOMContentLoaded", () => {
           } catch (error) {
             display.value = "Error";
           }
-          break;                
+          break;    
+        case "e":
+          currentInput += Math.E;
+          display.value = currentInput;
+          break;            
         default:
           currentInput += buttonText;
           display.value = currentInput;
