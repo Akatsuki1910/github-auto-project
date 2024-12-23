@@ -28,6 +28,12 @@ window.addEventListener("DOMContentLoaded", () => {
           currentInput = "";
           display.value = "";
           break;
+        case "Back":
+          if (display.value.length > 0) {
+               display.value = display.value.slice(0, -1);
+           }
+           currentInput = display.value;
+           break;        
         default:
           currentInput += buttonText;
           display.value = currentInput;
