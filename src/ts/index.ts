@@ -15,23 +15,15 @@ window.addEventListener("DOMContentLoaded", () => {
       const buttonText = button.textContent;
       switch (buttonText) {
         // ... (rest of the switch cases)
-        case "ceil":
+        case "x2":
           try {
-            const result = Math.ceil(eval(currentInput));
-            display.value = result.toString();
-            currentInput = result.toString();
+            const currentValue = parseFloat(display.value);
+            const doubledValue = currentValue * 2;
+            display.value = doubledValue.toString();
+            currentInput = doubledValue.toString();
           } catch (error) {
             display.value = "Error";
           }
-          break;  
-        case "+/-":
-          try {
-            const currentValue = parseFloat(display.value);
-            display.value = (-currentValue).toString();
-            currentInput = display.value;
-          } catch (error) {
-            display.value = "Error";
-          }        
           break;        
         default:
           currentInput += buttonText;
