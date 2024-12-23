@@ -56,7 +56,13 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = currentInput;      
       } else if (buttonText === "±") {
         currentInput = String(parseFloat(currentInput || "0") * -1);
-        display.value = currentInput;
+        display.value = currentInput;      
+      } else if (buttonText === "AC") { // all clear
+        currentInput = '';
+        display.value = '';
+        calculationHistory = []; // 追加：履歴もクリア
+        historyElement.textContent = ''; // 追加：履歴表示もクリア
+
       } else {
         currentInput += buttonText;
         display.value = currentInput;
