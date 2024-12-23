@@ -65,38 +65,15 @@ window.addEventListener("DOMContentLoaded", () => {
         case "MC": // Memory Clear
           memory = 0;
           break;
-        case "exp":
-          currentInput += "Math.exp(";
-          display.value = currentInput;          
-          break;
-        case "log":
-          currentInput += "Math.log10(";
-          display.value = currentInput;
-          break;
-        case "sin":
-          currentInput += "Math.sin(";
-          display.value = currentInput;
-          break;
-        case "cos":
-          currentInput += "Math.cos(";
-          display.value = currentInput;
-          break;
-        case "^":
-          currentInput += "**";
-          display.value = currentInput;
-          break;
-        case "round":
+        // 1/xボタンの処理を追加
+        case "1/x":
           try {
-            const result = Math.round(eval(currentInput));
+            const result = 1 / eval(currentInput);
             display.value = result.toString();
             currentInput = result.toString();
           } catch (error) {
             display.value = "Error";
           }
-          break;
-        case "+/-":
-          currentInput = String(parseFloat(currentInput || "0") * -1);
-          display.value = currentInput;
           break;
         default:
           currentInput += buttonText;
