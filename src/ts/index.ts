@@ -106,7 +106,16 @@ window.addEventListener("DOMContentLoaded", () => {
           } catch (error) {
             display.value = "Error";
           }
-          break;          
+          break;      
+        case "abs":
+          try {
+            const result = Math.abs(eval(currentInput));
+            display.value = result.toString();
+            currentInput = result.toString();
+          } catch (error) {
+            display.value = "Error";
+          }
+          break;                
         default:
           currentInput += buttonText;
           display.value = currentInput;
