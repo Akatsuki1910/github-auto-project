@@ -46,9 +46,9 @@ window.addEventListener("DOMContentLoaded", () => {
           historyElement.textContent = "";
           break;
         case "±":
-          currentInput = String(parseFloat(currentInput || "0") * -1);
-          display.value = currentInput;
-          break;
+           currentInput = String(parseFloat(currentInput || "0") * -1);
+           display.value = currentInput;
+           break;        
         case "AC":
           currentInput = '';
           display.value = '';
@@ -93,6 +93,10 @@ window.addEventListener("DOMContentLoaded", () => {
           } catch (error) {
             display.value = "Error";
           }
+          break;
+        case "+/-":
+          currentInput = String(parseFloat(currentInput || "0") * -1);
+          display.value = currentInput;
           break;
         default:
           currentInput += buttonText;
