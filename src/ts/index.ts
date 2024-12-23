@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
       switch (buttonText) {
-        case "Eval":
+        case "=":
           try {
             const result = eval(display.value);
             display.value = result.toString();
@@ -21,6 +21,10 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = (-parseFloat(display.value)).toString();
           currentInput = display.value;
           }          
+          break;
+        case "C":
+          currentInput = "";
+          display.value = "";
           break;
         default:
           currentInput += buttonText;
