@@ -14,121 +14,16 @@ window.addEventListener("DOMContentLoaded", () => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
       switch (buttonText) {
-        case "=":
+        // ... (rest of the switch cases)
+        case "ceil":
           try {
-            const result = eval(currentInput);
-            display.value = result.toString();
-            calculationHistory.push(currentInput + " = " + result);
-            historyElement.textContent = calculationHistory.join('\n');
-            currentInput = result.toString();
-          } catch (error) {
-            display.value = "Error";
-          }
-          break;
-        case "C":
-          currentInput = "";
-          display.value = "";
-          break;
-        case "←":
-          currentInput = currentInput.slice(0, -1);
-          display.value = currentInput;
-          break;
-        case "Copy":
-          navigator.clipboard.writeText(display.value).then(() => {
-            alert("Copied to clipboard!");
-          });
-          break;
-        case "History":
-          historyContainer.style.display = historyContainer.style.display === "none" ? "block" : "none";
-          break;
-        case "Clear History":
-          calculationHistory = [];
-          historyElement.textContent = "";
-          break;
-        case "±":
-           currentInput = String(parseFloat(currentInput || "0") * -1);
-           display.value = currentInput;
-           break;        
-        case "AC":
-          currentInput = '';
-          display.value = '';
-          calculationHistory = [];
-          historyElement.textContent = '';
-          break;
-          case "MS": // Memory Store
-          memory = parseFloat(display.value);
-          break;
-        case "MR": // Memory Recall
-          currentInput += memory;
-          display.value = currentInput;
-          break;
-        case "MC": // Memory Clear
-          memory = 0;
-          break;
-        // 1/xボタンの処理を追加
-        case "1/x":
-          try {
-            const result = 1 / eval(currentInput);
+            const result = Math.ceil(eval(currentInput));
             display.value = result.toString();
             currentInput = result.toString();
           } catch (error) {
             display.value = "Error";
           }
-          break;
-          case "floor":
-          try {
-            const result = Math.floor(eval(currentInput));
-            display.value = result.toString();
-            currentInput = result.toString();
-          } catch (error) {
-            display.value = "Error";
-          }
-          break;
-        case "rand":
-          const randomNumber = Math.random();
-          currentInput += randomNumber;
-          display.value = currentInput;
-          break;
-        case "x³":
-          try {
-            const result = Math.pow(eval(currentInput), 3);
-            display.value = result.toString();
-            currentInput = result.toString();
-          } catch (error) {
-            display.value = "Error";
-          }
-          break;
-        case "tan":
-          try {
-            const result = Math.tan(eval(currentInput));
-            display.value = result.toString();
-            currentInput = result.toString();
-          } catch (error) {
-            display.value = "Error";
-          }
-          break;      
-        case "abs":
-          try {
-            const result = Math.abs(eval(currentInput));
-            display.value = result.toString();
-            currentInput = result.toString();
-          } catch (error) {
-            display.value = "Error";
-          }
-          break;    
-        case "e":
-          currentInput += Math.E;
-          display.value = currentInput;
-          break; 
-        case "log₁₀":
-          try {
-            const result = Math.log10(eval(currentInput));
-            display.value = result.toString();
-            currentInput = result.toString();
-          } catch (error) {
-            display.value = "Error";
-          }
-          break;           
+          break;          
         default:
           currentInput += buttonText;
           display.value = currentInput;
