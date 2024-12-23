@@ -18,6 +18,8 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "MR") {
         currentInput += memory;
         display.value = currentInput;
+      } else if (buttonText === "MC") {
+        memory = 0;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
