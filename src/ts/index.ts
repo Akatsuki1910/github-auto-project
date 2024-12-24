@@ -29,6 +29,9 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
           }
           break;        
+        case "New Window":
+            window.open('https://www.google.com', '_blank');
+            break;          
           // 以下略
         default:
           currentInput += buttonText;
