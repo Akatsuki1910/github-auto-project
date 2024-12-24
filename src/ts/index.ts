@@ -67,6 +67,10 @@ window.addEventListener("DOMContentLoaded", () => {
           currentInput += "**";
           display.value = currentInput;
           break;
+        case "round":
+          display.value = Math.round(parseFloat(display.value)).toString();
+          currentInput = display.value;
+          break;
         default:
           currentInput += buttonText;
           display.value = currentInput;
