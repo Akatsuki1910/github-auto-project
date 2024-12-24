@@ -6,7 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let memory = 0;
   let isDarkMode = false;
   let isScientificMode = false;
-  let lastAnswer = 0; // Store the last answer
+  let lastAnswer = 0; 
 
   const switchThemeButton = document.getElementById("switchTheme");
   switchThemeButton.addEventListener("click", () => {
@@ -17,8 +17,6 @@ window.addEventListener("DOMContentLoaded", () => {
   const toggleScientificButton = document.getElementById("toggleScientific");
   toggleScientificButton.addEventListener("click", () => {
     isScientificMode = !isScientificMode;
-    // Add logic here to show/hide scientific buttons or change layout
-    // Example: you could add a 'scientific' class to the buttons and toggle its visibility
   });
 
   buttons.forEach(button => {
@@ -30,9 +28,8 @@ window.addEventListener("DOMContentLoaded", () => {
           const result = eval(currentInput);
           display.value = result.toString();
           history.push(currentInput + " = " + result);
-          currentInput = result.toString(); // Update currentInput with the result
-          lastAnswer = result; // Store the last answer
-          console.log("Calculation History:", history);
+          currentInput = result.toString(); 
+          lastAnswer = result; 
           const historyElement = document.getElementById("history") as HTMLParagraphElement; 
           historyElement.textContent = history.join("\n");
         } catch (error) {
@@ -68,7 +65,7 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "+/-") {
         currentInput = (parseFloat(currentInput) * -1).toString();
         display.value = currentInput;      
-      } else if (buttonText === "Ans") { // Added Ans functionality
+      } else if (buttonText === "Ans") {
         currentInput += lastAnswer;
         display.value = currentInput;
       } else {
