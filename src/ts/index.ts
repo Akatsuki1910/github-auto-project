@@ -24,6 +24,14 @@ window.addEventListener("DOMContentLoaded", () => {
           const randomNumber = Math.random();
           display.value = randomNumber.toString();
           currentInput = randomNumber.toString();
+          break;
+        case "+/-":
+          if (currentInput.startsWith("-")) {
+            currentInput = currentInput.substring(1);
+          } else {
+            currentInput = "-" + currentInput;
+          }
+          display.value = currentInput;
           break;        
         default:
           currentInput += buttonText;
