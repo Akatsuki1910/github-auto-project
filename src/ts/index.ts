@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let memory = 0;
   let isDarkMode = false;
   let isScientificMode = false;
+  let lastAnswer = 0; // Store the last answer
 
   const switchThemeButton = document.getElementById("switchTheme");
   switchThemeButton.addEventListener("click", () => {
@@ -30,9 +31,8 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = result.toString();
           history.push(currentInput + " = " + result);
           currentInput = result.toString(); // Update currentInput with the result
-          // Added feature: Log the calculation history to the console
+          lastAnswer = result; // Store the last answer
           console.log("Calculation History:", history);
-          // Added feature: Display calculation history in the history element
           const historyElement = document.getElementById("history") as HTMLParagraphElement; 
           historyElement.textContent = history.join("\n");
         } catch (error) {
@@ -45,15 +45,15 @@ window.addEventListener("DOMContentLoaded", () => {
           currentInput = "";
           history = [];
           display.value = "";
-          (document.getElementById("history") as HTMLParagraphElement).textContent = "";  // Clear history display
+          (document.getElementById("history") as HTMLParagraphElement).textContent = "";
        } else if (buttonText === "History") {
         const historyContainer = document.getElementById("historyContainer");
         historyContainer.style.display = historyContainer.style.display === "none" ? "block" : "none";
         (document.getElementById("history") as HTMLParagraphElement).textContent = history.join("\n");
       } else if (buttonText === "Clear History"){
             history = [];
-            (document.getElementById("history") as HTMLParagraphElement).textContent = ""; // Clear history display
-      } else if (buttonText === "←") {
+            (document.getElementById("history") as HTMLParagraphElement).textContent = "";
+      } else if (buttonText === "⌫") {
         currentInput = currentInput.slice(0, -1);
         display.value = currentInput;
         } else if (buttonText === "Copy Result") {
@@ -62,12 +62,15 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = memory.toString();
         currentInput = memory.toString();
       } else if (buttonText === "MC") {
-          memory = 0; // Clear memory
+          memory = 0; 
       } else if (buttonText === "M+") {
         memory += parseFloat(display.value);
       } else if (buttonText === "+/-") {
         currentInput = (parseFloat(currentInput) * -1).toString();
         display.value = currentInput;      
+      } else if (buttonText === "Ans") { // Added Ans functionality
+        currentInput += lastAnswer;
+        display.value = currentInput;
       } else {
         currentInput += buttonText;
         display.value = currentInput;
