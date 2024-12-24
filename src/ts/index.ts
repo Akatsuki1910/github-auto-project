@@ -18,22 +18,31 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
           }
           break;
-          case "±":
-          if(display.value !== ""){
-          display.value = (-parseFloat(display.value)).toString();
-          currentInput = display.value;
-          }          
-          break;          
+        case "±":
+          if (display.value !== "") {
+            display.value = (-parseFloat(display.value)).toString();
+            currentInput = display.value;
+          }
+          break;
         case "C":
           currentInput = "";
           display.value = "";
           break;
         case "←":
-           if (display.value.length > 0) {
-               display.value = display.value.slice(0, -1);
-           }
-           currentInput = display.value;
-           break;        
+          if (display.value.length > 0) {
+            display.value = display.value.slice(0, -1);
+          }
+          currentInput = display.value;
+          break;
+        case "Copy":
+          navigator.clipboard.writeText(display.value)
+            .then(() => {
+              alert("Copied to clipboard: " + display.value);
+            })
+            .catch(err => {
+              console.error("Failed to copy: ", err);
+            });
+          break;          
         default:
           currentInput += buttonText;
           display.value = currentInput;
@@ -45,7 +54,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const historyBtn = document.getElementById("historyBtn");
   const historyContainer = document.getElementById("historyContainer");
   const historyDisplay = document.getElementById("history");
-  const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;  
+  const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;
   historyBtn.addEventListener("click", () => {
     if (historyContainer.style.display === "none") {
       historyContainer.style.display = "block";
