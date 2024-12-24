@@ -62,6 +62,9 @@ window.addEventListener("DOMContentLoaded", () => {
           memory = 0; // Clear memory
       } else if (buttonText === "M+") {
         memory += parseFloat(display.value);
+      } else if (buttonText === "+/-") {
+        currentInput = (parseFloat(currentInput) * -1).toString();
+        display.value = currentInput;      
       } else {
         currentInput += buttonText;
         display.value = currentInput;
