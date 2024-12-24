@@ -55,7 +55,14 @@ window.addEventListener("DOMContentLoaded", () => {
                 currentInput = "-" + currentInput;
             }
             display.value = currentInput;
-            break;        
+            break;    
+        case "Copy to Clipboard":
+          navigator.clipboard.writeText(display.value).then(() => {
+            alert("Copied to clipboard!");
+          }).catch(err => {
+            console.error("Failed to copy: ", err);
+          });
+          break;    
         default:
           currentInput += buttonText;
           display.value = currentInput;
