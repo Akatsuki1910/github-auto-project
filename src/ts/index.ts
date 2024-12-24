@@ -51,6 +51,10 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value += memory;
           currentInput += memory;      
           break;
+        case "exp":
+          display.value = Math.exp(parseFloat(display.value)).toString();
+          currentInput = display.value;
+          break;
         default:
           currentInput += buttonText;
           display.value = currentInput;
