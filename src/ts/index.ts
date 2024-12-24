@@ -70,7 +70,10 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = currentInput;
       } else if (buttonText === "Exit") {
         window.close();
-      } else {
+      } else if (buttonText === "." && !currentInput.includes(".")) {
+        currentInput += ".";
+        display.value = currentInput;      
+      } else if (buttonText !== "."){
         currentInput += buttonText;
         display.value = currentInput;
       }
