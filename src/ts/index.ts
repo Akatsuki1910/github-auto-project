@@ -73,6 +73,10 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "." && !currentInput.includes(".")) {
         currentInput += ".";
         display.value = currentInput;      
+      } else if (buttonText === "Rand") {
+        const randomNumber = Math.random();
+        currentInput += randomNumber;
+        display.value = currentInput;     
       } else if (buttonText !== "."){
         currentInput += buttonText;
         display.value = currentInput;
