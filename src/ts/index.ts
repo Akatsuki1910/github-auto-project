@@ -20,42 +20,16 @@ window.addEventListener("DOMContentLoaded", () => {
           }
           break;
         // 以下略
-        case "ln":
+        case "log<sub>10</sub>":
           try {
-            const result = Math.log(parseFloat(display.value));
+            const result = Math.log10(parseFloat(display.value));
             display.value = result.toString();
             currentInput = result.toString();
           } catch (error) {
             display.value = "Error";
           }
           break;        
-        case "10<sup>x</sup>":
-          try {
-            const result = Math.pow(10, parseFloat(display.value));
-            display.value = result.toString();
-            currentInput = result.toString();
-          } catch (error) {
-            display.value = "Error";
-          }
-          break;
-        case ">>":
-          try {
-            const result = parseInt(display.value) >> 1; // 右ビットシフト
-            display.value = result.toString();
-            currentInput = result.toString();
-          } catch (error) {
-            display.value = "Error";
-          }
-          break;    
-          case "x³":
-          try {
-            const result = Math.pow(parseFloat(display.value), 3);
-            display.value = result.toString();
-            currentInput = result.toString();
-          } catch (error) {
-            display.value = "Error";
-          }
-          break;
+          // 以下略
         default:
           currentInput += buttonText;
           display.value = currentInput;
