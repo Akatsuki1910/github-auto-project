@@ -31,7 +31,11 @@ window.addEventListener("DOMContentLoaded", () => {
           break;        
         case "New Window":
             window.open('https://www.google.com', '_blank');
-            break;          
+            break;  
+        case "Dup":
+            currentInput = display.value + display.value;
+            display.value = currentInput;
+            break;        
           // 以下略
         default:
           currentInput += buttonText;
