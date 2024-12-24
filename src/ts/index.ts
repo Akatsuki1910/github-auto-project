@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const buttons = document.querySelectorAll("#calculator button");
   let currentInput = "";
   let history = [];
+  let memory = 0;
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
@@ -42,7 +43,10 @@ window.addEventListener("DOMContentLoaded", () => {
             .catch(err => {
               console.error("Failed to copy: ", err);
             });
-          break;          
+          break;      
+        case "MC": // Memory Clear
+          memory = 0;
+          break;    
         default:
           currentInput += buttonText;
           display.value = currentInput;
