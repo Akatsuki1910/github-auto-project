@@ -38,6 +38,15 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
           }
           break;
+        case ">>":
+          try {
+            const result = parseInt(display.value) >> 1; // 右ビットシフト
+            display.value = result.toString();
+            currentInput = result.toString();
+          } catch (error) {
+            display.value = "Error";
+          }
+          break;          
         default:
           currentInput += buttonText;
           display.value = currentInput;
