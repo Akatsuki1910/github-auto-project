@@ -68,6 +68,8 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "Ans") {
         currentInput += lastAnswer;
         display.value = currentInput;
+      } else if (buttonText === "Exit") {
+        window.close();
       } else {
         currentInput += buttonText;
         display.value = currentInput;
