@@ -32,6 +32,9 @@ window.addEventListener("DOMContentLoaded", () => {
           currentInput = result.toString(); // Update currentInput with the result
           // Added feature: Log the calculation history to the console
           console.log("Calculation History:", history);
+          // Added feature: Display calculation history in the history element
+          const historyElement = document.getElementById("history") as HTMLParagraphElement; 
+          historyElement.textContent = history.join("\n");
         } catch (error) {
           display.value = "Error";
         }
@@ -42,14 +45,14 @@ window.addEventListener("DOMContentLoaded", () => {
           currentInput = "";
           history = [];
           display.value = "";
-          document.getElementById("history").innerHTML = "";
+          (document.getElementById("history") as HTMLParagraphElement).textContent = "";  // Clear history display
        } else if (buttonText === "History") {
         const historyContainer = document.getElementById("historyContainer");
         historyContainer.style.display = historyContainer.style.display === "none" ? "block" : "none";
-        document.getElementById("history").innerHTML = history.join("\n");
+        (document.getElementById("history") as HTMLParagraphElement).textContent = history.join("\n");
       } else if (buttonText === "Clear History"){
             history = [];
-            document.getElementById("history").innerHTML = "";
+            (document.getElementById("history") as HTMLParagraphElement).textContent = ""; // Clear history display
       } else if (buttonText === "←") {
         currentInput = currentInput.slice(0, -1);
         display.value = currentInput;
