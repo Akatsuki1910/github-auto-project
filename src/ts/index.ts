@@ -46,7 +46,16 @@ window.addEventListener("DOMContentLoaded", () => {
           } catch (error) {
             display.value = "Error";
           }
-          break;          
+          break;    
+          case "x³":
+          try {
+            const result = Math.pow(parseFloat(display.value), 3);
+            display.value = result.toString();
+            currentInput = result.toString();
+          } catch (error) {
+            display.value = "Error";
+          }
+          break;
         default:
           currentInput += buttonText;
           display.value = currentInput;
