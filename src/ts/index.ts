@@ -59,6 +59,10 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = Math.sin(parseFloat(display.value)).toString();
           currentInput = display.value;
           break;
+        case "log":
+          display.value = Math.log10(parseFloat(display.value)).toString();
+          currentInput = display.value;
+          break;
         default:
           currentInput += buttonText;
           display.value = currentInput;
