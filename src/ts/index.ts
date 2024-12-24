@@ -17,10 +17,29 @@ window.addEventListener("DOMContentLoaded", () => {
       const buttonText = button.textContent;
       switch (buttonText) {
         case "=":
-          // 以下略
+          try {
+            const result = eval(currentInput);
+            display.value = result.toString();
+            history.push(currentInput + " = " + result);
+            currentInput = result.toString();
+          } catch (error) {
+            display.value = "Error";
+          }
           break;
+          case "Eval":
+              try {
+                  const result = eval(currentInput);
+                  display.value = result.toString();
+                  history.push(currentInput + " = " + result);
+                  currentInput = result.toString();
+              }
+             catch(error) {
+                  display.value = "Error";
+              }
+              break;              
         case "log<sub>10</sub>":
-            // 以下略
+            currentInput += "Math.log10(";
+            display.value = currentInput;
             break;        
         case "New Window":
             window.open('https://www.google.com', '_blank');
@@ -37,5 +56,18 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // History button functionality
-  // 以下略
+  const historyBtn = document.getElementById("historyBtn");
+  const historyContainer = document.getElementById("historyContainer");
+  const historyContent = document.getElementById("history");
+  const clearHistoryBtn = document.getElementById("clearHistory");
+
+  historyBtn.addEventListener("click", () => {
+    historyContainer.style.display = historyContainer.style.display === "none" ? "block" : "none";
+    historyContent.textContent = history.join("\n");
+  });
+
+  clearHistoryBtn.addEventListener("click", () => {
+    history = [];
+    historyContent.textContent = "";
+  });
 });
