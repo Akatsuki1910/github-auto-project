@@ -5,7 +5,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let history = [];
   let memory = 0;
   let isDarkMode = false;
-  let isScientificMode = false; // Added for scientific mode toggle
+  let isScientificMode = false; 
 
   const switchThemeButton = document.getElementById("switchTheme");
   switchThemeButton.addEventListener("click", () => {
@@ -13,7 +13,6 @@ window.addEventListener("DOMContentLoaded", () => {
     document.body.classList.toggle("dark-mode", isDarkMode);
   });
 
-  // Scientific mode toggle
   const toggleScientificButton = document.getElementById("toggleScientific");
   toggleScientificButton.addEventListener("click", () => {
     isScientificMode = !isScientificMode;
@@ -24,9 +23,36 @@ window.addEventListener("DOMContentLoaded", () => {
   buttons.forEach(button => {
     button.addEventListener("click", () => {
       const buttonText = button.textContent;
-      // ... (rest of the button click logic)
+
+      if (buttonText === "=") {
+        try {
+          const result = eval(currentInput);
+          display.value = result.toString();
+          history.push(currentInput + " = " + result);
+          currentInput = result.toString(); // Update currentInput with the result
+        } catch (error) {
+          display.value = "Error";
+        }
+      } else if (buttonText === "C") {
+        currentInput = "";
+        display.value = "";
+      } else if (buttonText === "AC"){
+          currentInput = "";
+          history = [];
+          display.value = "";
+          document.getElementById("history").innerHTML = "";
+       } else if (buttonText === "History") {
+        const historyContainer = document.getElementById("historyContainer");
+        historyContainer.style.display = historyContainer.style.display === "none" ? "block" : "none";
+        document.getElementById("history").innerHTML = history.join("\n");
+      } else if (buttonText === "Clear History"){
+            history = [];
+            document.getElementById("history").innerHTML = "";
+      }
+          else {
+        currentInput += buttonText;
+        display.value = currentInput;
+      }
     });
   });
-
-  // ... (rest of the code)
 });
