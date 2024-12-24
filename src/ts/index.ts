@@ -30,6 +30,8 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = result.toString();
           history.push(currentInput + " = " + result);
           currentInput = result.toString(); // Update currentInput with the result
+          // Added feature: Log the calculation history to the console
+          console.log("Calculation History:", history);
         } catch (error) {
           display.value = "Error";
         }
