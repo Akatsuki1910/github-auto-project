@@ -63,6 +63,10 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = Math.log10(parseFloat(display.value)).toString();
           currentInput = display.value;
           break;
+        case "^":
+          currentInput += "**";
+          display.value = currentInput;
+          break;
         default:
           currentInput += buttonText;
           display.value = currentInput;
