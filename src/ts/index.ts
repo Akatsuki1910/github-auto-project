@@ -19,65 +19,11 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
           }
           break;
-        case "±":
-          if (display.value !== "") {
-            display.value = (-parseFloat(display.value)).toString();
-            currentInput = display.value;
-          }
-          break;
-        case "C":
-          currentInput = "";
-          display.value = "";
-          break;
-        case "←":
-          if (display.value.length > 0) {
-            display.value = display.value.slice(0, -1);
-          }
-          currentInput = display.value;
-          break;
-        case "Copy":
-          navigator.clipboard.writeText(display.value)
-            .then(() => {
-              alert("Copied to clipboard: " + display.value);
-            })
-            .catch(err => {
-              console.error("Failed to copy: ", err);
-            });
-          break;      
-        case "MC": // Memory Clear
-          memory = 0;
-          break;    
-        case "MR": // Memory Recall
-          display.value += memory;
-          currentInput += memory;      
-          break;
-        case "exp":
-          display.value = Math.exp(parseFloat(display.value)).toString();
-          currentInput = display.value;
-          break;
-        case "sin":
-          display.value = Math.sin(parseFloat(display.value)).toString();
-          currentInput = display.value;
-          break;
-        case "log":
-          display.value = Math.log10(parseFloat(display.value)).toString();
-          currentInput = display.value;
-          break;
-        case "^":
-          currentInput += "**";
-          display.value = currentInput;
-          break;
-        case "round":
-          display.value = Math.round(parseFloat(display.value)).toString();
-          currentInput = display.value;
-          break;
-        case "1/x":
-          if (display.value !== "0"){
-             display.value = (1/parseFloat(display.value)).toString();
-             currentInput = display.value;
-          } else {
-            display.value = "Error";
-          }
+        // 以下略
+        case "Random":
+          const randomNumber = Math.random();
+          display.value = randomNumber.toString();
+          currentInput = randomNumber.toString();
           break;        
         default:
           currentInput += buttonText;
@@ -87,21 +33,5 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 
   // History button functionality
-  const historyBtn = document.getElementById("historyBtn");
-  const historyContainer = document.getElementById("historyContainer");
-  const historyDisplay = document.getElementById("history");
-  const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;
-  historyBtn.addEventListener("click", () => {
-    if (historyContainer.style.display === "none") {
-      historyContainer.style.display = "block";
-      historyDisplay.textContent = history.join('\n');
-    } else {
-      historyContainer.style.display = "none";
-    }
-  });
-
-  clearHistoryBtn.addEventListener("click", () => {
-    history = [];
-    historyDisplay.textContent = "";
-  });
+  // 以下略
 });
