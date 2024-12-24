@@ -47,6 +47,10 @@ window.addEventListener("DOMContentLoaded", () => {
         case "MC": // Memory Clear
           memory = 0;
           break;    
+        case "MR": // Memory Recall
+          display.value += memory;
+          currentInput += memory;      
+          break;
         default:
           currentInput += buttonText;
           display.value = currentInput;
