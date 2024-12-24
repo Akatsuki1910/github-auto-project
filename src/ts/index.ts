@@ -29,6 +29,15 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
           }
           break;        
+        case "10<sup>x</sup>":
+          try {
+            const result = Math.pow(10, parseFloat(display.value));
+            display.value = result.toString();
+            currentInput = result.toString();
+          } catch (error) {
+            display.value = "Error";
+          }
+          break;
         default:
           currentInput += buttonText;
           display.value = currentInput;
