@@ -63,6 +63,10 @@ window.addEventListener("DOMContentLoaded", () => {
             console.error("Failed to copy: ", err);
           });
           break;    
+        case "⌫":
+          currentInput = currentInput.slice(0, -1);
+          display.value = currentInput;
+          break;
         default:
           currentInput += buttonText;
           display.value = currentInput;
