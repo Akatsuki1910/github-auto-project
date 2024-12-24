@@ -23,13 +23,13 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = (-parseFloat(display.value)).toString();
           currentInput = display.value;
           }          
-          break;
+          break;          
         case "C":
           currentInput = "";
           display.value = "";
           break;
-        case "Back":
-          if (display.value.length > 0) {
+        case "←":
+           if (display.value.length > 0) {
                display.value = display.value.slice(0, -1);
            }
            currentInput = display.value;
@@ -39,5 +39,24 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = currentInput;
       }
     });
+  });
+
+  // History button functionality
+  const historyBtn = document.getElementById("historyBtn");
+  const historyContainer = document.getElementById("historyContainer");
+  const historyDisplay = document.getElementById("history");
+  const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;  
+  historyBtn.addEventListener("click", () => {
+    if (historyContainer.style.display === "none") {
+      historyContainer.style.display = "block";
+      historyDisplay.textContent = history.join('\n');
+    } else {
+      historyContainer.style.display = "none";
+    }
+  });
+
+  clearHistoryBtn.addEventListener("click", () => {
+    history = [];
+    historyDisplay.textContent = "";
   });
 });
