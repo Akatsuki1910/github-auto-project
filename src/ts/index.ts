@@ -45,26 +45,22 @@ window.addEventListener("DOMContentLoaded", () => {
             window.open('https://www.google.com', '_blank');
             break;  
         case "Dup":
-            currentInput = display.value + display.value;
+            currentInput = display.value + display.value; // Duplicate the current display value
             display.value = currentInput;
             break;
-        case "+/-":
-            if (currentInput.startsWith("-")) {
-                currentInput = currentInput.slice(1);
-            } else {
-                currentInput = "-" + currentInput;
-            }
-            display.value = currentInput;
-            break;    
         case "Copy to Clipboard":
           navigator.clipboard.writeText(display.value).then(() => {
-            alert("Copied to clipboard!");
+            //alert("Copied to clipboard!");
           }).catch(err => {
             console.error("Failed to copy: ", err);
           });
           break;    
         case "⌫":
           currentInput = currentInput.slice(0, -1);
+          display.value = currentInput;
+          break;
+        case "+/-": // Sign change
+          currentInput = String(Number(currentInput) * -1); 
           display.value = currentInput;
           break;
         default:
