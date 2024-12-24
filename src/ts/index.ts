@@ -51,6 +51,8 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "←") {
         currentInput = currentInput.slice(0, -1);
         display.value = currentInput;
+        } else if (buttonText === "Copy Result") {
+            navigator.clipboard.writeText(display.value);
       } else {
         currentInput += buttonText;
         display.value = currentInput;
