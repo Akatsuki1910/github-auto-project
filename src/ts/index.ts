@@ -49,6 +49,14 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
           }
           break;
+        case "|x|":
+          try {
+            display.value = Math.abs(parseFloat(display.value)).toString();
+            currentInput = display.value;
+          } catch (error) {
+            display.value = "Error";
+          }
+          break;
         default:
           currentInput += buttonText;
           display.value = currentInput;
