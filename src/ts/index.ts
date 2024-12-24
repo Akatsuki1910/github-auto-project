@@ -47,6 +47,14 @@ window.addEventListener("DOMContentLoaded", () => {
         case "Dup":
             currentInput = display.value + display.value;
             display.value = currentInput;
+            break;
+        case "+/-":
+            if (currentInput.startsWith("-")) {
+                currentInput = currentInput.slice(1);
+            } else {
+                currentInput = "-" + currentInput;
+            }
+            display.value = currentInput;
             break;        
         default:
           currentInput += buttonText;
