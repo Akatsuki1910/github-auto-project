@@ -5,7 +5,7 @@ window.addEventListener("DOMContentLoaded", () => {
   let history = [];
   let memory = 0;
   let isDarkMode = false;
-  let isScientificMode = false; 
+  let isScientificMode = false;
 
   const switchThemeButton = document.getElementById("switchTheme");
   switchThemeButton.addEventListener("click", () => {
@@ -53,7 +53,12 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = currentInput;
         } else if (buttonText === "Copy Result") {
             navigator.clipboard.writeText(display.value);
-      } else {
+      } else if (buttonText === "MR") {
+        display.value = memory.toString();
+        currentInput = memory.toString();
+      } else if (buttonText === "MC") {
+          memory = 0; // Clear memory
+        } else {
         currentInput += buttonText;
         display.value = currentInput;
       }
