@@ -71,6 +71,14 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = Math.round(parseFloat(display.value)).toString();
           currentInput = display.value;
           break;
+        case "1/x":
+          if (display.value !== "0"){
+             display.value = (1/parseFloat(display.value)).toString();
+             currentInput = display.value;
+          } else {
+            display.value = "Error";
+          }
+          break;        
         default:
           currentInput += buttonText;
           display.value = currentInput;
