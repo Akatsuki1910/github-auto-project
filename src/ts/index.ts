@@ -33,6 +33,10 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
           }
           break;
+          case "Random":
+              currentInput = Math.random().toString();
+              display.value = currentInput;
+              break;
         default:
           currentInput += buttonText;
           display.value = currentInput;
