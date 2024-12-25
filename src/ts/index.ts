@@ -8,15 +8,13 @@ window.addEventListener("DOMContentLoaded", () => {
   let isScientificMode = false;
   let lastAnswer = 0; 
 
-  const switchThemeButton = document.getElementById("switchTheme");
-  switchThemeButton.addEventListener("click", () => {
-    isDarkMode = !isDarkMode;
-    document.body.classList.toggle("dark-mode", isDarkMode);
-  });
-
-  const toggleScientificButton = document.getElementById("toggleScientific");
-  toggleScientificButton.addEventListener("click", () => {
-    isScientificMode = !isScientificMode;
+  const copyDisplayButton = document.getElementById("copy-display");
+  copyDisplayButton.addEventListener("click", () => {
+    navigator.clipboard.writeText(display.value).then(() => {
+      alert("Copied to clipboard!");
+    }, () => {
+      alert("Failed to copy to clipboard.");
+    });
   });
 
   buttons.forEach(button => {
@@ -38,12 +36,7 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "C") {
         currentInput = "";
         display.value = "";
-      } else if (buttonText === "AC"){
-          currentInput = "";
-          history = [];
-          display.value = "";
-          (document.getElementById("history") as HTMLParagraphElement).textContent = "";
-       } else if (buttonText === "History") {
+      } else if (buttonText === "History") {
         const historyContainer = document.getElementById("historyContainer");
         historyContainer.style.display = historyContainer.style.display === "none" ? "block" : "none";
         (document.getElementById("history") as HTMLParagraphElement).textContent = history.join("\n");
@@ -53,31 +46,10 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "⌫") {
         currentInput = currentInput.slice(0, -1);
         display.value = currentInput;
-        } else if (buttonText === "Copy Result") {
-            navigator.clipboard.writeText(display.value);
-      } else if (buttonText === "MR") {
-        display.value = memory.toString();
-        currentInput = memory.toString();
-      } else if (buttonText === "MC") {
-          memory = 0; 
-      } else if (buttonText === "M+") {
-        memory += parseFloat(display.value);
-      } else if (buttonText === "+/-") {
-        currentInput = (parseFloat(currentInput) * -1).toString();
-        display.value = currentInput;      
       } else if (buttonText === "Ans") {
         currentInput += lastAnswer;
         display.value = currentInput;
-      } else if (buttonText === "Exit") {
-        window.close();
-      } else if (buttonText === "." && !currentInput.includes(".")) {
-        currentInput += ".";
-        display.value = currentInput;      
-      } else if (buttonText === "Rand") {
-        const randomNumber = Math.random();
-        currentInput += randomNumber;
-        display.value = currentInput;     
-      } else if (buttonText !== "."){
+      } else {
         currentInput += buttonText;
         display.value = currentInput;
       }
