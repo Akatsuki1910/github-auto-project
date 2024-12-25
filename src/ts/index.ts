@@ -63,6 +63,16 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
           display.value = "Error: " + error.message;
         }
+      } else if (buttonText === "Round") {
+        try {
+          const num = parseFloat(currentInput);
+          if (isNaN(num)) throw new Error("Invalid input for round");
+          const result = Math.round(num);
+          display.value = result.toString();
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error: " + error.message;
+        }
       } else {
         currentInput += buttonText;
         display.value = currentInput;
