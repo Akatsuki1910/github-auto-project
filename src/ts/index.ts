@@ -25,6 +25,10 @@ window.addEventListener("DOMContentLoaded", () => {
           currentInput += "Math.sin(";
           display.value = currentInput;
           break;
+        case "cos":
+          currentInput += "Math.cos(";
+          display.value = currentInput;
+          break;
         // ... (Other cases remain unchanged)
       }
     });
