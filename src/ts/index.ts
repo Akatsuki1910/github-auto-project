@@ -10,6 +10,11 @@ window.addEventListener("DOMContentLoaded", () => {
       switch (buttonText) {
         // ... (Existing code remains unchanged)
 
+        case "x<sup>y</sup>":
+          currentInput += "**";
+          display.value = currentInput;
+          break;
+          
         case "√":
           try {
             const currentValue = parseFloat(display.value);
