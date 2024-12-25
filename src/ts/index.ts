@@ -9,7 +9,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
       switch (buttonText) {
         // ... other cases ...
-        case "tan":
+        case "Calculate":
+          try {
+            currentInput = eval(display.value);
+            display.value = currentInput;
+          } catch (error) {
+            display.value = "Error";
+          }
+          break;
+          case "tan":
           try {
             currentInput = Math.tan(parseFloat(display.value)).toString();
             display.value = currentInput;
