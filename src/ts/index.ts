@@ -48,6 +48,8 @@ window.addEventListener("DOMContentLoaded", () => {
           }
           break;
         case "±":
+        case "sign":
+        case "negate": // handle all +/- buttons
           currentInput = display.value.startsWith('-') ? display.value.slice(1) : '-' + display.value;
           display.value = currentInput;
           break;
@@ -64,6 +66,15 @@ window.addEventListener("DOMContentLoaded", () => {
           try {
             const currentValue = parseFloat(display.value);
             currentInput = (currentValue * 2).toString();
+            display.value = currentInput;
+          } catch (error) {
+            display.value = "Error";
+          }
+          break;
+        case "x3":
+          try {
+            const currentValue = parseFloat(display.value);
+            currentInput = (currentValue * currentValue * currentValue).toString(); // Added x3 functionality
             display.value = currentInput;
           } catch (error) {
             display.value = "Error";
