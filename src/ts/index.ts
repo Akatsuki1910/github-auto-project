@@ -58,6 +58,11 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
           }
           break;
+          case "Rand":
+          const randomNumber = Math.random();
+          currentInput = randomNumber.toString();
+          display.value = currentInput;
+          break;
          // ... (Existing code remains unchanged)
       }
     });
