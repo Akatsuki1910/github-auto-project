@@ -48,6 +48,15 @@ window.addEventListener("DOMContentLoaded", () => {
             currentInput = display.value.startsWith('-') ? display.value.slice(1) : '-' + display.value;
             display.value = currentInput;
           break;
+        case "Flip":
+          try {
+            const currentValue = parseFloat(display.value);
+            currentInput = (1 / currentValue).toString();
+            display.value = currentInput;
+          } catch (error) {
+            display.value = "Error";
+          }
+          break;
         default:
           currentInput += buttonText;
           display.value = currentInput;
