@@ -1,9 +1,11 @@
 window.addEventListener("DOMContentLoaded", () => {
-  // ... (existing code)
+  const display = document.getElementById("display") as HTMLInputElement;
+  const buttons = document.querySelectorAll("button");
+  let currentInput = "";
 
   buttons.forEach(button => {
     button.addEventListener("click", () => {
-      // ... (existing code)
+      const buttonText = button.textContent;
 
       switch (buttonText) {
         // ... other cases ...
@@ -17,6 +19,16 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error: " + error.message;
           }
           break;
+          case "|x|":
+          try {
+            const currentValue = parseFloat(display.value);
+            const absValue = Math.abs(currentValue);
+            currentInput = absValue.toString();
+            display.value = currentInput;
+          } catch (error) {
+            display.value = "Error: " + error.message;
+          }
+          break;        
         default:
           currentInput += buttonText;
           display.value = currentInput;
