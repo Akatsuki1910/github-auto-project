@@ -7,16 +7,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
       switch (buttonText) {
         // ... other cases ...
-        case "log":
+        case "exp":
           try {
             const currentValue = parseFloat(display.value);
-            if (currentValue <= 0) {
-              display.value = "Error: Invalid input for log";
-            } else {
-              const logValue = Math.log10(currentValue);
-              currentInput = logValue.toString();
-              display.value = currentInput;
-            }
+            const expValue = Math.exp(currentValue);
+            currentInput = expValue.toString();
+            display.value = currentInput;
           } catch (error) {
             display.value = "Error: " + error.message;
           }
