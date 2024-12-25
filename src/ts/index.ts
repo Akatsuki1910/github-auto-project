@@ -18,7 +18,7 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
           }
           break;        
-          case "Base Conversion":
+        case "Base Conversion":
           // Placeholder for base conversion logic. This would require a more complex UI
           // to specify the base to convert from and to.
           alert("Base conversion feature is coming soon!");
@@ -26,6 +26,15 @@ window.addEventListener("DOMContentLoaded", () => {
         case "log":
           try {
             const result = Math.log10(parseFloat(currentInput));
+            currentInput = result.toString();
+            display.value = currentInput;
+          } catch (error) {
+            display.value = "Error";
+          }
+          break;
+        case "exp":
+          try {
+            const result = Math.exp(parseFloat(currentInput));
             currentInput = result.toString();
             display.value = currentInput;
           } catch (error) {
