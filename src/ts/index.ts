@@ -49,6 +49,20 @@ window.addEventListener("DOMContentLoaded", () => {
       } else if (buttonText === "Ans") {
         currentInput += lastAnswer;
         display.value = currentInput;
+      } else if (buttonText === "!") {
+        try {
+          const num = parseInt(currentInput);
+          if (isNaN(num)) throw new Error("Invalid input for factorial");
+          if (num < 0) throw new Error("Factorial of negative number is not defined");
+          let result = 1;
+          for (let i = 2; i <= num; i++) {
+            result *= i;
+          }
+          display.value = result.toString();
+          currentInput = result.toString();
+        } catch (error) {
+          display.value = "Error: " + error.message;
+        }
       } else {
         currentInput += buttonText;
         display.value = currentInput;
