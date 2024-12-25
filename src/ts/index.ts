@@ -8,7 +8,6 @@ window.addEventListener("DOMContentLoaded", () => {
       const buttonText = button.textContent;
 
       switch (buttonText) {
-        // ... other cases ...
         case "Calculate":
           try {
             currentInput = eval(display.value);
@@ -17,9 +16,14 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
           }
           break;
-          // ... other cases ...
           case "Exit":
             window.close();
+            break;
+        case "DEL":
+            if(display.value.length > 0){
+                display.value = display.value.slice(0,-1);
+                currentInput = display.value;                
+            }
             break;
         default:
           currentInput += buttonText;
