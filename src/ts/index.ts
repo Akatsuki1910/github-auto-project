@@ -52,7 +52,15 @@ window.addEventListener("DOMContentLoaded", () => {
             } catch (error) {
               display.value = "Error";
             }
-            break;          
+            break;    
+            case "cos":
+              try {
+                currentInput = Math.cos(parseFloat(display.value)).toString();
+                display.value = currentInput;
+              } catch (error) {
+                display.value = "Error";
+              }
+              break;              
         default:
           currentInput += buttonText;
           display.value = currentInput;
