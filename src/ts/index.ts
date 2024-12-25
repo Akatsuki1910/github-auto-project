@@ -12,10 +12,15 @@ window.addEventListener("DOMContentLoaded", () => {
           currentInput = "";
           display.value = currentInput;
           break;
+        case "CE":
+          // Clear the current entry (last number or operation)
+          currentInput = currentInput.slice(0, -1); // Remove last character from input
+          display.value = currentInput; // Update the display accordingly 
+          break;
         case "Calculate":
           try {
             currentInput = eval(display.value);
-            display.value = currentInput.toString(); // convert to string to handle potential errors
+            display.value = currentInput.toString(); 
           } catch (error) {
             display.value = "Error";
           }
@@ -38,13 +43,12 @@ window.addEventListener("DOMContentLoaded", () => {
           }
         break;
         case ".":
-          // Prevent multiple decimal points
           if (!currentInput.includes('.')) {
             currentInput += buttonText;
             display.value = currentInput;
           }
           break;
-          case "±": // negate
+          case "±":
             currentInput = display.value.startsWith('-') ? display.value.slice(1) : '-' + display.value;
             display.value = currentInput;
           break;
