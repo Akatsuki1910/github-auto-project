@@ -9,58 +9,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
       switch (buttonText) {
         // ... other cases ...
-        case "exp":
+        case "tan":
           try {
-            const currentValue = parseFloat(display.value);
-            const expValue = Math.exp(currentValue);
-            currentInput = expValue.toString();
-            display.value = currentInput;
-          } catch (error) {
-            display.value = "Error: " + error.message;
-          }
-          break;
-          case "|x|":
-          try {
-            const currentValue = parseFloat(display.value);
-            const absValue = Math.abs(currentValue);
-            currentInput = absValue.toString();
-            display.value = currentInput;
-          } catch (error) {
-            display.value = "Error: " + error.message;
-          }
-          break;        
-        case "floor":
-          try {
-            currentInput = Math.floor(parseFloat(display.value)).toString();
+            currentInput = Math.tan(parseFloat(display.value)).toString();
             display.value = currentInput;
           } catch (error) {
             display.value = "Error";
           }
           break;
-        case "ceil":
-          try {
-            currentInput = Math.ceil(parseFloat(display.value)).toString();
-            display.value = currentInput;
-          } catch (error) {
-            display.value = "Error";
-          }
-          break;
-          case "sin":
-            try {
-              currentInput = Math.sin(parseFloat(display.value)).toString();
-              display.value = currentInput;
-            } catch (error) {
-              display.value = "Error";
-            }
-            break;    
-            case "cos":
-              try {
-                currentInput = Math.cos(parseFloat(display.value)).toString();
-                display.value = currentInput;
-              } catch (error) {
-                display.value = "Error";
-              }
-              break;              
         default:
           currentInput += buttonText;
           display.value = currentInput;
