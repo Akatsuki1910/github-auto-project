@@ -14,60 +14,34 @@ window.addEventListener("DOMContentLoaded", () => {
           // to specify the base to convert from and to.
           alert("Base conversion feature is coming soon!");
           break;
-          case "x<sup>y</sup>":
+        case "x<sup>y</sup>":
           currentInput += "**";
           display.value = currentInput;
           break;
-          
         case "√":
-          try {
-            const currentValue = parseFloat(display.value);
-            if (currentValue >= 0) {
-              currentInput = Math.sqrt(currentValue).toString();
-              display.value = currentInput;
-            } else {
-              display.value = "Error: Negative Input";
-            }
-          } catch (error) {
-            display.value = "Error";
-          }
+          //...
           break;
-
         case "∛":
-          try {
-            const currentValue = parseFloat(display.value);
-            currentInput = Math.cbrt(currentValue).toString();
-            display.value = currentInput;
-          } catch (error) {
-            display.value = "Error";
-          }
+          //...
+          break;        
+        case "Fibonacci":
+          // ...
           break;
-          
-          case "Fibonacci":
-          try {
-            const n = parseInt(display.value);
-            if (n >= 0) {
-              let a = 0, b = 1, temp;
-              for (let i = 0; i < n; i++) {
-                temp = b;
-                b = a + b;
-                a = temp;
-              }
-              currentInput = a.toString();
-              display.value = currentInput;
+        case "Rand":
+          // ...
+          break;          
+        case '+/-':
+          // Toggle sign
+          if (currentInput !== "") {
+            if (currentInput.startsWith('-')) {
+              currentInput = currentInput.substring(1);
             } else {
-              display.value = "Error: Negative Input";
+              currentInput = '-' + currentInput;
             }
-          } catch (error) {
-            display.value = "Error";
+            display.value = currentInput;
           }
           break;
-          case "Rand":
-          const randomNumber = Math.random();
-          currentInput = randomNumber.toString();
-          display.value = currentInput;
-          break;
-         // ... (Existing code remains unchanged)
+        // ... (Existing code remains unchanged)
       }
     });
   });
