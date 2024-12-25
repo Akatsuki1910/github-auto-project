@@ -44,6 +44,10 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = currentInput;
           }
           break;
+          case "±": // negate
+            currentInput = display.value.startsWith('-') ? display.value.slice(1) : '-' + display.value;
+            display.value = currentInput;
+          break;
         default:
           currentInput += buttonText;
           display.value = currentInput;
