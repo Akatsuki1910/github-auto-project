@@ -23,6 +23,15 @@ window.addEventListener("DOMContentLoaded", () => {
           // to specify the base to convert from and to.
           alert("Base conversion feature is coming soon!");
           break;
+        case "log":
+          try {
+            const result = Math.log10(parseFloat(currentInput));
+            currentInput = result.toString();
+            display.value = currentInput;
+          } catch (error) {
+            display.value = "Error";
+          }
+          break;
         // ... (Other cases remain unchanged)
       }
     });
