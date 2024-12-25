@@ -9,8 +9,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
       switch (buttonText) {
         // ... (Existing code remains unchanged)
-
-        case "x<sup>y</sup>":
+        case "Base Conversion":
+          // Placeholder for base conversion logic. This would require a more complex UI
+          // to specify the base to convert from and to.
+          alert("Base conversion feature is coming soon!");
+          break;
+          case "x<sup>y</sup>":
           currentInput += "**";
           display.value = currentInput;
           break;
