@@ -15,7 +15,7 @@ window.addEventListener("DOMContentLoaded", () => {
         case "Calculate":
           try {
             currentInput = eval(display.value);
-            display.value = currentInput;
+            display.value = currentInput.toString(); // convert to string to handle potential errors
           } catch (error) {
             display.value = "Error";
           }
@@ -29,6 +29,14 @@ window.addEventListener("DOMContentLoaded", () => {
                 currentInput = display.value;                
             }
             break;
+        case "=":
+          try {
+            currentInput = eval(display.value);
+            display.value = currentInput.toString();
+          } catch (error) {
+            display.value = "Error";
+          }
+        break;
         default:
           currentInput += buttonText;
           display.value = currentInput;
