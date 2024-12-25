@@ -8,6 +8,10 @@ window.addEventListener("DOMContentLoaded", () => {
       const buttonText = button.textContent;
 
       switch (buttonText) {
+        case "C":
+          currentInput = "";
+          display.value = currentInput;
+          break;
         case "Calculate":
           try {
             currentInput = eval(display.value);
