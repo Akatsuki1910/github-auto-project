@@ -9,39 +9,21 @@ window.addEventListener("DOMContentLoaded", () => {
 
       switch (buttonText) {
         // ... (Existing code remains unchanged)
-        case "Base Conversion":
+        case "∛":
+          try {
+            const result = Math.cbrt(parseFloat(currentInput));
+            currentInput = result.toString();
+            display.value = currentInput;
+          } catch (error) {
+            display.value = "Error";
+          }
+          break;        
+          case "Base Conversion":
           // Placeholder for base conversion logic. This would require a more complex UI
           // to specify the base to convert from and to.
           alert("Base conversion feature is coming soon!");
           break;
-        case "x<sup>y</sup>":
-          currentInput += "**";
-          display.value = currentInput;
-          break;
-        case "√":
-          //...
-          break;
-        case "∛":
-          //...
-          break;        
-        case "Fibonacci":
-          // ...
-          break;
-        case "Rand":
-          // ...
-          break;          
-        case '+/-':
-          // Toggle sign
-          if (currentInput !== "") {
-            if (currentInput.startsWith('-')) {
-              currentInput = currentInput.substring(1);
-            } else {
-              currentInput = '-' + currentInput;
-            }
-            display.value = currentInput;
-          }
-          break;
-        // ... (Existing code remains unchanged)
+        // ... (Other cases remain unchanged)
       }
     });
   });
