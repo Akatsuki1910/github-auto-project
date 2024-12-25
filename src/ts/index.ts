@@ -29,6 +29,14 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error: " + error.message;
           }
           break;        
+        case "floor":
+          try {
+            currentInput = Math.floor(parseFloat(display.value)).toString();
+            display.value = currentInput;
+          } catch (error) {
+            display.value = "Error";
+          }
+          break;
         default:
           currentInput += buttonText;
           display.value = currentInput;
