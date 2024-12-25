@@ -24,6 +24,16 @@ window.addEventListener("DOMContentLoaded", () => {
           }
           break;
 
+        case "∛":
+          try {
+            const currentValue = parseFloat(display.value);
+            currentInput = Math.cbrt(currentValue).toString();
+            display.value = currentInput;
+          } catch (error) {
+            display.value = "Error";
+          }
+          break;
+          
          // ... (Existing code remains unchanged)
       }
     });
