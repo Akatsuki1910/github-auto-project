@@ -13,6 +13,14 @@ window.addEventListener("DOMContentLoaded", () => {
           currentInput += "**";
           display.value = currentInput;
           break;        
+        case "(":
+          currentInput += "(";
+          display.value = currentInput;
+          break;
+        case ")":
+          currentInput += ")";
+          display.value = currentInput;
+          break;
         // ... (Other cases remain unchanged)
       }
     });
