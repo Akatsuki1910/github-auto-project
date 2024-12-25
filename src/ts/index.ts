@@ -54,6 +54,20 @@ window.addEventListener("DOMContentLoaded", () => {
                     display.value = "Error: " + error.message;
                 }
                 break;
+        case "1/x":
+          try {
+            const currentValue = parseFloat(display.value);
+            if (currentValue === 0) {
+              display.value = "Error: Division by zero";
+            } else {
+              const inverse = 1 / currentValue;
+              currentInput = inverse.toString();
+              display.value = currentInput;
+            }
+          } catch (error) {
+            display.value = "Error: " + error.message; // Display specific error message
+          }
+          break;          
         default:
           currentInput += buttonText;
           display.value = currentInput;
