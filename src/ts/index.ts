@@ -39,6 +39,25 @@ window.addEventListener("DOMContentLoaded", () => {
           }
           break;
           
+          case "Fibonacci":
+          try {
+            const n = parseInt(display.value);
+            if (n >= 0) {
+              let a = 0, b = 1, temp;
+              for (let i = 0; i < n; i++) {
+                temp = b;
+                b = a + b;
+                a = temp;
+              }
+              currentInput = a.toString();
+              display.value = currentInput;
+            } else {
+              display.value = "Error: Negative Input";
+            }
+          } catch (error) {
+            display.value = "Error";
+          }
+          break;
          // ... (Existing code remains unchanged)
       }
     });
