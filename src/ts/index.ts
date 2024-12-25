@@ -4,9 +4,17 @@ window.addEventListener("DOMContentLoaded", () => {
   let currentInput = "";
   let history = [];
   let memory = 0;
-  let isDarkMode = false;
-  let isScientificMode = false;
   let lastAnswer = 0; 
+
+  // Theme toggling
+  let isDarkMode = false;
+  const toggleThemeButton = document.getElementById("toggle-theme");
+  const body = document.body;
+
+  toggleThemeButton.addEventListener("click", () => {
+    isDarkMode = !isDarkMode;
+    body.classList.toggle("dark-mode", isDarkMode);
+  });
 
   const copyDisplayButton = document.getElementById("copy-display");
   copyDisplayButton.addEventListener("click", () => {
