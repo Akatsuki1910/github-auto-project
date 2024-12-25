@@ -13,27 +13,26 @@ window.addEventListener("DOMContentLoaded", () => {
           display.value = currentInput;
           break;
         case "CE":
-          // Clear the current entry (last number or operation)
-          currentInput = currentInput.slice(0, -1); // Remove last character from input
-          display.value = currentInput; // Update the display accordingly 
+          currentInput = currentInput.slice(0, -1);
+          display.value = currentInput;
           break;
         case "Calculate":
           try {
             currentInput = eval(display.value);
-            display.value = currentInput.toString(); 
+            display.value = currentInput.toString();
           } catch (error) {
             display.value = "Error";
           }
           break;
-          case "Exit":
-            window.close();
-            break;
+        case "Exit":
+          window.close();
+          break;
         case "DEL":
-            if(display.value.length > 0){
-                display.value = display.value.slice(0,-1);
-                currentInput = display.value;                
-            }
-            break;
+          if (display.value.length > 0) {
+            display.value = display.value.slice(0, -1);
+            currentInput = display.value;
+          }
+          break;
         case "=":
           try {
             currentInput = eval(display.value);
@@ -41,21 +40,30 @@ window.addEventListener("DOMContentLoaded", () => {
           } catch (error) {
             display.value = "Error";
           }
-        break;
+          break;
         case ".":
           if (!currentInput.includes('.')) {
             currentInput += buttonText;
             display.value = currentInput;
           }
           break;
-          case "±":
-            currentInput = display.value.startsWith('-') ? display.value.slice(1) : '-' + display.value;
-            display.value = currentInput;
+        case "±":
+          currentInput = display.value.startsWith('-') ? display.value.slice(1) : '-' + display.value;
+          display.value = currentInput;
           break;
         case "Flip":
           try {
             const currentValue = parseFloat(display.value);
             currentInput = (1 / currentValue).toString();
+            display.value = currentInput;
+          } catch (error) {
+            display.value = "Error";
+          }
+          break;
+          case "x2":
+          try {
+            const currentValue = parseFloat(display.value);
+            currentInput = (currentValue * 2).toString();
             display.value = currentInput;
           } catch (error) {
             display.value = "Error";
