@@ -37,6 +37,13 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
           }
         break;
+        case ".":
+          // Prevent multiple decimal points
+          if (!currentInput.includes('.')) {
+            currentInput += buttonText;
+            display.value = currentInput;
+          }
+          break;
         default:
           currentInput += buttonText;
           display.value = currentInput;
