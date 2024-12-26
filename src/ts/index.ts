@@ -64,7 +64,10 @@ window.addEventListener("DOMContentLoaded", () => {
                     } catch (error) {
                         display.value = "Error";
                     }
-                    break;                                     
+                    break; 
+                case "Copy":
+                    navigator.clipboard.writeText(display.value);
+                    break;                                    
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
