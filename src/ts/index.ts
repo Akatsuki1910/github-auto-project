@@ -20,66 +20,11 @@ window.addEventListener("DOMContentLoaded", () => {
                         display.value = "Error";
                     }
                     break;
-                case "%":
-                    try {
-                        currentInput = (eval(currentInput) / 100).toString();
-                        display.value = currentInput;
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break;     
-                case "+/-":
-                    try {
-                        currentInput = (eval(currentInput) * -1).toString();
-                        display.value = currentInput;
-                    } catch (error) {
-                        display.value = "Error";
-                    }                    
-                    break;  
-                case "π":
-                    currentInput += Math.PI;
+                // ... other cases
+                case "cos":
+                    currentInput += "Math.cos(";
                     display.value = currentInput;
-                    break;    
-                case "x²":
-                    try {
-                        currentInput = (eval(currentInput) * eval(currentInput)).toString();
-                        display.value = currentInput;
-                    } catch (error) {
-                        display.value = "Error";
-                    }                    
-                    break;     
-                case "!":
-                    try {
-                        const num = eval(currentInput);
-                        if (num < 0 || !Number.isInteger(num)) {
-                            display.value = "Error: Invalid input for factorial";
-                        } else {
-                            let result = 1;
-                            for (let i = 2; i <= num; i++) {
-                                result *= i;
-                            }
-                            currentInput = result.toString();
-                            display.value = currentInput;
-                        }
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break; 
-                case "Copy":
-                    navigator.clipboard.writeText(display.value);
-                    break; 
-                case "exp":
-                    currentInput += "Math.exp(";
-                    display.value = currentInput;
-                    break;
-                case "log":
-                    currentInput += "Math.log(";
-                    display.value = currentInput;
-                    break;   
-                case "sin":
-                    currentInput += "Math.sin(";
-                    display.value = currentInput;
-                    break;             
+                    break;                
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
