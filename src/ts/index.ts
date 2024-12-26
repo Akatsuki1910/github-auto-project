@@ -36,6 +36,14 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentInput = "";
                     display.value = "";
                     break;                    
+                case "+/-":
+                    try {
+                      const currentValue = parseFloat(display.value);
+                      display.value = (-currentValue).toString();
+                  } catch (error) {
+                      display.value = "Error";
+                  }
+                  break;
             }
         });
     });
