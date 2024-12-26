@@ -10,53 +10,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
             switch (buttonText) {
                 // ... (Existing code remains unchanged)
-                case "x³":
-                    try {
-                        const result = Math.pow(parseFloat(display.value), 3);
-                        display.value = result.toString();
-                        currentInput = result.toString();
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break;
-                    // ... (Other cases remain unchanged)
-                case "%":
-                  try {
-                    const currentValue = parseFloat(display.value);
-                    const result = currentValue / 100;                    
-                    display.value = result.toString();
-                    currentInput = result.toString();
-                  } catch (error) {
-                    display.value = "Error";
-                  }                  
-                  break;
-                case "x2":
+                case "1/x":
                     try {
                         const currentValue = parseFloat(display.value);
-                        display.value = (currentValue * 2).toString();
-                        currentInput = (currentValue * 2).toString();
+                        display.value = (1 / currentValue).toString();
+                        currentInput = (1/currentValue).toString();
                     } catch (error) {
                         display.value = "Error";
                     }
                     break;                
-                case "+/-":
-                    try {
-                        const currentValue = parseFloat(display.value);
-                        display.value = (-currentValue).toString();
-                        currentInput = (-currentValue).toString();
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                  break;  
-                  case "sign-change":
-                    try {
-                      const currentValue = parseFloat(display.value);
-                      display.value = (-currentValue).toString();
-                      currentInput = (-currentValue).toString();
-                    } catch (error) {
-                      display.value = "Error";
-                    }
-                    break;                              
             }
         });
     });
