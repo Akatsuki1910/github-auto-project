@@ -36,6 +36,14 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
           }
           break;
+        case "+/-":
+          try {
+            currentInput = (eval(currentInput) * -1).toString();
+            display.value = currentInput;
+          } catch (error) {
+            display.value = "Error";
+          }
+        break;        
         // ... (Other cases remain unchanged)
       }
     });
