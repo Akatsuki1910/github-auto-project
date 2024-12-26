@@ -12,12 +12,16 @@ window.addEventListener("DOMContentLoaded", () => {
                 case "AC":
                     currentInput = "";
                     display.value = "";
-                    memory = 0;
+                    memory = 0;                    
                     break;
                 case "CE": // Clear Entry
                     currentInput = "";
                     display.value = "";
-                    break;                    
+                    break;     
+                case "clearAll":
+                    currentInput = "";
+                    display.value = "0";
+                    break;                                   
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
