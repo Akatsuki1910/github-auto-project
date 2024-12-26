@@ -10,16 +10,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
             switch (buttonText) {
                 // ... (Existing code remains unchanged)
-                case "2<sup>x</sup>":
+                case "x³":
                     try {
-                        const result = Math.pow(2, parseFloat(display.value));
+                        const result = Math.pow(parseFloat(display.value), 3);
                         display.value = result.toString();
                         currentInput = result.toString();
                     } catch (error) {
                         display.value = "Error";
                     }
                     break;
-                // ... (Other cases remain unchanged)    
+                    // ... (Other cases remain unchanged)
             }
         });
     });
