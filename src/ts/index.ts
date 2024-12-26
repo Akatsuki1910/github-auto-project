@@ -33,6 +33,15 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentInput += "**";
                     display.value = currentInput;
                     break;
+                case "sign":
+                    try{
+                        const num = parseFloat(currentInput);
+                        currentInput = Math.sign(num).toString();
+                        display.value = currentInput;
+                    } catch (error) {
+                        display.value = "Error";
+                    }
+                    break;                
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
