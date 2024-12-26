@@ -9,33 +9,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
       switch (buttonText) {
         // ... (Existing code remains unchanged)
-        case "x<sup>y</sup>":
-          currentInput += "**";
-          display.value = currentInput;
-          break;        
-        case "(":
-          currentInput += "(";
-          display.value = currentInput;
-          break;
-        case ")":
-          currentInput += ")";
-          display.value = currentInput;
-          break;
-        case "sin":
-          currentInput += "Math.sin(";
-          display.value = currentInput;
-          break;
-        case "cos":
-          currentInput += "Math.cos(";
-          display.value = currentInput;
-          break;
-        case "tan":
-          currentInput += "Math.tan(";
-          display.value = currentInput;
-          break;
-        case "|x|":
+        case "floor":
           try {
-            const result = Math.abs(eval(currentInput));
+            const result = Math.floor(eval(currentInput));
             currentInput = result.toString();
             display.value = currentInput;
           } catch (error) {
