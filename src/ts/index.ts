@@ -39,7 +39,15 @@ window.addEventListener("DOMContentLoaded", () => {
                 case "π":
                     currentInput += Math.PI;
                     display.value = currentInput;
-                    break;                 
+                    break;    
+                case "x²":
+                    try {
+                        currentInput = (eval(currentInput) * eval(currentInput)).toString();
+                        display.value = currentInput;
+                    } catch (error) {
+                        display.value = "Error";
+                    }                    
+                    break;                             
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
