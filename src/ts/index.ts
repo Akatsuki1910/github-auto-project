@@ -18,7 +18,16 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
           }
           break;
-          // ... (Other cases remain unchanged)
+          case "ceil":
+            try {
+                const result = Math.ceil(eval(currentInput));
+                currentInput = result.toString();
+                display.value = currentInput;
+              } catch (error) {
+                display.value = "Error";
+              }
+              break;
+        // ... (Other cases remain unchanged)
       }
     });
   });
