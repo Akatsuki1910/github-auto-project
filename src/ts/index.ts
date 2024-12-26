@@ -41,6 +41,16 @@ window.addEventListener("DOMContentLoaded", () => {
                         display.value = "Error";
                     }
                     break;
+                case "10<sup>x</sup>":
+                case "exp10": // Added this case for the new button
+                    try {
+                        const result = Math.pow(10, parseFloat(display.value));
+                        display.value = result.toString();
+                        currentInput = result.toString();
+                    } catch (error) {
+                        display.value = "Error";
+                    }
+                    break;                                
                 // ... (Other cases remain unchanged)    
             }
         });
