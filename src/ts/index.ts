@@ -29,6 +29,10 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentInput += "Math.tan(";
                     display.value = currentInput;
                     break;
+                case "^":
+                    currentInput += "**";
+                    display.value = currentInput;
+                    break;
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
