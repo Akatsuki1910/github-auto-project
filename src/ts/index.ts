@@ -33,7 +33,16 @@ window.addEventListener("DOMContentLoaded", () => {
           currentInput += "Math.tan(";
           display.value = currentInput;
           break;
-        // ... (Other cases remain unchanged)
+        case "|x|":
+          try {
+            const result = Math.abs(eval(currentInput));
+            currentInput = result.toString();
+            display.value = currentInput;
+          } catch (error) {
+            display.value = "Error";
+          }
+          break;
+          // ... (Other cases remain unchanged)
       }
     });
   });
