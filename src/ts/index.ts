@@ -75,7 +75,11 @@ window.addEventListener("DOMContentLoaded", () => {
                 case "log":
                     currentInput += "Math.log(";
                     display.value = currentInput;
-                    break;                
+                    break;   
+                case "sin":
+                    currentInput += "Math.sin(";
+                    display.value = currentInput;
+                    break;             
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
