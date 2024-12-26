@@ -30,16 +30,6 @@ window.addEventListener("DOMContentLoaded", () => {
                     display.value = "Error";
                   }                  
                   break;
-                case "+/-":
-                    try {
-                        const currentValue = parseFloat(display.value);
-                        display.value = (-currentValue).toString();
-                        currentInput = (-currentValue).toString();
-                    }
-                    catch (error) {
-                        display.value = "Error";
-                    }
-                    break;     
                 case "x2":
                     try {
                         const currentValue = parseFloat(display.value);
@@ -48,7 +38,25 @@ window.addEventListener("DOMContentLoaded", () => {
                     } catch (error) {
                         display.value = "Error";
                     }
-                    break;               
+                    break;                
+                case "+/-":
+                    try {
+                        const currentValue = parseFloat(display.value);
+                        display.value = (-currentValue).toString();
+                        currentInput = (-currentValue).toString();
+                    } catch (error) {
+                        display.value = "Error";
+                    }
+                  break;  
+                  case "sign-change":
+                    try {
+                      const currentValue = parseFloat(display.value);
+                      display.value = (-currentValue).toString();
+                      currentInput = (-currentValue).toString();
+                    } catch (error) {
+                      display.value = "Error";
+                    }
+                    break;                              
             }
         });
     });
