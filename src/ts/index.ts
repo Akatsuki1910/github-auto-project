@@ -52,6 +52,10 @@ window.addEventListener("DOMContentLoaded", () => {
                         display.value = "Error";
                       }
                       break;
+                      case "exp(-1)":
+                        display.value = Math.exp(-1).toString();
+                        currentInput = Math.exp(-1).toString();
+                        break;
             }
         });
     });
