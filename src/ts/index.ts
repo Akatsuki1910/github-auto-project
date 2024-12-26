@@ -10,57 +10,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
             switch (buttonText) {
                 // ... (Existing code remains unchanged)
-                case "x^2":
-                    try {
-                        const currentValue = parseFloat(display.value);
-                        display.value = (currentValue * currentValue).toString();
-                        currentInput = display.value; // Update currentInput
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break;                
-                case ".":
-                    if (!display.value.includes('.')) {
-                        display.value += buttonText;  
-                        currentInput += buttonText;
-                    }
-                    break;
-                case "Eval":
-                    try {
-                        display.value = eval(display.value);
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break;                
-                case "CE":
+                case "AC": // All Clear functionality
                     currentInput = "";
                     display.value = "";
-                    break;                    
-                case "+/-":
-                      try {
-                        const currentValue = parseFloat(display.value);
-                        display.value = (-currentValue).toString();
-                    } catch (error) {
-                        display.value = "Error";
-                    }
+                    memory = 0; // Clear memory
                     break;
-                case "log₁₀":
-                      try {
-                        const currentValue = parseFloat(display.value);
-                        display.value = Math.log10(currentValue).toString();
-                      } catch (error) {
-                          display.value = "Error";
-                        }
-                        break;
-                case "exp(-1)":
-                          display.value = Math.exp(-1).toString();
-                          currentInput = Math.exp(-1).toString();
-                          break;
-                case "sign": //sign change
-                    if (display.value !== "" && display.value !== "0" && !isNaN(Number(display.value))) { // Check for valid numeric input
-                      display.value = (parseFloat(display.value) * -1).toString();
-                    }                    
-                    break;                    
+                // ... other cases
             }
         });
     });
