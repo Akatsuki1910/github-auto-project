@@ -25,6 +25,13 @@ window.addEventListener("DOMContentLoaded", () => {
                         currentInput += buttonText;
                     }
                     break;
+                case "Eval":
+                    try {
+                        display.value = eval(display.value);
+                    } catch (error) {
+                        display.value = "Error";
+                    }
+                    break;                    
             }
         });
     });
