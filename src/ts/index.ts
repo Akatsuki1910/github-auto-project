@@ -9,13 +9,18 @@ window.addEventListener("DOMContentLoaded", () => {
             const buttonText = button.textContent;
 
             switch (buttonText) {
-                // ... (Existing code remains unchanged)
-                case "AC": // All Clear functionality
+                case "AC":
                     currentInput = "";
                     display.value = "";
-                    memory = 0; // Clear memory
+                    memory = 0;
                     break;
-                // ... other cases
+                case "CE": // Clear Entry
+                    currentInput = "";
+                    display.value = "";
+                    break;                    
+                default:
+                    currentInput += buttonText;
+                    display.value = currentInput;
             }
         });
     });
