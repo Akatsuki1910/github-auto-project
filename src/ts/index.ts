@@ -31,6 +31,10 @@ window.addEventListener("DOMContentLoaded", () => {
                     } catch (error) {
                         display.value = "Error";
                     }
+                    break;                
+                case "CE":
+                    currentInput = "";
+                    display.value = "";
                     break;                    
             }
         });
