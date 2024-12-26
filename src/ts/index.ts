@@ -20,6 +20,16 @@ window.addEventListener("DOMContentLoaded", () => {
                     }
                     break;
                     // ... (Other cases remain unchanged)
+                case "%":
+                  try {
+                    const currentValue = parseFloat(display.value);
+                    const result = currentValue / 100;                    
+                    display.value = result.toString();
+                    currentInput = result.toString();
+                  } catch (error) {
+                    display.value = "Error";
+                  }                  
+                  break;
             }
         });
     });
