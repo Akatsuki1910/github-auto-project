@@ -47,7 +47,24 @@ window.addEventListener("DOMContentLoaded", () => {
                     } catch (error) {
                         display.value = "Error";
                     }                    
-                    break;                             
+                    break;     
+                case "!":
+                    try {
+                        const num = eval(currentInput);
+                        if (num < 0 || !Number.isInteger(num)) {
+                            display.value = "Error: Invalid input for factorial";
+                        } else {
+                            let result = 1;
+                            for (let i = 2; i <= num; i++) {
+                                result *= i;
+                            }
+                            currentInput = result.toString();
+                            display.value = currentInput;
+                        }
+                    } catch (error) {
+                        display.value = "Error";
+                    }
+                    break;                                     
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
