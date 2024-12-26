@@ -19,6 +19,12 @@ window.addEventListener("DOMContentLoaded", () => {
                         display.value = "Error";
                     }
                     break;                
+                    case ".":
+                    if (!display.value.includes('.')) {
+                        display.value += buttonText;  
+                        currentInput += buttonText;
+                    }
+                    break;
             }
         });
     });
