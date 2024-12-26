@@ -25,7 +25,13 @@ window.addEventListener("DOMContentLoaded", () => {
                     break;
                 case "M-":
                     memory -= parseFloat(display.value);
-                    break;    
+                    break;
+                case "±":
+                    if (display.value) {
+                        display.value = (-parseFloat(display.value)).toString();
+                        currentInput = display.value;
+                    }
+                    break;                
                 // ... (Other cases remain unchanged)    
             }
         });
