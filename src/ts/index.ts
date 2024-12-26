@@ -44,6 +44,14 @@ window.addEventListener("DOMContentLoaded", () => {
                       display.value = "Error";
                   }
                   break;
+                  case "log₁₀":
+                    try {
+                      const currentValue = parseFloat(display.value);
+                      display.value = Math.log10(currentValue).toString();
+                    } catch (error) {
+                        display.value = "Error";
+                      }
+                      break;
             }
         });
     });
