@@ -10,16 +10,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
             switch (buttonText) {
                 // ... (Existing code remains unchanged)
-                case "1/x":
+                case "x^2":
                     try {
                         const currentValue = parseFloat(display.value);
-                        display.value = (1 / currentValue).toString();
-                        currentInput = (1/currentValue).toString();
+                        display.value = (currentValue * currentValue).toString();
+                        currentInput = display.value; // Update currentInput
                     } catch (error) {
                         display.value = "Error";
                     }
                     break;                
-                    case ".":
+                case ".":
                     if (!display.value.includes('.')) {
                         display.value += buttonText;  
                         currentInput += buttonText;
