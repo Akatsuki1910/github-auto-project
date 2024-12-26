@@ -39,7 +39,16 @@ window.addEventListener("DOMContentLoaded", () => {
                     catch (error) {
                         display.value = "Error";
                     }
-                    break;                    
+                    break;     
+                case "x2":
+                    try {
+                        const currentValue = parseFloat(display.value);
+                        display.value = (currentValue * 2).toString();
+                        currentInput = (currentValue * 2).toString();
+                    } catch (error) {
+                        display.value = "Error";
+                    }
+                    break;               
             }
         });
     });
