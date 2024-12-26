@@ -20,6 +20,9 @@ window.addEventListener("DOMContentLoaded", () => {
                 case "MC":
                     memory = 0;
                     break;
+                case "M+":
+                    memory += parseFloat(display.value);
+                    break;    
                 // ... (Other cases remain unchanged)    
             }
         });
