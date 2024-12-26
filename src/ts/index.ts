@@ -37,25 +37,30 @@ window.addEventListener("DOMContentLoaded", () => {
                     display.value = "";
                     break;                    
                 case "+/-":
-                    try {
-                      const currentValue = parseFloat(display.value);
-                      display.value = (-currentValue).toString();
-                  } catch (error) {
-                      display.value = "Error";
-                  }
-                  break;
-                  case "log₁₀":
-                    try {
-                      const currentValue = parseFloat(display.value);
-                      display.value = Math.log10(currentValue).toString();
+                      try {
+                        const currentValue = parseFloat(display.value);
+                        display.value = (-currentValue).toString();
                     } catch (error) {
                         display.value = "Error";
-                      }
-                      break;
-                      case "exp(-1)":
-                        display.value = Math.exp(-1).toString();
-                        currentInput = Math.exp(-1).toString();
+                    }
+                    break;
+                case "log₁₀":
+                      try {
+                        const currentValue = parseFloat(display.value);
+                        display.value = Math.log10(currentValue).toString();
+                      } catch (error) {
+                          display.value = "Error";
+                        }
                         break;
+                case "exp(-1)":
+                          display.value = Math.exp(-1).toString();
+                          currentInput = Math.exp(-1).toString();
+                          break;
+                case "sign": //sign change
+                    if (display.value !== "" && display.value !== "0" && !isNaN(Number(display.value))) { // Check for valid numeric input
+                      display.value = (parseFloat(display.value) * -1).toString();
+                    }                    
+                    break;                    
             }
         });
     });
