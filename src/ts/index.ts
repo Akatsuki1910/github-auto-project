@@ -32,6 +32,15 @@ window.addEventListener("DOMContentLoaded", () => {
                         currentInput = display.value;
                     }
                     break;                
+                case "ln":
+                    try {
+                        const result = Math.log(parseFloat(display.value));
+                        display.value = result.toString();
+                        currentInput = result.toString();
+                    } catch (error) {
+                        display.value = "Error";
+                    }
+                    break;
                 // ... (Other cases remain unchanged)    
             }
         });
