@@ -65,6 +65,9 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentInput = currentInput.slice(0, -1);
                     display.value = currentInput;
                     break;                
+                case "Copy":
+                    navigator.clipboard.writeText(display.value);
+                    break;
                 case "+/-":
                     currentInput = (-parseFloat(currentInput)).toString();
                     display.value = currentInput;
