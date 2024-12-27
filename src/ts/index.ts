@@ -28,7 +28,16 @@ window.addEventListener("DOMContentLoaded", () => {
                     } catch (error) {
                         display.value = "Error";
                     }
-                    break;                
+                    break;  
+                case "1/x":
+                    try {
+                        const result = 1 / eval(currentInput);
+                        currentInput = result.toString();
+                        display.value = currentInput;
+                    } catch (error) {
+                        display.value = "Error";
+                    }
+                    break;                              
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
