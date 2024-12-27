@@ -22,9 +22,9 @@ window.addEventListener("DOMContentLoaded", () => {
                     }
                     break;
                 case "C":
-                    currentInput = currentInput.slice(0,-1);
+                    currentInput = currentInput.slice(0, -1);
                     display.value = currentInput;
-                    break;                    
+                    break;
                 case "e":
                     currentInput += Math.E;
                     display.value = currentInput;
@@ -34,10 +34,16 @@ window.addEventListener("DOMContentLoaded", () => {
                     break;
                 case "MR": // Memory Recall
                     currentInput += memory;
-                    display.value = currentInput;                    
+                    display.value = currentInput;
                     break;
                 case "MC": // Memory Clear
                     memory = 0;
+                    break;
+                case ".":
+                    if (!currentInput.includes('.')) {
+                        currentInput += ".";
+                        display.value = currentInput;                        
+                    }
                     break;                    
                 default:
                     currentInput += buttonText;
