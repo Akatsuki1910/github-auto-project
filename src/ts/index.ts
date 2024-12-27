@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
                         historyDiv.style.display = currentDisplay === "none" ? "block" : "none";
                         historyDiv.innerHTML = history.map(item => `<p>${item}</p>`).join('');
                     }
-                    break;
+                    break;                
                 case "M+":
                     try {
                         memory += parseFloat(display.value);
@@ -65,6 +65,20 @@ window.addEventListener("DOMContentLoaded", () => {
                         display.value = "Error";
                     }
                     break;
+                case "!":
+                    try {
+                        const num = parseInt(display.value);
+                        if (isNaN(num)) {
+                          throw new Error("Invalid input for factorial");
+                        }
+                        const result = factorial(num);
+                        display.value = result.toString();
+                        currentInput = result.toString();
+                        updateHistory(`${num}! = ${result}`);
+                    } catch (error) {
+                        display.value = "Error";
+                    }
+                    break;
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
@@ -74,5 +88,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
     function updateHistory(newEntry: string) {
         history.push(newEntry);
+    }
+
+    function factorial(n: number): number {
+        if (n === 0) {
+            return 1;
+        } else if (n < 0) {
+          throw new Error("Factorial is not defined for negative numbers");
+        }
+        return n * factorial(n - 1);
     }
 });
