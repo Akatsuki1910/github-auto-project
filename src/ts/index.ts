@@ -11,6 +11,11 @@ window.addEventListener("DOMContentLoaded", () => {
             const buttonText = button.textContent;
 
             switch (buttonText) {
+                // ... (other cases)
+                case "x<sup>y</sup>":
+                    currentInput += "**";
+                    display.value = currentInput;
+                    break;
                 case "=":
                     try {
                         const result = eval(currentInput);
@@ -21,68 +26,9 @@ window.addEventListener("DOMContentLoaded", () => {
                         display.value = "Error";
                     }
                     break;
-                case "C":
-                    currentInput = "";
-                    display.value = "";
-                    break;
-                case "AC":
-                    currentInput = "";
-                    display.value = "";
-                    history.length = 0; // Clear history
-                    if (historyDiv) {
-                        historyDiv.innerHTML = "";
-                    }
-                    break;
-                case "⌫":
-                    currentInput = currentInput.slice(0, -1);
-                    display.value = currentInput;
-                    break;
-                case "toggleHistory":
-                    if (historyDiv) {
-                        const currentDisplay = historyDiv.style.display;
-                        historyDiv.style.display = currentDisplay === "none" ? "block" : "none";
-                        historyDiv.innerHTML = history.map(item => `<p>${item}</p>`).join('');
-                    }
-                    break;                
-                case "M+":
-                    try {
-                        memory += parseFloat(display.value);
-                    } catch (error) {
-                        // Handle cases where display.value isn't a valid number
-                    }
-                    break;                
-                case "MR":
-                    display.value = memory.toString();
-                    currentInput = memory.toString();
-                    break;
-                // ... (other cases)
-                case "exp":
-                    try {
-                        const result = Math.exp(parseFloat(display.value));
-                        display.value = result.toString();
-                        currentInput = result.toString();
-                        updateHistory(`exp(${currentInput})=${result}`);
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break;
-                default:
-                    currentInput += buttonText;
-                    display.value = currentInput;
+                    // ...other cases
             }
         });
     });
-
-    function updateHistory(newEntry: string) {
-        history.push(newEntry);
-    }
-
-    function factorial(n: number): number {
-        if (n === 0) {
-            return 1;
-        } else if (n < 0) {
-          throw new Error("Factorial is not defined for negative numbers");
-        }
-        return n * factorial(n - 1);
-    }
+    // ... other functions
 });
