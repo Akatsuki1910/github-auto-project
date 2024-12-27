@@ -24,7 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 case "C":
                     currentInput = currentInput.slice(0, -1);
                     display.value = currentInput;
-                    break;
+                    break;                
                 case "e":
                     currentInput += Math.E;
                     display.value = currentInput;
@@ -61,6 +61,10 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentInput = Math.pow(parseFloat(currentInput),3).toString();
                     display.value = currentInput;
                     break;
+                case "Int":
+                    currentInput = Math.floor(parseFloat(currentInput)).toString();
+                    display.value = currentInput;
+                    break;                
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
