@@ -51,6 +51,10 @@ window.addEventListener("DOMContentLoaded", () => {
                         // Handle cases where display.value isn't a valid number
                     }
                     break;                
+                case "MR":
+                    display.value = memory.toString();
+                    currentInput = memory.toString();
+                    break;
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
