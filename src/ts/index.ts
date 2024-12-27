@@ -79,6 +79,16 @@ window.addEventListener("DOMContentLoaded", () => {
                         display.value = "Error";
                     }
                     break;
+                case "round":
+                    try {
+                        const result = Math.round(parseFloat(display.value));
+                        display.value = result.toString();
+                        currentInput = result.toString();
+                        updateHistory(`round(${currentInput})=${result}`);
+                    } catch (error) {
+                        display.value = "Error";
+                    }
+                break;
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
