@@ -53,7 +53,13 @@ window.addEventListener("DOMContentLoaded", () => {
                 case "⌫": // Backspace functionality
                     currentInput = currentInput.slice(0, -1);
                     display.value = currentInput;
-                    break;                                
+                    break;     
+                case ".":
+                    if (!currentInput.includes('.')) {
+                        currentInput += ".";
+                        display.value = currentInput;
+                    }
+                    break;                                                          
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
