@@ -49,6 +49,10 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentInput = (parseFloat(currentInput) * 2).toString();
                     display.value = currentInput;
                     break;                
+                case "+/-":
+                    currentInput = (parseFloat(currentInput) * -1).toString();
+                    display.value = currentInput;
+                    break;
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
