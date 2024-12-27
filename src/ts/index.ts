@@ -2,6 +2,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const display = document.getElementById("display") as HTMLInputElement;
     const buttons = document.querySelectorAll("button");
     let currentInput = "";
+    let memory = 0;
 
     buttons.forEach(button => {
         button.addEventListener("click", () => {
@@ -10,7 +11,7 @@ window.addEventListener("DOMContentLoaded", () => {
             switch (buttonText) {
                 case "AC":
                     currentInput = "";
-                    display.value = "";                    
+                    display.value = "";
                     break;
                 case "=":
                     try {
@@ -20,11 +21,20 @@ window.addEventListener("DOMContentLoaded", () => {
                         display.value = "Error";
                     }
                     break;
-                // ... other cases
                 case "e":
                     currentInput += Math.E;
                     display.value = currentInput;
-                    break;                
+                    break;
+                case "MS": // Memory Store
+                    memory = parseFloat(display.value);
+                    break;
+                case "MR": // Memory Recall
+                    currentInput += memory;
+                    display.value = currentInput;                    
+                    break;
+                case "MC": // Memory Clear
+                    memory = 0;
+                    break;                    
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
