@@ -86,7 +86,11 @@ window.addEventListener("DOMContentLoaded", () => {
                 case "Rand":
                     currentInput += Math.random();
                     display.value = currentInput;
-                    break;                                                                                                 
+                    break;
+                case "+/-":
+                    currentInput = (-parseFloat(currentInput)).toString();
+                    display.value = currentInput;                    
+                    break;                                                                                            
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
