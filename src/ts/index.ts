@@ -59,11 +59,37 @@ window.addEventListener("DOMContentLoaded", () => {
                         currentInput += ".";
                         display.value = currentInput;
                     }
-                    break;                                                          
+                    break;
+                case "!" : //factorial
+                  try {
+                    const num = parseFloat(currentInput);                  
+                    if (isNaN(num)){
+                      display.value="Error: Not a Number";
+                      currentInput = "";
+                      break;
+                    }
+                    const result = factorial(num);
+                    currentInput = result.toString();
+                    display.value = currentInput;
+                  } catch (error) {
+                    display.value = "Error";
+                  }
+                    break;                                                      
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
             }
         });
     });
+
+    function factorial(n: number): number {
+      if (n < 0) {
+        throw new Error("Factorial is not defined for negative numbers.");
+      }
+      if (n === 0) {
+        return 1;
+      } else {
+        return n * factorial(n - 1);
+      }
+    }
 });
