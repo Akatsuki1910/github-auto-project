@@ -21,38 +21,9 @@ window.addEventListener("DOMContentLoaded", () => {
                     }
                     break;
                 // ... other cases
-                case "cos":
-                    currentInput += "Math.cos(";
-                    display.value = currentInput;
-                    break;                
-                case "tan":
-                    currentInput += "Math.tan(";
-                    display.value = currentInput;
-                    break;
-                case "^":
-                    currentInput += "**";
-                    display.value = currentInput;
-                    break;
-                case "sign":
-                    try{
-                        const num = parseFloat(currentInput);
-                        currentInput = Math.sign(num).toString();
-                        display.value = currentInput;
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break;                
-                case "round":
+                case "abs":
                     try {
-                        currentInput = Math.round(eval(currentInput)).toString();
-                        display.value = currentInput;
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break;
-                case "floor":
-                    try {
-                        currentInput = Math.floor(eval(currentInput)).toString();
+                        currentInput = Math.abs(eval(currentInput)).toString();
                         display.value = currentInput;
                     } catch (error) {
                         display.value = "Error";
