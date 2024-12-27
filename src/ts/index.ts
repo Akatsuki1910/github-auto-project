@@ -78,7 +78,11 @@ window.addEventListener("DOMContentLoaded", () => {
                  case "10<sup>x</sup>":
                     currentInput += `* 10 ** `; // Allows inputting exponent
                     display.value = currentInput;            
-                    break;                                           
+                    break;    
+                case "log<sub>10</sub>":
+                    currentInput += "Math.log10(";
+                    display.value = currentInput;
+                    break;                                                           
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
