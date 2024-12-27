@@ -61,10 +61,14 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentInput = Math.floor(parseFloat(currentInput)).toString();
                     display.value = currentInput;
                     break;      
-                case "←": // Backspace functionality
+                case "⌫": // Backspace functionality
                     currentInput = currentInput.slice(0, -1);
                     display.value = currentInput;
-                    break;          
+                    break;                
+                case "+/-":
+                    currentInput = (-parseFloat(currentInput)).toString();
+                    display.value = currentInput;
+                    break;
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
