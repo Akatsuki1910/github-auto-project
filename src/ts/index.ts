@@ -21,47 +21,10 @@ window.addEventListener("DOMContentLoaded", () => {
                     }
                     break;
                 // ... other cases
-                case "abs":
-                    try {
-                        currentInput = Math.abs(eval(currentInput)).toString();
-                        display.value = currentInput;
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break;  
-                case "1/x":
-                    try {
-                        const result = 1 / eval(currentInput);
-                        currentInput = result.toString();
-                        display.value = currentInput;
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break; 
-                case "%":
-                    try {
-                        currentInput = (eval(currentInput) / 100).toString();
-                        display.value = currentInput;
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break;
-                case "ln":
-                    try {
-                        currentInput = Math.log(eval(currentInput)).toString();
-                        display.value = currentInput;
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break;     
-                case "ceil":
-                    try {
-                        currentInput = Math.ceil(eval(currentInput)).toString();
-                        display.value = currentInput;
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break;                                                              
+                case "e":
+                    currentInput += Math.E;
+                    display.value = currentInput;
+                    break;                
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
