@@ -55,70 +55,17 @@ window.addEventListener("DOMContentLoaded", () => {
                     display.value = memory.toString();
                     currentInput = memory.toString();
                     break;
-                case "x²":
+                // ... (other cases)
+                case "exp":
                     try {
-                        const result = Math.pow(parseFloat(display.value), 2);
+                        const result = Math.exp(parseFloat(display.value));
                         display.value = result.toString();
                         currentInput = result.toString();
-                        updateHistory(`${currentInput}²=${result}`);
+                        updateHistory(`exp(${currentInput})=${result}`);
                     } catch (error) {
                         display.value = "Error";
                     }
                     break;
-                case "!":
-                    try {
-                        const num = parseInt(display.value);
-                        if (isNaN(num)) {
-                          throw new Error("Invalid input for factorial");
-                        }
-                        const result = factorial(num);
-                        display.value = result.toString();
-                        currentInput = result.toString();
-                        updateHistory(`${num}! = ${result}`);
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break;
-                case "round":
-                    try {
-                        const result = Math.round(parseFloat(display.value));
-                        display.value = result.toString();
-                        currentInput = result.toString();
-                        updateHistory(`round(${currentInput})=${result}`);
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                break;
-                case "sin":
-                    try {
-                        const result = Math.sin(parseFloat(display.value));
-                        display.value = result.toString();
-                        currentInput = result.toString();
-                        updateHistory(`sin(${currentInput})=${result}`);
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break;
-                case "cos":
-                    try {
-                        const result = Math.cos(parseFloat(display.value));
-                        display.value = result.toString();
-                        currentInput = result.toString();
-                        updateHistory(`cos(${currentInput})=${result}`);
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break;
-                case "log":
-                    try {
-                        const result = Math.log10(parseFloat(display.value));
-                        display.value = result.toString();
-                        currentInput = result.toString();
-                        updateHistory(`log(${currentInput})=${result}`);
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break;                
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
