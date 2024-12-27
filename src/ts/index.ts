@@ -82,7 +82,11 @@ window.addEventListener("DOMContentLoaded", () => {
                 case "log<sub>10</sub>":
                     currentInput += "Math.log10(";
                     display.value = currentInput;
-                    break;                                                           
+                    break;
+                case "Rand":
+                    currentInput += Math.random();
+                    display.value = currentInput;
+                    break;                                                                                                 
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
