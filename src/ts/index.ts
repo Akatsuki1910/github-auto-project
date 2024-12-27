@@ -5,6 +5,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const historyDiv = document.getElementById("history");
     const history: string[] = [];
     let memory = 0;
+    let parenthesisOpen = false;
 
     buttons.forEach(button => {
         button.addEventListener("click", () => {
@@ -26,9 +27,21 @@ window.addEventListener("DOMContentLoaded", () => {
                         display.value = "Error";
                     }
                     break;
+                case "( )":
+                    currentInput += parenthesisOpen ? ")" : "(";
+                    parenthesisOpen = !parenthesisOpen;
+                    display.value = currentInput;
+                    break;
                     // ...other cases
             }
         });
     });
+
+    function updateHistory(newEntry: string): void {
+        history.push(newEntry);
+        if (historyDiv) {
+          historyDiv.innerHTML = history.map(item => `<div>${item}</div>`).join('');
+        }
+    }
     // ... other functions
 });
