@@ -53,7 +53,15 @@ window.addEventListener("DOMContentLoaded", () => {
                     } catch (error) {
                         display.value = "Error";
                     }
-                    break;                                                
+                    break;     
+                case "ceil":
+                    try {
+                        currentInput = Math.ceil(eval(currentInput)).toString();
+                        display.value = currentInput;
+                    } catch (error) {
+                        display.value = "Error";
+                    }
+                    break;                                                              
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
