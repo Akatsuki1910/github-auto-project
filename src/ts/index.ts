@@ -36,6 +36,14 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentInput += Math.E;
                     display.value = currentInput;
                     break;                    
+                case "|x|":
+                    try {
+                        currentInput = Math.abs(eval(currentInput)).toString();
+                        display.value = currentInput;
+                    } catch (error) {
+                        display.value = "Error";
+                    }
+                    break;
                     // ...other cases
             }
         });
