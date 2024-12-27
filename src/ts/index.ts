@@ -21,6 +21,10 @@ window.addEventListener("DOMContentLoaded", () => {
                         display.value = "Error";
                     }
                     break;
+                case "C":
+                    currentInput = currentInput.slice(0,-1);
+                    display.value = currentInput;
+                    break;                    
                 case "e":
                     currentInput += Math.E;
                     display.value = currentInput;
