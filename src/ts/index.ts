@@ -99,6 +99,16 @@ window.addEventListener("DOMContentLoaded", () => {
                         display.value = "Error";
                     }
                     break;
+                case "cos":
+                    try {
+                        const result = Math.cos(parseFloat(display.value));
+                        display.value = result.toString();
+                        currentInput = result.toString();
+                        updateHistory(`cos(${currentInput})=${result}`);
+                    } catch (error) {
+                        display.value = "Error";
+                    }
+                    break;
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
