@@ -89,6 +89,16 @@ window.addEventListener("DOMContentLoaded", () => {
                         display.value = "Error";
                     }
                 break;
+                case "sin":
+                    try {
+                        const result = Math.sin(parseFloat(display.value));
+                        display.value = result.toString();
+                        currentInput = result.toString();
+                        updateHistory(`sin(${currentInput})=${result}`);
+                    } catch (error) {
+                        display.value = "Error";
+                    }
+                    break;
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
