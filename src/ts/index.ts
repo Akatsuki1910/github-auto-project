@@ -39,39 +39,21 @@ window.addEventListener("DOMContentLoaded", () => {
                 case "MC": // Memory Clear
                     memory = 0;
                     break;
-                case ".":
-                    if (!currentInput.includes('.')) {
-                        currentInput += ".";
-                        display.value = currentInput;                        
-                    }
-                    break;    
-                case "x2":
-                    currentInput = (parseFloat(currentInput) * 2).toString();
-                    display.value = currentInput;
-                    break;                
-                case "Rand":
-                    currentInput += Math.random();
-                    display.value = currentInput;
-                    break;
-                case "x³":
-                    currentInput = Math.pow(parseFloat(currentInput),3).toString();
-                    display.value = currentInput;
-                    break;
-                case "Int":
-                    currentInput = Math.floor(parseFloat(currentInput)).toString();
-                    display.value = currentInput;
-                    break;      
-                case "⌫": // Backspace functionality
-                    currentInput = currentInput.slice(0, -1);
-                    display.value = currentInput;
-                    break;                
                 case "Copy":
                     navigator.clipboard.writeText(display.value);
                     break;
-                case "+/-":
-                    currentInput = (-parseFloat(currentInput)).toString();
-                    display.value = currentInput;
+                case "π":
+                    currentInput += Math.PI;
+                    display.value = currentInput;                    
                     break;
+                case "√":
+                    currentInput = Math.sqrt(parseFloat(currentInput)).toString();
+                    display.value = currentInput;
+                    break;    
+                case "⌫": // Backspace functionality
+                    currentInput = currentInput.slice(0, -1);
+                    display.value = currentInput;
+                    break;                                
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
