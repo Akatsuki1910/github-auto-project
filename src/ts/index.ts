@@ -32,6 +32,10 @@ window.addEventListener("DOMContentLoaded", () => {
                     parenthesisOpen = !parenthesisOpen;
                     display.value = currentInput;
                     break;
+                case "e":
+                    currentInput += Math.E;
+                    display.value = currentInput;
+                    break;                    
                     // ...other cases
             }
         });
