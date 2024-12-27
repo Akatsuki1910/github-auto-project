@@ -45,7 +45,15 @@ window.addEventListener("DOMContentLoaded", () => {
                     } catch (error) {
                         display.value = "Error";
                     }
-                    break;                                
+                    break;
+                case "ln":
+                    try {
+                        currentInput = Math.log(eval(currentInput)).toString();
+                        display.value = currentInput;
+                    } catch (error) {
+                        display.value = "Error";
+                    }
+                    break;                                                
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
