@@ -2,7 +2,6 @@ window.addEventListener("DOMContentLoaded", () => {
     const display = document.getElementById("display") as HTMLInputElement;
     const buttons = document.querySelectorAll("button");
     let currentInput = "";
-    let memory = 0;
     const historyDiv = document.getElementById("history");
     const history: string[] = [];
 
@@ -33,13 +32,17 @@ window.addEventListener("DOMContentLoaded", () => {
                         historyDiv.innerHTML = "";
                     }
                     break;
+                case "⌫":
+                    currentInput = currentInput.slice(0, -1);
+                    display.value = currentInput;                    
+                    break;
                 case "toggleHistory":
                     if (historyDiv) {
                         const currentDisplay = historyDiv.style.display;
                         historyDiv.style.display = currentDisplay === "none" ? "block" : "none";
                         historyDiv.innerHTML = history.map(item => `<p>${item}</p>`).join('');
                     }
-                    break;
+                    break;                
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
