@@ -44,7 +44,11 @@ window.addEventListener("DOMContentLoaded", () => {
                         currentInput += ".";
                         display.value = currentInput;                        
                     }
-                    break;                    
+                    break;    
+                case "x2":
+                    currentInput = (parseFloat(currentInput) * 2).toString();
+                    display.value = currentInput;
+                    break;                
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
