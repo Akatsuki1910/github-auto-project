@@ -4,6 +4,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let currentInput = "";
     const historyDiv = document.getElementById("history");
     const history: string[] = [];
+    let memory = 0;
 
     buttons.forEach(button => {
         button.addEventListener("click", () => {
@@ -34,13 +35,20 @@ window.addEventListener("DOMContentLoaded", () => {
                     break;
                 case "⌫":
                     currentInput = currentInput.slice(0, -1);
-                    display.value = currentInput;                    
+                    display.value = currentInput;
                     break;
                 case "toggleHistory":
                     if (historyDiv) {
                         const currentDisplay = historyDiv.style.display;
                         historyDiv.style.display = currentDisplay === "none" ? "block" : "none";
                         historyDiv.innerHTML = history.map(item => `<p>${item}</p>`).join('');
+                    }
+                    break;
+                case "M+":
+                    try {
+                        memory += parseFloat(display.value);
+                    } catch (error) {
+                        // Handle cases where display.value isn't a valid number
                     }
                     break;                
                 default:
