@@ -109,6 +109,16 @@ window.addEventListener("DOMContentLoaded", () => {
                         display.value = "Error";
                     }
                     break;
+                case "log":
+                    try {
+                        const result = Math.log10(parseFloat(display.value));
+                        display.value = result.toString();
+                        currentInput = result.toString();
+                        updateHistory(`log(${currentInput})=${result}`);
+                    } catch (error) {
+                        display.value = "Error";
+                    }
+                    break;                
                 default:
                     currentInput += buttonText;
                     display.value = currentInput;
