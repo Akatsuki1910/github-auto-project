@@ -13,6 +13,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
             switch (buttonText) {
                 // ... (other cases)
+                case "max(x,y)":
+                    currentInput += "Math.max(";
+                    parenthesisOpen = true; // Add this line to track parenthesis
+                    display.value = currentInput;
+                    break;
                 case "1/x":
                     try {
                         const result = 1 / eval(currentInput);
