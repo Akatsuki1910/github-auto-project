@@ -18,4 +18,9 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error: Division by zero";
         }
     });
+
+    const eulerButton = document.getElementById("euler") as HTMLButtonElement;
+    eulerButton.addEventListener("click", () => {
+        display.value = Math.E.toString();
+    });
 });
