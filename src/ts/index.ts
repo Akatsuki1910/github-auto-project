@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const inverseButton = document.getElementById("inverse") as HTMLButtonElement;
     const display = document.getElementById("display") as HTMLInputElement;
     const duplicateButton = document.getElementById("duplicate") as HTMLButtonElement;
+    const cubeButton = document.getElementById("cube") as HTMLButtonElement;
 
     inverseButton.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
@@ -24,5 +25,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
     duplicateButton.addEventListener("click", () => {
         display.value = display.value + display.value;    
+    });
+
+    cubeButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            display.value = (currentValue * currentValue * currentValue).toString();
+        }
     });
 });
