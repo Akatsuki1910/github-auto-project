@@ -31,6 +31,11 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentInput += Math.E.toString();
                     display.value = currentInput;
                     break;
+                case "log<sub>10</sub>":
+                    currentInput += "Math.log10(";
+                    parenthesisOpen = true; // Add this line to track parenthesis
+                    display.value = currentInput;
+                    break;
                     // ...other cases
             }
         });
