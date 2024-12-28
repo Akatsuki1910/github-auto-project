@@ -23,6 +23,11 @@ window.addEventListener("DOMContentLoaded", () => {
                     parenthesisOpen = true;
                     display.value = currentInput;
                     break;
+                case "atan":
+                    currentInput += "Math.atan(";
+                    parenthesisOpen = true;
+                    display.value = currentInput;
+                    break;
 
                 // ... other cases
             }
