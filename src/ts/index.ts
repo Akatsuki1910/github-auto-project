@@ -12,6 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const expButton = document.getElementById("exp") as HTMLButtonElement;
     const display = document.getElementById("display") as HTMLInputElement;
     const absButton = document.getElementById("abs") as HTMLButtonElement;
+    const signButton = document.getElementById("sign") as HTMLButtonElement;
 
     logButton.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
@@ -31,6 +32,13 @@ window.addEventListener("DOMContentLoaded", () => {
         const currentValue = parseFloat(display.value);
         if (!isNaN(currentValue)) {
             display.value = Math.abs(currentValue).toString();
+        }
+    });
+
+    signButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            display.value = Math.sign(currentValue).toString();
         }
     });
 });
