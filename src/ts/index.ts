@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code)
     const inverseButton = document.getElementById("inverse") as HTMLButtonElement;
     const display = document.getElementById("display") as HTMLInputElement;
+    const duplicateButton = document.getElementById("duplicate") as HTMLButtonElement;
 
     inverseButton.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
@@ -19,29 +20,9 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    const eulerButton = document.getElementById("euler") as HTMLButtonElement;
-    eulerButton.addEventListener("click", () => {
-        display.value = Math.E.toString();
-    });
+    // ... (Other existing code)
 
-    const floorButton = document.getElementById("floor") as HTMLButtonElement;
-    floorButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            display.value = Math.floor(currentValue).toString();
-        }
-    });
-
-    const ceilButton = document.getElementById("ceil") as HTMLButtonElement;
-    ceilButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            display.value = Math.ceil(currentValue).toString();
-        }
-    });
-
-    const randButton = document.getElementById("rand") as HTMLButtonElement;
-    randButton.addEventListener("click", () => {
-        display.value = Math.random().toString();
+    duplicateButton.addEventListener("click", () => {
+        display.value = display.value + display.value;    
     });
 });
