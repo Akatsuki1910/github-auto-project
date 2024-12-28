@@ -23,4 +23,12 @@ window.addEventListener("DOMContentLoaded", () => {
     eulerButton.addEventListener("click", () => {
         display.value = Math.E.toString();
     });
+
+    const floorButton = document.getElementById("floor") as HTMLButtonElement;
+    floorButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            display.value = Math.floor(currentValue).toString();
+        }
+    });
 });
