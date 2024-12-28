@@ -13,9 +13,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
             switch (buttonText) {
                 // ... (other cases)
+                case "Dup":
+                    if (currentInput) {
+                        currentInput += currentInput;
+                        display.value = currentInput;
+                    }
+                    break;                
                 case "max(x,y)":
                     currentInput += "Math.max(";
-                    parenthesisOpen = true; 
+                    parenthesisOpen = true;
                     display.value = currentInput;
                     break;
                 case "min(x,y)":
@@ -43,7 +49,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     break;
                 case "log<sub>10</sub>":
                     currentInput += "Math.log10(";
-                    parenthesisOpen = true; 
+                    parenthesisOpen = true;
                     display.value = currentInput;
                     break;
                     case "ceil":
