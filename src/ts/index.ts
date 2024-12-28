@@ -39,4 +39,9 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = Math.ceil(currentValue).toString();
         }
     });
+
+    const randButton = document.getElementById("rand") as HTMLButtonElement;
+    randButton.addEventListener("click", () => {
+        display.value = Math.random().toString();
+    });
 });
