@@ -28,6 +28,16 @@ window.addEventListener("DOMContentLoaded", () => {
                     parenthesisOpen = true;
                     display.value = currentInput;
                     break;
+                case "(":
+                    currentInput += "(";
+                    parenthesisOpen = true;
+                    display.value = currentInput;
+                    break;
+                case ")":
+                    currentInput += ")";
+                    parenthesisOpen = false;
+                    display.value = currentInput;
+                    break;
 
                 // ... other cases
             }
