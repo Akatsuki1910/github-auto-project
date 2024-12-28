@@ -44,6 +44,14 @@ window.addEventListener("DOMContentLoaded", () => {
                         display.value = "Error";
                     }
                     break;
+                case "floor":
+                    try {
+                        currentInput = Math.floor(eval(currentInput)).toString();
+                        display.value = currentInput;
+                    } catch (error) {
+                        display.value = "Error";
+                    }
+                    break;
                     // ...other cases
             }
         });
