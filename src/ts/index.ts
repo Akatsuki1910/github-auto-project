@@ -37,4 +37,17 @@ window.addEventListener("DOMContentLoaded", () => {
             body.classList.remove("dark-theme");
         }
     });
+
+    const calculateAverageButton = document.getElementById("calculate-average") as HTMLButtonElement;
+    calculateAverageButton.addEventListener("click", () => {
+        try {
+            const numbers = currentInput.split(/\+|-|\*|\//g).map(Number);
+            const sum = numbers.reduce((acc, num) => acc + num, 0);
+            const average = sum / numbers.length;
+            display.value = average.toString();
+            currentInput = average.toString();
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
 });
