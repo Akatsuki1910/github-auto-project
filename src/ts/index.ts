@@ -7,12 +7,20 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     const sinButton = document.getElementById("sin") as HTMLButtonElement;
+    const cosButton = document.getElementById("cos") as HTMLButtonElement;
     const display = document.getElementById("display") as HTMLInputElement;
 
     sinButton.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
         if (!isNaN(currentValue)) {
             display.value = Math.sin(currentValue).toString();
+        }
+    });
+
+    cosButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            display.value = Math.cos(currentValue).toString();
         }
     });
 });
