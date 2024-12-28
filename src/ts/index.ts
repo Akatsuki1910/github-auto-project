@@ -7,38 +7,15 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // ... (Existing Code)
-
-    const logButton = document.getElementById("log") as HTMLButtonElement;
-    const expButton = document.getElementById("exp") as HTMLButtonElement;
+    const inverseButton = document.getElementById("inverse") as HTMLButtonElement;
     const display = document.getElementById("display") as HTMLInputElement;
-    const absButton = document.getElementById("abs") as HTMLButtonElement;
-    const signButton = document.getElementById("sign") as HTMLButtonElement;
 
-    logButton.addEventListener("click", () => {
+    inverseButton.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            display.value = Math.log10(currentValue).toString();
-        }
-    });
-
-    expButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            display.value = Math.exp(currentValue).toString();
-        }
-    });
-
-    absButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            display.value = Math.abs(currentValue).toString();
-        }
-    });
-
-    signButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            display.value = Math.sign(currentValue).toString();
+        if (!isNaN(currentValue) && currentValue !== 0) {
+            display.value = (1 / currentValue).toString();
+        } else if (currentValue === 0) {
+            display.value = "Error: Division by zero";
         }
     });
 });
