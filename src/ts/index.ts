@@ -13,6 +13,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
             switch (buttonText) {
                 // ... (other cases)
+                case "trunc":
+                    currentInput += "Math.trunc(";
+                    parenthesisOpen = true;
+                    display.value = currentInput;                    
+                    break;
                 case "ln":
                     currentInput += "Math.log(";
                     parenthesisOpen = true;
