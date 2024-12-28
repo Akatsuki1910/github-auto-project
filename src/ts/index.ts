@@ -27,6 +27,10 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentInput += "**";
                     display.value = currentInput;
                     break;
+                case "Euler's number (γ)":
+                    currentInput += Math.E.toString();
+                    display.value = currentInput;
+                    break;
                     // ...other cases
             }
         });
