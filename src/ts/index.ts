@@ -13,58 +13,20 @@ window.addEventListener("DOMContentLoaded", () => {
 
             switch (buttonText) {
                 // ... (other cases)
-                case "x<sup>y</sup>":
-                    currentInput += "**";
-                    display.value = currentInput;
-                    break;
-                case "=":
+                case "1/x":
                     try {
-                        const result = eval(currentInput);
+                        const result = 1 / eval(currentInput);
                         display.value = result.toString();
-                        updateHistory(`${currentInput}=${result}`);
+                        updateHistory(`1/(${currentInput})=${result}`);
                         currentInput = result.toString();
                     } catch (error) {
                         display.value = "Error";
                     }
-                    break;
-                case "( )":
-                    currentInput += parenthesisOpen ? ")" : "(";
-                    parenthesisOpen = !parenthesisOpen;
+                    break;                
+                case "x<sup>y</sup>":
+                    currentInput += "**";
                     display.value = currentInput;
                     break;
-                case "e":
-                    currentInput += Math.E;
-                    display.value = currentInput;
-                    break;                    
-                case "|x|":
-                    try {
-                        currentInput = Math.abs(eval(currentInput)).toString();
-                        display.value = currentInput;
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break;
-                case "floor":
-                    try {
-                        currentInput = Math.floor(eval(currentInput)).toString();
-                        display.value = currentInput;
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break;
-                case "rand":
-                    currentInput += Math.random();
-                    display.value = currentInput;
-                    break;
-                case "sign":
-                    try {
-                        const num = eval(currentInput);
-                        currentInput = (num * -1).toString();
-                        display.value = currentInput;
-                    } catch (error) {
-                        display.value = "Error";
-                    }
-                    break;                    
                     // ...other cases
             }
         });
