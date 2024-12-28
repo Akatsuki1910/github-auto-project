@@ -52,6 +52,10 @@ window.addEventListener("DOMContentLoaded", () => {
                         display.value = "Error";
                     }
                     break;
+                case "rand":
+                    currentInput += Math.random();
+                    display.value = currentInput;
+                    break;
                     // ...other cases
             }
         });
