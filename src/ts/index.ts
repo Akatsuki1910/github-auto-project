@@ -6,29 +6,15 @@ window.addEventListener("DOMContentLoaded", () => {
         document.body.classList.toggle("dark-theme");
     });
 
-    const sinButton = document.getElementById("sin") as HTMLButtonElement;
-    const cosButton = document.getElementById("cos") as HTMLButtonElement;
-    const tanButton = document.getElementById("tan") as HTMLButtonElement;
+    // ... (Existing Code)
+
+    const logButton = document.getElementById("log") as HTMLButtonElement;
     const display = document.getElementById("display") as HTMLInputElement;
 
-    sinButton.addEventListener("click", () => {
+    logButton.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
         if (!isNaN(currentValue)) {
-            display.value = Math.sin(currentValue).toString();
-        }
-    });
-
-    cosButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            display.value = Math.cos(currentValue).toString();
-        }
-    });
-
-    tanButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            display.value = Math.tan(currentValue).toString();
+            display.value = Math.log10(currentValue).toString();
         }
     });
 });
