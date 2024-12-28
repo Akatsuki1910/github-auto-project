@@ -13,36 +13,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
             switch (buttonText) {
                 // ... (other cases)
-                case "trunc":
-                    currentInput += "Math.trunc(";
-                    parenthesisOpen = true;
-                    display.value = currentInput;
-                    break;
-                case "ln":
-                    currentInput += "Math.log(";
-                    parenthesisOpen = true;
-                    display.value = currentInput;
-                    break;
-                case "10<sup>x</sup>":
-                    currentInput += "Math.pow(10, ";
-                    parenthesisOpen = true;
-                    display.value = currentInput;
-                    break;
-                case "2<sup>x</sup>":
-                    currentInput += "Math.pow(2, ";
-                    parenthesisOpen = true;
-                    display.value = currentInput;
-                    break;
-                case "x³":
-                    currentInput += "**3";
-                    display.value = currentInput;
-                    break;
-                case "∛x":
-                    currentInput += "**(1/3)";
-                    display.value = currentInput;
-                    break;
-                case "tan":
-                    currentInput += "Math.tan(";
+                case "asin":
+                    currentInput += "Math.asin(";
                     parenthesisOpen = true;
                     display.value = currentInput;
                     break;
