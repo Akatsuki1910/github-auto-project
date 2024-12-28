@@ -6,49 +6,24 @@ window.addEventListener("DOMContentLoaded", () => {
     const history: string[] = [];
     let memory = 0;
     let parenthesisOpen = false;
+    let isDarkTheme = false;
+    const body = document.body;
 
     buttons.forEach(button => {
         button.addEventListener("click", () => {
-            const buttonText = button.textContent;
-
-            switch (buttonText) {
-                // ... (other cases)
-                case "asin":
-                    currentInput += "Math.asin(";
-                    parenthesisOpen = true;
-                    display.value = currentInput;
-                    break;
-                case "acos":
-                    currentInput += "Math.acos(";
-                    parenthesisOpen = true;
-                    display.value = currentInput;
-                    break;
-                case "atan":
-                    currentInput += "Math.atan(";
-                    parenthesisOpen = true;
-                    display.value = currentInput;
-                    break;
-                case "(":
-                    currentInput += "(";
-                    parenthesisOpen = true;
-                    display.value = currentInput;
-                    break;
-                case ")":
-                    currentInput += ")";
-                    parenthesisOpen = false;
-                    display.value = currentInput;
-                    break;
-
-                // ... other cases
-            }
+            // ... (other cases)
         });
     });
 
-    function updateHistory(newEntry: string): void {
-        history.push(newEntry);
-        if (historyDiv) {
-            historyDiv.innerHTML = history.map(item => `<div>${item}</div>`).join('');
-        }
-    }
     // ... other functions
+
+    const toggleThemeButton = document.getElementById("toggle-theme") as HTMLButtonElement;
+    toggleThemeButton.addEventListener("click", () => {
+        isDarkTheme = !isDarkTheme;
+        if (isDarkTheme) {
+            body.classList.add("dark-theme");
+        } else {
+            body.classList.remove("dark-theme");
+        }
+    });
 });
