@@ -18,6 +18,12 @@ window.addEventListener("DOMContentLoaded", () => {
                     parenthesisOpen = true;
                     display.value = currentInput;
                     break;
+                case "acos":
+                    currentInput += "Math.acos(";
+                    parenthesisOpen = true;
+                    display.value = currentInput;
+                    break;
+
                 // ... other cases
             }
         });
