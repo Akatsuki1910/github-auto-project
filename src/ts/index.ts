@@ -37,6 +37,10 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentInput += "**3";
                     display.value = currentInput;
                     break;
+                case "∛x":
+                    currentInput += "**(1/3)";
+                    display.value = currentInput;
+                    break;
                 // ... other cases
             }
         });
