@@ -23,6 +23,11 @@ window.addEventListener("DOMContentLoaded", () => {
                     parenthesisOpen = true;
                     display.value = currentInput;
                     break;
+                case "2<sup>x</sup>":
+                    currentInput += "Math.pow(2, ";
+                    parenthesisOpen = true;
+                    display.value = currentInput;
+                    break;
                 // ... other cases
             }
         });
