@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 case "trunc":
                     currentInput += "Math.trunc(";
                     parenthesisOpen = true;
-                    display.value = currentInput;                    
+                    display.value = currentInput;
                     break;
                 case "ln":
                     currentInput += "Math.log(";
@@ -41,6 +41,11 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentInput += "**(1/3)";
                     display.value = currentInput;
                     break;
+                case "tan":
+                    currentInput += "Math.tan(";
+                    parenthesisOpen = true;
+                    display.value = currentInput;
+                    break;
                 // ... other cases
             }
         });
@@ -49,7 +54,7 @@ window.addEventListener("DOMContentLoaded", () => {
     function updateHistory(newEntry: string): void {
         history.push(newEntry);
         if (historyDiv) {
-          historyDiv.innerHTML = history.map(item => `<div>${item}</div>`).join('');
+            historyDiv.innerHTML = history.map(item => `<div>${item}</div>`).join('');
         }
     }
     // ... other functions
