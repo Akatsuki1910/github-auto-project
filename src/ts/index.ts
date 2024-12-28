@@ -15,9 +15,14 @@ window.addEventListener("DOMContentLoaded", () => {
                 // ... (other cases)
                 case "max(x,y)":
                     currentInput += "Math.max(";
-                    parenthesisOpen = true; // Add this line to track parenthesis
+                    parenthesisOpen = true; 
                     display.value = currentInput;
                     break;
+                case "min(x,y)":
+                    currentInput += "Math.min(";
+                    parenthesisOpen = true;
+                    display.value = currentInput;
+                    break;                
                 case "1/x":
                     try {
                         const result = 1 / eval(currentInput);
@@ -38,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     break;
                 case "log<sub>10</sub>":
                     currentInput += "Math.log10(";
-                    parenthesisOpen = true; // Add this line to track parenthesis
+                    parenthesisOpen = true; 
                     display.value = currentInput;
                     break;
                     case "ceil":
