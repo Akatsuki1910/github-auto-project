@@ -1,13 +1,13 @@
 window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code)
 
-    const calculateRangeButton = document.getElementById("calculate-range") as HTMLButtonElement;
-    calculateRangeButton.addEventListener("click", () => {
+    const calculateProductButton = document.getElementById("calculate-product") as HTMLButtonElement;
+    calculateProductButton.addEventListener("click", () => {
         try {
-            const numbers = currentInput.split(/\+|-|\*|\//g).map(Number).sort((a, b) => a - b);
-            const range = numbers[numbers.length - 1] - numbers[0];
-            display.value = range.toString();
-            currentInput = range.toString();
+            const numbers = currentInput.split(/\+|-|\*|\//g).map(Number);
+            const product = numbers.reduce((acc, curr) => acc * curr, 1);
+            display.value = product.toString();
+            currentInput = product.toString();
         } catch (error) {
             display.value = "Error";
         }
