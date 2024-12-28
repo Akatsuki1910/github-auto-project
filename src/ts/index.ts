@@ -18,6 +18,11 @@ window.addEventListener("DOMContentLoaded", () => {
                     parenthesisOpen = true;
                     display.value = currentInput;
                     break;
+                case "10<sup>x</sup>":
+                    currentInput += "Math.pow(10, ";
+                    parenthesisOpen = true;
+                    display.value = currentInput;
+                    break;
                 // ... other cases
             }
         });
