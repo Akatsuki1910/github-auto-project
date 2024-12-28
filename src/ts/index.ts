@@ -56,6 +56,15 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentInput += Math.random();
                     display.value = currentInput;
                     break;
+                case "sign":
+                    try {
+                        const num = eval(currentInput);
+                        currentInput = (num * -1).toString();
+                        display.value = currentInput;
+                    } catch (error) {
+                        display.value = "Error";
+                    }
+                    break;                    
                     // ...other cases
             }
         });
