@@ -16,6 +16,17 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // ... other functions
+    const calculateSumButton = document.getElementById("calculate-sum") as HTMLButtonElement;
+    calculateSumButton.addEventListener("click", () => {
+        try {
+            const numbers = currentInput.split(/\+|-|\*|\//g).map(Number);
+            const sum = numbers.reduce((acc, num) => acc + num, 0);
+            display.value = sum.toString();
+            currentInput = sum.toString();
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
 
     const toggleThemeButton = document.getElementById("toggle-theme") as HTMLButtonElement;
     toggleThemeButton.addEventListener("click", () => {
