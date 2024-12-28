@@ -13,6 +13,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
             switch (buttonText) {
                 // ... (other cases)
+                case "Random":
+                    const randomNumber = Math.random();
+                    currentInput += randomNumber.toString();
+                    display.value = currentInput;
+                    break;
                 case "Dup":
                     if (currentInput) {
                         currentInput += currentInput;
