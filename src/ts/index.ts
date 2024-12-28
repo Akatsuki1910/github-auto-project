@@ -36,6 +36,17 @@ window.addEventListener("DOMContentLoaded", () => {
                     parenthesisOpen = true; // Add this line to track parenthesis
                     display.value = currentInput;
                     break;
+                    case "ceil":
+                    try {
+                        const result = Math.ceil(eval(currentInput));
+                        display.value = result.toString();
+                        updateHistory(`ceil(${currentInput})=${result}`);
+                        currentInput = result.toString();
+                    }
+                    catch (error) {
+                        display.value = "Error";
+                    }
+                    break;
                     // ...other cases
             }
         });
