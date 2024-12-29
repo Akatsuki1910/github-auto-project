@@ -83,4 +83,10 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+
+    const randomNumberButton = document.getElementById("random-number") as HTMLButtonElement;
+    randomNumberButton.addEventListener("click", () => {
+        const randomNumber = Math.random();
+        display.value = randomNumber.toString();
+    });
 });
