@@ -7,75 +7,23 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // ... (Existing Code)
-    const inverseButton = document.getElementById("inverse") as HTMLButtonElement;
-    const display = document.getElementById("display") as HTMLInputElement;
-    const duplicateButton = document.getElementById("duplicate") as HTMLButtonElement;
-    const cubeButton = document.getElementById("cube") as HTMLButtonElement;
-    const nthRootButton = document.getElementById("nthRoot") as HTMLButtonElement;
-    const exp10Button = document.getElementById("exp10") as HTMLButtonElement;
-    const lnButton = document.getElementById("ln") as HTMLButtonElement;
-    const signButton = document.getElementById("sign") as HTMLButtonElement;
-    const modButton = document.getElementById("mod") as HTMLButtonElement;
+     // ... existing code
 
-    inverseButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue) && currentValue !== 0) {
-            display.value = (1 / currentValue).toString();
-        } else if (currentValue === 0) {
-            display.value = "Error: Division by zero";
-        }
-    });
+    const baseConverterButton = document.getElementById("base-converter") as HTMLButtonElement;
+    baseConverterButton.addEventListener("click", () => {
+        const currentValue = display.value;
+        const fromBase = parseInt(prompt("Enter the current base (2-36):", "10") || "10");
+        const toBase = parseInt(prompt("Enter the target base (2-36):", "2") || "2");
 
-    // ... (Other existing code)
-
-    duplicateButton.addEventListener("click", () => {
-        display.value = display.value + display.value;    
-    });
-
-    cubeButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            display.value = (currentValue * currentValue * currentValue).toString();
-        }
-    });
-
-    nthRootButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        const n = parseFloat(prompt("Enter the nth root (e.g., 2 for square root, 3 for cube root):", "2") || "2"); // Default to square root if no input or invalid input
-
-        if (!isNaN(currentValue) && !isNaN(n)) {
-          display.value = (Math.pow(currentValue, 1/n)).toString();
-        }
-      });
-
-    exp10Button.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            display.value = (10 ** currentValue).toString();
-        }
-    });
-
-    lnButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue) && currentValue > 0) {
-            display.value = Math.log(currentValue).toString();
-        } else if (currentValue <= 0) {
-            display.value = "Error: Input must be positive";
-        }
-    });
-
-    signButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            display.value = (-currentValue).toString();
-        }
-    });
-
-    modButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-      const nextValue =  parseFloat(prompt("Enter the next value", "0") || "0");
-        if (!isNaN(currentValue) && !isNaN(nextValue)) {
-          display.value = (currentValue % nextValue).toString();
+        if (isNaN(fromBase) || fromBase < 2 || fromBase > 36 || isNaN(toBase) || toBase < 2 || toBase > 36) {
+            display.value = "Invalid base";
+        } else {
+            try {
+                const decimalValue = parseInt(currentValue, fromBase);
+                display.value = decimalValue.toString(toBase);
+            } catch (error) {
+                display.value = "Invalid input";
+            }
         }
     });
 });
