@@ -7,44 +7,11 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // ... (Existing Code)
-    const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
-    const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonElement;
-    const memRecallButton = document.getElementById("mem-recall") as HTMLButtonElement;
-    let memoryValue: number | null = null;
-
-    memoryStoreButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            memoryValue = currentValue;
-            display.value = "Stored: " + memoryValue;
-        } else {
-            display.value = "Invalid input";
-        }
-    });
-
-    memoryClearButton.addEventListener("click", () => {
-        memoryValue = null;
-        display.value = "Memory Cleared";
-    });
-
-    memRecallButton.addEventListener("click", () => {
-        if (memoryValue !== null) {
-            display.value = memoryValue.toString();
-        } else {
-            display.value = "No value stored";
-        }
-    });
-    let lastAnswer: number | null = null;
-    const lastAnswerButton = document.getElementById("last-answer") as HTMLButtonElement;
-    lastAnswerButton.addEventListener("click", () => {
-      if (lastAnswer !== null) {
-          display.value = lastAnswer.toString();
-      } else {
-          display.value = "No previous answer";
-      }
-    });
     // ... existing code
     const equalButton = document.getElementById("=") as HTMLButtonElement;
+    let lastAnswer: number | null = null;
+     const lastAnswerButton = document.getElementById("last-answer") as HTMLButtonElement;
+
     equalButton.addEventListener("click", () => {
             try {
                 const result = eval(display.value);
@@ -55,8 +22,14 @@ window.addEventListener("DOMContentLoaded", () => {
                 display.value = "Error";
             }
     });
-
-         const decimalButton = document.getElementById("decimal") as HTMLButtonElement;
+     lastAnswerButton.addEventListener("click", () => {
+      if (lastAnswer !== null) {
+          display.value = lastAnswer.toString();
+      } else {
+          display.value = "No previous answer";
+      }
+    });
+    const decimalButton = document.getElementById("decimal") as HTMLButtonElement;
     const display = document.getElementById("display") as HTMLInputElement;
         decimalButton.addEventListener('click', () => {
         if (!display.value.includes('.')) {
@@ -68,4 +41,10 @@ openNewWindowButton.addEventListener("click", () => {
     window.open("https://www.example.com", "_blank");
 });
 
+    const currentDateButton = document.getElementById("current-date") as HTMLButtonElement;
+    currentDateButton.addEventListener("click", () => {
+        const currentDate = new Date();
+        const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+        display.value = currentDate.toLocaleDateString(undefined, options);
+    });
 });
