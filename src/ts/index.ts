@@ -208,4 +208,15 @@ openNewWindowButton.addEventListener("click", () => {
         addToHistory("Error");
       }
     });
+
+ // copyボタンの追加
+ const copyButton = document.getElementById("copy") as HTMLButtonElement;
+ copyButton.addEventListener("click", () => {
+    navigator.clipboard.writeText(display.value).then(() => {
+        alert("Copied to clipboard: " + display.value);
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+        alert("Failed to copy");
+    });
+ });
 });
