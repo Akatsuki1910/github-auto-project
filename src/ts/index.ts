@@ -56,6 +56,16 @@ openNewWindowButton.addEventListener("click", () => {
         deleteLastDigitButton.addEventListener("click", () => {
                 display.value = display.value.slice(0, -1);
         })
+        const inverseSignButton = document.getElementById("inverse-sign") as HTMLButtonElement; 
+    inverseSignButton.addEventListener("click", () => {
+        if (display.value) { // Check if there's a value in the display
+          if (display.value.startsWith("-")) {
+            display.value = display.value.slice(1); // Remove the minus sign
+          } else {
+            display.value = "-" + display.value; // Add a minus sign
+          }
+        }
+      });
 
         const historyDiv = document.getElementById("history") as HTMLDivElement;
         const toggleHistoryButton = document.getElementById("toggleHistory") as HTMLButtonElement;
