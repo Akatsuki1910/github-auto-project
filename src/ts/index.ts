@@ -102,6 +102,11 @@ openNewWindowButton.addEventListener("click", () => {
         }
     });
 // ... (Existing code)
+const localStorageSaveButton = document.getElementById("localstorage-save") as HTMLButtonElement;
+localStorageSaveButton.addEventListener("click", () => {
+    localStorage.setItem("calculatorDisplayValue", display.value);
+    alert("Saved to local storage.");
+});
     // ローカルストレージからロードするボタンの追加
     const localStorageLoadButton = document.getElementById("localstorage-load") as HTMLButtonElement;
     localStorageLoadButton.addEventListener("click", () => {
