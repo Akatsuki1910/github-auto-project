@@ -37,4 +37,9 @@ window.addEventListener("DOMContentLoaded", () => {
         const now = new Date();
         display.value = now.toLocaleDateString();
     });
+
+    const exitButton = document.getElementById("exit") as HTMLButtonElement;
+    exitButton.addEventListener("click", () => {
+        window.close();
+    });
 });
