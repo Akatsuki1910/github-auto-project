@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code)
     const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
     const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonElement;
+    const memRecallButton = document.getElementById("mem-recall") as HTMLButtonElement;
     let memoryValue: number | null = null;
 
     memoryStoreButton.addEventListener("click", () => {
@@ -24,6 +25,14 @@ window.addEventListener("DOMContentLoaded", () => {
     memoryClearButton.addEventListener("click", () => {
         memoryValue = null;
         display.value = "Memory Cleared";
+    });
+
+    memRecallButton.addEventListener("click", () => {
+        if (memoryValue !== null) {
+            display.value = memoryValue.toString();
+        } else {
+            display.value = "No value stored";
+        }
     });
 
     // ... existing code
