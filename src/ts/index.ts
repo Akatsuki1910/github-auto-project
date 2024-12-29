@@ -125,5 +125,17 @@ openNewWindowButton.addEventListener("click", () => {
                 addToHistory("Error");
             }
         });
+    // expm1ボタンの追加
+    const expm1Button = document.getElementById("expm1") as HTMLButtonElement;
+    expm1Button.addEventListener("click", () => {
+        try {
+            const num = parseFloat(display.value);
+            display.value = Math.expm1(num).toString();
+            addToHistory(display.value);
+        }
+        catch (error) {
+            display.value = "Error";
+            addToHistory("Error");
+        }
+    });
 });
-
