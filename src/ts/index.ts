@@ -100,4 +100,16 @@ openNewWindowButton.addEventListener("click", () => {
             addToHistory("Error");
         }
     });
+
+        const log2Button = document.getElementById("log2") as HTMLButtonElement;
+        log2Button.addEventListener("click", () => {
+          try {
+              const num = parseFloat(display.value);
+              display.value = Math.log2(num).toString();
+              addToHistory(display.value);
+            } catch (error) {
+                display.value = "Error";
+                addToHistory("Error");
+            }
+        });
 });
