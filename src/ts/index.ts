@@ -129,4 +129,16 @@ localStorageSaveButton.addEventListener("click", () => {
         display.value = timeString; // 計算結果の代わりに現在時刻を表示
         addToHistory(timeString); // 現在時刻を履歴に追加
     });
+        const roundUpButton = document.getElementById("round-up") as HTMLButtonElement;
+    roundUpButton.addEventListener("click", () => {
+        try{
+        const result = Math.ceil(parseFloat(display.value));
+        display.value = result.toString();
+        addToHistory(display.value);
+        }
+        catch (error) {
+            display.value = "Error";
+            addToHistory("Error");
+        }
+    })
 });
