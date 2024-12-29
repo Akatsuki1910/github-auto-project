@@ -242,4 +242,11 @@ openNewWindowButton.addEventListener("click", () => {
         link.click();
       });
     });
+
+    // ローカルストレージに保存するボタンの追加
+  const localStorageSaveButton = document.getElementById("localstorage-save") as HTMLButtonElement;
+  localStorageSaveButton.addEventListener("click", () => {
+    localStorage.setItem("calculatorDisplayValue", display.value);
+    alert("Saved to local storage: " + display.value);
+  });
 });
