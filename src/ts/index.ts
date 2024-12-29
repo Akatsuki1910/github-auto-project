@@ -17,11 +17,15 @@ window.addEventListener("DOMContentLoaded", () => {
                 const result = eval(display.value);
                 display.value = result.toString();
                 lastAnswer = result;
+                addToHistory(display.value);
             }
             catch (error) {
                 display.value = "Error";
+                addToHistory("Error");
+
             }
     });
+
      lastAnswerButton.addEventListener("click", () => {
       if (lastAnswer !== null) {
           display.value = lastAnswer.toString();
@@ -52,4 +56,26 @@ openNewWindowButton.addEventListener("click", () => {
         deleteLastDigitButton.addEventListener("click", () => {
                 display.value = display.value.slice(0, -1);
         })
+
+        const historyDiv = document.getElementById("history") as HTMLDivElement;
+        const toggleHistoryButton = document.getElementById("toggleHistory") as HTMLButtonElement;
+
+        function addToHistory(entry: string) {
+                const p = document.createElement("p");
+                p.textContent = entry;
+                historyDiv.appendChild(p);
+        }
+
+        toggleHistoryButton.addEventListener("click", () => {
+                if (historyDiv.style.display === "none") {
+                    historyDiv.style.display = "block";
+                }
+                else {
+                    historyDiv.style.display = "none";
+                }
+        });
+        const clearHistoryButton = document.getElementById("clear-history") as HTMLButtonElement;
+        clearHistoryButton.addEventListener("click", () => {
+                historyDiv.innerHTML = ""; //履歴削除
+        });
 });
