@@ -63,5 +63,9 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value += '.';
         }
     });
+const openNewWindowButton = document.getElementById("open-new-window") as HTMLButtonElement;
+openNewWindowButton.addEventListener("click", () => {
+    window.open("https://www.example.com", "_blank");
+});
 
 });
