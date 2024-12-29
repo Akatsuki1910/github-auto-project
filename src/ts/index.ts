@@ -1,3 +1,4 @@
+// ... (Existing Code)
 window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code)
 
@@ -112,4 +113,17 @@ openNewWindowButton.addEventListener("click", () => {
                 addToHistory("Error");
             }
         });
+        //10のx乗ボタン
+        const powerOfTenButton = document.getElementById("power-of-ten") as HTMLButtonElement;
+        powerOfTenButton.addEventListener("click", () => {
+            try{
+                const num = parseFloat(display.value);
+                display.value = Math.pow(10, num).toString();
+                addToHistory(display.value);
+            } catch (error) {
+                display.value = "Error";
+                addToHistory("Error");
+            }
+        });
 });
+
