@@ -55,4 +55,13 @@ window.addEventListener("DOMContentLoaded", () => {
                 display.value = "Error";
             }
     });
+
+         const decimalButton = document.getElementById("decimal") as HTMLButtonElement;
+    const display = document.getElementById("display") as HTMLInputElement;
+        decimalButton.addEventListener('click', () => {
+        if (!display.value.includes('.')) {
+            display.value += '.';
+        }
+    });
+
 });
