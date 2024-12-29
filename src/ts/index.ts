@@ -122,4 +122,11 @@ localStorageSaveButton.addEventListener("click", () => {
         localStorage.removeItem("calculatorDisplayValue");
         alert("Local storage cleared.");
     });
+     const displayTimeButton = document.getElementById("display-time") as HTMLButtonElement;
+    displayTimeButton.addEventListener("click", () => {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+        display.value = timeString; // 計算結果の代わりに現在時刻を表示
+        addToHistory(timeString); // 現在時刻を履歴に追加
+    });
 });
