@@ -51,4 +51,10 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+
+    const localstorageClearButton = document.getElementById("localstorage-clear") as HTMLButtonElement;
+    localstorageClearButton.addEventListener("click", () => {
+        localStorage.clear();
+        display.value = "LocalStorage Cleared";
+    });
 });
