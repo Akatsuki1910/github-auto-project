@@ -162,4 +162,18 @@ openNewWindowButton.addEventListener("click", () => {
             addToHistory("Error");
         }
     });
+
+        const randomIntButton = document.getElementById("random-int") as HTMLButtonElement;
+        randomIntButton.addEventListener("click", () => {
+          try {
+            const min = parseFloat(prompt("Enter minimum value:", "0") || "0");
+            const max = parseFloat(prompt("Enter maximum value:", "100") || "100");
+            const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;   //乱数生成
+            display.value = randomNumber.toString();
+            addToHistory(display.value); //履歴に追加
+          } catch (error) {
+            display.value = "Invalid input";
+            addToHistory("Invalid input");
+          }
+        });
 });
