@@ -40,4 +40,15 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+
+    const log10Button = document.getElementById("log10") as HTMLButtonElement;
+    log10Button.addEventListener("click", () => {
+        try {
+            const num = parseFloat(display.value);
+            display.value = Math.log10(num).toString();
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
 });
