@@ -8,7 +8,18 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ... (Existing Code)
     // ... existing code
+    const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
+    let memoryValue: number | null = null;
 
+    memoryStoreButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            memoryValue = currentValue;
+            display.value = "Stored: " + memoryValue;
+        } else {
+            display.value = "Invalid input";
+        }
+    });
     // ... existing code
     const baseConverterButton = document.getElementById("base-converter") as HTMLButtonElement;
     baseConverterButton.addEventListener("click", () => {
