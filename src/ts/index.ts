@@ -47,4 +47,9 @@ openNewWindowButton.addEventListener("click", () => {
         const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' };
         display.value = currentDate.toLocaleDateString(undefined, options);
     });
+
+  const deleteLastDigitButton = document.getElementById("delete-last-digit") as HTMLButtonElement;
+        deleteLastDigitButton.addEventListener("click", () => {
+                display.value = display.value.slice(0, -1);
+        })
 });
