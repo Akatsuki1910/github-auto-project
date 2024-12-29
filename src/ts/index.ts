@@ -26,4 +26,9 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
+
+     const openGithubButton = document.getElementById("open-github") as HTMLButtonElement;
+    openGithubButton.addEventListener("click", () => {
+        window.open("https://github.com/Kenta-Sasaki/github-auto-project", "_blank");
+    });
 });
