@@ -150,4 +150,16 @@ openNewWindowButton.addEventListener("click", () => {
             addToHistory("Error");
         }
     });
+    // 切り捨てボタンの追加
+    const roundDownButton = document.getElementById("round-down") as HTMLButtonElement;
+    roundDownButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(display.value);
+            display.value = Math.floor(num).toString();
+            addToHistory(display.value);
+        } catch (error) {
+            display.value = "Error";
+            addToHistory("Error");
+        }
+    });
 });
