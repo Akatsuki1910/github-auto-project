@@ -15,6 +15,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const exp10Button = document.getElementById("exp10") as HTMLButtonElement;
     const lnButton = document.getElementById("ln") as HTMLButtonElement;
     const signButton = document.getElementById("sign") as HTMLButtonElement;
+    const modButton = document.getElementById("mod") as HTMLButtonElement;
 
     inverseButton.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
@@ -67,6 +68,14 @@ window.addEventListener("DOMContentLoaded", () => {
         const currentValue = parseFloat(display.value);
         if (!isNaN(currentValue)) {
             display.value = (-currentValue).toString();
+        }
+    });
+
+    modButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+      const nextValue =  parseFloat(prompt("Enter the next value", "0") || "0");
+        if (!isNaN(currentValue) && !isNaN(nextValue)) {
+          display.value = (currentValue % nextValue).toString();
         }
     });
 });
