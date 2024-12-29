@@ -101,13 +101,11 @@ openNewWindowButton.addEventListener("click", () => {
             addToHistory("Error");
         }
     });
-// ... (Existing code)
 const localStorageSaveButton = document.getElementById("localstorage-save") as HTMLButtonElement;
 localStorageSaveButton.addEventListener("click", () => {
     localStorage.setItem("calculatorDisplayValue", display.value);
     alert("Saved to local storage.");
 });
-    // ローカルストレージからロードするボタンの追加
     const localStorageLoadButton = document.getElementById("localstorage-load") as HTMLButtonElement;
     localStorageLoadButton.addEventListener("click", () => {
         const savedValue = localStorage.getItem("calculatorDisplayValue");
@@ -117,5 +115,11 @@ localStorageSaveButton.addEventListener("click", () => {
         else {
             alert("No saved value in local storage.");
         }
+    });
+    // ローカルストレージをクリアするボタンの追加
+    const localStorageClearButton = document.getElementById("localstorage-clear") as HTMLButtonElement;
+    localStorageClearButton.addEventListener("click", () => {
+        localStorage.removeItem("calculatorDisplayValue");
+        alert("Local storage cleared.");
     });
 });
