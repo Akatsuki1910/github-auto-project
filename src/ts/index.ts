@@ -101,152 +101,16 @@ openNewWindowButton.addEventListener("click", () => {
             addToHistory("Error");
         }
     });
-
-        const log2Button = document.getElementById("log2") as HTMLButtonElement;
-        log2Button.addEventListener("click", () => {
-          try {
-              const num = parseFloat(display.value);
-              display.value = Math.log2(num).toString();
-              addToHistory(display.value);
-            } catch (error) {
-                display.value = "Error";
-                addToHistory("Error");
-            }
-        });
-        //10のx乗ボタン
-        const powerOfTenButton = document.getElementById("power-of-ten") as HTMLButtonElement;
-        powerOfTenButton.addEventListener("click", () => {
-            try{
-                const num = parseFloat(display.value);
-                display.value = Math.pow(10, num).toString();
-                addToHistory(display.value);
-            } catch (error) {
-                display.value = "Error";
-                addToHistory("Error");
-            }
-        });
-    // expm1ボタンの追加
-    const expm1Button = document.getElementById("expm1") as HTMLButtonElement;
-    expm1Button.addEventListener("click", () => {
-        try {
-            const num = parseFloat(display.value);
-            display.value = Math.expm1(num).toString();
-            addToHistory(display.value);
+// ... (Existing code)
+    // ローカルストレージからロードするボタンの追加
+    const localStorageLoadButton = document.getElementById("localstorage-load") as HTMLButtonElement;
+    localStorageLoadButton.addEventListener("click", () => {
+        const savedValue = localStorage.getItem("calculatorDisplayValue");
+        if (savedValue) {
+            display.value = savedValue;
         }
-        catch (error) {
-            display.value = "Error";
-            addToHistory("Error");
+        else {
+            alert("No saved value in local storage.");
         }
     });
-        // 立方根ボタンの追加
-    const cbrtButton = document.getElementById("cbrt") as HTMLButtonElement;
-    cbrtButton.addEventListener("click", () => {
-        try {
-            const num = parseFloat(display.value);
-            display.value = Math.cbrt(num).toString();
-            addToHistory(display.value);
-        } catch (error) {
-            display.value = "Error";
-            addToHistory("Error");
-        }
-    });
-    // 切り捨てボタンの追加
-    const roundDownButton = document.getElementById("round-down") as HTMLButtonElement;
-    roundDownButton.addEventListener("click", () => {
-        try {
-            const num = parseFloat(display.value);
-            display.value = Math.floor(num).toString();
-            addToHistory(display.value);
-        } catch (error) {
-            display.value = "Error";
-            addToHistory("Error");
-        }
-    });
-
-        const randomIntButton = document.getElementById("random-int") as HTMLButtonElement;
-        randomIntButton.addEventListener("click", () => {
-          try {
-            const min = parseFloat(prompt("Enter minimum value:", "0") || "0");
-            const max = parseFloat(prompt("Enter maximum value:", "100") || "100");
-            const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;   //乱数生成
-            display.value = randomNumber.toString();
-            addToHistory(display.value); //履歴に追加
-          } catch (error) {
-            display.value = "Invalid input";
-            addToHistory("Invalid input");
-          }
-        });
-    // 逆数ボタンの追加
-    const reciprocalButton = document.getElementById("reciprocal") as HTMLButtonElement;
-    reciprocalButton.addEventListener("click", () => {
-        try {
-            const num = parseFloat(display.value);
-            if (num === 0) {
-                display.value = "Error: Division by zero";
-                addToHistory("Error: Division by zero");
-            } else {
-                display.value = (1 / num).toString();
-                addToHistory(display.value);
-            }
-        }
-        catch (error) {
-            display.value = "Error";
-            addToHistory("Error");
-        }
-    });
-
-      // 指数関数ボタンの追加
-    const exponentiationButton = document.getElementById("exponentiation") as HTMLButtonElement;
-    exponentiationButton.addEventListener("click", () => {
-      try {
-        const num = parseFloat(display.value);
-        display.value = Math.exp(num).toString();
-        addToHistory(display.value);
-      }
-      catch (error) {
-        display.value = "Error";
-        addToHistory("Error");
-      }
-    });
-
- // copyボタンの追加
- const copyButton = document.getElementById("copy") as HTMLButtonElement;
- copyButton.addEventListener("click", () => {
-    navigator.clipboard.writeText(display.value).then(() => {
-        alert("Copied to clipboard: " + display.value);
-    }).catch(err => {
-        console.error('Failed to copy: ', err);
-        alert("Failed to copy");
-    });
- });
-
-    // ランダムな文字列を生成するボタンの追加
-    const generateRandomStringButton = document.getElementById("generate-random-string") as HTMLButtonElement;
-    generateRandomStringButton.addEventListener("click", () => {
-        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
-        let randomString = "";
-        for (let i = 0; i < 10; i++) {
-            randomString += characters.charAt(Math.floor(Math.random() * characters.length));
-        }
-        display.value = randomString;
-        addToHistory(display.value);
-    });
-
- // スクリーンショットボタンの追加
-    const screenShotButton = document.getElementById("screen-shot") as HTMLButtonElement;
-    screenShotButton.addEventListener("click", () => {
-      html2canvas(document.body).then(canvas => {
-        const link = document.createElement('a');
-        link.href = canvas.toDataURL();
-        link.download = 'screenshot.png';
-        link.click();
-      });
-    });
-
-    // ローカルストレージに保存するボタンの追加
-  const localStorageSaveButton = document.getElementById("localstorage-save") as HTMLButtonElement;
-  localStorageSaveButton.addEventListener("click", () => {
-    localStorage.setItem("calculatorDisplayValue", display.value);
-    alert("Saved to local storage: " + display.value);
-  });
 });
