@@ -11,6 +11,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const display = document.getElementById("display") as HTMLInputElement;
     const duplicateButton = document.getElementById("duplicate") as HTMLButtonElement;
     const cubeButton = document.getElementById("cube") as HTMLButtonElement;
+    const nthRootButton = document.getElementById("nthRoot") as HTMLButtonElement;
 
     inverseButton.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
@@ -33,4 +34,13 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = (currentValue * currentValue * currentValue).toString();
         }
     });
+
+    nthRootButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        const n = parseFloat(prompt("Enter the nth root (e.g., 2 for square root, 3 for cube root):", "2") || "2"); // Default to square root if no input or invalid input
+
+        if (!isNaN(currentValue) && !isNaN(n)) {
+          display.value = (Math.pow(currentValue, 1/n)).toString();
+        }
+      });
 });
