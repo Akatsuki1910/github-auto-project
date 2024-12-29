@@ -14,6 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const nthRootButton = document.getElementById("nthRoot") as HTMLButtonElement;
     const exp10Button = document.getElementById("exp10") as HTMLButtonElement;
     const lnButton = document.getElementById("ln") as HTMLButtonElement;
+    const signButton = document.getElementById("sign") as HTMLButtonElement;
 
     inverseButton.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
@@ -56,9 +57,16 @@ window.addEventListener("DOMContentLoaded", () => {
     lnButton.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
         if (!isNaN(currentValue) && currentValue > 0) {
-            display.value = Math.ln(currentValue).toString();
-        } else if (currentValue <=0) {
+            display.value = Math.log(currentValue).toString();
+        } else if (currentValue <= 0) {
             display.value = "Error: Input must be positive";
+        }
+    });
+
+    signButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            display.value = (-currentValue).toString();
         }
     });
 });
