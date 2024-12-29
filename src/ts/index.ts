@@ -63,4 +63,24 @@ window.addEventListener("DOMContentLoaded", () => {
         const now = new Date();
         display.value = now.toLocaleTimeString();
     });
+
+    const fibonacciButton = document.getElementById("fibonacci") as HTMLButtonElement;
+    fibonacciButton.addEventListener("click", () => {
+        try {
+            const n = parseInt(display.value);
+            if (n < 0) {
+                display.value = "Error: Input must be non-negative.";
+                return;
+            }
+            let a = 0, b = 1;
+            for (let i = 0; i < n; i++) {
+                const temp = b;
+                b = a + b;
+                a = temp;
+            }
+            display.value = a.toString();
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
 });
