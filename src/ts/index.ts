@@ -176,4 +176,22 @@ openNewWindowButton.addEventListener("click", () => {
             addToHistory("Invalid input");
           }
         });
+    // 逆数ボタンの追加
+    const reciprocalButton = document.getElementById("reciprocal") as HTMLButtonElement;
+    reciprocalButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(display.value);
+            if (num === 0) {
+                display.value = "Error: Division by zero";
+                addToHistory("Error: Division by zero");
+            } else {
+                display.value = (1 / num).toString();
+                addToHistory(display.value);
+            }
+        }
+        catch (error) {
+            display.value = "Error";
+            addToHistory("Error");
+        }
+    });
 });
