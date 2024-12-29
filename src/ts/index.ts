@@ -88,4 +88,16 @@ openNewWindowButton.addEventListener("click", () => {
         clearHistoryButton.addEventListener("click", () => {
                 historyDiv.innerHTML = ""; //履歴削除
         });
+    const calculateTaxButton = document.getElementById("calculate-tax") as HTMLButtonElement;
+    calculateTaxButton.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            const tax = currentValue * 0.08;
+            display.value = (currentValue + tax).toString();
+            addToHistory(display.value);   
+        } catch (error) {
+            display.value = "Error";
+            addToHistory("Error");
+        }
+    });
 });
