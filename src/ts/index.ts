@@ -34,6 +34,25 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "No value stored";
         }
     });
-
+    let lastAnswer: number | null = null;
+    const lastAnswerButton = document.getElementById("last-answer") as HTMLButtonElement;
+    lastAnswerButton.addEventListener("click", () => {
+      if (lastAnswer !== null) {
+          display.value = lastAnswer.toString();
+      } else {
+          display.value = "No previous answer";
+      }
+    });
     // ... existing code
+    const equalButton = document.getElementById("=") as HTMLButtonElement;
+    equalButton.addEventListener("click", () => {
+            try {
+                const result = eval(display.value);
+                display.value = result.toString();
+                lastAnswer = result;
+            }
+            catch (error) {
+                display.value = "Error";
+            }
+    });
 });
