@@ -231,4 +231,15 @@ openNewWindowButton.addEventListener("click", () => {
         display.value = randomString;
         addToHistory(display.value);
     });
+
+ // スクリーンショットボタンの追加
+    const screenShotButton = document.getElementById("screen-shot") as HTMLButtonElement;
+    screenShotButton.addEventListener("click", () => {
+      html2canvas(document.body).then(canvas => {
+        const link = document.createElement('a');
+        link.href = canvas.toDataURL();
+        link.download = 'screenshot.png';
+        link.click();
+      });
+    });
 });
