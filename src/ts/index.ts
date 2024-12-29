@@ -219,4 +219,16 @@ openNewWindowButton.addEventListener("click", () => {
         alert("Failed to copy");
     });
  });
+
+    // ランダムな文字列を生成するボタンの追加
+    const generateRandomStringButton = document.getElementById("generate-random-string") as HTMLButtonElement;
+    generateRandomStringButton.addEventListener("click", () => {
+        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        let randomString = "";
+        for (let i = 0; i < 10; i++) {
+            randomString += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        display.value = randomString;
+        addToHistory(display.value);
+    });
 });
