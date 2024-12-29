@@ -194,4 +194,18 @@ openNewWindowButton.addEventListener("click", () => {
             addToHistory("Error");
         }
     });
+
+      // 指数関数ボタンの追加
+    const exponentiationButton = document.getElementById("exponentiation") as HTMLButtonElement;
+    exponentiationButton.addEventListener("click", () => {
+      try {
+        const num = parseFloat(display.value);
+        display.value = Math.exp(num).toString();
+        addToHistory(display.value);
+      }
+      catch (error) {
+        display.value = "Error";
+        addToHistory("Error");
+      }
+    });
 });
