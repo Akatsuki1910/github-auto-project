@@ -57,4 +57,10 @@ window.addEventListener("DOMContentLoaded", () => {
         localStorage.clear();
         display.value = "LocalStorage Cleared";
     });
+
+    const displayTimeButton = document.getElementById("display-time") as HTMLButtonElement;
+    displayTimeButton.addEventListener("click", () => {
+        const now = new Date();
+        display.value = now.toLocaleTimeString();
+    });
 });
