@@ -138,4 +138,16 @@ openNewWindowButton.addEventListener("click", () => {
             addToHistory("Error");
         }
     });
+        // 立方根ボタンの追加
+    const cbrtButton = document.getElementById("cbrt") as HTMLButtonElement;
+    cbrtButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(display.value);
+            display.value = Math.cbrt(num).toString();
+            addToHistory(display.value);
+        } catch (error) {
+            display.value = "Error";
+            addToHistory("Error");
+        }
+    });
 });
