@@ -9,22 +9,10 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code)
     // ... existing code
 
+    // ... existing code
     const baseConverterButton = document.getElementById("base-converter") as HTMLButtonElement;
     baseConverterButton.addEventListener("click", () => {
-        const currentValue = display.value;
-        const fromBase = parseInt(prompt("Enter the current base (2-36):", "10") || "10");
-        const toBase = parseInt(prompt("Enter the target base (2-36):", "2") || "2");
-
-        if (isNaN(fromBase) || fromBase < 2 || fromBase > 36 || isNaN(toBase) || toBase < 2 || toBase > 36) {
-            display.value = "Invalid base";
-        } else {
-            try {
-                const decimalValue = parseInt(currentValue, fromBase);
-                display.value = decimalValue.toString(toBase);
-            } catch (error) {
-                display.value = "Invalid input";
-            }
-        }
+        // ... existing code
     });
 
     const openGithubButton = document.getElementById("open-github") as HTMLButtonElement;
@@ -41,5 +29,15 @@ window.addEventListener("DOMContentLoaded", () => {
     const exitButton = document.getElementById("exit") as HTMLButtonElement;
     exitButton.addEventListener("click", () => {
         window.close();
+    });
+
+    const display = document.getElementById("display") as HTMLInputElement;
+    const evalButton = document.getElementById("eval") as HTMLButtonElement;
+    evalButton.addEventListener("click", () => {
+        try {
+            display.value = eval(display.value);
+        } catch (error) {
+            display.value = "Error";
+        }
     });
 });
