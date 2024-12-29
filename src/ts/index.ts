@@ -7,7 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // ... (Existing Code)
-     // ... existing code
+    // ... existing code
 
     const baseConverterButton = document.getElementById("base-converter") as HTMLButtonElement;
     baseConverterButton.addEventListener("click", () => {
@@ -27,8 +27,14 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-     const openGithubButton = document.getElementById("open-github") as HTMLButtonElement;
+    const openGithubButton = document.getElementById("open-github") as HTMLButtonElement;
     openGithubButton.addEventListener("click", () => {
         window.open("https://github.com/Kenta-Sasaki/github-auto-project", "_blank");
+    });
+
+    const dateButton = document.getElementById("date") as HTMLButtonElement;
+    dateButton.addEventListener("click", () => {
+        const now = new Date();
+        display.value = now.toLocaleDateString();
     });
 });
