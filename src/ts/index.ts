@@ -112,4 +112,11 @@ absButton.addEventListener("click", () => {
     const currentValue = parseFloat(display.value);
     display.value = Math.abs(currentValue).toString();
 });
+
+// ネイピア数ボタンの追加
+const eulerButton = document.getElementById("euler") as HTMLButtonElement;
+eulerButton.addEventListener("click", () => {
+    const display = document.getElementById("display") as HTMLInputElement;
+    display.value = Math.E.toString();
+});
 });
