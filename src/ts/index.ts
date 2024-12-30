@@ -96,4 +96,12 @@ randomButton.addEventListener("click", () => {
     const display = document.getElementById("display") as HTMLInputElement;
     display.value = Math.random().toString();
 });
+
+// 符号反転ボタンの追加
+const signButton = document.getElementById("sign") as HTMLButtonElement;
+signButton.addEventListener("click", () => {
+    const display = document.getElementById("display") as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = (-currentValue).toString();
+});
 });
