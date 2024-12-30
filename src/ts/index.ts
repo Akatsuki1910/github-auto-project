@@ -179,4 +179,10 @@ localStorageSaveButton.addEventListener("click", () => {
             addToHistory("Error");
         }
     });
+     const randomDecimalButton = document.getElementById("random-decimal") as HTMLButtonElement;
+    randomDecimalButton.addEventListener("click", () => {
+        const result = Math.random();
+        display.value = result.toString();
+        addToHistory(display.value);
+    });
 });
