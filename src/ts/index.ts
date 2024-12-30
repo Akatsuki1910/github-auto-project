@@ -12,8 +12,14 @@ window.addEventListener("DOMContentLoaded", () => {
     const equalButton = document.getElementById("=") as HTMLButtonElement;
     let lastAnswer: number | null = null;
      const lastAnswerButton = document.getElementById("last-answer") as HTMLButtonElement;
+     let memoryValue: number | null = null;
+    const memoryRecallButton = document.getElementById("mem-recall") as HTMLButtonElement;
+    const memoryPlusButton = document.getElementById("mem-plus") as HTMLButtonElement;  
+        const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonElement;  
+    const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
+const mrcButton = document.getElementById("mrc") as HTMLButtonElement;
 
-    equalButton.addEventListener("click", () => {
+equalButton.addEventListener("click", () => {
             try {
                 const result = eval(display.value);
                 display.value = result.toString();
@@ -189,5 +195,36 @@ localStorageSaveButton.addEventListener("click", () => {
         const result = Math.random();
         display.value = result.toString();
         addToHistory(display.value);
+    });
+    memoryStoreButton.addEventListener("click", () => {
+      memoryValue = parseFloat(display.value);
+    });
+
+    memoryRecallButton.addEventListener("click", () => {
+      if (memoryValue !== null) {
+        display.value = memoryValue.toString();
+      } else {
+        display.value = "No value in memory";
+      }
+    });
+     memoryPlusButton.addEventListener("click", () => {
+      if (memoryValue !== null && display.value) {
+        memoryValue += parseFloat(display.value);
+        display.value = memoryValue.toString();
+      } else {
+        display.value = "No value in memory";
+      }
+    });
+     memoryClearButton.addEventListener("click", () => {
+      memoryValue = null;
+      display.value = "Memory cleared";
+    });
+    mrcButton.addEventListener("click", () => {
+      if (memoryValue !== null) {
+        display.value = memoryValue.toString();
+        memoryValue = null; // MRC後にメモリクリア
+      } else {
+        display.value = "No value in memory";
+      }
     });
 });
