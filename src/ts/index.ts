@@ -153,4 +153,17 @@ localStorageSaveButton.addEventListener("click", () => {
         display.value = result;
         addToHistory(result);
     });
+        // x^2のボタン機能実装
+    const squaredButton = document.getElementById("squared") as HTMLButtonElement;
+    squaredButton.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            const result = currentValue * currentValue;
+            display.value = result.toString();
+            addToHistory(display.value);
+        } catch (error) {
+            display.value = "Error";
+            addToHistory("Error");
+        }
+    });
 });
