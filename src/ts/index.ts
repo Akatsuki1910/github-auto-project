@@ -119,4 +119,12 @@ eulerButton.addEventListener("click", () => {
     const display = document.getElementById("display") as HTMLInputElement;
     display.value = Math.E.toString();
 });
+
+// 切り捨てボタンの追加
+const floorButton = document.getElementById("floor") as HTMLButtonElement;
+floorButton.addEventListener("click", () => {
+    const display = document.getElementById("display") as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = Math.floor(currentValue).toString();
+});
 });
