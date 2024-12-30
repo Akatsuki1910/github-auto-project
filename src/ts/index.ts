@@ -73,4 +73,11 @@ tanButton.addEventListener("click", () => {
     const display = document.getElementById("display") as HTMLInputElement;
     display.value = Math.tan(parseFloat(display.value)).toString();
 });
+
+// logボタンの追加
+const logButton = document.getElementById("log") as HTMLButtonElement;
+logButton.addEventListener("click", () => {
+    const display = document.getElementById("display") as HTMLInputElement;
+    display.value = Math.log(parseFloat(display.value)).toString();
+});
 });
