@@ -45,6 +45,11 @@ const openNewWindowButton = document.getElementById("open-new-window") as HTMLBu
 openNewWindowButton.addEventListener("click", () => {
     window.open("https://www.example.com", "_blank");
 });
+// 新しいタブで開くボタンの追加
+const openNewTabButton = document.getElementById("open-new-tab") as HTMLButtonElement;
+openNewTabButton.addEventListener("click", () => {
+  window.open("https://www.google.com", "_blank");
+});
 
     const currentDateButton = document.getElementById("current-date") as HTMLButtonElement;
     currentDateButton.addEventListener("click", () => {
