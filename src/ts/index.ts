@@ -141,4 +141,16 @@ localStorageSaveButton.addEventListener("click", () => {
             addToHistory("Error");
         }
     })
+
+        // ランダムな文字列を生成するボタンを追加
+        const randomStringButton = document.getElementById("random-string") as HTMLButtonElement;
+    randomStringButton.addEventListener("click", () => {
+        const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        let result = '';
+        for (let i = 0; i < 10; i++) {
+            result += characters.charAt(Math.floor(Math.random() * characters.length));
+        }
+        display.value = result;
+        addToHistory(result);
+    });
 });
