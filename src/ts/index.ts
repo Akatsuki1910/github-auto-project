@@ -5,6 +5,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code)
     // ... existing code
     // ... (rest of the code)
+    let memoryValue: number | null = null;
 
     // ドキュメントを開くボタン
     const openDocumentationButton = document.getElementById("open-documentation") as HTMLButtonElement;
@@ -30,76 +31,25 @@ window.addEventListener("DOMContentLoaded", () => {
         document.body.classList.toggle("dark-theme");
     });
 
-    const calculateButton = document.getElementById("calculate") as HTMLButtonElement;
-    calculateButton.addEventListener("click", () => {
-        const display = document.getElementById("display") as HTMLInputElement;
-        try {
-            display.value = eval(display.value).toString();
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
+    // ... (rest of the existing code)
 
-    const backspaceButton = document.getElementById("backspace") as HTMLButtonElement;
-    backspaceButton.addEventListener("click", () => {
-        const display = document.getElementById("display") as HTMLInputElement;
-        display.value = display.value.slice(0, -1);
-    });
+// メモリ機能の追加
+const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
+memoryStoreButton.addEventListener("click", () => {
+    const display = document.getElementById("display") as HTMLInputElement;
+    memoryValue = parseFloat(display.value);
+});
 
-    const decimalButton = document.getElementById("decimal") as HTMLButtonElement;
-    decimalButton.addEventListener("click", () => {
-        const display = document.getElementById("display") as HTMLInputElement;
-        if (!display.value.includes('.')) {
-            display.value += '.';
-        }
-    });
+const memoryRecallButton = document.getElementById("memory-recall") as HTMLButtonElement;
+memoryRecallButton.addEventListener("click", () => {
+    const display = document.getElementById("display") as HTMLInputElement;
+    if (memoryValue !== null) {
+        display.value = memoryValue.toString();
+    }
+});
 
-    const negateButton = document.getElementById("negate") as HTMLButtonElement;
-    negateButton.addEventListener("click", () => {
-        const display = document.getElementById("display") as HTMLInputElement;
-        display.value = (parseFloat(display.value) * -1).toString();
-    });
-
-    const squareRootButton = document.getElementById("square-root") as HTMLButtonElement;
-    squareRootButton.addEventListener("click", () => {
-        const display = document.getElementById("display") as HTMLInputElement;
-        const currentValue = parseFloat(display.value);
-        if (currentValue >= 0) {
-            display.value = Math.sqrt(currentValue).toString();
-        } else {
-            display.value = "Error: Negative Input";
-        }
-    });
-
-    const percentButton = document.getElementById("percent") as HTMLButtonElement;
-    percentButton.addEventListener("click", () => {
-        const display = document.getElementById("display") as HTMLInputElement;
-        display.value = (parseFloat(display.value) / 100).toString();
-    });
-
-    const piButton = document.getElementById("pi") as HTMLButtonElement;
-    piButton.addEventListener("click", () => {
-        const display = document.getElementById("display") as HTMLInputElement;
-        display.value += Math.PI.toString();
-    });
-
-    // 階乗ボタンの追加
-    const factorialButton = document.getElementById("factorial") as HTMLButtonElement;
-    factorialButton.addEventListener("click", () => {
-        const display = document.getElementById("display") as HTMLInputElement;
-        const currentValue = parseInt(display.value);
-        if (isNaN(currentValue)) {
-          display.value = "Error: Invalid input";
-          return;  
-        }
-        if (currentValue < 0) {
-          display.value = "Error: Negative input";
-          return;
-        }
-        let result = 1;
-        for (let i = 1; i <= currentValue; i++) {
-            result *= i;
-        }
-        display.value = result.toString();
-    });
+const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonElement;
+memoryClearButton.addEventListener("click", () => {
+    memoryValue = null;
+});
 });
