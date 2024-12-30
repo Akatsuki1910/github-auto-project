@@ -39,4 +39,10 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+
+    const backspaceButton = document.getElementById("backspace") as HTMLButtonElement;
+    backspaceButton.addEventListener("click", () => {
+        const display = document.getElementById("display") as HTMLInputElement;
+        display.value = display.value.slice(0, -1);
+    });
 });
