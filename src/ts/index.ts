@@ -24,4 +24,9 @@ window.addEventListener("DOMContentLoaded", () => {
         const display = document.getElementById("display") as HTMLInputElement;
         display.value = '';
     });
+
+    const toggleThemeButton = document.getElementById("toggle-theme") as HTMLButtonElement;
+    toggleThemeButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-theme");
+    });
 });
