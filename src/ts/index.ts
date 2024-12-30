@@ -80,4 +80,11 @@ logButton.addEventListener("click", () => {
     const display = document.getElementById("display") as HTMLInputElement;
     display.value = Math.log(parseFloat(display.value)).toString();
 });
+
+// expボタンの追加
+const expButton = document.getElementById("exp") as HTMLButtonElement;
+expButton.addEventListener("click", () => {
+    const display = document.getElementById("display") as HTMLInputElement;
+    display.value = Math.exp(parseFloat(display.value)).toString();
+});
 });
