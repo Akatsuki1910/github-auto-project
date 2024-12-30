@@ -227,4 +227,14 @@ localStorageSaveButton.addEventListener("click", () => {
         display.value = "No value in memory";
       }
     });
+        // スクリーンショットボタンの追加
+    const screenShotButton = document.getElementById("screen-shot") as HTMLButtonElement;
+    screenShotButton.addEventListener("click", () => {
+        html2canvas(document.body).then(canvas => {
+            const link = document.createElement('a');
+            link.href = canvas.toDataURL('image/png');
+            link.download = 'screenshot.png';
+            link.click();
+        });
+    });
 });
