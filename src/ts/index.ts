@@ -18,4 +18,10 @@ window.addEventListener("DOMContentLoaded", () => {
         const display = document.getElementById("display") as HTMLInputElement;
         display.value = Date.now().toString();
     });
+
+    const clearButton = document.getElementById("clear-display") as HTMLButtonElement;
+    clearButton.addEventListener("click", () => {
+        const display = document.getElementById("display") as HTMLInputElement;
+        display.value = '';
+    });
 });
