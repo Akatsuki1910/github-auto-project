@@ -60,7 +60,7 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = (parseFloat(display.value) * -1).toString();
     });
 
-        const squareRootButton = document.getElementById("square-root") as HTMLButtonElement;
+    const squareRootButton = document.getElementById("square-root") as HTMLButtonElement;
     squareRootButton.addEventListener("click", () => {
         const display = document.getElementById("display") as HTMLInputElement;
         const currentValue = parseFloat(display.value);
@@ -69,5 +69,11 @@ window.addEventListener("DOMContentLoaded", () => {
         } else {
             display.value = "Error: Negative Input";
         }
+    });
+
+    const percentButton = document.getElementById("percent") as HTMLButtonElement;
+    percentButton.addEventListener("click", () => {
+        const display = document.getElementById("display") as HTMLInputElement;
+        display.value = (parseFloat(display.value) / 100).toString();
     });
 });
