@@ -59,4 +59,15 @@ window.addEventListener("DOMContentLoaded", () => {
         const display = document.getElementById("display") as HTMLInputElement;
         display.value = (parseFloat(display.value) * -1).toString();
     });
+
+        const squareRootButton = document.getElementById("square-root") as HTMLButtonElement;
+    squareRootButton.addEventListener("click", () => {
+        const display = document.getElementById("display") as HTMLInputElement;
+        const currentValue = parseFloat(display.value);
+        if (currentValue >= 0) {
+            display.value = Math.sqrt(currentValue).toString();
+        } else {
+            display.value = "Error: Negative Input";
+        }
+    });
 });
