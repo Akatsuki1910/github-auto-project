@@ -82,4 +82,11 @@ inverseButton.addEventListener("click", () => {
         display.value = "Error"; // ゼロ除算エラー処理
     }
 });
+// 四捨五入ボタンの追加
+const roundButton = document.getElementById("round") as HTMLButtonElement;
+roundButton.addEventListener("click", () => {
+    const display = document.getElementById("display") as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = Math.round(currentValue).toString();
+});
 });
