@@ -87,4 +87,21 @@ expButton.addEventListener("click", () => {
     const display = document.getElementById("display") as HTMLInputElement;
     display.value = Math.exp(parseFloat(display.value)).toString();
 });
+
+// べき乗ボタンの追加
+const powerButton = document.getElementById("power") as HTMLButtonElement;
+powerButton.addEventListener("click", () => {
+    const display = document.getElementById("display") as HTMLInputElement;
+    const base = parseFloat(display.value);
+    display.value = ""; // 一旦クリア
+    // 次に入力された値を指数としてべき乗計算を行う
+    const handleInput = (event: KeyboardEvent) => {
+      if (event.key === "Enter") {
+        const exponent = parseFloat(display.value);
+        display.value = Math.pow(base, exponent).toString();
+        display.removeEventListener("keydown", handleInput);
+      }
+    };
+    display.addEventListener("keydown", handleInput);
+});
 });
