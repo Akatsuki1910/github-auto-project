@@ -82,4 +82,24 @@ window.addEventListener("DOMContentLoaded", () => {
         const display = document.getElementById("display") as HTMLInputElement;
         display.value += Math.PI.toString();
     });
+
+    // 階乗ボタンの追加
+    const factorialButton = document.getElementById("factorial") as HTMLButtonElement;
+    factorialButton.addEventListener("click", () => {
+        const display = document.getElementById("display") as HTMLInputElement;
+        const currentValue = parseInt(display.value);
+        if (isNaN(currentValue)) {
+          display.value = "Error: Invalid input";
+          return;  
+        }
+        if (currentValue < 0) {
+          display.value = "Error: Negative input";
+          return;
+        }
+        let result = 1;
+        for (let i = 1; i <= currentValue; i++) {
+            result *= i;
+        }
+        display.value = result.toString();
+    });
 });
