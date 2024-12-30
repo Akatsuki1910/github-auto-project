@@ -76,4 +76,10 @@ window.addEventListener("DOMContentLoaded", () => {
         const display = document.getElementById("display") as HTMLInputElement;
         display.value = (parseFloat(display.value) / 100).toString();
     });
+
+    const piButton = document.getElementById("pi") as HTMLButtonElement;
+    piButton.addEventListener("click", () => {
+        const display = document.getElementById("display") as HTMLInputElement;
+        display.value += Math.PI.toString();
+    });
 });
