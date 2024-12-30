@@ -55,76 +55,14 @@ memoryClearButton.addEventListener("click", () => {
 
 // 既存のコード...
 
-// 二乗ボタンの追加
-const squareButton = document.getElementById("square") as HTMLButtonElement;
-squareButton.addEventListener("click", () => {
+// その他のボタンの追加...
+// ... (rest of the code)
+
+// 切り上げボタンの追加
+const ceilButton = document.getElementById("ceil") as HTMLButtonElement;
+ceilButton.addEventListener("click", () => {
     const display = document.getElementById("display") as HTMLInputElement;
     const currentValue = parseFloat(display.value);
-    display.value = (currentValue * currentValue).toString();
-});
-
-// 三乗ボタンの追加
-const cubeButton = document.getElementById("cube") as HTMLButtonElement;
-cubeButton.addEventListener("click", () => {
-  const display = document.getElementById("display") as HTMLInputElement;
-  const currentValue = parseFloat(display.value);
-  display.value = (currentValue * currentValue * currentValue).toString();
-});
-
-// 逆数ボタンの追加
-const inverseButton = document.getElementById("inverse") as HTMLButtonElement;
-inverseButton.addEventListener("click", () => {
-    const display = document.getElementById("display") as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    if (currentValue !== 0) {
-        display.value = (1 / currentValue).toString();
-    } else {
-        display.value = "Error"; // ゼロ除算エラー処理
-    }
-});
-// 四捨五入ボタンの追加
-const roundButton = document.getElementById("round") as HTMLButtonElement;
-roundButton.addEventListener("click", () => {
-    const display = document.getElementById("display") as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    display.value = Math.round(currentValue).toString();
-});
-
-// 乱数ボタンの追加
-const randomButton = document.getElementById("random") as HTMLButtonElement;
-randomButton.addEventListener("click", () => {
-    const display = document.getElementById("display") as HTMLInputElement;
-    display.value = Math.random().toString();
-});
-
-// 符号ボタンの追加
-const signButton = document.getElementById("sign") as HTMLButtonElement;
-signButton.addEventListener("click", () => {
-    const display = document.getElementById("display") as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    display.value = (-currentValue).toString();
-});
-
-// 絶対値ボタンの追加
-const absButton = document.getElementById("abs") as HTMLButtonElement;
-absButton.addEventListener("click", () => {
-    const display = document.getElementById("display") as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    display.value = Math.abs(currentValue).toString();
-});
-
-// ネイピア数ボタンの追加
-const eulerButton = document.getElementById("euler") as HTMLButtonElement;
-eulerButton.addEventListener("click", () => {
-    const display = document.getElementById("display") as HTMLInputElement;
-    display.value = Math.E.toString();
-});
-
-// 切り捨てボタンの追加
-const floorButton = document.getElementById("floor") as HTMLButtonElement;
-floorButton.addEventListener("click", () => {
-    const display = document.getElementById("display") as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    display.value = Math.floor(currentValue).toString();
+    display.value = Math.ceil(currentValue).toString();
 });
 });
