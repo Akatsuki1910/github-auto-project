@@ -70,4 +70,16 @@ cubeButton.addEventListener("click", () => {
   const currentValue = parseFloat(display.value);
   display.value = (currentValue * currentValue * currentValue).toString();
 });
+
+// 逆数ボタンの追加
+const inverseButton = document.getElementById("inverse") as HTMLButtonElement;
+inverseButton.addEventListener("click", () => {
+    const display = document.getElementById("display") as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    if (currentValue !== 0) {
+        display.value = (1 / currentValue).toString();
+    } else {
+        display.value = "Error"; // ゼロ除算エラー処理
+    }
+});
 });
