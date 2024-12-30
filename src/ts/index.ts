@@ -53,55 +53,13 @@ memoryClearButton.addEventListener("click", () => {
     memoryValue = null;
 });
 
-// sinボタンの追加
-const sinButton = document.getElementById("sin") as HTMLButtonElement;
-sinButton.addEventListener("click", () => {
-    const display = document.getElementById("display") as HTMLInputElement;
-    display.value = Math.sin(parseFloat(display.value)).toString();
-});
+// 既存のコード...
 
-// cosボタンの追加
-const cosButton = document.getElementById("cos") as HTMLButtonElement;
-cosButton.addEventListener("click", () => {
+// 二乗ボタンの追加
+const squareButton = document.getElementById("square") as HTMLButtonElement;
+squareButton.addEventListener("click", () => {
     const display = document.getElementById("display") as HTMLInputElement;
-    display.value = Math.cos(parseFloat(display.value)).toString();
-});
-
-// tanボタンの追加
-const tanButton = document.getElementById("tan") as HTMLButtonElement;
-tanButton.addEventListener("click", () => {
-    const display = document.getElementById("display") as HTMLInputElement;
-    display.value = Math.tan(parseFloat(display.value)).toString();
-});
-
-// logボタンの追加
-const logButton = document.getElementById("log") as HTMLButtonElement;
-logButton.addEventListener("click", () => {
-    const display = document.getElementById("display") as HTMLInputElement;
-    display.value = Math.log(parseFloat(display.value)).toString();
-});
-
-// expボタンの追加
-const expButton = document.getElementById("exp") as HTMLButtonElement;
-expButton.addEventListener("click", () => {
-    const display = document.getElementById("display") as HTMLInputElement;
-    display.value = Math.exp(parseFloat(display.value)).toString();
-});
-
-// べき乗ボタンの追加
-const powerButton = document.getElementById("power") as HTMLButtonElement;
-powerButton.addEventListener("click", () => {
-    const display = document.getElementById("display") as HTMLInputElement;
-    const base = parseFloat(display.value);
-    display.value = ""; // 一旦クリア
-    // 次に入力された値を指数としてべき乗計算を行う
-    const handleInput = (event: KeyboardEvent) => {
-      if (event.key === "Enter") {
-        const exponent = parseFloat(display.value);
-        display.value = Math.pow(base, exponent).toString();
-        display.removeEventListener("keydown", handleInput);
-      }
-    };
-    display.addEventListener("keydown", handleInput);
+    const currentValue = parseFloat(display.value);
+    display.value = (currentValue * currentValue).toString();
 });
 });
