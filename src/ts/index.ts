@@ -45,4 +45,12 @@ window.addEventListener("DOMContentLoaded", () => {
         const display = document.getElementById("display") as HTMLInputElement;
         display.value = display.value.slice(0, -1);
     });
+
+    const decimalButton = document.getElementById("decimal") as HTMLButtonElement;
+    decimalButton.addEventListener("click", () => {
+        const display = document.getElementById("display") as HTMLInputElement;
+        if (!display.value.includes('.')) {
+            display.value += '.';
+        }
+    });
 });
