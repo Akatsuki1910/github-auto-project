@@ -29,4 +29,14 @@ window.addEventListener("DOMContentLoaded", () => {
     toggleThemeButton.addEventListener("click", () => {
         document.body.classList.toggle("dark-theme");
     });
+
+    const calculateButton = document.getElementById("calculate") as HTMLButtonElement;
+    calculateButton.addEventListener("click", () => {
+        const display = document.getElementById("display") as HTMLInputElement;
+        try {
+            display.value = eval(display.value).toString();
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
 });
