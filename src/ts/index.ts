@@ -62,4 +62,12 @@ squareButton.addEventListener("click", () => {
     const currentValue = parseFloat(display.value);
     display.value = (currentValue * currentValue).toString();
 });
+
+// 三乗ボタンの追加
+const cubeButton = document.getElementById("cube") as HTMLButtonElement;
+cubeButton.addEventListener("click", () => {
+  const display = document.getElementById("display") as HTMLInputElement;
+  const currentValue = parseFloat(display.value);
+  display.value = (currentValue * currentValue * currentValue).toString();
+});
 });
