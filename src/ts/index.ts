@@ -95,7 +95,7 @@ memorySubtractButton.addEventListener("click", () => {
     }
 });
 
-    const operators = ['+', '-', '*', '/'];
+    const operators = ['+', '-', '*', '/', '(', ')'];
     for(const operator of operators){
         const button = document.getElementById(operator) as HTMLButtonElement;
         button.addEventListener('click', () =>{
