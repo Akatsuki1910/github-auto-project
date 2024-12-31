@@ -53,4 +53,13 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = num.toString(16);
         updateHistory(`Hexadecimal(${num}) = ${num.toString(16)}`);
     });
+
+    const sumButton = document.getElementById("sum") as HTMLButtonElement;
+    sumButton.addEventListener("click", () => {
+      const display = document.getElementById("display") as HTMLInputElement;
+      const numbers = display.value.split('+').map(Number);
+      const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+      display.value = sum.toString();
+      updateHistory(numbers.join(" + ") + " = " + sum);
+    });
 });
