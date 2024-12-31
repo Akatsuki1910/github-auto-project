@@ -43,7 +43,10 @@ window.addEventListener("DOMContentLoaded", () => {
     allClearButton.addEventListener("click", () => {
         display.value = "";
     });
-
+    const clearEntryButton = document.getElementById("clear-entry");
+    clearEntryButton.addEventListener("click", () => {
+        display.value = "";
+    });
     // ... existing code ...
     for (let i = 0; i <= 9; i++) {
         const numberButton = document.getElementById(i.toString());
