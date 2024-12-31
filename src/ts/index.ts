@@ -82,4 +82,22 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = median.toString();
         updateHistory("Median(" + numbers.join(" + ") + ") = " + median);
     });
+
+    const modeButton = document.getElementById("mode") as HTMLButtonElement;
+    modeButton.addEventListener("click", () => {
+      const display = document.getElementById("display") as HTMLInputElement;
+      const numbers = display.value.split('+').map(Number);
+      const counts = {};
+      let mode = null;
+      let maxCount = 0;
+      for (const num of numbers) {
+        counts[num] = (counts[num] || 0) + 1;
+        if (counts[num] > maxCount) {
+          mode = num;
+          maxCount = counts[num];
+        }
+      }
+      display.value = mode === null ? "No Mode" : mode.toString();
+      updateHistory("Mode(" + numbers.join(" + ") + ") = " + (mode === null ? "No Mode" : mode));
+    });
 });
