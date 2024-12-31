@@ -83,4 +83,12 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+
+    // 現在の時刻を表示する機能を追加
+    const currentTimestampButton = document.getElementById("current-timestamp");
+    currentTimestampButton.addEventListener("click", () => {
+        const timestamp = new Date().toLocaleString();
+        display.value = timestamp;
+        updateHistory(`Timestamp: ${timestamp}`);
+    });
 });
