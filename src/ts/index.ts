@@ -49,12 +49,12 @@ window.addEventListener("DOMContentLoaded", () => {
     clearEntryButton.addEventListener("click", () => {
         display.value = "";
     });
-        const lastAnswerButton = document.getElementById("last-answer");
-        lastAnswerButton.addEventListener("click", () => {
-            if (lastAnswer !== null) {
-                display.value += lastAnswer.toString();
-            }
-        });
+    const lastAnswerButton = document.getElementById("last-answer");
+    lastAnswerButton.addEventListener("click", () => {
+        if (lastAnswer !== null) {
+            display.value += lastAnswer.toString();
+        }
+    });
     // ... existing code ...
     for (let i = 0; i <= 9; i++) {
         const numberButton = document.getElementById(i.toString());
@@ -100,7 +100,7 @@ window.addEventListener("DOMContentLoaded", () => {
             const percentageValue = currentValue / 100;
             display.value = percentageValue.toString();
             updateHistory(`${currentValue}% = ${percentageValue}`);
-         } catch (error) {
+        } catch (error) {
             display.value = "Error";
         }
     });
@@ -118,4 +118,31 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+
+    // 階乗計算機能を追加
+    const factorialButton = document.getElementById("factorial");
+    factorialButton.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            const factorialValue = factorial(currentValue);
+            display.value = factorialValue.toString();
+            updateHistory(`factorial(${currentValue}) = ${factorialValue}`);
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
+
+    function factorial(n) {
+        if (n < 0) {
+            return "Error: Negative input";
+        } else if (n === 0) {
+            return 1;
+        } else {
+            let result = 1;
+            for (let i = 1; i <= n; i++) {
+                result *= i;
+            }
+            return result;
+        }
+    }
 });
