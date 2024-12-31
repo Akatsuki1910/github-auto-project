@@ -63,6 +63,19 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = "Error";
       }
     });
+
+     const exp10Button = document.getElementById("exp-10") as HTMLButtonElement;
+    exp10Button.addEventListener("click", () => {
+      const currentValue = parseFloat(display.value);
+      if (!isNaN(currentValue)) {
+        const result = 10 ** currentValue;
+        display.value = result.toString();
+        updateHistory(`10^(${currentValue}) = ${result}`);
+      } else {
+        display.value = "Error";
+      }
+    });
+
     const operators = ['+', '-', '*', '/'];
     for(const operator of operators){
         const button = document.getElementById(operator) as HTMLButtonElement;
