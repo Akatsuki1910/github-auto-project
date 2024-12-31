@@ -74,4 +74,11 @@ window.addEventListener("DOMContentLoaded", () => {
       display.value = "0";
          // 計算式のクリア処理を追加
     });
+
+        const historyReverseButton = document.getElementById("history-reverse") as HTMLButtonElement;
+        historyReverseButton.addEventListener("click", () => {
+            history.reverse();
+            historyDiv.innerHTML = history.map(item => `<p>${item}</p>`).join('');
+        });
 });
+
