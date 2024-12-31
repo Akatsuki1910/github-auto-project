@@ -102,18 +102,16 @@ memorySubtractButton.addEventListener("click", () => {
             display.value += operator;
         });
     }
-
-    const equalsButton = document.getElementById("equals") as HTMLButtonElement;
+  const equalsButton = document.getElementById("equals") as HTMLButtonElement;
     equalsButton.addEventListener('click', () => {
-    try {
-      const result = eval(display.value);
-      display.value = result.toString();
-      updateHistory(`${display.value} = ${result}`);
-    } catch (error) {
-      display.value = "Error";
-    }
-  });
-
+        try {
+            const result = eval(display.value);
+            display.value = result.toString();
+            updateHistory(`${display.value} = ${result}`);
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
     // Number buttons
     for (let i = 0; i <= 9; i++) {
         const numberButton = document.getElementById(i.toString()) as HTMLButtonElement;
