@@ -75,6 +75,15 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = "Error";
       }
     });
+//M+ボタンの追加
+const memoryAddButton = document.getElementById("memory-add") as HTMLButtonElement;
+memoryAddButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        memoryValue = (memoryValue || 0) + currentValue;
+        updateHistory(`M+ ${currentValue}`);
+    }
+});
 
     const operators = ['+', '-', '*', '/'];
     for(const operator of operators){
