@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
     // ... (rest of the code)
     let memoryValue: number | null = null;
+    let lastAnswer: number | null = null;
     const history: string[] = [];
     const historyDiv = document.getElementById("history") as HTMLDivElement;
     const display = document.getElementById("display") as HTMLInputElement;
@@ -59,6 +60,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const result = Math.log(currentValue);
         display.value = result.toString();
         updateHistory(`ln(${currentValue}) = ${result}`);
+        lastAnswer = result;
       } else {
         display.value = "Error";
       }
@@ -71,6 +73,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const result = 10 ** currentValue;
         display.value = result.toString();
         updateHistory(`10^(${currentValue}) = ${result}`);
+        lastAnswer = result;
       } else {
         display.value = "Error";
       }
@@ -95,6 +98,14 @@ memorySubtractButton.addEventListener("click", () => {
     }
 });
 
+// 最後の答えボタン
+const lastAnswerButton = document.getElementById("last-answer") as HTMLButtonElement;
+lastAnswerButton.addEventListener("click", () => {
+    if (lastAnswer !== null) {
+        display.value = lastAnswer.toString();
+    }
+});
+
     const operators = ['+', '-', '*', '/', '(', ')'];
     for(const operator of operators){
         const button = document.getElementById(operator) as HTMLButtonElement;
@@ -108,6 +119,7 @@ memorySubtractButton.addEventListener("click", () => {
             const result = eval(display.value);
             display.value = result.toString();
             updateHistory(`${display.value} = ${result}`);
+            lastAnswer = result;
         } catch (error) {
             display.value = "Error";
         }
