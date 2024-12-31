@@ -43,4 +43,21 @@ window.addEventListener("DOMContentLoaded", () => {
              console.error("Failed to copy: ", err);
          });
      });
+
+     const maxButton = document.getElementById("max") as HTMLButtonElement;
+     maxButton.addEventListener("click", () => {
+        if (history.length === 0) {
+            alert("History is empty!");
+            return;
+        }
+
+        const numbers = history.map(item => parseFloat(item)).filter(item => !isNaN(item));
+        if (numbers.length === 0) {
+            alert("History contains no valid numbers!");
+            return;
+        }
+        const maxValue = Math.max(...numbers);
+        display.value = maxValue.toString();
+        updateHistory("Max: " + maxValue.toString());
+     });
 });
