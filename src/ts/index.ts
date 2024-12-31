@@ -46,35 +46,26 @@ window.addEventListener("DOMContentLoaded", () => {
 
      const maxButton = document.getElementById("max") as HTMLButtonElement;
      maxButton.addEventListener("click", () => {
-        if (history.length === 0) {
-            alert("History is empty!");
-            return;
-        }
-
-        const numbers = history.map(item => parseFloat(item)).filter(item => !isNaN(item));
-        if (numbers.length === 0) {
-            alert("History contains no valid numbers!");
-            return;
-        }
-        const maxValue = Math.max(...numbers);
-        display.value = maxValue.toString();
-        updateHistory("Max: " + maxValue.toString());
+        // ... existing maxButton code
      });
 
      const minButton = document.getElementById("min") as HTMLButtonElement;
      minButton.addEventListener("click", () => {
+        // ... existing minButton code
+     });
+     const sumHistoryButton = document.getElementById("sum-history") as HTMLButtonElement;
+    sumHistoryButton.addEventListener("click", () => {
         if (history.length === 0) {
             alert("History is empty!");
             return;
         }
-
         const numbers = history.map(item => parseFloat(item)).filter(item => !isNaN(item));
         if (numbers.length === 0) {
             alert("History contains no valid numbers!");
             return;
         }
-        const minValue = Math.min(...numbers);
-        display.value = minValue.toString();
-        updateHistory("Min: " + minValue.toString());
-     });
+        const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+        display.value = sum.toString();
+        updateHistory("Sum History: " + sum.toString());
+    });
 });
