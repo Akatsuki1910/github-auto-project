@@ -46,4 +46,12 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value += i.toString();
         });
     }
+
+    const operators = ['plus', 'minus', 'multiply', 'divide'];
+    operators.forEach(operator => {
+        const operatorButton = document.getElementById(operator);
+        operatorButton.addEventListener('click', () => {
+            display.value += operator === 'plus' ? '+' : operator === 'minus' ? '-' : operator === 'multiply' ? '*' : '/';
+        });
+    });
 });
