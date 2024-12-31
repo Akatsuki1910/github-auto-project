@@ -42,6 +42,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const allClearButton = document.getElementById("all-clear");
     allClearButton.addEventListener("click", () => {
         display.value = "";
+        history.length = 0; //履歴もクリア
+        historyDiv.innerHTML = "";
     });
     const clearEntryButton = document.getElementById("clear-entry");
     clearEntryButton.addEventListener("click", () => {
