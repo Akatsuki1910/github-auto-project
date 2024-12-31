@@ -59,4 +59,17 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value += operator === 'plus' ? '+' : operator === 'minus' ? '-' : operator === 'multiply' ? '*' : '/';
         });
     });
+
+    const equalsButton = document.getElementById("equals");
+    equalsButton.addEventListener("click", () => {
+        try {
+            const result = eval(display.value);
+            display.value = result.toString();
+            updateHistory(`${display.value} = ${result}`);
+            lastAnswer = result;
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
 });
