@@ -75,13 +75,23 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = "Error";
       }
     });
-//M+ボタンの追加
+//M+ボタン
 const memoryAddButton = document.getElementById("memory-add") as HTMLButtonElement;
 memoryAddButton.addEventListener("click", () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
         memoryValue = (memoryValue || 0) + currentValue;
         updateHistory(`M+ ${currentValue}`);
+    }
+});
+
+//M-ボタンの追加
+const memorySubtractButton = document.getElementById("memory-subtract") as HTMLButtonElement;
+memorySubtractButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        memoryValue = (memoryValue || 0) - currentValue;
+        updateHistory(`M- ${currentValue}`);
     }
 });
 
