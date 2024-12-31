@@ -159,4 +159,9 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value += '.';
         }
     });
+     // 正負反転ボタンの追加
+    const plusminusButton = document.getElementById("plusminus");
+    plusminusButton.addEventListener("click", () => {
+        display.value = (parseFloat(display.value) * -1).toString();
+    });
 });
