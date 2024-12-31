@@ -30,5 +30,14 @@ window.addEventListener("DOMContentLoaded", () => {
         history.pop();
         historyDiv.innerHTML = history.map(item => `<p>${item}</p>`).join('');
     });
+
+    const copyDisplayButton = document.getElementById("copy-display") as HTMLButtonElement;
+    copyDisplayButton.addEventListener("click", () => {
+        navigator.clipboard.writeText(display.value).then(() => {
+            alert("Display value copied to clipboard!");
+        }, () => {
+            alert("Failed to copy display value.");
+        });
+    });
     // ... existing code ...
 });
