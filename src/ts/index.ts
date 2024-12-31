@@ -81,4 +81,12 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = (-currentValue).toString();
         }
     });
+
+    const sqrtButton = document.getElementById("sqrt") as HTMLButtonElement;
+    sqrtButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            display.value = Math.sqrt(currentValue).toString();
+        }
+    });
 });
