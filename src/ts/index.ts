@@ -145,4 +145,10 @@ window.addEventListener("DOMContentLoaded", () => {
             return result;
         }
     }
+
+    //DELボタンの追加
+    const deleteButton = document.getElementById("delete");
+    deleteButton.addEventListener("click", () => {
+        display.value = display.value.slice(0, -1);
+    });
 });
