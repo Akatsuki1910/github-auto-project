@@ -25,5 +25,10 @@ window.addEventListener("DOMContentLoaded", () => {
         history.push(value);
         historyDiv.innerHTML = history.map(item => `<p>${item}</p>`).join('');
     };
+    const clearLastHistoryButton = document.getElementById("clear-last-history") as HTMLButtonElement;
+    clearLastHistoryButton.addEventListener("click", () => {
+        history.pop();
+        historyDiv.innerHTML = history.map(item => `<p>${item}</p>`).join('');
+    });
     // ... existing code ...
 });
