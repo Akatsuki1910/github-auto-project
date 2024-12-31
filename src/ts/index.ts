@@ -63,6 +63,24 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = "Error";
       }
     });
+    const operators = ['+', '-', '*', '/'];
+    for(const operator of operators){
+        const button = document.getElementById(operator) as HTMLButtonElement;
+        button.addEventListener('click', () =>{
+            display.value += operator;
+        });
+    }
+
+    const equalsButton = document.getElementById("equals") as HTMLButtonElement;
+    equalsButton.addEventListener('click', () => {
+    try {
+      const result = eval(display.value);
+      display.value = result.toString();
+      updateHistory(`${display.value} = ${result}`);
+    } catch (error) {
+      display.value = "Error";
+    }
+  });
 
     // Number buttons
     for (let i = 0; i <= 9; i++) {
