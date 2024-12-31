@@ -68,4 +68,10 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = sum.toString();
         updateHistory("Sum History: " + sum.toString());
     });
+
+     const allClearButton = document.getElementById("all-clear") as HTMLButtonElement;
+    allClearButton.addEventListener("click", () => {
+      display.value = "0";
+         // 計算式のクリア処理を追加
+    });
 });
