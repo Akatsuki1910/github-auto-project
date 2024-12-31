@@ -33,81 +33,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
       // ... existing fibonacciButton code
 
-    const binaryButton = document.getElementById("binary") as HTMLButtonElement;
-    binaryButton.addEventListener("click", () => {
-        // ... existing binaryButton code
-    });
+    // ... (Existing Code)
 
-    const octalButton = document.getElementById("octal") as HTMLButtonElement;
-    octalButton.addEventListener("click", () => {
-        const display = document.getElementById("display") as HTMLInputElement;
-        const num = parseInt(display.value);
-        display.value = num.toString(8);
-        updateHistory(`Octal(${num}) = ${num.toString(8)}`);
-    });
-
-    const hexadecimalButton = document.getElementById("hexadecimal") as HTMLButtonElement;
-    hexadecimalButton.addEventListener("click", () => {
-        const display = document.getElementById("display") as HTMLInputElement;
-        const num = parseInt(display.value);
-        display.value = num.toString(16);
-        updateHistory(`Hexadecimal(${num}) = ${num.toString(16)}`);
-    });
-
-    const sumButton = document.getElementById("sum") as HTMLButtonElement;
-    sumButton.addEventListener("click", () => {
-      const display = document.getElementById("display") as HTMLInputElement;
-      const numbers = display.value.split('+').map(Number);
-      const sum = numbers.reduce((acc, curr) => acc + curr, 0);
-      display.value = sum.toString();
-      updateHistory(numbers.join(" + ") + " = " + sum);
-    });
-
-    const averageButton = document.getElementById("average") as HTMLButtonElement;
-    averageButton.addEventListener("click", () => {
-        const display = document.getElementById("display") as HTMLInputElement;
-        const numbers = display.value.split('+').map(Number);
-        const sum = numbers.reduce((acc, curr) => acc + curr, 0);
-        const average = sum / numbers.length;
-        display.value = average.toString();
-        updateHistory("Average(" + numbers.join(" + ") + ") = " + average);
-    });
-
-    const medianButton = document.getElementById("median") as HTMLButtonElement;
-    medianButton.addEventListener("click", () => {
-        const display = document.getElementById("display") as HTMLInputElement;
-        const numbers = display.value.split('+').map(Number).sort((a, b) => a - b);
-        const mid = Math.floor(numbers.length / 2);
-        const median = numbers.length % 2 === 0 ? (numbers[mid - 1] + numbers[mid]) / 2 : numbers[mid];
-        display.value = median.toString();
-        updateHistory("Median(" + numbers.join(" + ") + ") = " + median);
-    });
-
-    const modeButton = document.getElementById("mode") as HTMLButtonElement;
-    modeButton.addEventListener("click", () => {
-      const display = document.getElementById("display") as HTMLInputElement;
-      const numbers = display.value.split('+').map(Number);
-      const counts = {};
-      let mode = null;
-      let maxCount = 0;
-      for (const num of numbers) {
-        counts[num] = (counts[num] || 0) + 1;
-        if (counts[num] > maxCount) {
-          mode = num;
-          maxCount = counts[num];
-        }
-      }
-      display.value = mode === null ? "No Mode" : mode.toString();
-      updateHistory("Mode(" + numbers.join(" + ") + ") = " + (mode === null ? "No Mode" : mode));
-    });
-
-      const geoMeanButton = document.getElementById("geo-mean") as HTMLButtonElement;
-      geoMeanButton.addEventListener("click", () => {
-          const display = document.getElementById("display") as HTMLInputElement;
-          const numbers = display.value.split('+').map(Number);
-          const product = numbers.reduce((acc, curr) => acc * curr, 1);
-          const geoMean = Math.pow(product, 1 / numbers.length);
-          display.value = geoMean.toString();
-          updateHistory("Geo Mean(" + numbers.join(" + ") + ") = " + geoMean);
-      });
+     const copyHistoryButton = document.getElementById("copy-history") as HTMLButtonElement;
+     copyHistoryButton.addEventListener("click", () => {
+         navigator.clipboard.writeText(history.join('\n')).then(() => {
+             alert("History copied to clipboard!");
+         }).catch(err => {
+             console.error("Failed to copy: ", err);
+         });
+     });
 });
