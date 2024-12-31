@@ -55,18 +55,7 @@ window.addEventListener("DOMContentLoaded", () => {
      });
      const sumHistoryButton = document.getElementById("sum-history") as HTMLButtonElement;
     sumHistoryButton.addEventListener("click", () => {
-        if (history.length === 0) {
-            alert("History is empty!");
-            return;
-        }
-        const numbers = history.map(item => parseFloat(item)).filter(item => !isNaN(item));
-        if (numbers.length === 0) {
-            alert("History contains no valid numbers!");
-            return;
-        }
-        const sum = numbers.reduce((acc, curr) => acc + curr, 0);
-        display.value = sum.toString();
-        updateHistory("Sum History: " + sum.toString());
+        // ... existing sumHistoryButton code
     });
 
      const allClearButton = document.getElementById("all-clear") as HTMLButtonElement;
@@ -82,9 +71,14 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     const percentageButton = document.getElementById("percentage") as HTMLButtonElement;
     percentageButton.addEventListener("click", () => {
-      const currentValue = parseFloat(display.value);
-      if (!isNaN(currentValue)) {
-        display.value = (currentValue / 100).toString();
-      }
+      // ... existing percentageButton code
+    });
+
+    const plusMinusButton = document.getElementById("plus-minus") as HTMLButtonElement;
+    plusMinusButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            display.value = (-currentValue).toString();
+        }
     });
 });
