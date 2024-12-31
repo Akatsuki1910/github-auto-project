@@ -60,4 +60,21 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = maxValue.toString();
         updateHistory("Max: " + maxValue.toString());
      });
+
+     const minButton = document.getElementById("min") as HTMLButtonElement;
+     minButton.addEventListener("click", () => {
+        if (history.length === 0) {
+            alert("History is empty!");
+            return;
+        }
+
+        const numbers = history.map(item => parseFloat(item)).filter(item => !isNaN(item));
+        if (numbers.length === 0) {
+            alert("History contains no valid numbers!");
+            return;
+        }
+        const minValue = Math.min(...numbers);
+        display.value = minValue.toString();
+        updateHistory("Min: " + minValue.toString());
+     });
 });
