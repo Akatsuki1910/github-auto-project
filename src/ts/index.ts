@@ -58,4 +58,12 @@ window.addEventListener("DOMContentLoaded", () => {
          updateHistory(`Fibonacci(${n}) = ${a}`);
         }
     });
+
+    const binaryButton = document.getElementById("binary") as HTMLButtonElement;
+    binaryButton.addEventListener("click", () => {
+        const display = document.getElementById("display") as HTMLInputElement;
+        const num = parseInt(display.value);
+        display.value = num.toString(2);
+        updateHistory(`Binary(${num}) = ${num.toString(2)}`);
+    });
 });
