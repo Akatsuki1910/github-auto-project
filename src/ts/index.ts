@@ -80,5 +80,11 @@ window.addEventListener("DOMContentLoaded", () => {
             history.reverse();
             historyDiv.innerHTML = history.map(item => `<p>${item}</p>`).join('');
         });
+    const percentageButton = document.getElementById("percentage") as HTMLButtonElement;
+    percentageButton.addEventListener("click", () => {
+      const currentValue = parseFloat(display.value);
+      if (!isNaN(currentValue)) {
+        display.value = (currentValue / 100).toString();
+      }
+    });
 });
-
