@@ -5,13 +5,13 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code)
     // ... existing code
     // ... (rest of the code)
-    let memoryValue: number | null = null;
-    let lastAnswer: number | null = null;
-    const history: string[] = [];
-    const historyDiv = document.getElementById("history") as HTMLDivElement;
-    const display = document.getElementById("display") as HTMLInputElement;
+    let memoryValue = null;
+    let lastAnswer = null;
+    const history = [];
+    const historyDiv = document.getElementById("history");
+    const display = document.getElementById("display");
     // ... existing code ...
-    const toggleHistoryButton = document.getElementById("toggle-history") as HTMLButtonElement;
+    const toggleHistoryButton = document.getElementById("toggle-history");
     toggleHistoryButton.addEventListener("click", () => {
         if (historyDiv.style.display === "none" || historyDiv.style.display === "") {
             historyDiv.style.display = "block";
@@ -21,17 +21,17 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    const updateHistory = (value: string) => {
+    const updateHistory = (value) => {
         history.push(value);
         historyDiv.innerHTML = history.map(item => `<p>${item}</p>`).join('');
     };
-    const clearLastHistoryButton = document.getElementById("clear-last-history") as HTMLButtonElement;
+    const clearLastHistoryButton = document.getElementById("clear-last-history");
     clearLastHistoryButton.addEventListener("click", () => {
         history.pop();
         historyDiv.innerHTML = history.map(item => `<p>${item}</p>`).join('');
     });
 
-    const copyDisplayButton = document.getElementById("copy-display") as HTMLButtonElement;
+    const copyDisplayButton = document.getElementById("copy-display");
     copyDisplayButton.addEventListener("click", () => {
         navigator.clipboard.writeText(display.value).then(() => {
             alert("Display value copied to clipboard!");
@@ -40,4 +40,10 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     });
     // ... existing code ...
+    for (let i = 0; i <= 9; i++) {
+        const numberButton = document.getElementById(i.toString());
+        numberButton.addEventListener("click", () => {
+            display.value += i.toString();
+        });
+    }
 });
