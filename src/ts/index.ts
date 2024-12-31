@@ -104,4 +104,18 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+
+    //平方根の計算機能を追加
+    const sqrtButton = document.getElementById("sqrt");
+    sqrtButton.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            const sqrtValue = Math.sqrt(currentValue);
+            display.value = sqrtValue.toString();
+            updateHistory(`√(${currentValue}) = ${sqrtValue}`);
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
 });
