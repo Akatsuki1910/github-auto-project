@@ -49,6 +49,12 @@ window.addEventListener("DOMContentLoaded", () => {
     clearEntryButton.addEventListener("click", () => {
         display.value = "";
     });
+        const lastAnswerButton = document.getElementById("last-answer");
+        lastAnswerButton.addEventListener("click", () => {
+            if (lastAnswer !== null) {
+                display.value += lastAnswer.toString();
+            }
+        });
     // ... existing code ...
     for (let i = 0; i <= 9; i++) {
         const numberButton = document.getElementById(i.toString());
