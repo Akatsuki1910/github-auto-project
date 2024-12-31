@@ -45,4 +45,12 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = num.toString(8);
         updateHistory(`Octal(${num}) = ${num.toString(8)}`);
     });
+
+    const hexadecimalButton = document.getElementById("hexadecimal") as HTMLButtonElement;
+    hexadecimalButton.addEventListener("click", () => {
+        const display = document.getElementById("display") as HTMLInputElement;
+        const num = parseInt(display.value);
+        display.value = num.toString(16);
+        updateHistory(`Hexadecimal(${num}) = ${num.toString(16)}`);
+    });
 });
