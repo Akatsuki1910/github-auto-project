@@ -63,4 +63,16 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = "Error";
       }
     });
+
+    // Number buttons
+    for (let i = 0; i <= 9; i++) {
+        const numberButton = document.getElementById(i.toString()) as HTMLButtonElement;
+        numberButton.addEventListener("click", () => {
+            if (display.value === "0") {
+                display.value = i.toString();
+            } else {
+                display.value += i.toString();
+            }
+        });
+    }
 });
