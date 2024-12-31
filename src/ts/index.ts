@@ -100,4 +100,14 @@ window.addEventListener("DOMContentLoaded", () => {
       display.value = mode === null ? "No Mode" : mode.toString();
       updateHistory("Mode(" + numbers.join(" + ") + ") = " + (mode === null ? "No Mode" : mode));
     });
+
+      const geoMeanButton = document.getElementById("geo-mean") as HTMLButtonElement;
+      geoMeanButton.addEventListener("click", () => {
+          const display = document.getElementById("display") as HTMLInputElement;
+          const numbers = display.value.split('+').map(Number);
+          const product = numbers.reduce((acc, curr) => acc * curr, 1);
+          const geoMean = Math.pow(product, 1 / numbers.length);
+          display.value = geoMean.toString();
+          updateHistory("Geo Mean(" + numbers.join(" + ") + ") = " + geoMean);
+      });
 });
