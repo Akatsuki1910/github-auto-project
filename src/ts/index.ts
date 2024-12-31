@@ -51,4 +51,16 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... existing plusMinusButton code ...
 
     // ... existing sqrtButton code ...
+
+    const lnButton = document.getElementById("ln") as HTMLButtonElement;
+    lnButton.addEventListener("click", () => {
+      const currentValue = parseFloat(display.value);
+      if (!isNaN(currentValue) && currentValue > 0) {
+        const result = Math.log(currentValue);
+        display.value = result.toString();
+        updateHistory(`ln(${currentValue}) = ${result}`);
+      } else {
+        display.value = "Error";
+      }
+    });
 });
