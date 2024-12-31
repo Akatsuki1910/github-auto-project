@@ -62,4 +62,14 @@ window.addEventListener("DOMContentLoaded", () => {
       display.value = sum.toString();
       updateHistory(numbers.join(" + ") + " = " + sum);
     });
+
+    const averageButton = document.getElementById("average") as HTMLButtonElement;
+    averageButton.addEventListener("click", () => {
+        const display = document.getElementById("display") as HTMLInputElement;
+        const numbers = display.value.split('+').map(Number);
+        const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+        const average = sum / numbers.length;
+        display.value = average.toString();
+        updateHistory("Average(" + numbers.join(" + ") + ") = " + average);
+    });
 });
