@@ -39,6 +39,11 @@ window.addEventListener("DOMContentLoaded", () => {
             alert("Failed to copy display value.");
         });
     });
+    const allClearButton = document.getElementById("all-clear");
+    allClearButton.addEventListener("click", () => {
+        display.value = "";
+    });
+
     // ... existing code ...
     for (let i = 0; i <= 9; i++) {
         const numberButton = document.getElementById(i.toString());
