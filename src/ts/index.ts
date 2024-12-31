@@ -91,4 +91,17 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = timestamp;
         updateHistory(`Timestamp: ${timestamp}`);
     });
+
+    // パーセント計算機能を追加
+    const percentageButton = document.getElementById("percentage");
+    percentageButton.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            const percentageValue = currentValue / 100;
+            display.value = percentageValue.toString();
+            updateHistory(`${currentValue}% = ${percentageValue}`);
+         } catch (error) {
+            display.value = "Error";
+        }
+    });
 });
