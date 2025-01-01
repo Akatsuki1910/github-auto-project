@@ -177,4 +177,10 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+
+     // 一番最後の桁を削除する機能を追加
+    const deleteLastDigitButton = document.getElementById("delete-last-digit");
+    deleteLastDigitButton.addEventListener("click", () => {
+        display.value = display.value.slice(0, -1);
+    });
 });
