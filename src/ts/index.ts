@@ -169,6 +169,21 @@ copyAllHistoryButton.addEventListener("click", () => {
             display.value = "Error";
         }
     });
+    // 平方根の計算機能を追加
+    const squareRootButton = document.getElementById("square-root-button");
+    squareRootButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(display.value);
+            const result = Math.sqrt(num);
+            display.value = result.toString();
+            updateHistory(`√${num} = ${result}`);
+            lastAnswer = result;
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... (Existing functions)
 });
+
 
