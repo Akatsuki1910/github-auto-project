@@ -141,5 +141,19 @@ copyAllHistoryButton.addEventListener("click", () => {
     clearDisplayButton.addEventListener("click", () => {
         display.value = "";
     });
+     // x²の計算機能を追加
+    const squareNumberButton = document.getElementById("square-number");
+    squareNumberButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(display.value);
+            const result = num * num;
+            display.value = result.toString();
+            updateHistory(`${num}² = ${result}`);
+            lastAnswer = result;
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... (Existing functions)
 });
