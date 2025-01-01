@@ -102,5 +102,19 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    const exp2Button = document.getElementById("exp2");
+    exp2Button.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            const exp2Value = Math.pow(2, currentValue);
+            display.value = exp2Value.toString();
+            updateHistory(`2^${currentValue} = ${exp2Value}`);
+            lastAnswer = exp2Value;
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... (Existing functions)
 });
+
