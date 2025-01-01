@@ -98,4 +98,17 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+     // x²の計算機能を追加
+    const squareButton = document.getElementById("square");
+    squareButton.addEventListener("click", () => {
+      try {
+          const currentValue = parseFloat(display.value);
+          const squareValue = Math.pow(currentValue,2);
+          display.value = squareValue.toString();
+          updateHistory(`${currentValue}² = ${squareValue}`);
+         lastAnswer = squareValue;
+      } catch (error) {
+            display.value = "Error";
+        }
+    });
 });
