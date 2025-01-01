@@ -164,4 +164,24 @@ window.addEventListener("DOMContentLoaded", () => {
     plusminusButton.addEventListener("click", () => {
         display.value = (parseFloat(display.value) * -1).toString();
     });
+
+    // べき乗計算機能を追加
+    const powerButton = document.getElementById("power");
+    powerButton.addEventListener("click", () => {
+        try {
+            const base = parseFloat(display.value);
+            display.value = ""; // 一旦クリア
+            const exponentInput = () => new Promise((resolve) => {
+                const exponent = prompt("Enter exponent:");
+                resolve(parseFloat(exponent));
+            });
+            exponentInput().then((exponent) => {
+                const result = Math.pow(base, exponent);
+                display.value = result.toString();
+                updateHistory(`${base}^${exponent} = ${result}`);
+            });
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
 });
