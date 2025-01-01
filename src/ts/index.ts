@@ -111,4 +111,18 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+ // 立方根の計算機能を追加
+    const cubeRootButton = document.getElementById("cube-root");
+    cubeRootButton.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            const cubeRootValue = Math.cbrt(currentValue);
+            display.value = cubeRootValue.toString();
+            updateHistory(`∛${currentValue} = ${cubeRootValue}`);
+            lastAnswer = cubeRootValue;
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
 });
