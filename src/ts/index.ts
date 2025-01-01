@@ -183,4 +183,20 @@ window.addEventListener("DOMContentLoaded", () => {
     deleteLastDigitButton.addEventListener("click", () => {
         display.value = display.value.slice(0, -1);
     });
+
+     // xのy乗の計算機能を追加
+    const xPowerYButton = document.getElementById("x-power-y");
+    xPowerYButton.addEventListener("click", () => {
+        try {
+            const x = parseFloat(display.value);
+            const y = parseFloat(prompt("Enter the power (y):"));
+            const result = Math.pow(x, y);
+            display.value = result.toString();
+            updateHistory(`${x}^${y} = ${result}`);
+            lastAnswer = result;
+        }
+        catch(error) {
+            display.value = "Error";
+        }
+    });
 });
