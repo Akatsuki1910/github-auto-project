@@ -181,5 +181,20 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    const roundToNButton = document.getElementById("round-to-n");
+    const roundToNInput = document.getElementById("round-to-n-input");
+    roundToNButton.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            const n = parseInt(roundToNInput.value);
+            const roundedValue = Number(currentValue.toFixed(n));
+            display.value = roundedValue.toString();
+            updateHistory(`round(${currentValue}, ${n}) = ${roundedValue}`);
+      lastAnswer = roundedValue;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... (Existing functions)
 });
+
