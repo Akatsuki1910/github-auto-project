@@ -114,7 +114,8 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
-    // ... (Existing Code) ...
+  // ... (Existing Code) ...
+    // ... (Existing Code)
     const calculateEButton = document.getElementById("calculate-e");
     calculateEButton.addEventListener("click", () => {
         display.value = Math.E.toString();
@@ -265,6 +266,15 @@ window.addEventListener("DOMContentLoaded", () => {
         }).catch(err => {
             console.error("Failed to read clipboard contents: ", err);
         });
+    });
+    const openParenthesisButton = document.getElementById("open-parenthesis");
+    openParenthesisButton.addEventListener("click", () => {
+        display.value += "(";
+    });
+
+    const closeParenthesisButton = document.getElementById("close-parenthesis");
+    closeParenthesisButton.addEventListener("click", () => {
+        display.value += ")";
     });
     // ... (Existing functions)
 });
