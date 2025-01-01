@@ -50,7 +50,8 @@ window.addEventListener("DOMContentLoaded", () => {
             }, () => {
                 alert("Failed to copy result.");
             });
-        } catch (error) {
+        }
+        catch (error) {
             display.value = "Error";
         }
     });
@@ -78,7 +79,7 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    const operators = ['plus', 'minus', 'multiply', 'divide','modulus'];
+    const operators = ['plus', 'minus', 'multiply', 'divide', 'modulus'];
     operators.forEach(operator => {
         const operatorButton = document.getElementById(operator);
         operatorButton.addEventListener('click', () => {
@@ -123,7 +124,7 @@ window.addEventListener("DOMContentLoaded", () => {
     calculatePiButton.addEventListener("click", () => {
         display.value = Math.PI.toString();
     });
-        const resetButton = document.getElementById("reset");
+    const resetButton = document.getElementById("reset");
     resetButton.addEventListener("click", () => {
         display.value = "0";
     });
@@ -149,7 +150,7 @@ window.addEventListener("DOMContentLoaded", () => {
             const sqrtValue = Math.sqrt(currentValue);
             display.value = sqrtValue.toString();
             updateHistory(`√(${currentValue}) = ${sqrtValue}`);
-            lastAnswer = sqrtValue;            
+            lastAnswer = sqrtValue;
         }
         catch (error) {
             display.value = "Error";
@@ -190,11 +191,17 @@ window.addEventListener("DOMContentLoaded", () => {
             const roundedValue = Number(currentValue.toFixed(n));
             display.value = roundedValue.toString();
             updateHistory(`round(${currentValue}, ${n}) = ${roundedValue}`);
-      lastAnswer = roundedValue;
-        } catch (error) {
+            lastAnswer = roundedValue;
+        }
+        catch (error) {
             display.value = "Error";
         }
     });
+
+    const clearAllHistoryButton = document.getElementById("clear-all-history");
+    clearAllHistoryButton.addEventListener("click", () => {
+        history.length = 0;
+        historyDiv.innerHTML = "";
+    });
     // ... (Existing functions)
 });
-
