@@ -123,5 +123,19 @@ window.addEventListener("DOMContentLoaded", () => {
     calculatePiButton.addEventListener("click", () => {
         display.value = Math.PI.toString();
     });
+
+    // log10の計算機能を追加
+    const log10Button = document.getElementById("log10");
+    log10Button.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            const log10Value = Math.log10(currentValue);
+            display.value = log10Value.toString();
+            updateHistory(`log10(${currentValue}) = ${log10Value}`);
+            lastAnswer = log10Value;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... (Existing functions)
 });
