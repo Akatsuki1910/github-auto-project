@@ -136,5 +136,10 @@ copyAllHistoryButton.addEventListener("click", () => {
         const day = String(today.getDate()).padStart(2, '0');
         display.value = `${year}-${month}-${day}`;
     });
+        // 画面クリア機能を追加
+    const clearDisplayButton = document.getElementById("clear-display");
+    clearDisplayButton.addEventListener("click", () => {
+        display.value = "";
+    });
     // ... (Existing functions)
 });
