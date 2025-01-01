@@ -133,7 +133,22 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = log10Value.toString();
             updateHistory(`log10(${currentValue}) = ${log10Value}`);
             lastAnswer = log10Value;
-        } catch (error) {
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
+    // 平方根の計算機能を追加
+    const calculateSqrtButton = document.getElementById("calculate-sqrt");
+    calculateSqrtButton.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            const sqrtValue = Math.sqrt(currentValue);
+            display.value = sqrtValue.toString();
+            updateHistory(`√(${currentValue}) = ${sqrtValue}`);
+            lastAnswer = sqrtValue;            
+        }
+        catch (error) {
             display.value = "Error";
         }
     });
