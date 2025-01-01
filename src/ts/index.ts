@@ -125,4 +125,27 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    // 階乗の計算機能を追加
+    const factorialButton = document.getElementById("factorial");
+    factorialButton.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            if (currentValue < 0) {
+                throw new Error("Cannot calculate factorial of a negative number.");
+            }
+            const factorialValue = factorial(currentValue);
+            display.value = factorialValue.toString();
+            updateHistory(`${currentValue}! = ${factorialValue}`);
+            lastAnswer = factorialValue;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
+    function factorial(n) {
+        if (n === 0) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
 });
