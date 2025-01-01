@@ -257,5 +257,14 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+        // ペースト機能を追加
+    const pasteButton = document.getElementById("paste");
+    pasteButton.addEventListener("click", () => {
+        navigator.clipboard.readText().then(text => {
+            display.value += text;
+        }).catch(err => {
+            console.error("Failed to read clipboard contents: ", err);
+        });
+    });
     // ... (Existing functions)
 });
