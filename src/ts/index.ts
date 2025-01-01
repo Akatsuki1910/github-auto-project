@@ -164,7 +164,11 @@ window.addEventListener("DOMContentLoaded", () => {
     plusminusButton.addEventListener("click", () => {
         display.value = (parseFloat(display.value) * -1).toString();
     });
-
+        // 符号反転ボタンの追加
+    const signChangeButton = document.getElementById("sign-change");
+    signChangeButton.addEventListener("click", () => {
+        display.value = (-parseFloat(display.value)).toString();
+    });
     // べき乗計算機能を追加
     const powerButton = document.getElementById("power");
     powerButton.addEventListener("click", () => {
