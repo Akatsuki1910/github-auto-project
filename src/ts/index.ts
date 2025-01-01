@@ -162,4 +162,19 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    // n乗根の計算機能を追加
+    const nthRootButton = document.getElementById("nth-root");
+    nthRootButton.addEventListener("click", () => {
+        try {
+            const n = parseFloat(prompt("Enter the root (n):")); // nの値を入力
+            const currentValue = parseFloat(display.value);
+            const nthRootValue = Math.pow(currentValue, 1/n);
+            display.value = nthRootValue.toString();
+            updateHistory(`${n}√${currentValue} = ${nthRootValue}`);
+            lastAnswer = nthRootValue;
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
 });
