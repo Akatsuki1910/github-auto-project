@@ -39,6 +39,21 @@ window.addEventListener("DOMContentLoaded", () => {
             alert("Failed to copy display value.");
         });
     });
+
+    // 結果をコピーする機能を追加
+    const copyResultButton = document.getElementById("copy-result");
+    copyResultButton.addEventListener("click", () => {
+        try {
+            const result = eval(display.value);
+            navigator.clipboard.writeText(result.toString()).then(() => {
+                alert("Result copied to clipboard!");
+            }, () => {
+                alert("Failed to copy result.");
+            });
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
     const allClearButton = document.getElementById("all-clear");
     allClearButton.addEventListener("click", () => {
         display.value = "";
