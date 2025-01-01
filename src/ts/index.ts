@@ -199,4 +199,9 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+        // eの計算機能を追加
+    const calculateEButton = document.getElementById("calculate-e");
+    calculateEButton.addEventListener("click", () => {
+        display.value += Math.E.toString();
+    });
 });
