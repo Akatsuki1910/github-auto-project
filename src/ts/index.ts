@@ -63,11 +63,11 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-    const operators = ['plus', 'minus', 'multiply', 'divide'];
+    const operators = ['plus', 'minus', 'multiply', 'divide','modulus'];
     operators.forEach(operator => {
         const operatorButton = document.getElementById(operator);
         operatorButton.addEventListener('click', () => {
-            display.value += operator === 'plus' ? '+' : operator === 'minus' ? '-' : operator === 'multiply' ? '*' : '/';
+            display.value += operator === 'plus' ? '+' : operator === 'minus' ? '-' : operator === 'multiply' ? '*' : operator === 'modulus' ? '%' : '/';
         });
     });
 
