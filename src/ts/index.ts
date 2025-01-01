@@ -169,7 +169,7 @@ copyAllHistoryButton.addEventListener("click", () => {
             display.value = "Error";
         }
     });
-    // 平方根の計算機能を追加
+    // 平方根の計算機能を追
     const squareRootButton = document.getElementById("square-root-button");
     squareRootButton.addEventListener("click", () => {
         try {
@@ -183,7 +183,26 @@ copyAllHistoryButton.addEventListener("click", () => {
             display.value = "Error";
         }
     });
+        // 階乗の計算機能を追加
+    const factorialButton = document.getElementById("factorial-button");
+    factorialButton.addEventListener("click", () => {
+        try {
+            const num = parseInt(display.value);
+            if (num < 0) {
+                throw new Error("Cannot calculate factorial of negative number.");
+            }
+            let result = 1;
+            for (let i = 2; i <= num; i++) {
+                result *= i;
+            }
+            display.value = result.toString();
+            updateHistory(`${num}! = ${result}`);
+            lastAnswer = result;
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... (Existing functions)
 });
-
 
