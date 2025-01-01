@@ -116,7 +116,16 @@ window.addEventListener("DOMContentLoaded", () => {
 // 一文字削除機能
 const deleteLastCharacterButton = document.getElementById("delete-last-character");
 deleteLastCharacterButton.addEventListener("click", () => {
-    display.value = display.value.slice(0, -1);
+    display.value = display.value.slice(0, -1); 
+});
+ // 履歴をすべてコピーする機能を追加
+const copyAllHistoryButton = document.getElementById("copy-all-history");
+copyAllHistoryButton.addEventListener("click", () => {
+    navigator.clipboard.writeText(history.join('\n')).then(() => {
+        alert("History copied to clipboard!");
+    }, () => {
+        alert("Failed to copy history.");
+    });
 });
     // ... (Existing functions)
 });
