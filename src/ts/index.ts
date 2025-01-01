@@ -119,5 +119,9 @@ window.addEventListener("DOMContentLoaded", () => {
     resetButton.addEventListener("click", () => {
         display.value = "0";
     });
+        const calculatePiButton = document.getElementById("calculate-pi");
+    calculatePiButton.addEventListener("click", () => {
+        display.value = Math.PI.toString();
+    });
     // ... (Existing functions)
 });
