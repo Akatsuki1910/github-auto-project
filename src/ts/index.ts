@@ -155,5 +155,20 @@ copyAllHistoryButton.addEventListener("click", () => {
             display.value = "Error";
         }
     });
+    // x³の計算機能を追加
+    const cubeNumberButton = document.getElementById("cube-number");
+    cubeNumberButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(display.value);
+            const result = num * num * num;
+            display.value = result.toString();
+            updateHistory(`${num}³ = ${result}`);
+            lastAnswer = result;
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... (Existing functions)
 });
+
