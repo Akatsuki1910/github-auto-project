@@ -84,106 +84,16 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // 現在の時刻を表示する機能を追加
-    const currentTimestampButton = document.getElementById("current-timestamp");
-    currentTimestampButton.addEventListener("click", () => {
-        const timestamp = new Date().toLocaleString();
-        display.value = timestamp;
-        updateHistory(`Timestamp: ${timestamp}`);
-    });
+    // ... (Existing Code) ...
 
-    // パーセント計算機能を追加
-    const percentageButton = document.getElementById("percentage");
-    percentageButton.addEventListener("click", () => {
+    // 逆数の計算機能を追加
+    const reciprocalButton = document.getElementById("reciprocal");
+    reciprocalButton.addEventListener("click", () => {
         try {
             const currentValue = parseFloat(display.value);
-            const percentageValue = currentValue / 100;
-            display.value = percentageValue.toString();
-            updateHistory(`${currentValue}% = ${percentageValue}`);
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-
-    //平方根の計算機能を追加
-    const sqrtButton = document.getElementById("sqrt");
-    sqrtButton.addEventListener("click", () => {
-        try {
-            const currentValue = parseFloat(display.value);
-            const sqrtValue = Math.sqrt(currentValue);
-            display.value = sqrtValue.toString();
-            updateHistory(`√(${currentValue}) = ${sqrtValue}`);
-        }
-        catch (error) {
-            display.value = "Error";
-        }
-    });
-
-    // 階乗計算機能を追加
-    const factorialButton = document.getElementById("factorial");
-    factorialButton.addEventListener("click", () => {
-        try {
-            const currentValue = parseFloat(display.value);
-            const factorialValue = factorial(currentValue);
-            display.value = factorialValue.toString();
-            updateHistory(`factorial(${currentValue}) = ${factorialValue}`);
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-
-    function factorial(n) {
-        if (n < 0) {
-            return "Error: Negative input";
-        } else if (n === 0) {
-            return 1;
-        } else {
-            let result = 1;
-            for (let i = 1; i <= n; i++) {
-                result *= i;
-            }
-            return result;
-        }
-    }
-
-    //DELボタンの追加
-    const deleteButton = document.getElementById("delete");
-    deleteButton.addEventListener("click", () => {
-        display.value = display.value.slice(0, -1);
-    });
-
-    // 小数点ボタンの追加
-    const decimalButton = document.getElementById("decimal");
-    decimalButton.addEventListener("click", () => {
-        if (!display.value.includes('.')) {
-            display.value += '.';
-        }
-    });
-     // 正負反転ボタンの追加
-    const plusminusButton = document.getElementById("plusminus");
-    plusminusButton.addEventListener("click", () => {
-        display.value = (parseFloat(display.value) * -1).toString();
-    });
-        // 符号反転ボタンの追加
-    const signChangeButton = document.getElementById("sign-change");
-    signChangeButton.addEventListener("click", () => {
-        display.value = (-parseFloat(display.value)).toString();
-    });
-    // べき乗計算機能を追加
-    const powerButton = document.getElementById("power");
-    powerButton.addEventListener("click", () => {
-        try {
-            const base = parseFloat(display.value);
-            display.value = ""; // 一旦クリア
-            const exponentInput = () => new Promise((resolve) => {
-                const exponent = prompt("Enter exponent:");
-                resolve(parseFloat(exponent));
-            });
-            exponentInput().then((exponent) => {
-                const result = Math.pow(base, exponent);
-                display.value = result.toString();
-                updateHistory(`${base}^${exponent} = ${result}`);
-            });
+            const reciprocalValue = 1 / currentValue;
+            display.value = reciprocalValue.toString();
+            updateHistory(`1/${currentValue} = ${reciprocalValue}`);
         } catch (error) {
             display.value = "Error";
         }
