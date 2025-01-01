@@ -203,6 +203,11 @@ copyAllHistoryButton.addEventListener("click", () => {
             display.value = "Error";
         }
     });
+    // 乱数生成機能を追加
+    const randButton = document.getElementById("rand");
+    randButton.addEventListener("click", () => {
+        const randValue = Math.random();
+        display.value = randValue.toString();
+    });
     // ... (Existing functions)
 });
-
