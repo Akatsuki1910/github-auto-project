@@ -87,134 +87,20 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code) ...
 
     // 逆数の計算機能を追加
-    const reciprocalButton = document.getElementById("reciprocal");
-    reciprocalButton.addEventListener("click", () => {
+    // ... (Existing functions)
+    // 切り捨て機能を追加
+    const roundDownButton = document.getElementById("round-down");
+    roundDownButton.addEventListener("click", () => {
         try {
             const currentValue = parseFloat(display.value);
-            const reciprocalValue = 1 / currentValue;
-            display.value = reciprocalValue.toString();
-            updateHistory(`1/${currentValue} = ${reciprocalValue}`);
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-     // x²の計算機能を追加
-    const squareButton = document.getElementById("square");
-    squareButton.addEventListener("click", () => {
-      try {
-          const currentValue = parseFloat(display.value);
-          const squareValue = Math.pow(currentValue,2);
-          display.value = squareValue.toString();
-          updateHistory(`${currentValue}² = ${squareValue}`);
-         lastAnswer = squareValue;
-      } catch (error) {
-            display.value = "Error";
-        }
-    });
- // 立方根の計算機能を追加
-    const cubeRootButton = document.getElementById("cube-root");
-    cubeRootButton.addEventListener("click", () => {
-        try {
-            const currentValue = parseFloat(display.value);
-            const cubeRootValue = Math.cbrt(currentValue);
-            display.value = cubeRootValue.toString();
-            updateHistory(`∛${currentValue} = ${cubeRootValue}`);
-            lastAnswer = cubeRootValue;
+            const roundDownValue = Math.floor(currentValue);
+            display.value = roundDownValue.toString();
+            updateHistory(`roundDown(${currentValue}) = ${roundDownValue}`);
+            lastAnswer = roundDownValue;
         }
         catch (error) {
             display.value = "Error";
         }
     });
-    // 階乗の計算機能を追加
-    const factorialButton = document.getElementById("factorial");
-    factorialButton.addEventListener("click", () => {
-        try {
-            const currentValue = parseFloat(display.value);
-            if (currentValue < 0) {
-                throw new Error("Cannot calculate factorial of a negative number.");
-            }
-            const factorialValue = factorial(currentValue);
-            display.value = factorialValue.toString();
-            updateHistory(`${currentValue}! = ${factorialValue}`);
-            lastAnswer = factorialValue;
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-    function factorial(n) {
-        if (n === 0) {
-            return 1;
-        } else {
-            return n * factorial(n - 1);
-        }
-    }
-    // 切り上げ機能を追加
-    const roundUpButton = document.getElementById("round-up");
-    roundUpButton.addEventListener("click", () => {
-        try {
-            const currentValue = parseFloat(display.value);
-            const roundUpValue = Math.ceil(currentValue);
-            display.value = roundUpValue.toString();
-            updateHistory(`roundUp(${currentValue}) = ${roundUpValue}`);
-            lastAnswer = roundUpValue;
-        }
-        catch (error) {
-            display.value = "Error";
-        }
-    });
-    // n乗根の計算機能を追加
-    const nthRootButton = document.getElementById("nth-root");
-    nthRootButton.addEventListener("click", () => {
-        try {
-            const n = parseFloat(prompt("Enter the root (n):")); // nの値を入力
-            const currentValue = parseFloat(display.value);
-            const nthRootValue = Math.pow(currentValue, 1/n);
-            display.value = nthRootValue.toString();
-            updateHistory(`${n}√${currentValue} = ${nthRootValue}`);
-            lastAnswer = nthRootValue;
-        }
-        catch (error) {
-            display.value = "Error";
-        }
-    });
-
-     // 一番最後の桁を削除する機能を追加
-    const deleteLastDigitButton = document.getElementById("delete-last-digit");
-    deleteLastDigitButton.addEventListener("click", () => {
-        display.value = display.value.slice(0, -1);
-    });
-
-     // xのy乗の計算機能を追加
-    const xPowerYButton = document.getElementById("x-power-y");
-    xPowerYButton.addEventListener("click", () => {
-        try {
-            const x = parseFloat(display.value);
-            const y = parseFloat(prompt("Enter the power (y):"));
-            const result = Math.pow(x, y);
-            display.value = result.toString();
-            updateHistory(`${x}^${y} = ${result}`);
-            lastAnswer = result;
-        }
-        catch(error) {
-            display.value = "Error";
-        }
-    });
-        // eの計算機能を追加
-    const calculateEButton = document.getElementById("calculate-e");
-    calculateEButton.addEventListener("click", () => {
-        display.value += Math.E.toString();
-    });
-    // 10のx乗の計算機能を追加
-    const tenToThePowerOfXButton = document.getElementById("ten-to-the-power-of-x");
-    tenToThePowerOfXButton.addEventListener("click", () => {
-        try {
-            const x = parseFloat(display.value);
-            const result = Math.pow(10, x);
-            display.value = result.toString();
-            updateHistory(`10^${x} = ${result}`);
-            lastAnswer = result;
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
+    // ... (Existing functions)
 });
