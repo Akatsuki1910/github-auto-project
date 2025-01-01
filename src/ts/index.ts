@@ -203,5 +203,18 @@ window.addEventListener("DOMContentLoaded", () => {
         history.length = 0;
         historyDiv.innerHTML = "";
     });
+    const percentageCalculationButton = document.getElementById("percentage-calculation");
+    percentageCalculationButton.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            const percentageValue = currentValue / 100;
+            display.value = percentageValue.toString();
+            updateHistory(`${currentValue}% = ${percentageValue}`);
+            lastAnswer = percentageValue;
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... (Existing functions)
 });
