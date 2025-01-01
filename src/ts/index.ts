@@ -225,23 +225,37 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = log2Value.toString();
             updateHistory(`log2(${currentValue}) = ${log2Value}`);
             lastAnswer = log2Value;
-        } catch (error) {
+        }
+        catch (error) {
             display.value = "Error";
         }
     });
-// 立方(x^3)の計算機能を追加
-const calculateCubeButton = document.getElementById("calculate-cube");
-calculateCubeButton.addEventListener("click", () => {
-    try {
-        const currentValue = parseFloat(display.value);
-        const cubeValue = Math.pow(currentValue, 3);
-        display.value = cubeValue.toString();
-        updateHistory(`${currentValue}^3 = ${cubeValue}`);
-        lastAnswer = cubeValue;
-    }
-    catch (error) {
-        display.value = "Error";
-    }
-});
+    // 立方(x^3)の計算機能を追加
+    const calculateCubeButton = document.getElementById("calculate-cube");
+    calculateCubeButton.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            const cubeValue = Math.pow(currentValue, 3);
+            display.value = cubeValue.toString();
+            updateHistory(`${currentValue}^3 = ${cubeValue}`);
+            lastAnswer = cubeValue;
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
+    // 符号反転機能を追加
+    const inverseSignButton = document.getElementById("inverse-sign");
+    inverseSignButton.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            const inverseSignValue = -currentValue;
+            display.value = inverseSignValue.toString();
+            updateHistory(`-(${currentValue}) = ${inverseSignValue}`);
+            lastAnswer = inverseSignValue;
+        } catch (e) {
+            display.value = "Error";
+        }
+    });
     // ... (Existing functions)
 });
