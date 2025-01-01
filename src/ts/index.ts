@@ -229,5 +229,19 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+// 立方(x^3)の計算機能を追加
+const calculateCubeButton = document.getElementById("calculate-cube");
+calculateCubeButton.addEventListener("click", () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const cubeValue = Math.pow(currentValue, 3);
+        display.value = cubeValue.toString();
+        updateHistory(`${currentValue}^3 = ${cubeValue}`);
+        lastAnswer = cubeValue;
+    }
+    catch (error) {
+        display.value = "Error";
+    }
+});
     // ... (Existing functions)
 });
