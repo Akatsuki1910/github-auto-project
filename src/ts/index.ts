@@ -127,5 +127,14 @@ copyAllHistoryButton.addEventListener("click", () => {
         alert("Failed to copy history.");
     });
 });
+    // 現在の日付を表示する機能を追加
+    const currentDateButton = document.getElementById("current-date");
+    currentDateButton.addEventListener("click", () => {
+        const today = new Date();
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, '0');
+        const day = String(today.getDate()).padStart(2, '0');
+        display.value = `${year}-${month}-${day}`;
+    });
     // ... (Existing functions)
 });
