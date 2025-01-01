@@ -84,46 +84,34 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // 10のべき乗の計算機能を追加
+    const tenToThePowerOfXButton = document.getElementById("ten-to-the-power-of-x");
+    tenToThePowerOfXButton.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            const result = Math.pow(10, currentValue);
+            display.value = result.toString();
+            updateHistory(`10^${currentValue} = ${result}`);
+            lastAnswer = result;
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... (Existing Code) ...
+    const calculateEButton = document.getElementById("calculate-e");
+    calculateEButton.addEventListener("click", () => {
+        display.value = Math.E.toString();
+    });
 
-    // 逆数の計算機能を追加
-    // ... (Existing functions)
-    // 切り捨て機能を追加
-    const roundDownButton = document.getElementById("round-down");
-    roundDownButton.addEventListener("click", () => {
-        try {
-            const currentValue = parseFloat(display.value);
-            const roundDownValue = Math.floor(currentValue);
-            display.value = roundDownValue.toString();
-            updateHistory(`roundDown(${currentValue}) = ${roundDownValue}`);
-            lastAnswer = roundDownValue;
-        }
-        catch (error) {
-            display.value = "Error";
-        }
-    });
-    const exp2Button = document.getElementById("exp2");
-    exp2Button.addEventListener("click", () => {
-        try {
-            const currentValue = parseFloat(display.value);
-            const exp2Value = Math.pow(2, currentValue);
-            display.value = exp2Value.toString();
-            updateHistory(`2^${currentValue} = ${exp2Value}`);
-            lastAnswer = exp2Value;
-        }
-        catch (error) {
-            display.value = "Error";
-        }
-    });
-     const resetButton = document.getElementById("reset");
-    resetButton.addEventListener("click", () => {
-        display.value = "0";
-    });
-        const calculatePiButton = document.getElementById("calculate-pi");
+    const calculatePiButton = document.getElementById("calculate-pi");
     calculatePiButton.addEventListener("click", () => {
         display.value = Math.PI.toString();
     });
-
+        const resetButton = document.getElementById("reset");
+    resetButton.addEventListener("click", () => {
+        display.value = "0";
+    });
     // log10の計算機能を追加
     const log10Button = document.getElementById("log10");
     log10Button.addEventListener("click", () => {
@@ -147,6 +135,32 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = sqrtValue.toString();
             updateHistory(`√(${currentValue}) = ${sqrtValue}`);
             lastAnswer = sqrtValue;            
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
+    const roundDownButton = document.getElementById("round-down");
+    roundDownButton.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            const roundDownValue = Math.floor(currentValue);
+            display.value = roundDownValue.toString();
+            updateHistory(`roundDown(${currentValue}) = ${roundDownValue}`);
+            lastAnswer = roundDownValue;
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
+    const exp2Button = document.getElementById("exp2");
+    exp2Button.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            const exp2Value = Math.pow(2, currentValue);
+            display.value = exp2Value.toString();
+            updateHistory(`2^${currentValue} = ${exp2Value}`);
+            lastAnswer = exp2Value;
         }
         catch (error) {
             display.value = "Error";
