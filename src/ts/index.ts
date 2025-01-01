@@ -204,4 +204,17 @@ window.addEventListener("DOMContentLoaded", () => {
     calculateEButton.addEventListener("click", () => {
         display.value += Math.E.toString();
     });
+    // 10のx乗の計算機能を追加
+    const tenToThePowerOfXButton = document.getElementById("ten-to-the-power-of-x");
+    tenToThePowerOfXButton.addEventListener("click", () => {
+        try {
+            const x = parseFloat(display.value);
+            const result = Math.pow(10, x);
+            display.value = result.toString();
+            updateHistory(`10^${x} = ${result}`);
+            lastAnswer = result;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
 });
