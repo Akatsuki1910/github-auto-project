@@ -148,4 +148,18 @@ window.addEventListener("DOMContentLoaded", () => {
             return n * factorial(n - 1);
         }
     }
+    // 切り上げ機能を追加
+    const roundUpButton = document.getElementById("round-up");
+    roundUpButton.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            const roundUpValue = Math.ceil(currentValue);
+            display.value = roundUpValue.toString();
+            updateHistory(`roundUp(${currentValue}) = ${roundUpValue}`);
+            lastAnswer = roundUpValue;
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
 });
