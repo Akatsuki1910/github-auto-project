@@ -216,5 +216,18 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    // 2を底とする対数の計算機能を追加
+    const calculateLog2Button = document.getElementById("calculate-log2");
+    calculateLog2Button.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            const log2Value = Math.log2(currentValue);
+            display.value = log2Value.toString();
+            updateHistory(`log2(${currentValue}) = ${log2Value}`);
+            lastAnswer = log2Value;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... (Existing functions)
 });
