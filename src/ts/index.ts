@@ -115,6 +115,9 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+     const resetButton = document.getElementById("reset");
+    resetButton.addEventListener("click", () => {
+        display.value = "0";
+    });
     // ... (Existing functions)
 });
-
