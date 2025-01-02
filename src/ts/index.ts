@@ -87,4 +87,9 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = average.toString();
         updateHistory(`avg(${numbers.join(',')}) = ${average}`);
     });
+
+    const exitButton = document.getElementById("exit");
+    exitButton.addEventListener("click", () => {
+        window.close();
+    });
 });
