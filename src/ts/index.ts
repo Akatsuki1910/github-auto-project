@@ -263,5 +263,18 @@ exp10Button.addEventListener("click", () => {
             display.value = "Error";
         }
     });
+    // sinの計算機能を追加
+    const calculateSinButton = document.getElementById("calculate-sin");
+    calculateSinButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(display.value);
+            const result = Math.sin(num);
+            display.value = result.toString();
+            updateHistory(`sin(${num}) = ${result}`);
+            lastAnswer = result;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... (Existing functions)
 });
