@@ -236,5 +236,19 @@ exp10Button.addEventListener("click", () => {
         display.value = "Error";
     }
 });
+ // 四捨五入機能を追加
+    const roundButton = document.getElementById("round-button");
+    roundButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(display.value);
+            const result = Math.round(num);
+            display.value = result.toString();
+            updateHistory(`round(${num}) = ${result}`);
+            lastAnswer = result;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... (Existing functions)
 });
+
