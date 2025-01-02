@@ -139,8 +139,8 @@ const deleteLastCharacterButton = document.getElementById("delete-last-character
     clearDisplayButton.addEventListener("click", () => {
         display.value = "";
     });
-        // ... (Existing functions)
-    // cosの計算機能を追加
+    // ... (Existing functions)
+    // cos, sin, tanの計算機能を追加
     const calculateCosButton = document.getElementById("cos");
     calculateCosButton.addEventListener("click", () => {
         try {
@@ -154,4 +154,17 @@ const deleteLastCharacterButton = document.getElementById("delete-last-character
             display.value = "Error";
         }
     });
+// tan計算機能を追加
+const calculateTanButton = document.getElementById("calculate-tan");
+calculateTanButton.addEventListener("click", () => {
+    try {
+        const num = parseFloat(display.value);
+        const result = Math.tan(num);
+        display.value = result.toString();
+        updateHistory(`tan(${num}) = ${result}`);
+        lastAnswer = result;  // 最後の答えを更新
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 });
