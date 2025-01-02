@@ -87,4 +87,25 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = lastAnswer.toString();
         }
     });
+
+    const factorialButton = document.getElementById("factorial");
+    factorialButton.addEventListener("click", () => {
+        try {
+            const num = parseInt(display.value);
+            if (num < 0) {
+                display.value = "Error: Negative Input";
+            } else {
+                let result = 1;
+                for (let i = 2; i <= num; i++) {
+                    result *= i;
+                }
+                display.value = result.toString();
+                updateHistory(`${num}! = ${result}`);
+                lastAnswer = result;
+            }
+
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
 });
