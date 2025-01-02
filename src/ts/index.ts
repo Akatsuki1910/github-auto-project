@@ -64,5 +64,15 @@ window.addEventListener("DOMContentLoaded", () => {
             updateHistory(`∛(${currentValue}) = ${result}`);
         }
     });
+     // Natural Logarithm button
+    const naturalLogarithmButton = document.getElementById("natural-logarithm");
+    naturalLogarithmButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue) && currentValue > 0) {
+            const result = Math.log(currentValue);
+            display.value = result.toString();
+            updateHistory(`ln(${currentValue}) = ${result}`);
+        }
+    });
     // ... rest of the code
 });
