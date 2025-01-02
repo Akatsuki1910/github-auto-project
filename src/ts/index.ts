@@ -59,4 +59,17 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+
+    const percentButton = document.getElementById("percent");
+    percentButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(display.value);
+            const result = num / 100;
+            display.value = result.toString();
+            updateHistory(`${num}% = ${result}`);
+            lastAnswer = result;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
 });
