@@ -54,6 +54,15 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = (parseFloat(display.value) * -1).toString();
       }
     });
-
+    //Cube Root button
+    const cubeRootButton = document.getElementById("cube-root");
+    cubeRootButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            const result = Math.cbrt(currentValue);
+            display.value = result.toString();
+            updateHistory(`∛(${currentValue}) = ${result}`);
+        }
+    });
     // ... rest of the code
 });
