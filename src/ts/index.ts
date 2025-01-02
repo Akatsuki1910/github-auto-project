@@ -167,4 +167,17 @@ calculateTanButton.addEventListener("click", () => {
         display.value = "Error";
     }
 });
+const calculateAsinButton = document.getElementById("calculate-asin");
+calculateAsinButton.addEventListener("click", () => {
+    try {
+        const num = parseFloat(display.value);
+        const result = Math.asin(num);
+        display.value = result.toString();
+        updateHistory(`asin(${num}) = ${result}`);
+        lastAnswer = result;
+    }
+    catch (error) {
+        display.value = "Error";
+    }
+});
 });
