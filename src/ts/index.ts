@@ -85,5 +85,19 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    // tan button
+    const tanButton = document.getElementById("tan");
+    tanButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(display.value);
+            const result = Math.tan(num);
+            display.value = result.toString();
+            lastAnswer = result;
+            updateHistory(`tan(${num}) = ${result}`);
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... (rest of the code)
 });
