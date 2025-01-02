@@ -55,4 +55,9 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = randomNumber.toString();
         updateHistory(`random = ${randomNumber}`);
     });
+
+    const duplicateButton = document.getElementById("duplicate");
+    duplicateButton.addEventListener("click", () => {
+        display.value = display.value + display.value;
+    });
 });
