@@ -26,18 +26,37 @@ window.addEventListener("DOMContentLoaded", () => {
         historyDiv.innerHTML = history.map(item => `<p>${item}</p>`).join('');
     };
 
- // ... existing code ...
-const calculateAtanButton = document.getElementById("calculate-atan");
-calculateAtanButton.addEventListener("click", () => {
-    try {
-        const num = parseFloat(display.value);
-        const result = Math.atan(num);
-        display.value = result.toString();
-        updateHistory(`atan(${num}) = ${result}`);
-        lastAnswer = result; // 最後の答えを更新
-    }
-    catch (error) {
-        display.value = "Error";
-    }
-});
+    // ... existing code ...
+    const calculateAtanButton = document.getElementById("calculate-atan");
+    calculateAtanButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(display.value);
+            const result = Math.atan(num);
+            display.value = result.toString();
+            updateHistory(`atan(${num}) = ${result}`);
+            lastAnswer = result; // 最後の答えを更新
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
+
+    const squareRootButton = document.getElementById("square-root");
+    squareRootButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(display.value);
+            if (num < 0) {
+                display.value = "Error: Negative Input";
+            }
+            else {
+                const result = Math.sqrt(num);
+                display.value = result.toString();
+                updateHistory(`√(${num}) = ${result}`);
+                lastAnswer = result;
+            }
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
 });
