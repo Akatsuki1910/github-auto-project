@@ -105,5 +105,15 @@ window.addEventListener("DOMContentLoaded", () => {
     eulerButton.addEventListener("click", () => {
         display.value += Math.E;
     });
+    // Absolute Value Button
+    const absButton = document.getElementById("abs");
+    absButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            const result = Math.abs(currentValue);
+            display.value = result.toString();
+            updateHistory(`|${currentValue}| = ${result}`);
+        }
+    });
     // ... rest of the code
 });
