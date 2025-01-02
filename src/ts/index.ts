@@ -70,4 +70,12 @@ window.addEventListener("DOMContentLoaded", () => {
             updateHistory(`swap: ${currentValue} -> ${swappedValue}`);
         }
     });
+
+    const sumButton = document.getElementById("sum");
+    sumButton.addEventListener("click", () => {
+        const numbers = display.value.split(/\s*,\s*/).map(Number);
+        const sum = numbers.reduce((acc, num) => acc + num, 0);
+        display.value = sum.toString();
+        updateHistory(`sum(${numbers.join(',')}) = ${sum}`);
+    });
 });
