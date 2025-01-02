@@ -113,5 +113,18 @@ logButton.addEventListener("click", () => {
         display.value = "Error";
     }
 });
+// exp button
+const expButton = document.getElementById("exp");
+expButton.addEventListener("click", () => {
+    try {
+        const num = parseFloat(display.value);
+        const result = Math.exp(num);
+        display.value = result.toString();
+        lastAnswer = result;
+        updateHistory(`exp(${num}) = ${result}`);
+    } catch (error) {
+        display.value = "Error";
+    }
+});
     // ... (rest of the code)
 });
