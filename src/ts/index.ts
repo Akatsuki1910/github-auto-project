@@ -209,5 +209,18 @@ copyAllHistoryButton.addEventListener("click", () => {
         const randValue = Math.random();
         display.value = randValue.toString();
     });
+     // log計算機能を追加
+    const calculateLogButton = document.getElementById("calculate-log");
+    calculateLogButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(display.value);
+            const result = Math.log10(num);
+            display.value = result.toString();
+            updateHistory(`log(${num}) = ${result}`);
+            lastAnswer = result;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... (Existing functions)
 });
