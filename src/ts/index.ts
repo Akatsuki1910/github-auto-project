@@ -27,6 +27,24 @@ window.addEventListener("DOMContentLoaded", () => {
     };
 
     // ... existing code ...
+    // Memory buttons
+    const memoryStoreButton = document.getElementById("memory-store");
+    const memoryRecallButton = document.getElementById("memory-recall");
+    const memoryClearButton = document.getElementById("memory-clear");
+
+    memoryStoreButton.addEventListener("click", () => {
+        memoryValue = parseFloat(display.value);
+    });
+
+    memoryRecallButton.addEventListener("click", () => {
+        if (memoryValue !== null) {
+            display.value = memoryValue.toString();
+        }
+    });
+
+    memoryClearButton.addEventListener("click", () => {
+        memoryValue = null;
+    });
     // ... existing code ...
     const plusMinusButton = document.getElementById("plus-minus");
     plusMinusButton.addEventListener("click", () => {
