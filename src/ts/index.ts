@@ -71,5 +71,19 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+//cos button
+    const cosButton = document.getElementById("cos");
+    cosButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(display.value);
+            const result = Math.cos(num);
+            display.value = result.toString();
+            lastAnswer = result; // Update last answer
+            updateHistory(`cos(${num}) = ${result}`); // Update history
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... (rest of the code)
 });
