@@ -80,4 +80,11 @@ window.addEventListener("DOMContentLoaded", () => {
         updateHistory(`π = ${Math.PI}`);
         lastAnswer = Math.PI;
     });
+
+    const lastAnswerButton = document.getElementById("last-answer");
+    lastAnswerButton.addEventListener("click", () => {
+        if (lastAnswer !== null) {
+            display.value = lastAnswer.toString();
+        }
+    });
 });
