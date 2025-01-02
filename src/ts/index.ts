@@ -27,85 +27,18 @@ window.addEventListener("DOMContentLoaded", () => {
     };
 
     // ... existing code ...
-    const calculateAtanButton = document.getElementById("calculate-atan");
-    calculateAtanButton.addEventListener("click", () => {
+    // ... existing code ...
+    const plusMinusButton = document.getElementById("plus-minus");
+    plusMinusButton.addEventListener("click", () => {
         try {
             const num = parseFloat(display.value);
-            const result = Math.atan(num);
+            const result = -num;
             display.value = result.toString();
-            updateHistory(`atan(${num}) = ${result}`);
-            lastAnswer = result; // 最後の答えを更新
-        }
-        catch (error) {
-            display.value = "Error";
-        }
-    });
-
-    const squareRootButton = document.getElementById("square-root");
-    squareRootButton.addEventListener("click", () => {
-        try {
-            const num = parseFloat(display.value);
-            if (num < 0) {
-                display.value = "Error: Negative Input";
-            }
-            else {
-                const result = Math.sqrt(num);
-                display.value = result.toString();
-                updateHistory(`√(${num}) = ${result}`);
-                lastAnswer = result;
-            }
-        }
-        catch (error) {
-            display.value = "Error";
-        }
-    });
-
-    const percentButton = document.getElementById("percent");
-    percentButton.addEventListener("click", () => {
-        try {
-            const num = parseFloat(display.value);
-            const result = num / 100;
-            display.value = result.toString();
-            updateHistory(`${num}% = ${result}`);
             lastAnswer = result;
         }
         catch (error) {
             display.value = "Error";
         }
     });
-
-    const piButton = document.getElementById("pi");
-    piButton.addEventListener("click", () => {
-        display.value = Math.PI.toString();
-        updateHistory(`π = ${Math.PI}`);
-        lastAnswer = Math.PI;
-    });
-
-    const lastAnswerButton = document.getElementById("last-answer");
-    lastAnswerButton.addEventListener("click", () => {
-        if (lastAnswer !== null) {
-            display.value = lastAnswer.toString();
-        }
-    });
-
-    const factorialButton = document.getElementById("factorial");
-    factorialButton.addEventListener("click", () => {
-        try {
-            const num = parseInt(display.value);
-            if (num < 0) {
-                display.value = "Error: Negative Input";
-            } else {
-                let result = 1;
-                for (let i = 2; i <= num; i++) {
-                    result *= i;
-                }
-                display.value = result.toString();
-                updateHistory(`${num}! = ${result}`);
-                lastAnswer = result;
-            }
-
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
+    // ... (rest of the code)
 });
