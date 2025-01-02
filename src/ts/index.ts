@@ -115,5 +115,15 @@ window.addEventListener("DOMContentLoaded", () => {
             updateHistory(`|${currentValue}| = ${result}`);
         }
     });
+    //Floor Button
+    const floorButton = document.getElementById("floor");
+    floorButton.addEventListener("click", () => {
+      const currentValue = parseFloat(display.value);
+      if (!isNaN(currentValue)) {
+        const result = Math.floor(currentValue);
+        display.value = result.toString();
+        updateHistory(`floor(${currentValue}) = ${result}`);
+      }
+    });
     // ... rest of the code
 });
