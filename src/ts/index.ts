@@ -46,118 +46,14 @@ window.addEventListener("DOMContentLoaded", () => {
         memoryValue = null;
     });
     // ... existing code ...
-    const plusMinusButton = document.getElementById("plus-minus");
-    plusMinusButton.addEventListener("click", () => {
-        try {
-            const num = parseFloat(display.value);
-            const result = -num;
-            display.value = result.toString();
-            lastAnswer = result;
-        }
-        catch (error) {
-            display.value = "Error";
-        }
+
+    // Sign Change button
+    const signChangeButton = document.getElementById("sign-change");
+    signChangeButton.addEventListener("click", () => {
+      if (display.value !== "") {
+        display.value = (parseFloat(display.value) * -1).toString();
+      }
     });
-        //sin button
-    const sinButton = document.getElementById("sin");
-    sinButton.addEventListener("click", () => {
-        try {
-            const num = parseFloat(display.value);
-            const result = Math.sin(num);
-            display.value = result.toString();
-            lastAnswer = result; // Update last answer
-            updateHistory(`sin(${num}) = ${result}`); // Update history
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-//cos button
-    const cosButton = document.getElementById("cos");
-    cosButton.addEventListener("click", () => {
-        try {
-            const num = parseFloat(display.value);
-            const result = Math.cos(num);
-            display.value = result.toString();
-            lastAnswer = result; // Update last answer
-            updateHistory(`cos(${num}) = ${result}`); // Update history
-        }
-        catch (error) {
-            display.value = "Error";
-        }
-    });
-    // tan button
-    const tanButton = document.getElementById("tan");
-    tanButton.addEventListener("click", () => {
-        try {
-            const num = parseFloat(display.value);
-            const result = Math.tan(num);
-            display.value = result.toString();
-            lastAnswer = result;
-            updateHistory(`tan(${num}) = ${result}`);
-        }
-        catch (error) {
-            display.value = "Error";
-        }
-    });
-// log button
-const logButton = document.getElementById("log");
-logButton.addEventListener("click", () => {
-    try {
-        const num = parseFloat(display.value);
-        const result = Math.log10(num);
-        display.value = result.toString();
-        lastAnswer = result;
-        updateHistory(`log(${num}) = ${result}`);
-    }
-    catch (error) {
-        display.value = "Error";
-    }
-});
-// exp button
-const expButton = document.getElementById("exp");
-expButton.addEventListener("click", () => {
-    try {
-        const num = parseFloat(display.value);
-        const result = Math.exp(num);
-        display.value = result.toString();
-        lastAnswer = result;
-        updateHistory(`exp(${num}) = ${result}`);
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-// power button
-const powerButton = document.getElementById("power");
-powerButton.addEventListener("click", () => {
-    try {
-        const num = parseFloat(display.value);
-        display.value = `${num}^`;
-        const calculateButton = document.getElementById("calculate");
-        calculateButton.addEventListener("click", () => {
-          const exponent = parseFloat(display.value.split('^')[1]);
-          const base = num;
-          const result = Math.pow(base, exponent);
-          display.value = result.toString();
-          lastAnswer = result;
-          updateHistory(`${base}^${exponent} = ${result}`);
-        }, { once: true });
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-// Round button
-const roundButton = document.getElementById("round");
-roundButton.addEventListener("click", () => {
-    try {
-        const num = parseFloat(display.value);
-        const result = Math.round(num);
-        display.value = result.toString();
-        lastAnswer = result;
-        updateHistory(`round(${num}) = ${result}`);
-    }
-    catch (error) {
-        display.value = "Error";
-    }
-});
-    // ... (rest of the code)
+
+    // ... rest of the code
 });
