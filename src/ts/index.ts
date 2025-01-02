@@ -222,5 +222,19 @@ copyAllHistoryButton.addEventListener("click", () => {
             display.value = "Error";
         }
     });
+// 10のx乗の計算機能を追加
+const exp10Button = document.getElementById("exp10");
+exp10Button.addEventListener("click", () => {
+    try {
+        const num = parseFloat(display.value);
+        const result = Math.pow(10, num);
+        display.value = result.toString();
+        updateHistory(`10^(${num}) = ${result}`);
+        lastAnswer = result;
+    }
+    catch (error) {
+        display.value = "Error";
+    }
+});
     // ... (Existing functions)
 });
