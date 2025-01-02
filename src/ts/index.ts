@@ -48,92 +48,11 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... existing code ...
 
     // Sign Change button
-    const signChangeButton = document.getElementById("sign-change");
-    signChangeButton.addEventListener("click", () => {
-        if (display.value !== "") {
-            display.value = (parseFloat(display.value) * -1).toString();
-        }
+    // ... (rest of the code)
+    const randomNumberButton = document.getElementById("random-number");
+    randomNumberButton.addEventListener("click", () => {
+        const randomNumber = Math.random();
+        display.value = randomNumber.toString();
+        updateHistory(`random = ${randomNumber}`);
     });
-    //Cube Root button
-    const cubeRootButton = document.getElementById("cube-root");
-    cubeRootButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            const result = Math.cbrt(currentValue);
-            display.value = result.toString();
-            updateHistory(`∛(${currentValue}) = ${result}`);
-        }
-    });
-    // Natural Logarithm button
-    const naturalLogarithmButton = document.getElementById("natural-logarithm");
-    naturalLogarithmButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue) && currentValue > 0) {
-            const result = Math.log(currentValue);
-            display.value = result.toString();
-            updateHistory(`ln(${currentValue}) = ${result}`);
-        }
-    });
-    //Inverse Button
-    const inverseButton = document.getElementById("inverse");
-    inverseButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue) && currentValue !== 0) {
-            display.value = (1 / currentValue).toString();
-            updateHistory(`1/(${currentValue}) = ${1 / currentValue}`);
-        }
-    });
-    //Decimal Button
-    const decimalButton = document.getElementById("decimal");
-    decimalButton.addEventListener("click", () => {
-        if (!display.value.includes('.')) {
-            display.value += '.';
-        }
-    });
-    //Left Parenthesis Button
-    const leftParenthesisButton = document.getElementById("left-parenthesis");
-    leftParenthesisButton.addEventListener("click", () => {
-        display.value += '(';
-    });
-    //Right Parenthesis Button
-    const rightParenthesisButton = document.getElementById("right-parenthesis");
-    rightParenthesisButton.addEventListener("click", () => {
-        display.value += ')';
-    });
-    //Euler's number button
-    const eulerButton = document.getElementById("euler");
-    eulerButton.addEventListener("click", () => {
-        display.value += Math.E;
-    });
-    // Absolute Value Button
-    const absButton = document.getElementById("abs");
-    absButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            const result = Math.abs(currentValue);
-            display.value = result.toString();
-            updateHistory(`|${currentValue}| = ${result}`);
-        }
-    });
-    //Floor Button
-    const floorButton = document.getElementById("floor");
-    floorButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            const result = Math.floor(currentValue);
-            display.value = result.toString();
-            updateHistory(`floor(${currentValue}) = ${result}`);
-        }
-    });
-    //Ceil Button
-    const ceilButton = document.getElementById("ceil");
-    ceilButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            const result = Math.ceil(currentValue);
-            display.value = result.toString();
-            updateHistory(`ceil(${currentValue}) = ${result}`);
-        }
-    });
-    // ... rest of the code
 });
