@@ -90,5 +90,15 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value += '.';
       }
     });
+        //Left Parenthesis Button
+        const leftParenthesisButton = document.getElementById("left-parenthesis");
+        leftParenthesisButton.addEventListener("click", () => {
+             display.value += '(';
+        });
+         //Right Parenthesis Button
+        const rightParenthesisButton = document.getElementById("right-parenthesis");
+        rightParenthesisButton.addEventListener("click", () => {
+            display.value += ')';
+        });
     // ... rest of the code
 });
