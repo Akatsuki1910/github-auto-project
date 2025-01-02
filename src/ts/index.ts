@@ -83,5 +83,12 @@ window.addEventListener("DOMContentLoaded", () => {
             updateHistory(`1/(${currentValue}) = ${1/currentValue}`);
         }
     });
+     //Decimal Button
+    const decimalButton = document.getElementById("decimal");
+    decimalButton.addEventListener("click", () => {
+      if (!display.value.includes('.')) {
+        display.value += '.';
+      }
+    });
     // ... rest of the code
 });
