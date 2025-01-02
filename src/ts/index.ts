@@ -60,4 +60,14 @@ window.addEventListener("DOMContentLoaded", () => {
     duplicateButton.addEventListener("click", () => {
         display.value = display.value + display.value;
     });
+
+    const swapButton = document.getElementById("swap");
+    swapButton.addEventListener("click", () => {
+        const currentValue = display.value;
+        if (currentValue.length >= 2) {
+            const swappedValue = currentValue.slice(-2) + currentValue.slice(0, -2);
+            display.value = swappedValue;
+            updateHistory(`swap: ${currentValue} -> ${swappedValue}`);
+        }
+    });
 });
