@@ -50,9 +50,9 @@ window.addEventListener("DOMContentLoaded", () => {
     // Sign Change button
     const signChangeButton = document.getElementById("sign-change");
     signChangeButton.addEventListener("click", () => {
-      if (display.value !== "") {
-        display.value = (parseFloat(display.value) * -1).toString();
-      }
+        if (display.value !== "") {
+            display.value = (parseFloat(display.value) * -1).toString();
+        }
     });
     //Cube Root button
     const cubeRootButton = document.getElementById("cube-root");
@@ -64,7 +64,7 @@ window.addEventListener("DOMContentLoaded", () => {
             updateHistory(`∛(${currentValue}) = ${result}`);
         }
     });
-     // Natural Logarithm button
+    // Natural Logarithm button
     const naturalLogarithmButton = document.getElementById("natural-logarithm");
     naturalLogarithmButton.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
@@ -74,32 +74,32 @@ window.addEventListener("DOMContentLoaded", () => {
             updateHistory(`ln(${currentValue}) = ${result}`);
         }
     });
-     //Inverse Button
+    //Inverse Button
     const inverseButton = document.getElementById("inverse");
     inverseButton.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
         if (!isNaN(currentValue) && currentValue !== 0) {
             display.value = (1 / currentValue).toString();
-            updateHistory(`1/(${currentValue}) = ${1/currentValue}`);
+            updateHistory(`1/(${currentValue}) = ${1 / currentValue}`);
         }
     });
-     //Decimal Button
+    //Decimal Button
     const decimalButton = document.getElementById("decimal");
     decimalButton.addEventListener("click", () => {
-      if (!display.value.includes('.')) {
-        display.value += '.';
-      }
+        if (!display.value.includes('.')) {
+            display.value += '.';
+        }
     });
-        //Left Parenthesis Button
-        const leftParenthesisButton = document.getElementById("left-parenthesis");
-        leftParenthesisButton.addEventListener("click", () => {
-             display.value += '(';
-        });
-         //Right Parenthesis Button
-        const rightParenthesisButton = document.getElementById("right-parenthesis");
-        rightParenthesisButton.addEventListener("click", () => {
-            display.value += ')';
-        });
+    //Left Parenthesis Button
+    const leftParenthesisButton = document.getElementById("left-parenthesis");
+    leftParenthesisButton.addEventListener("click", () => {
+        display.value += '(';
+    });
+    //Right Parenthesis Button
+    const rightParenthesisButton = document.getElementById("right-parenthesis");
+    rightParenthesisButton.addEventListener("click", () => {
+        display.value += ')';
+    });
     //Euler's number button
     const eulerButton = document.getElementById("euler");
     eulerButton.addEventListener("click", () => {
@@ -118,12 +118,22 @@ window.addEventListener("DOMContentLoaded", () => {
     //Floor Button
     const floorButton = document.getElementById("floor");
     floorButton.addEventListener("click", () => {
-      const currentValue = parseFloat(display.value);
-      if (!isNaN(currentValue)) {
-        const result = Math.floor(currentValue);
-        display.value = result.toString();
-        updateHistory(`floor(${currentValue}) = ${result}`);
-      }
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            const result = Math.floor(currentValue);
+            display.value = result.toString();
+            updateHistory(`floor(${currentValue}) = ${result}`);
+        }
+    });
+    //Ceil Button
+    const ceilButton = document.getElementById("ceil");
+    ceilButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            const result = Math.ceil(currentValue);
+            display.value = result.toString();
+            updateHistory(`ceil(${currentValue}) = ${result}`);
+        }
     });
     // ... rest of the code
 });
