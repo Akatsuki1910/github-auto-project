@@ -139,9 +139,7 @@ const deleteLastCharacterButton = document.getElementById("delete-last-character
     clearDisplayButton.addEventListener("click", () => {
         display.value = "";
     });
-    // ... (Existing functions)
-    // cos, sin, tanの計算機能を追加
-    const calculateCosButton = document.getElementById("cos");
+    const calculateCosButton = document.getElementById("calculate-cos");
     calculateCosButton.addEventListener("click", () => {
         try {
             const num = parseFloat(display.value);
@@ -154,7 +152,6 @@ const deleteLastCharacterButton = document.getElementById("delete-last-character
             display.value = "Error";
         }
     });
-// tan計算機能を追加
 const calculateTanButton = document.getElementById("calculate-tan");
 calculateTanButton.addEventListener("click", () => {
     try {
@@ -175,6 +172,20 @@ calculateAsinButton.addEventListener("click", () => {
         display.value = result.toString();
         updateHistory(`asin(${num}) = ${result}`);
         lastAnswer = result;
+    }
+    catch (error) {
+        display.value = "Error";
+    }
+});
+// 逆コサイン(アークコサイン、acos)の計算機能を追加
+const calculateAcosButton = document.getElementById("calculate-acos");
+calculateAcosButton.addEventListener("click", () => {
+    try {
+        const num = parseFloat(display.value);
+        const result = Math.acos(num);
+        display.value = result.toString();
+        updateHistory(`acos(${num}) = ${result}`);
+        lastAnswer = result; // 最後の答えを更新
     }
     catch (error) {
         display.value = "Error";
