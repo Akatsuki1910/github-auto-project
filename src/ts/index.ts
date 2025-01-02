@@ -126,5 +126,24 @@ expButton.addEventListener("click", () => {
         display.value = "Error";
     }
 });
+// power button
+const powerButton = document.getElementById("power");
+powerButton.addEventListener("click", () => {
+    try {
+        const num = parseFloat(display.value);
+        display.value = `${num}^`;
+        const calculateButton = document.getElementById("calculate");
+        calculateButton.addEventListener("click", () => {
+          const exponent = parseFloat(display.value.split('^')[1]);
+          const base = num;
+          const result = Math.pow(base, exponent);
+          display.value = result.toString();
+          lastAnswer = result;
+          updateHistory(`${base}^${exponent} = ${result}`);
+        }, { once: true });
+    } catch (error) {
+        display.value = "Error";
+    }
+});
     // ... (rest of the code)
 });
