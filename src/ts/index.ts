@@ -78,4 +78,13 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = sum.toString();
         updateHistory(`sum(${numbers.join(',')}) = ${sum}`);
     });
+
+    const averageButton = document.getElementById("average");
+    averageButton.addEventListener("click", () => {
+        const numbers = display.value.split(/\s*,\s*/).map(Number);
+        const sum = numbers.reduce((acc, num) => acc + num, 0);
+        const average = sum / numbers.length;
+        display.value = average.toString();
+        updateHistory(`avg(${numbers.join(',')}) = ${average}`);
+    });
 });
