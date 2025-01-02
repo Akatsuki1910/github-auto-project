@@ -99,5 +99,19 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+// log button
+const logButton = document.getElementById("log");
+logButton.addEventListener("click", () => {
+    try {
+        const num = parseFloat(display.value);
+        const result = Math.log10(num);
+        display.value = result.toString();
+        lastAnswer = result;
+        updateHistory(`log(${num}) = ${result}`);
+    }
+    catch (error) {
+        display.value = "Error";
+    }
+});
     // ... (rest of the code)
 });
