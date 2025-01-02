@@ -58,5 +58,18 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+        //sin button
+    const sinButton = document.getElementById("sin");
+    sinButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(display.value);
+            const result = Math.sin(num);
+            display.value = result.toString();
+            lastAnswer = result; // Update last answer
+            updateHistory(`sin(${num}) = ${result}`); // Update history
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... (rest of the code)
 });
