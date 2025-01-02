@@ -110,23 +110,21 @@ window.addEventListener("DOMContentLoaded", () => {
     calculatePiButton.addEventListener("click", () => {
         display.value = Math.PI.toString();
     });
-
 // ... existing code ...
-
 // 一文字削除機能
 const deleteLastCharacterButton = document.getElementById("delete-last-character");
-deleteLastCharacterButton.addEventListener("click", () => {
-    display.value = display.value.slice(0, -1); 
-});
- // 履歴をすべてコピーする機能を追加
-const copyAllHistoryButton = document.getElementById("copy-all-history");
-copyAllHistoryButton.addEventListener("click", () => {
-    navigator.clipboard.writeText(history.join('\n')).then(() => {
-        alert("History copied to clipboard!");
-    }, () => {
-        alert("Failed to copy history.");
+    deleteLastCharacterButton.addEventListener("click", () => {
+        display.value = display.value.slice(0, -1); 
     });
-});
+    // 履歴をすべてコピーする機能を追加
+    const copyAllHistoryButton = document.getElementById("copy-all-history");
+    copyAllHistoryButton.addEventListener("click", () => {
+        navigator.clipboard.writeText(history.join('\n')).then(() => {
+            alert("History copied to clipboard!");
+        }, () => {
+            alert("Failed to copy history.");
+        });
+    });
     // 現在の日付を表示する機能を追加
     const currentDateButton = document.getElementById("current-date");
     currentDateButton.addEventListener("click", () => {
@@ -141,140 +139,19 @@ copyAllHistoryButton.addEventListener("click", () => {
     clearDisplayButton.addEventListener("click", () => {
         display.value = "";
     });
-     // x²の計算機能を追加
-    const squareNumberButton = document.getElementById("square-number");
-    squareNumberButton.addEventListener("click", () => {
+        // ... (Existing functions)
+    // cosの計算機能を追加
+    const calculateCosButton = document.getElementById("cos");
+    calculateCosButton.addEventListener("click", () => {
         try {
             const num = parseFloat(display.value);
-            const result = num * num;
+            const result = Math.cos(num);
             display.value = result.toString();
-            updateHistory(`${num}² = ${result}`);
+            updateHistory(`cos(${num}) = ${result}`);
             lastAnswer = result;
         }
         catch (error) {
             display.value = "Error";
         }
     });
-    // x³の計算機能を追加
-    const cubeNumberButton = document.getElementById("cube-number");
-    cubeNumberButton.addEventListener("click", () => {
-        try {
-            const num = parseFloat(display.value);
-            const result = num * num * num;
-            display.value = result.toString();
-            updateHistory(`${num}³ = ${result}`);
-            lastAnswer = result;
-        }
-        catch (error) {
-            display.value = "Error";
-        }
-    });
-    // 平方根の計算機能を追
-    const squareRootButton = document.getElementById("square-root-button");
-    squareRootButton.addEventListener("click", () => {
-        try {
-            const num = parseFloat(display.value);
-            const result = Math.sqrt(num);
-            display.value = result.toString();
-            updateHistory(`√${num} = ${result}`);
-            lastAnswer = result;
-        }
-        catch (error) {
-            display.value = "Error";
-        }
-    });
-        // 階乗の計算機能を追加
-    const factorialButton = document.getElementById("factorial-button");
-    factorialButton.addEventListener("click", () => {
-        try {
-            const num = parseInt(display.value);
-            if (num < 0) {
-                throw new Error("Cannot calculate factorial of negative number.");
-            }
-            let result = 1;
-            for (let i = 2; i <= num; i++) {
-                result *= i;
-            }
-            display.value = result.toString();
-            updateHistory(`${num}! = ${result}`);
-            lastAnswer = result;
-        }
-        catch (error) {
-            display.value = "Error";
-        }
-    });
-    // 乱数生成機能を追加
-    const randButton = document.getElementById("rand");
-    randButton.addEventListener("click", () => {
-        const randValue = Math.random();
-        display.value = randValue.toString();
-    });
-     // log計算機能を追加
-    const calculateLogButton = document.getElementById("calculate-log");
-    calculateLogButton.addEventListener("click", () => {
-        try {
-            const num = parseFloat(display.value);
-            const result = Math.log10(num);
-            display.value = result.toString();
-            updateHistory(`log(${num}) = ${result}`);
-            lastAnswer = result;
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-// 10のx乗の計算機能を追加
-const exp10Button = document.getElementById("exp10");
-exp10Button.addEventListener("click", () => {
-    try {
-        const num = parseFloat(display.value);
-        const result = Math.pow(10, num);
-        display.value = result.toString();
-        updateHistory(`10^(${num}) = ${result}`);
-        lastAnswer = result;
-    }
-    catch (error) {
-        display.value = "Error";
-    }
-});
- // 四捨五入機能を追加
-    const roundButton = document.getElementById("round-button");
-    roundButton.addEventListener("click", () => {
-        try {
-            const num = parseFloat(display.value);
-            const result = Math.round(num);
-            display.value = result.toString();
-            updateHistory(`round(${num}) = ${result}`);
-            lastAnswer = result;
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-    // 絶対値の計算機能を追加
-    const calculateAbsButton = document.getElementById("calculate-abs");
-    calculateAbsButton.addEventListener("click", () => {
-        try {
-            const num = parseFloat(display.value);
-            const result = Math.abs(num);
-            display.value = result.toString();
-            updateHistory(`|${num}| = ${result}`);
-            lastAnswer = result;
-        }
-        catch (error) {
-            display.value = "Error";
-        }
-    });
-    // sinの計算機能を追加
-    const calculateSinButton = document.getElementById("calculate-sin");
-    calculateSinButton.addEventListener("click", () => {
-        try {
-            const num = parseFloat(display.value);
-            const result = Math.sin(num);
-            display.value = result.toString();
-            updateHistory(`sin(${num}) = ${result}`);
-            lastAnswer = result;
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-    // ... (Existing functions)
 });
