@@ -68,8 +68,16 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = result.toString();
             updateHistory(`${num}% = ${result}`);
             lastAnswer = result;
-        } catch (error) {
+        }
+        catch (error) {
             display.value = "Error";
         }
+    });
+
+    const piButton = document.getElementById("pi");
+    piButton.addEventListener("click", () => {
+        display.value = Math.PI.toString();
+        updateHistory(`π = ${Math.PI}`);
+        lastAnswer = Math.PI;
     });
 });
