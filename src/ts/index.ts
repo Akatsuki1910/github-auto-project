@@ -74,5 +74,14 @@ window.addEventListener("DOMContentLoaded", () => {
             updateHistory(`ln(${currentValue}) = ${result}`);
         }
     });
+     //Inverse Button
+    const inverseButton = document.getElementById("inverse");
+    inverseButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue) && currentValue !== 0) {
+            display.value = (1 / currentValue).toString();
+            updateHistory(`1/(${currentValue}) = ${1/currentValue}`);
+        }
+    });
     // ... rest of the code
 });
