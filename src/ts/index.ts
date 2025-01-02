@@ -145,5 +145,19 @@ powerButton.addEventListener("click", () => {
         display.value = "Error";
     }
 });
+// Round button
+const roundButton = document.getElementById("round");
+roundButton.addEventListener("click", () => {
+    try {
+        const num = parseFloat(display.value);
+        const result = Math.round(num);
+        display.value = result.toString();
+        lastAnswer = result;
+        updateHistory(`round(${num}) = ${result}`);
+    }
+    catch (error) {
+        display.value = "Error";
+    }
+});
     // ... (rest of the code)
 });
