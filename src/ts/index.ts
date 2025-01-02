@@ -100,5 +100,10 @@ window.addEventListener("DOMContentLoaded", () => {
         rightParenthesisButton.addEventListener("click", () => {
             display.value += ')';
         });
+    //Euler's number button
+    const eulerButton = document.getElementById("euler");
+    eulerButton.addEventListener("click", () => {
+        display.value += Math.E;
+    });
     // ... rest of the code
 });
