@@ -249,6 +249,19 @@ exp10Button.addEventListener("click", () => {
             display.value = "Error";
         }
     });
+    // 絶対値の計算機能を追加
+    const calculateAbsButton = document.getElementById("calculate-abs");
+    calculateAbsButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(display.value);
+            const result = Math.abs(num);
+            display.value = result.toString();
+            updateHistory(`|${num}| = ${result}`);
+            lastAnswer = result;
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... (Existing functions)
 });
-
