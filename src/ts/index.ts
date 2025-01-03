@@ -151,4 +151,14 @@ const clearLastEntryButton = document.getElementById("clear-last-entry");
 clearLastEntryButton.addEventListener("click", () => {
     display.value = "";
 });
+
+const numberOfDigitsButton = document.getElementById("number-of-digits");
+numberOfDigitsButton.addEventListener("click", () => {
+    const displayValue = display.value;
+    if (displayValue) {
+        const numDigits = displayValue.length;
+        display.value = numDigits.toString();
+        updateHistory(`Digits: ${numDigits}`);
+    }
+});
 });
