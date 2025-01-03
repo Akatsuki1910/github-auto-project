@@ -71,5 +71,13 @@ reciprocalButton.addEventListener("click", () => {
         updateHistory(`1/${value} = ${result}`);
     }
 });
+//Squared functionality
+const squaredButton = document.getElementById("squared");
+squaredButton.addEventListener("click", () => {
+    const value = parseFloat(display.value);
+    const result = value * value; // Or Math.pow(value, 2)
+    display.value = result;
+    updateHistory(`${value}² = ${result}`);
+});
     // ... (rest of the code)
 });
