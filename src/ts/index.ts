@@ -167,4 +167,14 @@ mrcButton.addEventListener("click", () => {
         display.value = '';
     }
 });
+
+const inverseSineButton = document.getElementById("inverse-sine");
+inverseSineButton.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    const result = Math.asin(currentValue);
+    display.value = result;
+    updateHistory(`asin(${currentValue}) = ${result}`);
+  }
+});
 });
