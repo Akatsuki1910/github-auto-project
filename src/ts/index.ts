@@ -89,5 +89,22 @@ openGoogleButton.addEventListener("click", () => {
     window.open("https://www.google.com", "_blank");
 });
 
+// Left shift
+const leftShiftButton = document.getElementById("left-shift");
+leftShiftButton.addEventListener("click", () => {
+    const value = parseInt(display.value);
+    const result = value << 1; // Left shift by 1 bit
+    display.value = result;
+    updateHistory(`(${value} << 1) = ${result}`);
+});
+
+// Right shift
+const rightShiftButton = document.getElementById("right-shift");
+rightShiftButton.addEventListener("click", () => {
+    const value = parseInt(display.value);
+    const result = value >> 1; // Right shift by 1 bit
+    display.value = result;
+    updateHistory(`(${value} >> 1) = ${result}`);
+});
     // ... (rest of the code)
 });
