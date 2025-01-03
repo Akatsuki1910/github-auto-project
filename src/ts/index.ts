@@ -99,4 +99,15 @@ binaryConversionButton.addEventListener("click", () => {
     updateHistory(`Binary: ${binaryValue}`);
   }
 });
+
+const squareButton = document.getElementById("square");
+squareButton.addEventListener("click", () => {
+    const displayValue = display.value;
+    if (displayValue) {
+        const num = parseFloat(displayValue);
+        const result = num * num;
+        display.value = result.toString();
+        updateHistory(`${num}² = ${result}`);
+    }
+});
 });
