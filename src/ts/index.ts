@@ -110,4 +110,15 @@ squareButton.addEventListener("click", () => {
         updateHistory(`${num}² = ${result}`);
     }
 });
+
+const cubeButton = document.getElementById("cube");
+cubeButton.addEventListener("click", () => {
+    const displayValue = display.value;
+    if (displayValue) {
+        const num = parseFloat(displayValue);
+        const result = num * num * num;
+        display.value = result.toString();
+        updateHistory(`${num}³ = ${result}`);
+    }
+});
 });
