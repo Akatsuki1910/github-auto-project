@@ -100,76 +100,17 @@ binaryConversionButton.addEventListener("click", () => {
   }
 });
 
-const squareButton = document.getElementById("square");
-squareButton.addEventListener("click", () => {
-    const displayValue = display.value;
-    if (displayValue) {
-        const num = parseFloat(displayValue);
-        const result = num * num;
-        display.value = result.toString();
-        updateHistory(`${num}² = ${result}`);
-    }
-});
+// ... (rest of the code)
 
-const cubeButton = document.getElementById("cube");
-cubeButton.addEventListener("click", () => {
-    const displayValue = display.value;
-    if (displayValue) {
-        const num = parseFloat(displayValue);
-        const result = num * num * num;
-        display.value = result.toString();
-        updateHistory(`${num}³ = ${result}`);
-    }
-});
-
-const fibonacciButton = document.getElementById("fibonacci");
-fibonacciButton.addEventListener("click", () => {
-    const displayValue = display.value;
-    if (displayValue) {
-        const n = parseInt(displayValue);
-        if (n >= 0) {
-          const result = fibonacci(n);
-          display.value = result.toString();
-          updateHistory(`Fibonacci(${n}) = ${result}`);
-        }
-    }
-});
-
-function fibonacci(n) {
-    if (n <= 1) {
-      return n;
-    }
-    return fibonacci(n - 1) + fibonacci(n - 2);
-  }
-
-  const debugButton = document.getElementById("debug");
-debugButton.addEventListener("click", () => {
-    debugger;
-});
-
-const clearLastEntryButton = document.getElementById("clear-last-entry");
-clearLastEntryButton.addEventListener("click", () => {
-    display.value = "";
-});
-
-const numberOfDigitsButton = document.getElementById("number-of-digits");
-numberOfDigitsButton.addEventListener("click", () => {
-    const displayValue = display.value;
-    if (displayValue) {
-        const numDigits = displayValue.length;
-        display.value = numDigits.toString();
-        updateHistory(`Digits: ${numDigits}`);
-    }
-});
-
-const tenToThePowerOfXButton = document.getElementById("ten-to-the-power-of-x");
-tenToThePowerOfXButton.addEventListener("click", () => {
-    const displayValue = display.value;
-    if (displayValue) {
-        const num = parseFloat(displayValue);
-        const result = Math.pow(10, num);
-        display.value = result.toString();
-        updateHistory(`10^${num} = ${result}`);
+const evaluateButton = document.getElementById("evaluate");
+evaluateButton.addEventListener("click", () => {
+    try {
+        const result = eval(display.value);
+        display.value = result;
+        updateHistory(`${display.value} = ${result}`);
+    } catch (error) {
+        display.value = "Error";
+        updateHistory(`Error: ${error.message}`);
     }
 });
 
