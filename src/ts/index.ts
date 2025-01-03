@@ -58,6 +58,18 @@ decimalButton.addEventListener("click", () => {
     display.value += '.';
   }
 });
+// Reciprocal function
+const reciprocalButton = document.getElementById("reciprocal");
+reciprocalButton.addEventListener("click", () => {
+    const value = parseFloat(display.value);
+    if (value === 0) {
+        display.value = "Error: Division by zero";
+    }
+    else {
+        const result = 1 / value;
+        display.value = result;
+        updateHistory(`1/${value} = ${result}`);
+    }
+});
     // ... (rest of the code)
 });
-
