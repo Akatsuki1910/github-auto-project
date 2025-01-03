@@ -172,4 +172,14 @@ tenToThePowerOfXButton.addEventListener("click", () => {
         updateHistory(`10^${num} = ${result}`);
     }
 });
+
+    // Number buttons
+    for (let i = 0; i <= 9; i++) {
+        const numberButton = document.getElementById(`number-${i}`);
+        if (numberButton) {
+          numberButton.addEventListener("click", () => {
+              display.value += i.toString();
+          });
+        }
+      }
 });
