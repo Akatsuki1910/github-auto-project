@@ -58,5 +58,17 @@ copyToClipboardButton.addEventListener("click", () => {
     });
 });
 
+const inverseCosineButton = document.getElementById("inverse-cosine");
+inverseCosineButton.addEventListener("click", () => {
+    try {
+        const value = parseFloat(display.value);
+        const result = Math.acos(value);
+        display.value = isDegreeMode ? result * (180 / Math.PI) : result;
+        updateHistory(`acos(${value}) = ${display.value}`);
+    } catch (error) {
+        display.value = "Error";
+        updateHistory(`Error: ${error.message}`);
+    }
+});
     // ... (rest of the code)
 });
