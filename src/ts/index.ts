@@ -177,4 +177,12 @@ inverseSineButton.addEventListener("click", () => {
     updateHistory(`asin(${currentValue}) = ${result}`);
   }
 });
+
+const currentTimeButton = document.getElementById("current-time");
+currentTimeButton.addEventListener("click", () => {
+  const now = new Date();
+  const timeString = now.toLocaleTimeString();
+  display.value = timeString;
+  updateHistory(`Time: ${timeString}`);
+});
 });
