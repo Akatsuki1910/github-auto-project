@@ -139,5 +139,15 @@ evaluateButton.addEventListener("click", () => {
                 updateHistory(`√(${currentValue}) = ${result}`);
             }
         });
+    }    const percentageButton = document.getElementById("percentage");
+    if (percentageButton) {
+        percentageButton.addEventListener("click", () => {
+            const currentValue = parseFloat(display.value);
+            if (!isNaN(currentValue)) {
+                const result = currentValue / 100;
+                display.value = result;
+                updateHistory(`${currentValue}% = ${result}`);
+            }
+        });
     }
 });
