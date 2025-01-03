@@ -79,5 +79,13 @@ squaredButton.addEventListener("click", () => {
     display.value = result;
     updateHistory(`${value}² = ${result}`);
 });
+//Cubed functionality
+const cubedButton = document.getElementById("cubed");
+cubedButton.addEventListener("click", () => {
+    const value = parseFloat(display.value);
+    const result = value * value * value; // Or Math.pow(value, 3)
+    display.value = result;
+    updateHistory(`${value}³ = ${result}`);
+});
     // ... (rest of the code)
 });
