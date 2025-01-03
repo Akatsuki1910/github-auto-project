@@ -26,86 +26,18 @@ window.addEventListener("DOMContentLoaded", () => {
         historyDiv.innerHTML = history.map(item => `<p>${item}</p>`).join('');
     };
 
+// clear history button
+const clearHistoryButton = document.getElementById("clear-history");
+clearHistoryButton.addEventListener("click", () => {
+  history.length = 0; //履歴配列をクリア
+  historyDiv.innerHTML = ""; //履歴表示をクリア
+});
+
     // ... existing code ...
     // Memory buttons
-    const memoryStoreButton = document.getElementById("memory-store");
-    const memoryRecallButton = document.getElementById("memory-recall");
-    const memoryClearButton = document.getElementById("memory-clear");
-
-    memoryStoreButton.addEventListener("click", () => {
-        memoryValue = parseFloat(display.value);
-    });
-
-    memoryRecallButton.addEventListener("click", () => {
-        if (memoryValue !== null) {
-            display.value = memoryValue.toString();
-        }
-    });
-
-    memoryClearButton.addEventListener("click", () => {
-        memoryValue = null;
-    });
     // ... existing code ...
 
     // Sign Change button
     // ... (rest of the code)
-    const randomNumberButton = document.getElementById("random-number");
-    randomNumberButton.addEventListener("click", () => {
-        const randomNumber = Math.random();
-        display.value = randomNumber.toString();
-        updateHistory(`random = ${randomNumber}`);
-    });
-
-    const duplicateButton = document.getElementById("duplicate");
-    duplicateButton.addEventListener("click", () => {
-        display.value = display.value + display.value;
-    });
-
-    const swapButton = document.getElementById("swap");
-    swapButton.addEventListener("click", () => {
-        const currentValue = display.value;
-        if (currentValue.length >= 2) {
-            const swappedValue = currentValue.slice(-2) + currentValue.slice(0, -2);
-            display.value = swappedValue;
-            updateHistory(`swap: ${currentValue} -> ${swappedValue}`);
-        }
-    });
-
-    const sumButton = document.getElementById("sum");
-    sumButton.addEventListener("click", () => {
-        const numbers = display.value.split(/\s*,\s*/).map(Number);
-        const sum = numbers.reduce((acc, num) => acc + num, 0);
-        display.value = sum.toString();
-        updateHistory(`sum(${numbers.join(',')}) = ${sum}`);
-    });
-
-    const averageButton = document.getElementById("average");
-    averageButton.addEventListener("click", () => {
-        const numbers = display.value.split(/\s*,\s*/).map(Number);
-        const sum = numbers.reduce((acc, num) => acc + num, 0);
-        const average = sum / numbers.length;
-        display.value = average.toString();
-        updateHistory(`avg(${numbers.join(',')}) = ${average}`);
-    });
-
-    const exitButton = document.getElementById("exit");
-    exitButton.addEventListener("click", () => {
-        window.close();
-    });
-
-    const minButton = document.getElementById("min");
-    minButton.addEventListener("click", () => {
-        const numbers = display.value.split(/\s*,\s*/).map(Number);
-        const min = Math.min(...numbers);
-        display.value = min.toString();
-        updateHistory(`min(${numbers.join(',')}) = ${min}`);
-    });
-
-    const maxButton = document.getElementById("max");
-    maxButton.addEventListener("click", () => {
-        const numbers = display.value.split(/\s*,\s*/).map(Number);
-        const max = Math.max(...numbers);
-        display.value = max.toString();
-        updateHistory(`max(${numbers.join(',')}) = ${max}`);
-    });
+    // ... (rest of the code)
 });
