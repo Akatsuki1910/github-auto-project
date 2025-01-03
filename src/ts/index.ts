@@ -106,5 +106,20 @@ rightShiftButton.addEventListener("click", () => {
     display.value = result;
     updateHistory(`(${value} >> 1) = ${result}`);
 });
+// Modulo operator
+const moduloButton = document.getElementById("modulo");
+moduloButton.addEventListener("click", () => {
+  try {
+    const currentValue = parseFloat(display.value);
+    const previousValue = parseFloat(history[history.length - 1]); // Assuming previous entry is a number
+    const result = previousValue % currentValue; // Previous % current entry
+    display.value = result;
+    updateHistory(`${previousValue} % ${currentValue} = ${result}`);
+  } catch (error) {
+    display.value = "Error";
+    updateHistory(`Error: ${error.message}`);
+  }
+});
+
     // ... (rest of the code)
 });
