@@ -89,4 +89,14 @@ currentDateButton.addEventListener("click", () => {
     display.value = dateString;
     updateHistory(`Date: ${dateString}`);
 });
+
+const binaryConversionButton = document.getElementById("binary-conversion");
+binaryConversionButton.addEventListener("click", () => {
+  const displayValue = display.value;
+  if (displayValue) {
+    const binaryValue = parseInt(displayValue).toString(2);
+    display.value = binaryValue;
+    updateHistory(`Binary: ${binaryValue}`);
+  }
+});
 });
