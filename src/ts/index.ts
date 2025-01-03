@@ -69,4 +69,16 @@ showKeyboardButton.addEventListener("click", () => {
         keyboardDiv.style.display = "none";
     }
 });
+const generateQrCodeButton = document.getElementById("generate-qrcode");
+const qrcodeDiv = document.getElementById("qrcode");
+generateQrCodeButton.addEventListener("click", () => {
+    const displayValue = display.value;
+    if (displayValue) {
+      new QRCode(qrcodeDiv, {
+          text: displayValue,
+          width: 128,
+          height: 128,
+      });
+  }
+});
 });
