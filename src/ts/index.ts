@@ -58,4 +58,15 @@ copyHistoryButton.addEventListener("click", () => {
     openNewWindowButton.addEventListener("click", () => {
         window.open("https://www.google.com", "_blank");
     });
+// Show Keyboard button
+const showKeyboardButton = document.getElementById("show-keyboard");
+const keyboardDiv = document.getElementById("keyboard");
+showKeyboardButton.addEventListener("click", () => {
+    if (keyboardDiv.style.display === "none" || keyboardDiv.style.display === "") {
+        keyboardDiv.style.display = "block";
+    }
+    else {
+        keyboardDiv.style.display = "none";
+    }
+});
 });
