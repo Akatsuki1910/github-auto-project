@@ -129,4 +129,15 @@ evaluateButton.addEventListener("click", () => {
           window.open("https://github.com", "_blank");
         });
       }
+    const sqrtButton = document.getElementById("sqrt");
+    if (sqrtButton) {
+        sqrtButton.addEventListener("click", () => {
+            const currentValue = parseFloat(display.value);
+            if (!isNaN(currentValue)) {
+                const result = Math.sqrt(currentValue);
+                display.value = result;
+                updateHistory(`√(${currentValue}) = ${result}`);
+            }
+        });
+    }
 });
