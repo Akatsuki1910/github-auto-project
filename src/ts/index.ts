@@ -161,4 +161,15 @@ numberOfDigitsButton.addEventListener("click", () => {
         updateHistory(`Digits: ${numDigits}`);
     }
 });
+
+const tenToThePowerOfXButton = document.getElementById("ten-to-the-power-of-x");
+tenToThePowerOfXButton.addEventListener("click", () => {
+    const displayValue = display.value;
+    if (displayValue) {
+        const num = parseFloat(displayValue);
+        const result = Math.pow(10, num);
+        display.value = result.toString();
+        updateHistory(`10^${num} = ${result}`);
+    }
+});
 });
