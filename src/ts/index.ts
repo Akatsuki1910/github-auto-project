@@ -100,4 +100,12 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = min.toString();
         updateHistory(`min(${numbers.join(',')}) = ${min}`);
     });
+
+    const maxButton = document.getElementById("max");
+    maxButton.addEventListener("click", () => {
+        const numbers = display.value.split(/\s*,\s*/).map(Number);
+        const max = Math.max(...numbers);
+        display.value = max.toString();
+        updateHistory(`max(${numbers.join(',')}) = ${max}`);
+    });
 });
