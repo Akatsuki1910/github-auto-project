@@ -146,4 +146,9 @@ function fibonacci(n) {
 debugButton.addEventListener("click", () => {
     debugger;
 });
+
+const clearLastEntryButton = document.getElementById("clear-last-entry");
+clearLastEntryButton.addEventListener("click", () => {
+    display.value = "";
+});
 });
