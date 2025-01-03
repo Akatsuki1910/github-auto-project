@@ -114,44 +114,57 @@ evaluateButton.addEventListener("click", () => {
     }
 });
 
-    // Number buttons
-    for (let i = 0; i <= 9; i++) {
-        const numberButton = document.getElementById(`number-${i}`);
-        if (numberButton) {
-          numberButton.addEventListener("click", () => {
-              display.value += i.toString();
-          });
-        }
-      }
-      const openGithubButton = document.getElementById("open-github");
-      if (openGithubButton) {
-        openGithubButton.addEventListener("click", () => {
-          window.open("https://github.com", "_blank");
-        });
-      }
-    const sqrtButton = document.getElementById("sqrt");
-    if (sqrtButton) {
-        sqrtButton.addEventListener("click", () => {
-            const currentValue = parseFloat(display.value);
-            if (!isNaN(currentValue)) {
-                const result = Math.sqrt(currentValue);
-                display.value = result;
-                updateHistory(`√(${currentValue}) = ${result}`);
-            }
-        });
-    }    const percentageButton = document.getElementById("percentage");
-    if (percentageButton) {
-        percentageButton.addEventListener("click", () => {
-            const currentValue = parseFloat(display.value);
-            if (!isNaN(currentValue)) {
-                const result = currentValue / 100;
-                display.value = result;
-                updateHistory(`${currentValue}% = ${result}`);
-            }
-        });
+// Number buttons
+for (let i = 0; i <= 9; i++) {
+    const numberButton = document.getElementById(`number-${i}`);
+    if (numberButton) {
+      numberButton.addEventListener("click", () => {
+          display.value += i.toString();
+      });
     }
-    const deleteLastCharButton = document.getElementById("delete-last-char");
-    deleteLastCharButton.addEventListener("click", () => {
-        display.value = display.value.slice(0,-1);
+  }
+const openGithubButton = document.getElementById("open-github");
+if (openGithubButton) {
+  openGithubButton.addEventListener("click", () => {
+    window.open("https://github.com", "_blank");
+  });
+}
+const sqrtButton = document.getElementById("sqrt");
+if (sqrtButton) {
+    sqrtButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            const result = Math.sqrt(currentValue);
+            display.value = result;
+            updateHistory(`√(${currentValue}) = ${result}`);
+        }
     });
+}    const percentageButton = document.getElementById("percentage");
+if (percentageButton) {
+    percentageButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            const result = currentValue / 100;
+            display.value = result;
+            updateHistory(`${currentValue}% = ${result}`);
+        }
+    });
+}
+const deleteLastCharButton = document.getElementById("delete-last-char");
+deleteLastCharButton.addEventListener("click", () => {
+    display.value = display.value.slice(0,-1);
+});
+
+// Memory Recall/Clear button
+const mrcButton = document.getElementById("mrc");
+mrcButton.addEventListener("click", () => {
+    if (memoryValue !== null) {
+        display.value = memoryValue;
+        memoryValue = null; // Clear memory after recall
+        updateHistory(`MRC: ${display.value}`);
+    } else {
+        // If memory is empty, clear the display
+        display.value = '';
+    }
+});
 });
