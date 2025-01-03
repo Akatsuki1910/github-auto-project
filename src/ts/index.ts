@@ -92,4 +92,12 @@ window.addEventListener("DOMContentLoaded", () => {
     exitButton.addEventListener("click", () => {
         window.close();
     });
+
+    const minButton = document.getElementById("min");
+    minButton.addEventListener("click", () => {
+        const numbers = display.value.split(/\s*,\s*/).map(Number);
+        const min = Math.min(...numbers);
+        display.value = min.toString();
+        updateHistory(`min(${numbers.join(',')}) = ${min}`);
+    });
 });
