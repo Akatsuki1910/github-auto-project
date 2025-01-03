@@ -47,5 +47,16 @@ openNewTabButton.addEventListener("click", () => {
   window.open("https://www.example.com", "_blank");
 });
 
+const copyToClipboardButton = document.getElementById("copy-to-clipboard");
+copyToClipboardButton.addEventListener("click", () => {
+  navigator.clipboard.writeText(display.value)
+    .then(() => {
+      alert("Copied to clipboard: " + display.value);
+    })
+    .catch(err => {
+      console.error("Failed to copy: ", err);
+    });
+});
+
     // ... (rest of the code)
 });
