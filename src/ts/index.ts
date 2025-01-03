@@ -81,4 +81,12 @@ generateQrCodeButton.addEventListener("click", () => {
       });
   }
 });
+
+const currentDateButton = document.getElementById("current-date");
+currentDateButton.addEventListener("click", () => {
+    const now = new Date();
+    const dateString = now.toLocaleDateString();
+    display.value = dateString;
+    updateHistory(`Date: ${dateString}`);
+});
 });
