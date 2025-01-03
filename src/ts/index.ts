@@ -70,5 +70,19 @@ inverseCosineButton.addEventListener("click", () => {
         updateHistory(`Error: ${error.message}`);
     }
 });
+
+const inverseTangentButton = document.getElementById("inverse-tangent");
+inverseTangentButton.addEventListener("click", () => {
+    try {
+        const value = parseFloat(display.value);
+        const result = Math.atan(value);
+        display.value = isDegreeMode ? result * (180 / Math.PI) : result;
+        updateHistory(`atan(${value}) = ${display.value}`);
+    } catch (error) {
+        display.value = "Error";
+        updateHistory(`Error: ${error.message}`);
+    }
+});
+
     // ... (rest of the code)
 });
