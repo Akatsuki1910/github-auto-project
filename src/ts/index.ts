@@ -42,83 +42,15 @@ evaluateButton.addEventListener("click", () => {
     }
 });
 
-const openNewTabButton = document.getElementById("open-new-tab");
-openNewTabButton.addEventListener("click", () => {
-  window.open("https://www.example.com", "_blank");
-});
+// ... existing code ...
 
-const copyToClipboardButton = document.getElementById("copy-to-clipboard");
-copyToClipboardButton.addEventListener("click", () => {
-  navigator.clipboard.writeText(display.value)
-    .then(() => {
-      alert("Copied to clipboard: " + display.value);
-    })
-    .catch(err => {
-      console.error("Failed to copy: ", err);
-    });
-});
-
-const inverseCosineButton = document.getElementById("inverse-cosine");
-inverseCosineButton.addEventListener("click", () => {
-    try {
-        const value = parseFloat(display.value);
-        const result = Math.acos(value);
-        display.value = isDegreeMode ? result * (180 / Math.PI) : result;
-        updateHistory(`acos(${value}) = ${display.value}`);
-    } catch (error) {
-        display.value = "Error";
-        updateHistory(`Error: ${error.message}`);
-    }
-});
-
-const inverseTangentButton = document.getElementById("inverse-tangent");
-inverseTangentButton.addEventListener("click", () => {
-    try {
-        const value = parseFloat(display.value);
-        const result = Math.atan(value);
-        display.value = isDegreeMode ? result * (180 / Math.PI) : result;
-        updateHistory(`atan(${value}) = ${display.value}`);
-    } catch (error) {
-        display.value = "Error";
-        updateHistory(`Error: ${error.message}`);
-    }
-});
-
-const openGoogleButton = document.getElementById("open-google");
-openGoogleButton.addEventListener("click", () => {
-    window.open("https://www.google.com", "_blank");
-});
-
-// Left shift
-const leftShiftButton = document.getElementById("left-shift");
-leftShiftButton.addEventListener("click", () => {
-    const value = parseInt(display.value);
-    const result = value << 1; // Left shift by 1 bit
+// Sign function
+const signButton = document.getElementById("sign");
+signButton.addEventListener("click", () => {
+    const value = parseFloat(display.value);
+    const result = Math.sign(value);
     display.value = result;
-    updateHistory(`(${value} << 1) = ${result}`);
-});
-
-// Right shift
-const rightShiftButton = document.getElementById("right-shift");
-rightShiftButton.addEventListener("click", () => {
-    const value = parseInt(display.value);
-    const result = value >> 1; // Right shift by 1 bit
-    display.value = result;
-    updateHistory(`(${value} >> 1) = ${result}`);
-});
-// Modulo operator
-const moduloButton = document.getElementById("modulo");
-moduloButton.addEventListener("click", () => {
-  try {
-    const currentValue = parseFloat(display.value);
-    const previousValue = parseFloat(history[history.length - 1]); // Assuming previous entry is a number
-    const result = previousValue % currentValue; // Previous % current entry
-    display.value = result;
-    updateHistory(`${previousValue} % ${currentValue} = ${result}`);
-  } catch (error) {
-    display.value = "Error";
-    updateHistory(`Error: ${error.message}`);
-  }
+    updateHistory(`sign(${value}) = ${result}`);
 });
 
     // ... (rest of the code)
