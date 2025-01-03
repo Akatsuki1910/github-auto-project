@@ -27,15 +27,8 @@ evaluateButton.addEventListener("click", () => {
     try {
         let result = eval(display.value);
         // Degree/Radian conversion for trigonometric functions
-        if (isDegreeMode && typeof result === 'number' && !isNaN(result)) {
-          const toRadians = (degrees) => degrees * (Math.PI / 180);
-          result = toRadians(result);
-          display.value = result;
-          updateHistory(`${display.value} = ${result} (radians)`);  
-      } else {
-          display.value = result;
+        display.value = result;
         updateHistory(`${display.value} = ${result}`);
-      }
     } catch (error) {
         display.value = "Error";
         updateHistory(`Error: ${error.message}`);
@@ -52,6 +45,10 @@ signButton.addEventListener("click", () => {
     display.value = result;
     updateHistory(`sign(${value}) = ${result}`);
 });
-
+//Added divide functionality
+const divideButton = document.getElementById("divide");
+divideButton.addEventListener("click", () => {
+    display.value += "/";
+});
     // ... (rest of the code)
 });
