@@ -200,4 +200,14 @@ currentTimeButton.addEventListener("click", () => {
   display.value = timeString;
   updateHistory(`Time: ${timeString}`);
 });
+
+const roundUpButton = document.getElementById("round-up");
+roundUpButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.ceil(currentValue);
+        display.value = result;
+        updateHistory(`Round Up(${currentValue}) = ${result}`);
+    }
+});
 });
