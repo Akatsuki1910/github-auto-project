@@ -53,4 +53,9 @@ copyHistoryButton.addEventListener("click", () => {
     // Sign Change button
     // ... (rest of the code)
     // ... (rest of the code)
+
+    const openNewWindowButton = document.getElementById("open-new-window");
+    openNewWindowButton.addEventListener("click", () => {
+        window.open("https://www.google.com", "_blank");
+    });
 });
