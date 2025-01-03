@@ -123,4 +123,10 @@ evaluateButton.addEventListener("click", () => {
           });
         }
       }
+      const openGithubButton = document.getElementById("open-github");
+      if (openGithubButton) {
+        openGithubButton.addEventListener("click", () => {
+          window.open("https://github.com", "_blank");
+        });
+      }
 });
