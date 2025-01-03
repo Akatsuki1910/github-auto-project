@@ -114,6 +114,19 @@ evaluateButton.addEventListener("click", () => {
     }
 });
 
+const calculateExpressionButton = document.getElementById("calculate-expression");
+calculateExpressionButton.addEventListener("click", () => {
+  try {
+    const result = eval(display.value);
+    display.value = result;
+    updateHistory(`Expression: ${display.value} = ${result}`);
+  }
+  catch (error) {
+    display.value = "Error";
+    updateHistory(`Expression Error: ${error.message}`);
+  }
+});
+
 // Number buttons
 for (let i = 0; i <= 9; i++) {
     const numberButton = document.getElementById(`number-${i}`);
@@ -151,6 +164,8 @@ if (percentageButton) {
     });
 }
 const deleteLastCharButton = document.getElementById("delete-last-char");
+
+// ... rest of the code
 deleteLastCharButton.addEventListener("click", () => {
     display.value = display.value.slice(0,-1);
 });
