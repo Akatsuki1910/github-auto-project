@@ -50,5 +50,14 @@ const divideButton = document.getElementById("divide");
 divideButton.addEventListener("click", () => {
     display.value += "/";
 });
+const decimalButton = document.getElementById("decimal-point");
+
+decimalButton.addEventListener("click", () => {
+  // Check if the display already contains a decimal point
+  if (!display.value.includes('.')) {
+    display.value += '.';
+  }
+});
     // ... (rest of the code)
 });
+
