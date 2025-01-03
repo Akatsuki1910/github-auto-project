@@ -121,4 +121,24 @@ cubeButton.addEventListener("click", () => {
         updateHistory(`${num}³ = ${result}`);
     }
 });
+
+const fibonacciButton = document.getElementById("fibonacci");
+fibonacciButton.addEventListener("click", () => {
+    const displayValue = display.value;
+    if (displayValue) {
+        const n = parseInt(displayValue);
+        if (n >= 0) {
+          const result = fibonacci(n);
+          display.value = result.toString();
+          updateHistory(`Fibonacci(${n}) = ${result}`);
+        }
+    }
+});
+
+function fibonacci(n) {
+    if (n <= 1) {
+      return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+  }
 });
