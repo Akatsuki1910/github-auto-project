@@ -33,6 +33,19 @@ clearHistoryButton.addEventListener("click", () => {
   historyDiv.innerHTML = ""; //履歴表示をクリア
 });
 
+ // copy history button
+const copyHistoryButton = document.getElementById("copy-history");
+copyHistoryButton.addEventListener("click", () => {
+    const historyText = history.join('\n');
+    navigator.clipboard.writeText(historyText)
+        .then(() => {
+            alert('History copied to clipboard!');
+        })
+        .catch(err => {
+            console.error('Failed to copy: ', err);
+        });
+});
+
     // ... existing code ...
     // Memory buttons
     // ... existing code ...
