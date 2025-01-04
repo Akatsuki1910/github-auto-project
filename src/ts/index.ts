@@ -408,5 +408,19 @@ calculateAreaTrapezoid.addEventListener("click", () => {
         display.value = "Error: Enter a,b,h";
     }
 });
+// Calculate Modulus
+const calculateModulusButton = document.getElementById("calculate-modulus");
+calculateModulusButton.addEventListener("click", () => {
+    const values = display.value.split(',');
+    if (values.length === 2) {
+        const num1 = parseFloat(values[0]);
+        const num2 = parseFloat(values[1]);
+        const result = num1 % num2; // Calculate Modulus
+        display.value = result;
+        updateHistory(`${num1} mod ${num2}: ${result}`);
+    } else {
+        display.value = "Error: Enter two number separated by a comma";
+    }
+});
     // ... (rest of the code)
 });
