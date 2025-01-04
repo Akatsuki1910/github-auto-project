@@ -144,5 +144,30 @@ lcmButton.addEventListener("click", () => {
     }
 });
 
+function permutation(n, r) {
+    if (n < 0 || r < 0 || n < r) {
+        return "Error: Invalid input for permutation";
+    }
+    let result = 1;
+    for (let i = 0; i < r; i++) {
+        result *= (n - i);
+    }
+    return result;
+}
+
+const permutationButton = document.getElementById("calculate-permutation");
+permutationButton.addEventListener("click", () => {
+    const values = display.value.split(',');
+    if (values.length === 2) {
+        const n = parseInt(values[0]);
+        const r = parseInt(values[1]);
+        const result = permutation(n, r);
+        display.value = result;
+        updateHistory(`P(${n}, ${r}) = ${result}`);
+    } else {
+        display.value = "Error: Enter n,r";
+    }
+});
+
     // ... (rest of the code)
 });
