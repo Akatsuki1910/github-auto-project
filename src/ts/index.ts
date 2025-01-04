@@ -306,5 +306,18 @@ sphereVolumeButton.addEventListener("click", () => {
         display.value = "Error: Invalid input for radius";
     }
 });
+// Calculate Cube Volume
+const cubeVolumeButton = document.getElementById("calculate-volume-cube");
+cubeVolumeButton.addEventListener("click", () => {
+    const side = parseFloat(display.value);
+    if (!isNaN(side)) {
+        const volume = Math.pow(side, 3);
+        display.value = volume;
+        updateHistory(`Volume of cube with side ${side}: ${volume}`);
+    } else {
+        display.value = "Error: Invalid input for side";
+    }
+});
+
     // ... (rest of the code)
 });
