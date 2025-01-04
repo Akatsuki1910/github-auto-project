@@ -278,5 +278,20 @@ calculateAreaCircleButton.addEventListener("click", () => {
     display.value = "Error: Invalid input for radius";
   }
 });
+// Calculate Triangle Area
+const calculateAreaTriangleButton = document.getElementById("calculate-area-triangle");
+calculateAreaTriangleButton.addEventListener("click", () => {
+    const values = display.value.split(',');
+    if (values.length === 2) {
+        const base = parseFloat(values[0]);
+        const height = parseFloat(values[1]);
+        const area = 0.5 * base * height;
+        display.value = area;
+        updateHistory(`Area of triangle with base ${base} and height ${height}: ${area}`);
+    }
+    else {
+        display.value = "Error: Input base,height";
+    }
+});
     // ... (rest of the code)
 });
