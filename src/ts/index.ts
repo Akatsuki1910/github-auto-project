@@ -125,5 +125,24 @@ gcdButton.addEventListener("click", () => {
   }
 });
 
+function lcm(a, b) {
+    return (a * b) / gcd(a, b);
+}
+
+const lcmButton = document.getElementById("calculate-lcm");
+lcmButton.addEventListener("click", () => {
+    const values = display.value.split(',');
+    if (values.length === 2) {
+        const num1 = parseInt(values[0]);
+        const num2 = parseInt(values[1]);
+        const result = lcm(num1, num2);
+        display.value = result;
+        updateHistory(`lcm(${num1}, ${num2}) = ${result}`);
+    }
+    else {
+        display.value = "Error: Enter two numbers separated by a comma";
+    }
+});
+
     // ... (rest of the code)
 });
