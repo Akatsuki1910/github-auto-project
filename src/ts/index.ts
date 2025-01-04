@@ -169,5 +169,34 @@ permutationButton.addEventListener("click", () => {
     }
 });
 
+function combination(n, r) {
+    if (n < 0 || r < 0 || n < r) {
+        return "Error: Invalid input for combination";
+    }
+    return permutation(n, r) / factorial(r);
+}
+function factorial(n) {
+    if (n < 0) {
+        return "Error: Invalid input for factorial";
+    }
+    let result = 1;
+    for (let i = 2; i <= n; i++) {
+        result *= i;
+    }
+    return result;
+}
+const combinationButton = document.getElementById("calculate-combination");
+combinationButton.addEventListener("click", () => {
+    const values = display.value.split(',');
+    if (values.length === 2) {
+        const n = parseInt(values[0]);
+        const r = parseInt(values[1]);
+        const result = combination(n, r);
+        display.value = result;
+        updateHistory(`C(${n}, ${r}) = ${result}`);
+    } else {
+        display.value = "Error: Enter n,r";
+    }
+});
     // ... (rest of the code)
 });
