@@ -102,5 +102,28 @@ nthRootButton.addEventListener("click", () => {
   }
 });
 
+function gcd(a, b) {
+    while (b !== 0) {
+        const temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+const gcdButton = document.getElementById("calculate-gcd");
+gcdButton.addEventListener("click", () => {
+  const values = display.value.split(',');
+  if (values.length === 2) {
+    const num1 = parseInt(values[0]);
+    const num2 = parseInt(values[1]);
+    const result = gcd(num1, num2);
+    display.value = result;
+    updateHistory(`gcd(${num1}, ${num2}) = ${result}`);
+  }
+  else {
+    display.value = "Error: Enter two numbers separated by a comma";
+  }
+});
+
     // ... (rest of the code)
 });
