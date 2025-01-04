@@ -222,5 +222,20 @@ log2Button.addEventListener("click", () => {
         updateHistory(`log2(${num}) = ${result}`);
     }
 });
+// Added ln functionality
+const lnButton = document.getElementById("calculate-ln");
+lnButton.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Error: Invalid Input";
+    } else if (num <= 0) {
+        display.value = "Error: Input must be positive for ln";
+    }
+    else {
+        const result = Math.log(num);
+        display.value = result;
+        updateHistory(`ln(${num}) = ${result}`);
+    }
+});
     // ... (rest of the code)
 });
