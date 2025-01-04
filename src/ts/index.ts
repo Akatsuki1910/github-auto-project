@@ -433,5 +433,11 @@ copyDisplayButton.addEventListener("click", () => {
             console.error("Failed to copy: ", err);
         });
 });
+//asin button
+const asinButton = document.getElementById("calculate-asin");
+asinButton.addEventListener("click", () => {
+    const value = parseFloat(display.value);
+    display.value = Math.asin(value);
+});
     // ... (rest of the code)
 });
