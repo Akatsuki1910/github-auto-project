@@ -318,6 +318,20 @@ cubeVolumeButton.addEventListener("click", () => {
         display.value = "Error: Invalid input for side";
     }
 });
-
+//Calculate Cylinder Volume
+const cylinderVolumeButton = document.getElementById("calculate-volume-cylinder");
+cylinderVolumeButton.addEventListener("click", () => {
+    const values = display.value.split(',');
+    if (values.length === 2) {
+        const radius = parseFloat(values[0]);
+        const height = parseFloat(values[1]);
+        const volume = Math.PI * radius * radius * height; // Using the correct formula
+        display.value = volume;
+        updateHistory(`Volume of cylinder with radius ${radius} and height ${height}: ${volume}`);
+    }
+    else {
+        display.value = "Error: Please enter radius,height";
+    }
+});
     // ... (rest of the code)
 });
