@@ -237,5 +237,14 @@ lnButton.addEventListener("click", () => {
         updateHistory(`ln(${num}) = ${result}`);
     }
 });
+//Memory Add functionality
+const memoryAddButton = document.getElementById("memory-add");
+memoryAddButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        memoryValue = (memoryValue || 0) + currentValue;
+        updateHistory(`M+ ${currentValue} (Memory: ${memoryValue})`);
+    }
+});
     // ... (rest of the code)
 });
