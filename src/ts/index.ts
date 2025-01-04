@@ -293,5 +293,18 @@ calculateAreaTriangleButton.addEventListener("click", () => {
         display.value = "Error: Input base,height";
     }
 });
+//Calculate the volume of a sphere
+const sphereVolumeButton = document.getElementById("calculate-volume-sphere");
+sphereVolumeButton.addEventListener("click", () => {
+    const radius = parseFloat(display.value);
+    if (!isNaN(radius)) {
+        const volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
+        display.value = volume;
+        updateHistory(`Volume of sphere with radius ${radius}: ${volume}`);
+    }
+    else {
+        display.value = "Error: Invalid input for radius";
+    }
+});
     // ... (rest of the code)
 });
