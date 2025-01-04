@@ -246,5 +246,10 @@ memoryAddButton.addEventListener("click", () => {
         updateHistory(`M+ ${currentValue} (Memory: ${memoryValue})`);
     }
 });
+const eulerButton = document.getElementById('e');
+
+eulerButton.addEventListener('click', () => {
+    display.value += Math.E;
+});
     // ... (rest of the code)
 });
