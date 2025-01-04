@@ -210,5 +210,17 @@ log10Button.addEventListener("click", () => {
     updateHistory(`log10(${num}) = ${result}`);
   }
 });
+//Added log2 functionality
+const log2Button = document.getElementById("calculate-log2");
+log2Button.addEventListener("click", () => {
+  const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Error: Invalid Input";
+    } else {
+        const result = Math.log2(num);
+        display.value = result;
+        updateHistory(`log2(${num}) = ${result}`);
+    }
+});
     // ... (rest of the code)
 });
