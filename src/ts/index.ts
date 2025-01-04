@@ -101,7 +101,20 @@ nthRootButton.addEventListener("click", () => {
     display.value = "Error: Enter x,y";
   }
 });
-
+const rootButton = document.getElementById("root");
+rootButton.addEventListener("click", () => {
+    const values = display.value.split(',');
+    if (values.length === 2) {
+        const x = parseFloat(values[0]);
+        const y = parseFloat(values[1]);
+        const result = Math.pow(x, 1 / y);
+        display.value = result;
+        updateHistory(`${x}^(1/${y}) = ${result}`);
+    }
+    else {
+        display.value = "Error: Enter x,y";
+    }
+});
 function gcd(a, b) {
     while (b !== 0) {
         const temp = b;
