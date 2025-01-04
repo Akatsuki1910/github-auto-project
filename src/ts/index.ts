@@ -266,5 +266,17 @@ hypotenuseButton.addEventListener("click", () => {
         display.value = "Error: Input a,b";
     }
 });
+// Calculate Circle Area
+const calculateAreaCircleButton = document.getElementById("calculate-area-circle");
+calculateAreaCircleButton.addEventListener("click", () => {
+  const radius = parseFloat(display.value);
+  if (!isNaN(radius)) {
+    const area = Math.PI * radius * radius;
+    display.value = area;
+    updateHistory(`Area of circle with radius ${radius}: ${area}`);
+  } else {
+    display.value = "Error: Invalid input for radius";
+  }
+});
     // ... (rest of the code)
 });
