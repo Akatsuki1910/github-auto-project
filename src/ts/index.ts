@@ -333,5 +333,18 @@ cylinderVolumeButton.addEventListener("click", () => {
         display.value = "Error: Please enter radius,height";
     }
 });
+// Calculate Cube Surface Area
+const cubeSurfaceAreaButton = document.getElementById("calculate-surface-area-cube");
+cubeSurfaceAreaButton.addEventListener("click", () => {
+    const side = parseFloat(display.value);
+    if (!isNaN(side)) {
+        const surfaceArea = 6 * side * side;
+        display.value = surfaceArea;
+        updateHistory(`Surface area of cube with side ${side}: ${surfaceArea}`);
+    }
+    else {
+        display.value = "Error: Invalid input for side";
+    }
+});
     // ... (rest of the code)
 });
