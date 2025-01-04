@@ -87,5 +87,20 @@ cubedButton.addEventListener("click", () => {
     display.value = result;
     updateHistory(`${value}³ = ${result}`);
 });
+// Nth root functionality
+const nthRootButton = document.getElementById("n-th-root");
+nthRootButton.addEventListener("click", () => {
+  const values = display.value.split(',');
+  if (values.length === 2) {
+    const x = parseFloat(values[0]);
+    const y = parseFloat(values[1]);
+    const result = Math.pow(x, 1/y);
+    display.value = result;
+    updateHistory(`${y}√${x} = ${result}`);
+  } else {
+    display.value = "Error: Enter x,y";
+  }
+});
+
     // ... (rest of the code)
 });
