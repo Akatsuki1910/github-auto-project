@@ -376,5 +376,24 @@ squareAreaButton.addEventListener("click", () => {
     display.value = "Error: Invalid input for side";
   }
 });
+
+const calculateAreaTrapezoid = document.getElementById("calculate-area-trapezoid");
+calculateAreaTrapezoid.addEventListener("click", () => {
+    const values = display.value.split(',');
+    if(values.length === 3) {
+        const a = parseFloat(values[0]);
+        const b = parseFloat(values[1]);
+        const h = parseFloat(values[2]);
+        if(isNaN(a) || isNaN(b) || isNaN(h)) {
+            display.value = "Error: Invalid input";
+        } else {
+            const area = (a + b) * h / 2;
+            display.value = area;
+            updateHistory(`Area of trapezoid is: ${area}`);
+        }
+    } else {
+        display.value = "Error: Enter a,b,h";
+    }
+});
     // ... (rest of the code)
 });
