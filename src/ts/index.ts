@@ -75,4 +75,16 @@ atan2Button.addEventListener("click", () => {
     }
 });
 
+const powerOfTwoButton = document.getElementById("power-of-two");
+powerOfTwoButton.addEventListener("click", () => {
+  const value = parseFloat(display.value);
+  if (!isNaN(value)) {
+    const result = value * value; // Calculate square
+    display.value = result;
+    updateHistory(`${value}^2 = ${result}`);
+  } else {
+    display.value = "Error";
+  }
+});
+
 });
