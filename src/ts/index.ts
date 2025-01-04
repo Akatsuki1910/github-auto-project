@@ -251,5 +251,20 @@ const eulerButton = document.getElementById('e');
 eulerButton.addEventListener('click', () => {
     display.value += Math.E;
 });
+//Hypotenuse Calculation
+const hypotenuseButton = document.getElementById("calculate-hypotenuse");
+hypotenuseButton.addEventListener("click", () => {
+    const values = display.value.split(',');
+    if (values.length === 2) {
+        const a = parseFloat(values[0]);
+        const b = parseFloat(values[1]);
+        const result = Math.sqrt(a * a + b * b);
+        display.value = result;
+        updateHistory(`hypotenuse(${a},${b}): ${result}`);
+    }
+    else {
+        display.value = "Error: Input a,b";
+    }
+});
     // ... (rest of the code)
 });
