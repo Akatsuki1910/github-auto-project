@@ -198,5 +198,17 @@ combinationButton.addEventListener("click", () => {
         display.value = "Error: Enter n,r";
     }
 });
+//Added log10 functionality
+const log10Button = document.getElementById("calculate-log10");
+log10Button.addEventListener("click", () => {
+  const num = parseFloat(display.value);
+  if(isNaN(num)){
+    display.value = "Error: Invalid Input";
+  } else{
+  const result = Math.log10(num);
+  display.value = result;
+    updateHistory(`log10(${num}) = ${result}`);
+  }
+});
     // ... (rest of the code)
 });
