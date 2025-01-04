@@ -346,5 +346,25 @@ cubeSurfaceAreaButton.addEventListener("click", () => {
         display.value = "Error: Invalid input for side";
     }
 });
+//Calculate area of a rectangle
+const rectangleAreaButton = document.getElementById("calculate-area-rectangle");
+rectangleAreaButton.addEventListener("click", () => {
+    const values = display.value.split(',');
+    if (values.length === 2) {
+        const length = parseFloat(values[0]);
+        const width = parseFloat(values[1]);
+        if(isNaN(length) || isNaN(width)){
+            display.value = "Error: Invalid length or width";
+        } else{
+            const area = length * width;
+            display.value = area;
+            updateHistory(`Area of rectangle is: ${area}`);
+        }
+    }
+    else {
+        display.value = "Error: Enter length and width separated by comma";
+    }
+});
+
     // ... (rest of the code)
 });
