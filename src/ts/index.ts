@@ -365,6 +365,16 @@ rectangleAreaButton.addEventListener("click", () => {
         display.value = "Error: Enter length and width separated by comma";
     }
 });
-
+const squareAreaButton = document.getElementById("calculate-area-square");
+squareAreaButton.addEventListener("click", () => {
+  const side = parseFloat(display.value);
+  if (!isNaN(side)) {
+    const area = side * side;
+    display.value = area;
+    updateHistory(`Area of square with side ${side}: ${area}`);
+  } else {
+    display.value = "Error: Invalid input for side";
+  }
+});
     // ... (rest of the code)
 });
