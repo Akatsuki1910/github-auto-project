@@ -422,5 +422,16 @@ calculateModulusButton.addEventListener("click", () => {
         display.value = "Error: Enter two number separated by a comma";
     }
 });
+//copy display value to clipboard
+const copyDisplayButton = document.getElementById("copy-display");
+copyDisplayButton.addEventListener("click", () => {
+    navigator.clipboard.writeText(display.value)
+        .then(() => {
+            alert("Copied display value to clipboard!");
+        })
+        .catch(err => {
+            console.error("Failed to copy: ", err);
+        });
+});
     // ... (rest of the code)
 });
