@@ -439,5 +439,11 @@ asinButton.addEventListener("click", () => {
     const value = parseFloat(display.value);
     display.value = Math.asin(value);
 });
+//acos button
+const acosButton = document.getElementById("calculate-acos");
+acosButton.addEventListener("click", () => {
+    const value = parseFloat(display.value);
+    display.value = Math.acos(value);
+});
     // ... (rest of the code)
 });
