@@ -47,59 +47,16 @@ calculateSqrtButton.addEventListener("click", () => {
     }
 });
 
-const inverseSinButton = document.getElementById("inverse-sin");
-inverseSinButton.addEventListener("click", () => {
+// ... other functions
+
+const calculateLnButton = document.getElementById("calculate-ln");
+calculateLnButton.addEventListener("click", () => {
     const currentValue = parseFloat(display.value);
-    const result = isDegreeMode ? Math.asin(currentValue) * (180 / Math.PI) : Math.asin(currentValue);
-    display.value = result.toString();
-});
-
-const inverseCosButton = document.getElementById("inverse-cos");
-inverseCosButton.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  const result = isDegreeMode ? Math.acos(currentValue) * (180 / Math.PI) : Math.acos(currentValue);
-  display.value = result.toString();
-});
-
-const inverseTanButton = document.getElementById("inverse-tan");
-inverseTanButton.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    const result = isDegreeMode ? Math.atan(currentValue) * (180 / Math.PI) : Math.atan(currentValue); 
-    display.value = result.toString();
-});
-
-const copyToClipboardButton = document.getElementById("copy-to-clipboard");
-copyToClipboardButton.addEventListener("click", () => {
-  navigator.clipboard.writeText(display.value)
-    .then(() => {
-      alert("Copied to clipboard: " + display.value);
-    })
-    .catch(err => {
-      console.error("Failed to copy: ", err);
-    });
-});
-
-const switchSignButton = document.getElementById("switch-sign");
-switchSignButton.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    display.value = (-currentValue).toString();
-});
-
-const calculateCbrtButton = document.getElementById("calculate-cbrt");
-calculateCbrtButton.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  const result = Math.cbrt(currentValue);
-  display.value = result.toString();
-});
-
-const calculateLog10Button = document.getElementById("calculate-log10");
-calculateLog10Button.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (currentValue > 0) {
-    const result = Math.log10(currentValue);
-    display.value = result.toString();
-  } else {
-    display.value = "Error: Invalid Input for log10";
-  }
-});
+    if (currentValue > 0) {
+      const result = Math.log(currentValue);
+      display.value = result.toString();
+    } else {
+      display.value = "Error: Invalid input for ln";
+    }
+  });
 });
