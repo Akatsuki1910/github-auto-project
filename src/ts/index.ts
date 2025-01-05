@@ -99,4 +99,15 @@ calculateAbsButton.addEventListener("click", () => {
   const result = Math.abs(currentValue);
   display.value = result.toString();
 });
+//Memory Recall and Clear (MRC) functionality
+let memoryRecallValue = 0;
+const mrcButton = document.getElementById("mrc");
+mrcButton.addEventListener("click", () =>{
+    if(memoryRecallValue !== 0){
+        display.value = memoryRecallValue.toString();
+        memoryRecallValue = 0; // Clear the memory after recall
+    } else {
+        alert("Memory is empty!");
+    }
+});
 });
