@@ -83,4 +83,13 @@ calculateLnButton.addEventListener("click", () => {
     const result = Math.exp(currentValue);
     display.value = result.toString();
   });
+
+// Calculate 10^x
+const calculate10xButton = document.getElementById("calculate-10x");
+calculate10xButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    const result = Math.pow(10, currentValue);
+    display.value = result.toString();
+});
+
 });
