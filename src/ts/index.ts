@@ -16,7 +16,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // ... (rest of the code)
 const degRadButton = document.getElementById("deg-rad");
-// ... other functions ...
+ degRadButton.addEventListener("click", () => {
+    isDegreeMode = !isDegreeMode;
+    degRadButton.textContent = isDegreeMode ? "Deg" : "Rad";
+  });
 
  //Added delete last char functionality
 const deleteLastCharButton = document.getElementById("delete-last-char");
