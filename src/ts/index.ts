@@ -92,4 +92,11 @@ calculate10xButton.addEventListener("click", () => {
     display.value = result.toString();
 });
 
+// Calculate absolute value
+const calculateAbsButton = document.getElementById("calculate-abs");
+calculateAbsButton.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  const result = Math.abs(currentValue);
+  display.value = result.toString();
+});
 });
