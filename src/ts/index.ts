@@ -49,135 +49,16 @@ calculateSqrtButton.addEventListener("click", () => {
 
 // ... other functions
 
-const calculateLnButton = document.getElementById("calculate-ln");
-calculateLnButton.addEventListener("click", () => {
+// ... (rest of code)
+
+// Reciprocal Calculation
+const calculateReciprocalButton = document.getElementById("calculate-reciprocal");
+calculateReciprocalButton.addEventListener("click", () => {
     const currentValue = parseFloat(display.value);
-    if (currentValue > 0) {
-      const result = Math.log(currentValue);
-      display.value = result.toString();
+    if (currentValue !== 0) {
+        display.value = (1 / currentValue).toString();
     } else {
-      display.value = "Error: Invalid input for ln";
-    }
-  });
-
-  // Left shift
-  const leftShiftButton = document.getElementById("left-shift");
-  leftShiftButton.addEventListener("click", () => {
-    const currentValue = parseInt(display.value);
-    const result = currentValue << 1; // Left shift by 1 bit
-    display.value = result.toString();
-  });
-
-  // Right shift
-  const rightShiftButton = document.getElementById("right-shift");
-  rightShiftButton.addEventListener("click", () => {
-    const currentValue = parseInt(display.value);
-    const result = currentValue >> 1; // Right shift by 1 bit
-    display.value = result.toString();
-  });
-
-  // Calculate e^x
-  const calculateEButton = document.getElementById("calculate-e");
-  calculateEButton.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    const result = Math.exp(currentValue);
-    display.value = result.toString();
-  });
-
-// Calculate 10^x
-const calculate10xButton = document.getElementById("calculate-10x");
-calculate10xButton.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    const result = Math.pow(10, currentValue);
-    display.value = result.toString();
-});
-
-// Calculate absolute value
-const calculateAbsButton = document.getElementById("calculate-abs");
-calculateAbsButton.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  const result = Math.abs(currentValue);
-  display.value = result.toString();
-});
-//Memory Recall and Clear (MRC) functionality
-let memoryRecallValue = 0;
-const mrcButton = document.getElementById("mrc");
-mrcButton.addEventListener("click", () =>{
-    if(memoryRecallValue !== 0){
-        display.value = memoryRecallValue.toString();
-        memoryRecallValue = 0; // Clear the memory after recall
-    } else {
-        alert("Memory is empty!");
-    }
-});
-
-// Floor calculation
-const calculateFloorButton = document.getElementById("calculate-floor");
-calculateFloorButton.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  display.value = Math.floor(currentValue).toString();
-});
-
-// x^y calculation
-const calculatePowButton = document.getElementById("calculate-pow");
-calculatePowButton.addEventListener("click", () => {
-    const base = parseFloat(prompt("Enter the base (x):"));
-    const exponent = parseFloat(prompt("Enter the exponent (y):"));
-    if (isNaN(base) || isNaN(exponent)){
-        display.value = "Invalid input";
-    } else {
-        display.value = Math.pow(base, exponent).toString();
-    }
-});
-
-// x^3 calculation
-const calculateExpButton = document.getElementById("calculate-exp");
-calculateExpButton.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  display.value = Math.pow(currentValue, 3).toString();
-});
-
-// Sign function
-const signButton = document.getElementById("sign");
-signButton.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  display.value = Math.sign(currentValue).toString();
-});
-
-const screenToggleButton = document.getElementById("screen-toggle");
-screenToggleButton.addEventListener("click", () => {
-  if (display.style.display === "none") {
-    display.style.display = "block";
-  } else {
-    display.style.display = "none";
-  }
-});
-
-const calculateAsinButton = document.getElementById("calculate-asin");
-calculateAsinButton.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (isDegreeMode) {
-    display.value = (Math.asin(currentValue) * 180 / Math.PI).toString();
-  } else {
-    display.value = Math.asin(currentValue).toString();
-  }
-});
-
-// Round functionality
-const calculateRoundButton = document.getElementById("calculate-round");
-calculateRoundButton.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  display.value = Math.round(currentValue).toString();
-});
-
-//log2 functionality
-const calculateLog2Button = document.getElementById("calculate-log2");
-calculateLog2Button.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if(currentValue > 0){
-        display.value = Math.log2(currentValue).toString();
-    } else {
-        display.value = "Error: Invalid input for log2";
+        display.value = "Error: Division by zero";
     }
 });
 });
