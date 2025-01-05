@@ -27,6 +27,19 @@ deleteLastCharButton.addEventListener("click", () => {
     display.value = display.value.slice(0, -1);
 });
 
+// ... (Other existing button event listeners)
+
+const calculateSqrtButton = document.getElementById("calculate-sqrt");
+calculateSqrtButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (currentValue >= 0) {
+        const result = Math.sqrt(currentValue);
+        display.value = result.toString();
+    } else {
+        display.value = "Error: Negative Input";
+    }
+});
+
 const inverseSinButton = document.getElementById("inverse-sin");
 inverseSinButton.addEventListener("click", () => {
     const currentValue = parseFloat(display.value);
