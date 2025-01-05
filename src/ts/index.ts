@@ -113,4 +113,23 @@ nthRootButton.addEventListener("click", () => {
         display.value = "Error: Enter x,y";
     }
 });
+
+const roundToDecimalButton = document.getElementById("round-to-decimal");
+roundToDecimalButton.addEventListener("click", () => {
+    const values = display.value.split(',');
+    if (values.length === 2) {
+        const number = parseFloat(values[0]);
+        const decimalPlaces = parseInt(values[1]);
+        if(!isNaN(number) && !isNaN(decimalPlaces)) {
+            const result = number.toFixed(decimalPlaces);
+            display.value = result;
+            updateHistory(`round(${number}, ${decimalPlaces}) = ${result}`);
+        } else {
+            display.value = "Error: Invalid input";
+        }
+    }
+    else {
+        display.value = "Error: Enter number,decimal";
+    }
+});
 });
