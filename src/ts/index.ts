@@ -115,4 +115,17 @@ cbrtButton.addEventListener("click", () => {
     display.value = "Error";
   }
 });
+
+// 10^x functionality
+const exp10Button = document.getElementById("exp-10");
+exp10Button.addEventListener("click", () => {
+    const value = parseFloat(display.value);
+    if (!isNaN(value)) {
+        const result = Math.pow(10, value);
+        display.value = result;
+        updateHistory(`10^${value} = ${result}`);
+    } else {
+        display.value = "Error";
+    }
+});
 });
