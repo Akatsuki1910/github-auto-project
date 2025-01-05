@@ -47,4 +47,15 @@ inverseTanButton.addEventListener("click", () => {
     const result = isDegreeMode ? Math.atan(currentValue) * (180 / Math.PI) : Math.atan(currentValue); 
     display.value = result.toString();
 });
+
+const copyToClipboardButton = document.getElementById("copy-to-clipboard");
+copyToClipboardButton.addEventListener("click", () => {
+  navigator.clipboard.writeText(display.value)
+    .then(() => {
+      alert("Copied to clipboard: " + display.value);
+    })
+    .catch(err => {
+      console.error("Failed to copy: ", err);
+    });
+});
 });
