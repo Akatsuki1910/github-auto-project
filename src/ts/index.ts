@@ -70,5 +70,17 @@ document.addEventListener('keydown', (event) => {
     }
         // Add more key mappings as needed
 });
+//Percentage button functionality
+const percentageButton = document.getElementById("percentage");
+percentageButton.addEventListener("click", () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const percentageValue = currentValue / 100;
+        display.value = percentageValue.toString();
+        currentExpression += '/100'; // Add to current expression
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 
 });
