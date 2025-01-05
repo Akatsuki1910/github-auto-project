@@ -169,4 +169,15 @@ calculateRoundButton.addEventListener("click", () => {
   const currentValue = parseFloat(display.value);
   display.value = Math.round(currentValue).toString();
 });
+
+//log2 functionality
+const calculateLog2Button = document.getElementById("calculate-log2");
+calculateLog2Button.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if(currentValue > 0){
+        display.value = Math.log2(currentValue).toString();
+    } else {
+        display.value = "Error: Invalid input for log2";
+    }
+});
 });
