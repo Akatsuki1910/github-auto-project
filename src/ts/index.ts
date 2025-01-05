@@ -29,6 +29,13 @@ deleteLastCharButton.addEventListener("click", () => {
 
 // ... (Other existing button event listeners)
 
+//Settings Button and Functionality
+const openSettingsButton = document.getElementById("open-settings");
+openSettingsButton.addEventListener("click", () => {
+  // Implement settings functionality here. For example, open a modal, etc.
+  alert("Settings functionality will be added here.");
+});
+
 const calculateSqrtButton = document.getElementById("calculate-sqrt");
 calculateSqrtButton.addEventListener("click", () => {
     const currentValue = parseFloat(display.value);
