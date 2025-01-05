@@ -102,4 +102,17 @@ ceilButton.addEventListener("click", () => {
         display.value = "Error";
     }
 });
+
+//Cbrt Functionality
+const cbrtButton = document.getElementById("calculate-cbrt");
+cbrtButton.addEventListener("click", () => {
+  const value = parseFloat(display.value);
+  if (!isNaN(value)) {
+    const result = Math.cbrt(value);
+    display.value = result;
+    updateHistory(`cbrt(${value}) = ${result}`);
+  } else {
+    display.value = "Error";
+  }
+});
 });
