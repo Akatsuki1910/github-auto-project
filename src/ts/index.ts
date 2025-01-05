@@ -14,6 +14,15 @@ window.addEventListener("DOMContentLoaded", () => {
     let currentExpression = ''; // Store the current expression
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay");
 
+    // Clear button functionality
+    const clearButton = document.getElementById("clear");
+    clearButton.addEventListener("click", () => {
+        display.value = '';
+        currentExpression = '';
+        currentExpressionDisplay.textContent = '';
+    });
+
+
     // ... existing code ...
 
 // ... (rest of the code)
