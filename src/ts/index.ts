@@ -130,4 +130,11 @@ calculatePowButton.addEventListener("click", () => {
     }
 });
 
+// x^3 calculation
+const calculateExpButton = document.getElementById("calculate-exp");
+calculateExpButton.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  display.value = Math.pow(currentValue, 3).toString();
+});
+
 });
