@@ -75,4 +75,12 @@ calculateLnButton.addEventListener("click", () => {
     const result = currentValue >> 1; // Right shift by 1 bit
     display.value = result.toString();
   });
+
+  // Calculate e^x
+  const calculateEButton = document.getElementById("calculate-e");
+  calculateEButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    const result = Math.exp(currentValue);
+    display.value = result.toString();
+  });
 });
