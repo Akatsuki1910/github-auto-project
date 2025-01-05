@@ -18,38 +18,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // ... (rest of the code)
 const degRadButton = document.getElementById("deg-rad");
- degRadButton.addEventListener("click", () => {
-    isDegreeMode = !isDegreeMode;
-    degRadButton.textContent = isDegreeMode ? "Deg" : "Rad";
-  });
-
  //Added delete last char functionality
 const deleteLastCharButton = document.getElementById("delete-last-char");
-deleteLastCharButton.addEventListener("click", () => {
-    display.value = display.value.slice(0, -1);
-    currentExpression = currentExpression.slice(0,-1);
-     currentExpressionDisplay.textContent = currentExpression;
-});
 
 // ... (Other existing button event listeners)
 
 //Settings Button and Functionality
 const openSettingsButton = document.getElementById("open-settings");
-openSettingsButton.addEventListener("click", () => {
-  // Implement settings functionality here. For example, open a modal, etc.
-  alert("Settings functionality will be added here.");
-});
 
 const calculateSqrtButton = document.getElementById("calculate-sqrt");
-calculateSqrtButton.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (currentValue >= 0) {
-        const result = Math.sqrt(currentValue);
-        display.value = result.toString();
-    } else {
-        display.value = "Error: Negative Input";
-    }
-});
 
 // ... other functions
 
@@ -57,46 +34,32 @@ calculateSqrtButton.addEventListener("click", () => {
 
 // Reciprocal Calculation
 const calculateReciprocalButton = document.getElementById("calculate-reciprocal");
-calculateReciprocalButton.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (currentValue !== 0) {
-        display.value = (1 / currentValue).toString();
-    } else {
-        display.value = "Error: Division by zero";
-    }
-});
 
 // Factorial Calculation
 const calculateFactorialButton = document.getElementById("calculate-factorial");
-calculateFactorialButton.addEventListener("click", () => {
-    const currentValue = parseInt(display.value);
-    if (currentValue >= 0) {
-        let result = 1;
-        for (let i = 2; i <= currentValue; i++) {
-            result *= i;
-        }
-        display.value = result.toString();
-    } else {
-        display.value = "Error: Negative Input";
-    }
-});
 
 const openNewTabButton = document.getElementById("open-new-tab");
-openNewTabButton.addEventListener("click", () => {
-    window.open("https://www.example.com", "_blank");
-});
 const displayCurrentExpressionButton = document.getElementById("display-current-expression");
-displayCurrentExpressionButton.addEventListener("click", () => {
-  currentExpressionDisplay.textContent = currentExpression;
-});
 
 const insertAnsButton = document.getElementById("insert-ans");
-insertAnsButton.addEventListener("click", () => {
-    if (lastAnswer !== null) {
-        display.value += lastAnswer.toString();
-        currentExpression += lastAnswer.toString();
-        currentExpressionDisplay.textContent = currentExpression;
+
+ // Add keyboard support
+document.addEventListener('keydown', (event) => {
+    const key = event.key;
+    if (/^[0-9]$/.test(key)) {
+        display.value += key;
+        currentExpression += key;
+    } else if (key === '+') {
+    display.value += '+';
+    currentExpression += '+';
+    } else if (key === '-') {
+       display.value += '-';
+        currentExpression += '-';
+    } else if (key === '*') {
+        display.value += '*';
+        currentExpression += '*';
     }
+        // Add more key mappings as needed
 });
 
 });
