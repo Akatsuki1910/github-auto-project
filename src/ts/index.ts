@@ -152,4 +152,14 @@ screenToggleButton.addEventListener("click", () => {
     display.style.display = "none";
   }
 });
+
+const calculateAsinButton = document.getElementById("calculate-asin");
+calculateAsinButton.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (isDegreeMode) {
+    display.value = (Math.asin(currentValue) * 180 / Math.PI).toString();
+  } else {
+    display.value = Math.asin(currentValue).toString();
+  }
+});
 });
