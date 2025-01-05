@@ -110,4 +110,11 @@ mrcButton.addEventListener("click", () =>{
         alert("Memory is empty!");
     }
 });
+
+// Floor calculation
+const calculateFloorButton = document.getElementById("calculate-floor");
+calculateFloorButton.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  display.value = Math.floor(currentValue).toString();
+});
 });
