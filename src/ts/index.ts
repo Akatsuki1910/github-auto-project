@@ -132,4 +132,12 @@ roundToDecimalButton.addEventListener("click", () => {
         display.value = "Error: Enter number,decimal";
     }
 });
+
+const absoluteButton = document.getElementById("calculate-absolute");
+absoluteButton.addEventListener("click", () => {
+    const value = parseFloat(display.value);
+    const result = Math.abs(value);
+    display.value = result;
+    updateHistory(`|${value}| = ${result}`);
+});
 });
