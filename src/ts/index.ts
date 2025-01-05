@@ -89,4 +89,17 @@ floorButton.addEventListener("click", () => {
     }
 });
 
+//Ceil Functionality
+const ceilButton = document.getElementById("calculate-ceil");
+ceilButton.addEventListener("click", () => {
+    const value = parseFloat(display.value);
+    if (!isNaN(value)) {
+      const result = Math.ceil(value);
+      display.value = result;
+      updateHistory(`ceil(${value}) = ${result}`);
+    }
+    else {
+        display.value = "Error";
+    }
+});
 });
