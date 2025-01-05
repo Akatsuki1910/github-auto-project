@@ -75,69 +75,18 @@ atan2Button.addEventListener("click", () => {
     }
 });
 
-const powerOfTwoButton = document.getElementById("power-of-two");
-powerOfTwoButton.addEventListener("click", () => {
-  const value = parseFloat(display.value);
-  if (!isNaN(value)) {
-    const result = value * value; // Calculate square
-    display.value = result;
-    updateHistory(`${value}^2 = ${result}`);
-  } else {
-    display.value = "Error";
-  }
-});
+// ... other functions ...
 
-const powerOfThreeButton = document.getElementById("power-of-three");
-powerOfThreeButton.addEventListener("click", () => {
+const floorButton = document.getElementById("calculate-floor");
+floorButton.addEventListener("click", () => {
     const value = parseFloat(display.value);
     if (!isNaN(value)) {
-        const result = value * value * value; // Calculate cube
+        const result = Math.floor(value);
         display.value = result;
-        updateHistory(`${value}^3 = ${result}`);
-    }
-    else {
+        updateHistory(`floor(${value}) = ${result}`);
+    } else {
         display.value = "Error";
     }
 });
 
-const nthRootButton = document.getElementById("nth-root");
-nthRootButton.addEventListener("click", () => {
-    const values = display.value.split(',');
-    if (values.length === 2) {
-        const x = parseFloat(values[0]);
-        const y = parseFloat(values[1]);
-        const result = Math.pow(x, 1/y);
-        display.value = result;
-        updateHistory(`${y}√${x} = ${result}`);
-    } else {
-        display.value = "Error: Enter x,y";
-    }
-});
-
-const roundToDecimalButton = document.getElementById("round-to-decimal");
-roundToDecimalButton.addEventListener("click", () => {
-    const values = display.value.split(',');
-    if (values.length === 2) {
-        const number = parseFloat(values[0]);
-        const decimalPlaces = parseInt(values[1]);
-        if(!isNaN(number) && !isNaN(decimalPlaces)) {
-            const result = number.toFixed(decimalPlaces);
-            display.value = result;
-            updateHistory(`round(${number}, ${decimalPlaces}) = ${result}`);
-        } else {
-            display.value = "Error: Invalid input";
-        }
-    }
-    else {
-        display.value = "Error: Enter number,decimal";
-    }
-});
-
-const absoluteButton = document.getElementById("calculate-absolute");
-absoluteButton.addEventListener("click", () => {
-    const value = parseFloat(display.value);
-    const result = Math.abs(value);
-    display.value = result;
-    updateHistory(`|${value}| = ${result}`);
-});
 });
