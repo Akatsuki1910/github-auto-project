@@ -77,4 +77,11 @@ switchSignButton.addEventListener("click", () => {
     const currentValue = parseFloat(display.value);
     display.value = (-currentValue).toString();
 });
+
+const calculateCbrtButton = document.getElementById("calculate-cbrt");
+calculateCbrtButton.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  const result = Math.cbrt(currentValue);
+  display.value = result.toString();
+});
 });
