@@ -58,4 +58,10 @@ copyToClipboardButton.addEventListener("click", () => {
       console.error("Failed to copy: ", err);
     });
 });
+
+const switchSignButton = document.getElementById("switch-sign");
+switchSignButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    display.value = (-currentValue).toString();
+});
 });
