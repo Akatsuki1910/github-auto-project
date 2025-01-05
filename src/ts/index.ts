@@ -87,4 +87,17 @@ powerOfTwoButton.addEventListener("click", () => {
   }
 });
 
+const powerOfThreeButton = document.getElementById("power-of-three");
+powerOfThreeButton.addEventListener("click", () => {
+    const value = parseFloat(display.value);
+    if (!isNaN(value)) {
+        const result = value * value * value; // Calculate cube
+        display.value = result;
+        updateHistory(`${value}^3 = ${result}`);
+    }
+    else {
+        display.value = "Error";
+    }
+});
+
 });
