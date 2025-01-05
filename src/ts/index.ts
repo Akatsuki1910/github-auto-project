@@ -117,4 +117,17 @@ calculateFloorButton.addEventListener("click", () => {
   const currentValue = parseFloat(display.value);
   display.value = Math.floor(currentValue).toString();
 });
+
+// x^y calculation
+const calculatePowButton = document.getElementById("calculate-pow");
+calculatePowButton.addEventListener("click", () => {
+    const base = parseFloat(prompt("Enter the base (x):"));
+    const exponent = parseFloat(prompt("Enter the exponent (y):"));
+    if (isNaN(base) || isNaN(exponent)){
+        display.value = "Invalid input";
+    } else {
+        display.value = Math.pow(base, exponent).toString();
+    }
+});
+
 });
