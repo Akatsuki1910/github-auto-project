@@ -100,4 +100,17 @@ powerOfThreeButton.addEventListener("click", () => {
     }
 });
 
+const nthRootButton = document.getElementById("nth-root");
+nthRootButton.addEventListener("click", () => {
+    const values = display.value.split(',');
+    if (values.length === 2) {
+        const x = parseFloat(values[0]);
+        const y = parseFloat(values[1]);
+        const result = Math.pow(x, 1/y);
+        display.value = result;
+        updateHistory(`${y}√${x} = ${result}`);
+    } else {
+        display.value = "Error: Enter x,y";
+    }
+});
 });
