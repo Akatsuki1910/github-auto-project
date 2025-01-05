@@ -162,4 +162,11 @@ calculateAsinButton.addEventListener("click", () => {
     display.value = Math.asin(currentValue).toString();
   }
 });
+
+// Round functionality
+const calculateRoundButton = document.getElementById("calculate-round");
+calculateRoundButton.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  display.value = Math.round(currentValue).toString();
+});
 });
