@@ -90,4 +90,13 @@ displayCurrentExpressionButton.addEventListener("click", () => {
   currentExpressionDisplay.textContent = currentExpression;
 });
 
+const insertAnsButton = document.getElementById("insert-ans");
+insertAnsButton.addEventListener("click", () => {
+    if (lastAnswer !== null) {
+        display.value += lastAnswer.toString();
+        currentExpression += lastAnswer.toString();
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
+
 });
