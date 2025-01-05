@@ -128,4 +128,19 @@ exp10Button.addEventListener("click", () => {
         display.value = "Error";
     }
 });
+// x^n functionality
+const xToTheNthButton = document.getElementById("x-to-the-nth");
+xToTheNthButton.addEventListener("click", () => {
+    const values = display.value.split(',');
+    if (values.length === 2) {
+        const x = parseFloat(values[0]);
+        const n = parseFloat(values[1]);
+        const result = Math.pow(x, n);
+        display.value = result;
+        updateHistory(`${x}^${n} = ${result}`);
+    }
+    else {
+        display.value = "Error: Enter x,n";
+    }
+});
 });
