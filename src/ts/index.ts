@@ -61,4 +61,20 @@ calculateReciprocalButton.addEventListener("click", () => {
         display.value = "Error: Division by zero";
     }
 });
+
+// Factorial Calculation
+const calculateFactorialButton = document.getElementById("calculate-factorial");
+calculateFactorialButton.addEventListener("click", () => {
+    const currentValue = parseInt(display.value);
+    if (currentValue >= 0) {
+        let result = 1;
+        for (let i = 2; i <= currentValue; i++) {
+            result *= i;
+        }
+        display.value = result.toString();
+    } else {
+        display.value = "Error: Negative Input";
+    }
+});
+
 });
