@@ -144,4 +144,12 @@ signButton.addEventListener("click", () => {
   display.value = Math.sign(currentValue).toString();
 });
 
+const screenToggleButton = document.getElementById("screen-toggle");
+screenToggleButton.addEventListener("click", () => {
+  if (display.style.display === "none") {
+    display.style.display = "block";
+  } else {
+    display.style.display = "none";
+  }
+});
 });
