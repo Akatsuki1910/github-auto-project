@@ -11,6 +11,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const historyDiv = document.getElementById("history");
     const display = document.getElementById("display");
     let isDegreeMode = true; // Degree mode by default
+    let currentExpression = ''; // Store the current expression
+    const currentExpressionDisplay = document.getElementById("currentExpressionDisplay");
 
     // ... existing code ...
 
@@ -25,6 +27,8 @@ const degRadButton = document.getElementById("deg-rad");
 const deleteLastCharButton = document.getElementById("delete-last-char");
 deleteLastCharButton.addEventListener("click", () => {
     display.value = display.value.slice(0, -1);
+    currentExpression = currentExpression.slice(0,-1);
+     currentExpressionDisplay.textContent = currentExpression;
 });
 
 // ... (Other existing button event listeners)
@@ -80,6 +84,10 @@ calculateFactorialButton.addEventListener("click", () => {
 const openNewTabButton = document.getElementById("open-new-tab");
 openNewTabButton.addEventListener("click", () => {
     window.open("https://www.example.com", "_blank");
+});
+const displayCurrentExpressionButton = document.getElementById("display-current-expression");
+displayCurrentExpressionButton.addEventListener("click", () => {
+  currentExpressionDisplay.textContent = currentExpression;
 });
 
 });
