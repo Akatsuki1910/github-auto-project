@@ -77,4 +77,9 @@ calculateFactorialButton.addEventListener("click", () => {
     }
 });
 
+const openNewTabButton = document.getElementById("open-new-tab");
+openNewTabButton.addEventListener("click", () => {
+    window.open("https://www.example.com", "_blank");
+});
+
 });
