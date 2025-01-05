@@ -84,4 +84,15 @@ calculateCbrtButton.addEventListener("click", () => {
   const result = Math.cbrt(currentValue);
   display.value = result.toString();
 });
+
+const calculateLog10Button = document.getElementById("calculate-log10");
+calculateLog10Button.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (currentValue > 0) {
+    const result = Math.log10(currentValue);
+    display.value = result.toString();
+  } else {
+    display.value = "Error: Invalid Input for log10";
+  }
+});
 });
