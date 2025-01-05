@@ -59,4 +59,20 @@ calculateLnButton.addEventListener("click", () => {
       display.value = "Error: Invalid input for ln";
     }
   });
+
+  // Left shift
+  const leftShiftButton = document.getElementById("left-shift");
+  leftShiftButton.addEventListener("click", () => {
+    const currentValue = parseInt(display.value);
+    const result = currentValue << 1; // Left shift by 1 bit
+    display.value = result.toString();
+  });
+
+  // Right shift
+  const rightShiftButton = document.getElementById("right-shift");
+  rightShiftButton.addEventListener("click", () => {
+    const currentValue = parseInt(display.value);
+    const result = currentValue >> 1; // Right shift by 1 bit
+    display.value = result.toString();
+  });
 });
