@@ -137,4 +137,11 @@ calculateExpButton.addEventListener("click", () => {
   display.value = Math.pow(currentValue, 3).toString();
 });
 
+// Sign function
+const signButton = document.getElementById("sign");
+signButton.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  display.value = Math.sign(currentValue).toString();
+});
+
 });
