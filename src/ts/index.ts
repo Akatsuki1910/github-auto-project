@@ -81,5 +81,17 @@ factorialButton.addEventListener("click", () => {
     }
 });
 
+const roundButton = document.getElementById("round");
+roundButton.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (isNaN(currentValue)) {
+    display.value = "Error: Invalid input";
+  } else {
+    const roundedValue = Math.round(currentValue);
+    display.value = roundedValue.toString();
+    currentExpression = `round(${currentExpression})`;
+  }
+});
+
 // ... (Rest of the code)
 });
