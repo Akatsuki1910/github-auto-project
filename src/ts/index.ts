@@ -60,65 +60,25 @@ document.addEventListener('keydown', (event) => {
 
 // ... (Existing functions)
 
-// Inverse button functionality
-const inverseButton = document.getElementById("inverse");
-inverseButton.addEventListener("click", () => {
+// ... existing code
+
+const factorialButton = document.getElementById("factorial");
+factorialButton.addEventListener("click", () => {
     try {
         const currentValue = parseFloat(display.value);
-        if (currentValue === 0) {
-            display.value = "Error: Division by zero";
+        if (currentValue < 0) {
+            display.value = "Error: Factorial of negative number";
         } else {
-            const inverseValue = 1 / currentValue;
-            display.value = inverseValue.toString();
-            currentExpression = `1/(${currentExpression})`;
+            let result = 1;
+            for (let i = 2; i <= currentValue; i++) {
+                result *= i;
+            }
+            display.value = result.toString();
+            currentExpression = `fact(${currentExpression})`;
         }
     } catch (error) {
         display.value = "Error";
     }
-});
-const sinButton = document.getElementById("sin");
-sinButton.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  const result = Math.sin(currentValue);
-  display.value = result.toString();
-});
-
-const cosButton = document.getElementById("cos");
-cosButton.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    const result = Math.cos(currentValue);
-    display.value = result.toString();
-});
-
-const tanButton = document.getElementById("tan");
-tanButton.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    const result = Math.tan(currentValue);
-    display.value = result.toString();
-});
-
-const absButton = document.getElementById("abs");
-absButton.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    const result = Math.abs(currentValue);
-    display.value = result.toString();
-    currentExpression = `abs(${currentExpression})`;
-});
-
-const floorButton = document.getElementById("floor");
-floorButton.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    const result = Math.floor(currentValue);
-    display.value = result.toString();
-    currentExpression = `floor(${currentExpression})`;
-});
-
-const powerOfTenButton = document.getElementById("powerOfTen");
-powerOfTenButton.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    const result = 10 ** currentValue; // Calculate 10 to the power of currentValue
-    display.value = result.toString();
-    currentExpression = `10^(${currentExpression})`;
 });
 
 // ... (Rest of the code)
