@@ -77,4 +77,24 @@ evaluateButton.addEventListener("click", () => {
       currentExpressionDisplay.textContent = ''; // Clear the display
     }
   });
+
+//Memory Functionality
+const memoryStoreButton = document.getElementById("memory-store");
+const memoryRecallButton = document.getElementById("memory-recall");
+const memoryClearButton = document.getElementById("memory-clear");
+
+memoryStoreButton.addEventListener("click", () => {
+    memoryValue = parseFloat(display.value);
+});
+
+memoryRecallButton.addEventListener("click", () => {
+    if (memoryValue !== null) {
+        currentExpression += memoryValue.toString();
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
+
+memoryClearButton.addEventListener("click", () => {
+    memoryValue = null;
+});
 });
