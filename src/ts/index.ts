@@ -93,5 +93,18 @@ roundButton.addEventListener("click", () => {
   }
 });
 
+// Sign/Sgn function
+const signButton = document.getElementById("sign");
+signButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (isNaN(currentValue)) {
+        display.value = "Error: Invalid input";
+    } else {
+        const sign = Math.sign(currentValue);
+        display.value = sign.toString();
+        currentExpression = `sgn(${currentExpression})`;
+    }
+});
+
 // ... (Rest of the code)
 });
