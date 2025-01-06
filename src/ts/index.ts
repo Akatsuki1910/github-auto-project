@@ -71,4 +71,12 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    // Pi button functionality
+    const piButton = document.getElementById("pi");
+    piButton.addEventListener("click", () => {
+        display.value = Math.PI.toString();
+        currentExpression = 'π';
+        currentExpressionDisplay.textContent = currentExpression; 
+    });
+
 });
