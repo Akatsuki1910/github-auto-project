@@ -101,5 +101,13 @@ cubeButton.addEventListener("click", () => {
     }
 });
 
+// Exponent button functionality
+const exponentButton = document.getElementById("exponent");
+exponentButton.addEventListener("click", () => {
+  // Implementation for exponent calculation (x^y)
+  currentExpression += '**'; // Use ** for exponent in currentExpression
+  currentExpressionDisplay.textContent = currentExpression;
+});
+
 // ... (Rest of the code)
 });
