@@ -116,4 +116,17 @@ backspaceButton.addEventListener("click", () => {
   currentExpression = currentExpression.slice(0, -1);
 });
 
+//Square functionality
+const squareButton = document.getElementById("square");
+squareButton.addEventListener("click", () => {
+    try{
+        const currentValue = parseFloat(display.value);
+        const squareValue = currentValue * currentValue;
+        display.value = squareValue.toString();
+        currentExpression += '**2';
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
 });
