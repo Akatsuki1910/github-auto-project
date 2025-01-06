@@ -83,4 +83,21 @@ percentageButton.addEventListener("click", () => {
     }
 });
 
+// Plus/Minus button functionality
+const plusMinusButton = document.getElementById("plus-minus");
+plusMinusButton.addEventListener("click", () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = (-currentValue).toString();
+        // Update currentExpression appropriately (e.g., prepend '-' if not already present)
+        if (!currentExpression.startsWith('-')) {
+          currentExpression = '-' + currentExpression; // Prepend the minus sign
+        } else {
+          currentExpression = currentExpression.substring(1); // Remove the minus sign
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
 });
