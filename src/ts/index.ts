@@ -48,6 +48,17 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // ... other functions
+    const percentButton = document.getElementById("percent");
+    percentButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            const result = currentValue / 100;
+            display.value = result.toString();
+            currentExpression = `${currentValue}%`;
+            currentExpressionDisplay.textContent = currentExpression;
+            history.push({ expression: currentExpression, result: result });
+        }
+    });
 
     // History Toggle Functionality
     const historyButton = document.getElementById("show-history");
