@@ -26,36 +26,23 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... existing code ...
 
 // ... (rest of the code)
-const degRadButton = document.getElementById("deg-rad");
+
  //Added delete last char functionality
-const deleteLastCharButton = document.getElementById("delete-last-char");
 
-// ... (Other existing button event listeners)
 
-//Settings Button and Functionality
-const openSettingsButton = document.getElementById("open-settings");
+    //Settings Button and Functionality
 
-const calculateSqrtButton = document.getElementById("calculate-sqrt");
 
-// ... other functions
+    // ... other functions
 
-// ... (rest of code)
+    // ... (rest of code)
 
 // Reciprocal Calculation
-const calculateReciprocalButton = document.getElementById("calculate-reciprocal");
 
 // Factorial Calculation
-const calculateFactorialButton = document.getElementById("calculate-factorial");
 
-const openNewTabButton = document.getElementById("open-new-tab");
-const displayCurrentExpressionButton = document.getElementById("display-current-expression");
+// Add keyboard support
 
-const insertAnsButton = document.getElementById("insert-ans");
-
- // Add keyboard support
-document.addEventListener('keydown', (event) => {
-    // ... (Existing keyboard handling code)
-});
 // ... (Other existing button event listeners)
 
 // ... (Existing functions)
@@ -63,30 +50,6 @@ document.addEventListener('keydown', (event) => {
 // ... existing code
 
 // ... (Rest of the code)
-
-const expButton = document.getElementById("exp");
-expButton.addEventListener("click", () => {
-    try {
-        const currentValue = parseFloat(display.value);
-        const result = Math.exp(currentValue);
-        display.value = result.toString();
-        currentExpression = `exp(${currentExpression})`;
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-
-const lnButton = document.getElementById("ln");
-lnButton.addEventListener("click", () => {
-    try {
-        const currentValue = parseFloat(display.value);
-        const result = Math.log(currentValue);
-        display.value = result.toString();
-        currentExpression = `ln(${currentExpression})`;
-    } catch (error) {
-        display.value = "Error";
-    }
-});
 
 const parenthesisOpenButton = document.getElementById("parenthesis-open");
 parenthesisOpenButton.addEventListener("click", () => {
@@ -99,4 +62,19 @@ parenthesisCloseButton.addEventListener("click", () => {
   currentExpression += ')';
   currentExpressionDisplay.textContent = currentExpression;
 });
+
+const evaluateButton = document.getElementById("evaluate");
+evaluateButton.addEventListener("click", () => {
+    try {
+      const result = eval(currentExpression);
+      display.value = result;
+      history.push({ expression: currentExpression, result: result });
+      currentExpression = result.toString(); // Update currentExpression with the result
+      currentExpressionDisplay.textContent = currentExpression; // Update the display
+    } catch (error) {
+      display.value = "Error";
+      currentExpression = ''; // Clear currentExpression on error
+      currentExpressionDisplay.textContent = ''; // Clear the display
+    }
+  });
 });
