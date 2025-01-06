@@ -87,4 +87,16 @@ lnButton.addEventListener("click", () => {
         display.value = "Error";
     }
 });
+
+const parenthesisOpenButton = document.getElementById("parenthesis-open");
+parenthesisOpenButton.addEventListener("click", () => {
+  currentExpression += '(';
+  currentExpressionDisplay.textContent = currentExpression;
+});
+
+const parenthesisCloseButton = document.getElementById("parenthesis-close");
+parenthesisCloseButton.addEventListener("click", () => {
+  currentExpression += ')';
+  currentExpressionDisplay.textContent = currentExpression;
+});
 });
