@@ -79,4 +79,20 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpressionDisplay.textContent = currentExpression; 
     });
 
+        // Factorial button functionality
+    const factorialButton = document.getElementById("factorial");
+    factorialButton.addEventListener("click", () => {
+        const currentValue = parseInt(display.value);
+        if (!isNaN(currentValue) && currentValue >= 0) {
+            let result = 1;
+            for (let i = 2; i <= currentValue; i++) {
+                result *= i;
+            }
+            display.value = result.toString();
+            currentExpression = `${currentValue}!`;
+            currentExpressionDisplay.textContent = currentExpression;
+            history.push({ expression: currentExpression, result: result });
+        }
+    });
+
 });
