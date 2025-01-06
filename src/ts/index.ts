@@ -97,5 +97,13 @@ tanButton.addEventListener("click", () => {
     display.value = result.toString();
 });
 
+const absButton = document.getElementById("abs");
+absButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    const result = Math.abs(currentValue);
+    display.value = result.toString();
+    currentExpression = `abs(${currentExpression})`;
+});
+
 // ... (Rest of the code)
 });
