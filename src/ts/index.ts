@@ -36,5 +36,13 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+     //sin button
+    const sinButton = document.getElementById("sin");
+    sinButton.addEventListener("click", () => {
+      currentExpression += 'Math.sin('; // Add sin function to expression
+      currentExpressionDisplay.textContent = currentExpression;
+      display.value = '';
+    });
+
     // ... (rest of the existing code)
 });
