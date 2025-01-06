@@ -51,60 +51,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // ... (Rest of the code)
 
-const parenthesisOpenButton = document.getElementById("parenthesis-open");
-parenthesisOpenButton.addEventListener("click", () => {
-  currentExpression += '(';
-  currentExpressionDisplay.textContent = currentExpression;
-});
+// ... (Existing code)
 
-const parenthesisCloseButton = document.getElementById("parenthesis-close");
-parenthesisCloseButton.addEventListener("click", () => {
-  currentExpression += ')';
-  currentExpressionDisplay.textContent = currentExpression;
-});
-
-const evaluateButton = document.getElementById("evaluate");
-evaluateButton.addEventListener("click", () => {
-    try {
-      const result = eval(currentExpression);
-      display.value = result;
-      history.push({ expression: currentExpression, result: result });
-      lastAnswer = result; // Store the last answer
-      currentExpression = result.toString(); // Update currentExpression with the result
-      currentExpressionDisplay.textContent = currentExpression; // Update the display
-    } catch (error) {
-      display.value = "Error";
-      currentExpression = ''; // Clear currentExpression on error
-      currentExpressionDisplay.textContent = ''; // Clear the display
-    }
-  });
-
-//Memory Functionality
-const memoryStoreButton = document.getElementById("memory-store");
-const memoryRecallButton = document.getElementById("memory-recall");
-const memoryClearButton = document.getElementById("memory-clear");
-
-memoryStoreButton.addEventListener("click", () => {
-    memoryValue = parseFloat(display.value);
-});
-
-memoryRecallButton.addEventListener("click", () => {
-    if (memoryValue !== null) {
-        currentExpression += memoryValue.toString();
-        currentExpressionDisplay.textContent = currentExpression;
-    }
-});
-
-memoryClearButton.addEventListener("click", () => {
-    memoryValue = null;
-});
-
-// Last Answer Functionality
-const lastAnswerButton = document.getElementById("last-answer");
-lastAnswerButton.addEventListener("click", () => {
-  if (lastAnswer !== null) {
-    currentExpression += lastAnswer.toString();
-    currentExpressionDisplay.textContent = currentExpression;
+// History Toggle Functionality
+const historyButton = document.getElementById("show-history");
+historyButton.addEventListener("click", () => {
+  if (historyDiv.style.display === "none") {
+    historyDiv.style.display = "block";
+    historyDiv.innerHTML = history.map(item => `<p>${item.expression} = ${item.result}</p>`).join('');
+  } else {
+    historyDiv.style.display = "none";
   }
 });
+
 });
