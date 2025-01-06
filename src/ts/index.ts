@@ -105,5 +105,13 @@ absButton.addEventListener("click", () => {
     currentExpression = `abs(${currentExpression})`;
 });
 
+const floorButton = document.getElementById("floor");
+floorButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    const result = Math.floor(currentValue);
+    display.value = result.toString();
+    currentExpression = `floor(${currentExpression})`;
+});
+
 // ... (Rest of the code)
 });
