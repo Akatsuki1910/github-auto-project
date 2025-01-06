@@ -90,5 +90,12 @@ cosButton.addEventListener("click", () => {
     display.value = result.toString();
 });
 
+const tanButton = document.getElementById("tan");
+tanButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    const result = Math.tan(currentValue);
+    display.value = result.toString();
+});
+
 // ... (Rest of the code)
 });
