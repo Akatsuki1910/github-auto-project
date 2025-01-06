@@ -58,73 +58,25 @@ document.addEventListener('keydown', (event) => {
 });
 // ... (Other existing button event listeners)
 
-//Square Root button functionality
-const sqrtButton = document.getElementById("sqrt");
-sqrtButton.addEventListener("click", () => {
+// ... (Existing functions)
+
+// Inverse button functionality
+const inverseButton = document.getElementById("inverse");
+inverseButton.addEventListener("click", () => {
     try {
         const currentValue = parseFloat(display.value);
-        if (currentValue < 0) {
-            display.value = "Error: Cannot calculate square root of negative number";
+        if (currentValue === 0) {
+            display.value = "Error: Division by zero";
         } else {
-            const sqrtValue = Math.sqrt(currentValue);
-            display.value = sqrtValue.toString();
-            currentExpression = `sqrt(${currentExpression})`; // Add to current expression
+            const inverseValue = 1 / currentValue;
+            display.value = inverseValue.toString();
+            currentExpression = `1/(${currentExpression})`;
         }
     } catch (error) {
         display.value = "Error";
     }
 });
 
-// Square button functionality
-const squareButton = document.getElementById("square");
-squareButton.addEventListener("click", () => {
-    try {
-        const currentValue = parseFloat(display.value);
-        const squareValue = currentValue * currentValue;
-        display.value = squareValue.toString();
-        currentExpression = `(${currentExpression})^2`;
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-
-// Cube button functionality
-const cubeButton = document.getElementById("cube");
-cubeButton.addEventListener("click", () => {
-    try {
-        const currentValue = parseFloat(display.value);
-        const cubeValue = currentValue * currentValue * currentValue;
-        display.value = cubeValue.toString();
-        currentExpression = `(${currentExpression})^3`;
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-
-// Exponent button functionality
-const exponentButton = document.getElementById("exponent");
-exponentButton.addEventListener("click", () => {
-  // Implementation for exponent calculation (x^y)
-  currentExpression += '**'; // Use ** for exponent in currentExpression
-  currentExpressionDisplay.textContent = currentExpression;
-});
-
-// Logarithm (base 10) button functionality
-const logButton = document.getElementById("log");
-logButton.addEventListener("click", () => {
-    try {
-        const currentValue = parseFloat(display.value);
-        if (currentValue <= 0) {
-            display.value = "Error: Cannot calculate logarithm of non-positive number";
-        } else {
-            const logValue = Math.log10(currentValue);
-            display.value = logValue.toString();
-            currentExpression = `log(${currentExpression})`;
-        }
-    } catch (error) {
-        display.value = "Error";
-    }
-});
 
 // ... (Rest of the code)
 });
