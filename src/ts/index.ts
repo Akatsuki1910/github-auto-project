@@ -44,5 +44,13 @@ window.addEventListener("DOMContentLoaded", () => {
       display.value = '';
     });
 
+        // Cosine functionality
+    const cosButton = document.getElementById("cos");
+    cosButton.addEventListener("click", () => {
+        currentExpression += 'Math.cos('; // Add cos function to expression
+        currentExpressionDisplay.textContent = currentExpression;
+        display.value = ''; // Clear the display
+    });
+
     // ... (rest of the existing code)
 });
