@@ -109,4 +109,11 @@ decimalButton.addEventListener("click", () => {
   }
 });
 
+// Backspace button functionality
+const backspaceButton = document.getElementById("backspace");
+backspaceButton.addEventListener("click", () => {
+  display.value = display.value.slice(0, -1);
+  currentExpression = currentExpression.slice(0, -1);
+});
+
 });
