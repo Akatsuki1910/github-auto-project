@@ -75,4 +75,16 @@ expButton.addEventListener("click", () => {
         display.value = "Error";
     }
 });
+
+const lnButton = document.getElementById("ln");
+lnButton.addEventListener("click", () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const result = Math.log(currentValue);
+        display.value = result.toString();
+        currentExpression = `ln(${currentExpression})`;
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 });
