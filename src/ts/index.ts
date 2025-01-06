@@ -100,4 +100,13 @@ plusMinusButton.addEventListener("click", () => {
     }
 });
 
+// Decimal button functionality
+const decimalButton = document.getElementById("decimal");
+decimalButton.addEventListener("click", () => {
+  if (!display.value.includes('.')) { // Check if decimal already exists
+    display.value += '.';
+    currentExpression += '.';
+  }
+});
+
 });
