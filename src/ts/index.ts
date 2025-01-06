@@ -109,5 +109,22 @@ exponentButton.addEventListener("click", () => {
   currentExpressionDisplay.textContent = currentExpression;
 });
 
+// Logarithm (base 10) button functionality
+const logButton = document.getElementById("log");
+logButton.addEventListener("click", () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        if (currentValue <= 0) {
+            display.value = "Error: Cannot calculate logarithm of non-positive number";
+        } else {
+            const logValue = Math.log10(currentValue);
+            display.value = logValue.toString();
+            currentExpression = `log(${currentExpression})`;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
 // ... (Rest of the code)
 });
