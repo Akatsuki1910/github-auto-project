@@ -113,5 +113,13 @@ floorButton.addEventListener("click", () => {
     currentExpression = `floor(${currentExpression})`;
 });
 
+const powerOfTenButton = document.getElementById("powerOfTen");
+powerOfTenButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    const result = 10 ** currentValue; // Calculate 10 to the power of currentValue
+    display.value = result.toString();
+    currentExpression = `10^(${currentExpression})`;
+});
+
 // ... (Rest of the code)
 });
