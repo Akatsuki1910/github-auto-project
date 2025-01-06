@@ -34,6 +34,19 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+        // Square Root button functionality
+    const sqrtButton = document.getElementById("sqrt");
+    sqrtButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue) && currentValue >=0) {
+            const result = Math.sqrt(currentValue);
+            display.value = result.toString();
+            currentExpression = `sqrt(${currentValue})`;
+            currentExpressionDisplay.textContent = currentExpression;  
+          history.push({ expression: currentExpression, result: result });
+        }
+    });
+
     // ... other functions
 
     // History Toggle Functionality
