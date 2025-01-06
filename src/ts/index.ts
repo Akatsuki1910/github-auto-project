@@ -62,57 +62,17 @@ document.addEventListener('keydown', (event) => {
 
 // ... existing code
 
-const factorialButton = document.getElementById("factorial");
-factorialButton.addEventListener("click", () => {
+// ... (Rest of the code)
+
+const expButton = document.getElementById("exp");
+expButton.addEventListener("click", () => {
     try {
         const currentValue = parseFloat(display.value);
-        if (currentValue < 0) {
-            display.value = "Error: Factorial of negative number";
-        } else {
-            let result = 1;
-            for (let i = 2; i <= currentValue; i++) {
-                result *= i;
-            }
-            display.value = result.toString();
-            currentExpression = `fact(${currentExpression})`;
-        }
+        const result = Math.exp(currentValue);
+        display.value = result.toString();
+        currentExpression = `exp(${currentExpression})`;
     } catch (error) {
         display.value = "Error";
     }
 });
-
-const roundButton = document.getElementById("round");
-roundButton.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (isNaN(currentValue)) {
-    display.value = "Error: Invalid input";
-  } else {
-    const roundedValue = Math.round(currentValue);
-    display.value = roundedValue.toString();
-    currentExpression = `round(${currentExpression})`;
-  }
 });
-
-// Sign/Sgn function
-const signButton = document.getElementById("sign");
-signButton.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (isNaN(currentValue)) {
-        display.value = "Error: Invalid input";
-    } else {
-        const sign = Math.sign(currentValue);
-        display.value = sign.toString();
-        currentExpression = `sgn(${currentExpression})`;
-    }
-});
-
-const randomButton = document.getElementById("random");
-randomButton.addEventListener("click", () => {
-  const randomNumber = Math.random();
-  display.value = randomNumber.toString();
-  currentExpression = `rand()`;
-});
-
-// ... (Rest of the code)
-});
-
