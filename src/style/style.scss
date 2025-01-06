@@ -1,13 +1,4 @@
-body {
-  background-color: #f0f0f0;
-  color: #333;
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-body.dark-theme {
-  background-color: #333;
-  color: #f0f0f0;
-}
+/* ... (Existing styles) */
 
 #history {
     width: 200px;
@@ -18,7 +9,7 @@ body.dark-theme {
     position: absolute;
     top: 0px;
     right:0px;
-    display: none; /* 初期状態では非表示 */
+    display: none; /* Initially hidden */
 }
 
 #history p {
@@ -26,17 +17,9 @@ body.dark-theme {
     padding: 5px;
 }
 
-#qrcode {
-    width: 128px;
-    height:128px;
-    position:absolute;
-    top:0;
-    left:0;
-}
-
 #currentExpressionDisplay{
     width: 100%;
     height: 20px;
     border: 1px solid black;
-    margin-bottom: 10px; /* Add some spacing between elements */
+    margin-bottom: 10px; 
 }
