@@ -18,12 +18,20 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpressionDisplay.textContent = '';
     });
 
-    // Backspace button functionality (newly added)
+    // Backspace button functionality
     const backspaceButton = document.getElementById("backspace");
     backspaceButton.addEventListener("click", () => {
         display.value = display.value.slice(0, -1);
         currentExpression = currentExpression.slice(0, -1);
         currentExpressionDisplay.textContent = currentExpression;
+    });
+
+    // Plus/Minus button functionality
+    const plusMinusButton = document.getElementById("plus-minus");
+    plusMinusButton.addEventListener("click", () => {
+        if (display.value) {
+            display.value = String(parseFloat(display.value) * -1);
+        }
     });
 
     // ... other functions
