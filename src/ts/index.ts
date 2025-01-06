@@ -52,5 +52,13 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = ''; // Clear the display
     });
 
+    // Tangent functionality
+    const tanButton = document.getElementById("tan");
+    tanButton.addEventListener("click", () => {
+        currentExpression += 'Math.tan('; // Add tan function to expression
+        currentExpressionDisplay.textContent = currentExpression;
+        display.value = ''; // Clear the display
+    });
+
     // ... (rest of the existing code)
 });
