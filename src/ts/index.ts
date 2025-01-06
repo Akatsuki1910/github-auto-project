@@ -69,6 +69,7 @@ evaluateButton.addEventListener("click", () => {
       const result = eval(currentExpression);
       display.value = result;
       history.push({ expression: currentExpression, result: result });
+      lastAnswer = result; // Store the last answer
       currentExpression = result.toString(); // Update currentExpression with the result
       currentExpressionDisplay.textContent = currentExpression; // Update the display
     } catch (error) {
@@ -96,5 +97,14 @@ memoryRecallButton.addEventListener("click", () => {
 
 memoryClearButton.addEventListener("click", () => {
     memoryValue = null;
+});
+
+// Last Answer Functionality
+const lastAnswerButton = document.getElementById("last-answer");
+lastAnswerButton.addEventListener("click", () => {
+  if (lastAnswer !== null) {
+    currentExpression += lastAnswer.toString();
+    currentExpressionDisplay.textContent = currentExpression;
+  }
 });
 });
