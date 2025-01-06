@@ -11,6 +11,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let currentExpression = ''; 
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay");
 
+    //Clear button
     const clearButton = document.getElementById("clear");
     clearButton.addEventListener("click", () => {
         display.value = '';
@@ -18,7 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpressionDisplay.textContent = '';
     });
 
-    // Backspace button functionality
+    // Backspace button
     const backspaceButton = document.getElementById("backspace");
     backspaceButton.addEventListener("click", () => {
         display.value = display.value.slice(0, -1);
@@ -26,7 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpressionDisplay.textContent = currentExpression;
     });
 
-    // Plus/Minus button functionality
+    // Plus/Minus button 
     const plusMinusButton = document.getElementById("plus-minus");
     plusMinusButton.addEventListener("click", () => {
         if (display.value) {
@@ -34,7 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-        // Square Root button functionality
+    // Square Root button
     const sqrtButton = document.getElementById("sqrt");
     sqrtButton.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
@@ -60,7 +61,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // History Toggle Functionality
+    //History button
     const historyButton = document.getElementById("show-history");
     historyButton.addEventListener("click", () => {
       if (historyDiv.style.display === "none") {
@@ -71,7 +72,7 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Pi button functionality
+    // Pi button 
     const piButton = document.getElementById("pi");
     piButton.addEventListener("click", () => {
         display.value = Math.PI.toString();
@@ -79,7 +80,7 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpressionDisplay.textContent = currentExpression; 
     });
 
-        // Factorial button functionality
+    // Factorial button 
     const factorialButton = document.getElementById("factorial");
     factorialButton.addEventListener("click", () => {
         const currentValue = parseInt(display.value);
@@ -92,6 +93,16 @@ window.addEventListener("DOMContentLoaded", () => {
             currentExpression = `${currentValue}!`;
             currentExpressionDisplay.textContent = currentExpression;
             history.push({ expression: currentExpression, result: result });
+        }
+    });
+
+        // Decimal button functionality
+    const decimalButton = document.getElementById("decimal");
+    decimalButton.addEventListener("click", () => {
+        if (!display.value.includes('.')) {
+            display.value += '.';
+            currentExpression += '.';
+            currentExpressionDisplay.textContent = currentExpression; 
         }
     });
 
