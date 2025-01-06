@@ -106,5 +106,13 @@ signButton.addEventListener("click", () => {
     }
 });
 
+const randomButton = document.getElementById("random");
+randomButton.addEventListener("click", () => {
+  const randomNumber = Math.random();
+  display.value = randomNumber.toString();
+  currentExpression = `rand()`;
+});
+
 // ... (Rest of the code)
 });
+
