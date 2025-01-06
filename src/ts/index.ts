@@ -75,5 +75,18 @@ sqrtButton.addEventListener("click", () => {
     }
 });
 
+// Square button functionality
+const squareButton = document.getElementById("square");
+squareButton.addEventListener("click", () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const squareValue = currentValue * currentValue;
+        display.value = squareValue.toString();
+        currentExpression = `(${currentExpression})^2`;
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
 // ... (Rest of the code)
 });
