@@ -88,5 +88,18 @@ squareButton.addEventListener("click", () => {
     }
 });
 
+// Cube button functionality
+const cubeButton = document.getElementById("cube");
+cubeButton.addEventListener("click", () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const cubeValue = currentValue * currentValue * currentValue;
+        display.value = cubeValue.toString();
+        currentExpression = `(${currentExpression})^3`;
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
 // ... (Rest of the code)
 });
