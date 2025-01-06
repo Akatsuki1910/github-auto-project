@@ -76,7 +76,12 @@ inverseButton.addEventListener("click", () => {
         display.value = "Error";
     }
 });
-
+const sinButton = document.getElementById("sin");
+sinButton.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  const result = Math.sin(currentValue);
+  display.value = result.toString();
+});
 
 // ... (Rest of the code)
 });
