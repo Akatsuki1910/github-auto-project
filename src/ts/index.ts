@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const ceilButton = document.getElementById("ceil");
     const floorButton = document.getElementById("floor");
     const dupeButton = document.getElementById("dupe");
+    const roundButton = document.getElementById("round");
 
     // ... (Existing event listeners)
     ceilButton.addEventListener("click", () => {
@@ -37,6 +38,13 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpression += display.value;
         currentExpressionDisplay.textContent = currentExpression;
         display.value = display.value; //duplicate the value in the display
+    });
+
+    roundButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        display.value = Math.round(currentValue).toString();
+        currentExpression += 'round(' + currentValue + ')';
+        currentExpressionDisplay.textContent = currentExpression;
     });
 
     // ... (rest of the existing code)
