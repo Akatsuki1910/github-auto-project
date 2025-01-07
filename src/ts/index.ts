@@ -3,16 +3,26 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code)
 
     // ... (Existing variables)
-    //2のx乗ボタンの要素を取得
-    const twoToThePowerOfXButton = document.getElementById("two-to-the-power-of-x");
+     const fibonacciButton = document.getElementById("fibonacci");
 
        // ... (Existing event listeners)
-       //2のx乗ボタンのクリックイベントリスナー
-       twoToThePowerOfXButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        display.value = Math.pow(2, currentValue).toString();
-        currentExpression += '2^' + currentValue;
-        currentExpressionDisplay.textContent = currentExpression;        
+    fibonacciButton.addEventListener("click", () => {
+        const n = parseInt(display.value);
+        if (isNaN(n) || n < 0) {
+            display.value = "Error";
+        } else {
+            let a = 0,
+                b = 1,
+                temp;
+            for (let i = 0; i < n; i++) {
+                temp = b;
+                b = a + b;
+                a = temp;
+            }
+            display.value = a.toString();
+            currentExpression += 'Fib(' + n + ')';
+            currentExpressionDisplay.textContent = currentExpression;
+        }
     });
     // ... (rest of the existing code)
 });
