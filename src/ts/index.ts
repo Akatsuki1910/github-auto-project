@@ -18,6 +18,7 @@ window.addEventListener("DOMContentLoaded", () => {
      const openParenthesisButton = document.getElementById("open-parenthesis");
     const closeParenthesisButton = document.getElementById("close-parenthesis");
     const showHistoryButton = document.getElementById("show-history");
+    const randomButton = document.getElementById("random");
 
     //Clear button
     // ... (Existing Code)
@@ -98,6 +99,12 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       };
 
+    randomButton.addEventListener("click", () => {
+        const randomNumber = Math.random();
+        display.value = randomNumber.toString();
+        currentExpression += randomNumber;
+        currentExpressionDisplay.textContent = currentExpression;
+    });
 
     // ... (rest of the existing code)
 });
