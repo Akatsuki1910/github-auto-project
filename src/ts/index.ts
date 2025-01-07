@@ -36,6 +36,13 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpressionDisplay.textContent = currentExpression;
         display.value = ''; // Clear the display
     });
+     // Natural Logarithm functionality (Base e)
+    const lnButton = document.getElementById("ln");
+    lnButton.addEventListener("click", () => {
+        currentExpression += 'Math.log('; // Add ln function to expression
+        currentExpressionDisplay.textContent = currentExpression;
+        display.value = '';
+    });
 
 
     // ... (rest of the existing code)
