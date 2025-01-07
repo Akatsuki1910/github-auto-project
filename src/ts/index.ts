@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const copyButton = document.getElementById("copy");
     const historyDiv = document.getElementById("history") as HTMLDivElement;
     const showHistoryButton = document.getElementById("show-history");
+    const clearHistoryButton = document.getElementById("clear-history"); // Add clear history button
        let history: string[] = [];
 
        // ... (Existing event listeners)
@@ -50,5 +51,10 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     }
 
+       // Clear history functionality
+       clearHistoryButton?.addEventListener("click", () => {
+           history = [];
+           updateHistoryDisplay();
+       });
     // ... (rest of the existing code)
 });
