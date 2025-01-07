@@ -19,6 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const closeParenthesisButton = document.getElementById("close-parenthesis");
     const showHistoryButton = document.getElementById("show-history");
     const randomButton = document.getElementById("random");
+    const eButton = document.getElementById("e");
 
     //Clear button
     // ... (Existing Code)
@@ -103,6 +104,12 @@ window.addEventListener("DOMContentLoaded", () => {
         const randomNumber = Math.random();
         display.value = randomNumber.toString();
         currentExpression += randomNumber;
+        currentExpressionDisplay.textContent = currentExpression;
+    });
+eButton.addEventListener("click", () => {
+        const eValue = Math.E;
+        display.value = eValue.toString();
+        currentExpression += eValue;
         currentExpressionDisplay.textContent = currentExpression;
     });
 
