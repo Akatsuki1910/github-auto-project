@@ -5,6 +5,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const clearExpressionHistoryButton = document.getElementById("clear-expression-history") as HTMLButtonElement;
     const clearDisplayButton = document.getElementById("clear-display") as HTMLButtonElement;
     const clearAllButton = document.getElementById("clearAll") as HTMLButtonElement;
+    const exportHistoryButton = document.getElementById("export-history") as HTMLButtonElement;
     let expressionHistory: string[] = [];
 
     // ... (Existing event listeners)
@@ -47,8 +48,17 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpressionDisplay.textContent = '';
         expressionHistory = [];
         updateExpressionHistoryDisplay();
-                history.length = 0;
-                updateHistory(); // Clear button history as well
+        history.length = 0;
+        updateHistory(); // Clear button history as well
+    });
+
+    exportHistoryButton.addEventListener("click", () => {
+        const historyText = expressionHistory.join('\n');
+        const blob = new Blob([historyText], { type: 'text/plain' });
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'calculator_history.txt';
+        a.click();
     });
 
         // ... (rest of the existing code)
