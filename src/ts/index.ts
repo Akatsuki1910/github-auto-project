@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const expButton = document.getElementById("exp");
     const maxButton = document.getElementById("max");
     const minButton = document.getElementById("min");
+    const avgButton = document.getElementById("average");
 
     // ... (Existing event listeners)
     // ... (Other event listeners)
@@ -25,6 +26,14 @@ minButton.addEventListener("click", () => {
         const previousValue = parseFloat(prevNumber);
         display.value = Math.min(currentValue, previousValue).toString();
         currentExpression += 'min(' + currentValue + ',' + previousValue + ')';
+        currentExpressionDisplay.textContent = currentExpression;
+    });
+
+        avgButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        const previousValue = parseFloat(prevNumber);
+        display.value = ((currentValue + previousValue) / 2).toString();
+        currentExpression += 'avg(' + currentValue + ',' + previousValue + ')';
         currentExpressionDisplay.textContent = currentExpression;
     });
 
