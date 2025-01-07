@@ -45,3 +45,9 @@ body {
     grid-template-columns: repeat(10, 1fr);
     /* Add styling for keyboard buttons, etc. */
 }
+#keyboard button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+}
