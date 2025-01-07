@@ -4,8 +4,18 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ... (Existing variables)
     const copyButton = document.getElementById("copy");
+    const historyDiv = document.getElementById("history") as HTMLDivElement;
+    const showHistoryButton = document.getElementById("show-history");
+       let history: string[] = [];
 
        // ... (Existing event listeners)
+       showHistoryButton?.addEventListener("click", () => {
+        if (historyDiv.style.display === "none") {
+            historyDiv.style.display = "block";
+        } else {
+            historyDiv.style.display = "none";
+        }
+    });
 
     copyButton.addEventListener("click", () => {
         const displayValue = display.value;
@@ -18,5 +28,27 @@ window.addEventListener("DOMContentLoaded", () => {
                 console.error("Failed to copy: ", err);
             });
     });
+
+        // Store history
+        evaluateButton.addEventListener("click", () => {
+           const expression = currentExpressionDisplay.textContent;
+           const result = display.value;
+
+           if (expression && result) {  // Check if both are defined
+              history.push(`${expression} = ${result}`); 
+              // Update history display
+              updateHistoryDisplay();
+           }
+       });
+
+    function updateHistoryDisplay(){
+        historyDiv.innerHTML = ""; // Clear existing history
+        history.forEach(item => {
+            const p = document.createElement("p");
+            p.textContent = item;
+            historyDiv.appendChild(p);
+        });
+    }
+
     // ... (rest of the existing code)
 });
