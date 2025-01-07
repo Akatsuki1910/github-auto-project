@@ -3,22 +3,15 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code)
 
     // ... (Existing variables)
-    const inverseButton = document.getElementById("inverse");
+    const squareButton = document.getElementById("square");
 
     // ... (Existing event listeners)
-
-    inverseButton.addEventListener("click", () => {
+    squareButton.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
-        if (currentValue !== 0) {
-            const inverseValue = 1 / currentValue;
-            display.value = inverseValue.toString();
-            currentExpression +=  (isNaN(currentValue) ? "|" : "") + "1/(" + currentValue + ")" + (isNaN(currentValue) ? "|" : "");
-            currentExpressionDisplay.textContent = currentExpression;
-        } else {
-            display.value = "Error"; // Or handle division by zero as needed
-            currentExpression = "";
-            currentExpressionDisplay.textContent = "Error";
-        }
+        const squareValue = currentValue * currentValue;
+        display.value = squareValue.toString();
+        currentExpression +=  (isNaN(currentValue) ? "|" : "") + currentValue + "²" + (isNaN(currentValue) ? "|" : "");
+        currentExpressionDisplay.textContent = currentExpression; 
     });
 
     // ... (rest of the existing code)
