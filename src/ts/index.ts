@@ -2,6 +2,7 @@
 window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code and variables)
     const expressionHistoryDiv = document.getElementById("expression-history") as HTMLDivElement;
+    const clearExpressionHistoryButton = document.getElementById("clear-expression-history") as HTMLButtonElement;
     let expressionHistory: string[] = [];
 
     // ... (Existing event listeners)
@@ -27,6 +28,11 @@ window.addEventListener("DOMContentLoaded", () => {
     showHistoryButton?.addEventListener("click", () => {
         historyDiv.style.display = historyDiv.style.display === "none" ? "block" : "none";
         expressionHistoryDiv.style.display = expressionHistoryDiv.style.display === "none" ? "block" : "none"; // Show/hide expression history
+    });
+
+    clearExpressionHistoryButton.addEventListener("click", () => {
+        expressionHistory = [];
+        updateExpressionHistoryDisplay();
     });
 
         // ... (rest of the existing code)
