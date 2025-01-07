@@ -15,6 +15,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryRecallButton = document.getElementById("memory-recall");
     const memoryClearButton = document.getElementById("memory-clear");
     const lastAnswerButton = document.getElementById("last-answer");
+     const openParenthesisButton = document.getElementById("open-parenthesis");
+    const closeParenthesisButton = document.getElementById("close-parenthesis");
 
     //Clear button
     // ... (Existing Code)
@@ -68,6 +70,15 @@ window.addEventListener("DOMContentLoaded", () => {
             currentExpression += lastAnswer;
             currentExpressionDisplay.textContent = currentExpression;
         }
+    });
+    openParenthesisButton.addEventListener("click", () => {
+        currentExpression += "(";
+        currentExpressionDisplay.textContent = currentExpression;    
+    });
+
+    closeParenthesisButton.addEventListener("click", () => {
+        currentExpression += ")";
+        currentExpressionDisplay.textContent = currentExpression;    
     });
 
     // ... (rest of the existing code)
