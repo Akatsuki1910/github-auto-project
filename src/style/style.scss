@@ -23,3 +23,14 @@
     border: 1px solid black;
     margin-bottom: 10px; 
 }
+
+body {
+    background-color: #f0f0f0;
+    color: #333;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.dark-theme {
+    background-color: #333;
+    color: #f0f0f0;
+}

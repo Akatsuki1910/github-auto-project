@@ -7,7 +7,9 @@ window.addEventListener("DOMContentLoaded", () => {
     const historyDiv = document.getElementById("history") as HTMLDivElement;
     const showHistoryButton = document.getElementById("show-history");
     const clearHistoryButton = document.getElementById("clear-history"); // Add clear history button
+    const toggleThemeButton = document.getElementById("toggle-theme");
        let history: string[] = [];
+       let isDarkTheme = false;
 
        // ... (Existing event listeners)
        showHistoryButton?.addEventListener("click", () => {
@@ -56,5 +58,10 @@ window.addEventListener("DOMContentLoaded", () => {
            history = [];
            updateHistoryDisplay();
        });
+
+       toggleThemeButton?.addEventListener("click", () => {
+        isDarkTheme = !isDarkTheme;
+        document.body.classList.toggle("dark-theme", isDarkTheme);
+    });
     // ... (rest of the existing code)
 });
