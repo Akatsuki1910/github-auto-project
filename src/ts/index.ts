@@ -11,6 +11,9 @@ window.addEventListener("DOMContentLoaded", () => {
     let currentExpression = ''; 
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay");
     const degRadButton = document.getElementById("deg-rad");
+    const memoryStoreButton = document.getElementById("memory-store");
+    const memoryRecallButton = document.getElementById("memory-recall");
+    const memoryClearButton = document.getElementById("memory-clear");
 
     //Clear button
     // ... (Existing Code)
@@ -40,7 +43,22 @@ window.addEventListener("DOMContentLoaded", () => {
         degRadButton.textContent = isDegreeMode ? "DEG" : "RAD";
     });
 
+    memoryStoreButton.addEventListener("click", () => {
+        memoryValue = parseFloat(display.value);
+    });
+
+    memoryRecallButton.addEventListener("click", () => {
+        if (memoryValue !== null) {
+            display.value = memoryValue.toString();
+            currentExpression += memoryValue;
+            currentExpressionDisplay.textContent = currentExpression;
+        }
+    });
+
+    memoryClearButton.addEventListener("click", () => {
+        memoryValue = null;
+    });
+
 
     // ... (rest of the existing code)
 });
-
