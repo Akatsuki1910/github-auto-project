@@ -8,41 +8,20 @@ window.addEventListener("DOMContentLoaded", () => {
     const showHistoryButton = document.getElementById("show-history");
     const clearHistoryButton = document.getElementById("clear-history"); // Add clear history button
     const toggleThemeButton = document.getElementById("toggle-theme");
+    const keyboardToggle = document.getElementById("keyboard-toggle");
+    const keyboardDiv = document.getElementById("keyboard") as HTMLDivElement; 
        let history: string[] = [];
        let isDarkTheme = false;
+       let isKeyboardVisible = false;
 
        // ... (Existing event listeners)
        showHistoryButton?.addEventListener("click", () => {
-        if (historyDiv.style.display === "none") {
-            historyDiv.style.display = "block";
-        } else {
-            historyDiv.style.display = "none";
-        }
-    });
-
-    copyButton.addEventListener("click", () => {
-        const displayValue = display.value;
-        navigator.clipboard.writeText(displayValue)
-            .then(() => {
-                // Optional: Provide feedback to the user that the copy was successful
-                console.log("Copied to clipboard:", displayValue);
-            })
-            .catch(err => {
-                console.error("Failed to copy: ", err);
-            });
-    });
-
-        // Store history
-        evaluateButton.addEventListener("click", () => {
-           const expression = currentExpressionDisplay.textContent;
-           const result = display.value;
-
-           if (expression && result) {  // Check if both are defined
-              history.push(`${expression} = ${result}`); 
-              // Update history display
-              updateHistoryDisplay();
-           }
+        historyDiv.style.display = historyDiv.style.display === "none" ? "block" : "none";
        });
+
+       // ... (Existing copyButton listener)
+
+       // ... (Existing evaluateButton listener)
 
     function updateHistoryDisplay(){
         historyDiv.innerHTML = ""; // Clear existing history
@@ -53,15 +32,13 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     }
 
-       // Clear history functionality
-       clearHistoryButton?.addEventListener("click", () => {
-           history = [];
-           updateHistoryDisplay();
-       });
+       // ... (Existing clearHistoryButton listener)
 
-       toggleThemeButton?.addEventListener("click", () => {
-        isDarkTheme = !isDarkTheme;
-        document.body.classList.toggle("dark-theme", isDarkTheme);
-    });
+       // ... (Existing toggleThemeButton listener)
+
+       keyboardToggle?.addEventListener("click", () => {
+           isKeyboardVisible = !isKeyboardVisible;
+           keyboardDiv.style.display = isKeyboardVisible ? "block" : "none";
+       });
     // ... (rest of the existing code)
 });

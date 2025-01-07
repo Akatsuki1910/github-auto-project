@@ -34,3 +34,14 @@ body {
     background-color: #333;
     color: #f0f0f0;
 }
+
+#keyboard {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #eee;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    /* Add styling for keyboard buttons, etc. */
+}
