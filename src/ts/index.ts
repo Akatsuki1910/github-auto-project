@@ -11,6 +11,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const maxButton = document.getElementById("max");
     const minButton = document.getElementById("min");
     const avgButton = document.getElementById("average");
+    const sumButton = document.getElementById("sum");
+    let sum = 0;
 
     // ... (Existing event listeners)
     // ... (Other event listeners)
@@ -37,5 +39,35 @@ minButton.addEventListener("click", () => {
         currentExpressionDisplay.textContent = currentExpression;
     });
 
+    sumButton.addEventListener("click", () => {
+        sum += parseFloat(display.value);
+        currentExpression = ""; // clear the display
+        display.value = "";
+    });
+
+    evaluate.addEventListener("click", () => {
+        // ... existing code ...
+
+        try {
+           if (currentExpression.length !==0){
+            result = eval(currentExpression);
+            }
+            else {
+            result = eval(display.value);            
+            }
+            if(sum !== 0){
+                 result += sum;
+                display.value = result.toString();
+                sum = 0;
+            }
+            else{
+                display.value = result.toString();
+            }
+
+            // ... existing code ...
+        } catch (error) {
+            // ... existing code ...
+        }
+    });
     // ... (rest of the existing code)
 });
