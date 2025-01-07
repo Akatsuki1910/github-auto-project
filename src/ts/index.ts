@@ -20,6 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const showHistoryButton = document.getElementById("show-history");
     const randomButton = document.getElementById("random");
     const eButton = document.getElementById("e");
+    const absButton = document.getElementById("abs");
 
     //Clear button
     // ... (Existing Code)
@@ -113,5 +114,12 @@ eButton.addEventListener("click", () => {
         currentExpressionDisplay.textContent = currentExpression;
     });
 
+        absButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        const absValue = Math.abs(currentValue);
+        display.value = absValue.toString();
+        currentExpression +=  (isNaN(currentValue) ? "|" : "" ) + "abs(" + currentValue + ")" + (isNaN(currentValue) ? "|" : "");
+        currentExpressionDisplay.textContent = currentExpression; 
+    });
     // ... (rest of the existing code)
 });
