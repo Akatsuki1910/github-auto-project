@@ -3,26 +3,20 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code)
 
     // ... (Existing variables)
-     const fibonacciButton = document.getElementById("fibonacci");
+    const copyButton = document.getElementById("copy");
 
        // ... (Existing event listeners)
-    fibonacciButton.addEventListener("click", () => {
-        const n = parseInt(display.value);
-        if (isNaN(n) || n < 0) {
-            display.value = "Error";
-        } else {
-            let a = 0,
-                b = 1,
-                temp;
-            for (let i = 0; i < n; i++) {
-                temp = b;
-                b = a + b;
-                a = temp;
-            }
-            display.value = a.toString();
-            currentExpression += 'Fib(' + n + ')';
-            currentExpressionDisplay.textContent = currentExpression;
-        }
+
+    copyButton.addEventListener("click", () => {
+        const displayValue = display.value;
+        navigator.clipboard.writeText(displayValue)
+            .then(() => {
+                // Optional: Provide feedback to the user that the copy was successful
+                console.log("Copied to clipboard:", displayValue);
+            })
+            .catch(err => {
+                console.error("Failed to copy: ", err);
+            });
     });
     // ... (rest of the existing code)
 });
