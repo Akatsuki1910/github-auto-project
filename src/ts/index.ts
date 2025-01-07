@@ -14,6 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryStoreButton = document.getElementById("memory-store");
     const memoryRecallButton = document.getElementById("memory-recall");
     const memoryClearButton = document.getElementById("memory-clear");
+    const lastAnswerButton = document.getElementById("last-answer");
 
     //Clear button
     // ... (Existing Code)
@@ -23,6 +24,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
        // Evaluate button functionality (Modified)
     // ... (Existing Code)
+     // After evaluating the expression:
+        lastAnswer = parseFloat(display.value); 
 
      //sin button
     // ... (Existing Code)
@@ -59,6 +62,13 @@ window.addEventListener("DOMContentLoaded", () => {
         memoryValue = null;
     });
 
+    lastAnswerButton.addEventListener("click", () => {
+        if (lastAnswer !== null) {
+            display.value = lastAnswer.toString();
+            currentExpression += lastAnswer;
+            currentExpressionDisplay.textContent = currentExpression;
+        }
+    });
 
     // ... (rest of the existing code)
 });
