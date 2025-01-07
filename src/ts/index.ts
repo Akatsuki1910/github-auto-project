@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let isDegreeMode = true; 
     let currentExpression = ''; 
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay");
+    const degRadButton = document.getElementById("deg-rad");
 
     //Clear button
     // ... (Existing Code)
@@ -30,20 +31,16 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code)
 
      // Logarithm functionality (Base 10)
-    const logButton = document.getElementById("log");
-    logButton.addEventListener("click", () => {
-        currentExpression += 'Math.log10('; // Add log function to expression
-        currentExpressionDisplay.textContent = currentExpression;
-        display.value = ''; // Clear the display
-    });
+    // ... (Existing Code)
      // Natural Logarithm functionality (Base e)
-    const lnButton = document.getElementById("ln");
-    lnButton.addEventListener("click", () => {
-        currentExpression += 'Math.log('; // Add ln function to expression
-        currentExpressionDisplay.textContent = currentExpression;
-        display.value = '';
+    // ... (Existing Code)
+
+    degRadButton.addEventListener("click", () => {
+        isDegreeMode = !isDegreeMode;
+        degRadButton.textContent = isDegreeMode ? "DEG" : "RAD";
     });
 
 
     // ... (rest of the existing code)
 });
+
