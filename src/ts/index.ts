@@ -3,15 +3,18 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code)
 
     // ... (Existing variables)
-    const cubeButton = document.getElementById("cube");
+    const signButton = document.getElementById("sign");
 
     // ... (Existing event listeners)
-    cubeButton.addEventListener("click", () => {
+    signButton.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
-        const cubeValue = currentValue * currentValue * currentValue;
-        display.value = cubeValue.toString();
-        currentExpression +=  (isNaN(currentValue) ? "|" : "") + currentValue + "³" + (isNaN(currentValue) ? "|" : "");
-        currentExpressionDisplay.textContent = currentExpression; 
+        if (currentValue > 0) {
+            display.value = "-" + display.value;
+        } else if (currentValue < 0) {
+            display.value = display.value.substring(1);
+        }
+        currentExpression += 'sgn(' + currentValue + ')';
+        currentExpressionDisplay.textContent = currentExpression;
     });
         
     // ... (rest of the existing code)
