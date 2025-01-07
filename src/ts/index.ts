@@ -1,53 +1,33 @@
 // ... (Existing Code)
 window.addEventListener("DOMContentLoaded", () => {
-    // ... (Existing Code)
+    // ... (Existing Code and variables)
+    const expressionHistoryDiv = document.getElementById("expression-history") as HTMLDivElement;
+    let expressionHistory: string[] = [];
 
-    // ... (Existing variables)
-    const copyButton = document.getElementById("copy");
-    const historyDiv = document.getElementById("history") as HTMLDivElement;
-    const showHistoryButton = document.getElementById("show-history");
-    const clearHistoryButton = document.getElementById("clear-history"); // Add clear history button
-    const toggleThemeButton = document.getElementById("toggle-theme");
-    const keyboardToggle = document.getElementById("keyboard-toggle");
-    const keyboardDiv = document.getElementById("keyboard") as HTMLDivElement; 
-    const keyboardButtons = keyboardDiv.querySelectorAll('button');
-       let history: string[] = [];
-       let isDarkTheme = false;
-       let isKeyboardVisible = false;
+    // ... (Existing event listeners)
 
-       // ... (Existing event listeners)
-       showHistoryButton?.addEventListener("click", () => {
-        historyDiv.style.display = historyDiv.style.display === "none" ? "block" : "none";
-       });
+    evaluateButton?.addEventListener("click", () => {
+        // ... (Existing evaluation logic)
 
-       // ... (Existing copyButton listener)
+        // Add evaluated expression to history
+        const expression = display.value;
+        expressionHistory.push(expression);
+        updateExpressionHistoryDisplay();
+    });
 
-       // ... (Existing evaluateButton listener)
-
-    function updateHistoryDisplay(){
-        historyDiv.innerHTML = ""; // Clear existing history
-        history.forEach(item => {
+    function updateExpressionHistoryDisplay() {
+        expressionHistoryDiv.innerHTML = ""; // Clear existing history
+        expressionHistory.forEach(item => {
             const p = document.createElement("p");
             p.textContent = item;
-            historyDiv.appendChild(p);
+            expressionHistoryDiv.appendChild(p);
         });
     }
 
-       // ... (Existing clearHistoryButton listener)
-
-       // ... (Existing toggleThemeButton listener)
-
-       keyboardToggle?.addEventListener("click", () => {
-           isKeyboardVisible = !isKeyboardVisible;
-           keyboardDiv.style.display = isKeyboardVisible ? "block" : "none";
-       });
-
-       keyboardButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            // Append the button's text content to the display
-            const display = document.getElementById('display') as HTMLInputElement;
-            display.value += button.textContent;
-        });
+    showHistoryButton?.addEventListener("click", () => {
+        historyDiv.style.display = historyDiv.style.display === "none" ? "block" : "none";
+        expressionHistoryDiv.style.display = expressionHistoryDiv.style.display === "none" ? "block" : "none"; // Show/hide expression history
     });
-    // ... (rest of the existing code)
+
+        // ... (rest of the existing code)
 });
