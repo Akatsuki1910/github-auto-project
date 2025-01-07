@@ -3,16 +3,16 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code)
 
     // ... (Existing variables)
-    const squareButton = document.getElementById("square");
+    const cubeButton = document.getElementById("cube");
 
     // ... (Existing event listeners)
-    squareButton.addEventListener("click", () => {
+    cubeButton.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
-        const squareValue = currentValue * currentValue;
-        display.value = squareValue.toString();
-        currentExpression +=  (isNaN(currentValue) ? "|" : "") + currentValue + "²" + (isNaN(currentValue) ? "|" : "");
+        const cubeValue = currentValue * currentValue * currentValue;
+        display.value = cubeValue.toString();
+        currentExpression +=  (isNaN(currentValue) ? "|" : "") + currentValue + "³" + (isNaN(currentValue) ? "|" : "");
         currentExpressionDisplay.textContent = currentExpression; 
     });
-
+        
     // ... (rest of the existing code)
 });
