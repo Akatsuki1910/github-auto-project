@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const toggleThemeButton = document.getElementById("toggle-theme");
     const keyboardToggle = document.getElementById("keyboard-toggle");
     const keyboardDiv = document.getElementById("keyboard") as HTMLDivElement; 
+    const keyboardButtons = keyboardDiv.querySelectorAll('button');
        let history: string[] = [];
        let isDarkTheme = false;
        let isKeyboardVisible = false;
@@ -40,5 +41,13 @@ window.addEventListener("DOMContentLoaded", () => {
            isKeyboardVisible = !isKeyboardVisible;
            keyboardDiv.style.display = isKeyboardVisible ? "block" : "none";
        });
+
+       keyboardButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            // Append the button's text content to the display
+            const display = document.getElementById('display') as HTMLInputElement;
+            display.value += button.textContent;
+        });
+    });
     // ... (rest of the existing code)
 });
