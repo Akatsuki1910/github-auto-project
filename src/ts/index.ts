@@ -12,6 +12,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const minButton = document.getElementById("min");
     const avgButton = document.getElementById("average");
     const sumButton = document.getElementById("sum");
+    const clearHistoryButton = document.getElementById("clear-history");
+    const historyDiv = document.getElementById("history");
     let sum = 0;
 
     // ... (Existing event listeners)
@@ -63,11 +65,17 @@ minButton.addEventListener("click", () => {
             else{
                 display.value = result.toString();
             }
+            const historyItem = document.createElement('p');
+            historyItem.textContent = result;
+            historyDiv.appendChild(historyItem);
 
             // ... existing code ...
         } catch (error) {
             // ... existing code ...
         }
+    });
+       clearHistoryButton.addEventListener("click", () => {
+        historyDiv.innerHTML = ''; // Clear the history display
     });
     // ... (rest of the existing code)
 });
