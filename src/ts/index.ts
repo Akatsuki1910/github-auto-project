@@ -17,6 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const lastAnswerButton = document.getElementById("last-answer");
      const openParenthesisButton = document.getElementById("open-parenthesis");
     const closeParenthesisButton = document.getElementById("close-parenthesis");
+    const showHistoryButton = document.getElementById("show-history");
 
     //Clear button
     // ... (Existing Code)
@@ -28,6 +29,8 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code)
      // After evaluating the expression:
         lastAnswer = parseFloat(display.value); 
+        history.push(currentExpression + " = " + lastAnswer);
+        displayHistory();
 
      //sin button
     // ... (Existing Code)
@@ -80,6 +83,21 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpression += ")";
         currentExpressionDisplay.textContent = currentExpression;    
     });
+
+    showHistoryButton.addEventListener("click", () => {
+        const historyDiv = document.getElementById("history");
+        if (historyDiv.style.display === "none" || historyDiv.style.display === "") {
+          historyDiv.style.display = "block";
+        } else {
+          historyDiv.style.display = "none";
+        }
+      });
+      const displayHistory = () => {
+        if (historyDiv) {
+          historyDiv.innerHTML = history.map(item => `<p>${item}</p>`).join('');
+        }
+      };
+
 
     // ... (rest of the existing code)
 });
