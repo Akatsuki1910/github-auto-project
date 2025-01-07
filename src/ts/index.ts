@@ -5,6 +5,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing variables)
     const ceilButton = document.getElementById("ceil");
     const floorButton = document.getElementById("floor");
+    const dupeButton = document.getElementById("dupe");
 
     // ... (Existing event listeners)
     ceilButton.addEventListener("click", () => {
@@ -30,6 +31,12 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         currentExpression += 'sgn(' + currentValue + ')';
         currentExpressionDisplay.textContent = currentExpression;
+    });
+
+    dupeButton.addEventListener("click", () => {
+        currentExpression += display.value;
+        currentExpressionDisplay.textContent = currentExpression;
+        display.value = display.value; //duplicate the value in the display
     });
 
     // ... (rest of the existing code)
