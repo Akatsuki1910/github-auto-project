@@ -8,6 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const exportHistoryButton = document.getElementById("export-history") as HTMLButtonElement;
     const toggleThemeButton = document.getElementById("toggle-theme") as HTMLButtonElement;
     const backspaceButton = document.getElementById("backspace") as HTMLButtonElement;
+    const decimalButton = document.getElementById("decimal") as HTMLButtonElement;
     let expressionHistory: string[] = [];
     let isDarkTheme = false;
 
@@ -72,6 +73,13 @@ window.addEventListener("DOMContentLoaded", () => {
     backspaceButton.addEventListener("click", () => {
         display.value = display.value.slice(0, -1);
         currentExpressionDisplay.textContent = display.value;
+    });
+
+    decimalButton.addEventListener("click", () => {
+        if (!display.value.includes('.')) {
+            display.value += '.';
+            currentExpressionDisplay.textContent = display.value;
+        }
     });
 
         // ... (rest of the existing code)
