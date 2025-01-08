@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
     const memoryRecallButton = document.getElementById("memory-recall") as HTMLButtonElement;
     const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonElement;
+    const lastAnswerButton = document.getElementById("last-answer") as HTMLButtonElement;
 
     // ... other existing variables
     memoryStoreButton.addEventListener("click", () => {
@@ -33,5 +34,22 @@ window.addEventListener("DOMContentLoaded", () => {
         
     });
 
+        lastAnswerButton.addEventListener("click", () => {
+          display.value = lastAnswer.toString();
+          currentExpressionDisplay.textContent = display.value;    
+        });
+
     // ... existing event listeners
+
+      //Example Calculation (This part is added to ensure lastAnswer is populated for demonstration)
+      const calculate = (expression: string) => {
+        try {
+            const result = eval(expression);
+            lastAnswer = result;
+            return result;     
+         } catch (error) {
+           return "Error";
+         }
+      };
+
 });
