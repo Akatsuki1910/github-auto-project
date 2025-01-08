@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const toggleThemeButton = document.getElementById("toggle-theme") as HTMLButtonElement;
     const backspaceButton = document.getElementById("backspace") as HTMLButtonElement;
     const decimalButton = document.getElementById("decimal") as HTMLButtonElement;
+    const negateButton = document.getElementById("negate") as HTMLButtonElement;
     let expressionHistory: string[] = [];
     let isDarkTheme = false;
 
@@ -78,6 +79,17 @@ window.addEventListener("DOMContentLoaded", () => {
     decimalButton.addEventListener("click", () => {
         if (!display.value.includes('.')) {
             display.value += '.';
+            currentExpressionDisplay.textContent = display.value;
+        }
+    });
+
+    negateButton.addEventListener("click", () => {
+        if (display.value) {
+            if (display.value.startsWith("-")){
+                display.value = display.value.slice(1);
+            }else{
+                display.value = "-" + display.value;
+            }
             currentExpressionDisplay.textContent = display.value;
         }
     });
