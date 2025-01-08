@@ -8,6 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryRecallButton = document.getElementById("memory-recall") as HTMLButtonElement;
     const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonElement;
     const lastAnswerButton = document.getElementById("last-answer") as HTMLButtonElement;
+    const duplicateButton = document.getElementById("duplicate") as HTMLButtonElement;
 
     // ... other existing variables
     memoryStoreButton.addEventListener("click", () => {
@@ -34,10 +35,17 @@ window.addEventListener("DOMContentLoaded", () => {
         
     });
 
-        lastAnswerButton.addEventListener("click", () => {
-          display.value = lastAnswer.toString();
+    lastAnswerButton.addEventListener("click", () => {
+        display.value = lastAnswer.toString();
+        currentExpressionDisplay.textContent = display.value;    
+    });
+
+     duplicateButton.addEventListener("click", () => {
+        if (display.value) {
+          display.value += display.value; //duplicate the display value
           currentExpressionDisplay.textContent = display.value;    
-        });
+        }
+      });
 
     // ... existing event listeners
 
