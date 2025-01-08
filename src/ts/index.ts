@@ -9,55 +9,42 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonElement;
     const lastAnswerButton = document.getElementById("last-answer") as HTMLButtonElement;
     const duplicateButton = document.getElementById("duplicate") as HTMLButtonElement;
+     const historyDiv = document.getElementById("history") as HTMLDivElement;
 
     // ... other existing variables
+ //Clear History Button
+    const clearHistoryButton = document.getElementById("clear-history") as HTMLButtonElement;
+
+    clearHistoryButton.addEventListener("click", () => {
+        historyDiv.innerHTML = ""; // Clear the history display
+        localStorage.removeItem("calculatorHistory"); // Clear history from local storage
+    });
+
     memoryStoreButton.addEventListener("click", () => {
-        if (display.value) {
-            memory += parseFloat(display.value);
-            display.value = ""; // Clear display after storing value (optional)
-            currentExpressionDisplay.textContent = display.value;
-        }
+        // ... existing code
     });
 
     memoryRecallButton.addEventListener("click", () => {
-        display.value = memory.toString();
-        currentExpressionDisplay.textContent = display.value;
+        // ... existing code
     });
 
     memoryClearButton.addEventListener("click", () => {
-        memory = 0;
-        display.value = "";
-        currentExpressionDisplay.textContent = "Memory Cleared";
-
-        setTimeout(() =>{
-          currentExpressionDisplay.textContent = "";
-        }, 500);
-        
+        // ... existing code
     });
 
     lastAnswerButton.addEventListener("click", () => {
-        display.value = lastAnswer.toString();
-        currentExpressionDisplay.textContent = display.value;    
+        // ... existing code
     });
 
      duplicateButton.addEventListener("click", () => {
-        if (display.value) {
-          display.value += display.value; //duplicate the display value
-          currentExpressionDisplay.textContent = display.value;    
-        }
+        // ... existing code
       });
 
     // ... existing event listeners
 
       //Example Calculation (This part is added to ensure lastAnswer is populated for demonstration)
       const calculate = (expression: string) => {
-        try {
-            const result = eval(expression);
-            lastAnswer = result;
-            return result;     
-         } catch (error) {
-           return "Error";
-         }
+        // ... existing code
       };
 
 });
