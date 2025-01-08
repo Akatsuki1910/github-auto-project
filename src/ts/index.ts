@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const signButton = document.getElementById("sign") as HTMLButtonElement;
     const absButton = document.getElementById("abs") as HTMLButtonElement;
     const floorButton = document.getElementById("floor") as HTMLButtonElement;
+    const ceilButton = document.getElementById("ceil") as HTMLButtonElement;
 
     // ... other existing variables
 
@@ -64,6 +65,14 @@ window.addEventListener("DOMContentLoaded", () => {
         if (display.value) {
             const floorValue = Math.floor(parseFloat(display.value));
             display.value = floorValue.toString();
+            currentExpressionDisplay.textContent = display.value;
+        }
+    });
+
+    ceilButton.addEventListener("click", () => {
+        if (display.value) {
+            const ceilValue = Math.ceil(parseFloat(display.value));
+            display.value = ceilValue.toString();
             currentExpressionDisplay.textContent = display.value;
         }
     });
