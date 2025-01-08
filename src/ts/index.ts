@@ -4,6 +4,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const powerButton = document.getElementById("power") as HTMLButtonElement;
     const sinButton = document.getElementById("sin") as HTMLButtonElement;
     const cosButton = document.getElementById("cos") as HTMLButtonElement;
+    const logButton = document.getElementById("log") as HTMLButtonElement;
 
     // ... (Other existing variables and event listeners)
 
@@ -18,19 +19,17 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     sinButton.addEventListener("click", () => {
-        if (display.value !== "") {
-            const num = parseFloat(display.value);
-            display.value = Math.sin(num).toString();
-            currentExpressionDisplay.textContent = display.value;
-            addToHistory(display.value);
-            addToExpressionHistory(savedExpression);
-        }
+        // ... (Existing sin code)
     });
 
     cosButton.addEventListener("click", () => {
+        // ... (Existing cos code)
+    });
+
+     logButton.addEventListener("click", () => {
         if (display.value !== "") {
             const num = parseFloat(display.value);
-            display.value = Math.cos(num).toString();
+            display.value = Math.log10(num).toString();
             currentExpressionDisplay.textContent = display.value;
             addToHistory(display.value);
             addToExpressionHistory(savedExpression);
@@ -40,17 +39,7 @@ window.addEventListener("DOMContentLoaded", () => {
     equalsButton.addEventListener("click", () => {
         // ... (Existing equals code)
         if (powerBase !== null) {
-            const expression = display.value.substring(powerBase.toString().length + 1 );
-            try {
-               const powerValue = eval(expression);
-               display.value = Math.pow(powerBase, powerValue).toString();
-               currentExpressionDisplay.textContent = display.value;
-               addToHistory(display.value);
-               addToExpressionHistory(savedExpression);
-               powerBase = null;
-            } catch (error) {
-                display.value = "Error";
-            }
+            // ... (Existing power code)
            return;
         }
         // ... (Rest of existing equals code)
