@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const parenthesisOpenButton = document.getElementById("parenthesis-open") as HTMLButtonElement;
     const parenthesisCloseButton = document.getElementById("parenthesis-close") as HTMLButtonElement;
     const ansButton = document.getElementById("ans") as HTMLButtonElement;
+    const copyToClipboardButton = document.getElementById("copy-to-clipboard") as HTMLButtonElement;
 
     parenthesisOpenButton.addEventListener("click", () => {
         display.value += "(";
@@ -21,6 +22,13 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value += lastAnswer;
         currentExpressionDisplay.textContent = display.value;  
     });
+
+    copyToClipboardButton.addEventListener("click", () => {
+        navigator.clipboard.writeText(display.value).then(() => {
+            alert("Copied to clipboard!");
+        });
+    });
+
 
     // ... (Rest of existing code)
 
