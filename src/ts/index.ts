@@ -1,36 +1,37 @@
 // ... (Existing Code)
 window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code and variables)
-    const percentageButton = document.getElementById("percentage") as HTMLButtonElement;
-    const inverseButton = document.getElementById("inverse") as HTMLButtonElement;
-    const factorialButton = document.getElementById("factorial") as HTMLButtonElement;
+    const powerButton = document.getElementById("power") as HTMLButtonElement;
 
     // ... (Other existing variables and event listeners)
 
-    percentageButton.addEventListener("click", () => {
-        // ... (Existing percentage code)
+    let powerBase: number | null = null;
+
+    powerButton.addEventListener("click", () => {
+        if (display.value !== "") {
+            powerBase = parseFloat(display.value);
+            display.value += "^";
+            currentExpressionDisplay.textContent = display.value;
+        }
     });
 
-    inverseButton.addEventListener("click", () => {
-       // ... (Existing inverse code)
-    });
-
-    function factorial(n: number): number {
-        if (n === 0) {
-            return 1;
+    equalsButton.addEventListener("click", () => {
+        // ... (Existing equals code)
+        if (powerBase !== null) {
+            const expression = display.value.substring(powerBase.toString().length + 1 );
+            try {
+               const powerValue = eval(expression);
+               display.value = Math.pow(powerBase, powerValue).toString();
+               currentExpressionDisplay.textContent = display.value;
+               addToHistory(display.value);
+               addToExpressionHistory(savedExpression);
+               powerBase = null;
+            } catch (error) {
+                display.value = "Error";
+            }
+           return;
         }
-        return n * factorial(n - 1);
-    }
-
-    factorialButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue) && currentValue >= 0 && Number.isInteger(currentValue)) {
-            const result = factorial(currentValue);
-            display.value = result.toString();
-            currentExpressionDisplay.textContent = display.value;            
-        } else {
-            display.value = "Invalid Input";
-        }
+        // ... (Rest of existing equals code)
     });
 
     // ... (rest of the existing code)
