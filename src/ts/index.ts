@@ -5,6 +5,8 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code and variables)
     const ansButton = document.getElementById("ans") as HTMLButtonElement;
     const randomButton = document.getElementById("random") as HTMLButtonElement;
+    const roundButton = document.getElementById("round") as HTMLButtonElement;
+
     // ... other existing variables
 
     // ... existing event listeners
@@ -29,5 +31,13 @@ window.addEventListener("DOMContentLoaded", () => {
         const randomNumber = Math.random();
         display.value += randomNumber.toString();
         currentExpressionDisplay.textContent = display.value;
+    });
+
+    roundButton.addEventListener("click", () => {
+        if (display.value) {
+            const roundedValue = Math.round(parseFloat(display.value));
+            display.value = roundedValue.toString();
+            currentExpressionDisplay.textContent = display.value;
+        }
     });
 });
