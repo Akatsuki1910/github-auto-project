@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const randomButton = document.getElementById("random") as HTMLButtonElement;
     const roundButton = document.getElementById("round") as HTMLButtonElement;
     const signButton = document.getElementById("sign") as HTMLButtonElement;
+    const absButton = document.getElementById("abs") as HTMLButtonElement;
 
     // ... other existing variables
 
@@ -47,6 +48,14 @@ window.addEventListener("DOMContentLoaded", () => {
             const currentValue = parseFloat(display.value);
             display.value = (-currentValue).toString();
              currentExpressionDisplay.textContent = display.value; // Update the current expression display
+        }
+    });
+
+    absButton.addEventListener("click", () => {
+        if (display.value) {
+            const currentValue = parseFloat(display.value);
+            display.value = Math.abs(currentValue).toString();
+            currentExpressionDisplay.textContent = display.value;
         }
     });
 });
