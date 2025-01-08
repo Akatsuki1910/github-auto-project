@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code and variables)
     const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
     const memoryRecallButton = document.getElementById("memory-recall") as HTMLButtonElement;
+    const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonElement;
 
     // ... other existing variables
     memoryStoreButton.addEventListener("click", () => {
@@ -19,6 +20,17 @@ window.addEventListener("DOMContentLoaded", () => {
     memoryRecallButton.addEventListener("click", () => {
         display.value = memory.toString();
         currentExpressionDisplay.textContent = display.value;
+    });
+
+    memoryClearButton.addEventListener("click", () => {
+        memory = 0;
+        display.value = "";
+        currentExpressionDisplay.textContent = "Memory Cleared";
+
+        setTimeout(() =>{
+          currentExpressionDisplay.textContent = "";
+        }, 500);
+        
     });
 
     // ... existing event listeners
