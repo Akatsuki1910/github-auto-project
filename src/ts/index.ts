@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code and variables)
     const powerButton = document.getElementById("power") as HTMLButtonElement;
     const sinButton = document.getElementById("sin") as HTMLButtonElement;
+    const cosButton = document.getElementById("cos") as HTMLButtonElement;
 
     // ... (Other existing variables and event listeners)
 
@@ -20,6 +21,16 @@ window.addEventListener("DOMContentLoaded", () => {
         if (display.value !== "") {
             const num = parseFloat(display.value);
             display.value = Math.sin(num).toString();
+            currentExpressionDisplay.textContent = display.value;
+            addToHistory(display.value);
+            addToExpressionHistory(savedExpression);
+        }
+    });
+
+    cosButton.addEventListener("click", () => {
+        if (display.value !== "") {
+            const num = parseFloat(display.value);
+            display.value = Math.cos(num).toString();
             currentExpressionDisplay.textContent = display.value;
             addToHistory(display.value);
             addToExpressionHistory(savedExpression);
