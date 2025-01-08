@@ -8,6 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const modButton = document.getElementById("mod") as HTMLButtonElement;
     const clearEntryButton = document.getElementById("clear-entry") as HTMLButtonElement;
     const deleteButton = document.getElementById("delete") as HTMLButtonElement;
+    const plusMinusButton = document.getElementById("plus-minus") as HTMLButtonElement;
 
     // ... other event listeners
     modButton.addEventListener("click", () => {
@@ -36,6 +37,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
     deleteButton.addEventListener("click", () => {
         display.value = display.value.slice(0, -1);
+    });
+
+    plusMinusButton.addEventListener("click", () => {
+        if (display.value !== "") {
+          if (display.value.charAt(0) === '-') {
+            display.value = display.value.slice(1);
+          }
+          else {
+            display.value = "-" + display.value;
+          }
+        }
     });
 
 });
