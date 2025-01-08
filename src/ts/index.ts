@@ -7,6 +7,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const parenthesisCloseButton = document.getElementById("parenthesis-close") as HTMLButtonElement;
     const ansButton = document.getElementById("ans") as HTMLButtonElement;
     const copyToClipboardButton = document.getElementById("copy-to-clipboard") as HTMLButtonElement;
+    const showHistoryButton = document.getElementById("show-history") as HTMLButtonElement;
+    const expressionHistoryDiv = document.getElementById("expression-history") as HTMLDivElement;
 
     parenthesisOpenButton.addEventListener("click", () => {
         display.value += "(";
@@ -29,6 +31,13 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     });
 
+    showHistoryButton.addEventListener("click", () => {
+        if (expressionHistoryDiv.style.display === "none") {
+            expressionHistoryDiv.style.display = "block";
+        } else {
+            expressionHistoryDiv.style.display = "none";
+        }
+    });
 
     // ... (Rest of existing code)
 
