@@ -6,7 +6,9 @@ window.addEventListener("DOMContentLoaded", () => {
     const clearDisplayButton = document.getElementById("clear-display") as HTMLButtonElement;
     const clearAllButton = document.getElementById("clearAll") as HTMLButtonElement;
     const exportHistoryButton = document.getElementById("export-history") as HTMLButtonElement;
+    const toggleThemeButton = document.getElementById("toggle-theme") as HTMLButtonElement;
     let expressionHistory: string[] = [];
+    let isDarkTheme = false;
 
     // ... (Existing event listeners)
 
@@ -59,6 +61,11 @@ window.addEventListener("DOMContentLoaded", () => {
         a.href = URL.createObjectURL(blob);
         a.download = 'calculator_history.txt';
         a.click();
+    });
+
+    toggleThemeButton.addEventListener("click", () => {
+        isDarkTheme = !isDarkTheme;
+        document.body.classList.toggle("dark-theme", isDarkTheme);
     });
 
         // ... (rest of the existing code)
