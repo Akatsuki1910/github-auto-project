@@ -4,46 +4,13 @@ let memory = 0;
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code and variables)
-    const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
-    const memoryRecallButton = document.getElementById("memory-recall") as HTMLButtonElement;
-    const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonElement;
-    const lastAnswerButton = document.getElementById("last-answer") as HTMLButtonElement;
-    const duplicateButton = document.getElementById("duplicate") as HTMLButtonElement;
-    const historyDiv = document.getElementById("history") as HTMLDivElement;
-    const clearHistoryButton = document.getElementById("clear-history") as HTMLButtonElement;
-    const display = document.getElementById("display") as HTMLInputElement;
-    const plusButton = document.getElementById("plus") as HTMLButtonElement;
-    const minusButton = document.getElementById("minus") as HTMLButtonElement;
-    const multiplyButton = document.getElementById("multiply") as HTMLButtonElement;
-    const divideButton = document.getElementById("divide") as HTMLButtonElement;
-    const equalsButton = document.getElementById("equals") as HTMLButtonElement;
-    //Added the functionality for Memory Store, Recall, Clear
-    memoryStoreButton.addEventListener("click", () => {
-        memory = parseFloat(display.value);
-    });
-
-    memoryRecallButton.addEventListener("click", () => {
-        display.value += memory.toString();
-    });
-
-    memoryClearButton.addEventListener("click", () => {
-        memory = 0;
-    });
-
-    lastAnswerButton.addEventListener("click", () => {
-        display.value += lastAnswer.toString();
-    })
     // ... other existing variables
-    clearHistoryButton.addEventListener("click", () => {
-        historyDiv.innerHTML = ""; // Clear the history display
-        localStorage.removeItem("calculatorHistory"); // Clear history from local storage
-    });
+    const modButton = document.getElementById("mod") as HTMLButtonElement;
 
-//duplicate button adds the current display value to itself
-    duplicateButton.addEventListener("click", () => {
-        display.value += display.value;
-    });
     // ... other event listeners
+    modButton.addEventListener("click", () => {
+        display.value += "%";
+    });
     // Basic Arithmetic operations
     plusButton.addEventListener("click", () => {display.value += "+";});
     minusButton.addEventListener("click", () => {display.value += "-";});
@@ -52,7 +19,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     equalsButton.addEventListener("click", () => {
         try {
-            const result = eval(display.value); // Evaluate the expression
+            const expression = display.value.replace(/%/g, "*");
+            const result = eval(expression); // Evaluate the expression
             display.value = result.toString();
             lastAnswer = result; // Store the last answer
         } catch (error) {
