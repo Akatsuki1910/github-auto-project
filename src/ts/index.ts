@@ -9,37 +9,27 @@ window.addEventListener("DOMContentLoaded", () => {
     const copyToClipboardButton = document.getElementById("copy-to-clipboard") as HTMLButtonElement;
     const showHistoryButton = document.getElementById("show-history") as HTMLButtonElement;
     const expressionHistoryDiv = document.getElementById("expression-history") as HTMLDivElement;
+    const keyboardToggleButton = document.getElementById("keyboard-toggle") as HTMLButtonElement;
+    const keyboardCheckbox = document.getElementById("keyboard-checkbox") as HTMLInputElement;
 
-    parenthesisOpenButton.addEventListener("click", () => {
-        display.value += "(";
-        currentExpressionDisplay.textContent = display.value;
-    });
+    // ... existing event listeners
 
-    parenthesisCloseButton.addEventListener("click", () => {
-        display.value += ")";
-        currentExpressionDisplay.textContent = display.value;
-    });
-
-    ansButton.addEventListener("click", () => {
-        display.value += lastAnswer;
-        currentExpressionDisplay.textContent = display.value;  
-    });
-
-    copyToClipboardButton.addEventListener("click", () => {
-        navigator.clipboard.writeText(display.value).then(() => {
-            alert("Copied to clipboard!");
-        });
-    });
-
-    showHistoryButton.addEventListener("click", () => {
-        if (expressionHistoryDiv.style.display === "none") {
-            expressionHistoryDiv.style.display = "block";
+    keyboardToggleButton.addEventListener("click", () => {
+        keyboardCheckbox.checked = !keyboardCheckbox.checked;
+        if (keyboardCheckbox.checked) {
+          //Keyboard input logic to be implemented later.
+            display.addEventListener("input", handleKeyboardInput);
+            //Prevent default input behavior
+             display.readOnly = false; 
         } else {
-            expressionHistoryDiv.style.display = "none";
+            display.removeEventListener("input", handleKeyboardInput);
+            display.readOnly = true; //Restore default behavior
         }
     });
 
-    // ... (Rest of existing code)
+  function handleKeyboardInput(event: Event) {
+       currentExpressionDisplay.textContent = display.value;
+  }
 
     equalsButton.addEventListener("click", () => {
         try {
