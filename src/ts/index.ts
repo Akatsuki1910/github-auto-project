@@ -4,6 +4,7 @@ let lastAnswer = 0;
 window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code and variables)
     const ansButton = document.getElementById("ans") as HTMLButtonElement;
+    const randomButton = document.getElementById("random") as HTMLButtonElement;
     // ... other existing variables
 
     // ... existing event listeners
@@ -22,5 +23,11 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
             // ... existing error handling
         }
+    });
+
+    randomButton.addEventListener("click", () => {
+        const randomNumber = Math.random();
+        display.value += randomNumber.toString();
+        currentExpressionDisplay.textContent = display.value;
     });
 });
