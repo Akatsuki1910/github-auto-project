@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const clearAllButton = document.getElementById("clearAll") as HTMLButtonElement;
     const exportHistoryButton = document.getElementById("export-history") as HTMLButtonElement;
     const toggleThemeButton = document.getElementById("toggle-theme") as HTMLButtonElement;
+    const backspaceButton = document.getElementById("backspace") as HTMLButtonElement;
     let expressionHistory: string[] = [];
     let isDarkTheme = false;
 
@@ -66,6 +67,11 @@ window.addEventListener("DOMContentLoaded", () => {
     toggleThemeButton.addEventListener("click", () => {
         isDarkTheme = !isDarkTheme;
         document.body.classList.toggle("dark-theme", isDarkTheme);
+    });
+
+    backspaceButton.addEventListener("click", () => {
+        display.value = display.value.slice(0, -1);
+        currentExpressionDisplay.textContent = display.value;
     });
 
         // ... (rest of the existing code)
