@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... other existing variables
     const modButton = document.getElementById("mod") as HTMLButtonElement;
     const clearEntryButton = document.getElementById("clear-entry") as HTMLButtonElement;
+    const deleteButton = document.getElementById("delete") as HTMLButtonElement;
 
     // ... other event listeners
     modButton.addEventListener("click", () => {
@@ -31,6 +32,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
     clearEntryButton.addEventListener("click", () => {
         display.value = ""; // Clear the current entry
+    });
+
+    deleteButton.addEventListener("click", () => {
+        display.value = display.value.slice(0, -1);
     });
 
 });
