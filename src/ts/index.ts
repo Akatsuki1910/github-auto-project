@@ -12,11 +12,23 @@ window.addEventListener("DOMContentLoaded", () => {
     const historyDiv = document.getElementById("history") as HTMLDivElement;
     const clearHistoryButton = document.getElementById("clear-history") as HTMLButtonElement;
     const display = document.getElementById("display") as HTMLInputElement;
-     const plusButton = document.getElementById("plus") as HTMLButtonElement;
+    const plusButton = document.getElementById("plus") as HTMLButtonElement;
     const minusButton = document.getElementById("minus") as HTMLButtonElement;
     const multiplyButton = document.getElementById("multiply") as HTMLButtonElement;
     const divideButton = document.getElementById("divide") as HTMLButtonElement;
     const equalsButton = document.getElementById("equals") as HTMLButtonElement;
+    //Added the functionality for Memory Store, Recall, Clear
+    memoryStoreButton.addEventListener("click", () => {
+        memory = parseFloat(display.value);
+    });
+
+    memoryRecallButton.addEventListener("click", () => {
+        display.value += memory.toString();
+    });
+
+    memoryClearButton.addEventListener("click", () => {
+        memory = 0;
+    });
 
     // ... other existing variables
     clearHistoryButton.addEventListener("click", () => {
@@ -34,7 +46,8 @@ window.addEventListener("DOMContentLoaded", () => {
     equalsButton.addEventListener("click", () => {
         try {
             const result = eval(display.value); // Evaluate the expression
-            display.value = result.toString(); 
+            display.value = result.toString();
+            lastAnswer = result; // Store the last answer
         } catch (error) {
             display.value = "Error";
         }
