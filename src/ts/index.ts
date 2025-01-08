@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code and variables)
     const sqrtButton = document.getElementById("sqrt") as HTMLButtonElement;
     const squareButton = document.getElementById("square") as HTMLButtonElement;
+    const cubeButton = document.getElementById("cube") as HTMLButtonElement;
     // ... (Other existing variables)
 
     // ... (Existing event listeners)
@@ -22,6 +23,17 @@ window.addEventListener("DOMContentLoaded", () => {
         const currentValue = parseFloat(display.value);
         if (!isNaN(currentValue)) {
             const result = currentValue * currentValue;
+            display.value = result.toString();
+            currentExpressionDisplay.textContent = display.value;
+        } else {
+            display.value = "Invalid Input";
+        }
+    });
+
+    cubeButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            const result = currentValue * currentValue * currentValue;
             display.value = result.toString();
             currentExpressionDisplay.textContent = display.value;
         } else {
