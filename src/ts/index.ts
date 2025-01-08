@@ -30,12 +30,19 @@ window.addEventListener("DOMContentLoaded", () => {
         memory = 0;
     });
 
+    lastAnswerButton.addEventListener("click", () => {
+        display.value += lastAnswer.toString();
+    })
     // ... other existing variables
     clearHistoryButton.addEventListener("click", () => {
         historyDiv.innerHTML = ""; // Clear the history display
         localStorage.removeItem("calculatorHistory"); // Clear history from local storage
     });
 
+//duplicate button adds the current display value to itself
+    duplicateButton.addEventListener("click", () => {
+        display.value += display.value;
+    });
     // ... other event listeners
     // Basic Arithmetic operations
     plusButton.addEventListener("click", () => {display.value += "+";});
