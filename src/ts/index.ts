@@ -5,17 +5,14 @@ window.addEventListener("DOMContentLoaded", () => {
     const sinButton = document.getElementById("sin") as HTMLButtonElement;
     const cosButton = document.getElementById("cos") as HTMLButtonElement;
     const logButton = document.getElementById("log") as HTMLButtonElement;
+    const expButton = document.getElementById("exp") as HTMLButtonElement;
 
     // ... (Other existing variables and event listeners)
 
     let powerBase: number | null = null;
 
     powerButton.addEventListener("click", () => {
-        if (display.value !== "") {
-            powerBase = parseFloat(display.value);
-            display.value += "^";
-            currentExpressionDisplay.textContent = display.value;
-        }
+        // ... existing code
     });
 
     sinButton.addEventListener("click", () => {
@@ -27,9 +24,13 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
      logButton.addEventListener("click", () => {
+        // ... existing code
+    });
+
+    expButton.addEventListener("click", () => {
         if (display.value !== "") {
             const num = parseFloat(display.value);
-            display.value = Math.log10(num).toString();
+            display.value = Math.exp(num).toString();
             currentExpressionDisplay.textContent = display.value;
             addToHistory(display.value);
             addToExpressionHistory(savedExpression);
