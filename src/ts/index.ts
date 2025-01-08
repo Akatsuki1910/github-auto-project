@@ -2,6 +2,7 @@
 window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code and variables)
     const percentageButton = document.getElementById("percentage") as HTMLButtonElement;
+    const inverseButton = document.getElementById("inverse") as HTMLButtonElement;
 
     // ... (Other existing variables and event listeners)
 
@@ -11,6 +12,17 @@ window.addEventListener("DOMContentLoaded", () => {
             const result = currentValue / 100;
             display.value = result.toString();
             currentExpressionDisplay.textContent = display.value;
+        } else {
+            display.value = "Invalid Input";
+        }
+    });
+
+    inverseButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue) && currentValue !== 0) {
+            const result = 1 / currentValue;
+            display.value = result.toString();
+            currentExpressionDisplay.textContent = display.value;            
         } else {
             display.value = "Invalid Input";
         }
