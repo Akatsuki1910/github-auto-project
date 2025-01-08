@@ -4,6 +4,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const sqrtButton = document.getElementById("sqrt") as HTMLButtonElement;
     const squareButton = document.getElementById("square") as HTMLButtonElement;
     const cubeButton = document.getElementById("cube") as HTMLButtonElement;
+    const piButton = document.getElementById("pi") as HTMLButtonElement;
     // ... (Other existing variables)
 
     // ... (Existing event listeners)
@@ -39,6 +40,11 @@ window.addEventListener("DOMContentLoaded", () => {
         } else {
             display.value = "Invalid Input";
         }
+    });
+
+    piButton.addEventListener("click", () => {
+        display.value = Math.PI.toString();
+        currentExpressionDisplay.textContent = display.value;
     });
 
     // ... (rest of the existing code)
