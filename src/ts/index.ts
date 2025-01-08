@@ -6,6 +6,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const cosButton = document.getElementById("cos") as HTMLButtonElement;
     const logButton = document.getElementById("log") as HTMLButtonElement;
     const expButton = document.getElementById("exp") as HTMLButtonElement;
+    const tenPowerButton = document.getElementById("ten-power") as HTMLButtonElement;
 
     // ... (Other existing variables and event listeners)
 
@@ -34,6 +35,16 @@ window.addEventListener("DOMContentLoaded", () => {
             currentExpressionDisplay.textContent = display.value;
             addToHistory(display.value);
             addToExpressionHistory(savedExpression);
+        }
+    });
+
+        tenPowerButton.addEventListener("click", () => {
+        if (display.value !== "") {
+            const num = parseFloat(display.value);
+            display.value = Math.pow(10, num).toString();
+            currentExpressionDisplay.textContent = display.value;
+            addToHistory(display.value);
+            addToExpressionHistory(savedExpression);  // Assuming savedExpression is defined elsewhere
         }
     });
 
