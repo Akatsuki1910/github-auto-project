@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const clearEntryButton = document.getElementById("clear-entry") as HTMLButtonElement;
     const deleteButton = document.getElementById("delete") as HTMLButtonElement;
     const plusMinusButton = document.getElementById("plus-minus") as HTMLButtonElement;
+    const sqrtButton = document.getElementById("sqrt") as HTMLButtonElement;
 
     // ... other event listeners
     modButton.addEventListener("click", () => {
@@ -49,5 +50,19 @@ window.addEventListener("DOMContentLoaded", () => {
           }
         }
     });
+
+sqrtButton.addEventListener("click", () => {
+        try {
+          const currentValue = parseFloat(display.value);
+          if (currentValue < 0) {
+            display.value = "Error: Cannot calculate square root of negative number";
+          } else {
+            const result = Math.sqrt(currentValue);
+            display.value = result.toString();
+          }
+        } catch (error) {
+          display.value = "Error";
+        }
+      });
 
 });
