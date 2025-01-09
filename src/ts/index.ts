@@ -19,6 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const reciprocalButton = document.getElementById("reciprocal") as HTMLButtonElement;
     const powerButton = document.getElementById("power") as HTMLButtonElement;
     const sinButton = document.getElementById("sin") as HTMLButtonElement;
+    const cosButton = document.getElementById("cos") as HTMLButtonElement;
 
     // ... other event listeners
 
@@ -35,6 +36,12 @@ window.addEventListener("DOMContentLoaded", () => {
     sinButton.addEventListener("click", () => {
         if (display.value) {
             display.value = Math.sin(eval(display.value)).toString();
+        }
+    });
+
+    cosButton.addEventListener("click", () => {
+        if (display.value) {
+            display.value = Math.cos(eval(display.value)).toString();
         }
     });
 
