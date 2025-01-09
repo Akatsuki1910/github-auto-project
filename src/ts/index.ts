@@ -11,6 +11,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const plusMinusButton = document.getElementById("plus-minus") as HTMLButtonElement;
     const sqrtButton = document.getElementById("sqrt") as HTMLButtonElement;
     const reciprocalButton = document.getElementById("reciprocal") as HTMLButtonElement;
+    const exp10Button = document.getElementById("exp-10") as HTMLButtonElement;
 
     // ... other event listeners
     modButton.addEventListener("click", () => {
@@ -22,7 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
     multiplyButton.addEventListener("click", () => {display.value += "*";});
     divideButton.addEventListener("click", () => {display.value += "/";});
 
-    equalsButton.addEventListener("click", () => {
+equalsButton.addEventListener("click", () => {
         try {
             const expression = display.value.replace(/%/g, "*");
             const result = eval(expression); // Evaluate the expression
@@ -77,6 +78,15 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
             display.value = "Error";
         }
+    });
+
+        exp10Button.addEventListener("click", () => {
+          try {
+            const currentValue = parseFloat(display.value);
+            display.value = (10**currentValue).toString();
+          } catch (error) {
+            display.value = "Error";
+          }
     });
 
 });
