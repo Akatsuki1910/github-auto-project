@@ -25,6 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const lastAnswerButton = document.getElementById("last-answer") as HTMLButtonElement;
 
     const factorialButton = document.getElementById("factorial") as HTMLButtonElement;
+    const squareButton = document.getElementById("square") as HTMLButtonElement;
 
     // ... other event listeners
     modButton.addEventListener("click", () => {
@@ -61,6 +62,16 @@ window.addEventListener("DOMContentLoaded", () => {
                 }
                 display.value = result.toString();
             }
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
+
+    squareButton.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            const result = currentValue * currentValue;
+            display.value = result.toString();
         } catch (error) {
             display.value = "Error";
         }
