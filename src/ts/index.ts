@@ -7,6 +7,8 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... other existing variables
     // ... (Existing buttons)
     const backspaceButton = document.getElementById("backspace") as HTMLButtonElement;
+    const equalsButton = document.getElementById("equals") as HTMLButtonElement;
+    const display = document.getElementById("display") as HTMLInputElement;
 
     // ... other event listeners
 
@@ -14,5 +16,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
     backspaceButton.addEventListener("click", () => {
         display.value = display.value.slice(0, -1);
+    });
+
+    equalsButton.addEventListener("click", () => {
+        try {
+            lastAnswer = eval(display.value);
+            display.value = lastAnswer.toString();
+        } catch (error) {
+            display.value = "Error";
+        }
     });
 });
