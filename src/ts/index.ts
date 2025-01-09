@@ -22,6 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonElement;
     const memoryPlusButton = document.getElementById("memory-plus") as HTMLButtonElement;
     const memoryMinusButton = document.getElementById("memory-minus") as HTMLButtonElement;
+    const lastAnswerButton = document.getElementById("last-answer") as HTMLButtonElement;
 
     // ... other event listeners
     modButton.addEventListener("click", () => {
@@ -115,5 +116,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
     memoryMinusButton.addEventListener("click", () => {
         memory -= parseFloat(display.value);
+    });
+
+    lastAnswerButton.addEventListener("click", () => {
+        display.value += lastAnswer.toString();
     });
 });
