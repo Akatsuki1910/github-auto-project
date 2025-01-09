@@ -18,6 +18,11 @@ window.addEventListener("DOMContentLoaded", () => {
     const divideButton = document.getElementById("divide") as HTMLButtonElement;
     const equalsButton = document.getElementById("equals") as HTMLButtonElement;
 
+    const memoryRecallButton = document.getElementById("memory-recall") as HTMLButtonElement;
+    const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonElement;
+    const memoryPlusButton = document.getElementById("memory-plus") as HTMLButtonElement;
+    const memoryMinusButton = document.getElementById("memory-minus") as HTMLButtonElement;
+
     // ... other event listeners
     modButton.addEventListener("click", () => {
         display.value += "%";
@@ -93,5 +98,22 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
             display.value = "Error";
         }
+    });
+
+    // Memory functions
+    memoryRecallButton.addEventListener("click", () => {
+        display.value = memory.toString();
+    });
+
+    memoryClearButton.addEventListener("click", () => {
+        memory = 0;
+    });
+
+    memoryPlusButton.addEventListener("click", () => {
+        memory += parseFloat(display.value);
+    });
+
+    memoryMinusButton.addEventListener("click", () => {
+        memory -= parseFloat(display.value);
     });
 });
