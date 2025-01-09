@@ -28,6 +28,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const squareButton = document.getElementById("square") as HTMLButtonElement;
     const clearButton = document.getElementById("clear") as HTMLButtonElement; // Get the clear button
     const piButton = document.getElementById("pi") as HTMLButtonElement;
+    const decimalButton = document.getElementById("decimal") as HTMLButtonElement;
 
     // ... other event listeners
     modButton.addEventListener("click", () => {
@@ -85,5 +86,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
     piButton.addEventListener("click", () => {
         display.value += Math.PI;
+    });
+
+    decimalButton.addEventListener("click", () => {
+        if (!display.value.includes('.')) {
+            display.value += ".";
+        }
     });
 });
