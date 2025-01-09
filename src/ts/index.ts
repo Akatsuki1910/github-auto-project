@@ -12,6 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const historyDiv = document.getElementById("history") as HTMLDivElement;
     const clearHistoryButton = document.getElementById("clear-history") as HTMLButtonElement;
     const plusMinusButton = document.getElementById("plus-minus") as HTMLButtonElement;
+    const squareRootButton = document.getElementById("square-root") as HTMLButtonElement;
 
     // ... other event listeners
 
@@ -39,6 +40,17 @@ window.addEventListener("DOMContentLoaded", () => {
     plusMinusButton.addEventListener("click", () => {
         if (display.value) {
             display.value = (parseFloat(display.value) * -1).toString();
+        }
+    });
+
+    squareRootButton.addEventListener("click", () => {
+        if (display.value) {
+            const num = parseFloat(display.value);
+            if (num >= 0) {
+                display.value = Math.sqrt(num).toString();
+            } else {
+                display.value = "Invalid Input";
+            }
         }
     });
 });
