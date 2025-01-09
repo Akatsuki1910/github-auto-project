@@ -100,4 +100,18 @@ window.addEventListener("DOMContentLoaded", () => {
              display.value = (-parseFloat(display.value)).toString();
          }
     });
+
+    sqrtButton.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            if (currentValue < 0) {
+                display.value = "Error: Cannot calculate the square root of a negative number.";
+            } else {
+                const result = Math.sqrt(currentValue);
+                display.value = result.toString();
+            }
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
 });
