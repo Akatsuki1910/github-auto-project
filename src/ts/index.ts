@@ -21,6 +21,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const sinButton = document.getElementById("sin") as HTMLButtonElement;
     const cosButton = document.getElementById("cos") as HTMLButtonElement;
     const tanButton = document.getElementById("tan") as HTMLButtonElement;
+    const roundButton = document.getElementById("round") as HTMLButtonElement;
 
     // ... other event listeners
 
@@ -49,6 +50,12 @@ window.addEventListener("DOMContentLoaded", () => {
     tanButton.addEventListener("click", () => {
         if (display.value) {
             display.value = Math.tan(eval(display.value)).toString();
+        }
+    });
+
+    roundButton.addEventListener("click", () => {
+        if (display.value) {
+            display.value = Math.round(eval(display.value)).toString();
         }
     });
 
