@@ -8,6 +8,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing buttons)
     // ... existing buttons
     const ceilButton = document.getElementById("ceil") as HTMLButtonElement;
+    const randButton = document.getElementById("rand") as HTMLButtonElement;
 
     // ... other event listeners
 
@@ -19,6 +20,10 @@ window.addEventListener("DOMContentLoaded", () => {
         if (display.value) {
             display.value = Math.ceil(eval(display.value)).toString();
         }
+    });
+
+    randButton.addEventListener("click", () => {
+        display.value = Math.random().toString();
     });
 
     // ... (Existing Event Listeners)
