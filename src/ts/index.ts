@@ -22,12 +22,20 @@ window.addEventListener("DOMContentLoaded", () => {
     const cosButton = document.getElementById("cos") as HTMLButtonElement;
     const tanButton = document.getElementById("tan") as HTMLButtonElement;
     const roundButton = document.getElementById("round") as HTMLButtonElement;
+    const absButton = document.getElementById("abs") as HTMLButtonElement;
 
     // ... other event listeners
 
     // ... Existing code for other buttons
 
     // ... (Existing event listeners)
+
+    //Absolute Value
+    absButton.addEventListener("click", () => {
+        if (display.value) {
+            display.value = Math.abs(eval(display.value)).toString();
+        }
+    });
 
     powerButton.addEventListener("click", () => {
         if (display.value) {
