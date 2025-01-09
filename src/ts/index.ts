@@ -23,6 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const tanButton = document.getElementById("tan") as HTMLButtonElement;
     const roundButton = document.getElementById("round") as HTMLButtonElement;
     const absButton = document.getElementById("abs") as HTMLButtonElement;
+    const inverseButton = document.getElementById("inverse") as HTMLButtonElement;
 
     // ... other event listeners
 
@@ -64,6 +65,16 @@ window.addEventListener("DOMContentLoaded", () => {
     roundButton.addEventListener("click", () => {
         if (display.value) {
             display.value = Math.round(eval(display.value)).toString();
+        }
+    });
+    inverseButton.addEventListener("click", () => {
+        if (display.value) {
+            try {
+                const result = 1 / eval(display.value);
+                display.value = result.toString();
+            } catch (error) {
+                display.value = "Error";
+            }
         }
     });
 
