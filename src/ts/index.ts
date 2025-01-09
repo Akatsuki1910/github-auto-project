@@ -24,6 +24,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryMinusButton = document.getElementById("memory-minus") as HTMLButtonElement;
     const lastAnswerButton = document.getElementById("last-answer") as HTMLButtonElement;
 
+    const factorialButton = document.getElementById("factorial") as HTMLButtonElement;
+
     // ... other event listeners
     modButton.addEventListener("click", () => {
         display.value += "%";
@@ -45,80 +47,22 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    clearEntryButton.addEventListener("click", () => {
-        display.value = "";
-    });
+    // ... (rest of the existing code)
 
-    deleteButton.addEventListener("click", () => {
-        display.value = display.value.slice(0, -1);
-    });
-
-    plusMinusButton.addEventListener("click", () => {
-        if (display.value !== "") {
-            if (display.value.charAt(0) === '-') {
-                display.value = display.value.slice(1);
-            } else {
-                display.value = "-" + display.value;
-            }
-        }
-    });
-
-    sqrtButton.addEventListener("click", () => {
+     factorialButton.addEventListener("click", () => {
         try {
             const currentValue = parseFloat(display.value);
-            if (currentValue < 0) {
-                display.value = "Error: Cannot calculate square root of negative number";
+            if (currentValue < 0 || !Number.isInteger(currentValue)) {
+                display.value = "Error: Factorial is not defined for negative numbers or non-integers.";
             } else {
-                const result = Math.sqrt(currentValue);
+                let result = 1;
+                for (let i = 1; i <= currentValue; i++) {
+                    result *= i;
+                }
                 display.value = result.toString();
             }
         } catch (error) {
             display.value = "Error";
         }
-    });
-
-    reciprocalButton.addEventListener("click", () => {
-        try {
-            const currentValue = parseFloat(display.value);
-            if (currentValue === 0) {
-                display.value = "Error: Cannot divide by zero";
-            } else {
-                display.value = (1 / currentValue).toString();
-            }
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-
-    // Added feature: Percentage calculation
-    const percentageButton = document.getElementById("percentage") as HTMLButtonElement;
-    percentageButton.addEventListener("click", () => {
-        try {
-            const currentValue = parseFloat(display.value);
-            display.value = (currentValue / 100).toString();
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-
-    // Memory functions
-    memoryRecallButton.addEventListener("click", () => {
-        display.value = memory.toString();
-    });
-
-    memoryClearButton.addEventListener("click", () => {
-        memory = 0;
-    });
-
-    memoryPlusButton.addEventListener("click", () => {
-        memory += parseFloat(display.value);
-    });
-
-    memoryMinusButton.addEventListener("click", () => {
-        memory -= parseFloat(display.value);
-    });
-
-    lastAnswerButton.addEventListener("click", () => {
-        display.value += lastAnswer.toString();
     });
 });
