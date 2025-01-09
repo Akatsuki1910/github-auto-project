@@ -20,6 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const powerButton = document.getElementById("power") as HTMLButtonElement;
     const sinButton = document.getElementById("sin") as HTMLButtonElement;
     const cosButton = document.getElementById("cos") as HTMLButtonElement;
+    const tanButton = document.getElementById("tan") as HTMLButtonElement;
 
     // ... other event listeners
 
@@ -42,6 +43,12 @@ window.addEventListener("DOMContentLoaded", () => {
     cosButton.addEventListener("click", () => {
         if (display.value) {
             display.value = Math.cos(eval(display.value)).toString();
+        }
+    });
+
+    tanButton.addEventListener("click", () => {
+        if (display.value) {
+            display.value = Math.tan(eval(display.value)).toString();
         }
     });
 
