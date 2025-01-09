@@ -16,6 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const logButton = document.getElementById("log") as HTMLButtonElement;
     const expButton = document.getElementById("exp") as HTMLButtonElement;
     const cubeButton = document.getElementById("cube") as HTMLButtonElement;
+    const reciprocalButton = document.getElementById("reciprocal") as HTMLButtonElement;
 
     // ... other event listeners
 
@@ -73,6 +74,17 @@ window.addEventListener("DOMContentLoaded", () => {
         if (display.value) {
             const num = parseFloat(display.value);
             display.value = (num * num * num).toString();
+        }
+    });
+
+    reciprocalButton.addEventListener("click", () => {
+        if (display.value) {
+            const num = parseFloat(display.value);
+            if (num !== 0) {
+                display.value = (1 / num).toString();
+            } else {
+                display.value = "Cannot divide by zero";
+            }
         }
     });
 });
