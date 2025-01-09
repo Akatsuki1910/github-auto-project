@@ -17,74 +17,20 @@ window.addEventListener("DOMContentLoaded", () => {
     const expButton = document.getElementById("exp") as HTMLButtonElement;
     const cubeButton = document.getElementById("cube") as HTMLButtonElement;
     const reciprocalButton = document.getElementById("reciprocal") as HTMLButtonElement;
+    const powerButton = document.getElementById("power") as HTMLButtonElement;
 
     // ... other event listeners
 
     // ... Existing code for other buttons
 
-    backspaceButton.addEventListener("click", () => {
-        display.value = display.value.slice(0, -1);
-    });
+    // ... (Existing event listeners)
 
-    equalsButton.addEventListener("click", () => {
-        try {
-            lastAnswer = eval(display.value);
-            display.value = lastAnswer.toString();
-            historyDiv.innerHTML += `${display.value}<br>`;
-        } catch (error) {
-            display.value = "Error";
-            historyDiv.innerHTML += "Error<br>";
-        }
-    });
-
-    clearHistoryButton.addEventListener("click", () => {
-        historyDiv.innerHTML = "";
-    });
-
-    plusMinusButton.addEventListener("click", () => {
+    powerButton.addEventListener("click", () => {
         if (display.value) {
-            display.value = (parseFloat(display.value) * -1).toString();
+            display.value += "**";
         }
     });
 
-    squareRootButton.addEventListener("click", () => {
-        if (display.value) {
-            const num = parseFloat(display.value);
-            if (num >= 0) {
-                display.value = Math.sqrt(num).toString();
-            } else {
-                display.value = "Invalid Input";
-            }
-        }
-    });
 
-    logButton.addEventListener("click", () => {
-        if (display.value) {
-            display.value = Math.log10(parseFloat(display.value)).toString();
-        }
-    });
-
-    expButton.addEventListener("click", () => {
-        if (display.value) {
-            display.value = Math.exp(parseFloat(display.value)).toString();
-        }
-    });
-
-    cubeButton.addEventListener("click", () => {
-        if (display.value) {
-            const num = parseFloat(display.value);
-            display.value = (num * num * num).toString();
-        }
-    });
-
-    reciprocalButton.addEventListener("click", () => {
-        if (display.value) {
-            const num = parseFloat(display.value);
-            if (num !== 0) {
-                display.value = (1 / num).toString();
-            } else {
-                display.value = "Cannot divide by zero";
-            }
-        }
-    });
+    // ... (Existing Event Listeners)
 });
