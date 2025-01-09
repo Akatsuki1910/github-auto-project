@@ -17,6 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const multiplyButton = document.getElementById("multiply") as HTMLButtonElement;
     const divideButton = document.getElementById("divide") as HTMLButtonElement;
     const equalsButton = document.getElementById("equals") as HTMLButtonElement;
+    const historyDiv = document.getElementById("history") as HTMLDivElement;
 
     // ... other event listeners
     modButton.addEventListener("click", () => {
@@ -34,6 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
             const result = eval(expression);
             display.value = result.toString();
             lastAnswer = result;
+            historyDiv.innerHTML += `${expression} = ${result}<br>`; // Add to history
         } catch (error) {
             display.value = "Error";
         }
