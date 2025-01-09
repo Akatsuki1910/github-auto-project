@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const ceilButton = document.getElementById("ceil") as HTMLButtonElement;
     const randButton = document.getElementById("rand") as HTMLButtonElement;
     const eButton = document.getElementById("e") as HTMLButtonElement;
+    const base10LogButton = document.getElementById("base-10-log") as HTMLButtonElement;
 
     // ... other event listeners
 
@@ -29,6 +30,12 @@ window.addEventListener("DOMContentLoaded", () => {
 
     eButton.addEventListener("click", () => {
         display.value = Math.E.toString();
+    });
+
+    base10LogButton.addEventListener("click", () => {
+        if (display.value) {
+            display.value = Math.log10(eval(display.value)).toString();
+        }
     });
 
     // ... (Existing Event Listeners)
