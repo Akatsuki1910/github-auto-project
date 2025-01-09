@@ -13,6 +13,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const clearHistoryButton = document.getElementById("clear-history") as HTMLButtonElement;
     const plusMinusButton = document.getElementById("plus-minus") as HTMLButtonElement;
     const squareRootButton = document.getElementById("square-root") as HTMLButtonElement;
+    const logButton = document.getElementById("log") as HTMLButtonElement;
 
     // ... other event listeners
 
@@ -51,6 +52,12 @@ window.addEventListener("DOMContentLoaded", () => {
             } else {
                 display.value = "Invalid Input";
             }
+        }
+    });
+
+    logButton.addEventListener("click", () => {
+        if (display.value) {
+            display.value = Math.log10(parseFloat(display.value)).toString();
         }
     });
 });
