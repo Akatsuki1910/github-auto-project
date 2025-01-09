@@ -14,6 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const plusMinusButton = document.getElementById("plus-minus") as HTMLButtonElement;
     const squareRootButton = document.getElementById("square-root") as HTMLButtonElement;
     const logButton = document.getElementById("log") as HTMLButtonElement;
+    const expButton = document.getElementById("exp") as HTMLButtonElement;
 
     // ... other event listeners
 
@@ -58,6 +59,12 @@ window.addEventListener("DOMContentLoaded", () => {
     logButton.addEventListener("click", () => {
         if (display.value) {
             display.value = Math.log10(parseFloat(display.value)).toString();
+        }
+    });
+
+    expButton.addEventListener("click", () => {
+        if (display.value) {
+            display.value = Math.exp(parseFloat(display.value)).toString();
         }
     });
 });
