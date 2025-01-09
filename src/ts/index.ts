@@ -29,6 +29,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const clearButton = document.getElementById("clear") as HTMLButtonElement; // Get the clear button
     const piButton = document.getElementById("pi") as HTMLButtonElement;
     const decimalButton = document.getElementById("decimal") as HTMLButtonElement;
+    const signButton = document.getElementById("sign") as HTMLButtonElement;
 
     // ... other event listeners
     modButton.addEventListener("click", () => {
@@ -92,5 +93,11 @@ window.addEventListener("DOMContentLoaded", () => {
         if (!display.value.includes('.')) {
             display.value += ".";
         }
+    });
+
+    signButton.addEventListener("click", () => {
+        if (display.value !== "") {
+             display.value = (-parseFloat(display.value)).toString();
+         }
     });
 });
