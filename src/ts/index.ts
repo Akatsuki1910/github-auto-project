@@ -10,6 +10,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const deleteButton = document.getElementById("delete") as HTMLButtonElement;
     const plusMinusButton = document.getElementById("plus-minus") as HTMLButtonElement;
     const sqrtButton = document.getElementById("sqrt") as HTMLButtonElement;
+    const reciprocalButton = document.getElementById("reciprocal") as HTMLButtonElement;
 
     // ... other event listeners
     modButton.addEventListener("click", () => {
@@ -51,7 +52,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-sqrtButton.addEventListener("click", () => {
+    sqrtButton.addEventListener("click", () => {
         try {
           const currentValue = parseFloat(display.value);
           if (currentValue < 0) {
@@ -64,5 +65,18 @@ sqrtButton.addEventListener("click", () => {
           display.value = "Error";
         }
       });
+
+    reciprocalButton.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            if (currentValue === 0) {
+                display.value = "Error: Cannot divide by zero";
+            } else {
+                display.value = (1 / currentValue).toString();
+            }
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
 
 });
