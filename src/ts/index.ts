@@ -11,6 +11,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const display = document.getElementById("display") as HTMLInputElement;
     const historyDiv = document.getElementById("history") as HTMLDivElement;
     const clearHistoryButton = document.getElementById("clear-history") as HTMLButtonElement;
+    const plusMinusButton = document.getElementById("plus-minus") as HTMLButtonElement;
 
     // ... other event listeners
 
@@ -33,5 +34,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
     clearHistoryButton.addEventListener("click", () => {
         historyDiv.innerHTML = "";
+    });
+
+    plusMinusButton.addEventListener("click", () => {
+        if (display.value) {
+            display.value = (parseFloat(display.value) * -1).toString();
+        }
     });
 });
