@@ -9,6 +9,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const backspaceButton = document.getElementById("backspace") as HTMLButtonElement;
     const equalsButton = document.getElementById("equals") as HTMLButtonElement;
     const display = document.getElementById("display") as HTMLInputElement;
+    const historyDiv = document.getElementById("history") as HTMLDivElement;
+    const clearHistoryButton = document.getElementById("clear-history") as HTMLButtonElement;
 
     // ... other event listeners
 
@@ -22,8 +24,14 @@ window.addEventListener("DOMContentLoaded", () => {
         try {
             lastAnswer = eval(display.value);
             display.value = lastAnswer.toString();
+            historyDiv.innerHTML += `${display.value}<br>`;
         } catch (error) {
             display.value = "Error";
+            historyDiv.innerHTML += "Error<br>";
         }
+    });
+
+    clearHistoryButton.addEventListener("click", () => {
+        historyDiv.innerHTML = "";
     });
 });
