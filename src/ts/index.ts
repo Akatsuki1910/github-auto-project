@@ -24,6 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const roundButton = document.getElementById("round") as HTMLButtonElement;
     const absButton = document.getElementById("abs") as HTMLButtonElement;
     const inverseButton = document.getElementById("inverse") as HTMLButtonElement;
+    const floorButton = document.getElementById("floor") as HTMLButtonElement;
 
     // ... other event listeners
 
@@ -75,6 +76,12 @@ window.addEventListener("DOMContentLoaded", () => {
             } catch (error) {
                 display.value = "Error";
             }
+        }
+    });
+
+     floorButton.addEventListener("click", () => {
+        if (display.value) {
+            display.value = Math.floor(eval(display.value)).toString();
         }
     });
 
