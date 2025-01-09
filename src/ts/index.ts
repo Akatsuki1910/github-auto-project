@@ -15,6 +15,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const squareRootButton = document.getElementById("square-root") as HTMLButtonElement;
     const logButton = document.getElementById("log") as HTMLButtonElement;
     const expButton = document.getElementById("exp") as HTMLButtonElement;
+    const cubeButton = document.getElementById("cube") as HTMLButtonElement;
 
     // ... other event listeners
 
@@ -65,6 +66,13 @@ window.addEventListener("DOMContentLoaded", () => {
     expButton.addEventListener("click", () => {
         if (display.value) {
             display.value = Math.exp(parseFloat(display.value)).toString();
+        }
+    });
+
+    cubeButton.addEventListener("click", () => {
+        if (display.value) {
+            const num = parseFloat(display.value);
+            display.value = (num * num * num).toString();
         }
     });
 });
