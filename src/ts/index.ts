@@ -26,6 +26,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const factorialButton = document.getElementById("factorial") as HTMLButtonElement;
     const squareButton = document.getElementById("square") as HTMLButtonElement;
+    const clearButton = document.getElementById("clear") as HTMLButtonElement; // Get the clear button
 
     // ... other event listeners
     modButton.addEventListener("click", () => {
@@ -76,4 +77,8 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+
+    clearButton.addEventListener("click", () => {
+        display.value = ""; // Clear the display when clear button is clicked.
+    })
 });
