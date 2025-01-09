@@ -11,6 +11,12 @@ window.addEventListener("DOMContentLoaded", () => {
     const plusMinusButton = document.getElementById("plus-minus") as HTMLButtonElement;
     const sqrtButton = document.getElementById("sqrt") as HTMLButtonElement;
     const reciprocalButton = document.getElementById("reciprocal") as HTMLButtonElement;
+    const display = document.getElementById("display") as HTMLInputElement;
+    const plusButton = document.getElementById("plus") as HTMLButtonElement;
+    const minusButton = document.getElementById("minus") as HTMLButtonElement;
+    const multiplyButton = document.getElementById("multiply") as HTMLButtonElement;
+    const divideButton = document.getElementById("divide") as HTMLButtonElement;
+    const equalsButton = document.getElementById("equals") as HTMLButtonElement;
 
     // ... other event listeners
     modButton.addEventListener("click", () => {
@@ -24,17 +30,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
     equalsButton.addEventListener("click", () => {
         try {
-            const expression = display.value.replace(/%/g, "*");
-            const result = eval(expression); // Evaluate the expression
+            const expression = display.value.replace(/%/g, "/100*"); // Correct modulo operator
+            const result = eval(expression);
             display.value = result.toString();
-            lastAnswer = result; // Store the last answer
+            lastAnswer = result;
         } catch (error) {
             display.value = "Error";
         }
     });
 
     clearEntryButton.addEventListener("click", () => {
-        display.value = ""; // Clear the current entry
+        display.value = "";
     });
 
     deleteButton.addEventListener("click", () => {
@@ -43,28 +49,27 @@ window.addEventListener("DOMContentLoaded", () => {
 
     plusMinusButton.addEventListener("click", () => {
         if (display.value !== "") {
-          if (display.value.charAt(0) === '-') {
-            display.value = display.value.slice(1);
-          }
-          else {
-            display.value = "-" + display.value;
-          }
+            if (display.value.charAt(0) === '-') {
+                display.value = display.value.slice(1);
+            } else {
+                display.value = "-" + display.value;
+            }
         }
     });
 
     sqrtButton.addEventListener("click", () => {
         try {
-          const currentValue = parseFloat(display.value);
-          if (currentValue < 0) {
-            display.value = "Error: Cannot calculate square root of negative number";
-          } else {
-            const result = Math.sqrt(currentValue);
-            display.value = result.toString();
-          }
+            const currentValue = parseFloat(display.value);
+            if (currentValue < 0) {
+                display.value = "Error: Cannot calculate square root of negative number";
+            } else {
+                const result = Math.sqrt(currentValue);
+                display.value = result.toString();
+            }
         } catch (error) {
-          display.value = "Error";
+            display.value = "Error";
         }
-      });
+    });
 
     reciprocalButton.addEventListener("click", () => {
         try {
@@ -79,4 +84,14 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    // Added feature: Percentage calculation
+    const percentageButton = document.getElementById("percentage") as HTMLButtonElement;
+    percentageButton.addEventListener("click", () => {
+        try {
+            const currentValue = parseFloat(display.value);
+            display.value = (currentValue / 100).toString();
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
 });
