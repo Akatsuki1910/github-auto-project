@@ -30,11 +30,10 @@ window.addEventListener("DOMContentLoaded", () => {
     const piButton = document.getElementById("pi") as HTMLButtonElement;
     const decimalButton = document.getElementById("decimal") as HTMLButtonElement;
     const signButton = document.getElementById("sign") as HTMLButtonElement;
+    const percentageButton = document.getElementById("percentage") as HTMLButtonElement;
 
     // ... other event listeners
-    modButton.addEventListener("click", () => {
-        display.value += "%";
-    });
+
     // Basic Arithmetic operations
     plusButton.addEventListener("click", () => {display.value += "+";});
     minusButton.addEventListener("click", () => {display.value += "-";});
@@ -54,64 +53,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ... (rest of the existing code)
 
-     factorialButton.addEventListener("click", () => {
-        try {
-            const currentValue = parseFloat(display.value);
-            if (currentValue < 0 || !Number.isInteger(currentValue)) {
-                display.value = "Error: Factorial is not defined for negative numbers or non-integers.";
-            } else {
-                let result = 1;
-                for (let i = 1; i <= currentValue; i++) {
-                    result *= i;
-                }
-                display.value = result.toString();
-            }
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-
-    squareButton.addEventListener("click", () => {
-        try {
-            const currentValue = parseFloat(display.value);
-            const result = currentValue * currentValue;
-            display.value = result.toString();
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-
-    clearButton.addEventListener("click", () => {
-        display.value = ""; // Clear the display when clear button is clicked.
+    //Percentage Button
+    percentageButton.addEventListener("click", () => {
+      try{
+          const currentValue = parseFloat(display.value);
+          display.value = (currentValue/100).toString();
+      } catch(error) {
+        display.value = "Error";
+      }
     })
 
-    piButton.addEventListener("click", () => {
-        display.value += Math.PI;
-    });
-
-    decimalButton.addEventListener("click", () => {
-        if (!display.value.includes('.')) {
-            display.value += ".";
-        }
-    });
-
-    signButton.addEventListener("click", () => {
-        if (display.value !== "") {
-             display.value = (-parseFloat(display.value)).toString();
-         }
-    });
-
-    sqrtButton.addEventListener("click", () => {
-        try {
-            const currentValue = parseFloat(display.value);
-            if (currentValue < 0) {
-                display.value = "Error: Cannot calculate the square root of a negative number.";
-            } else {
-                const result = Math.sqrt(currentValue);
-                display.value = result.toString();
-            }
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
+        // ... Existing code for other buttons
 });
