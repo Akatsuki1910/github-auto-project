@@ -27,5 +27,12 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = Math.E.toString();
         currentExpressionDisplay.textContent = "e";
     });
-});
 
+    const duplicateButton = document.getElementById("duplicate") as HTMLButtonElement;
+    duplicateButton.addEventListener("click", () => {
+        const currentValue = display.value;
+        if (currentValue) {
+            display.value = currentValue + currentValue;  // Duplicate the current display value   
+        }
+    });
+});
