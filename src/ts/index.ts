@@ -11,30 +11,20 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing buttons)
     const expButton = document.getElementById("exp") as HTMLButtonElement;
     const naturalLogarithmButton = document.getElementById("natural-logarithm") as HTMLButtonElement; // 自然対数ボタン
+    const cubeButton = document.getElementById("cube") as HTMLButtonElement; // 立方計算ボタン
 
     // ... other existing variables and buttons
     // ... existing event listeners
 
-    expButton.addEventListener("click", () => {
+    // ... (Existing event listeners)
+
+    cubeButton.addEventListener("click", () => { // 立方計算ボタンのイベントリスナー
         const currentValue = parseFloat(display.value);
         if (!isNaN(currentValue)) {
-            const result = Math.exp(currentValue);
+            const result = Math.pow(currentValue, 3);
             display.value = result.toString();
-            currentExpressionDisplay.textContent = `exp(${currentValue})`;
-            history.push(`exp(${currentValue}) = ${result}`);
-        }
-    });
-
-    naturalLogarithmButton.addEventListener("click", () => { // 自然対数ボタンのイベントリスナー
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue) && currentValue > 0) { // 0以下はエラー
-            const result = Math.log(currentValue);
-            display.value = result.toString();
-            currentExpressionDisplay.textContent = `ln(${currentValue})`;
-            history.push(`ln(${currentValue}) = ${result}`);
-        } else {
-          display.value = "Error";
-          currentExpressionDisplay.textContent = "Error: Input must be greater than 0 for ln";
+            currentExpressionDisplay.textContent = `${currentValue}³`;
+            history.push(`${currentValue}³ = ${result}`);
         }
     });
 
