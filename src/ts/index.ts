@@ -3,6 +3,7 @@ let lastAnswer = 0;
 let memory = 0;
 let isRadian = true; // ラジアンモードフラグ
 let isKeyboardInputEnabled = false; // キーボード入力有効フラグ
+let history: string[] = [];
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code and variables)
@@ -10,11 +11,10 @@ window.addEventListener("DOMContentLoaded", () => {
     const display = document.getElementById("display") as HTMLInputElement;
     const darkModeToggleButton = document.getElementById("dark-mode-toggle") as HTMLButtonElement;
     const copyToClipboardButton = document.getElementById("copy-to-clipboard") as HTMLButtonElement;
+    const historyDisplay = document.getElementById("history-display") as HTMLDivElement;
     let isDarkMode = false;
 
     // ... other existing variables and buttons
-
-    // ... other event listeners
     keyboardToggleButton.addEventListener("click", () => {
         isKeyboardInputEnabled = !isKeyboardInputEnabled;
         keyboardToggleButton.textContent = isKeyboardInputEnabled ? "キーボード入力: ON" : "キーボード入力: OFF";
@@ -25,15 +25,6 @@ window.addEventListener("DOMContentLoaded", () => {
             display.setAttribute("readonly", "true");
         }
     });
-
-    if (isKeyboardInputEnabled) {
-      display.addEventListener("keydown", (event: KeyboardEvent) => {
-        if (event.key === "Enter") {
-            // calculateExpressionButton.click();
-           // 後でこの部分を実装
-        }
-      });
-    }
 
     darkModeToggleButton.addEventListener("click", () => {
         isDarkMode = !isDarkMode;
@@ -53,5 +44,29 @@ window.addEventListener("DOMContentLoaded", () => {
             });
     });
 
+    // 履歴表示機能
+    const updateHistoryDisplay = () => {
+      historyDisplay.innerHTML = history.map(item => `<div>${item}</div>`).join('');
+    };
+
     // ... Existing code for other buttons
+    // 仮の計算処理（後で適切な計算ロジックに置き換える）
+    const calculate = () => {
+        const expression = display.value;
+        try {
+            // const result = eval(expression); // evalは安全ではないので、後で適切な計算ロジックに置き換える
+            const result = expression; // 一時的な実装
+            display.value = result.toString();
+            history.push(expression + " = " + result);
+            updateHistoryDisplay();
+            lastAnswer = result;
+        } catch (error) {
+            display.value = "Error";
+        }
+    };
+
+    const equalsButton = document.getElementById("equals") as HTMLButtonElement;
+    equalsButton.addEventListener("click", calculate);
+
+
 });
