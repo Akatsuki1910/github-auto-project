@@ -20,6 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const radiansToggleButton = document.getElementById("radians-toggle") as HTMLButtonElement;
     const allClearButton = document.getElementById("all-clear") as HTMLButtonElement;
     const clearButton = document.getElementById("clear") as HTMLButtonElement;
+    const lastAnswerButton = document.getElementById("last-answer") as HTMLButtonElement;
 
     // ... other existing variables and buttons
     keyboardToggleButton.addEventListener("click", () => {
@@ -76,6 +77,13 @@ window.addEventListener("DOMContentLoaded", () => {
         document.body.className = ""; // Clear existing classes
         document.body.classList.add(themeSelect.value);
     });
+
+     // 前回の計算結果を呼び出す
+    lastAnswerButton.addEventListener("click", () => {
+        display.value += lastAnswer.toString();
+        currentExpressionDisplay.textContent = display.value; // 現在式表示も更新
+    });
+
     // ... Existing code for other buttons
     // 仮の計算処理（後で適切な計算ロジックに置き換える）
     const calculate = () => {
