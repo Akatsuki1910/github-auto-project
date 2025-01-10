@@ -19,10 +19,16 @@ window.addEventListener("DOMContentLoaded", () => {
     const tenToThePowerOfXButton = document.getElementById("ten-to-the-power-of-x") as HTMLButtonElement; // 10のx乗ボタン
     const display = document.getElementById("display") as HTMLInputElement;
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
+    const randomButton = document.getElementById("random") as HTMLButtonElement; // 乱数ボタン
+
     // ... other existing variables and buttons
     // ... existing event listeners
-
-    // ... (Existing event listeners)
+    randomButton.addEventListener("click", () => {
+        const randomNumber = Math.random();
+        display.value = randomNumber.toString();
+        currentExpressionDisplay.textContent = "Rand";
+        history.push(`Rand = ${randomNumber}`);
+    });
 
        tenToThePowerOfXButton.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
@@ -56,4 +62,3 @@ window.addEventListener("DOMContentLoaded", () => {
 
         // ... existing functions (cube, inverse, round, etc)
 });
-
