@@ -17,6 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const themeSelect = document.getElementById("theme-select") as HTMLSelectElement;
     const clearHistoryButton = document.getElementById("clear-history") as HTMLButtonElement;
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
+    const radiansToggleButton = document.getElementById("radians-toggle") as HTMLButtonElement;
 
     // ... other existing variables and buttons
     keyboardToggleButton.addEventListener("click", () => {
@@ -27,7 +28,11 @@ window.addEventListener("DOMContentLoaded", () => {
             display.removeAttribute("readonly");
         } else {
             display.setAttribute("readonly", "true");
-        }
+        } 
+    });
+    radiansToggleButton.addEventListener("click", () => {
+        isRadian = !isRadian;
+        radiansToggleButton.textContent = isRadian ? "Rad" : "Deg";
     });
 
     // 履歴クリア機能
