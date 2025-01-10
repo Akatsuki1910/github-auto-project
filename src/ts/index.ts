@@ -18,6 +18,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const closeParenthesisButton = document.getElementById("close-parenthesis") as HTMLButtonElement;
     const calculateExpressionButton = document.getElementById("calculate-expression") as HTMLButtonElement;
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
+    const copyToClipboardButton = document.getElementById("copy-to-clipboard") as HTMLButtonElement;
 
     // ... other event listeners
 
@@ -73,6 +74,14 @@ window.addEventListener("DOMContentLoaded", () => {
         } catch (error) {
             display.value = "Error";
         }
+    });
+
+    copyToClipboardButton.addEventListener("click", () => {
+        navigator.clipboard.writeText(display.value).then(() => {
+            console.log("Copied to clipboard:", display.value);
+        }).catch(err => {
+            console.error("Failed to copy: ", err);
+        });
     });
     // ... Other button event listeners
 });
