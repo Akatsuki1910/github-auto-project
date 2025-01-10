@@ -21,5 +21,11 @@ window.addEventListener("DOMContentLoaded", () => {
             history.push(`-${currentValue} = ${changedValue}`);
         }
     });
-        // ... existing functions (cube, inverse, round, etc)
+    // ... existing functions (cube, inverse, round, etc)
+    const calculateEButton = document.getElementById("calculate-e") as HTMLButtonElement;
+    calculateEButton.addEventListener("click", () => {
+        display.value = Math.E.toString();
+        currentExpressionDisplay.textContent = "e";
+    });
 });
+
