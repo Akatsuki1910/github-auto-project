@@ -72,4 +72,12 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = sum.toString();
         currentExpressionDisplay.textContent = numbers.join('+') + '=' + sum;
     });
+
+    const minButton = document.getElementById("min") as HTMLButtonElement;
+    minButton.addEventListener("click", () => {
+        const numbers = display.value.split(',').map(Number);
+        const min = Math.min(...numbers.filter(num => !isNaN(num)));
+        display.value = min.toString();
+        currentExpressionDisplay.textContent = numbers.join(',') + ' の最小値 = ' + min;  
+    });
 });
