@@ -13,6 +13,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const lnButton = document.getElementById("ln") as HTMLButtonElement;
     const base2LogButton = document.getElementById("base-2-log") as HTMLButtonElement;
     const tenToThePowerOfXButton = document.getElementById("ten-to-the-power-of-x") as HTMLButtonElement;
+    const twoToThePowerOfXButton = document.getElementById("two-to-the-power-of-x") as HTMLButtonElement;
 
     // ... other event listeners
 
@@ -42,6 +43,12 @@ window.addEventListener("DOMContentLoaded", () => {
     tenToThePowerOfXButton.addEventListener("click", () => {
         if (display.value) {
             display.value = (10 ** parseFloat(display.value)).toString();
+        }
+    });
+
+    twoToThePowerOfXButton.addEventListener("click", () => {
+        if (display.value) {
+            display.value = (2 ** parseFloat(display.value)).toString();
         }
     });
     // ... Other button event listeners
