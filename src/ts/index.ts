@@ -16,6 +16,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const twoToThePowerOfXButton = document.getElementById("two-to-the-power-of-x") as HTMLButtonElement;
     const openParenthesisButton = document.getElementById("open-parenthesis") as HTMLButtonElement;
     const closeParenthesisButton = document.getElementById("close-parenthesis") as HTMLButtonElement;
+    const calculateExpressionButton = document.getElementById("calculate-expression") as HTMLButtonElement;
+    const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
 
     // ... other event listeners
 
@@ -55,10 +57,22 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     openParenthesisButton.addEventListener("click", () => {
         display.value += "(";
+        currentExpressionDisplay.textContent += "(";
     });
 
     closeParenthesisButton.addEventListener("click", () => {
         display.value += ")";
+        currentExpressionDisplay.textContent += ")";
+    });
+
+    calculateExpressionButton.addEventListener("click", () => {
+        try {
+            const result = eval(currentExpressionDisplay.textContent);
+            display.value = result.toString();
+            currentExpressionDisplay.textContent = "";
+        } catch (error) {
+            display.value = "Error";
+        }
     });
     // ... Other button event listeners
 });
