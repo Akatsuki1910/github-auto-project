@@ -50,5 +50,12 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = ""; // 入力値をクリア
         currentExpressionDisplay.textContent = ""; // 現在式の表示もクリア
     });
-
+  const modButton = document.getElementById("mod") as HTMLButtonElement;
+    modButton.addEventListener("click", () => {
+       currentExpressionDisplay.textContent += "%";
+    });
+       const divButton = document.getElementById("div") as HTMLButtonElement;
+    divButton.addEventListener("click", () => {
+         currentExpressionDisplay.textContent += "/";
+    });
 });
