@@ -18,6 +18,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const clearHistoryButton = document.getElementById("clear-history") as HTMLButtonElement;
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
     const radiansToggleButton = document.getElementById("radians-toggle") as HTMLButtonElement;
+    const allClearButton = document.getElementById("all-clear") as HTMLButtonElement;
+    const clearButton = document.getElementById("clear") as HTMLButtonElement;
 
     // ... other existing variables and buttons
     keyboardToggleButton.addEventListener("click", () => {
@@ -28,7 +30,7 @@ window.addEventListener("DOMContentLoaded", () => {
             display.removeAttribute("readonly");
         } else {
             display.setAttribute("readonly", "true");
-        } 
+        }
     });
     radiansToggleButton.addEventListener("click", () => {
         isRadian = !isRadian;
@@ -98,5 +100,13 @@ window.addEventListener("DOMContentLoaded", () => {
     display.addEventListener("input", () => {
       currentExpressionDisplay.textContent = display.value;
     });
+     allClearButton.addEventListener("click", () => {
+        display.value = '';
+        currentExpressionDisplay.textContent = '';
+    });
 
+    clearButton.addEventListener('click', () => {
+        display.value = display.value.slice(0, -1);
+        currentExpressionDisplay.textContent = display.value; // 現在式表示も更新
+    });
 });
