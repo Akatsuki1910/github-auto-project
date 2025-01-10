@@ -1,1 +1,23 @@
 /* ... (Existing styles) */
+body {
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode {
+    background-color: #000;
+    color: #fff;
+}
+
+#calculator {
+    display: flex;
+    flex-direction: column; /* ボタンを縦に並べる */
+    align-items: center; /* ボタンを中央に配置 */
+}
+
+.buttons {
+    display: grid; /* グリッドレイアウトを使用 */
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); /* ボタンのサイズを調整 */
+    gap: 5px; /* ボタン間の隙間 */
+}
