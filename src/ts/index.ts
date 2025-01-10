@@ -9,6 +9,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const keyboardToggleButton = document.getElementById("keyboard-toggle") as HTMLButtonElement;
     const display = document.getElementById("display") as HTMLInputElement;
     const darkModeToggleButton = document.getElementById("dark-mode-toggle") as HTMLButtonElement;
+    const copyToClipboardButton = document.getElementById("copy-to-clipboard") as HTMLButtonElement;
     let isDarkMode = false;
 
     // ... other existing variables and buttons
@@ -28,7 +29,8 @@ window.addEventListener("DOMContentLoaded", () => {
     if (isKeyboardInputEnabled) {
       display.addEventListener("keydown", (event: KeyboardEvent) => {
         if (event.key === "Enter") {
-          calculateExpressionButton.click(); // calculateExpressionButtonの定義が必要です
+            // calculateExpressionButton.click();
+           // 後でこの部分を実装
         }
       });
     }
@@ -37,6 +39,18 @@ window.addEventListener("DOMContentLoaded", () => {
         isDarkMode = !isDarkMode;
         document.body.classList.toggle("dark-mode", isDarkMode);
         darkModeToggleButton.textContent = isDarkMode ? "ライトモード" : "ダークモード";
+    });
+
+    copyToClipboardButton.addEventListener("click", () => {
+        const displayValue = display.value;
+        navigator.clipboard.writeText(displayValue)
+            .then(() => {
+                alert("Copied to clipboard: " + displayValue);
+            })
+            .catch(err => {
+                console.error("Failed to copy: ", err);
+                alert("Failed to copy to clipboard.");
+            });
     });
 
     // ... Existing code for other buttons
