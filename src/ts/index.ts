@@ -4,6 +4,7 @@ let memory = 0;
 let isRadian = true; // ラジアンモードフラグ
 let isKeyboardInputEnabled = false; // キーボード入力有効フラグ
 let history: string[] = [];
+let isHistoryVisible = false; // 履歴表示状態フラグ
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code and variables)
@@ -12,6 +13,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const darkModeToggleButton = document.getElementById("dark-mode-toggle") as HTMLButtonElement;
     const copyToClipboardButton = document.getElementById("copy-to-clipboard") as HTMLButtonElement;
     const historyDisplay = document.getElementById("history-display") as HTMLDivElement;
+    const toggleHistoryButton = document.getElementById("toggle-history") as HTMLButtonElement;
     let isDarkMode = false;
 
     // ... other existing variables and buttons
@@ -49,6 +51,11 @@ window.addEventListener("DOMContentLoaded", () => {
       historyDisplay.innerHTML = history.map(item => `<div>${item}</div>`).join('');
     };
 
+    toggleHistoryButton.addEventListener("click", () => {
+        isHistoryVisible = !isHistoryVisible;
+        historyDisplay.style.display = isHistoryVisible ? "block" : "none";
+        toggleHistoryButton.textContent = isHistoryVisible ? "履歴を隠す" : "履歴を表示";
+    });
     // ... Existing code for other buttons
     // 仮の計算処理（後で適切な計算ロジックに置き換える）
     const calculate = () => {

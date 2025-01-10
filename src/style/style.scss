@@ -27,4 +27,5 @@ body.dark-mode {
     overflow: scroll;
     height: 100px;
     margin-top: 10px;
+    display: none; /* 初期状態では非表示 */
 }
