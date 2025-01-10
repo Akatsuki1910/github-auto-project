@@ -13,6 +13,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const naturalLogarithmButton = document.getElementById("natural-logarithm") as HTMLButtonElement; // 自然対数ボタン
     const cubeButton = document.getElementById("cube") as HTMLButtonElement; // 立方計算ボタン
     const inverseButton = document.getElementById("inverse") as HTMLButtonElement; // 逆数ボタン
+    const roundButton = document.getElementById("round") as HTMLButtonElement; // 丸めボタン
 
     // ... other existing variables and buttons
     // ... existing event listeners
@@ -39,6 +40,16 @@ window.addEventListener("DOMContentLoaded", () => {
         } else if (currentValue === 0) {
             display.value = "Error: Division by zero";
             currentExpressionDisplay.textContent = ""; // 式表示をクリア
+        }
+    });
+
+    roundButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            const result = Math.round(currentValue);
+            display.value = result.toString();
+            currentExpressionDisplay.textContent = `round(${currentValue})`;
+            history.push(`round(${currentValue}) = ${result}`);
         }
     });
 
