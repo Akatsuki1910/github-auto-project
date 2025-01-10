@@ -1,50 +1,45 @@
 // ... (Existing Code)
 let lastAnswer = 0;
 let memory = 0;
+let isRadian = true; // ラジアンモードフラグ
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code and variables)
     // ... other existing variables
     // ... (Existing buttons)
     // ... existing buttons
-    const ceilButton = document.getElementById("ceil") as HTMLButtonElement;
-    const randButton = document.getElementById("rand") as HTMLButtonElement;
-    const eButton = document.getElementById("e") as HTMLButtonElement;
-    const base10LogButton = document.getElementById("base-10-log") as HTMLButtonElement;
-    const signChangeButton = document.getElementById("sign-change") as HTMLButtonElement;
+    const degRadButton = document.getElementById("deg-rad") as HTMLButtonElement;
     const display = document.getElementById("display") as HTMLInputElement;
-
     // ... other event listeners
 
     // ... Existing code for other buttons
 
     // ... (Existing event listeners)
 
-    ceilButton.addEventListener("click", () => {
-        if (display.value) {
-            display.value = Math.ceil(eval(display.value)).toString();
-        }
+    degRadButton.addEventListener("click", () => {
+        isRadian = !isRadian;
+        degRadButton.textContent = isRadian ? "Rad" : "Deg";
     });
 
-    randButton.addEventListener("click", () => {
-        display.value = Math.random().toString();
+    sinButton.addEventListener("click", () => {
+      if (display.value) {
+        const value = eval(display.value);
+        display.value = (isRadian ? Math.sin(value) : Math.sin(value * Math.PI / 180)).toString();
+      }
     });
 
-    eButton.addEventListener("click", () => {
-        display.value = Math.E.toString();
+    cosButton.addEventListener("click", () => {
+      if (display.value) {
+        const value = eval(display.value);
+        display.value = (isRadian ? Math.cos(value) : Math.cos(value * Math.PI / 180)).toString();
+      }
     });
 
-    base10LogButton.addEventListener("click", () => {
-        if (display.value) {
-            display.value = Math.log10(eval(display.value)).toString();
-        }
+    tanButton.addEventListener("click", () => {
+      if (display.value) {
+        const value = eval(display.value);
+        display.value = (isRadian ? Math.tan(value) : Math.tan(value * Math.PI / 180)).toString();
+      }
     });
-
-    signChangeButton.addEventListener("click", () => {
-        if (display.value) {
-            display.value = (-eval(display.value)).toString();
-        }
-    });
-
-    // ... (Existing Event Listeners)
+    // ... Other button event listeners
 });
