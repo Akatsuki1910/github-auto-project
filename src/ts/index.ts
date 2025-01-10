@@ -25,6 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const sinButton = document.getElementById("sin") as HTMLButtonElement;
     const cosButton = document.getElementById("cos") as HTMLButtonElement; // cosボタンの取得
     const tanButton = document.getElementById("tan") as HTMLButtonElement;
+    const logButton = document.getElementById("log") as HTMLButtonElement; // logボタンの取得
 
 
     // ... other existing variables and buttons
@@ -43,31 +44,25 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     sinButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            const result = isRadian ? Math.sin(currentValue) : Math.sin(currentValue * Math.PI / 180); // ラジアン/度数切り替え
-            display.value = result.toString();
-            currentExpressionDisplay.textContent = `sin(${currentValue})`;
-        }
+      // ... existing code
     });
 
     cosButton.addEventListener("click", () => {
-            const currentValue = parseFloat(display.value);
-            if (!isNaN(currentValue)) {
-              const result = isRadian ? Math.cos(currentValue) : Math.cos(currentValue * Math.PI / 180);
-              display.value = result.toString();
-              currentExpressionDisplay.textContent = `cos(${currentValue})`;
-            }
-          });
+      // ... existing code
+    });
 
     tanButton.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-          const result = isRadian ? Math.tan(currentValue) : Math.tan(currentValue * Math.PI / 180);
-          display.value = result.toString();
-          currentExpressionDisplay.textContent = `tan(${currentValue})`;
-        }
-      });
+      // ... existing code
+    });
+
+  logButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue > 0) { // 0以下はエラーとする
+      const result = Math.log10(currentValue);
+      display.value = result.toString();
+      currentExpressionDisplay.textContent = `log(${currentValue})`;
+    }
+  });
+
 // ... (Rest of the existing code)
 }
-
