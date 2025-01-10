@@ -19,6 +19,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const calculateExpressionButton = document.getElementById("calculate-expression") as HTMLButtonElement;
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
     const copyToClipboardButton = document.getElementById("copy-to-clipboard") as HTMLButtonElement;
+    const toggleHistoryButton = document.getElementById("toggle-history") as HTMLButtonElement;
+    const historyDiv = document.getElementById("history") as HTMLDivElement;
 
     // ... other event listeners
 
@@ -82,6 +84,13 @@ window.addEventListener("DOMContentLoaded", () => {
         }).catch(err => {
             console.error("Failed to copy: ", err);
         });
+    });
+
+    let historyVisible = true; // 履歴表示状態を管理する変数
+    toggleHistoryButton.addEventListener("click", () => {
+        historyVisible = !historyVisible;
+        historyDiv.style.display = historyVisible ? "block" : "none";
+        toggleHistoryButton.textContent = historyVisible ? "履歴非表示" : "履歴表示";
     });
     // ... Other button event listeners
 });
