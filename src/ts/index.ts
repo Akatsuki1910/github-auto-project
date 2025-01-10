@@ -15,6 +15,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const historyDisplay = document.getElementById("history-display") as HTMLDivElement;
     const toggleHistoryButton = document.getElementById("toggle-history") as HTMLButtonElement;
     const themeSelect = document.getElementById("theme-select") as HTMLSelectElement;
+    const clearHistoryButton = document.getElementById("clear-history") as HTMLButtonElement;
 
     // ... other existing variables and buttons
     keyboardToggleButton.addEventListener("click", () => {
@@ -25,7 +26,12 @@ window.addEventListener("DOMContentLoaded", () => {
             display.removeAttribute("readonly");
         } else {
             display.setAttribute("readonly", "true");
-        }
+        }    });
+
+    // 履歴クリア機能
+    clearHistoryButton.addEventListener("click", () => {
+        history = [];
+        updateHistoryDisplay();
     });
 
     darkModeToggleButton.addEventListener("click", () => {
