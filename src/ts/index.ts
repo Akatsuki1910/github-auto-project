@@ -16,6 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const toggleHistoryButton = document.getElementById("toggle-history") as HTMLButtonElement;
     const themeSelect = document.getElementById("theme-select") as HTMLSelectElement;
     const clearHistoryButton = document.getElementById("clear-history") as HTMLButtonElement;
+    const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
 
     // ... other existing variables and buttons
     keyboardToggleButton.addEventListener("click", () => {
@@ -26,7 +27,8 @@ window.addEventListener("DOMContentLoaded", () => {
             display.removeAttribute("readonly");
         } else {
             display.setAttribute("readonly", "true");
-        }    });
+        }
+    });
 
     // 履歴クリア機能
     clearHistoryButton.addEventListener("click", () => {
@@ -54,7 +56,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // 履歴表示機能
     const updateHistoryDisplay = () => {
-      historyDisplay.innerHTML = history.map(item => `<div>${item}</div>`).join('');
+        historyDisplay.innerHTML = history.map(item => `<div>${item}</div>`).join('');
     };
 
     toggleHistoryButton.addEventListener("click", () => {
@@ -78,6 +80,7 @@ window.addEventListener("DOMContentLoaded", () => {
             history.push(expression + " = " + result);
             updateHistoryDisplay();
             lastAnswer = result;
+            currentExpressionDisplay.textContent = ""; // 計算後に現在式表示をクリア
         } catch (error) {
             display.value = "Error";
         }
@@ -86,5 +89,9 @@ window.addEventListener("DOMContentLoaded", () => {
     const equalsButton = document.getElementById("equals") as HTMLButtonElement;
     equalsButton.addEventListener("click", calculate);
 
+        // 現在入力中の式を表示
+    display.addEventListener("input", () => {
+      currentExpressionDisplay.textContent = display.value;
+    });
 
 });
