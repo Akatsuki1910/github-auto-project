@@ -15,21 +15,33 @@ window.addEventListener("DOMContentLoaded", () => {
     const inverseButton = document.getElementById("inverse") as HTMLButtonElement; // 逆数ボタン
     const roundButton = document.getElementById("round") as HTMLButtonElement; // 丸めボタン
     const absoluteButton = document.getElementById("absolute") as HTMLButtonElement; // 絶対値ボタン
-
+    const powerButton = document.getElementById("power") as HTMLButtonElement; // 累乗ボタン
+    const display = document.getElementById("display") as HTMLInputElement;
+    const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
     // ... other existing variables and buttons
     // ... existing event listeners
 
     // ... (Existing event listeners)
 
-    absoluteButton.addEventListener("click", () => {
+    powerButton.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
         if (!isNaN(currentValue)) {
-            const result = Math.abs(currentValue);
+          currentExpressionDisplay.textContent = `${currentValue} ^ `;  // 累乗記号を表示
+            display.value = ""; // 入力フィールドをクリア
+        let base = currentValue
+        const calculatePower = () => {
+        const exponent = parseFloat(display.value);
+          if (!isNaN(exponent)){
+            const result = Math.pow(base, exponent);
             display.value = result.toString();
-            currentExpressionDisplay.textContent = `|${currentValue}|`;
-            history.push(`|${currentValue}| = ${result}`);
+            currentExpressionDisplay.textContent = `${base}^${exponent}`;
+            history.push(`${base}^${exponent} = ${result}`);
+          }
+        }
+        const equalsButton = document.getElementById("equals") as HTMLButtonElement;
+        equalsButton.addEventListener("click", calculatePower, {once: true}); // 一度だけ実行されるように設定
         }
     });
 
-    // ... existing functions (cube, inverse, round, etc)
+        // ... existing functions (cube, inverse, round, etc)
 });
