@@ -58,4 +58,18 @@ window.addEventListener("DOMContentLoaded", () => {
     divButton.addEventListener("click", () => {
          currentExpressionDisplay.textContent += "/";
     });
+
+    const sumButton = document.getElementById("sum") as HTMLButtonElement;
+    sumButton.addEventListener("click", () => {
+        // Σボタンの処理をここに追加
+        let sum = 0;
+        const numbers = display.value.split('+').map(Number);
+        for(let i=0; i<numbers.length; i++){
+            if(!isNaN(numbers[i])){
+                 sum += numbers[i];
+            }
+        }
+        display.value = sum.toString();
+        currentExpressionDisplay.textContent = numbers.join('+') + '=' + sum;
+    });
 });
