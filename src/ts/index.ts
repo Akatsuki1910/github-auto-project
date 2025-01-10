@@ -10,6 +10,8 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... existing buttons
     const degRadButton = document.getElementById("deg-rad") as HTMLButtonElement;
     const display = document.getElementById("display") as HTMLInputElement;
+    const lnButton = document.getElementById("ln") as HTMLButtonElement;
+
     // ... other event listeners
 
     // ... Existing code for other buttons
@@ -40,6 +42,12 @@ window.addEventListener("DOMContentLoaded", () => {
         const value = eval(display.value);
         display.value = (isRadian ? Math.tan(value) : Math.tan(value * Math.PI / 180)).toString();
       }
+    });
+
+    lnButton.addEventListener("click", () => {
+        if (display.value) {
+            display.value = Math.log(parseFloat(display.value)).toString();
+        }
     });
     // ... Other button event listeners
 });
