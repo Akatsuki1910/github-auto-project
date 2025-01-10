@@ -34,3 +34,8 @@ body.blue {
     margin-top: 10px;
     display: none; /* 初期状態では非表示 */
 }
+
+#currentExpressionDisplay {
+  margin-bottom: 10px; /* 下のマージンを追加 */
+  font-size: 1.2em;
+}
