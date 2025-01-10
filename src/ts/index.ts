@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const copyToClipboardButton = document.getElementById("copy-to-clipboard") as HTMLButtonElement;
     const historyDisplay = document.getElementById("history-display") as HTMLDivElement;
     const toggleHistoryButton = document.getElementById("toggle-history") as HTMLButtonElement;
-    let isDarkMode = false;
+    const themeSelect = document.getElementById("theme-select") as HTMLSelectElement;
 
     // ... other existing variables and buttons
     keyboardToggleButton.addEventListener("click", () => {
@@ -29,9 +29,9 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     darkModeToggleButton.addEventListener("click", () => {
-        isDarkMode = !isDarkMode;
-        document.body.classList.toggle("dark-mode", isDarkMode);
-        darkModeToggleButton.textContent = isDarkMode ? "ライトモード" : "ダークモード";
+        // isDarkMode = !isDarkMode;
+        // document.body.classList.toggle("dark-mode", isDarkMode);
+        // darkModeToggleButton.textContent = isDarkMode ? "ライトモード" : "ダークモード";
     });
 
     copyToClipboardButton.addEventListener("click", () => {
@@ -55,6 +55,11 @@ window.addEventListener("DOMContentLoaded", () => {
         isHistoryVisible = !isHistoryVisible;
         historyDisplay.style.display = isHistoryVisible ? "block" : "none";
         toggleHistoryButton.textContent = isHistoryVisible ? "履歴を隠す" : "履歴を表示";
+    });
+
+    themeSelect.addEventListener("change", () => {
+        document.body.className = ""; // Clear existing classes
+        document.body.classList.add(themeSelect.value);
     });
     // ... Existing code for other buttons
     // 仮の計算処理（後で適切な計算ロジックに置き換える）
