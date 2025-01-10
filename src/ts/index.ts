@@ -45,4 +45,10 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    const clearEntryButton = document.getElementById("clear-entry") as HTMLButtonElement;
+    clearEntryButton.addEventListener("click", () => {
+        display.value = ""; // 入力値をクリア
+        currentExpressionDisplay.textContent = ""; // 現在式の表示もクリア
+    });
+
 });
