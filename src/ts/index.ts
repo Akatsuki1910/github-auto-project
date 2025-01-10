@@ -16,6 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const roundButton = document.getElementById("round") as HTMLButtonElement; // 丸めボタン
     const absoluteButton = document.getElementById("absolute") as HTMLButtonElement; // 絶対値ボタン
     const powerButton = document.getElementById("power") as HTMLButtonElement; // 累乗ボタン
+    const tenToThePowerOfXButton = document.getElementById("ten-to-the-power-of-x") as HTMLButtonElement; // 10のx乗ボタン
     const display = document.getElementById("display") as HTMLInputElement;
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
     // ... other existing variables and buttons
@@ -23,12 +24,22 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ... (Existing event listeners)
 
+       tenToThePowerOfXButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            const result = Math.pow(10, currentValue);
+            display.value = result.toString();
+            currentExpressionDisplay.textContent = `10^${currentValue}`;
+            history.push(`10^${currentValue} = ${result}`);
+        }
+    });
+
     powerButton.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
         if (!isNaN(currentValue)) {
-          currentExpressionDisplay.textContent = `${currentValue} ^ `;  // 累乗記号を表示
-            display.value = ""; // 入力フィールドをクリア
-        let base = currentValue
+          currentExpressionDisplay.textContent = `${currentValue} ^ `;
+            display.value = "";
+        let base = currentValue;
         const calculatePower = () => {
         const exponent = parseFloat(display.value);
           if (!isNaN(exponent)){
@@ -39,9 +50,10 @@ window.addEventListener("DOMContentLoaded", () => {
           }
         }
         const equalsButton = document.getElementById("equals") as HTMLButtonElement;
-        equalsButton.addEventListener("click", calculatePower, {once: true}); // 一度だけ実行されるように設定
+        equalsButton.addEventListener("click", calculatePower, {once: true});
         }
     });
 
         // ... existing functions (cube, inverse, round, etc)
 });
+
