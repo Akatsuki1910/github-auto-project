@@ -21,3 +21,10 @@ body.dark-mode {
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr)); /* ボタンのサイズを調整 */
     gap: 5px; /* ボタン間の隙間 */
 }
+#history-display{
+    width: 100%;
+    border: solid 1px;
+    overflow: scroll;
+    height: 100px;
+    margin-top: 10px;
+}
