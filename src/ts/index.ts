@@ -23,6 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const lastAnswerButton = document.getElementById("last-answer") as HTMLButtonElement;
     const plusMinusButton = document.getElementById("plus-minus") as HTMLButtonElement;
     const sinButton = document.getElementById("sin") as HTMLButtonElement;
+    const cosButton = document.getElementById("cos") as HTMLButtonElement; // cosボタンの取得
 
 
     // ... other existing variables and buttons
@@ -49,5 +50,13 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+        cosButton.addEventListener("click", () => {
+            const currentValue = parseFloat(display.value);
+            if (!isNaN(currentValue)) {
+              const result = isRadian ? Math.cos(currentValue) : Math.cos(currentValue * Math.PI / 180);
+              display.value = result.toString();
+              currentExpressionDisplay.textContent = `cos(${currentValue})`;
+            }
+          });
 // ... (Rest of the existing code)
 }
