@@ -20,6 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const display = document.getElementById("display") as HTMLInputElement;
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
     const randomButton = document.getElementById("random") as HTMLButtonElement; // 乱数ボタン
+    const floorButton = document.getElementById("floor") as HTMLButtonElement; // floorボタン
 
     // ... other existing variables and buttons
     // ... existing event listeners
@@ -57,6 +58,15 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         const equalsButton = document.getElementById("equals") as HTMLButtonElement;
         equalsButton.addEventListener("click", calculatePower, {once: true});
+        }
+    });
+     floorButton.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            const result = Math.floor(currentValue);
+            display.value = result.toString();
+            currentExpressionDisplay.textContent = `floor(${currentValue})`;
+            history.push(`floor(${currentValue}) = ${result}`);
         }
     });
 
