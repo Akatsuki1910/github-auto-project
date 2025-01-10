@@ -35,4 +35,14 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = currentValue + currentValue;  // Duplicate the current display value   
         }
     });
+
+    const swapButton = document.getElementById("swap") as HTMLButtonElement;
+    swapButton.addEventListener("click", () => {
+        const currentValue = display.value;
+        if (currentValue && currentValue.length >= 2) {
+            const swappedValue = currentValue.slice(-1) + currentValue.slice(0, -1);
+            display.value = swappedValue;
+        }
+    });
+
 });
