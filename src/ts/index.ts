@@ -2,95 +2,34 @@
 let lastAnswer = 0;
 let memory = 0;
 let isRadian = true; // ラジアンモードフラグ
+let isKeyboardInputEnabled = false; // キーボード入力有効フラグ
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... (Existing Code and variables)
-    // ... other existing variables
-    // ... (Existing buttons)
-    // ... existing buttons
-    const degRadButton = document.getElementById("deg-rad") as HTMLButtonElement;
+    const keyboardToggleButton = document.getElementById("keyboard-toggle") as HTMLButtonElement;
     const display = document.getElementById("display") as HTMLInputElement;
-    const lnButton = document.getElementById("ln") as HTMLButtonElement;
-    const base2LogButton = document.getElementById("base-2-log") as HTMLButtonElement;
-    const tenToThePowerOfXButton = document.getElementById("ten-to-the-power-of-x") as HTMLButtonElement;
-    const twoToThePowerOfXButton = document.getElementById("two-to-the-power-of-x") as HTMLButtonElement;
-    const openParenthesisButton = document.getElementById("open-parenthesis") as HTMLButtonElement;
-    const closeParenthesisButton = document.getElementById("close-parenthesis") as HTMLButtonElement;
-    const calculateExpressionButton = document.getElementById("calculate-expression") as HTMLButtonElement;
-    const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
-    const copyToClipboardButton = document.getElementById("copy-to-clipboard") as HTMLButtonElement;
-    const toggleHistoryButton = document.getElementById("toggle-history") as HTMLButtonElement;
-    const historyDiv = document.getElementById("history") as HTMLDivElement;
+    // ... other existing variables and buttons
 
     // ... other event listeners
 
+    keyboardToggleButton.addEventListener("click", () => {
+        isKeyboardInputEnabled = !isKeyboardInputEnabled;
+        keyboardToggleButton.textContent = isKeyboardInputEnabled ? "キーボード入力: ON" : "キーボード入力: OFF";
+
+        if (isKeyboardInputEnabled) {
+            display.removeAttribute("readonly");
+        } else {
+            display.setAttribute("readonly", "true");
+        }
+    });
+
+    if (isKeyboardInputEnabled) {
+      display.addEventListener("keydown", (event: KeyboardEvent) => {
+        if (event.key === "Enter") {
+          calculateExpressionButton.click();
+        }
+      });
+    }
+
     // ... Existing code for other buttons
-
-    // ... (Existing event listeners)
-
-    degRadButton.addEventListener("click", () => {
-        isRadian = !isRadian;
-        degRadButton.textContent = isRadian ? "Rad" : "Deg";
-    });
-
-    // ... (Existing trigonometric functions)
-
-    lnButton.addEventListener("click", () => {
-        if (display.value) {
-            display.value = Math.log(parseFloat(display.value)).toString();
-        }
-    });
-
-    base2LogButton.addEventListener("click", () => {
-        if (display.value) {
-            display.value = (Math.log2(parseFloat(display.value))).toString();
-        }
-    });
-
-    tenToThePowerOfXButton.addEventListener("click", () => {
-        if (display.value) {
-            display.value = (10 ** parseFloat(display.value)).toString();
-        }
-    });
-
-    twoToThePowerOfXButton.addEventListener("click", () => {
-        if (display.value) {
-            display.value = (2 ** parseFloat(display.value)).toString();
-        }
-    });
-    openParenthesisButton.addEventListener("click", () => {
-        display.value += "(";
-        currentExpressionDisplay.textContent += "(";
-    });
-
-    closeParenthesisButton.addEventListener("click", () => {
-        display.value += ")";
-        currentExpressionDisplay.textContent += ")";
-    });
-
-    calculateExpressionButton.addEventListener("click", () => {
-        try {
-            const result = eval(currentExpressionDisplay.textContent);
-            display.value = result.toString();
-            currentExpressionDisplay.textContent = "";
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-
-    copyToClipboardButton.addEventListener("click", () => {
-        navigator.clipboard.writeText(display.value).then(() => {
-            console.log("Copied to clipboard:", display.value);
-        }).catch(err => {
-            console.error("Failed to copy: ", err);
-        });
-    });
-
-    let historyVisible = true; // 履歴表示状態を管理する変数
-    toggleHistoryButton.addEventListener("click", () => {
-        historyVisible = !historyVisible;
-        historyDiv.style.display = historyVisible ? "block" : "none";
-        toggleHistoryButton.textContent = historyVisible ? "履歴非表示" : "履歴表示";
-    });
-    // ... Other button event listeners
 });
