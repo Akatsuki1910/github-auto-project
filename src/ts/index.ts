@@ -21,6 +21,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const allClearButton = document.getElementById("all-clear") as HTMLButtonElement;
     const clearButton = document.getElementById("clear") as HTMLButtonElement;
     const lastAnswerButton = document.getElementById("last-answer") as HTMLButtonElement;
+        const plusMinusButton = document.getElementById("plus-minus") as HTMLButtonElement;
+
 
     // ... other existing variables and buttons
     keyboardToggleButton.addEventListener("click", () => {
@@ -31,8 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
             display.removeAttribute("readonly");
         } else {
             display.setAttribute("readonly", "true");
-        }
-    });
+        }    });
     radiansToggleButton.addEventListener("click", () => {
         isRadian = !isRadian;
         radiansToggleButton.textContent = isRadian ? "Rad" : "Deg";
@@ -84,6 +85,12 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpressionDisplay.textContent = display.value; // 現在式表示も更新
     });
 
+        plusMinusButton.addEventListener("click", () => {
+        if (display.value) {
+            display.value = (-parseFloat(display.value)).toString();
+            currentExpressionDisplay.textContent = display.value;
+        }
+    });
     // ... Existing code for other buttons
     // 仮の計算処理（後で適切な計算ロジックに置き換える）
     const calculate = () => {
