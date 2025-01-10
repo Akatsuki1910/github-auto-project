@@ -11,6 +11,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const degRadButton = document.getElementById("deg-rad") as HTMLButtonElement;
     const display = document.getElementById("display") as HTMLInputElement;
     const lnButton = document.getElementById("ln") as HTMLButtonElement;
+    const base2LogButton = document.getElementById("base-2-log") as HTMLButtonElement;
 
     // ... other event listeners
 
@@ -47,6 +48,12 @@ window.addEventListener("DOMContentLoaded", () => {
     lnButton.addEventListener("click", () => {
         if (display.value) {
             display.value = Math.log(parseFloat(display.value)).toString();
+        }
+    });
+
+    base2LogButton.addEventListener("click", () => {
+        if (display.value) {
+            display.value = (Math.log2(parseFloat(display.value))).toString();
         }
     });
     // ... Other button event listeners
