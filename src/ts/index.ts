@@ -28,56 +28,20 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpressionDisplay.textContent = "e";
     });
 
-    const duplicateButton = document.getElementById("duplicate") as HTMLButtonElement;
-    duplicateButton.addEventListener("click", () => {
-        const currentValue = display.value;
-        if (currentValue) {
-            display.value = currentValue + currentValue;  // Duplicate the current display value   
-        }
-    });
-
-    const swapButton = document.getElementById("swap") as HTMLButtonElement;
-    swapButton.addEventListener("click", () => {
-        const currentValue = display.value;
-        if (currentValue && currentValue.length >= 2) {
-            const swappedValue = currentValue.slice(-1) + currentValue.slice(0, -1);
-            display.value = swappedValue;
-        }
-    });
-
-    const clearEntryButton = document.getElementById("clear-entry") as HTMLButtonElement;
-    clearEntryButton.addEventListener("click", () => {
-        display.value = ""; // 入力値をクリア
-        currentExpressionDisplay.textContent = ""; // 現在式の表示もクリア
-    });
-  const modButton = document.getElementById("mod") as HTMLButtonElement;
-    modButton.addEventListener("click", () => {
-       currentExpressionDisplay.textContent += "%";
-    });
-       const divButton = document.getElementById("div") as HTMLButtonElement;
-    divButton.addEventListener("click", () => {
-         currentExpressionDisplay.textContent += "/";
-    });
-
-    const sumButton = document.getElementById("sum") as HTMLButtonElement;
-    sumButton.addEventListener("click", () => {
-        // Σボタンの処理をここに追加
-        let sum = 0;
-        const numbers = display.value.split('+').map(Number);
-        for(let i=0; i<numbers.length; i++){
-            if(!isNaN(numbers[i])){
-                 sum += numbers[i];
-            }
-        }
-        display.value = sum.toString();
-        currentExpressionDisplay.textContent = numbers.join('+') + '=' + sum;
-    });
-
+    // ... (Existing Code)
     const minButton = document.getElementById("min") as HTMLButtonElement;
     minButton.addEventListener("click", () => {
         const numbers = display.value.split(',').map(Number);
         const min = Math.min(...numbers.filter(num => !isNaN(num)));
         display.value = min.toString();
         currentExpressionDisplay.textContent = numbers.join(',') + ' の最小値 = ' + min;  
+    });
+
+    const maxButton = document.getElementById("max") as HTMLButtonElement;
+    maxButton.addEventListener("click", () => {
+        const numbers = display.value.split(',').map(Number);
+        const max = Math.max(...numbers.filter(num => !isNaN(num)));
+        display.value = max.toString();
+        currentExpressionDisplay.textContent = numbers.join(',') + ' の最大値 = ' + max;
     });
 });
