@@ -17,6 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const display = document.getElementById("display") as HTMLInputElement;
     let currentExpression = "";
+    let isParenthesisOpen = false;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -24,8 +25,17 @@ window.addEventListener("DOMContentLoaded", () => {
             const buttonText = button.textContent;
 
             // ... (Existing button handling logic)
-
-            else if (buttonText === "!") {
+            else if (buttonText === "()") {
+                if (!isParenthesisOpen) {
+                    currentExpression += "(";
+                    isParenthesisOpen = true;
+                } else {
+                    currentExpression += ")";
+                    isParenthesisOpen = false;
+                }
+                display.value = currentExpression;
+            }
+else if (buttonText === "!") {
                 try {
                     const currentNumber = parseFloat(currentExpression);
                     if (currentNumber < 0 || !Number.isInteger(currentNumber)) {
