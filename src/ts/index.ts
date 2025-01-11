@@ -29,48 +29,16 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // ... (Existing Code)
-    const minButton = document.getElementById("min") as HTMLButtonElement;
-    minButton.addEventListener("click", () => {
-        const numbers = display.value.split(',').map(Number);
-        const min = Math.min(...numbers.filter(num => !isNaN(num)));
-        display.value = min.toString();
-        currentExpressionDisplay.textContent = numbers.join(',') + ' の最小値 = ' + min;  
-    });
-
-    const maxButton = document.getElementById("max") as HTMLButtonElement;
-    maxButton.addEventListener("click", () => {
-        const numbers = display.value.split(',').map(Number);
-        const max = Math.max(...numbers.filter(num => !isNaN(num)));
-        display.value = max.toString();
-        currentExpressionDisplay.textContent = numbers.join(',') + ' の最大値 = ' + max;
-    });
-
-    const averageButton = document.getElementById("average") as HTMLButtonElement;
-    averageButton.addEventListener("click", () => {
-        const numbers = display.value.split(',').map(Number);
-        const validNumbers = numbers.filter(num => !isNaN(num));
-        if (validNumbers.length > 0) {
-          const sum = validNumbers.reduce((acc, curr) => acc + curr, 0);
-          const average = sum / validNumbers.length;
-          display.value = average.toString();
-          currentExpressionDisplay.textContent = numbers.join(',') + ' の平均 = ' + average;
-        } else {
-          display.value = "NaN"; // 空の入力または無効な数値の場合
-          currentExpressionDisplay.textContent = "数値を入力してください。";
+     const baseConversionButton = document.getElementById("base-conversion") as HTMLButtonElement;
+    baseConversionButton.addEventListener("click", () => {
+        const decimalValue = parseInt(display.value);
+        if (!isNaN(decimalValue)) {
+            const binaryValue = decimalValue.toString(2);
+            const octalValue = decimalValue.toString(8);
+            const hexValue = decimalValue.toString(16);
+            display.value = `2進数: ${binaryValue}, 8進数: ${octalValue}, 16進数: ${hexValue}`;
         }
     });
 
-    const sumOfSquaresButton = document.getElementById("sum-of-squares") as HTMLButtonElement;
-    sumOfSquaresButton.addEventListener("click", () => {
-        const numbers = display.value.split(',').map(Number);
-        const validNumbers = numbers.filter(num => !isNaN(num));
-        if (validNumbers.length > 0) {
-            const sumOfSquares = validNumbers.reduce((acc, curr) => acc + curr * curr, 0);
-            display.value = sumOfSquares.toString();
-            currentExpressionDisplay.textContent = numbers.join(',') + ' の二乗和 = ' + sumOfSquares;
-        } else {
-            display.value = "NaN";
-            currentExpressionDisplay.textContent = "数値を入力してください。";
-        }
-    });
+    // ... existing functions
 });
