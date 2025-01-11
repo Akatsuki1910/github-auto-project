@@ -54,6 +54,21 @@ log10Button.addEventListener("click", () => {
     }
 });
 
+// 指数関数ボタンの追加
+const exponentButton = document.getElementById("exponent") as HTMLButtonElement;
+exponentButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.exp(currentValue);
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = `e^(${currentValue}) = ${result}`;
+        history.push(`e^(${currentValue}) = ${result}`);
+        updateHistoryDisplay();
+    } else {
+        display.value = "Invalid input";
+        currentExpressionDisplay.textContent = "Invalid input";
+    }
+});
 
     const historyDisplay = document.getElementById("history-display") as HTMLDivElement;
     function updateHistoryDisplay() {
