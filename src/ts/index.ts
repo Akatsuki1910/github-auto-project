@@ -47,6 +47,9 @@ window.addEventListener("DOMContentLoaded", () => {
             } else if (buttonText === "C") {
                 currentExpression = "";
                 display.value = "";
+            } else if (buttonText === "←") {
+                currentExpression = currentExpression.slice(0, -1);
+                display.value = currentExpression;
             }
         });
     });
