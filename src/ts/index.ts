@@ -66,6 +66,16 @@ else if (buttonText === "!") {
                     display.value = "Error";
                     currentExpression = "";
                 }
+            } else if (buttonText === "log") {
+                try {
+                  const num = parseFloat(currentExpression);
+                  const result = Math.log10(num);
+                  display.value = result.toString();
+                  currentExpression = result.toString();
+                } catch (error) {
+                  display.value = "Error";
+                  currentExpression = "";
+                }
             }
         });
     });
