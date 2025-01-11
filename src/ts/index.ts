@@ -106,6 +106,19 @@ window.addEventListener("DOMContentLoaded", () => {
         history.pop();
         updateHistoryDisplay();
     });
+
+    const eulerButton = document.getElementById("euler") as HTMLButtonElement;
+    eulerButton.addEventListener("click", () => {
+        const x = parseFloat(display.value);
+        if (!isNaN(x)) {
+            const result = Math.exp(x);
+            display.value = result.toString();
+            currentExpressionDisplay.textContent = `e^${x}`;
+            history.push(`e^${x} = ${result}`);
+            updateHistoryDisplay();
+        }
+    });
+
     const historyDisplay = document.getElementById("history-display") as HTMLDivElement;
     function updateHistoryDisplay() {
         historyDisplay.innerHTML = history.join('<br>');
