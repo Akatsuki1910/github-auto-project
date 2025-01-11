@@ -46,6 +46,21 @@ window.addEventListener("DOMContentLoaded", () => {
           currentExpressionDisplay.textContent = "Invalid decimal input";
       }
   });
+// 10進数から16進数への変換ボタンを追加
+const decimalToHexadecimalButton = document.getElementById("decimal-hexadecimal") as HTMLButtonElement;
+decimalToHexadecimalButton.addEventListener("click", () => {
+    const decimalValue = parseInt(display.value);
+    if (!isNaN(decimalValue)) {
+        const hexadecimalValue = decimalValue.toString(16);
+        display.value = hexadecimalValue;
+        currentExpressionDisplay.textContent = `${decimalValue}(10) = ${hexadecimalValue}(16)`;
+        history.push(`${decimalValue}(10) = ${hexadecimalValue}(16)`);
+        updateHistoryDisplay();
+    } else {
+        display.value = "Invalid decimal input";
+        currentExpressionDisplay.textContent = "Invalid decimal input";
+    }
+});
 
     const historyDisplay = document.getElementById("history-display") as HTMLDivElement;
     function updateHistoryDisplay() {
