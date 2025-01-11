@@ -73,6 +73,20 @@ memoryPlusPercentButton.addEventListener("click", () => {
     }
 });
 
+// M-％機能の追加
+const memoryMinusPercentButton = document.getElementById("memory-minus-percent") as HTMLButtonElement;
+memoryMinusPercentButton.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    const percentageDecrease = currentValue / 100;
+    memory -= memory * percentageDecrease;
+    display.value = memory.toString();
+    currentExpressionDisplay.textContent = `M - ${currentValue}% = ${memory}`;
+    history.push(`M - ${currentValue}% = ${memory}`);
+    updateHistoryDisplay();
+  }
+});
+
     const historyDisplay = document.getElementById("history-display") as HTMLDivElement;
     function updateHistoryDisplay() {
         historyDisplay.innerHTML = history.join('<br>');
