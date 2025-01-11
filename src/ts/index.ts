@@ -56,6 +56,16 @@ else if (buttonText === "!") {
             } else if (buttonText === "^") {
                 currentExpression += "**";
                 display.value = currentExpression;
+            } else if (buttonText === "sgn") {
+                try {
+                    const num = parseFloat(currentExpression);
+                    const sign = Math.sign(num);
+                    display.value = sign.toString();
+                    currentExpression = sign.toString();
+                } catch (error) {
+                    display.value = "Error";
+                    currentExpression = "";
+                }
             }
         });
     });
