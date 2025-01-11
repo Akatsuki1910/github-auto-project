@@ -38,6 +38,22 @@ nthRootButton.addEventListener("click", () => {
   }
 });
 
+// log10ボタンの追加
+const log10Button = document.getElementById("log10") as HTMLButtonElement;
+log10Button.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue > 0) {
+        const result = Math.log10(currentValue);
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = `log10(${currentValue}) = ${result}`;
+        history.push(`log10(${currentValue}) = ${result}`);
+        updateHistoryDisplay();
+    } else {
+        display.value = "Invalid input";
+        currentExpressionDisplay.textContent = "Invalid input";
+    }
+});
+
 
     const historyDisplay = document.getElementById("history-display") as HTMLDivElement;
     function updateHistoryDisplay() {
