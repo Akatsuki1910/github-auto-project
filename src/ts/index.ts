@@ -78,8 +78,26 @@ decimalToOctalButton.addEventListener("click", () => {
     }
 });
 
+// 16進数から10進数への変換機能
+const hexadecimalToDecimalButton = document.getElementById("hexadecimal-decimal") as HTMLButtonElement;
+hexadecimalToDecimalButton.addEventListener("click", () => {
+  const hexadecimalValue = display.value;
+  try {
+    const decimalValue = parseInt(hexadecimalValue, 16);
+    display.value = decimalValue.toString();
+    currentExpressionDisplay.textContent = `${hexadecimalValue}(16) = ${decimalValue}(10)`;
+    history.push(`${hexadecimalValue}(16) = ${decimalValue}(10)`);
+    updateHistoryDisplay();
+  } catch (error) {
+    display.value = "Invalid hexadecimal input";
+    currentExpressionDisplay.textContent = "Invalid hexadecimal input";
+  }
+});
+
+
     const historyDisplay = document.getElementById("history-display") as HTMLDivElement;
     function updateHistoryDisplay() {
         historyDisplay.innerHTML = history.join('<br>');
     }
 });
+
