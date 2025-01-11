@@ -18,15 +18,19 @@ window.addEventListener("DOMContentLoaded", () => {
  // 2進数から10進数への変換ボタン
  // ... existing code
 
-// 立方根ボタンの追加
-const cubeRootButton = document.getElementById("cube-root") as HTMLButtonElement;
-cubeRootButton.addEventListener("click", () => {
+// 立方根ボタン
+// ... existing code for cube root button
+
+// n乗根ボタンの追加
+const nthRootButton = document.getElementById("nth-root") as HTMLButtonElement;
+nthRootButton.addEventListener("click", () => {
   const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    const cubeRoot = Math.cbrt(currentValue);
-    display.value = cubeRoot.toString();
-    currentExpressionDisplay.textContent = `³√(${currentValue}) = ${cubeRoot}`;
-    history.push(`³√(${currentValue}) = ${cubeRoot}`);
+  const rootValue = parseFloat(prompt("何乗根を求めますか？", "2")); // デフォルトは2乗根
+  if (!isNaN(currentValue) && !isNaN(rootValue) && rootValue !== 0) {
+    const nthRoot = currentValue ** (1/rootValue);
+    display.value = nthRoot.toString();
+    currentExpressionDisplay.textContent = `${rootValue}√(${currentValue}) = ${nthRoot}`;
+    history.push(`${rootValue}√(${currentValue}) = ${nthRoot}`);
     updateHistoryDisplay();
   } else {
     display.value = "Invalid input";
@@ -34,9 +38,9 @@ cubeRootButton.addEventListener("click", () => {
   }
 });
 
+
     const historyDisplay = document.getElementById("history-display") as HTMLDivElement;
     function updateHistoryDisplay() {
         historyDisplay.innerHTML = history.join('<br>');
     }
 });
-
