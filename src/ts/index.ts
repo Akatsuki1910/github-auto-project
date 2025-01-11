@@ -87,5 +87,15 @@ window.addEventListener("DOMContentLoaded", () => {
     const minusButton = document.getElementById("minus") as HTMLButtonElement;
     const multiplyButton = document.getElementById("multiply") as HTMLButtonElement;
     const divideButton = document.getElementById("divide") as HTMLButtonElement;
+// 数字ボタンの追加
+    for (let i = 0; i <= 9; i++) {
+        const numberButton = document.getElementById(i.toString()) as HTMLButtonElement;
+        if (numberButton) {
+            numberButton.addEventListener('click', () => {
+                const display = document.getElementById("display") as HTMLInputElement;
+                display.value += i;
+            });
+        }
+    }
 
 });
