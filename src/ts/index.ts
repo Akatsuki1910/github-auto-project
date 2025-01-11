@@ -59,4 +59,18 @@ window.addEventListener("DOMContentLoaded", () => {
           currentExpressionDisplay.textContent = "数値を入力してください。";
         }
     });
+
+    const sumOfSquaresButton = document.getElementById("sum-of-squares") as HTMLButtonElement;
+    sumOfSquaresButton.addEventListener("click", () => {
+        const numbers = display.value.split(',').map(Number);
+        const validNumbers = numbers.filter(num => !isNaN(num));
+        if (validNumbers.length > 0) {
+            const sumOfSquares = validNumbers.reduce((acc, curr) => acc + curr * curr, 0);
+            display.value = sumOfSquares.toString();
+            currentExpressionDisplay.textContent = numbers.join(',') + ' の二乗和 = ' + sumOfSquares;
+        } else {
+            display.value = "NaN";
+            currentExpressionDisplay.textContent = "数値を入力してください。";
+        }
+    });
 });
