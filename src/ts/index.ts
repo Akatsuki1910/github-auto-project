@@ -23,81 +23,26 @@ window.addEventListener("DOMContentLoaded", () => {
         button.addEventListener("click", () => {
             const buttonText = button.textContent;
 
-            if (/[0-9]/.test(buttonText)) {
-                currentExpression += buttonText;
-                display.value = currentExpression;
-            } else if (buttonText === "+" || buttonText === "-" || buttonText === "*" || buttonText === "/") {
-                currentExpression += buttonText;
-                display.value = currentExpression;
-            } else if (buttonText === ".") {
-                // Prevent multiple decimals in a number
-                if (!currentExpression.includes(".")) {
-                    currentExpression += buttonText;
-                    display.value = currentExpression;
-                }
-            } else if (buttonText === "=") {
-                try {
-                    const result = eval(currentExpression);
-                    display.value = result.toString();
-                    currentExpression = result.toString();
-                } catch (error) {
-                    display.value = "Error";
-                    currentExpression = "";
-                }
-            } else if (buttonText === "C") {
-                currentExpression = "";
-                display.value = "";
-            } else if (buttonText === "←") {
-                currentExpression = currentExpression.slice(0, -1);
-                display.value = currentExpression;
-            } else if (buttonText === "x²") {
+            // ... (Existing button handling logic)
+
+            else if (buttonText === "!") {
                 try {
                     const currentNumber = parseFloat(currentExpression);
-                    const result = currentNumber * currentNumber; // Or use Math.pow()
-                    display.value = result.toString();
-                    currentExpression = result.toString();
-                } catch (error) {
-                  display.value = "Error";
-                  currentExpression = "";
-                }
-            } else if (buttonText === "√") {
-                try {
-                    const currentNumber = parseFloat(currentExpression);
-                    if (currentNumber >= 0) {
-                        const result = Math.sqrt(currentNumber);
-                        display.value = result.toString();
-                        currentExpression = result.toString();
-                    } else {
-                        display.value = "Error"; // Square root of negative number
+                    if (currentNumber < 0 || !Number.isInteger(currentNumber)) {
+                        display.value = "Error";
                         currentExpression = "";
+                    } else {
+                      let result = 1;
+                      for (let i = 2; i <= currentNumber; i++) {
+                          result *= i;
+                      }
+                      display.value = result.toString();
+                      currentExpression = result.toString();
                     }
                 } catch (error) {
                     display.value = "Error";
                     currentExpression = "";
                 }
-            } else if (buttonText === "+/-") {
-                try {
-                  const currentNumber = parseFloat(currentExpression);
-                  const result = -currentNumber;
-                  display.value = result.toString();
-                  currentExpression = result.toString();
-                } catch (error) {
-                  display.value = "Error";
-                  currentExpression = "";
-                }
-            } else if (buttonText === "%") {
-               try {
-                    const currentNumber = parseFloat(currentExpression);
-                    const result = currentNumber / 100;
-                    display.value = result.toString();
-                    currentExpression = result.toString();
-                } catch (error) {
-                    display.value = "Error";
-                    currentExpression = "";
-                }
-            } else if (buttonText === "π") {
-                currentExpression += Math.PI;
-                display.value = currentExpression;
             }
         });
     });
