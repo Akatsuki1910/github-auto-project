@@ -75,6 +75,16 @@ window.addEventListener("DOMContentLoaded", () => {
                     display.value = "Error";
                     currentExpression = "";
                 }
+            } else if (buttonText === "+/-") {
+                try {
+                  const currentNumber = parseFloat(currentExpression);
+                  const result = -currentNumber;
+                  display.value = result.toString();
+                  currentExpression = result.toString();
+                } catch (error) {
+                  display.value = "Error";
+                  currentExpression = "";
+                }
             }
         });
     });
