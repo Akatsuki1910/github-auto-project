@@ -46,6 +46,20 @@ absButton.addEventListener("click", () => {
     }
 });
 
+// メモリーストア機能を追加
+let memory = 0;
+const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
+memoryStoreButton.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    memory = currentValue;
+    currentExpressionDisplay.textContent = `M = ${memory}`;
+        history.push(`M = ${memory}`);
+        updateHistoryDisplay();
+  }
+});
+
+
     const historyDisplay = document.getElementById("history-display") as HTMLDivElement;
     function updateHistoryDisplay() {
         historyDisplay.innerHTML = history.join('<br>');
