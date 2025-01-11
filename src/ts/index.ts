@@ -30,6 +30,22 @@ window.addEventListener("DOMContentLoaded", () => {
             currentExpressionDisplay.textContent = "Invalid binary input";
         }
     });
+ // 10進数から2進数への変換ボタンを追加
+    const decimalToBinaryButton = document.getElementById("decimal-binary") as HTMLButtonElement;
+    decimalToBinaryButton.addEventListener("click", () => {
+      const decimalValue = parseInt(display.value);
+      if (!isNaN(decimalValue)) {
+          const binaryValue = decimalValue.toString(2);
+          display.value = binaryValue;
+          currentExpressionDisplay.textContent = `${decimalValue}(10) = ${binaryValue}(2)`;
+          history.push(`${decimalValue}(10) = ${binaryValue}(2)`);
+
+          updateHistoryDisplay();
+      } else {
+          display.value = "Invalid decimal input";
+          currentExpressionDisplay.textContent = "Invalid decimal input";
+      }
+  });
 
     const historyDisplay = document.getElementById("history-display") as HTMLDivElement;
     function updateHistoryDisplay() {
