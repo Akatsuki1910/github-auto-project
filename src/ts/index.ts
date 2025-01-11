@@ -44,9 +44,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // パーセント変化計算機能の追加
 // ... existing percentage change code
-
     const historyDisplay = document.getElementById("history-display") as HTMLDivElement;
     let history: string[] = [];
+    let memoryValue = 0; //メモリ値を保持する変数
+
     function updateHistoryDisplay() {
         historyDisplay.innerHTML = history.join('<br>');
     }
@@ -57,4 +58,13 @@ window.addEventListener("DOMContentLoaded", () => {
         history = [];
         updateHistoryDisplay();
     });
+
+ // MRCボタンの追加（メモリ呼び出しとクリア）
+    const mrcButton = document.getElementById("mrc") as HTMLButtonElement;
+    mrcButton.addEventListener("click", () => {
+      const display = document.getElementById("display") as HTMLInputElement;
+        display.value = memoryValue.toString();
+        memoryValue = 0; // 呼び出し後にメモリクリア
+    });
 });
+
