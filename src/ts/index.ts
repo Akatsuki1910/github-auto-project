@@ -50,6 +50,16 @@ window.addEventListener("DOMContentLoaded", () => {
             } else if (buttonText === "←") {
                 currentExpression = currentExpression.slice(0, -1);
                 display.value = currentExpression;
+            } else if (buttonText === "x²") {
+                try {
+                    const currentNumber = parseFloat(currentExpression);
+                    const result = currentNumber * currentNumber; // Or use Math.pow()
+                    display.value = result.toString();
+                    currentExpression = result.toString();
+                } catch (error) {
+                  display.value = "Error";
+                  currentExpression = "";
+                }
             }
         });
     });
