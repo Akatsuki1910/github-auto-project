@@ -60,6 +60,21 @@ window.addEventListener("DOMContentLoaded", () => {
                   display.value = "Error";
                   currentExpression = "";
                 }
+            } else if (buttonText === "√") {
+                try {
+                    const currentNumber = parseFloat(currentExpression);
+                    if (currentNumber >= 0) {
+                        const result = Math.sqrt(currentNumber);
+                        display.value = result.toString();
+                        currentExpression = result.toString();
+                    } else {
+                        display.value = "Error"; // Square root of negative number
+                        currentExpression = "";
+                    }
+                } catch (error) {
+                    display.value = "Error";
+                    currentExpression = "";
+                }
             }
         });
     });
