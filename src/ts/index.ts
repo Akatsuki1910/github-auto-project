@@ -44,4 +44,19 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = max.toString();
         currentExpressionDisplay.textContent = numbers.join(',') + ' の最大値 = ' + max;
     });
+
+    const averageButton = document.getElementById("average") as HTMLButtonElement;
+    averageButton.addEventListener("click", () => {
+        const numbers = display.value.split(',').map(Number);
+        const validNumbers = numbers.filter(num => !isNaN(num));
+        if (validNumbers.length > 0) {
+          const sum = validNumbers.reduce((acc, curr) => acc + curr, 0);
+          const average = sum / validNumbers.length;
+          display.value = average.toString();
+          currentExpressionDisplay.textContent = numbers.join(',') + ' の平均 = ' + average;
+        } else {
+          display.value = "NaN"; // 空の入力または無効な数値の場合
+          currentExpressionDisplay.textContent = "数値を入力してください。";
+        }
+    });
 });
