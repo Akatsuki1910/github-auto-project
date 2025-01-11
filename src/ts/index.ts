@@ -62,6 +62,22 @@ decimalToHexadecimalButton.addEventListener("click", () => {
     }
 });
 
+// 10進数から8進数への変換ボタンを追加
+const decimalToOctalButton = document.getElementById("decimal-octal") as HTMLButtonElement;
+decimalToOctalButton.addEventListener("click", () => {
+    const decimalValue = parseInt(display.value);
+    if (!isNaN(decimalValue)) {
+        const octalValue = decimalValue.toString(8);
+        display.value = octalValue;
+        currentExpressionDisplay.textContent = `${decimalValue}(10) = ${octalValue}(8)`;
+        history.push(`${decimalValue}(10) = ${octalValue}(8)`);
+        updateHistoryDisplay();
+    } else {
+        display.value = "Invalid decimal input";
+        currentExpressionDisplay.textContent = "Invalid decimal input";
+    }
+});
+
     const historyDisplay = document.getElementById("history-display") as HTMLDivElement;
     function updateHistoryDisplay() {
         historyDisplay.innerHTML = history.join('<br>');
