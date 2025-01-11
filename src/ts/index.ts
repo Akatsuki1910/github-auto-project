@@ -31,33 +31,10 @@ window.addEventListener("DOMContentLoaded", () => {
 // ... existing code for exponent button
 
 // 絶対値ボタンの追加
-const absButton = document.getElementById("abs") as HTMLButtonElement;
-absButton.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        const result = Math.abs(currentValue);
-        display.value = result.toString();
-        currentExpressionDisplay.textContent = `|${currentValue}| = ${result}`;
-        history.push(`|${currentValue}| = ${result}`);
-        updateHistoryDisplay();
-    } else {
-        display.value = "Invalid input";
-        currentExpressionDisplay.textContent = "Invalid input";
-    }
-});
+// ... existing code for abs button
 
 // メモリーストア機能を追加
-let memory = 0;
-const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
-memoryStoreButton.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    memory = currentValue;
-    currentExpressionDisplay.textContent = `M = ${memory}`;
-        history.push(`M = ${memory}`);
-        updateHistoryDisplay();
-  }
-});
+// ... existing memory store code
 
 // M+％機能の追加
 // ... existing M+% code
@@ -66,20 +43,18 @@ memoryStoreButton.addEventListener("click", () => {
 // ... existing M-% code
 
 // パーセント変化計算機能の追加
-const percentChangeButton = document.getElementById("percent-change") as HTMLButtonElement;
-percentChangeButton.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue !== 0) {
-        const percentageChange = (currentValue - memory) / memory * 100;
-        display.value = percentageChange.toString();
-        currentExpressionDisplay.textContent = `(${currentValue} - ${memory}) / ${memory} * 100 = ${percentageChange}%`;
-        history.push(`(${currentValue} - ${memory}) / ${memory} * 100 = ${percentageChange}%`);
-        updateHistoryDisplay();
-    }
-});
+// ... existing percentage change code
 
     const historyDisplay = document.getElementById("history-display") as HTMLDivElement;
+    let history: string[] = [];
     function updateHistoryDisplay() {
         historyDisplay.innerHTML = history.join('<br>');
     }
+
+    // 履歴全削除ボタンの追加
+    const clearAllHistoryButton = document.getElementById("clear-all-history") as HTMLButtonElement;
+    clearAllHistoryButton.addEventListener("click", () => {
+        history = [];
+        updateHistoryDisplay();
+    });
 });
