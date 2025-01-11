@@ -81,4 +81,11 @@ window.addEventListener("DOMContentLoaded", () => {
         const display = document.getElementById("display") as HTMLInputElement;
         display.value = '';
     });
+
+     // 四則演算ボタンの追加
+    const plusButton = document.getElementById("plus") as HTMLButtonElement;
+    const minusButton = document.getElementById("minus") as HTMLButtonElement;
+    const multiplyButton = document.getElementById("multiply") as HTMLButtonElement;
+    const divideButton = document.getElementById("divide") as HTMLButtonElement;
+
 });
