@@ -29,6 +29,12 @@ window.addEventListener("DOMContentLoaded", () => {
             } else if (buttonText === "+" || buttonText === "-" || buttonText === "*" || buttonText === "/") {
                 currentExpression += buttonText;
                 display.value = currentExpression;
+            } else if (buttonText === ".") {
+                // Prevent multiple decimals in a number
+                if (!currentExpression.includes(".")) {
+                    currentExpression += buttonText;
+                    display.value = currentExpression;
+                }
             } else if (buttonText === "=") {
                 try {
                     const result = eval(currentExpression);
@@ -45,4 +51,3 @@ window.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-
