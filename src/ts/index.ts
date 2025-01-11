@@ -49,5 +49,11 @@ window.addEventListener("DOMContentLoaded", () => {
         history = [];
         updateHistoryDisplay();
     });
+     const currentTimeButton = document.getElementById("current-time") as HTMLButtonElement;
+    currentTimeButton.addEventListener("click", () => {
+        const now = new Date();
+        display.value = now.toLocaleTimeString();
+        currentExpressionDisplay.textContent = "現在時刻";
+    });
     // ... existing functions
 });
