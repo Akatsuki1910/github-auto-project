@@ -74,4 +74,11 @@ window.addEventListener("DOMContentLoaded", () => {
         const now = new Date();
         display.value = now.toLocaleDateString();
     });
+
+    // クリアボタンの追加
+    const clearDisplayButton = document.getElementById("clear-display") as HTMLButtonElement;
+    clearDisplayButton.addEventListener("click", () => {
+        const display = document.getElementById("display") as HTMLInputElement;
+        display.value = '';
+    });
 });
