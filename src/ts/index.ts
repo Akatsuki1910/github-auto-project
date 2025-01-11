@@ -59,6 +59,19 @@ memoryStoreButton.addEventListener("click", () => {
   }
 });
 
+// M+％機能の追加
+const memoryPlusPercentButton = document.getElementById("memory-plus-percent") as HTMLButtonElement;
+memoryPlusPercentButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const percentageIncrease = currentValue / 100;
+        memory += memory * percentageIncrease;
+        display.value = memory.toString();
+        currentExpressionDisplay.textContent = `M + ${currentValue}% = ${memory}`;
+        history.push(`M + ${currentValue}% = ${memory}`);
+        updateHistoryDisplay();
+    }
+});
 
     const historyDisplay = document.getElementById("history-display") as HTMLDivElement;
     function updateHistoryDisplay() {
