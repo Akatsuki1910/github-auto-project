@@ -71,5 +71,33 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
+
+    const gcdButton = document.getElementById("gcd") as HTMLButtonElement;
+    gcdButton.addEventListener("click", () => {
+        const input = display.value;
+        const numbers = input.split(',').map(Number);
+        if (numbers.some(isNaN)) {
+            display.value = "Invalid input";
+            return;
+        }
+        if (numbers.length < 2) {
+            display.value = "少なくとも2つの数を入力してください。";
+            return;
+        }
+        let result = gcd(numbers[0], numbers[1]);
+        for (let i = 2; i < numbers.length; i++) {
+            result = gcd(result, numbers[i]);
+        }
+        display.value = result.toString();
+    });
+
+    function gcd(a: number, b: number): number {
+        while (b) {
+            const temp = b;
+            b = a % b;
+            a = temp;
+        }
+        return Math.abs(a);
+    }
     // ... existing functions
 });
