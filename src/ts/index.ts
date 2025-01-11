@@ -55,5 +55,21 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = now.toLocaleTimeString();
         currentExpressionDisplay.textContent = "現在時刻";
     });
+     const fibonacciButton = document.getElementById("fibonacci") as HTMLButtonElement;
+    fibonacciButton.addEventListener("click", () => {
+        const n = parseInt(display.value);
+        if (!isNaN(n) && n >= 0) {
+            display.value = fibonacci(n).toString();
+        } else {
+            display.value = "Invalid input";
+        }
+    });
+
+    function fibonacci(n: number): number {
+        if (n <= 1) {
+            return n;
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
     // ... existing functions
 });
