@@ -66,5 +66,12 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = memoryValue.toString();
         memoryValue = 0; // 呼び出し後にメモリクリア
     });
-});
 
+     // 現在日付ボタンの追加
+    const currentDateButton = document.getElementById("current-date") as HTMLButtonElement;
+    currentDateButton.addEventListener("click", () => {
+        const display = document.getElementById("display") as HTMLInputElement;
+        const now = new Date();
+        display.value = now.toLocaleDateString();
+    });
+});
