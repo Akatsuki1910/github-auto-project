@@ -19,6 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = changedValue.toString();
             currentExpressionDisplay.textContent = `-${currentValue}`;
             history.push(`-${currentValue} = ${changedValue}`);
+            updateHistoryDisplay(); // 履歴表示を更新
         }
     });
     // ... existing functions (cube, inverse, round, etc)
@@ -99,5 +100,15 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         return Math.abs(a);
     }
-    // ... existing functions
+     // ... existing functions
+    const deleteLastHistoryEntryButton = document.getElementById("delete-last-history-entry") as HTMLButtonElement;
+    deleteLastHistoryEntryButton.addEventListener("click", () => {
+        history.pop();
+        updateHistoryDisplay();
+    });
+    const historyDisplay = document.getElementById("history-display") as HTMLDivElement;
+    function updateHistoryDisplay() {
+        historyDisplay.innerHTML = history.join('<br>');
+    }
+
 });
