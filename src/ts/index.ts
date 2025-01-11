@@ -85,6 +85,16 @@ window.addEventListener("DOMContentLoaded", () => {
                   display.value = "Error";
                   currentExpression = "";
                 }
+            } else if (buttonText === "% Yen") {
+               try {
+                    const currentNumber = parseFloat(currentExpression);
+                    const result = currentNumber / 100;
+                    display.value = result.toString();
+                    currentExpression = result.toString();
+                } catch (error) {
+                    display.value = "Error";
+                    currentExpression = "";
+                }
             }
         });
     });
