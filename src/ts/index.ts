@@ -53,6 +53,9 @@ else if (buttonText === "!") {
                     display.value = "Error";
                     currentExpression = "";
                 }
+            } else if (buttonText === "^") {
+                currentExpression += "**";
+                display.value = currentExpression;
             }
         });
     });
