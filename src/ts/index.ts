@@ -82,6 +82,10 @@ window.addEventListener("DOMContentLoaded", () => {
                 currentExpression += "Math.cos(";
                 display.value = currentExpression;
                 isParenthesisOpen = true;
+            } else if (buttonText === "tan") {
+                currentExpression += "Math.tan(";
+                display.value = currentExpression;
+                isParenthesisOpen = true;
             } else if (buttonText === "=") {
                 try {
                     previousAnswer = eval(currentExpression).toString();
