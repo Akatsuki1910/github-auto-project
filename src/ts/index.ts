@@ -21,6 +21,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
     const toggleThemeBtn = document.getElementById("toggleTheme") as HTMLButtonElement;
     const parenthesesBtn = document.getElementById("parentheses") as HTMLButtonElement; // Parentheses button
+    const eulerBtn = document.getElementById("euler") as HTMLButtonElement; // Euler's number button
     let openParentheses = 0;
 
     const buttons = document.querySelectorAll("button");
@@ -40,6 +41,9 @@ window.addEventListener("DOMContentLoaded", () => {
             } else if (buttonText === "Toggle Theme") {
                 isDarkTheme = !isDarkTheme;
                 document.body.classList.toggle("dark-theme", isDarkTheme);
+            } else if (buttonText === "e"){
+                currentExpression += Math.E;
+                currentExpressionDisplay.textContent = currentExpression;
             } else {
               // existing logic
             }
