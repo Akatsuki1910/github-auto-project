@@ -19,6 +19,9 @@ window.addEventListener("DOMContentLoaded", () => {
     let currentExpression = "";
     let isParenthesisOpen = false;
     let previousAnswer = "";
+    const history: string[] = [];
+    const historyDiv = document.getElementById("history") as HTMLDivElement;
+    const historyBtn = document.getElementById("historyBtn") as HTMLButtonElement;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -52,20 +55,30 @@ window.addEventListener("DOMContentLoaded", () => {
                     .catch((err) => {
                         console.error("Failed to copy: ", err);
                     });
+            } else if (buttonText === "=") {
+                try {
+                    previousAnswer = eval(currentExpression).toString();
+                    display.value = previousAnswer;
+                    currentExpression = previousAnswer; // Update for next calculation
+                    history.push(currentExpression); // Add to history
+                } catch (error) {
+                    display.value = "Error";
+                    currentExpression = ""; // Clear on error
+                }
             }
             // ... rest of button logic
 
             // ... existing functions
-            else if (buttonText === "=") {
-              try {
-                previousAnswer = eval(currentExpression).toString();
-                display.value = previousAnswer;
-                currentExpression = previousAnswer; // Update for next calculation
-              } catch (error) {
-                display.value = "Error";
-                currentExpression = ""; // Clear on error
-              }
-            }
         });
+    });
+
+    historyBtn.addEventListener("click", () => {
+        historyDiv.innerHTML = ""; // Clear previous history
+        history.forEach(item => {
+          const p = document.createElement("p");
+          p.textContent = item;
+          historyDiv.appendChild(p);
+        });
+        historyDiv.style.display = "block";
     });
 });
