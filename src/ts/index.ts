@@ -27,6 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const sumBtn = document.getElementById("sum") as HTMLButtonElement;
     const leftParenthesisBtn = document.getElementById("left-parenthesis") as HTMLButtonElement;
     const rightParenthesisBtn = document.getElementById("right-parenthesis") as HTMLButtonElement;
+    const powerOfTwoBtn = document.getElementById("powerOfTwo") as HTMLButtonElement;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -77,7 +78,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 currentExpressionDisplay.textContent = currentExpression;
             } else if (buttonText === "Sum") {
                 try {
-                    const numbers = currentExpression.split(/\+|\-|\*|\/|%/g).map(Number).filter(isFinite);
+                    const numbers = currentExpression.split(/\+|-|\*|\/|%/g).map(Number).filter(isFinite);
                     const sum = numbers.reduce((a, b) => a + b, 0);
                     display.value = sum.toString();
                     currentExpression = sum.toString();
@@ -91,6 +92,16 @@ window.addEventListener("DOMContentLoaded", () => {
             } else if (buttonText === ")") {
                 currentExpression += ")";
                 currentExpressionDisplay.textContent = currentExpression;
+            } else if (buttonText === "x^2") {
+                try {
+                    const currentValue = parseFloat(display.value);
+                    const result = Math.pow(currentValue, 2);
+                    display.value = result.toString();
+                    currentExpression += `(${currentValue}^2)`;
+                    currentExpressionDisplay.textContent = currentExpression;
+                } catch (error) {
+                    display.value = "Error";
+                }
             }
            
         });
