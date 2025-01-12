@@ -27,12 +27,13 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryStoreBtn = document.getElementById("memoryStore") as HTMLButtonElement;
     const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement;
     const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement;
-  const roundBtn = document.getElementById("round") as HTMLButtonElement;
-  const floorBtn = document.getElementById("floor") as HTMLButtonElement; // Get the floor button
-  const randomBtn = document.getElementById("random") as HTMLButtonElement;
-  const cubeBtn = document.getElementById("cube") as HTMLButtonElement;
-  const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
-  const ceilBtn = document.getElementById("ceil") as HTMLButtonElement;
+    const roundBtn = document.getElementById("round") as HTMLButtonElement;
+    const floorBtn = document.getElementById("floor") as HTMLButtonElement; // Get the floor button
+    const randomBtn = document.getElementById("random") as HTMLButtonElement;
+    const cubeBtn = document.getElementById("cube") as HTMLButtonElement;
+    const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
+    const ceilBtn = document.getElementById("ceil") as HTMLButtonElement;
+    const signChangeBtn = document.getElementById("signChange") as HTMLButtonElement;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -45,23 +46,9 @@ window.addEventListener("DOMContentLoaded", () => {
             if (buttonText === "Cube") {
                 // ... existing cube logic
             } else if (buttonText === "1/x") {
-                try {
-                    const num = parseFloat(currentExpression);
-                    currentExpression = (1/num).toString();
-                    display.value = currentExpression;
-                } catch (error) {
-                    display.value = "Error";
-                    currentExpression = "";
-                }
-            //Ceil function
+                // ... existing inverse logic
             } else if (buttonText === "Ceil"){
-                try{
-                currentExpression = Math.ceil(parseFloat(currentExpression)).toString();
-                display.value = currentExpression;
-                } catch (error) {
-                    display.value = "Error";
-                    currentExpression = "";
-                }
+                // ... existing ceil logic
             } else if (buttonText === "Ans") {
                 // ... existing Ans logic
             } else if (buttonText === "MS") {
@@ -70,7 +57,17 @@ window.addEventListener("DOMContentLoaded", () => {
                 // ... existing MR logic
             } else if (buttonText === "MC") {
                 // ... existing MC logic
-            // ... other button logic
+            } else if (buttonText === "+/-") {
+                try {
+                    const num = parseFloat(currentExpression);
+                    currentExpression = (-num).toString();
+                    display.value = currentExpression;
+                } catch (error) {
+                    display.value = "Error";
+                    currentExpression = "";
+                }
+            } else { 
+                // ... other button logic
             }
         });
     });
