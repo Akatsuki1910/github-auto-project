@@ -74,6 +74,10 @@ window.addEventListener("DOMContentLoaded", () => {
             } else if (buttonText === "Round"){
                 currentExpression = Math.round(parseFloat(currentExpression)).toString();
                 display.value = currentExpression;
+            } else if (buttonText === "sin") {
+                currentExpression += "Math.sin(";
+                display.value = currentExpression;
+                isParenthesisOpen = true; // Ensure parenthesis is open after sin
             } else if (buttonText === "=") {
                 try {
                     previousAnswer = eval(currentExpression).toString();
