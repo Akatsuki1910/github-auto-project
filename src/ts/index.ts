@@ -42,6 +42,16 @@ window.addEventListener("DOMContentLoaded", () => {
                 currentExpressionDisplay.textContent = currentExpression;
             } else if (buttonText === "MC"){
                 memory = 0;
+            } else if (buttonText === "ln") {
+                try {
+                    const currentValue = parseFloat(display.value);
+                    const result = Math.log(currentValue);
+                    display.value = result.toString();
+                    currentExpression += `ln(${currentValue})`;
+                    currentExpressionDisplay.textContent = currentExpression;
+                } catch (error) {
+                    display.value = "Error";
+                }
             }
              // ...other button logic   
            
