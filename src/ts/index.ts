@@ -15,8 +15,14 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... existing event listeners
     // ... existing functions
 
-    // ... existing variables
+    let currentExpression = "";
+    const display = document.getElementById("display") as HTMLInputElement;
+    const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
     const clearEntryBtn = document.getElementById("clearEntry") as HTMLButtonElement;
+    let memory = 0;
+    const memoryStoreBtn = document.getElementById("memoryStore") as HTMLButtonElement;
+    const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement;
+    const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -28,6 +34,14 @@ window.addEventListener("DOMContentLoaded", () => {
                 currentExpression = "";
                 display.value = "0";
                 currentExpressionDisplay.textContent = "";
+            } else if (buttonText === "MS"){
+                memory = parseFloat(display.value);
+            } else if (buttonText === "MR"){
+                display.value = memory.toString();
+                currentExpression += memory;
+                currentExpressionDisplay.textContent = currentExpression;
+            } else if (buttonText === "MC"){
+                memory = 0;
             }
              // ...other button logic   
            
