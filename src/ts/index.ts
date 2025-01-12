@@ -30,6 +30,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const powerOfTwoBtn = document.getElementById("powerOfTwo") as HTMLButtonElement;
     const toggleThemeBtn = document.getElementById("toggleTheme") as HTMLButtonElement;
     const clearAllBtn = document.getElementById("clearAll") as HTMLButtonElement;
+    const duplicateBtn = document.getElementById("duplicate") as HTMLButtonElement;
     let isDarkTheme = false;
 
     const buttons = document.querySelectorAll("button");
@@ -48,6 +49,10 @@ window.addEventListener("DOMContentLoaded", () => {
                 display.value = "";
                 currentExpression = "";
                 currentExpressionDisplay.textContent = "";
+            } else if (buttonText === "Dup"){
+                if (display.value) {
+                   display.value += display.value;
+                }
             }
             // ... (Rest of the existing button logic)
         });
