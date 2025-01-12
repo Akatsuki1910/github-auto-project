@@ -22,6 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const toggleThemeBtn = document.getElementById("toggleTheme") as HTMLButtonElement;
     const parenthesesBtn = document.getElementById("parentheses") as HTMLButtonElement; // Parentheses button
     const eulerBtn = document.getElementById("euler") as HTMLButtonElement; // Euler's number button
+    const randomBtn = document.getElementById("random") as HTMLButtonElement; // Random number button
     let openParentheses = 0;
 
     const buttons = document.querySelectorAll("button");
@@ -43,6 +44,10 @@ window.addEventListener("DOMContentLoaded", () => {
                 document.body.classList.toggle("dark-theme", isDarkTheme);
             } else if (buttonText === "e"){
                 currentExpression += Math.E;
+                currentExpressionDisplay.textContent = currentExpression;
+            } else if (buttonText === "Rand") {
+                const randomNumber = Math.random();
+                currentExpression += randomNumber;
                 currentExpressionDisplay.textContent = currentExpression;
             } else {
               // existing logic
