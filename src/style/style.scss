@@ -35,3 +35,14 @@ button {
   max-height: 200px; /* Limit height */
   overflow-y: auto; /* Add scroll if needed */
 }
+
+#currentExpressionDisplay{
+   grid-column: span 4;
+  padding: 5px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  text-align: right;
+  margin-top: 5px;
+  margin-bottom: 5px; /* Add margin */
+}
