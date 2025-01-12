@@ -57,7 +57,17 @@ window.addEventListener("DOMContentLoaded", () => {
                 display.value = eValue.toString();
                 currentExpression += eValue;
                 currentExpressionDisplay.textContent = currentExpression;
-            } 
+            } else if (buttonText === "10x") {
+                try {
+                  const currentValue = parseFloat(display.value);
+                  const result = Math.pow(10, currentValue);
+                  display.value = result.toString();
+                  currentExpression += `10^(${currentValue})`;
+                  currentExpressionDisplay.textContent = currentExpression;
+                } catch (error) {
+                    display.value = "Error";
+                }
+              }
              // ...other button logic   
            
         });
