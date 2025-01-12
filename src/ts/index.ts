@@ -86,6 +86,10 @@ window.addEventListener("DOMContentLoaded", () => {
                 currentExpression += "Math.tan(";
                 display.value = currentExpression;
                 isParenthesisOpen = true;
+            } else if (buttonText === "|x|") {
+                currentExpression += "Math.abs(";  // Add abs function
+                display.value = currentExpression;  // Update display
+                isParenthesisOpen = true;
             } else if (buttonText === "=") {
                 try {
                     previousAnswer = eval(currentExpression).toString();
