@@ -34,6 +34,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
     const ceilBtn = document.getElementById("ceil") as HTMLButtonElement;
     const signChangeBtn = document.getElementById("signChange") as HTMLButtonElement;
+    const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
+    const currentExpressionBtn = document.getElementById("currentExpressionBtn") as HTMLButtonElement;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -62,15 +64,19 @@ window.addEventListener("DOMContentLoaded", () => {
                     const num = parseFloat(currentExpression);
                     currentExpression = (-num).toString();
                     display.value = currentExpression;
+                    currentExpressionDisplay.textContent = currentExpression;
                 } catch (error) {
                     display.value = "Error";
                     currentExpression = "";
+                    currentExpressionDisplay.textContent = "";
                 }
             } else { 
                 // ... other button logic
             }
         });
     });
-
+    currentExpressionBtn.addEventListener("click", () => {
+        currentExpressionDisplay.textContent = currentExpression;
+    });
     // ... existing historyBtn and clearHistoryBtn logic
 });
