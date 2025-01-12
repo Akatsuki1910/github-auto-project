@@ -52,7 +52,12 @@ window.addEventListener("DOMContentLoaded", () => {
                 } catch (error) {
                     display.value = "Error";
                 }
-            }
+            } else if (buttonText === "e") {
+                const eValue = Math.E;
+                display.value = eValue.toString();
+                currentExpression += eValue;
+                currentExpressionDisplay.textContent = currentExpression;
+            } 
              // ...other button logic   
            
         });
