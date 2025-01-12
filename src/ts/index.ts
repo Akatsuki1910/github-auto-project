@@ -29,6 +29,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const rightParenthesisBtn = document.getElementById("right-parenthesis") as HTMLButtonElement;
     const powerOfTwoBtn = document.getElementById("powerOfTwo") as HTMLButtonElement;
     const toggleThemeBtn = document.getElementById("toggleTheme") as HTMLButtonElement;
+    const clearAllBtn = document.getElementById("clearAll") as HTMLButtonElement;
     let isDarkTheme = false;
 
     const buttons = document.querySelectorAll("button");
@@ -42,6 +43,11 @@ window.addEventListener("DOMContentLoaded", () => {
             if (buttonText === "Toggle Theme") {
               isDarkTheme = !isDarkTheme;
                 document.body.classList.toggle("dark-theme", isDarkTheme);
+            } else if (buttonText === "AC") {
+                // Clear all logic
+                display.value = "";
+                currentExpression = "";
+                currentExpressionDisplay.textContent = "";
             }
             // ... (Rest of the existing button logic)
         });
