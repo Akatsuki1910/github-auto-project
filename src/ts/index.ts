@@ -23,6 +23,10 @@ window.addEventListener("DOMContentLoaded", () => {
     const historyDiv = document.getElementById("history") as HTMLDivElement;
     const historyBtn = document.getElementById("historyBtn") as HTMLButtonElement;
     const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;
+    let memoryValue = 0;
+    const memoryStoreBtn = document.getElementById("memoryStore") as HTMLButtonElement;
+    const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement;
+    const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -34,6 +38,16 @@ window.addEventListener("DOMContentLoaded", () => {
             if (buttonText === "Ans") {
                 currentExpression += previousAnswer;
                 display.value = currentExpression;
+            //Memory Store
+            } else if (buttonText === "MS") {
+                memoryValue = parseFloat(display.value);
+            //Memory Recall
+            } else if (buttonText === "MR") {
+                currentExpression += memoryValue;
+                display.value = currentExpression;      
+            //Memory Clear
+            } else if (buttonText === "MC") {
+                memoryValue = 0;   
             } else if (buttonText === "()") {
               // ... existing parenthesis logic
             } else if (buttonText === "!") {
