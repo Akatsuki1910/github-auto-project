@@ -27,6 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryStoreBtn = document.getElementById("memoryStore") as HTMLButtonElement;
     const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement;
     const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement;
+  const roundBtn = document.getElementById("round") as HTMLButtonElement;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -70,6 +71,9 @@ window.addEventListener("DOMContentLoaded", () => {
                     .catch((err) => {
                         console.error("Failed to copy: ", err);
                     });
+            } else if (buttonText === "Round"){
+                currentExpression = Math.round(parseFloat(currentExpression)).toString();
+                display.value = currentExpression;
             } else if (buttonText === "=") {
                 try {
                     previousAnswer = eval(currentExpression).toString();
