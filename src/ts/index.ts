@@ -23,6 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryStoreBtn = document.getElementById("memoryStore") as HTMLButtonElement;
     const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement;
     const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement;
+    const modBtn = document.getElementById("mod") as HTMLButtonElement;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -67,7 +68,10 @@ window.addEventListener("DOMContentLoaded", () => {
                 } catch (error) {
                     display.value = "Error";
                 }
-              }
+              } else if (buttonText === "Mod"){
+                currentExpression += "%";
+                currentExpressionDisplay.textContent = currentExpression;
+            }
              // ...other button logic   
            
         });
