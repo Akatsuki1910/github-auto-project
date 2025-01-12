@@ -22,6 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const history: string[] = [];
     const historyDiv = document.getElementById("history") as HTMLDivElement;
     const historyBtn = document.getElementById("historyBtn") as HTMLButtonElement;
+    const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -80,5 +81,11 @@ window.addEventListener("DOMContentLoaded", () => {
           historyDiv.appendChild(p);
         });
         historyDiv.style.display = "block";
+    });
+
+    clearHistoryBtn.addEventListener("click", () => {
+        history.length = 0; // Clear history array
+        historyDiv.innerHTML = ""; // Clear history display
+        historyDiv.style.display = "none"; // Hide the history div
     });
 });
