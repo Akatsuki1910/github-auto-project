@@ -37,6 +37,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
     const currentExpressionBtn = document.getElementById("currentExpressionBtn") as HTMLButtonElement;
     const copyBtn = document.getElementById("copy") as HTMLButtonElement;
+    const deleteBtn = document.getElementById("delete") as HTMLButtonElement;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -57,7 +58,11 @@ window.addEventListener("DOMContentLoaded", () => {
                   console.error("Failed to copy: ", err);
                   alert("Failed to copy.");
                 });
-            }
+            } else if (buttonText === "Del") {
+                currentExpression = currentExpression.slice(0, -1);
+                display.value = currentExpression;
+                currentExpressionDisplay.textContent = currentExpression; 
+           }
             
             if (buttonText === "Cube") {
                 // ... existing cube logic
