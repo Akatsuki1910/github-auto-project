@@ -32,6 +32,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const randomBtn = document.getElementById("random") as HTMLButtonElement;
   const cubeBtn = document.getElementById("cube") as HTMLButtonElement;
   const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
+  const ceilBtn = document.getElementById("ceil") as HTMLButtonElement;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -48,6 +49,15 @@ window.addEventListener("DOMContentLoaded", () => {
                     const num = parseFloat(currentExpression);
                     currentExpression = (1/num).toString();
                     display.value = currentExpression;
+                } catch (error) {
+                    display.value = "Error";
+                    currentExpression = "";
+                }
+            //Ceil function
+            } else if (buttonText === "Ceil"){
+                try{
+                currentExpression = Math.ceil(parseFloat(currentExpression)).toString();
+                display.value = currentExpression;
                 } catch (error) {
                     display.value = "Error";
                     currentExpression = "";
