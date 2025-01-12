@@ -44,6 +44,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
             // ... (Existing button handling logic)
             //Ans button functionality
+            if (buttonText === "Copy") {
+                navigator.clipboard.writeText(display.value).then(() => {
+                  alert("Copied to clipboard: " + display.value);
+                })
+                .catch(err => {
+                  console.error("Failed to copy: ", err);
+                  alert("Failed to copy.");
+                });
+            }
             
             if (buttonText === "Cube") {
                 // ... existing cube logic
