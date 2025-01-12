@@ -46,3 +46,14 @@ button {
   margin-top: 5px;
   margin-bottom: 5px; /* Add margin */
 }
+
+body {
+    background-color: #fff;
+    color: #000;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme {
+    background-color: #333;
+    color: #fff;
+}
