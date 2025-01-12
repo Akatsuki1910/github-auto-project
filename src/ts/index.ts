@@ -25,6 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const squareRootBtn = document.getElementById("squareRoot") as HTMLButtonElement;
     const percentageBtn = document.getElementById("percentage") as HTMLButtonElement;
     const piBtn = document.getElementById("pi") as HTMLButtonElement;
+    const powerBtn = document.getElementById("power") as HTMLButtonElement;
     let isDarkTheme = false;
 
     const buttons = document.querySelectorAll("button");
@@ -69,6 +70,14 @@ window.addEventListener("DOMContentLoaded", () => {
                   }
               } else if (buttonText === "π") {
                 display.value += Math.PI.toString();
+            } else if (buttonText === "x²") {
+                try {
+                  const currentValue = parseFloat(display.value);
+                  const result = Math.pow(currentValue, 2);
+                  display.value = result.toString();
+                } catch (error) {
+                  display.value = "Error";
+                }
             }
             // ... (Rest of the existing button logic)
         });
