@@ -19,18 +19,10 @@ window.addEventListener("DOMContentLoaded", () => {
     const display = document.getElementById("display") as HTMLInputElement;
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
     const clearEntryBtn = document.getElementById("clearEntry") as HTMLButtonElement;
-    let memory = 0;
-    const memoryStoreBtn = document.getElementById("memoryStore") as HTMLButtonElement;
-    const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement;
-    const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement;
-    const modBtn = document.getElementById("mod") as HTMLButtonElement;
-    const sumBtn = document.getElementById("sum") as HTMLButtonElement;
-    const leftParenthesisBtn = document.getElementById("left-parenthesis") as HTMLButtonElement;
-    const rightParenthesisBtn = document.getElementById("right-parenthesis") as HTMLButtonElement;
-    const powerOfTwoBtn = document.getElementById("powerOfTwo") as HTMLButtonElement;
     const toggleThemeBtn = document.getElementById("toggleTheme") as HTMLButtonElement;
     const clearAllBtn = document.getElementById("clearAll") as HTMLButtonElement;
     const duplicateBtn = document.getElementById("duplicate") as HTMLButtonElement;
+    const squareRootBtn = document.getElementById("squareRoot") as HTMLButtonElement;
     let isDarkTheme = false;
 
     const buttons = document.querySelectorAll("button");
@@ -52,6 +44,18 @@ window.addEventListener("DOMContentLoaded", () => {
             } else if (buttonText === "Dup"){
                 if (display.value) {
                    display.value += display.value;
+                }
+            } else if (buttonText === "√") {
+                try {
+                    const currentValue = parseFloat(display.value);
+                    if (currentValue < 0) {
+                        display.value = "Invalid Input";
+                    } else {
+                        const result = Math.sqrt(currentValue);
+                        display.value = result.toString();
+                    }
+                } catch (error) {
+                    display.value = "Error";
                 }
             }
             // ... (Rest of the existing button logic)
