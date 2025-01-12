@@ -29,6 +29,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement;
   const roundBtn = document.getElementById("round") as HTMLButtonElement;
   const floorBtn = document.getElementById("floor") as HTMLButtonElement; // Get the floor button
+  const randomBtn = document.getElementById("random") as HTMLButtonElement;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -85,6 +86,9 @@ window.addEventListener("DOMContentLoaded", () => {
                 // ... existing abs logic
             } else if (buttonText === "Floor") {
                 currentExpression = Math.floor(parseFloat(currentExpression)).toString();
+                display.value = currentExpression;
+            } else if (buttonText === "Random") {
+                currentExpression += Math.random();
                 display.value = currentExpression;
             } else if (buttonText === "=") {
               // ... existing equals logic
