@@ -24,6 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement;
     const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement;
     const modBtn = document.getElementById("mod") as HTMLButtonElement;
+    const sumBtn = document.getElementById("sum") as HTMLButtonElement;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -31,6 +32,7 @@ window.addEventListener("DOMContentLoaded", () => {
             const buttonText = button.textContent;
 
             // ... (Existing button handling logic)
+            // ... other button logic   
             if (buttonText === "CE") {
                 currentExpression = "";
                 display.value = "0";
@@ -71,8 +73,17 @@ window.addEventListener("DOMContentLoaded", () => {
               } else if (buttonText === "Mod"){
                 currentExpression += "%";
                 currentExpressionDisplay.textContent = currentExpression;
+            } else if (buttonText === "Sum") {
+                try {
+                    const numbers = currentExpression.split(/\+|\-|\*|\/|%/g).map(Number).filter(isFinite);
+                    const sum = numbers.reduce((a, b) => a + b, 0);
+                    display.value = sum.toString();
+                    currentExpression = sum.toString();
+                    currentExpressionDisplay.textContent = currentExpression;
+                } catch (error) {
+                    display.value = "Error";
+                }
             }
-             // ...other button logic   
            
         });
     });
