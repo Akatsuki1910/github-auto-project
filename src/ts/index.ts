@@ -24,6 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const eulerBtn = document.getElementById("euler") as HTMLButtonElement; // Euler's number button
     const randomBtn = document.getElementById("random") as HTMLButtonElement; // Random number button
     let openParentheses = 0;
+    const sinBtn = document.getElementById("sin") as HTMLButtonElement; //sin button
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -48,6 +49,10 @@ window.addEventListener("DOMContentLoaded", () => {
             } else if (buttonText === "Rand") {
                 const randomNumber = Math.random();
                 currentExpression += randomNumber;
+                currentExpressionDisplay.textContent = currentExpression;
+            } else if (buttonText === "sin") {
+                currentExpression += "Math.sin(";
+                openParentheses++;
                 currentExpressionDisplay.textContent = currentExpression;
             } else {
               // existing logic
