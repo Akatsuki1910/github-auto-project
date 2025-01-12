@@ -36,6 +36,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const signChangeBtn = document.getElementById("signChange") as HTMLButtonElement;
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
     const currentExpressionBtn = document.getElementById("currentExpressionBtn") as HTMLButtonElement;
+    const copyBtn = document.getElementById("copy") as HTMLButtonElement;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -46,7 +47,11 @@ window.addEventListener("DOMContentLoaded", () => {
             //Ans button functionality
             if (buttonText === "Copy") {
                 navigator.clipboard.writeText(display.value).then(() => {
-                  alert("Copied to clipboard: " + display.value);
+                  //alert("Copied to clipboard: " + display.value);
+                    display.value = "Copied!";
+                    setTimeout(() => {
+                        display.value = currentExpression; // Restore original display value
+                     },500); // Display "Copied!" message for a short time
                 })
                 .catch(err => {
                   console.error("Failed to copy: ", err);
