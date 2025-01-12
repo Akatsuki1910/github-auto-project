@@ -24,6 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const duplicateBtn = document.getElementById("duplicate") as HTMLButtonElement;
     const squareRootBtn = document.getElementById("squareRoot") as HTMLButtonElement;
     const percentageBtn = document.getElementById("percentage") as HTMLButtonElement;
+    const piBtn = document.getElementById("pi") as HTMLButtonElement;
     let isDarkTheme = false;
 
     const buttons = document.querySelectorAll("button");
@@ -58,7 +59,7 @@ window.addEventListener("DOMContentLoaded", () => {
                 } catch (error) {
                     display.value = "Error";
                 }
-            } else if (buttonText === "%'") {
+            } else if (buttonText === "%") {
                   try {
                     const currentValue = parseFloat(display.value);
                     const percentage = currentValue / 100; // Percentage logic
@@ -66,7 +67,9 @@ window.addEventListener("DOMContentLoaded", () => {
                   } catch (error) {
                     display.value = "Error";
                   }
-              }
+              } else if (buttonText === "π") {
+                display.value += Math.PI.toString();
+            }
             // ... (Rest of the existing button logic)
         });
     });
