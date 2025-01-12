@@ -27,6 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const piBtn = document.getElementById("pi") as HTMLButtonElement;
     const powerBtn = document.getElementById("power") as HTMLButtonElement;
     const factorialBtn = document.getElementById("factorial") as HTMLButtonElement;
+    const signBtn = document.getElementById("sign") as HTMLButtonElement;
     let isDarkTheme = false;
 
     const buttons = document.querySelectorAll("button");
@@ -68,6 +69,11 @@ window.addEventListener("DOMContentLoaded", () => {
                     }
                 } catch (error) {
                     display.value = "Error";
+                }
+            } else if (buttonText === "Sign") {
+                const currentValue = parseFloat(display.value);
+                if (!isNaN(currentValue)) {
+                    display.value = (-currentValue).toString();
                 }
             }
             // ... (Rest of the existing button logic)
