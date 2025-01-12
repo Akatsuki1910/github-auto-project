@@ -25,6 +25,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement;
     const modBtn = document.getElementById("mod") as HTMLButtonElement;
     const sumBtn = document.getElementById("sum") as HTMLButtonElement;
+    const leftParenthesisBtn = document.getElementById("left-parenthesis") as HTMLButtonElement;
+    const rightParenthesisBtn = document.getElementById("right-parenthesis") as HTMLButtonElement;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -83,6 +85,12 @@ window.addEventListener("DOMContentLoaded", () => {
                 } catch (error) {
                     display.value = "Error";
                 }
+            } else if (buttonText === "(") {
+                currentExpression += "(";
+                currentExpressionDisplay.textContent = currentExpression;            
+            } else if (buttonText === ")") {
+                currentExpression += ")";
+                currentExpressionDisplay.textContent = currentExpression;
             }
            
         });
