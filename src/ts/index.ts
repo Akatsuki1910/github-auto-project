@@ -78,6 +78,10 @@ window.addEventListener("DOMContentLoaded", () => {
                 currentExpression += "Math.sin(";
                 display.value = currentExpression;
                 isParenthesisOpen = true; // Ensure parenthesis is open after sin
+            } else if (buttonText === "cos") {
+                currentExpression += "Math.cos(";
+                display.value = currentExpression;
+                isParenthesisOpen = true;
             } else if (buttonText === "=") {
                 try {
                     previousAnswer = eval(currentExpression).toString();
