@@ -26,6 +26,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const percentageBtn = document.getElementById("percentage") as HTMLButtonElement;
     const piBtn = document.getElementById("pi") as HTMLButtonElement;
     const powerBtn = document.getElementById("power") as HTMLButtonElement;
+    const factorialBtn = document.getElementById("factorial") as HTMLButtonElement;
     let isDarkTheme = false;
 
     const buttons = document.querySelectorAll("button");
@@ -49,38 +50,35 @@ window.addEventListener("DOMContentLoaded", () => {
                    display.value += display.value;
                 }
             } else if (buttonText === "√") {
+                // ... existing square root logic
+            } else if (buttonText === "%") {
+                  // ... existing percentage logic
+              } else if (buttonText === "π") {
+                // ... existing pi logic
+            } else if (buttonText === "x²") {
+                // ... existing power logic
+            } else if (buttonText === "x!") {
                 try {
                     const currentValue = parseFloat(display.value);
                     if (currentValue < 0) {
                         display.value = "Invalid Input";
                     } else {
-                        const result = Math.sqrt(currentValue);
+                        const result = factorial(currentValue);
                         display.value = result.toString();
                     }
                 } catch (error) {
                     display.value = "Error";
                 }
-            } else if (buttonText === "%") {
-                  try {
-                    const currentValue = parseFloat(display.value);
-                    const percentage = currentValue / 100; // Percentage logic
-                    display.value = percentage.toString();
-                  } catch (error) {
-                    display.value = "Error";
-                  }
-              } else if (buttonText === "π") {
-                display.value += Math.PI.toString();
-            } else if (buttonText === "x²") {
-                try {
-                  const currentValue = parseFloat(display.value);
-                  const result = Math.pow(currentValue, 2);
-                  display.value = result.toString();
-                } catch (error) {
-                  display.value = "Error";
-                }
             }
             // ... (Rest of the existing button logic)
         });
     });
+
+    function factorial(n: number): number {
+        if (n === 0) {
+            return 1;
+        }
+        return n * factorial(n - 1);
+    }
     // ...existing logic
 });
