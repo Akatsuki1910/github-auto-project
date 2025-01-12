@@ -28,6 +28,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const powerBtn = document.getElementById("power") as HTMLButtonElement;
     const factorialBtn = document.getElementById("factorial") as HTMLButtonElement;
     const signBtn = document.getElementById("sign") as HTMLButtonElement;
+    const inverseBtn = document.getElementById("inverse") as HTMLButtonElement; // Inverse button
     let isDarkTheme = false;
 
     const buttons = document.querySelectorAll("button");
@@ -74,6 +75,17 @@ window.addEventListener("DOMContentLoaded", () => {
                 const currentValue = parseFloat(display.value);
                 if (!isNaN(currentValue)) {
                     display.value = (-currentValue).toString();
+                }
+            } else if (buttonText === "1/x") { // Inverse functionality
+                try {
+                    const currentValue = parseFloat(display.value);
+                    if (currentValue === 0) {
+                        display.value = "Cannot divide by zero";
+                    } else {
+                        display.value = (1 / currentValue).toString();
+                    }
+                } catch (error) {
+                    display.value = "Error";
                 }
             }
             // ... (Rest of the existing button logic)
