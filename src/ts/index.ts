@@ -18,6 +18,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const display = document.getElementById("display") as HTMLInputElement;
     let currentExpression = "";
     let isParenthesisOpen = false;
+    let previousAnswer = "";
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -25,7 +26,11 @@ window.addEventListener("DOMContentLoaded", () => {
             const buttonText = button.textContent;
 
             // ... (Existing button handling logic)
-            else if (buttonText === "()") {
+            //Ans button functionality
+            if (buttonText === "Ans") {
+                currentExpression += previousAnswer;
+                display.value = currentExpression;
+            } else if (buttonText === "()") {
                 if (!isParenthesisOpen) {
                     currentExpression += "(";
                     isParenthesisOpen = true;
@@ -34,8 +39,7 @@ window.addEventListener("DOMContentLoaded", () => {
                     isParenthesisOpen = false;
                 }
                 display.value = currentExpression;
-            }
-else if (buttonText === "!") {
+            } else if (buttonText === "!") {
                 try {
                     const currentNumber = parseFloat(currentExpression);
                     if (currentNumber < 0 || !Number.isInteger(currentNumber)) {
@@ -85,6 +89,19 @@ else if (buttonText === "!") {
               } catch (error) {
                 display.value = "Error";
                 currentExpression = "";
+              }
+            }
+            // ... rest of button logic
+
+            // ... existing functions
+            else if (buttonText === "=") {
+              try {
+                previousAnswer = eval(currentExpression).toString();
+                display.value = previousAnswer;
+                currentExpression = previousAnswer; // Update for next calculation
+              } catch (error) {
+                display.value = "Error";
+                currentExpression = ""; // Clear on error
               }
             }
         });
