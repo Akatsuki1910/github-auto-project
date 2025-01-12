@@ -30,6 +30,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const roundBtn = document.getElementById("round") as HTMLButtonElement;
   const floorBtn = document.getElementById("floor") as HTMLButtonElement; // Get the floor button
   const randomBtn = document.getElementById("random") as HTMLButtonElement;
+  const cubeBtn = document.getElementById("cube") as HTMLButtonElement;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -38,7 +39,17 @@ window.addEventListener("DOMContentLoaded", () => {
 
             // ... (Existing button handling logic)
             //Ans button functionality
-            if (buttonText === "Ans") {
+            
+            if (buttonText === "Cube") {
+                try {
+                    const num = parseFloat(currentExpression);
+                    currentExpression = Math.pow(num,3).toString();
+                    display.value = currentExpression;  
+                } catch (error) {
+                    display.value = "Error";
+                    currentExpression = "";
+                }
+            } else if (buttonText === "Ans") {
                 currentExpression += previousAnswer;
                 display.value = currentExpression;
             //Memory Store
