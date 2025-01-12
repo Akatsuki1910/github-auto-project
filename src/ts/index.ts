@@ -23,6 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const clearAllBtn = document.getElementById("clearAll") as HTMLButtonElement;
     const duplicateBtn = document.getElementById("duplicate") as HTMLButtonElement;
     const squareRootBtn = document.getElementById("squareRoot") as HTMLButtonElement;
+    const percentageBtn = document.getElementById("percentage") as HTMLButtonElement;
     let isDarkTheme = false;
 
     const buttons = document.querySelectorAll("button");
@@ -57,7 +58,15 @@ window.addEventListener("DOMContentLoaded", () => {
                 } catch (error) {
                     display.value = "Error";
                 }
-            }
+            } else if (buttonText === "%'") {
+                  try {
+                    const currentValue = parseFloat(display.value);
+                    const percentage = currentValue / 100; // Percentage logic
+                    display.value = percentage.toString();
+                  } catch (error) {
+                    display.value = "Error";
+                  }
+              }
             // ... (Rest of the existing button logic)
         });
     });
