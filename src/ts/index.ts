@@ -29,6 +29,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const logBtn = document.getElementById("log") as HTMLButtonElement; //log button
     const expBtn = document.getElementById("exp") as HTMLButtonElement; // Exponential function button
     const absBtn = document.getElementById("abs") as HTMLButtonElement; // Absolute value button
+    const sqrtBtn = document.getElementById("sqrt") as HTMLButtonElement; // Square Root button
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -56,6 +57,15 @@ window.addEventListener("DOMContentLoaded", () => {
                 currentExpression += "Math.abs(";
                 openParentheses++;
                 currentExpressionDisplay.textContent = currentExpression;
+            } else if (buttonText === "√x") {
+                try {
+                    const result = Math.sqrt(eval(currentExpression));
+                    display.value = result.toString();
+                    currentExpression = result.toString();
+                    currentExpressionDisplay.textContent = currentExpression; 
+                } catch (error) {
+                    display.value = "Error";
+                }
             } else {
               // existing logic
             }
