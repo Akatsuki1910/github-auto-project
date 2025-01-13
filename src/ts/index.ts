@@ -39,13 +39,22 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement; // Memory Recall
     const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement; // Memory Clear
     const memoryAddBtn = document.getElementById("memoryAdd") as HTMLButtonElement; // Memory Add
+      const percentBtn = document.getElementById("percent") as HTMLButtonElement; // Percent button
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
             const buttonText = button.textContent;
             // ... existing logic
-            if (buttonText === "MS") {
+              if (buttonText === "%") {
+                const currentValue = parseFloat(display.value);
+                const percentValue = currentValue / 100;
+                display.value = percentValue.toString();
+                currentExpression = percentValue.toString();
+                currentExpressionDisplay.textContent = currentExpression;
+            }
+            // ... existing logic
+                else if (buttonText === "MS") {
                 memoryValue = parseFloat(display.value);
             } else if (buttonText === "MR") {
                 display.value = memoryValue.toString();
