@@ -94,17 +94,34 @@ window.addEventListener("DOMContentLoaded", () => {
                 currentExpression = `${currentValue}²`;
                 currentExpressionDisplay.textContent = currentExpression;
             }
+            if (buttonText === "!") {
+                const currentValue = parseFloat(display.value);
+                if (Number.isInteger(currentValue) && currentValue >= 0) {
+                  const factorial = calculateFactorial(currentValue);
+                  display.value = factorial.toString();
+                  currentExpression = `${currentValue}!`; // Update currentExpression for history
+                  currentExpressionDisplay.textContent = currentExpression;
+                } else {
+                  display.value = "Error: Invalid Input for Factorial";
+                }
+              }
 
             // Percentage button logic
-            if (buttonText === "%&&") {
+            if (buttonText === "%") {
               const currentValue = parseFloat(display.value);
               const percentageValue = currentValue / 100;
               display.value = percentageValue.toString();
-              currentExpression += "%&&"; // Or adjust how you want to display it in history
+              currentExpression += "%"; // Or adjust how you want to display it in history
               currentExpressionDisplay.textContent = currentExpression;
             }
         });
     });
+    function calculateFactorial(n: number): number {
+      if (n === 0) {
+        return 1;
+      }
+      return n * calculateFactorial(n - 1);
+    }
 
     // ... Existing memory button event listeners
 
