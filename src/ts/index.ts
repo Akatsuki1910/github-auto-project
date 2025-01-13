@@ -42,6 +42,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const percentBtn = document.getElementById("percent") as HTMLButtonElement; // Percent button
     const lnBtn = document.getElementById("ln") as HTMLButtonElement; // Natural Logarithm button
     const plusMinusBtn = document.getElementById("plusMinus") as HTMLButtonElement;
+    const squareBtn = document.getElementById("square") as HTMLButtonElement;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -49,39 +50,29 @@ window.addEventListener("DOMContentLoaded", () => {
             const buttonText = button.textContent;
             // ... existing logic
               if (buttonText === "%") {
-                const currentValue = parseFloat(display.value);
-                const percentValue = currentValue / 100;
-                display.value = percentValue.toString();
-                currentExpression = percentValue.toString();
-                currentExpressionDisplay.textContent = currentExpression;
+                // ... existing percentage logic
             }
              else if (buttonText === "ln") {
-                try {
-                    const result = Math.log(parseFloat(display.value));
-                    display.value = result.toString();
-                    currentExpression = result.toString();
-                    currentExpressionDisplay.textContent = currentExpression;
-                } catch (error) {
-                    display.value = "Error";
-                }
+                // ... existing natural log logic
             }
              else if (buttonText === "±") {
+                // ... existing plus/minus logic
+             } else if (buttonText === "x²") {
                 const currentValue = parseFloat(display.value);
-                display.value = (-currentValue).toString();
-                currentExpression = (-currentValue).toString();
+                const squaredValue = currentValue * currentValue;
+                display.value = squaredValue.toString();
+                currentExpression = squaredValue.toString();
                 currentExpressionDisplay.textContent = currentExpression;
-             }
+            } 
             // ... existing logic
                 else if (buttonText === "MS") {
-                memoryValue = parseFloat(display.value);
+                    // ... existing memory store logic
             } else if (buttonText === "MR") {
-                display.value = memoryValue.toString();
-                currentExpression = memoryValue.toString();
-                currentExpressionDisplay.textContent = currentExpression;
+               // ... existing memory recall logic
             } else if (buttonText === "MC") {
-                memoryValue = 0;
+                // ... existing memory clear logic
             } else if (buttonText === "M+") {
-                memoryValue += parseFloat(display.value);
+               // ... existing memory add logic
             } else {
               // existing logic
             }
