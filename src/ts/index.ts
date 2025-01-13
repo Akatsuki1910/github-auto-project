@@ -23,7 +23,11 @@ window.addEventListener("DOMContentLoaded", () => {
     const toggleThemeBtn = document.getElementById("toggleTheme") as HTMLButtonElement;
     const memoryPlusBtn = document.getElementById("memoryPlus") as HTMLButtonElement;
     const memorySubtractBtn = document.getElementById("memorySubtract") as HTMLButtonElement; // Added M- button
-     const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement;
+    const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement;
+    const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement;
+    const history = document.getElementById("history") as HTMLDivElement;
+ const historyBtn = document.getElementById("historyBtn") as HTMLButtonElement;
+ let historyData: string[] = [];
 
     // ... other buttons
     const signFlipBtn = document.getElementById("signFlip") as HTMLButtonElement;
@@ -42,7 +46,7 @@ window.addEventListener("DOMContentLoaded", () => {
            // ... other logic
         });
     });
-     memoryPlusBtn.addEventListener("click", () => {
+    memoryPlusBtn.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
         if (!isNaN(currentValue)) {
             memoryValue += currentValue;
@@ -55,11 +59,22 @@ window.addEventListener("DOMContentLoaded", () => {
             memoryValue -= currentValue;
         }
     });
-     memoryRecallBtn.addEventListener("click", () => {
+ memoryRecallBtn.addEventListener("click", () => {
         display.value = memoryValue.toString();
         currentExpression = memoryValue.toString();
         currentExpressionDisplay.textContent = currentExpression;
     });
+    memoryClearBtn.addEventListener("click", () => {
+    memoryValue = 0;
+});
+ historyBtn.addEventListener("click", () => {
+    if (history.style.display === "none" || history.style.display === ""){
+            history.style.display = "block";
+ history.innerHTML = historyData.map(item => `<p>${item}</p>`).join(''); // Display history data
+} else {
+ history.style.display = "none";
+}
+});
 
     // ... existing functions
 });
