@@ -27,6 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const sinBtn = document.getElementById("sin") as HTMLButtonElement; //sin button
     const cosBtn = document.getElementById("cos") as HTMLButtonElement; //cos button
     const logBtn = document.getElementById("log") as HTMLButtonElement; //log button
+    const expBtn = document.getElementById("exp") as HTMLButtonElement; // Exponential function button
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -62,6 +63,10 @@ window.addEventListener("DOMContentLoaded", () => {
                 currentExpressionDisplay.textContent = currentExpression;
             } else if (buttonText === "log") {
                 currentExpression += "Math.log10("; // Use log10 for common logarithm
+                openParentheses++;
+                currentExpressionDisplay.textContent = currentExpression;
+            } else if (buttonText === "exp") {
+                currentExpression += "Math.exp(";
                 openParentheses++;
                 currentExpressionDisplay.textContent = currentExpression;
             } else {
