@@ -29,6 +29,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const historyBtn = document.getElementById("historyBtn") as HTMLButtonElement;
     const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement; // Added Clear History Button
     let historyData: string[] = [];
+    const backspaceBtn = document.getElementById("backspace") as HTMLButtonElement;
 
     // ... other buttons
     const signFlipBtn = document.getElementById("signFlip") as HTMLButtonElement;
@@ -45,7 +46,11 @@ window.addEventListener("DOMContentLoaded", () => {
                 currentExpressionDisplay.textContent = currentExpression;
             }
            // ... other logic
-
+           if (buttonText === "←") {
+                display.value = display.value.slice(0, -1);
+                currentExpression = currentExpression.slice(0, -1);
+                currentExpressionDisplay.textContent = currentExpression; // Update display
+            }
            //Added History Feature
             if (buttonText === "="){
               historyData.push(currentExpression + " = " + display.value);
