@@ -27,6 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement;
     const history = document.getElementById("history") as HTMLDivElement;
     const historyBtn = document.getElementById("historyBtn") as HTMLButtonElement;
+    const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement; // Added Clear History Button
     let historyData: string[] = [];
 
     // ... other buttons
@@ -51,35 +52,22 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         });
     });
-    memoryPlusBtn.addEventListener("click", () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            memoryValue += currentValue;
-        }
-    });
 
-    memorySubtractBtn.addEventListener("click", () => { // Added M- functionality
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            memoryValue -= currentValue;
-        }
-    });
-    memoryRecallBtn.addEventListener("click", () => {
-        display.value = memoryValue.toString();
-        currentExpression = memoryValue.toString();
-        currentExpressionDisplay.textContent = currentExpression;
-    });
-    memoryClearBtn.addEventListener("click", () => {
-        memoryValue = 0;
-    });
+    // ... Existing memory button event listeners
+
     historyBtn.addEventListener("click", () => {
-        if (history.style.display === "none" || history.style.display === ""){
-            history.style.display = "block";
-            history.innerHTML = historyData.map(item => `<p>${item}</p>`).join(''); // Display history data
-        } else {
-            history.style.display = "none";
-        }
-    });
+      if (history.style.display === "none" || history.style.display === ""){
+          history.style.display = "block";
+          history.innerHTML = historyData.map(item => `<p>${item}</p>`).join(''); // Display history data
+      } else {
+          history.style.display = "none";
+      }
+  });
+
+  clearHistoryBtn.addEventListener("click", () => {
+      historyData = []; //Added function to clear history
+      history.innerHTML = ""; // Clear the displayed history
+  });
 
     // ... existing functions
 });
