@@ -37,6 +37,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... other buttons
     const signFlipBtn = document.getElementById("signFlip") as HTMLButtonElement;
     const percentButton = document.getElementById("percent") as HTMLButtonElement;
+    const cubeRootBtn = document.getElementById("cubeRoot") as HTMLButtonElement; //Added Cube Root Button
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -113,6 +114,17 @@ window.addEventListener("DOMContentLoaded", () => {
               display.value = percentageValue.toString();
               currentExpression += "%"; // Or adjust how you want to display it in history
               currentExpressionDisplay.textContent = currentExpression;
+            }
+             if (buttonText === "∛x") {
+                try {
+                    const currentValue = parseFloat(display.value);
+                    const cubeRootValue = Math.cbrt(currentValue);
+                    display.value = cubeRootValue.toString();
+                    currentExpression = `∛(${currentValue})`;
+                    currentExpressionDisplay.textContent = currentExpression;    
+                } catch (error) {
+                    display.value = "Invalid Input";
+                }
             }
         });
     });
