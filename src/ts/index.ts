@@ -33,6 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const sqrtBtn = document.getElementById("sqrt") as HTMLButtonElement; // Square Root button
     const percentageBtn = document.getElementById("percentage") as HTMLButtonElement; // Percentage button
     const decimalBtn = document.getElementById("decimal") as HTMLButtonElement; // Decimal button
+    const backspaceBtn = document.getElementById("backspace") as HTMLButtonElement; // Backspace button
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
@@ -84,6 +85,11 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentExpression += ".";
                     currentExpressionDisplay.textContent = currentExpression;
                 }
+            }
+            if (buttonText === "←") {
+              display.value = display.value.slice(0, -1);
+              currentExpression = currentExpression.slice(0, -1);
+              currentExpressionDisplay.textContent = currentExpression;
             }
         });
     });
