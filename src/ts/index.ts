@@ -30,6 +30,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement; // Added Clear History Button
     let historyData: string[] = [];
     const backspaceBtn = document.getElementById("backspace") as HTMLButtonElement;
+    const copyBtn = document.getElementById("copy") as HTMLButtonElement;
 
     // ... other buttons
     const signFlipBtn = document.getElementById("signFlip") as HTMLButtonElement;
@@ -55,6 +56,15 @@ window.addEventListener("DOMContentLoaded", () => {
             if (buttonText === "="){
               historyData.push(currentExpression + " = " + display.value);
             }
+           if (buttonText === "Copy") {
+                navigator.clipboard.writeText(display.value).then(() => {
+                  // Optional: Provide feedback to the user that the copy was successful
+                  console.log('Copied to clipboard:', display.value);
+              },
+                (err) => {
+                  console.error('Failed to copy to clipboard:', err);
+                });
+           }
         });
     });
 
