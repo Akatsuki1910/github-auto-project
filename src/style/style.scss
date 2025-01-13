@@ -1,59 +1,29 @@
 /* ... (Existing styles) */
 
 #calculator {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+    /* ... (Existing calculator styles) */
 }
 
 #display {
-  grid-column: span 4;
-  padding: 10px;
-  font-size: 1.2rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: right;
+    /* ... (Existing display styles) */
 }
 
 button {
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  cursor: pointer;
+    /* ... (Existing button styles) */
 }
 
 #history {
-  display: none; /* Initially hidden */
-  grid-column: span 4;
-  border: 1px solid #ccc;
-  padding: 10px;
-  margin-top: 10px;
-  max-height: 200px; /* Limit height */
-  overflow-y: auto; /* Add scroll if needed */
+    /* ... (Existing history styles) */
 }
 
 #currentExpressionDisplay{
-   grid-column: span 4;
-  padding: 5px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  text-align: right;
-  margin-top: 5px;
-  margin-bottom: 5px; /* Add margin */
+    /* ... existing current expression styles */
 }
 
 body {
-    background-color: #fff;
-    color: #000;
-    transition: background-color 0.3s, color 0.3s;
+    /* ... (Existing body styles) */
 }
 
 body.dark-theme {
-    background-color: #333;
-    color: #fff;
+    /* ... existing dark theme styles*/
 }
