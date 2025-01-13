@@ -31,6 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement;
     const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement; // Memory functions
     const sqrtBtn = document.getElementById("sqrt") as HTMLButtonElement; // Square Root button
+    const percentageBtn = document.getElementById("percentage") as HTMLButtonElement; // Percentage button
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
@@ -68,6 +69,13 @@ window.addEventListener("DOMContentLoaded", () => {
                   currentExpression = "Error";
                   currentExpressionDisplay.textContent = "";
                 }
+            }
+            if (buttonText === "%\") {
+                const currentValue = parseFloat(display.value);
+                const result = currentValue / 100;
+                display.value = result.toString();
+                currentExpression += "%";
+                currentExpressionDisplay.textContent = currentExpression;
             }
         });
     });
