@@ -41,6 +41,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryAddBtn = document.getElementById("memoryAdd") as HTMLButtonElement; // Memory Add
       const percentBtn = document.getElementById("percent") as HTMLButtonElement; // Percent button
     const lnBtn = document.getElementById("ln") as HTMLButtonElement; // Natural Logarithm button
+    const plusMinusBtn = document.getElementById("plusMinus") as HTMLButtonElement;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -64,6 +65,12 @@ window.addEventListener("DOMContentLoaded", () => {
                     display.value = "Error";
                 }
             }
+             else if (buttonText === "±") {
+                const currentValue = parseFloat(display.value);
+                display.value = (-currentValue).toString();
+                currentExpression = (-currentValue).toString();
+                currentExpressionDisplay.textContent = currentExpression;
+             }
             // ... existing logic
                 else if (buttonText === "MS") {
                 memoryValue = parseFloat(display.value);
