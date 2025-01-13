@@ -32,6 +32,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const backspaceBtn = document.getElementById("backspace") as HTMLButtonElement;
     const copyBtn = document.getElementById("copy") as HTMLButtonElement;
     const parenthesesBtn = document.getElementById("parentheses") as HTMLButtonElement;
+    const squareRootBtn = document.getElementById("squareRoot") as HTMLButtonElement; // Add square root button
 
     // ... other buttons
     const signFlipBtn = document.getElementById("signFlip") as HTMLButtonElement;
@@ -41,6 +42,15 @@ window.addEventListener("DOMContentLoaded", () => {
         button.addEventListener("click", () => {
             const buttonText = button.textContent;
             // ... existing logic
+          if (buttonText === "√"){
+                const currentValue = parseFloat(display.value);
+                if (currentValue >=0){
+                    display.value = Math.sqrt(currentValue).toString();
+                    currentExpression = `√(${currentValue})`; // Store current expression for history
+                } else {
+                    display.value = "Error: Negative Input";
+                }
+            }
             if (buttonText === "+/-") {
                 const currentValue = parseFloat(display.value);
                 display.value = (-currentValue).toString();
