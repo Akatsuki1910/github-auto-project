@@ -22,6 +22,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
     const toggleThemeBtn = document.getElementById("toggleTheme") as HTMLButtonElement;
     const memoryPlusBtn = document.getElementById("memoryPlus") as HTMLButtonElement;
+    const memorySubtractBtn = document.getElementById("memorySubtract") as HTMLButtonElement; // Added M- button
 
     // ... other buttons
     const signFlipBtn = document.getElementById("signFlip") as HTMLButtonElement;
@@ -44,6 +45,13 @@ window.addEventListener("DOMContentLoaded", () => {
         const currentValue = parseFloat(display.value);
         if (!isNaN(currentValue)) {
             memoryValue += currentValue;
+        }
+    });
+
+    memorySubtractBtn.addEventListener("click", () => { // Added M- functionality
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            memoryValue -= currentValue;
         }
     });
 
