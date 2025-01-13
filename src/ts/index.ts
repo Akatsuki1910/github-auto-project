@@ -36,6 +36,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const squaredBtn = document.getElementById("squared") as HTMLButtonElement;
     // ... other buttons
     const signFlipBtn = document.getElementById("signFlip") as HTMLButtonElement;
+    const percentButton = document.getElementById("percent") as HTMLButtonElement;
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -92,6 +93,15 @@ window.addEventListener("DOMContentLoaded", () => {
                 display.value = squaredValue.toString();
                 currentExpression = `${currentValue}²`;
                 currentExpressionDisplay.textContent = currentExpression;
+            }
+
+            // Percentage button logic
+            if (buttonText === "%&&") {
+              const currentValue = parseFloat(display.value);
+              const percentageValue = currentValue / 100;
+              display.value = percentageValue.toString();
+              currentExpression += "%&&"; // Or adjust how you want to display it in history
+              currentExpressionDisplay.textContent = currentExpression;
             }
         });
     });
