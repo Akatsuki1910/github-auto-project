@@ -30,6 +30,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryPlusBtn = document.getElementById("memoryPlus") as HTMLButtonElement;
     const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement;
     const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement; // Memory functions
+    const sqrtBtn = document.getElementById("sqrt") as HTMLButtonElement; // Square Root button
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
@@ -54,6 +55,19 @@ window.addEventListener("DOMContentLoaded", () => {
             }
             if (buttonText === "MC") {
                 memoryValue = 0;
+            }
+            if (buttonText === "√") {
+                const currentValue = parseFloat(display.value);
+                if (currentValue >= 0) {
+                  const result = Math.sqrt(currentValue);
+                  display.value = result.toString();
+                  currentExpression = `√(${currentValue})`;
+                  currentExpressionDisplay.textContent = currentExpression;
+                } else {
+                  display.value = "Error: Negative Input";
+                  currentExpression = "Error";
+                  currentExpressionDisplay.textContent = "";
+                }
             }
         });
     });
