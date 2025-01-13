@@ -27,6 +27,9 @@ window.addEventListener("DOMContentLoaded", () => {
     const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement; // Added Clear History Button
     let historyData: string[] = [];
     const lastAnswerBtn = document.getElementById("lastAnswer") as HTMLButtonElement; // Add Last Answer Button
+    const memoryPlusBtn = document.getElementById("memoryPlus") as HTMLButtonElement;
+    const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement;
+    const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement; // Memory functions
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
@@ -40,6 +43,17 @@ window.addEventListener("DOMContentLoaded", () => {
                 display.value = lastAnswer.toString();
                 currentExpression = lastAnswer.toString();
                 currentExpressionDisplay.textContent = currentExpression;
+            }
+            if (buttonText === "M+") {
+                memoryValue += parseFloat(display.value);
+            }
+            if (buttonText === "MR") {
+                display.value = memoryValue.toString();
+                currentExpression = memoryValue.toString();
+                currentExpressionDisplay.textContent = currentExpression;
+            }
+            if (buttonText === "MC") {
+                memoryValue = 0;
             }
         });
     });
