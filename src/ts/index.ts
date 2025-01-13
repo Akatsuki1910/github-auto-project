@@ -26,6 +26,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const memorySubtractBtn = document.getElementById("memorySubtract") as HTMLButtonElement; // Added M- button
     const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement;
     const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement;
+        const memoryPlusTenPercentBtn = document.getElementById("memoryPlusTenPercent") as HTMLButtonElement;
     const history = document.getElementById("history") as HTMLDivElement;
     const historyBtn = document.getElementById("historyBtn") as HTMLButtonElement;
     const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement; // Added Clear History Button
@@ -88,6 +89,9 @@ window.addEventListener("DOMContentLoaded", () => {
                 currentExpression += lastAnswer.toString();
                 currentExpressionDisplay.textContent = currentExpression; 
             }
+                        if (buttonText === "M+10%") {
+                memoryValue += memoryValue * 0.1;
+            }
             if (buttonText === "Exit") {
                 window.close(); // Close the current window/tab
             }
@@ -95,3 +99,4 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     // ... (Existing functions)
 });
+
