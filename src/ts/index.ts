@@ -25,6 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const randomBtn = document.getElementById("random") as HTMLButtonElement; // Random number button
     let openParentheses = 0;
     const sinBtn = document.getElementById("sin") as HTMLButtonElement; //sin button
+    const cosBtn = document.getElementById("cos") as HTMLButtonElement; //cos button
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -52,6 +53,10 @@ window.addEventListener("DOMContentLoaded", () => {
                 currentExpressionDisplay.textContent = currentExpression;
             } else if (buttonText === "sin") {
                 currentExpression += "Math.sin(";
+                openParentheses++;
+                currentExpressionDisplay.textContent = currentExpression;
+            } else if (buttonText === "cos") {
+                currentExpression += "Math.cos(";
                 openParentheses++;
                 currentExpressionDisplay.textContent = currentExpression;
             } else {
