@@ -40,6 +40,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const signFlipBtn = document.getElementById("signFlip") as HTMLButtonElement;
     const percentButton = document.getElementById("percent") as HTMLButtonElement;
     const cubeRootBtn = document.getElementById("cubeRoot") as HTMLButtonElement; //Added Cube Root Button
+       const exitBtn = document.getElementById("exit") as HTMLButtonElement; // Added exit button
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -86,6 +87,9 @@ window.addEventListener("DOMContentLoaded", () => {
                 display.value = lastAnswer.toString();
                 currentExpression += lastAnswer.toString();
                 currentExpressionDisplay.textContent = currentExpression; 
+            }
+            if (buttonText === "Exit") {
+                window.close(); // Close the current window/tab
             }
         });
     });
