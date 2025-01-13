@@ -17,6 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     let currentExpression = "";
     let isDarkTheme = false;
+    let memoryValue = 0; // Added memoryValue variable
     const display = document.getElementById("display") as HTMLInputElement;
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
     const toggleThemeBtn = document.getElementById("toggleTheme") as HTMLButtonElement;
@@ -34,55 +35,29 @@ window.addEventListener("DOMContentLoaded", () => {
     const floorBtn = document.getElementById("floor") as HTMLButtonElement; // Floor function
     const modBtn = document.getElementById("mod") as HTMLButtonElement; // Modulo operator button
     const roundBtn = document.getElementById("round") as HTMLButtonElement; // Round function button
+    const memoryStoreBtn = document.getElementById("memoryStore") as HTMLButtonElement; // Memory Store
+    const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement; // Memory Recall
+    const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement; // Memory Clear
+    const memoryAddBtn = document.getElementById("memoryAdd") as HTMLButtonElement; // Memory Add
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
             const buttonText = button.textContent;
             // ... existing logic
-            // ... existing logic
-           if (buttonText === "%") {
-                currentExpression += "%";
+            if (buttonText === "MS") {
+                memoryValue = parseFloat(display.value);
+            } else if (buttonText === "MR") {
+                display.value = memoryValue.toString();
+                currentExpression = memoryValue.toString();
                 currentExpressionDisplay.textContent = currentExpression;
-            } else if (buttonText === "( )") {
-                // ... existing parentheses logic
-            } else if (buttonText === "Toggle Theme") {
-               // ... existing toggle theme logic
-            } else if (buttonText === "e"){
-                // ... existing euler's number logic
-            } else if (buttonText === "Rand") {
-                // ... existing random number logic
-            } else if (buttonText === "sin") {
-                // ... existing sin logic
-            } else if (buttonText === "cos") {
-                // ... existing cos logic
-            } else if (buttonText === "log") {
-                // ... existing log logic
-            } else if (buttonText === "exp") {
-                // ... existing exp logic
-            } else if (buttonText === "|x|") {
-                currentExpression += "Math.abs(";
-                openParentheses++;
-                currentExpressionDisplay.textContent = currentExpression;
-            } else if (buttonText === "√x") {
-              // existing sqrt logic
-            } else if (buttonText === "x³") {
-              // existing cube logic
-            } else if (buttonText === "⌊x⌋") {
-               // existing floor logic
-           } else if (buttonText === "round") { // Round function
-              try {
-                const result = Math.round(eval(currentExpression));
-                display.value = result.toString();
-                currentExpression = result.toString();
-                currentExpressionDisplay.textContent = currentExpression;                
-              } catch (error) {
-                display.value = "Error";
-              }
+            } else if (buttonText === "MC") {
+                memoryValue = 0;
+            } else if (buttonText === "M+") {
+                memoryValue += parseFloat(display.value);
             } else {
               // existing logic
             }
-
             // ... (Rest of the existing button logic)
         });
     });
