@@ -31,6 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const absBtn = document.getElementById("abs") as HTMLButtonElement; // Absolute value button
     const sqrtBtn = document.getElementById("sqrt") as HTMLButtonElement; // Square Root button
     const cubeBtn = document.getElementById("cube") as HTMLButtonElement; // Cube button
+     const floorBtn = document.getElementById("floor") as HTMLButtonElement; // Floor function
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -76,7 +77,16 @@ window.addEventListener("DOMContentLoaded", () => {
                 } catch (error) {
                   display.value = "Error";
                 }
-            } else {
+            } else if (buttonText === "⌊x⌋") {
+              try {
+                const result = Math.floor(eval(currentExpression));
+                display.value = result.toString();
+                currentExpression = result.toString();
+                currentExpressionDisplay.textContent = currentExpression;
+              } catch (error) {
+                display.value = "Error";
+              }
+           } else {
               // existing logic
             }
 
