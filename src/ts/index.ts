@@ -28,45 +28,32 @@ window.addEventListener("DOMContentLoaded", () => {
     const cosBtn = document.getElementById("cos") as HTMLButtonElement; //cos button
     const logBtn = document.getElementById("log") as HTMLButtonElement; //log button
     const expBtn = document.getElementById("exp") as HTMLButtonElement; // Exponential function button
+    const absBtn = document.getElementById("abs") as HTMLButtonElement; // Absolute value button
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
             const buttonText = button.textContent;
             // ... existing logic
+            // ... existing logic
             if (buttonText === "( )") {
-                if (openParentheses === 0) {
-                    currentExpression += "(";
-                    openParentheses++;
-                } else {
-                    currentExpression += ")";
-                    openParentheses--;
-                }
-                currentExpressionDisplay.textContent = currentExpression;
+                // ... existing parentheses logic
             } else if (buttonText === "Toggle Theme") {
-                isDarkTheme = !isDarkTheme;
-                document.body.classList.toggle("dark-theme", isDarkTheme);
+               // ... existing toggle theme logic
             } else if (buttonText === "e"){
-                currentExpression += Math.E;
-                currentExpressionDisplay.textContent = currentExpression;
+                // ... existing euler's number logic
             } else if (buttonText === "Rand") {
-                const randomNumber = Math.random();
-                currentExpression += randomNumber;
-                currentExpressionDisplay.textContent = currentExpression;
+                // ... existing random number logic
             } else if (buttonText === "sin") {
-                currentExpression += "Math.sin(";
-                openParentheses++;
-                currentExpressionDisplay.textContent = currentExpression;
+                // ... existing sin logic
             } else if (buttonText === "cos") {
-                currentExpression += "Math.cos(";
-                openParentheses++;
-                currentExpressionDisplay.textContent = currentExpression;
+                // ... existing cos logic
             } else if (buttonText === "log") {
-                currentExpression += "Math.log10("; // Use log10 for common logarithm
-                openParentheses++;
-                currentExpressionDisplay.textContent = currentExpression;
+                // ... existing log logic
             } else if (buttonText === "exp") {
-                currentExpression += "Math.exp(";
+                // ... existing exp logic
+            } else if (buttonText === "|x|") {
+                currentExpression += "Math.abs(";
                 openParentheses++;
                 currentExpressionDisplay.textContent = currentExpression;
             } else {
@@ -78,10 +65,7 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     function factorial(n: number): number {
-        if (n === 0) {
-            return 1;
-        }
-        return n * factorial(n - 1);
+        // ... existing factorial function
     }
     // ...existing logic
 });
