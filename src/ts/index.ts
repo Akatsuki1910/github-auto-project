@@ -26,8 +26,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement;
     const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement;
     const history = document.getElementById("history") as HTMLDivElement;
- const historyBtn = document.getElementById("historyBtn") as HTMLButtonElement;
- let historyData: string[] = [];
+    const historyBtn = document.getElementById("historyBtn") as HTMLButtonElement;
+    let historyData: string[] = [];
 
     // ... other buttons
     const signFlipBtn = document.getElementById("signFlip") as HTMLButtonElement;
@@ -44,6 +44,11 @@ window.addEventListener("DOMContentLoaded", () => {
                 currentExpressionDisplay.textContent = currentExpression;
             }
            // ... other logic
+
+           //Added History Feature
+            if (buttonText === "="){
+              historyData.push(currentExpression + " = " + display.value);
+            }
         });
     });
     memoryPlusBtn.addEventListener("click", () => {
@@ -59,22 +64,22 @@ window.addEventListener("DOMContentLoaded", () => {
             memoryValue -= currentValue;
         }
     });
- memoryRecallBtn.addEventListener("click", () => {
+    memoryRecallBtn.addEventListener("click", () => {
         display.value = memoryValue.toString();
         currentExpression = memoryValue.toString();
         currentExpressionDisplay.textContent = currentExpression;
     });
     memoryClearBtn.addEventListener("click", () => {
-    memoryValue = 0;
-});
- historyBtn.addEventListener("click", () => {
-    if (history.style.display === "none" || history.style.display === ""){
+        memoryValue = 0;
+    });
+    historyBtn.addEventListener("click", () => {
+        if (history.style.display === "none" || history.style.display === ""){
             history.style.display = "block";
- history.innerHTML = historyData.map(item => `<p>${item}</p>`).join(''); // Display history data
-} else {
- history.style.display = "none";
-}
-});
+            history.innerHTML = historyData.map(item => `<p>${item}</p>`).join(''); // Display history data
+        } else {
+            history.style.display = "none";
+        }
+    });
 
     // ... existing functions
 });
