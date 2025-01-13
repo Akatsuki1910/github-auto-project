@@ -31,7 +31,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const absBtn = document.getElementById("abs") as HTMLButtonElement; // Absolute value button
     const sqrtBtn = document.getElementById("sqrt") as HTMLButtonElement; // Square Root button
     const cubeBtn = document.getElementById("cube") as HTMLButtonElement; // Cube button
-     const floorBtn = document.getElementById("floor") as HTMLButtonElement; // Floor function
+    const floorBtn = document.getElementById("floor") as HTMLButtonElement; // Floor function
+    const modBtn = document.getElementById("mod") as HTMLButtonElement; // Modulo operator button
 
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -39,7 +40,10 @@ window.addEventListener("DOMContentLoaded", () => {
             const buttonText = button.textContent;
             // ... existing logic
             // ... existing logic
-            if (buttonText === "( )") {
+           if (buttonText === "%") {
+                currentExpression += "%";
+                currentExpressionDisplay.textContent = currentExpression;
+            } else if (buttonText === "( )") {
                 // ... existing parentheses logic
             } else if (buttonText === "Toggle Theme") {
                // ... existing toggle theme logic
