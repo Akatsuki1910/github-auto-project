@@ -36,7 +36,16 @@ window.addEventListener("DOMContentLoaded", () => {
     const backspaceBtn = document.getElementById("backspace") as HTMLButtonElement; // Backspace button
     const signBtn = document.getElementById("sign") as HTMLButtonElement; // Sign change button
     const piBtn = document.getElementById("pi") as HTMLButtonElement; // Pi button
+    const factorialBtn = document.getElementById("factorial") as HTMLButtonElement; // Factorial button
     const buttons = document.querySelectorAll("button");
+
+    function factorial(n: number): number {
+        if (n === 0) {
+            return 1;
+        }
+        return n * factorial(n - 1);
+    }
+
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
             const buttonText = button.textContent;
@@ -46,21 +55,20 @@ window.addEventListener("DOMContentLoaded", () => {
               lastAnswer = parseFloat(display.value); // Store the last answer
            }
             // ... (Existing logic for other buttons)
-            if (buttonText === "+/-") {
-                if (display.value !== "") {
-                    display.value = (-parseFloat(display.value)).toString();
-                    currentExpression = display.value;
-                    currentExpressionDisplay.textContent = currentExpression;
-                }
+            if (buttonText === "x!") {
+                const num = parseFloat(display.value);
+                if (!isNaN(num)) {
+                  const result = factorial(num);
+                  display.value = result.toString();
+                  currentExpression = result.toString(); // Update the current expression
+                  currentExpressionDisplay.textContent = currentExpression;
+              }
             }
-            if (buttonText === "π") {
-                display.value = Math.PI.toString();
-                currentExpression += Math.PI;
-                currentExpressionDisplay.textContent = currentExpression;
-            }
+            // Existing code for other buttons...
         });
     });
 
     // ... (Existing Event Listeners)
 });
+
 
