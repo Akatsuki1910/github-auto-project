@@ -35,6 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const decimalBtn = document.getElementById("decimal") as HTMLButtonElement; // Decimal button
     const backspaceBtn = document.getElementById("backspace") as HTMLButtonElement; // Backspace button
     const signBtn = document.getElementById("sign") as HTMLButtonElement; // Sign change button
+    const piBtn = document.getElementById("pi") as HTMLButtonElement; // Pi button
     const buttons = document.querySelectorAll("button");
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
@@ -52,8 +53,14 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentExpressionDisplay.textContent = currentExpression;
                 }
             }
+            if (buttonText === "π") {
+                display.value = Math.PI.toString();
+                currentExpression += Math.PI;
+                currentExpressionDisplay.textContent = currentExpression;
+            }
         });
     });
 
     // ... (Existing Event Listeners)
 });
+
