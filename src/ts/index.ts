@@ -31,6 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
     let historyData: string[] = [];
     const backspaceBtn = document.getElementById("backspace") as HTMLButtonElement;
     const copyBtn = document.getElementById("copy") as HTMLButtonElement;
+    const parenthesesBtn = document.getElementById("parentheses") as HTMLButtonElement;
 
     // ... other buttons
     const signFlipBtn = document.getElementById("signFlip") as HTMLButtonElement;
@@ -65,6 +66,17 @@ window.addEventListener("DOMContentLoaded", () => {
                   console.error('Failed to copy to clipboard:', err);
                 });
            }
+
+            if (buttonText === "( )"){
+                // Add logic for parentheses
+                if (!currentExpression.includes("(")){
+                    currentExpression += "(";
+                }else if (currentExpression.includes("(") && !currentExpression.includes(")")){
+                    currentExpression += ")";
+                }
+                currentExpressionDisplay.textContent = currentExpression;
+            }
+           
         });
     });
 
