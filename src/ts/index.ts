@@ -37,6 +37,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const squareRootBtn = document.getElementById("squareRoot") as HTMLButtonElement; // Add square root button
       const squaredBtn = document.getElementById("squared") as HTMLButtonElement;
     const ansBtn = document.getElementById("ans") as HTMLButtonElement;
+    const lastAnswerBtn = document.getElementById("lastAnswer") as HTMLButtonElement; // Add Last Answer Button
     // ... other buttons
     const signFlipBtn = document.getElementById("signFlip") as HTMLButtonElement;
     const percentButton = document.getElementById("percent") as HTMLButtonElement;
@@ -95,8 +96,12 @@ window.addEventListener("DOMContentLoaded", () => {
             if (buttonText === "Exit") {
                 window.close(); // Close the current window/tab
             }
+		    if (buttonText === "Last Answer") {
+                display.value = lastAnswer.toString();
+            }
         });
     });
     // ... (Existing functions)
 });
+
 
