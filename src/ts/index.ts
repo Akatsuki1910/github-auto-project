@@ -33,7 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const copyBtn = document.getElementById("copy") as HTMLButtonElement;
     const parenthesesBtn = document.getElementById("parentheses") as HTMLButtonElement;
     const squareRootBtn = document.getElementById("squareRoot") as HTMLButtonElement; // Add square root button
-
+      const squaredBtn = document.getElementById("squared") as HTMLButtonElement;
     // ... other buttons
     const signFlipBtn = document.getElementById("signFlip") as HTMLButtonElement;
 
@@ -86,7 +86,13 @@ window.addEventListener("DOMContentLoaded", () => {
                 }
                 currentExpressionDisplay.textContent = currentExpression;
             }
-           
+            if (buttonText === "x²") {
+                const currentValue = parseFloat(display.value);
+                const squaredValue = currentValue * currentValue;
+                display.value = squaredValue.toString();
+                currentExpression = `${currentValue}²`;
+                currentExpressionDisplay.textContent = currentExpression;
+            }
         });
     });
 
