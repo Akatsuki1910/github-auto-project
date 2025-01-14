@@ -39,6 +39,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const factorialBtn = document.getElementById("factorial") as HTMLButtonElement; // Factorial button
     const powerBtn = document.getElementById("power") as HTMLButtonElement; // Power button
     const logBtn = document.getElementById("log") as HTMLButtonElement; // Logarithm button
+    const expBtn = document.getElementById("exp") as HTMLButtonElement; // Exponential function button
     const buttons = document.querySelectorAll("button");
 
     function factorial(n: number): number {
@@ -79,6 +80,10 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentExpressionDisplay.textContent = currentExpression;
                 }
             }
+           if (buttonText === "exp") {
+               currentExpression += "Math.exp(";
+               currentExpressionDisplay.textContent = currentExpression;
+           }
             // Existing code for other buttons...
         });
     });
