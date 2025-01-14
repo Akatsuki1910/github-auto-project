@@ -49,6 +49,7 @@ window.addEventListener("DOMContentLoaded", () => {
      const deleteBtn = document.getElementById("delete") as HTMLButtonElement; //Added Delete Button
      const bracketBtn = document.getElementById("bracket") as HTMLButtonElement;
      const signBtn = document.getElementById("sign") as HTMLButtonElement; // Sign Change Button
+     const lnBtn = document.getElementById("ln") as HTMLButtonElement; // Natural Logarithm Button
      let openBracket = true; // Keep track of bracket status
 
     function factorial(n: number): number {
@@ -116,6 +117,10 @@ window.addEventListener("DOMContentLoaded", () => {
                            currentExpressionDisplay.textContent = currentExpression;                   
                        }       
                 }
+                 if (buttonText === "ln"){
+                    currentExpression += "Math.log(";
+                     currentExpressionDisplay.textContent = currentExpression;
+                 }
                 // Existing code for other buttons...
             });
         });
