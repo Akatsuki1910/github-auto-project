@@ -38,6 +38,7 @@ window.addEventListener("DOMContentLoaded", () => {
      const ansBtn = document.getElementById("ans") as HTMLButtonElement; // Ans Button
      const modBtn = document.getElementById("mod") as HTMLButtonElement; // Modulo Button
      const exitBtn = document.getElementById("exit") as HTMLButtonElement;
+     const copyBtn = document.getElementById("copy") as HTMLButtonElement;
 
     function factorial(n: number): number {
         if (n === 0) {
@@ -64,6 +65,13 @@ window.addEventListener("DOMContentLoaded", () => {
            if (buttonText === "Exit") {
                 window.close(); // Close the window
            } 
+           if (buttonText === "Copy") {
+               navigator.clipboard.writeText(display.value).then(() => {
+                    alert("Copied to clipboard: " + display.value);
+                   }).catch(err => {
+                       console.error("Failed to copy: ", err);
+                  });
+            }
             // Existing code for other buttons...
         });
     });
