@@ -46,6 +46,7 @@ window.addEventListener("DOMContentLoaded", () => {
      const eightBtn = document.getElementById("8") as HTMLButtonElement; // Number 8
      const nineBtn = document.getElementById("9") as HTMLButtonElement; // Number 9
      const clearAllBtn = document.getElementById("clearAll") as HTMLButtonElement;
+     const deleteBtn = document.getElementById("delete") as HTMLButtonElement; //Added Delete Button
 
     function factorial(n: number): number {
         if (n === 0) {
@@ -88,6 +89,10 @@ window.addEventListener("DOMContentLoaded", () => {
                     display.value = "";
                     currentExpressionDisplay.textContent = "";
                 }
+                if (buttonText === "DEL") {
+                    currentExpression = currentExpression.slice(0, -1);
+                    currentExpressionDisplay.textContent = currentExpression;
+                 }
                 // Existing code for other buttons...
             });
         });
