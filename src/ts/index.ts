@@ -43,6 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const openParenBtn = document.getElementById("openParen") as HTMLButtonElement;
     const closeParenBtn = document.getElementById("closeParen") as HTMLButtonElement;
     const cubeBtn = document.getElementById("cube") as HTMLButtonElement;
+    const squareBtn = document.getElementById("square") as HTMLButtonElement;
     const buttons = document.querySelectorAll("button");
 
     function factorial(n: number): number {
@@ -80,6 +81,17 @@ window.addEventListener("DOMContentLoaded", () => {
                     display.value = "Error";
                 }           
            }
+           if (buttonText === "x²") {
+                try {
+                    const currentValue = parseFloat(display.value);
+                    const squareResult = currentValue * currentValue;
+                    display.value = squareResult.toString();
+                    currentExpression = squareResult.toString();
+                    currentExpressionDisplay.textContent = currentExpression;                    
+                } catch (error) {
+                    display.value = "Error";
+                }
+            }
             // Existing code for other buttons...
         });
     });
