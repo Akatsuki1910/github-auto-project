@@ -37,6 +37,7 @@ window.addEventListener("DOMContentLoaded", () => {
      const zeroButton = document.getElementById("0") as HTMLButtonElement;
      const ansBtn = document.getElementById("ans") as HTMLButtonElement; // Ans Button
      const modBtn = document.getElementById("mod") as HTMLButtonElement; // Modulo Button
+     const exitBtn = document.getElementById("exit") as HTMLButtonElement;
 
     function factorial(n: number): number {
         if (n === 0) {
@@ -60,6 +61,9 @@ window.addEventListener("DOMContentLoaded", () => {
                 currentExpression += "% ";
                 currentExpressionDisplay.textContent = currentExpression; 
            }
+           if (buttonText === "Exit") {
+                window.close(); // Close the window
+           } 
             // Existing code for other buttons...
         });
     });
