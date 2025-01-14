@@ -45,6 +45,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const cubeBtn = document.getElementById("cube") as HTMLButtonElement;
     const squareBtn = document.getElementById("square") as HTMLButtonElement;
     const sinBtn = document.getElementById("sin") as HTMLButtonElement;
+    const cosBtn = document.getElementById("cos") as HTMLButtonElement; // Cosine button
     const buttons = document.querySelectorAll("button");
 
     function factorial(n: number): number {
@@ -100,6 +101,17 @@ window.addEventListener("DOMContentLoaded", () => {
                     display.value = squareResult.toString();
                     currentExpression = squareResult.toString();
                     currentExpressionDisplay.textContent = currentExpression;                    
+                } catch (error) {
+                    display.value = "Error";
+                }
+            }
+             if (buttonText === "cos") {
+                try {
+                    const currentValue = parseFloat(display.value);
+                    const cosResult = Math.cos(currentValue);
+                    display.value = cosResult.toString();
+                    currentExpression = cosResult.toString();
+                    currentExpressionDisplay.textContent = currentExpression;
                 } catch (error) {
                     display.value = "Error";
                 }
