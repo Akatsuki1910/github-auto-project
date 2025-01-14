@@ -34,6 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
      const randBtn = document.getElementById("rand") as HTMLButtonElement; // Rand Button
      const ceilBtn = document.getElementById("ceil") as HTMLButtonElement; // Ceil Button
      const eBtn = document.getElementById("e") as HTMLButtonElement; // e Button
+     const zeroButton = document.getElementById("0") as HTMLButtonElement;
 
     function factorial(n: number): number {
         if (n === 0) {
@@ -95,6 +96,11 @@ window.addEventListener("DOMContentLoaded", () => {
                 currentExpression += Math.E;
                 currentExpressionDisplay.textContent = currentExpression;
              }
+            if (buttonText === "0") {
+                display.value += "0";
+                currentExpression += "0";
+                currentExpressionDisplay.textContent = currentExpression;  
+            }
             // Existing code for other buttons...
         });
     });
