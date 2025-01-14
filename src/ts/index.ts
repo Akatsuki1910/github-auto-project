@@ -46,6 +46,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const squareBtn = document.getElementById("square") as HTMLButtonElement;
     const sinBtn = document.getElementById("sin") as HTMLButtonElement;
     const cosBtn = document.getElementById("cos") as HTMLButtonElement; // Cosine button
+    const tanBtn = document.getElementById("tan") as HTMLButtonElement; // Tangent button
     const buttons = document.querySelectorAll("button");
 
     function factorial(n: number): number {
@@ -64,53 +65,12 @@ window.addEventListener("DOMContentLoaded", () => {
               lastAnswer = parseFloat(display.value); // Store the last answer
            }
             // ... (Existing logic for other buttons)
-            if (buttonText === "sin") {
+           if (buttonText === "tan") {
                 try {
                     const currentValue = parseFloat(display.value);
-                    const sinResult = Math.sin(currentValue);
-                    display.value = sinResult.toString();
-                    currentExpression = sinResult.toString();
-                    currentExpressionDisplay.textContent = currentExpression;                    
-                } catch (error) {
-                    display.value = "Error";
-                }
-            }
-           if (buttonText === "(") {
-                currentExpression += "(";
-                currentExpressionDisplay.textContent = currentExpression;
-            }
-            if (buttonText === ")") {
-                currentExpression += ")";
-                currentExpressionDisplay.textContent = currentExpression;
-            }
-           if (buttonText === "x³") {
-             try {
-                    const currentValue = parseFloat(display.value);
-                  const cubeResult = currentValue * currentValue * currentValue;
-                   display.value = cubeResult.toString();
-                   currentExpression = cubeResult.toString(); // Update currentExpression after calculation
-                   currentExpressionDisplay.textContent = currentExpression;
-                } catch (error) {
-                    display.value = "Error";
-                }           
-           }
-           if (buttonText === "x²") {
-                try {
-                    const currentValue = parseFloat(display.value);
-                    const squareResult = currentValue * currentValue;
-                    display.value = squareResult.toString();
-                    currentExpression = squareResult.toString();
-                    currentExpressionDisplay.textContent = currentExpression;                    
-                } catch (error) {
-                    display.value = "Error";
-                }
-            }
-             if (buttonText === "cos") {
-                try {
-                    const currentValue = parseFloat(display.value);
-                    const cosResult = Math.cos(currentValue);
-                    display.value = cosResult.toString();
-                    currentExpression = cosResult.toString();
+                    const tanResult = Math.tan(currentValue);
+                    display.value = tanResult.toString();
+                    currentExpression = tanResult.toString();
                     currentExpressionDisplay.textContent = currentExpression;
                 } catch (error) {
                     display.value = "Error";
@@ -122,5 +82,4 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ... (Existing Event Listeners)
 });
-
 
