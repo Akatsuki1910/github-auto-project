@@ -48,6 +48,7 @@ window.addEventListener("DOMContentLoaded", () => {
      const clearAllBtn = document.getElementById("clearAll") as HTMLButtonElement;
      const deleteBtn = document.getElementById("delete") as HTMLButtonElement; //Added Delete Button
      const bracketBtn = document.getElementById("bracket") as HTMLButtonElement;
+     const signBtn = document.getElementById("sign") as HTMLButtonElement; // Sign Change Button
      let openBracket = true; // Keep track of bracket status
 
     function factorial(n: number): number {
@@ -100,6 +101,21 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentExpression = currentExpression.slice(0, -1);
                     currentExpressionDisplay.textContent = currentExpression;
                  }
+                   if (buttonText === "+/-") {
+                    // Toggle the sign of the current number
+                       if (currentExpression && !isNaN(Number(currentExpression.slice(-1)))){
+                           let numStr = "";
+                           let i = currentExpression.length -1;
+                           while (i >=0 && !isNaN(Number(currentExpression[i]))) {
+                               numStr = currentExpression[i] + numStr;
+                               i--;
+                           }
+                           const num = parseFloat(numStr);
+                           const signedNum = -num;
+                           currentExpression = currentExpression.substring(0, i + 1) + signedNum.toString();
+                           currentExpressionDisplay.textContent = currentExpression;                   
+                       }       
+                }
                 // Existing code for other buttons...
             });
         });
