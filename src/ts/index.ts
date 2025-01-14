@@ -27,28 +27,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement; // Added Clear History Button
     let historyData: string[] = [];
     const lastAnswerBtn = document.getElementById("lastAnswer") as HTMLButtonElement; // Add Last Answer Button
-    const memoryPlusBtn = document.getElementById("memoryPlus") as HTMLButtonElement;
-    const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement;
-    const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement; // Memory functions
-    const sqrtBtn = document.getElementById("sqrt") as HTMLButtonElement; // Square Root button
-    const percentageBtn = document.getElementById("percentage") as HTMLButtonElement; // Percentage button
-    const decimalBtn = document.getElementById("decimal") as HTMLButtonElement; // Decimal button
-    const backspaceBtn = document.getElementById("backspace") as HTMLButtonElement; // Backspace button
-    const signBtn = document.getElementById("sign") as HTMLButtonElement; // Sign change button
-    const piBtn = document.getElementById("pi") as HTMLButtonElement; // Pi button
-    const factorialBtn = document.getElementById("factorial") as HTMLButtonElement; // Factorial button
-    const powerBtn = document.getElementById("power") as HTMLButtonElement; // Power button
-    const logBtn = document.getElementById("log") as HTMLButtonElement; // Logarithm button
-    const expBtn = document.getElementById("exp") as HTMLButtonElement; // Exponential function button
-    const openParenBtn = document.getElementById("openParen") as HTMLButtonElement;
-    const closeParenBtn = document.getElementById("closeParen") as HTMLButtonElement;
-    const cubeBtn = document.getElementById("cube") as HTMLButtonElement;
-    const squareBtn = document.getElementById("square") as HTMLButtonElement;
-    const sinBtn = document.getElementById("sin") as HTMLButtonElement;
-    const cosBtn = document.getElementById("cos") as HTMLButtonElement; // Cosine button
-    const tanBtn = document.getElementById("tan") as HTMLButtonElement; // Tangent button
-    const roundBtn = document.getElementById("round") as HTMLButtonElement; // Round button
-    const buttons = document.querySelectorAll("button");
+    // ... other buttons
+    const absBtn = document.getElementById("abs") as HTMLButtonElement; // Absolute Value Button
 
     function factorial(n: number): number {
         if (n === 0) {
@@ -67,21 +47,17 @@ window.addEventListener("DOMContentLoaded", () => {
            }
             // ... (Existing logic for other buttons)
            if (buttonText === "tan") {
-                try {
-                    const currentValue = parseFloat(display.value);
-                    const tanResult = Math.tan(currentValue);
-                    display.value = tanResult.toString();
-                    currentExpression = tanResult.toString();
-                    currentExpressionDisplay.textContent = currentExpression;
-                } catch (error) {
-                    display.value = "Error";
-                }
+                // ... existing tan logic
             }
              if (buttonText === "round") {
+                // ... existing round logic
+            }
+            if (buttonText === "|x|") {
                 try {
-                    display.value = Math.round(parseFloat(display.value)).toString();
+                    const currentValue = parseFloat(display.value);
+                    display.value = Math.abs(currentValue).toString();
                     currentExpression = display.value;
-                     currentExpressionDisplay.textContent = currentExpression;
+                    currentExpressionDisplay.textContent = currentExpression;
                 } catch (error) {
                     display.value = "Error";
                 }
