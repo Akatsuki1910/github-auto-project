@@ -45,6 +45,7 @@ window.addEventListener("DOMContentLoaded", () => {
      const sevenBtn = document.getElementById("7") as HTMLButtonElement; // Number 7
      const eightBtn = document.getElementById("8") as HTMLButtonElement; // Number 8
      const nineBtn = document.getElementById("9") as HTMLButtonElement; // Number 9
+     const clearAllBtn = document.getElementById("clearAll") as HTMLButtonElement;
 
     function factorial(n: number): number {
         if (n === 0) {
@@ -82,6 +83,11 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentExpression += buttonText;
                     currentExpressionDisplay.textContent = currentExpression;
                  }
+                 if (buttonText === "AC") {
+                    currentExpression = "";
+                    display.value = "";
+                    currentExpressionDisplay.textContent = "";
+                }
                 // Existing code for other buttons...
             });
         });
