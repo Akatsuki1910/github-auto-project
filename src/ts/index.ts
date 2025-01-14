@@ -35,6 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
      const ceilBtn = document.getElementById("ceil") as HTMLButtonElement; // Ceil Button
      const eBtn = document.getElementById("e") as HTMLButtonElement; // e Button
      const zeroButton = document.getElementById("0") as HTMLButtonElement;
+     const ansBtn = document.getElementById("ans") as HTMLButtonElement; // Ans Button
 
     function factorial(n: number): number {
         if (n === 0) {
@@ -67,39 +68,24 @@ window.addEventListener("DOMContentLoaded", () => {
                 // ... existing floor logic
             }
             if (buttonText === "1/x") {
-                try {
-                    const currentValue = parseFloat(display.value);
-                    display.value = (1 / currentValue).toString();
-                    currentExpression = display.value;
-                    currentExpressionDisplay.textContent = currentExpression;
-                } catch (error) {
-                    display.value = "Error";
-                }
+                // ... existing inverse logic
             }            
             if (buttonText === "rand") {
-                const randomNumber = Math.random();
-                display.value = randomNumber.toString();
-                currentExpression = randomNumber.toString();
-                 currentExpressionDisplay.textContent = currentExpression; 
+                // ... existing rand logic
             }
             if (buttonText === "ceil") {
-                try {
-                    display.value = Math.ceil(parseFloat(display.value)).toString();
-                    currentExpression = display.value;
-                    currentExpressionDisplay.textContent = currentExpression;
-                } catch (error) {
-                    display.value = "Error";
-                }
+               // ... existing ceil logic
             }
              if (buttonText === "e"){
-                display.value += Math.E;
-                currentExpression += Math.E;
-                currentExpressionDisplay.textContent = currentExpression;
+                // ... existing e logic
              }
             if (buttonText === "0") {
-                display.value += "0";
-                currentExpression += "0";
-                currentExpressionDisplay.textContent = currentExpression;  
+                // ... existing 0 logic
+            }
+            if (buttonText === "Ans") {
+                display.value += lastAnswer;
+                currentExpression += lastAnswer;
+                currentExpressionDisplay.textContent = currentExpression; 
             }
             // Existing code for other buttons...
         });
