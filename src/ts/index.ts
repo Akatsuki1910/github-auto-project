@@ -39,6 +39,12 @@ window.addEventListener("DOMContentLoaded", () => {
      const modBtn = document.getElementById("mod") as HTMLButtonElement; // Modulo Button
      const exitBtn = document.getElementById("exit") as HTMLButtonElement;
      const copyBtn = document.getElementById("copy") as HTMLButtonElement;
+     const fourBtn = document.getElementById("4") as HTMLButtonElement; // Number 4
+     const fiveBtn = document.getElementById("5") as HTMLButtonElement; // Number 5
+     const sixBtn = document.getElementById("6") as HTMLButtonElement; // Number 6
+     const sevenBtn = document.getElementById("7") as HTMLButtonElement; // Number 7
+     const eightBtn = document.getElementById("8") as HTMLButtonElement; // Number 8
+     const nineBtn = document.getElementById("9") as HTMLButtonElement; // Number 9
 
     function factorial(n: number): number {
         if (n === 0) {
@@ -72,9 +78,13 @@ window.addEventListener("DOMContentLoaded", () => {
                        console.error("Failed to copy: ", err);
                   });
             }
-            // Existing code for other buttons...
+                if (buttonText >= "0" && buttonText <= "9") {
+                    currentExpression += buttonText;
+                    currentExpressionDisplay.textContent = currentExpression;
+                 }
+                // Existing code for other buttons...
+            });
         });
-    });
 
     // ... (Existing Event Listeners)
 });
