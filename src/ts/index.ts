@@ -30,6 +30,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... other buttons
     const absBtn = document.getElementById("abs") as HTMLButtonElement; // Absolute Value Button
     const floorBtn = document.getElementById("floor") as HTMLButtonElement; // Floor Button
+    const inverseBtn = document.getElementById("inverse") as HTMLButtonElement; // Inverse Button
 
     function factorial(n: number): number {
         if (n === 0) {
@@ -54,25 +55,21 @@ window.addEventListener("DOMContentLoaded", () => {
                 // ... existing round logic
             }
             if (buttonText === "|x|") {
+                // ... existing abs logic
+            }
+             if (buttonText === "floor"){
+                // ... existing floor logic
+            }
+            if (buttonText === "1/x") {
                 try {
                     const currentValue = parseFloat(display.value);
-                    display.value = Math.abs(currentValue).toString();
+                    display.value = (1 / currentValue).toString();
                     currentExpression = display.value;
                     currentExpressionDisplay.textContent = currentExpression;
                 } catch (error) {
                     display.value = "Error";
                 }
-            }
-             if (buttonText === "floor"){
-                try{
-                    const currentValue = parseFloat(display.value);
-                    display.value = Math.floor(currentValue).toString();
-                    currentExpression = display.value;
-                    currentExpressionDisplay.textContent = currentExpression;                    
-                } catch (error) {
-                    display.value = "Error";
-                }
-            }
+            }            
             // Existing code for other buttons...
         });
     });
