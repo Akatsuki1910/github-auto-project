@@ -31,6 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const absBtn = document.getElementById("abs") as HTMLButtonElement; // Absolute Value Button
     const floorBtn = document.getElementById("floor") as HTMLButtonElement; // Floor Button
     const inverseBtn = document.getElementById("inverse") as HTMLButtonElement; // Inverse Button
+     const randBtn = document.getElementById("rand") as HTMLButtonElement; // Rand Button
 
     function factorial(n: number): number {
         if (n === 0) {
@@ -38,6 +39,8 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         return n * factorial(n - 1);
     }
+
+    const buttons = Array.from(document.querySelectorAll('button'));
 
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
@@ -70,6 +73,12 @@ window.addEventListener("DOMContentLoaded", () => {
                     display.value = "Error";
                 }
             }            
+            if (buttonText === "rand") {
+                const randomNumber = Math.random();
+                display.value = randomNumber.toString();
+                currentExpression = randomNumber.toString();
+                 currentExpressionDisplay.textContent = currentExpression; 
+            }
             // Existing code for other buttons...
         });
     });
