@@ -47,6 +47,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const sinBtn = document.getElementById("sin") as HTMLButtonElement;
     const cosBtn = document.getElementById("cos") as HTMLButtonElement; // Cosine button
     const tanBtn = document.getElementById("tan") as HTMLButtonElement; // Tangent button
+    const roundBtn = document.getElementById("round") as HTMLButtonElement; // Round button
     const buttons = document.querySelectorAll("button");
 
     function factorial(n: number): number {
@@ -76,10 +77,18 @@ window.addEventListener("DOMContentLoaded", () => {
                     display.value = "Error";
                 }
             }
+             if (buttonText === "round") {
+                try {
+                    display.value = Math.round(parseFloat(display.value)).toString();
+                    currentExpression = display.value;
+                     currentExpressionDisplay.textContent = currentExpression;
+                } catch (error) {
+                    display.value = "Error";
+                }
+            }
             // Existing code for other buttons...
         });
     });
 
     // ... (Existing Event Listeners)
 });
-
