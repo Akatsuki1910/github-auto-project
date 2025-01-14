@@ -32,6 +32,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const floorBtn = document.getElementById("floor") as HTMLButtonElement; // Floor Button
     const inverseBtn = document.getElementById("inverse") as HTMLButtonElement; // Inverse Button
      const randBtn = document.getElementById("rand") as HTMLButtonElement; // Rand Button
+     const ceilBtn = document.getElementById("ceil") as HTMLButtonElement; // Ceil Button
 
     function factorial(n: number): number {
         if (n === 0) {
@@ -78,6 +79,15 @@ window.addEventListener("DOMContentLoaded", () => {
                 display.value = randomNumber.toString();
                 currentExpression = randomNumber.toString();
                  currentExpressionDisplay.textContent = currentExpression; 
+            }
+            if (buttonText === "ceil") {
+                try {
+                    display.value = Math.ceil(parseFloat(display.value)).toString();
+                    currentExpression = display.value;
+                    currentExpressionDisplay.textContent = currentExpression;
+                } catch (error) {
+                    display.value = "Error";
+                }
             }
             // Existing code for other buttons...
         });
