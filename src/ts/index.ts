@@ -38,6 +38,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const piBtn = document.getElementById("pi") as HTMLButtonElement; // Pi button
     const factorialBtn = document.getElementById("factorial") as HTMLButtonElement; // Factorial button
     const powerBtn = document.getElementById("power") as HTMLButtonElement; // Power button
+    const logBtn = document.getElementById("log") as HTMLButtonElement; // Logarithm button
     const buttons = document.querySelectorAll("button");
 
     function factorial(n: number): number {
@@ -68,6 +69,15 @@ window.addEventListener("DOMContentLoaded", () => {
             if (buttonText === "^") {
                 currentExpression += "**";
                 currentExpressionDisplay.textContent = currentExpression;
+            }
+            if (buttonText === "log") {
+                const num = parseFloat(display.value);
+                if (!isNaN(num)) {
+                    const result = Math.log10(num);
+                    display.value = result.toString();
+                    currentExpression = result.toString();
+                    currentExpressionDisplay.textContent = currentExpression;
+                }
             }
             // Existing code for other buttons...
         });
