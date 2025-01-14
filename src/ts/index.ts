@@ -44,6 +44,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const closeParenBtn = document.getElementById("closeParen") as HTMLButtonElement;
     const cubeBtn = document.getElementById("cube") as HTMLButtonElement;
     const squareBtn = document.getElementById("square") as HTMLButtonElement;
+    const sinBtn = document.getElementById("sin") as HTMLButtonElement;
     const buttons = document.querySelectorAll("button");
 
     function factorial(n: number): number {
@@ -62,6 +63,17 @@ window.addEventListener("DOMContentLoaded", () => {
               lastAnswer = parseFloat(display.value); // Store the last answer
            }
             // ... (Existing logic for other buttons)
+            if (buttonText === "sin") {
+                try {
+                    const currentValue = parseFloat(display.value);
+                    const sinResult = Math.sin(currentValue);
+                    display.value = sinResult.toString();
+                    currentExpression = sinResult.toString();
+                    currentExpressionDisplay.textContent = currentExpression;                    
+                } catch (error) {
+                    display.value = "Error";
+                }
+            }
            if (buttonText === "(") {
                 currentExpression += "(";
                 currentExpressionDisplay.textContent = currentExpression;
