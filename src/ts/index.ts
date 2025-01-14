@@ -37,6 +37,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const signBtn = document.getElementById("sign") as HTMLButtonElement; // Sign change button
     const piBtn = document.getElementById("pi") as HTMLButtonElement; // Pi button
     const factorialBtn = document.getElementById("factorial") as HTMLButtonElement; // Factorial button
+    const powerBtn = document.getElementById("power") as HTMLButtonElement; // Power button
     const buttons = document.querySelectorAll("button");
 
     function factorial(n: number): number {
@@ -63,6 +64,10 @@ window.addEventListener("DOMContentLoaded", () => {
                   currentExpression = result.toString(); // Update the current expression
                   currentExpressionDisplay.textContent = currentExpression;
               }
+            }
+            if (buttonText === "^") {
+                currentExpression += "**";
+                currentExpressionDisplay.textContent = currentExpression;
             }
             // Existing code for other buttons...
         });
