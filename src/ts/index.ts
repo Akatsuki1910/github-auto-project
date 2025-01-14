@@ -29,6 +29,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const lastAnswerBtn = document.getElementById("lastAnswer") as HTMLButtonElement; // Add Last Answer Button
     // ... other buttons
     const absBtn = document.getElementById("abs") as HTMLButtonElement; // Absolute Value Button
+    const floorBtn = document.getElementById("floor") as HTMLButtonElement; // Floor Button
 
     function factorial(n: number): number {
         if (n === 0) {
@@ -58,6 +59,16 @@ window.addEventListener("DOMContentLoaded", () => {
                     display.value = Math.abs(currentValue).toString();
                     currentExpression = display.value;
                     currentExpressionDisplay.textContent = currentExpression;
+                } catch (error) {
+                    display.value = "Error";
+                }
+            }
+             if (buttonText === "floor"){
+                try{
+                    const currentValue = parseFloat(display.value);
+                    display.value = Math.floor(currentValue).toString();
+                    currentExpression = display.value;
+                    currentExpressionDisplay.textContent = currentExpression;                    
                 } catch (error) {
                     display.value = "Error";
                 }
