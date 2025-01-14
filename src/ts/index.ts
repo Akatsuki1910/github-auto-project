@@ -47,6 +47,8 @@ window.addEventListener("DOMContentLoaded", () => {
      const nineBtn = document.getElementById("9") as HTMLButtonElement; // Number 9
      const clearAllBtn = document.getElementById("clearAll") as HTMLButtonElement;
      const deleteBtn = document.getElementById("delete") as HTMLButtonElement; //Added Delete Button
+     const bracketBtn = document.getElementById("bracket") as HTMLButtonElement;
+     let openBracket = true; // Keep track of bracket status
 
     function factorial(n: number): number {
         if (n === 0) {
@@ -60,6 +62,11 @@ window.addEventListener("DOMContentLoaded", () => {
     buttons.forEach((button) => {
         button.addEventListener("click", () => {
             const buttonText = button.textContent;
+             if (buttonText === "()") {
+                currentExpression += openBracket ? "(" : ")";
+                currentExpressionDisplay.textContent = currentExpression;
+                openBracket = !openBracket; // Toggle the bracket status
+            }
             // ... existing logic
            if (buttonText === "="){
               historyData.push(currentExpression + " = " + display.value);
@@ -67,7 +74,7 @@ window.addEventListener("DOMContentLoaded", () => {
            }
             // ... (Existing logic for other buttons)
            if (buttonText === "%") {
-                currentExpression += "% ";
+                currentExpression += "%";
                 currentExpressionDisplay.textContent = currentExpression; 
            }
            if (buttonText === "Exit") {
@@ -75,7 +82,7 @@ window.addEventListener("DOMContentLoaded", () => {
            } 
            if (buttonText === "Copy") {
                navigator.clipboard.writeText(display.value).then(() => {
-                    alert("Copied to clipboard: " + display.value);
+                    //alert("Copied to clipboard: " + display.value);
                    }).catch(err => {
                        console.error("Failed to copy: ", err);
                   });
