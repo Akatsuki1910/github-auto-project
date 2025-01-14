@@ -42,6 +42,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const expBtn = document.getElementById("exp") as HTMLButtonElement; // Exponential function button
     const openParenBtn = document.getElementById("openParen") as HTMLButtonElement;
     const closeParenBtn = document.getElementById("closeParen") as HTMLButtonElement;
+    const cubeBtn = document.getElementById("cube") as HTMLButtonElement;
     const buttons = document.querySelectorAll("button");
 
     function factorial(n: number): number {
@@ -68,6 +69,17 @@ window.addEventListener("DOMContentLoaded", () => {
                 currentExpression += ")";
                 currentExpressionDisplay.textContent = currentExpression;
             }
+           if (buttonText === "x³") {
+             try {
+                    const currentValue = parseFloat(display.value);
+                  const cubeResult = currentValue * currentValue * currentValue;
+                   display.value = cubeResult.toString();
+                   currentExpression = cubeResult.toString(); // Update currentExpression after calculation
+                   currentExpressionDisplay.textContent = currentExpression;
+                } catch (error) {
+                    display.value = "Error";
+                }           
+           }
             // Existing code for other buttons...
         });
     });
