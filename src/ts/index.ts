@@ -40,6 +40,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const powerBtn = document.getElementById("power") as HTMLButtonElement; // Power button
     const logBtn = document.getElementById("log") as HTMLButtonElement; // Logarithm button
     const expBtn = document.getElementById("exp") as HTMLButtonElement; // Exponential function button
+    const openParenBtn = document.getElementById("openParen") as HTMLButtonElement;
+    const closeParenBtn = document.getElementById("closeParen") as HTMLButtonElement;
     const buttons = document.querySelectorAll("button");
 
     function factorial(n: number): number {
@@ -58,32 +60,14 @@ window.addEventListener("DOMContentLoaded", () => {
               lastAnswer = parseFloat(display.value); // Store the last answer
            }
             // ... (Existing logic for other buttons)
-            if (buttonText === "x!") {
-                const num = parseFloat(display.value);
-                if (!isNaN(num)) {
-                  const result = factorial(num);
-                  display.value = result.toString();
-                  currentExpression = result.toString(); // Update the current expression
-                  currentExpressionDisplay.textContent = currentExpression;
-              }
-            }
-            if (buttonText === "^") {
-                currentExpression += "**";
+           if (buttonText === "(") {
+                currentExpression += "(";
                 currentExpressionDisplay.textContent = currentExpression;
             }
-            if (buttonText === "log") {
-                const num = parseFloat(display.value);
-                if (!isNaN(num)) {
-                    const result = Math.log10(num);
-                    display.value = result.toString();
-                    currentExpression = result.toString();
-                    currentExpressionDisplay.textContent = currentExpression;
-                }
+            if (buttonText === ")") {
+                currentExpression += ")";
+                currentExpressionDisplay.textContent = currentExpression;
             }
-           if (buttonText === "exp") {
-               currentExpression += "Math.exp(";
-               currentExpressionDisplay.textContent = currentExpression;
-           }
             // Existing code for other buttons...
         });
     });
