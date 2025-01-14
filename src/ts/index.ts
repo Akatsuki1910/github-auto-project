@@ -36,6 +36,7 @@ window.addEventListener("DOMContentLoaded", () => {
      const eBtn = document.getElementById("e") as HTMLButtonElement; // e Button
      const zeroButton = document.getElementById("0") as HTMLButtonElement;
      const ansBtn = document.getElementById("ans") as HTMLButtonElement; // Ans Button
+     const modBtn = document.getElementById("mod") as HTMLButtonElement; // Modulo Button
 
     function factorial(n: number): number {
         if (n === 0) {
@@ -55,38 +56,10 @@ window.addEventListener("DOMContentLoaded", () => {
               lastAnswer = parseFloat(display.value); // Store the last answer
            }
             // ... (Existing logic for other buttons)
-           if (buttonText === "tan") {
-                // ... existing tan logic
-            }
-             if (buttonText === "round") {
-                // ... existing round logic
-            }
-            if (buttonText === "|x|") {
-                // ... existing abs logic
-            }
-             if (buttonText === "floor"){
-                // ... existing floor logic
-            }
-            if (buttonText === "1/x") {
-                // ... existing inverse logic
-            }            
-            if (buttonText === "rand") {
-                // ... existing rand logic
-            }
-            if (buttonText === "ceil") {
-               // ... existing ceil logic
-            }
-             if (buttonText === "e"){
-                // ... existing e logic
-             }
-            if (buttonText === "0") {
-                // ... existing 0 logic
-            }
-            if (buttonText === "Ans") {
-                display.value += lastAnswer;
-                currentExpression += lastAnswer;
+           if (buttonText === "%") {
+                currentExpression += "% ";
                 currentExpressionDisplay.textContent = currentExpression; 
-            }
+           }
             // Existing code for other buttons...
         });
     });
