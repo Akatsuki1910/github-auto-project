@@ -20,6 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const negateBtn = document.getElementById("negate") as HTMLButtonElement;
     const currentTimeBtn = document.getElementById("currentTime") as HTMLButtonElement;
     const currentDayBtn = document.getElementById("currentDay") as HTMLButtonElement;
+    const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
     let currentExpression = "";
 
     function fibonacci(n: number): number {
@@ -63,6 +64,16 @@ currentDayBtn.addEventListener("click", () => {
     display.value = currentDay;
     currentExpression = currentDay; // Update currentExpression
     currentExpressionDisplay.textContent = currentExpression; 
+});
+
+expm1Btn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.expm1(currentValue);
+        display.value = result.toString();
+        currentExpression = `expm1(${currentValue})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
 });
 
     // ... (Existing Event Listeners)
