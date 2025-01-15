@@ -104,6 +104,11 @@ eBtn.addEventListener("click", () => {
   display.value = Math.E.toString();
 });
 
+// Generate random number button
+const randBtn = document.getElementById("rand") as HTMLButtonElement;
+randBtn.addEventListener("click", () => {
+    display.value = Math.random().toString();
+});
     // ... existing event listeners
 
 });
