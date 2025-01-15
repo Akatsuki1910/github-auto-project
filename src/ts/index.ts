@@ -129,6 +129,17 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = (-currentValue).toString();
         }
     });
+ //Cube Root Function
+const cubeRootBtn = document.getElementById("cubeRoot") as HTMLButtonElement;
+cubeRootBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.cbrt(currentValue);
+        display.value = result.toString();
+        currentExpression = `∛(${currentValue})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
 
     // ... existing event listeners
 
