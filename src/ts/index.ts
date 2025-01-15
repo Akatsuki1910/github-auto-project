@@ -54,5 +54,20 @@ modBtn.addEventListener("click", () => {
     }
 });
 
+//Summation functionality
+const sumBtn = document.getElementById("sum") as HTMLButtonElement;
+sumBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        let sum = 0;
+        for (let i = 1; i <= currentValue; i++) {
+            sum += i;
+        }
+        display.value = sum.toString();
+        currentExpression = `∑${currentValue}`;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
+
 
 });
