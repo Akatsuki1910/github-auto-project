@@ -87,6 +87,21 @@ window.addEventListener("DOMContentLoaded", () => {
     currentExpressionDisplay.textContent = currentExpression;
  });
 
+ //Min function
+ const minBtn = document.getElementById("min") as HTMLButtonElement;
+  minBtn.addEventListener("click", () => {
+    const numbersString = display.value;
+    const numbersArray = numbersString.split(',').map(Number);
+     if (numbersArray.some(isNaN)) {
+      display.value = "Invalid Input";
+      return;
+     }
+     const minValue = Math.min(...numbersArray);
+     display.value = minValue.toString();
+      currentExpression = `min(${numbersString})`;
+      currentExpressionDisplay.textContent = currentExpression;
+  });
+
     // ... existing event listeners
 
 });
