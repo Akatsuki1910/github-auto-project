@@ -95,6 +95,16 @@ tenToThePowerOfXBtn.addEventListener("click", () => {
         display.value = result.toString();
     }
 });
+//Cuberoot Function
+const cbrtBtn = document.getElementById("cbrt") as HTMLButtonElement;
+cbrtBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    const result = Math.cbrt(currentValue);
+    display.value = result.toString();
+  }
+});
+
     // ... existing event listeners
 
 });
