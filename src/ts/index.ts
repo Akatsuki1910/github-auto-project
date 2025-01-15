@@ -77,6 +77,15 @@ squared2Btn.addEventListener("click", () => {
     display.value = result.toString();
   }
 });
+    //x³ button
+const squared3Btn = document.getElementById("squared3") as HTMLButtonElement;
+squared3Btn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if(!isNaN(currentValue)) {
+        const result = Math.pow(currentValue, 3);
+        display.value = result.toString();
+    }
+});
     // ... existing event listeners
 
 });
