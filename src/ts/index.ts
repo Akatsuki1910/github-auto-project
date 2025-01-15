@@ -19,6 +19,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
     const negateBtn = document.getElementById("negate") as HTMLButtonElement;
     const currentTimeBtn = document.getElementById("currentTime") as HTMLButtonElement;
+    const currentDayBtn = document.getElementById("currentDay") as HTMLButtonElement;
     let currentExpression = "";
 
     function fibonacci(n: number): number {
@@ -38,16 +39,7 @@ window.addEventListener("DOMContentLoaded", () => {
       });
   });
 
-    buttons.forEach((button) => {
-        // ... (Existing button event listeners)
-
-        const buttonText = button.textContent;
-        if (buttonText === "Fibonacci") {
-            // ... existing fibonacci code
-        } else if (buttonText === "2<sup>x</sup>") {
-            // ... existing 2^x code
-        }
-    });
+    // ... existing code
 
      negateBtn.addEventListener("click", () => {
         const currentValue = parseFloat(display.value);
@@ -62,6 +54,14 @@ currentTimeBtn.addEventListener("click", () => {
     const currentTime = now.toLocaleTimeString();
     display.value = currentTime; 
     currentExpression = currentTime;
+    currentExpressionDisplay.textContent = currentExpression; 
+});
+
+currentDayBtn.addEventListener("click", () => {
+    const now = new Date();
+    const currentDay = now.toLocaleDateString();
+    display.value = currentDay;
+    currentExpression = currentDay; // Update currentExpression
     currentExpressionDisplay.textContent = currentExpression; 
 });
 
