@@ -69,5 +69,16 @@ sumBtn.addEventListener("click", () => {
     }
 });
 
+// 10 to the power of x functionality
+const tenToThePowerOfXBtn = document.getElementById("tenToThePowerOfX") as HTMLButtonElement;
+tenToThePowerOfXBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    const result = Math.pow(10, currentValue);
+    display.value = result.toString();
+    currentExpression = `10^${currentValue}`;
+    currentExpressionDisplay.textContent = currentExpression;
+  }
+});
 
 });
