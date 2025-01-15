@@ -74,6 +74,13 @@ floorBtn.addEventListener("click", () => {
     }
 });
 
+const sinBtn = document.getElementById("sin") as HTMLButtonElement;
+sinBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = Math.sin(currentValue).toString();
+  }
+});
     // ... existing event listeners
 
 });
