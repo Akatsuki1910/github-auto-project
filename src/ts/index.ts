@@ -110,6 +110,17 @@ standardDeviationBtn.addEventListener("click", () => {
   currentExpressionDisplay.textContent = currentExpression;
 });
 
+//Absolute Value Function
+const absoluteValueBtn = document.getElementById("absoluteValue") as HTMLButtonElement;
+absoluteValueBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if(!isNaN(currentValue)){
+        const result = Math.abs(currentValue);
+        display.value = result.toString();
+        currentExpression = `|${currentValue}|`;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
     // ... existing event listeners
 
 });
