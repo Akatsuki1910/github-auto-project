@@ -68,6 +68,15 @@ absoluteValueBtn.addEventListener("click", () => {
       const randomNumber = Math.random();
       display.value = randomNumber.toString();
     });
+
+   const squared2Btn = document.getElementById("squared2") as HTMLButtonElement;
+squared2Btn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    const result = Math.pow(currentValue, 4);
+    display.value = result.toString();
+  }
+});
     // ... existing event listeners
 
 });
