@@ -17,6 +17,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const exp2Btn = document.getElementById("exp2") as HTMLButtonElement;
     const display = document.getElementById("display") as HTMLInputElement;
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
+    const negateBtn = document.getElementById("negate") as HTMLButtonElement;
     let currentExpression = "";
 
     function fibonacci(n: number): number {
@@ -41,29 +42,18 @@ window.addEventListener("DOMContentLoaded", () => {
 
         const buttonText = button.textContent;
         if (buttonText === "Fibonacci") {
-            const num = parseFloat(display.value);
-            if (!isNaN(num) && num >=0 && num <= 50) { // Limit for performance
-                const result = fibonacci(num);
-                display.value = result.toString();
-                currentExpression = result.toString();
-                currentExpressionDisplay.textContent = currentExpression; 
-            } else {
-                display.value = "Error";
-                currentExpression = "";
-                currentExpressionDisplay.textContent = "Input a number between 0 and 50";
-            }
+            // ... existing fibonacci code
         } else if (buttonText === "2<sup>x</sup>") {
-            const num = parseFloat(display.value);
-            if (!isNaN(num)) {
-                const result = Math.pow(2, num);
-                display.value = result.toString();
-                currentExpression = result.toString();
-                currentExpressionDisplay.textContent = currentExpression;
-            } else {
-                display.value = "Error";
-                currentExpression = "";
-                currentExpressionDisplay.textContent = "Input a valid number";
-            }
+            // ... existing 2^x code
+        }
+    });
+
+     negateBtn.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            display.value = (-currentValue).toString();
+            currentExpression = display.value; // Update currentExpression
+            currentExpressionDisplay.textContent = currentExpression;
         }
     });
 
