@@ -90,6 +90,14 @@ cosBtn.addEventListener("click", () => {
   }
 });
 
+const tanBtn = document.getElementById("tan") as HTMLButtonElement;
+tanBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = Math.tan(currentValue).toString();
+  }
+});
+
     // ... existing event listeners
 
 });
