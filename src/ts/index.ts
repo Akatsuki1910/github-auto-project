@@ -39,86 +39,20 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-//Reciprocal function (1/x) button
-const reciprocalBtn = document.getElementById("reciprocal") as HTMLButtonElement;
-reciprocalBtn.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue !== 0) {
-        display.value = (1 / currentValue).toString();
-    } else if (currentValue === 0) {
-        display.value = "Cannot divide by zero";
+// ... other button event listeners
+
+//Modulus operator functionality
+const modBtn = document.getElementById("mod") as HTMLButtonElement;
+modBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)){
+        currentOperator = '%';
+        firstOperand = currentValue;
+        currentExpression = `${currentValue}%`;
+        currentExpressionDisplay.textContent = currentExpression;
+        display.value = "";
     }
 });
 
-const roundBtn = document.getElementById("round") as HTMLButtonElement;
-roundBtn.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-      display.value = Math.round(currentValue).toString();
-    }
-});
-
-const absBtn = document.getElementById("abs") as HTMLButtonElement;
-absBtn.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    display.value = Math.abs(currentValue).toString();
-  }
-});
-//Floor function button
-const floorBtn = document.getElementById("floor") as HTMLButtonElement;
-floorBtn.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.floor(currentValue).toString();
-    }
-});
-
-const sinBtn = document.getElementById("sin") as HTMLButtonElement;
-sinBtn.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    display.value = Math.sin(currentValue).toString();
-  }
-});
-
-const cosBtn = document.getElementById("cos") as HTMLButtonElement;
-cosBtn.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    display.value = Math.cos(currentValue).toString();
-  }
-});
-
-const tanBtn = document.getElementById("tan") as HTMLButtonElement;
-tanBtn.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    display.value = Math.tan(currentValue).toString();
-  }
-});
-
-// Add Euler's number (e) button
-const eBtn = document.getElementById("e") as HTMLButtonElement;
-eBtn.addEventListener("click", () => {
-  display.value = Math.E.toString();
-});
-
-// Generate random number button
-const randBtn = document.getElementById("rand") as HTMLButtonElement;
-randBtn.addEventListener("click", () => {
-    display.value = Math.random().toString();
-});
-// Add natural logarithm (ln) button
-const lnBtn = document.getElementById("ln") as HTMLButtonElement;
-lnBtn.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue) && currentValue > 0) {
-    display.value = Math.log(currentValue).toString();
-  } else if (currentValue <= 0) {
-    display.value = "Error: ln not defined for non-positive numbers";
-  }
-});
-    // ... existing event listeners
 
 });
