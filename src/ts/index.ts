@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... existing variables
     // ... existing code
  // Add factorial button
-    const calculateFactorialBtn = document.getElementById("calculateFactorial") as HTMLButtonElement;
+    const calculateFactorialBtn = document.getElementById("factorial") as HTMLButtonElement;
 
     function factorial(n: number): number {
         if (n === 0 || n === 1) {
@@ -50,6 +50,13 @@ reciprocalBtn.addEventListener("click", () => {
     }
 });
 
+const roundBtn = document.getElementById("round") as HTMLButtonElement;
+roundBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+      display.value = Math.round(currentValue).toString();
+    }
+});
 
     // ... existing event listeners
 
