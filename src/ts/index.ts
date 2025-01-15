@@ -21,6 +21,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const currentTimeBtn = document.getElementById("currentTime") as HTMLButtonElement;
     const currentDayBtn = document.getElementById("currentDay") as HTMLButtonElement;
     const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
+    const baseConversionBtn = document.getElementById("baseConversion") as HTMLButtonElement;
     let currentExpression = "";
 
     function fibonacci(n: number): number {
@@ -75,6 +76,26 @@ expm1Btn.addEventListener("click", () => {
         currentExpressionDisplay.textContent = currentExpression;
     }
 });
+
+baseConversionBtn.addEventListener("click", () => {
+    const currentValue = display.value;
+    const base = prompt("Enter the base to convert to (2-36):", "2");
+    if (base !== null) {
+      const parsedBase = parseInt(base, 10);
+      if (parsedBase >= 2 && parsedBase <= 36) {
+        try {
+          const convertedValue = parseInt(currentValue, 10).toString(parsedBase);
+          display.value = convertedValue;
+          currentExpression = `base${parsedBase}(${currentValue})`;
+          currentExpressionDisplay.textContent = currentExpression;
+        } catch (error) {
+          alert("Invalid input for base conversion.");
+        }
+      } else {
+        alert("Invalid base. Please enter a number between 2 and 36.");
+      }
+    }
+  });
 
     // ... (Existing Event Listeners)
 });
