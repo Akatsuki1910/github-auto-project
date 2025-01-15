@@ -80,5 +80,13 @@ tenToThePowerOfXBtn.addEventListener("click", () => {
     currentExpressionDisplay.textContent = currentExpression;
   }
 });
+// Sign change functionality
+const signBtn = document.getElementById("sign") as HTMLButtonElement;
+signBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = (-currentValue).toString();
+  }
+});
 
 });
