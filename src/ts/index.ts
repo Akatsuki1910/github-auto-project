@@ -121,6 +121,14 @@ window.addEventListener("DOMContentLoaded", () => {
     const currentValue = display.value;
     display.value += currentValue;
   });
+  // Sign Change functionality
+    const signChangeBtn = document.getElementById("signChange") as HTMLButtonElement;
+    signChangeBtn.addEventListener("click", () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            display.value = (-currentValue).toString();
+        }
+    });
 
     // ... existing event listeners
 
