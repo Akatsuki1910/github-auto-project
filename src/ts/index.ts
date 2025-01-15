@@ -53,6 +53,21 @@ window.addEventListener("DOMContentLoaded", () => {
     currentExpressionDisplay.textContent = currentExpression;
   }
  });
+ //Average Function
+ const averageBtn = document.getElementById("average") as HTMLButtonElement;
+ averageBtn.addEventListener("click", () =>{
+    const numbersString = display.value;
+    const numbersArray = numbersString.split(',').map(Number);
+    if (numbersArray.some(isNaN)){
+      display.value = "Invalid Input";
+      return;
+    }
+  const sum = numbersArray.reduce((acc, num) => acc + num, 0);
+    const average = sum / numbersArray.length;
+    display.value = average.toString();
+    currentExpression = `avg(${numbersString})`;
+  currentExpressionDisplay.textContent = currentExpression;
+ });
     // ... existing event listeners
 
 });
