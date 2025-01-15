@@ -39,71 +39,17 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-// ... existing functions for sum, average, median, min, max, duplicate, signChange, cubeRoot, geoMean
-
-//Mode function
-const modeBtn = document.getElementById("mode") as HTMLButtonElement;
-modeBtn.addEventListener("click", () => {
-    // ... existing mode calculation code ...
-});
-//Range Function
-const rangeBtn = document.getElementById("range") as HTMLButtonElement;
-rangeBtn.addEventListener("click", () => {
-  // ... existing range calculation code ...
-});
-
-const standardDeviationBtn = document.getElementById("standardDeviation") as HTMLButtonElement;
-standardDeviationBtn.addEventListener("click", () => {
-  // ... existing standard deviation code ...
-});
-
-//Absolute Value Function
-const absoluteValueBtn = document.getElementById("absoluteValue") as HTMLButtonElement;
-absoluteValueBtn.addEventListener("click", () => {
-   // ... existing absolute value calculation ...
-});
- // Generate a random number between 0 and 1
-    const randomNumBtn = document.getElementById("randomNum") as HTMLButtonElement;
-    randomNumBtn.addEventListener("click", () => {
-      const randomNumber = Math.random();
-      display.value = randomNumber.toString();
-    });
-
-   const squared2Btn = document.getElementById("squared2") as HTMLButtonElement;
-squared2Btn.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    const result = Math.pow(currentValue, 4);
-    display.value = result.toString();
-  }
-});
-    //x³ button
-const squared3Btn = document.getElementById("squared3") as HTMLButtonElement;
-squared3Btn.addEventListener("click", () => {
+//Reciprocal function (1/x) button
+const reciprocalBtn = document.getElementById("reciprocal") as HTMLButtonElement;
+reciprocalBtn.addEventListener("click", () => {
     const currentValue = parseFloat(display.value);
-    if(!isNaN(currentValue)) {
-        const result = Math.pow(currentValue, 3);
-        display.value = result.toString();
+    if (!isNaN(currentValue) && currentValue !== 0) {
+        display.value = (1 / currentValue).toString();
+    } else if (currentValue === 0) {
+        display.value = "Cannot divide by zero";
     }
 });
-//10^x button
-const tenToThePowerOfXBtn = document.getElementById("tenToThePowerOfX") as HTMLButtonElement;
-tenToThePowerOfXBtn.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        const result = Math.pow(10, currentValue);
-        display.value = result.toString();
-    }
-});
-//Cuberoot Function
-const cbrtBtn = document.getElementById("cbrt") as HTMLButtonElement;
-cbrtBtn.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    const result = Math.cbrt(currentValue);
-    display.value = result.toString();
-  }
-});
+
 
     // ... existing event listeners
 
