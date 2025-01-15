@@ -29,6 +29,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryMinusBtn = document.getElementById("M-") as HTMLButtonElement; // Added M- button
     const memoryRecallBtn = document.getElementById("MR") as HTMLButtonElement;
     const memoryClearBtn = document.getElementById("MC") as HTMLButtonElement;
+    const exp10Btn = document.getElementById("exp10") as HTMLButtonElement;
 
     // ... other buttons
 
@@ -101,6 +102,10 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentExpression += "Math.log(";
                      currentExpressionDisplay.textContent = currentExpression;
                  }
+                if (buttonText === "10x") {
+                    currentExpression += "10**(";
+                    currentExpressionDisplay.textContent = currentExpression;
+                } 
 
                  // Memory operations
                 if (buttonText === "M+") {
