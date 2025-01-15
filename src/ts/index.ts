@@ -71,6 +71,22 @@ modeBtn.addEventListener("click", () => {
     currentExpression = `mode(${numbersString})`;
     currentExpressionDisplay.textContent = currentExpression;
 });
+//Range Function
+const rangeBtn = document.getElementById("range") as HTMLButtonElement;
+rangeBtn.addEventListener("click", () => {
+  const numbersString = display.value;
+  const numbersArray = numbersString.split(',').map(Number);
+
+  if (numbersArray.some(isNaN)) {
+      display.value = "Invalid Input";
+      return;
+  }
+    numbersArray.sort((a,b) => a-b )
+    const range = numbersArray[numbersArray.length -1] - numbersArray[0];
+   display.value = range.toString();
+  currentExpression = `range(${numbersString})`;
+  currentExpressionDisplay.textContent = currentExpression;
+});
 
     // ... existing event listeners
 
