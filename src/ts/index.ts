@@ -101,6 +101,20 @@ window.addEventListener("DOMContentLoaded", () => {
       currentExpression = `min(${numbersString})`;
       currentExpressionDisplay.textContent = currentExpression;
   });
+ //Max function
+  const maxBtn = document.getElementById("max") as HTMLButtonElement;
+ maxBtn.addEventListener("click", () =>{
+  const numbersString = display.value;
+  const numbersArray = numbersString.split(',').map(Number);
+   if (numbersArray.some(isNaN)) {
+      display.value = "Invalid Input";
+      return;
+     }
+  const maxValue = Math.max(...numbersArray);
+     display.value = maxValue.toString();
+      currentExpression = `max(${numbersString})`;
+      currentExpressionDisplay.textContent = currentExpression; 
+ });
 
     // ... existing event listeners
 
