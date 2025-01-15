@@ -30,6 +30,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryRecallBtn = document.getElementById("MR") as HTMLButtonElement;
     const memoryClearBtn = document.getElementById("MC") as HTMLButtonElement;
     const exp10Btn = document.getElementById("exp10") as HTMLButtonElement;
+    const squaredBtn = document.getElementById("squared") as HTMLButtonElement; // x² button
 
     // ... other buttons
 
@@ -106,6 +107,10 @@ window.addEventListener("DOMContentLoaded", () => {
                     currentExpression += "10**(";
                     currentExpressionDisplay.textContent = currentExpression;
                 } 
+                if (buttonText === "x²") {
+                    currentExpression += "**2";
+                    currentExpressionDisplay.textContent = currentExpression;  
+                }
 
                  // Memory operations
                 if (buttonText === "M+") {
