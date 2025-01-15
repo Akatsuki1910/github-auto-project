@@ -68,6 +68,25 @@ window.addEventListener("DOMContentLoaded", () => {
     currentExpression = `avg(${numbersString})`;
   currentExpressionDisplay.textContent = currentExpression;
  });
+ //Median function
+ const medianBtn = document.getElementById("median") as HTMLButtonElement;
+ medianBtn.addEventListener("click", () => {
+  const numbersString = display.value;
+    const numbersArray = numbersString.split(',').map(Number);
+
+    if (numbersArray.some(isNaN)) {
+        display.value = "Invalid Input";
+        return;
+    }
+
+    numbersArray.sort((a, b) => a - b);
+    const mid = Math.floor(numbersArray.length / 2);
+    const median = numbersArray.length % 2 === 0 ? (numbersArray[mid - 1] + numbersArray[mid]) / 2 : numbersArray[mid];
+    display.value = median.toString();
+    currentExpression = `median(${numbersString})`;
+    currentExpressionDisplay.textContent = currentExpression;
+ });
+
     // ... existing event listeners
 
 });
