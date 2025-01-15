@@ -58,6 +58,13 @@ roundBtn.addEventListener("click", () => {
     }
 });
 
+const absBtn = document.getElementById("abs") as HTMLButtonElement;
+absBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = Math.abs(currentValue).toString();
+  }
+});
     // ... existing event listeners
 
 });
