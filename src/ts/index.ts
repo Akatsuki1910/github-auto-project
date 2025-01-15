@@ -65,6 +65,15 @@ absBtn.addEventListener("click", () => {
     display.value = Math.abs(currentValue).toString();
   }
 });
+//Floor function button
+const floorBtn = document.getElementById("floor") as HTMLButtonElement;
+floorBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.floor(currentValue).toString();
+    }
+});
+
     // ... existing event listeners
 
 });
