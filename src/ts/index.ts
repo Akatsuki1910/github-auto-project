@@ -109,6 +109,16 @@ const randBtn = document.getElementById("rand") as HTMLButtonElement;
 randBtn.addEventListener("click", () => {
     display.value = Math.random().toString();
 });
+// Add natural logarithm (ln) button
+const lnBtn = document.getElementById("ln") as HTMLButtonElement;
+lnBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue) && currentValue > 0) {
+    display.value = Math.log(currentValue).toString();
+  } else if (currentValue <= 0) {
+    display.value = "Error: ln not defined for non-positive numbers";
+  }
+});
     // ... existing event listeners
 
 });
