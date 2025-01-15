@@ -141,6 +141,24 @@ cubeRootBtn.addEventListener("click", () => {
     }
 });
 
+//Geometric Mean Function
+const geoMeanBtn = document.getElementById("geoMean") as HTMLButtonElement;
+geoMeanBtn.addEventListener("click", () => {
+    const numbersString = display.value;
+    const numbersArray = numbersString.split(',').map(Number);
+
+    if (numbersArray.some(isNaN) || numbersArray.some(num => num <= 0)) {
+        display.value = "Invalid Input (positive numbers only)";
+        return;
+    }
+
+    const product = numbersArray.reduce((acc, num) => acc * num, 1);
+    const geoMean = Math.pow(product, 1 / numbersArray.length);
+    display.value = geoMean.toString();
+    currentExpression = `geoMean(${numbersString})`;
+    currentExpressionDisplay.textContent = currentExpression;
+});
+
     // ... existing event listeners
 
 });
