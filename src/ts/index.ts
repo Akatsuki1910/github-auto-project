@@ -86,6 +86,15 @@ squared3Btn.addEventListener("click", () => {
         display.value = result.toString();
     }
 });
+//10^x button
+const tenToThePowerOfXBtn = document.getElementById("tenToThePowerOfX") as HTMLButtonElement;
+tenToThePowerOfXBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.pow(10, currentValue);
+        display.value = result.toString();
+    }
+});
     // ... existing event listeners
 
 });
