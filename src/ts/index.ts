@@ -98,6 +98,12 @@ tanBtn.addEventListener("click", () => {
   }
 });
 
+// Add Euler's number (e) button
+const eBtn = document.getElementById("e") as HTMLButtonElement;
+eBtn.addEventListener("click", () => {
+  display.value = Math.E.toString();
+});
+
     // ... existing event listeners
 
 });
