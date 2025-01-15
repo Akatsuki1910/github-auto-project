@@ -115,6 +115,12 @@ window.addEventListener("DOMContentLoaded", () => {
       currentExpression = `max(${numbersString})`;
       currentExpressionDisplay.textContent = currentExpression; 
  });
+ //Duplicate function
+  const duplicateBtn = document.getElementById("duplicate") as HTMLButtonElement;
+  duplicateBtn.addEventListener("click", () =>{
+    const currentValue = display.value;
+    display.value += currentValue;
+  });
 
     // ... existing event listeners
 
