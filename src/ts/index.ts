@@ -88,6 +88,28 @@ rangeBtn.addEventListener("click", () => {
   currentExpressionDisplay.textContent = currentExpression;
 });
 
+const standardDeviationBtn = document.getElementById("standardDeviation") as HTMLButtonElement;
+standardDeviationBtn.addEventListener("click", () => {
+  const numbersString = display.value;
+  const numbersArray = numbersString.split(',').map(Number);
+
+  if (numbersArray.some(isNaN)) {
+    display.value = "Invalid Input";
+    return;
+  }
+
+  const n = numbersArray.length;
+  const sum = numbersArray.reduce((acc, val) => acc + val, 0);
+  const mean = sum / n;
+
+  const squaredDifferencesSum = numbersArray.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0);
+  const standardDeviation = Math.sqrt(squaredDifferencesSum / n);
+
+  display.value = standardDeviation.toString();
+  currentExpression = `stddev(${numbersString})`;
+  currentExpressionDisplay.textContent = currentExpression;
+});
+
     // ... existing event listeners
 
 });
