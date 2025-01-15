@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
         if (n === 0 || n === 1) {
             return 1;
         } else if (n < 0) {
-          return "Error: Factorial not defined for negative numbers";
+          return NaN; // Return NaN for negative numbers
         }
         return n * factorial(n - 1);
     }
@@ -29,12 +29,30 @@ window.addEventListener("DOMContentLoaded", () => {
         const currentValue = parseFloat(display.value);
         if (!isNaN(currentValue)) {
             const result = factorial(currentValue);
-            display.value = result.toString();
-            currentExpression = `${currentValue}!`;
-            currentExpressionDisplay.textContent = currentExpression;
+            if (isNaN(result)){
+              display.value = "Error: Factorial not defined for negative numbers";
+            }else {
+              display.value = result.toString();
+              currentExpression = `${currentValue}!`;
+              currentExpressionDisplay.textContent = currentExpression;
+            }
         }
     });
 
+//Sum function
+ const sumBtn = document.getElementById("sum") as HTMLButtonElement;
+ sumBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)){
+    let sum = 0;
+    for (let i = 1; i<= currentValue; i++){
+      sum += i;  
+    }
+    display.value = sum.toString();
+    currentExpression = `sum(${currentValue})`;
+    currentExpressionDisplay.textContent = currentExpression;
+  }
+ });
     // ... existing event listeners
 
 });
