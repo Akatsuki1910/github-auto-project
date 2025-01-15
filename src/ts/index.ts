@@ -88,5 +88,14 @@ signBtn.addEventListener("click", () => {
     display.value = (-currentValue).toString();
   }
 });
+// Inverse functionality
+const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
+inverseBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue) && currentValue !== 0) {
+    display.value = (1/currentValue).toString();
+      currentExpression = `1/${currentValue}`;
+      currentExpressionDisplay.textContent = currentExpression;  }
+});
 
 });
