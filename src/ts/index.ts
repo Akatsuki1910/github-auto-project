@@ -91,5 +91,15 @@ squaredRootBtn.addEventListener("click", () => {
         display.value = Math.sqrt(currentValue).toString();
     }
 });
+//Inverse Functionality
+const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
+inverseBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue !== 0) {
+        display.value = (1/currentValue).toString();
+    } else if(currentValue === 0) {
+        display.value = "Cannot divide by zero";
+    }
+});
 // ... rest of the code
 });
