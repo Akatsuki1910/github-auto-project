@@ -123,5 +123,13 @@ const randomBtn = document.getElementById('random') as HTMLButtonElement;
 randomBtn.addEventListener('click', () => {
   display.value = Math.random().toString();
 });
+
+const tenToThePowerOfXBtn = document.getElementById('tenToThePowerOfX') as HTMLButtonElement;
+tenToThePowerOfXBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (10**currentValue).toString();
+    }
+});
 // ... rest of the code
 });
