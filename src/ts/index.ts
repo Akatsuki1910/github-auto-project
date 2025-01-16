@@ -64,5 +64,14 @@ signChangeBtn.addEventListener("click", () => {
         display.value = (-currentValue).toString();
     }
 });
+
+// Add log2 functionality
+const calculateLog2Btn = document.getElementById("calculateLog2") as HTMLButtonElement;
+calculateLog2Btn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = Math.log2(currentValue).toString();
+  }
+});
 // ... rest of the code
 });
