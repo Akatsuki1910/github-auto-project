@@ -119,5 +119,9 @@ function calculateTrig(func: string, value: number): number {
       default: return NaN;
     }
 }
+const randomBtn = document.getElementById('random') as HTMLButtonElement;
+randomBtn.addEventListener('click', () => {
+  display.value = Math.random().toString();
+});
 // ... rest of the code
 });
