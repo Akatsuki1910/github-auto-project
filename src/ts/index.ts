@@ -136,4 +136,18 @@ clearEntryBtn.addEventListener("click", () => {
   display.value = "0"; //Resets the display value to 0
 
 });
+
+// toFixed Functionality
+const toFixedBtn = document.getElementById("toFixed") as HTMLButtonElement;
+toFixedBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    const decimalPlaces = parseInt(prompt("Enter the number of decimal places:", "2") || "2");
+    if (isNaN(decimalPlaces) || decimalPlaces < 0) {
+      display.value = "Invalid decimal places";
+    } else {
+      display.value = currentValue.toFixed(decimalPlaces);
+    }
+  }
+});
 });
