@@ -144,4 +144,9 @@ expm1Btn.addEventListener("click", () => {
   }
 });
 
+const duplicateBtn = document.getElementById("duplicate") as HTMLButtonElement;
+duplicateBtn.addEventListener("click", () => {
+    display.value += display.value; 
+});
+
 });
