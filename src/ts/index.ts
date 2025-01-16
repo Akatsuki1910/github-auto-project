@@ -61,5 +61,15 @@ signChangeBtn.addEventListener("click", () => {
     }
   });
 
+const squaredBtn = document.getElementById("squared") as HTMLButtonElement;
+squaredBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    const result = currentValue * currentValue;
+    display.value = result.toString();
+    currentExpression = `${currentValue}²`;
+    currentExpressionDisplay.textContent = currentExpression;
+  }
+});
 // Existing Code ...
 });
