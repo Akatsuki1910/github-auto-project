@@ -125,5 +125,15 @@ const deleteBtn = document.getElementById("delete") as HTMLButtonElement;
 deleteBtn.addEventListener("click", () => {
   display.value = display.value.slice(0, -1);
 });
+const parenthesesBtn = document.getElementById("parentheses") as HTMLButtonElement;
+let parenthesesOpen = true;
+parenthesesBtn.addEventListener("click", () => {
+    if (parenthesesOpen) {
+        display.value += "(";
+    } else {
+        display.value += ")";
+    }
+    parenthesesOpen = !parenthesesOpen;
+});
 
 });
