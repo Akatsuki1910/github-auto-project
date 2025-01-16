@@ -113,4 +113,20 @@ exp10Btn.addEventListener("click", () => {
     display.value = (10**currentValue).toString();
   }
 });
+
+// Nth Root Functionality
+const nthRootBtn = document.getElementById("nthRoot") as HTMLButtonElement;
+nthRootBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if(!isNaN(currentValue)){
+    // Prompt the user for the nth root they want to calculate
+    const n = parseFloat(prompt("Enter the root value (e.g., 2 for square root, 3 for cube root):", "2") || "2");
+    if(isNaN(n) || n <=0) {
+      display.value = "Invalid root value";
+    } else {
+      display.value = (currentValue**(1/n)).toString();
+    }
+
+  }
+});
 });
