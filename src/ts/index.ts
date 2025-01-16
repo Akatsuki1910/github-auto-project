@@ -95,4 +95,13 @@ signChangeBtn.addEventListener("click", () => {
         display.value = (-currentValue).toString();
     }
 });
+
+// Truncate Functionality
+const truncateBtn = document.getElementById("truncate") as HTMLButtonElement;
+truncateBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.trunc(currentValue).toString();
+    }
+});
 });
