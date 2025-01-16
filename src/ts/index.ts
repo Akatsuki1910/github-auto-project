@@ -82,5 +82,13 @@ calculateLog10Btn.addEventListener("click", () => {
         display.value = Math.log10(currentValue).toString();
     }
 });
+//Squared Root functionality
+const squaredRootBtn = document.getElementById("squaredRoot") as HTMLButtonElement;
+squaredRootBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if(!isNaN(currentValue)){
+        display.value = Math.sqrt(currentValue).toString();
+    }
+});
 // ... rest of the code
 });
