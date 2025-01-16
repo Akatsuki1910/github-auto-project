@@ -79,4 +79,13 @@ ceilBtn.addEventListener("click", () => {
     display.value = Math.ceil(currentValue).toString();
   }
 });
+
+// Sign Change Functionality
+const signChangeBtn = document.getElementById("signChange") as HTMLButtonElement;
+signChangeBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (-currentValue).toString();
+    }
+});
 });
