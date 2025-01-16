@@ -129,4 +129,11 @@ nthRootBtn.addEventListener("click", () => {
 
   }
 });
+
+//Clear Entry Functionality
+const clearEntryBtn = document.getElementById("clearEntry") as HTMLButtonElement;
+clearEntryBtn.addEventListener("click", () => {
+  display.value = "0"; //Resets the display value to 0
+
+});
 });
