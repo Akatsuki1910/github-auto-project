@@ -57,5 +57,12 @@ expm1Btn.addEventListener("click", () => {
         display.value = Math.expm1(currentValue).toString();
     }
 });
+const signChangeBtn = document.getElementById("signChangeBtn") as HTMLButtonElement;
+signChangeBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (-currentValue).toString();
+    }
+});
 // ... rest of the code
 });
