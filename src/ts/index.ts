@@ -18,17 +18,8 @@ window.addEventListener("DOMContentLoaded", () => {
 
     //Cubed Functionality
 const cubedBtn = document.getElementById("cubed") as HTMLButtonElement;
-cubedBtn.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    const result = currentValue * currentValue * currentValue;
-    display.value = result.toString();
-    currentExpression = `${currentValue}³`;
-    currentExpressionDisplay.textContent = currentExpression;
-  }
-});
 
- // Add factorial button
+// Add factorial button
     const calculateFactorialBtn = document.getElementById("factorial") as HTMLButtonElement;
 
     function factorial(n: number): number {
@@ -53,6 +44,15 @@ cubedBtn.addEventListener("click", () => {
             }
         }
     });
+
+//Negate functionality
+const negBtn = document.getElementById("neg") as HTMLButtonElement;
+negBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (-currentValue).toString();
+    }
+});
 
 // ... other button event listeners
 
