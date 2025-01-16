@@ -149,4 +149,16 @@ duplicateBtn.addEventListener("click", () => {
     display.value += display.value; 
 });
 
+//Squared functionality
+const squaredBtn = document.getElementById("squared") as HTMLButtonElement;
+squaredBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    const result = currentValue * currentValue;
+    display.value = result.toString();
+    currentExpression = `${currentValue}²`;
+    currentExpressionDisplay.textContent = currentExpression;
+  }
+});
+
 });
