@@ -54,6 +54,15 @@ negBtn.addEventListener("click", () => {
     }
 });
 
+// 2^x functionality
+const exp2Btn = document.getElementById("exp2") as HTMLButtonElement;
+exp2Btn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = (2**currentValue).toString();
+  }
+});
+
 // ... other button event listeners
 
 //Modulus operator functionality
