@@ -109,5 +109,15 @@ copyBtn.addEventListener("click", () => {
     console.error("Failed to copy:", err);
   });
 });
+// Add reset functionality
+const resetBtn = document.getElementById("reset") as HTMLButtonElement;
+resetBtn.addEventListener("click", () => {
+    display.value = "";
+    currentExpression = "";
+    currentExpressionDisplay.textContent = currentExpression;
+    firstOperand = null;
+    currentOperator = null;
+    numbersToSum = []; // Clear summation array if it exists
+});
 
 });
