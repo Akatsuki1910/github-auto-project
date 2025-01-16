@@ -110,4 +110,13 @@ cuberootBtn.addEventListener("click", () => {
     }
 });
 
+// Percentage button functionality
+const percentBtn = document.getElementById("percent") as HTMLButtonElement;
+percentBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (currentValue / 100).toString();
+    }
+});
+
 });
