@@ -104,4 +104,13 @@ truncateBtn.addEventListener("click", () => {
         display.value = Math.trunc(currentValue).toString();
     }
 });
+
+// 10^x functionality
+const exp10Btn = document.getElementById("exp10") as HTMLButtonElement;
+exp10Btn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = (10**currentValue).toString();
+  }
+});
 });
