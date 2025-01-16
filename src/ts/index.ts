@@ -73,5 +73,14 @@ calculateLog2Btn.addEventListener("click", () => {
     display.value = Math.log2(currentValue).toString();
   }
 });
+
+// Add log10 functionality
+const calculateLog10Btn = document.getElementById("calculateLog10") as HTMLButtonElement;
+calculateLog10Btn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.log10(currentValue).toString();
+    }
+});
 // ... rest of the code
 });
