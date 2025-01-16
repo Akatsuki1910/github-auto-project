@@ -98,4 +98,16 @@ inverseBtn.addEventListener("click", () => {
       currentExpressionDisplay.textContent = currentExpression;  }
 });
 
+//Cuberoot functionality
+const cuberootBtn = document.getElementById("cuberoot") as HTMLButtonElement;
+cuberootBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.cbrt(currentValue);
+        display.value = result.toString();
+        currentExpression = `∛${currentValue}`;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
+
 });
