@@ -43,6 +43,13 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
 //Negate functionality
+const signChangeBtn = document.getElementById("signChange") as HTMLButtonElement;
+signChangeBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (-currentValue).toString();
+    }
+});
 // ... other button event listeners
 // ... other functions
 //Ln2 functionality
