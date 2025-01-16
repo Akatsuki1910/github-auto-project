@@ -70,4 +70,13 @@ exp2Btn.addEventListener("click", () => {
 
 //Summation functionality
 // ... (rest of the code)
+
+// Ceil Functionality
+const ceilBtn = document.getElementById("ceil") as HTMLButtonElement;
+ceilBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = Math.ceil(currentValue).toString();
+  }
+});
 });
