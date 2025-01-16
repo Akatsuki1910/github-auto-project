@@ -101,5 +101,23 @@ inverseBtn.addEventListener("click", () => {
         display.value = "Cannot divide by zero";
     }
 });
+let angleMode = 'rad'; // Initialize to radians
+const degBtn = document.getElementById('deg') as HTMLButtonElement;
+degBtn.addEventListener('click', () => {
+  angleMode = angleMode === 'rad' ? 'deg' : 'rad';
+  degBtn.textContent = angleMode === 'rad' ? 'Deg/Rad' : 'Rad/Deg';
+});
+
+function calculateTrig(func: string, value: number): number {
+    if (angleMode === 'deg') {
+      value = value * Math.PI / 180; // Convert to radians
+    }
+    switch (func) {
+        case 'sin': return Math.sin(value);
+        case 'cos': return Math.cos(value);
+        case 'tan': return Math.tan(value);
+      default: return NaN;
+    }
+}
 // ... rest of the code
 });
