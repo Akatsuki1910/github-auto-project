@@ -50,7 +50,19 @@ minBtn.addEventListener("click", () => {
     if (!isNaN(currentValue)) {
         currentOperator = 'min';
         firstOperand = currentValue;
-        currentExpression = `${currentValue} min `; // Add space for visual clarity
+        currentExpression = `${currentValue} min `;
+        currentExpressionDisplay.textContent = currentExpression;
+        display.value = "";
+    }
+});
+
+const maxBtn = document.getElementById("max") as HTMLButtonElement;
+maxBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        currentOperator = 'max';
+        firstOperand = currentValue;
+        currentExpression = `${currentValue} max `;
         currentExpressionDisplay.textContent = currentExpression;
         display.value = "";
     }
