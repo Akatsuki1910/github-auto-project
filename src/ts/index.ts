@@ -16,9 +16,6 @@ window.addEventListener("DOMContentLoaded", () => {
  // Add factorial button
     // ... existing functions
 
-    //Cubed Functionality
-const cubedBtn = document.getElementById("cubed") as HTMLButtonElement;
-
 // Add factorial button
     const calculateFactorialBtn = document.getElementById("factorial") as HTMLButtonElement;
 
@@ -46,108 +43,13 @@ const cubedBtn = document.getElementById("cubed") as HTMLButtonElement;
     });
 
 //Negate functionality
-const negBtn = document.getElementById("neg") as HTMLButtonElement;
-negBtn.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (-currentValue).toString();
-    }
-});
-
-// 2^x functionality
-const exp2Btn = document.getElementById("exp2") as HTMLButtonElement;
-exp2Btn.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    display.value = (2**currentValue).toString();
-  }
-});
-//Expm1 functionality
-const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
-expm1Btn.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    display.value = Math.expm1(currentValue).toString();
-  }
-});
 // ... other button event listeners
-
-//Modulus operator functionality
 // ... other functions
-
-//Summation functionality
-// ... (rest of the code)
-
-// Ceil Functionality
-const ceilBtn = document.getElementById("ceil") as HTMLButtonElement;
-ceilBtn.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    display.value = Math.ceil(currentValue).toString();
-  }
+//Ln2 functionality
+const ln2Btn = document.getElementById("ln2") as HTMLButtonElement;
+ln2Btn.addEventListener("click", () => {
+  display.value = Math.LN2.toString();
 });
 
-// Sign Change Functionality
-const signChangeBtn = document.getElementById("+/-") as HTMLButtonElement;
-signChangeBtn.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (-currentValue).toString();
-    }
-});
-
-// Truncate Functionality
-const truncateBtn = document.getElementById("truncate") as HTMLButtonElement;
-truncateBtn.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.trunc(currentValue).toString();
-    }
-});
-
-// 10^x functionality
-const exp10Btn = document.getElementById("exp10") as HTMLButtonElement;
-exp10Btn.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    display.value = (10**currentValue).toString();
-  }
-});
-
-// Nth Root Functionality
-const nthRootBtn = document.getElementById("nthRoot") as HTMLButtonElement;
-nthRootBtn.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if(!isNaN(currentValue)){
-    // Prompt the user for the nth root they want to calculate
-    const n = parseFloat(prompt("Enter the root value (e.g., 2 for square root, 3 for cube root):", "2") || "2");
-    if(isNaN(n) || n <=0) {
-      display.value = "Invalid root value";
-    } else {
-      display.value = (currentValue**(1/n)).toString();
-    }
-
-  }
-});
-
-//Clear Entry Functionality
-const clearEntryBtn = document.getElementById("clearEntry") as HTMLButtonElement;
-clearEntryBtn.addEventListener("click", () => {
-  display.value = "0"; //Resets the display value to 0
-
-});
-
-// toFixed Functionality
-const toFixedBtn = document.getElementById("toFixed") as HTMLButtonElement;
-toFixedBtn.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    const decimalPlaces = parseInt(prompt("Enter the number of decimal places:", "2") || "2");
-    if (isNaN(decimalPlaces) || decimalPlaces < 0) {
-      display.value = "Invalid decimal places";
-    } else {
-      display.value = currentValue.toFixed(decimalPlaces);
-    }
-  }
-});
+// ... rest of the code
 });
