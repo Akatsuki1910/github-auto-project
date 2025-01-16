@@ -44,6 +44,29 @@ window.addEventListener("DOMContentLoaded", () => {
 //Modulus operator functionality
 // ... other functions
 
+//Summation functionality
+const summationBtn = document.getElementById("summation") as HTMLButtonElement;
+let numbersToSum: number[] = [];
+
+summationBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    numbersToSum.push(currentValue);
+    display.value = ""; // Clear the display for the next number
+    currentExpression = numbersToSum.join(" + ");
+    currentExpressionDisplay.textContent = currentExpression;
+  }
+
+equalsBtn.addEventListener("click", () => {
+  if (numbersToSum.length > 0) {
+    const sum = numbersToSum.reduce((a, b) => a + b, 0);
+    display.value = sum.toString();
+    currentExpression = "";
+    currentExpressionDisplay.textContent = currentExpression;
+    numbersToSum = []; // Reset the array for the next summation
+  }
+});
+});
 const minBtn = document.getElementById("min") as HTMLButtonElement;
 minBtn.addEventListener("click", () => {
     const currentValue = parseFloat(display.value);
