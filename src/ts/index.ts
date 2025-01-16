@@ -125,4 +125,17 @@ randomBtn.addEventListener("click", () => {
   display.value = randomNumber.toString();
 });
 
+// Exponent Functionality
+const calculateExponentBtn = document.getElementById("calculateExponent") as HTMLButtonElement;
+calculateExponentBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        currentOperator = "^"; // Use a unique identifier for the exponent operation
+        firstOperand = currentValue;
+        currentExpression = `${firstOperand}^`;
+        currentExpressionDisplay.textContent = currentExpression;
+        display.value = ""; // Clear the display for the second operand
+    }
+});
+
 });
