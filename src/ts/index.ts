@@ -120,4 +120,10 @@ resetBtn.addEventListener("click", () => {
     numbersToSum = []; // Clear summation array if it exists
 });
 
+// Add delete functionality
+const deleteBtn = document.getElementById("delete") as HTMLButtonElement;
+deleteBtn.addEventListener("click", () => {
+  display.value = display.value.slice(0, -1);
+});
+
 });
