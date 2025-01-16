@@ -88,7 +88,7 @@ ceilBtn.addEventListener("click", () => {
 });
 
 // Sign Change Functionality
-const signChangeBtn = document.getElementById("signChange") as HTMLButtonElement;
+const signChangeBtn = document.getElementById("+/-") as HTMLButtonElement;
 signChangeBtn.addEventListener("click", () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
