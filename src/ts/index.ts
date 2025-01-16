@@ -99,4 +99,15 @@ signChangeBtn.addEventListener("click", () => {
   }
 });
 
+// Add copy to clipboard functionality
+const copyBtn = document.getElementById("copy") as HTMLButtonElement;
+copyBtn.addEventListener("click", () => {
+  navigator.clipboard.writeText(display.value).then(() => {
+    // Optional: Provide feedback to the user that the copy was successful
+    console.log("Copied to clipboard:", display.value);
+  }).catch(err => {
+    console.error("Failed to copy:", err);
+  });
+});
+
 });
