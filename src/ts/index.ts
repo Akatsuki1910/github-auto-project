@@ -50,6 +50,12 @@ const ln2Btn = document.getElementById("ln2") as HTMLButtonElement;
 ln2Btn.addEventListener("click", () => {
   display.value = Math.LN2.toString();
 });
-
+const expm1Btn = document.getElementById("expm1Btn") as HTMLButtonElement;
+expm1Btn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.expm1(currentValue).toString();
+    }
+});
 // ... rest of the code
 });
