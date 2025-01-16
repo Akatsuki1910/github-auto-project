@@ -136,4 +136,12 @@ parenthesesBtn.addEventListener("click", () => {
     parenthesesOpen = !parenthesesOpen;
 });
 
+const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
+expm1Btn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = Math.expm1(currentValue).toString();
+  }
+});
+
 });
