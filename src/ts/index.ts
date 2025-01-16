@@ -42,94 +42,16 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-//Negate functionality
-const signChangeBtn = document.getElementById("signChange") as HTMLButtonElement;
-signChangeBtn.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (-currentValue).toString();
-    }
-});
-// ... other button event listeners
-// ... other functions
-//Ln2 functionality
-const ln2Btn = document.getElementById("ln2") as HTMLButtonElement;
-ln2Btn.addEventListener("click", () => {
-  display.value = Math.LN2.toString();
-});
-// Add expm1 functionality
-const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
-expm1Btn.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.expm1(currentValue).toString();
-    }
-});
+// Existing code ...
 
-// Add log2 functionality
-const calculateLog2Btn = document.getElementById("calculateLog2") as HTMLButtonElement;
-calculateLog2Btn.addEventListener("click", () => {
+// Plus/Minus button functionality
+const plusMinusBtn = document.getElementById("plusMinus") as HTMLButtonElement;
+plusMinusBtn.addEventListener("click", () => {
   const currentValue = parseFloat(display.value);
   if (!isNaN(currentValue)) {
-    display.value = Math.log2(currentValue).toString();
+    display.value = (-1 * currentValue).toString();
   }
 });
 
-// Add log10 functionality
-const calculateLog10Btn = document.getElementById("calculateLog10") as HTMLButtonElement;
-calculateLog10Btn.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.log10(currentValue).toString();
-    }
-});
-//Squared Root functionality
-const squaredRootBtn = document.getElementById("squaredRoot") as HTMLButtonElement;
-squaredRootBtn.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if(!isNaN(currentValue)){
-        display.value = Math.sqrt(currentValue).toString();
-    }
-});
-//Inverse Functionality
-const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
-inverseBtn.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue !== 0) {
-        display.value = (1/currentValue).toString();
-    } else if(currentValue === 0) {
-        display.value = "Cannot divide by zero";
-    }
-});
-let angleMode = 'rad'; // Initialize to radians
-const degBtn = document.getElementById('deg') as HTMLButtonElement;
-degBtn.addEventListener('click', () => {
-  angleMode = angleMode === 'rad' ? 'deg' : 'rad';
-  degBtn.textContent = angleMode === 'rad' ? 'Deg/Rad' : 'Rad/Deg';
-});
-
-function calculateTrig(func: string, value: number): number {
-    if (angleMode === 'deg') {
-      value = value * Math.PI / 180; // Convert to radians
-    }
-    switch (func) {
-        case 'sin': return Math.sin(value);
-        case 'cos': return Math.cos(value);
-        case 'tan': return Math.tan(value);
-      default: return NaN;
-    }
-}
-const randomBtn = document.getElementById('random') as HTMLButtonElement;
-randomBtn.addEventListener('click', () => {
-  display.value = Math.random().toString();
-});
-
-const tenToThePowerOfXBtn = document.getElementById('tenToThePowerOfX') as HTMLButtonElement;
-tenToThePowerOfXBtn.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (10**currentValue).toString();
-    }
-});
-// ... rest of the code
+// Existing Code ...
 });
