@@ -52,6 +52,14 @@ plusMinusBtn.addEventListener("click", () => {
     display.value = (-1 * currentValue).toString();
   }
 });
+//Sign Change button functionality
+const signChangeBtn = document.getElementById("signChange") as HTMLButtonElement;
+signChangeBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+      display.value = (-1 * currentValue).toString();
+    }
+  });
 
 // Existing Code ...
 });
