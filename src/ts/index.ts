@@ -62,7 +62,14 @@ exp2Btn.addEventListener("click", () => {
     display.value = (2**currentValue).toString();
   }
 });
-
+//Expm1 functionality
+const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
+expm1Btn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = Math.expm1(currentValue).toString();
+  }
+});
 // ... other button event listeners
 
 //Modulus operator functionality
