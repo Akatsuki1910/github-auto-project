@@ -74,5 +74,27 @@ const negateBtn = document.getElementById("negate") as HTMLButtonElement;
     }
   });
 
+ //Fibonacci button
+    const fibonacciBtn = document.getElementById("fibonacci") as HTMLButtonElement;
+
+    function fibonacci(n: number): number {
+        if (n <= 1) {
+            return n;
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
+
+    fibonacciBtn.addEventListener("click", () => {
+      const currentValue = parseInt(display.value);
+      if (!isNaN(currentValue) && currentValue >=0) {
+        const result = fibonacci(currentValue);
+        display.value = result.toString();
+        currentExpression = `fibonacci(${currentValue})`;
+        currentExpressionDisplay.textContent = currentExpression;
+      } else{
+        display.value = "Error: Input must be a non-negative integer";
+      }
+    });
+
 // Existing Code ...
 });
