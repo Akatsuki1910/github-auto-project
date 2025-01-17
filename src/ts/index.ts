@@ -77,5 +77,10 @@ function addToHistory(expression: string) {
     historyDisplay.innerHTML = history.map(item => `<div>${item}</div>`).join('');
 }
 
+const multiplyBtn = document.getElementById("multiply") as HTMLButtonElement;
+multiplyBtn.addEventListener("click", () => {
+    currentExpression += '*';
+    currentExpressionDisplay.textContent = currentExpression;
+});
 //Existing code ...
 });
