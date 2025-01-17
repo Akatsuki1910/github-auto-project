@@ -107,6 +107,14 @@ duplicateBtn.addEventListener("click", () => {
     }
 });
 
+const swapBtn = document.getElementById("swap") as HTMLButtonElement;
+swapBtn.addEventListener("click", () => {
+    if (currentExpression && currentExpression.length >= 2) {
+        currentExpression = currentExpression.slice(-2) + currentExpression.slice(0, -2);
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
+
 });
 
 //Existing Pow Button Code...
