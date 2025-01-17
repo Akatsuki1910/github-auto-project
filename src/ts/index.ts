@@ -101,6 +101,15 @@ naturalLogBtn.addEventListener("click", () => {
         currentExpressionDisplay.textContent = currentExpression;
     }
 });
+const exp2Btn = document.getElementById("exp2") as HTMLButtonElement;
+exp2Btn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.exp(currentValue).toString();
+        currentExpression = `e^(${currentValue})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
 
 // Existing Code ...
 });
