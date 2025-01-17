@@ -61,6 +61,21 @@ ansBtn.addEventListener("click", () => {
     currentExpression += lastAnswer;
     currentExpressionDisplay.textContent = currentExpression;
 });
+//Floor Functionality
+const floorBtn = document.getElementById("floor") as HTMLButtonElement;
+floorBtn?.addEventListener("click", () => {
+    try {
+        const result = Math.floor(eval(currentExpression));
+        display.value = result.toString();
+        lastAnswer = result;
+        addToHistory(`${currentExpression} = ${result}`);
+        currentExpression = "";
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+    catch (error) {
+        display.value = "Error";
+    }
+});
 
 });
 
