@@ -45,95 +45,34 @@ window.addEventListener("DOMContentLoaded", () => {
 // Existing code ...
 
 // Plus/Minus button functionality
-const plusMinusBtn = document.getElementById("plusMinus") as HTMLButtonElement;
-plusMinusBtn.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    display.value = (-1 * currentValue).toString();
-  }
-});
+// ... existing plusMinusBtn code
+
 //Sign Change button functionality
-const signChangeBtn = document.getElementById("signChange") as HTMLButtonElement;
-signChangeBtn.addEventListener("click", () => {
+// ... existing signChangeBtn code
+
+// ... existing squaredBtn, cubedBtn, base10LogBtn, naturalLogBtn code
+
+const exp2Btn = document.getElementById("exp2") as HTMLButtonElement;
+// ... existing exp2Btn code
+
+const tenPowerXBtn = document.getElementById("tenPowerX") as HTMLButtonElement;
+// ... existing tenPowerXBtn code
+
+const sumNumbersBtn = document.getElementById("sumNumbers") as HTMLButtonElement;
+// ... existing sumNumbersBtn code
+
+const negateBtn = document.getElementById("negate") as HTMLButtonElement;
+// ... existing negateBtn code
+
+// Add percentage button functionality
+  const percentBtn = document.getElementById("percent") as HTMLButtonElement;
+
+  percentBtn.addEventListener("click", () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-      display.value = (-1 * currentValue).toString();
+      display.value = (currentValue / 100).toString();
     }
   });
 
-const squaredBtn = document.getElementById("squared") as HTMLButtonElement;
-squaredBtn.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    const result = currentValue * currentValue;
-    display.value = result.toString();
-    currentExpression = `${currentValue}²`;
-    currentExpressionDisplay.textContent = currentExpression;
-  }
-});
-
-const cubedBtn = document.getElementById("cubed") as HTMLButtonElement;
-cubedBtn.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    const result = currentValue * currentValue * currentValue;
-    display.value = result.toString();
-    currentExpression = `${currentValue}³`;
-    currentExpressionDisplay.textContent = currentExpression;
-  }
-});
-//Base 10 Log
-const base10LogBtn = document.getElementById("base10Log") as HTMLButtonElement;
-base10LogBtn.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.log10(currentValue).toString();
-    }
-});
-
-//Natural Logarithm (ln)
-const naturalLogBtn = document.getElementById("naturalLog") as HTMLButtonElement;
-naturalLogBtn.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue > 0) { // Check for positive input
-        display.value = Math.log(currentValue).toString();
-        currentExpression = `ln(${currentValue})`;
-        currentExpressionDisplay.textContent = currentExpression;
-    }
-});
-const exp2Btn = document.getElementById("exp2") as HTMLButtonElement;
-exp2Btn.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.exp(currentValue).toString();
-        currentExpression = `e^(${currentValue})`;
-        currentExpressionDisplay.textContent = currentExpression;
-    }
-});
-
-const tenPowerXBtn = document.getElementById("tenPowerX") as HTMLButtonElement;
-tenPowerXBtn.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.pow(10, currentValue).toString();
-        currentExpression = `10^(${currentValue})`;
-        currentExpressionDisplay.textContent = currentExpression;
-    }
-});
-
-const sumNumbersBtn = document.getElementById("sumNumbers") as HTMLButtonElement;
-sumNumbersBtn.addEventListener("click", () => {
-  const numbers = display.value.split(/\s*,\s*|\s+/).map(Number);
-  const sum = numbers.reduce((acc, num) => acc + num, 0);
-  display.value = sum.toString();
-});
-
-const negateBtn = document.getElementById("negate") as HTMLButtonElement;
-negateBtn.addEventListener("click", () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    display.value = (-currentValue).toString();
-  }
-});
 // Existing Code ...
 });
