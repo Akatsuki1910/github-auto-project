@@ -39,6 +39,20 @@ powBtn.addEventListener("click", () => {
     }
   }
 });
+const squareRootBtn = document.getElementById("squareRoot") as HTMLButtonElement;
+squareRootBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (!isNaN(num)) {
+        if (num < 0) {
+            display.value = "Invalid input";
+        } else {
+            const result = Math.sqrt(num);
+            display.value = result.toString();
+            currentExpression = `√(${num})`;  // Update current expression
+            currentExpressionDisplay.textContent = currentExpression;
+        }
+    }
+});
 
 //Existing code ...
 });
