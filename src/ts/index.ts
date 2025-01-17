@@ -139,5 +139,28 @@ const negateBtn = document.getElementById("negate") as HTMLButtonElement;
               currentExpressionDisplay.textContent = currentExpression;        
           }
   });
+//Add gcd button
+const gcdBtn = document.getElementById("gcd") as HTMLButtonElement;
+
+function gcd(a: number, b: number): number {
+    if (!b) {
+      return a;
+    }
+    return gcd(b, a % b);
+  }
+
+gcdBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    const nextValue = parseFloat(prompt("Enter the second number:") || "0");
+
+    if(!isNaN(currentValue) && !isNaN(nextValue)){
+        const result = gcd(currentValue,nextValue);
+        display.value = result.toString();
+        currentExpression = `gcd(${currentValue},${nextValue})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    } else {
+        display.value = "Invalid input";
+    }
+});
 // Existing Code ...
 });
