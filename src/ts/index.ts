@@ -194,5 +194,17 @@ absValueBtn.addEventListener("click", () => {
         currentExpressionDisplay.textContent = currentExpression;
     }
 });
+
+const signFlipBtn = document.getElementById("signFlip") as HTMLButtonElement;
+signFlipBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = (-currentValue).toString();
+    currentExpression = `-${currentValue}`;
+    currentExpressionDisplay.textContent = currentExpression;
+  }
+});
+
+
 // Existing Code ...
 });
