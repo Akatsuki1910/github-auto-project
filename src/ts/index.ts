@@ -99,6 +99,14 @@ randomBtn.addEventListener("click", () => {
     currentExpressionDisplay.textContent = currentExpression;
 });
 
+const duplicateBtn = document.getElementById("duplicate") as HTMLButtonElement;
+duplicateBtn.addEventListener("click", () => {
+    if (currentExpression) {
+        currentExpression += currentExpression;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
+
 });
 
 //Existing Pow Button Code...
