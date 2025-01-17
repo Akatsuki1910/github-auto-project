@@ -23,6 +23,9 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // ... (Existing event listeners and functions)
 
+//Existing code ...
+});
+
 const powBtn = document.getElementById("pow") as HTMLButtonElement;
 
 powBtn.addEventListener("click", () => {
@@ -82,5 +85,8 @@ multiplyBtn.addEventListener("click", () => {
     currentExpression += '*';
     currentExpressionDisplay.textContent = currentExpression;
 });
-//Existing code ...
+const divideBtn = document.getElementById("divide") as HTMLButtonElement;
+divideBtn.addEventListener("click", () => {
+    currentExpression += '/';
+    currentExpressionDisplay.textContent = currentExpression;
 });
