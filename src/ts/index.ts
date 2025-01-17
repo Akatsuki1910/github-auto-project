@@ -34,7 +34,9 @@ powBtn.addEventListener("click", () => {
       display.value = result.toString();
       currentExpression = `${base}^${exponent}`;
       currentExpressionDisplay.textContent = currentExpression;
-    } else {
+      addToHistory(`${base}^${exponent}=${result}`); // Add this line
+    }
+     else {
       display.value = "Invalid exponent";
     }
   }
@@ -50,6 +52,7 @@ squareRootBtn.addEventListener("click", () => {
             display.value = result.toString();
             currentExpression = `√(${num})`;  // Update current expression
             currentExpressionDisplay.textContent = currentExpression;
+            addToHistory(`√(${num})=${result}`); // Add this line
         }
     }
 });
@@ -62,8 +65,17 @@ cbrtBtn.addEventListener("click", () => {
       display.value = result.toString();
       currentExpression = `∛(${num})`; // Update current expression for cube root
       currentExpressionDisplay.textContent = currentExpression;
+      addToHistory(`∛(${num})=${result}`); // Add this line
     }
 });
+
+let history: string[] = [];
+const historyDisplay = document.getElementById("history") as HTMLDivElement;
+
+function addToHistory(expression: string) {
+    history.push(expression);
+    historyDisplay.innerHTML = history.map(item => `<div>${item}</div>`).join('');
+}
 
 //Existing code ...
 });
