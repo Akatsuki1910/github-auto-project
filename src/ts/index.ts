@@ -82,5 +82,14 @@ cubedBtn.addEventListener("click", () => {
     currentExpressionDisplay.textContent = currentExpression;
   }
 });
+//Base 10 Log
+const base10LogBtn = document.getElementById("base10Log") as HTMLButtonElement;
+base10LogBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.log10(currentValue).toString();
+    }
+});
+
 // Existing Code ...
 });
