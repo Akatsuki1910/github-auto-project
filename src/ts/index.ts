@@ -71,5 +71,16 @@ squaredBtn.addEventListener("click", () => {
     currentExpressionDisplay.textContent = currentExpression;
   }
 });
+
+const cubedBtn = document.getElementById("cubed") as HTMLButtonElement;
+cubedBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    const result = currentValue * currentValue * currentValue;
+    display.value = result.toString();
+    currentExpression = `${currentValue}³`;
+    currentExpressionDisplay.textContent = currentExpression;
+  }
+});
 // Existing Code ...
 });
