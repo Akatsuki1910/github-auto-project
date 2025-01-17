@@ -121,5 +121,11 @@ tenPowerXBtn.addEventListener("click", () => {
     }
 });
 
+const sumNumbersBtn = document.getElementById("sumNumbers") as HTMLButtonElement;
+sumNumbersBtn.addEventListener("click", () => {
+  const numbers = display.value.split(/\s*,\s*|\s+/).map(Number);
+  const sum = numbers.reduce((acc, num) => acc + num, 0);
+  display.value = sum.toString();
+});
 // Existing Code ...
 });
