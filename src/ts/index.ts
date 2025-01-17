@@ -204,6 +204,21 @@ signFlipBtn.addEventListener("click", () => {
     currentExpressionDisplay.textContent = currentExpression;
   }
 });
+//Add a square root button
+const squaredRootBtn = document.getElementById("squaredRoot") as HTMLButtonElement;
+squaredRootBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    if (currentValue < 0) {
+      display.value = "Invalid input";
+    } else {
+      const result = Math.sqrt(currentValue);
+      display.value = result.toString();
+      currentExpression = `√(${currentValue})`;
+      currentExpressionDisplay.textContent = currentExpression;
+    }
+  }
+});
 
 
 // Existing Code ...
