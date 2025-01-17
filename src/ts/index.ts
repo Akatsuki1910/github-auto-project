@@ -27,6 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
 let history: string[] = [];
 const historyDisplay = document.getElementById("history") as HTMLDivElement;
+let lastAnswer = 0;
 
 function addToHistory(expression: string) {
     history.push(expression);
@@ -54,6 +55,13 @@ eBtn.addEventListener("click", () => {
     currentExpression += Math.E;
     currentExpressionDisplay.textContent = currentExpression;
 });
+
+const ansBtn = document.getElementById("ans") as HTMLButtonElement;
+ansBtn.addEventListener("click", () => {
+    currentExpression += lastAnswer;
+    currentExpressionDisplay.textContent = currentExpression;
+});
+
 });
 
 //Existing Pow Button Code...
