@@ -236,5 +236,21 @@ roundToNearestBtn.addEventListener("click", () => {
   }
 });
 
+const calculateLogBtn = document.getElementById("calculateLog") as HTMLButtonElement;
+
+calculateLogBtn.addEventListener("click", () => {
+    const base = parseFloat(prompt("Enter base:") || "10");
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(base) && !isNaN(currentValue)){
+        const result = Math.log(currentValue) / Math.log(base);
+        display.value = result.toString();
+        currentExpression = `log(${currentValue},${base})`;
+        currentExpressionDisplay.textContent = currentExpression;  
+    }
+    else {
+      display.value = "Invalid Input for base or current value";
+    }
+});
+
 // Existing Code ...
 });
