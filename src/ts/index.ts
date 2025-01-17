@@ -77,6 +77,21 @@ floorBtn?.addEventListener("click", () => {
     }
 });
 
+//Ceil Functionality
+const ceilBtn = document.getElementById("ceil") as HTMLButtonElement;
+ceilBtn?.addEventListener("click", () => {
+    try {
+        const result = Math.ceil(eval(currentExpression));
+        display.value = result.toString();
+        lastAnswer = result;
+        addToHistory(`${currentExpression} = ${result}`);
+        currentExpression = "";
+        currentExpressionDisplay.textContent = currentExpression;
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
 });
 
 //Existing Pow Button Code...
