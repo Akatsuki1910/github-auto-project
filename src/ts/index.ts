@@ -95,6 +95,22 @@ const negateBtn = document.getElementById("negate") as HTMLButtonElement;
         display.value = "Error: Input must be a non-negative integer";
       }
     });
+//Add Random Integer button
+ const randomIntegerBtn = document.getElementById("randomInteger") as HTMLButtonElement;
+
+ randomIntegerBtn.addEventListener("click", () => {
+  const minVal = parseFloat(prompt("Enter minimum value:", "0") || "0");
+  const maxVal = parseFloat(prompt("Enter maximum value:", "100") || "100");
+
+  if (!isNaN(minVal) && !isNaN(maxVal)) {
+    const randomInt = Math.floor(Math.random() * (maxVal - minVal + 1)) + minVal;
+    display.value = randomInt.toString();
+    currentExpression = `random(${minVal}, ${maxVal})`;
+    currentExpressionDisplay.textContent = currentExpression;
+  } else {
+    display.value = "Invalid input";
+  }
+});
 
 // Existing Code ...
 });
