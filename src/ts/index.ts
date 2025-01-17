@@ -54,5 +54,16 @@ squareRootBtn.addEventListener("click", () => {
     }
 });
 
+const cbrtBtn = document.getElementById("cuberoot") as HTMLButtonElement;
+cbrtBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (!isNaN(num)) {
+      const result = Math.cbrt(num);
+      display.value = result.toString();
+      currentExpression = `∛(${num})`; // Update current expression for cube root
+      currentExpressionDisplay.textContent = currentExpression;
+    }
+});
+
 //Existing code ...
 });
