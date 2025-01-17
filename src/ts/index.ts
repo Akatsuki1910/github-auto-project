@@ -48,6 +48,12 @@ negateBtn.addEventListener("click", () => {
 });
 
 // ... existing multiply, divide, remainder buttons and event listeners
+
+const eBtn = document.getElementById("e") as HTMLButtonElement;
+eBtn.addEventListener("click", () => {
+    currentExpression += Math.E;
+    currentExpressionDisplay.textContent = currentExpression;
+});
 });
 
 //Existing Pow Button Code...
@@ -55,4 +61,3 @@ negateBtn.addEventListener("click", () => {
 //Existing Square Root Button Code...
 
 //Existing Cube Root Button Code...
-
