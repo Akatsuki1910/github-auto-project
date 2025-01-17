@@ -111,5 +111,15 @@ exp2Btn.addEventListener("click", () => {
     }
 });
 
+const tenPowerXBtn = document.getElementById("tenPowerX") as HTMLButtonElement;
+tenPowerXBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.pow(10, currentValue).toString();
+        currentExpression = `10^(${currentValue})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
+
 // Existing Code ...
 });
