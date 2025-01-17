@@ -220,6 +220,21 @@ squaredRootBtn.addEventListener("click", () => {
   }
 });
 
+const roundToNearestBtn = document.getElementById("roundToNearest") as HTMLButtonElement;
+roundToNearestBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    const nearestValue = parseFloat(prompt("Round to nearest:") || "1");
+    if(!isNaN(nearestValue)){
+    const result = Math.round(currentValue / nearestValue) * nearestValue;
+    display.value = result.toString();
+    currentExpression = `round(${currentValue},${nearestValue})`;
+    currentExpressionDisplay.textContent = currentExpression;  
+    } else {
+      display.value = "Invalid Input for nearest value";
+    }
+  }
+});
 
 // Existing Code ...
 });
