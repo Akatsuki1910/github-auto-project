@@ -184,5 +184,15 @@ lcmBtn.addEventListener("click", () => {
     }
 });
 
+const absValueBtn = document.getElementById("absValue") as HTMLButtonElement;
+
+absValueBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.abs(currentValue).toString();
+        currentExpression = `|${currentValue}|`;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
 // Existing Code ...
 });
