@@ -162,5 +162,27 @@ gcdBtn.addEventListener("click", () => {
         display.value = "Invalid input";
     }
 });
+
+//Add lcm button
+const lcmBtn = document.getElementById("lcm") as HTMLButtonElement;
+
+function lcm(a: number, b: number): number {
+  return (a * b) / gcd(a, b);
+}
+
+lcmBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    const nextValue = parseFloat(prompt("Enter the second number:") || "0");
+
+    if(!isNaN(currentValue) && !isNaN(nextValue)){
+        const result = lcm(currentValue, nextValue);
+        display.value = result.toString();
+        currentExpression = `lcm(${currentValue},${nextValue})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    }else{
+        display.value = "Invalid Input";
+    }
+});
+
 // Existing Code ...
 });
