@@ -127,5 +127,13 @@ sumNumbersBtn.addEventListener("click", () => {
   const sum = numbers.reduce((acc, num) => acc + num, 0);
   display.value = sum.toString();
 });
+
+const negateBtn = document.getElementById("negate") as HTMLButtonElement;
+negateBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = (-currentValue).toString();
+  }
+});
 // Existing Code ...
 });
