@@ -24,13 +24,6 @@ window.addEventListener("DOMContentLoaded", () => {
 // ... (Existing event listeners and functions)
 
 //Existing code ...
-});
-
-//Existing Pow Button Code...
-
-//Existing Square Root Button Code...
-
-//Existing Cube Root Button Code...
 
 let history: string[] = [];
 const historyDisplay = document.getElementById("history") as HTMLDivElement;
@@ -40,20 +33,26 @@ function addToHistory(expression: string) {
     historyDisplay.innerHTML = history.map(item => `<div>${item}</div>`).join('');
 }
 
-const multiplyBtn = document.getElementById("multiply") as HTMLButtonElement;
-multiplyBtn.addEventListener("click", () => {
-    currentExpression += '*';
+// ... other existing buttons
+
+const negateBtn = document.getElementById("negate") as HTMLButtonElement;
+negateBtn.addEventListener("click", () => {
+  if (currentExpression) {
+    if (currentExpression.startsWith("-")) {
+      currentExpression = currentExpression.substring(1);
+    } else {
+      currentExpression = "-" + currentExpression;
+    }
     currentExpressionDisplay.textContent = currentExpression;
-});
-const divideBtn = document.getElementById("divide") as HTMLButtonElement;
-divideBtn.addEventListener("click", () => {
-    currentExpression += '/';
-    currentExpressionDisplay.textContent = currentExpression;
+  }
 });
 
-const remainderBtn = document.getElementById("remainder") as HTMLButtonElement;
-remainderBtn.addEventListener("click", () => {
-  currentExpression += '%';
-  currentExpressionDisplay.textContent = currentExpression;
+// ... existing multiply, divide, remainder buttons and event listeners
 });
+
+//Existing Pow Button Code...
+
+//Existing Square Root Button Code...
+
+//Existing Cube Root Button Code...
 
