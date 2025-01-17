@@ -91,5 +91,16 @@ base10LogBtn.addEventListener("click", () => {
     }
 });
 
+//Natural Logarithm (ln)
+const naturalLogBtn = document.getElementById("naturalLog") as HTMLButtonElement;
+naturalLogBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue > 0) { // Check for positive input
+        display.value = Math.log(currentValue).toString();
+        currentExpression = `ln(${currentValue})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
+
 // Existing Code ...
 });
