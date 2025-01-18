@@ -71,14 +71,17 @@ function addToHistory(expression: string) {
 // ... existing Clear All button code ...
 
 // Min Functionality
-const minBtn = document.getElementById("min") as HTMLButtonElement;
-minBtn.addEventListener("click", () => {
+// ... existing Min button code ...
+
+// Max Functionality
+const maxBtn = document.getElementById("max") as HTMLButtonElement;
+maxBtn.addEventListener("click", () => {
   try {
     const numbers = currentExpression.split('+').map(Number);
-    const result = Math.min(...numbers);
+    const result = Math.max(...numbers);
     display.value = result.toString();
     lastAnswer = result;
-    addToHistory(`min(${currentExpression}) = ${result}`);
+    addToHistory(`max(${currentExpression}) = ${result}`);
     currentExpression = "";
     currentExpressionDisplay.textContent = currentExpression;
   } catch (error) {
