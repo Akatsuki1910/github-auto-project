@@ -57,6 +57,7 @@ const exp2Btn = document.getElementById("exp2") as HTMLButtonElement;
 const cubeRootBtn = document.getElementById("cubeRoot") as HTMLButtonElement;
 const tenToThePowerOfXBtn = document.getElementById("ten-to-the-power-of-x") as HTMLButtonElement;
 const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
+const geoMeanBtn = document.getElementById("geoMean") as HTMLButtonElement;
 
 
   leftParenBtn.addEventListener("click", () => {
@@ -189,4 +190,19 @@ expm1Btn.addEventListener("click", () => {
     display.value = Math.expm1(num).toString();
   }
 });
+
+geoMeanBtn.addEventListener("click", () => {
+    const input = prompt("Enter numbers separated by commas:");
+    if (input) {
+        const numbers = input.split(',').map(Number).filter(num => !isNaN(num) && num > 0);
+        if (numbers.length === 0) {
+            display.value = "Invalid input";
+            return;
+        }
+        const product = numbers.reduce((a, b) => a * b, 1);
+        const geoMean = Math.pow(product, 1 / numbers.length);
+        display.value = geoMean.toString();
+    }
+});
+
 });
