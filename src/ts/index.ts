@@ -37,7 +37,12 @@ function addToHistory(expression: string) {
 // ... other existing buttons
 
 // ... existing negate button code ...
-
+const signBtn = document.getElementById("sign") as HTMLButtonElement;
+signBtn.addEventListener("click", () => {
+    if (display.value) {
+      display.value = (-parseFloat(display.value)).toString();
+    }
+});
 // ... existing multiply, divide, remainder buttons and event listeners
 
 // ... existing e button code ...
