@@ -80,6 +80,14 @@ avgBtn.addEventListener("click", () => {
   }
 });
 
+// Add Clear All functionality
+const clearAllBtn = document.getElementById("clearAll") as HTMLButtonElement;
+clearAllBtn.addEventListener("click", () => {
+    currentExpression = "";
+    currentExpressionDisplay.textContent = "";
+    display.value = "";
+});
+
 });
 
 //Existing Pow Button Code...
