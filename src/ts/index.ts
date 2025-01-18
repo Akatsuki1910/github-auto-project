@@ -54,6 +54,7 @@ calculateSumBtn.addEventListener("click", () => {
 const toggleHistoryBtn = document.getElementById("toggleHistory") as HTMLButtonElement;
 const copyBtn = document.getElementById("copy") as HTMLButtonElement;
 const exp2Btn = document.getElementById("exp2") as HTMLButtonElement;
+const cubeRootBtn = document.getElementById("cubeRoot") as HTMLButtonElement;
 
 
   leftParenBtn.addEventListener("click", () => {
@@ -163,6 +164,13 @@ exp2Btn.addEventListener("click", () => {
     const num = parseFloat(display.value);
     if (!isNaN(num)) {
       display.value = Math.pow(2, num).toString();
+    }
+});
+
+cubeRootBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (!isNaN(num)) {
+        display.value = Math.cbrt(num).toString();
     }
 });
 });
