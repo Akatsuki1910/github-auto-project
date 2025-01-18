@@ -42,6 +42,21 @@ calculateSumBtn.addEventListener("click", () => {
     }
 });
 
+const calculateAverageBtn = document.getElementById("calculateAverage") as HTMLButtonElement;
+
+calculateAverageBtn.addEventListener("click", () => {
+    const input = prompt("Enter numbers separated by commas:");
+    if (input) {
+        const numbers = input.split(',').map(Number).filter(num => !isNaN(num));
+		if (numbers.length === 0) {
+			display.value = "0";
+			return;		
+		}
+        const sum = numbers.reduce((a, b) => a + b, 0);
+        const average = sum / numbers.length;
+        display.value = average.toString();
+    }
+});
   const leftParenBtn = document.getElementById("left-paren") as HTMLButtonElement;
   const rightParenBtn = document.getElementById("right-paren") as HTMLButtonElement;
   const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement; 
