@@ -16,9 +16,12 @@ let memory = 0;
 
 function addToHistory(expression: string, result: string) {
     history.push(`${expression} = ${result}`);
-    historyDisplay.innerHTML = history.map(item => `<div>${item}</div>`).join('');
+    updateHistoryDisplay();
 }
 
+function updateHistoryDisplay(){
+    historyDisplay.innerHTML = history.map(item => `<div>${item}</div>`).join('');
+}
 // ... other existing buttons
 
 // ... existing code
@@ -48,6 +51,7 @@ calculateSumBtn.addEventListener("click", () => {
  const rightShiftBtn = document.getElementById("right-shift") as HTMLButtonElement;
  const fibonacciBtn = document.getElementById("fibonacci") as HTMLButtonElement;
  const baseConversionBtn = document.getElementById("base-conversion") as HTMLButtonElement;
+const toggleHistoryBtn = document.getElementById("toggleHistory") as HTMLButtonElement;
 
 
   leftParenBtn.addEventListener("click", () => {
@@ -62,7 +66,7 @@ calculateSumBtn.addEventListener("click", () => {
 
    clearHistoryBtn.addEventListener("click", () => {
         history = [];
-        historyDisplay.innerHTML = ''; // Clear the history display
+        updateHistoryDisplay(); // Clear the history display
     });
 
 memoryPlusBtn.addEventListener("click", () => {
@@ -136,4 +140,11 @@ baseConversionBtn.addEventListener("click", () => {
     }
 });
 
+toggleHistoryBtn.addEventListener("click", () => {
+    if (historyDisplay.style.display === "none" || historyDisplay.style.display === ""){
+        historyDisplay.style.display = "block";
+    } else{
+        historyDisplay.style.display = "none";
+    }
+})
 });
