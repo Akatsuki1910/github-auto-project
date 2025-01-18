@@ -65,27 +65,25 @@ function addToHistory(expression: string) {
 // ... existing sum button code ...
 
 // Average Functionality
-const avgBtn = document.getElementById("average") as HTMLButtonElement;
-avgBtn.addEventListener("click", () => {
+// ... existing Average button code ...
+
+// Add Clear All functionality
+// ... existing Clear All button code ...
+
+// Min Functionality
+const minBtn = document.getElementById("min") as HTMLButtonElement;
+minBtn.addEventListener("click", () => {
   try {
     const numbers = currentExpression.split('+').map(Number);
-    const result = numbers.reduce((a, b) => a + b, 0) / numbers.length;
+    const result = Math.min(...numbers);
     display.value = result.toString();
     lastAnswer = result;
-    addToHistory(`avg(${currentExpression}) = ${result}`);
+    addToHistory(`min(${currentExpression}) = ${result}`);
     currentExpression = "";
     currentExpressionDisplay.textContent = currentExpression;
   } catch (error) {
     display.value = "Error";
   }
-});
-
-// Add Clear All functionality
-const clearAllBtn = document.getElementById("clearAll") as HTMLButtonElement;
-clearAllBtn.addEventListener("click", () => {
-    currentExpression = "";
-    currentExpressionDisplay.textContent = "";
-    display.value = "";
 });
 
 });
