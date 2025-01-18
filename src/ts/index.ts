@@ -128,6 +128,14 @@ lnBtn.addEventListener("click", () => {
       display.value = "Error";
     }
 });
+
+// Modulo operator functionality
+const modBtn = document.getElementById("mod") as HTMLButtonElement;
+modBtn.addEventListener("click", () => {
+  currentExpression += "%";
+  currentExpressionDisplay.textContent = currentExpression;  
+});
+
 });
 
 //Existing Pow Button Code...
