@@ -37,12 +37,7 @@ function addToHistory(expression: string) {
 // ... other existing buttons
 
 // ... existing negate button code ...
-const signBtn = document.getElementById("sign") as HTMLButtonElement;
-signBtn.addEventListener("click", () => {
-    if (display.value) {
-      display.value = (-parseFloat(display.value)).toString();
-    }
-});
+
 // ... existing multiply, divide, remainder buttons and event listeners
 
 // ... existing e button code ...
@@ -79,30 +74,24 @@ signBtn.addEventListener("click", () => {
 // ... existing Min button code ...
 
 // Max Functionality
-const maxBtn = document.getElementById("max") as HTMLButtonElement;
-maxBtn.addEventListener("click", () => {
-  try {
-    const numbers = currentExpression.split('+').map(Number);
-    const result = Math.max(...numbers);
-    display.value = result.toString();
-    lastAnswer = result;
-    addToHistory(`max(${currentExpression}) = ${result}`);
-    currentExpression = "";
-    currentExpressionDisplay.textContent = currentExpression;
-  } catch (error) {
-    display.value = "Error";
-  }
-});
+// ... max button code ...
 
 // Add 10 to the power of x button
-const exp10Btn = document.getElementById("exp10") as HTMLButtonElement;
-exp10Btn.addEventListener("click", () => {
+// ... existing 10^x button code ...
+const display = document.getElementById("display") as HTMLInputElement;
+const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
+let currentExpression = "";
+// Squared Functionality
+const squaredBtn = document.getElementById("squared") as HTMLButtonElement;
+squaredBtn.addEventListener("click", () => {
     try {
         const num = parseFloat(display.value);
-        const result = Math.pow(10, num);
+        const result = num * num;
         display.value = result.toString();
         lastAnswer = result;
-        addToHistory(`10^(${num}) = ${result}`);
+        addToHistory(`${num}² = ${result}`);
+        currentExpression = "";
+        currentExpressionDisplay.textContent = currentExpression;
     } catch (error) {
         display.value = "Error";
     }
