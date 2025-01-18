@@ -55,6 +55,7 @@ const toggleHistoryBtn = document.getElementById("toggleHistory") as HTMLButtonE
 const copyBtn = document.getElementById("copy") as HTMLButtonElement;
 const exp2Btn = document.getElementById("exp2") as HTMLButtonElement;
 const cubeRootBtn = document.getElementById("cubeRoot") as HTMLButtonElement;
+const tenToThePowerOfXBtn = document.getElementById("ten-to-the-power-of-x") as HTMLButtonElement;
 
 
   leftParenBtn.addEventListener("click", () => {
@@ -173,4 +174,11 @@ cubeRootBtn.addEventListener("click", () => {
         display.value = Math.cbrt(num).toString();
     }
 });
+
+tenToThePowerOfXBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if(!isNaN(num)){
+        display.value = Math.pow(10, num).toString();
+    }
+})
 });
