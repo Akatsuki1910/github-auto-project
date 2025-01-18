@@ -80,7 +80,7 @@ const backBtn = document.getElementById("back") as HTMLButtonElement;
 const roundNearestBtn = document.getElementById("round-nearest") as HTMLButtonElement;
 const dateBtn = document.getElementById("date") as HTMLButtonElement;
 const timeBtn = document.getElementById("time") as HTMLButtonElement;
-
+const plusMinusBtn = document.getElementById("plusMinus") as HTMLButtonElement;
 
   // ... existing code
 
@@ -101,7 +101,11 @@ const timeBtn = document.getElementById("time") as HTMLButtonElement;
                display.value = "Error";
           }
       });
-
+plusMinusBtn.addEventListener("click", () => {
+    if (display.value) {
+        display.value = (-parseFloat(display.value)).toString();
+    }
+});
 dateBtn.addEventListener("click", () => {
   display.value = new Date().toLocaleDateString();
 });
