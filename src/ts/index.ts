@@ -52,6 +52,7 @@ calculateSumBtn.addEventListener("click", () => {
  const fibonacciBtn = document.getElementById("fibonacci") as HTMLButtonElement;
  const baseConversionBtn = document.getElementById("base-conversion") as HTMLButtonElement;
 const toggleHistoryBtn = document.getElementById("toggleHistory") as HTMLButtonElement;
+const copyBtn = document.getElementById("copy") as HTMLButtonElement;
 
 
   leftParenBtn.addEventListener("click", () => {
@@ -147,4 +148,13 @@ toggleHistoryBtn.addEventListener("click", () => {
         historyDisplay.style.display = "none";
     }
 })
+
+copyBtn.addEventListener("click", () => {
+  navigator.clipboard.writeText(display.value).then(() => {
+    // Optional: Provide feedback to the user
+    console.log("Copied to clipboard");
+  }, (err) => {
+    console.error('Failed to copy: ', err);
+  });
+});
 });
