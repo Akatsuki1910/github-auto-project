@@ -35,6 +35,7 @@ window.addEventListener("DOMContentLoaded", () => {
  const leftShiftBtn = document.getElementById("left-shift") as HTMLButtonElement;
  const rightShiftBtn = document.getElementById("right-shift") as HTMLButtonElement;
  const fibonacciBtn = document.getElementById("fibonacci") as HTMLButtonElement;
+ const baseConversionBtn = document.getElementById("base-conversion") as HTMLButtonElement;
 
 
   leftParenBtn.addEventListener("click", () => {
@@ -110,6 +111,16 @@ fibonacciBtn.addEventListener("click", () => {
         display.value = "Invalid input";
     } else {
         display.value = fibonacci(n).toString();
+    }
+});
+
+baseConversionBtn.addEventListener("click", () => {
+    const num = parseInt(display.value);
+    const base = prompt("Enter the base (2-36):");
+    if (base === null || isNaN(parseInt(base)) || parseInt(base) < 2 || parseInt(base) > 36) {
+        display.value = "Invalid base";
+    } else {
+        display.value = num.toString(parseInt(base));
     }
 });
 
