@@ -25,6 +25,18 @@ function addToHistory(expression: string, result: string) {
 
 window.addEventListener("DOMContentLoaded", () => {
   // ... existing code
+ // ... existing code ...
+
+const calculateSumBtn = document.getElementById("calculateSum") as HTMLButtonElement;
+
+calculateSumBtn.addEventListener("click", () => {
+    const input = prompt("Enter numbers separated by commas:");
+    if (input) {
+        const numbers = input.split(',').map(Number).filter(num => !isNaN(num));
+        const sum = numbers.reduce((a, b) => a + b, 0);
+        display.value = sum.toString();
+    }
+});
 
   const leftParenBtn = document.getElementById("left-paren") as HTMLButtonElement;
   const rightParenBtn = document.getElementById("right-paren") as HTMLButtonElement;
