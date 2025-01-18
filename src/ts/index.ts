@@ -97,6 +97,21 @@ squaredBtn.addEventListener("click", () => {
     }
 });
 
+const percentBtn = document.getElementById("percent") as HTMLButtonElement;
+percentBtn.addEventListener("click", () => {
+    try {
+        const num = parseFloat(display.value);
+        const result = num / 100;
+        display.value = result.toString();
+        lastAnswer = result;
+        addToHistory(`${num}% = ${result}`);
+                currentExpression = "";
+        currentExpressionDisplay.textContent = currentExpression;
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
 });
 
 //Existing Pow Button Code...
