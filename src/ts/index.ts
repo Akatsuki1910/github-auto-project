@@ -109,6 +109,13 @@ deleteBtn.addEventListener("click", () => {
   display.value = display.value.slice(0, -1);
 });
 
+const dotBtn = document.getElementById("dot") as HTMLButtonElement;
+dotBtn.addEventListener("click", () => {
+  if (!display.value.includes('.')) {
+    display.value += '.';
+  }
+});
+
 });
 
 //Existing Pow Button Code...
