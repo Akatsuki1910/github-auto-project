@@ -27,6 +27,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const leftParenBtn = document.getElementById("left-paren") as HTMLButtonElement;
   const rightParenBtn = document.getElementById("right-paren") as HTMLButtonElement;
+  const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;
 
   leftParenBtn.addEventListener("click", () => {
     currentExpression += "(";
@@ -37,6 +38,11 @@ window.addEventListener("DOMContentLoaded", () => {
     currentExpression += ")";
     currentExpressionDisplay.textContent = currentExpression;
   });
+
+   clearHistoryBtn.addEventListener("click", () => {
+        history = [];
+        historyDisplay.innerHTML = ''; // Clear the history display
+    });
 
 //Rest of  existing code
 });
