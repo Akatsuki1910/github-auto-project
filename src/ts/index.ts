@@ -33,6 +33,7 @@ window.addEventListener("DOMContentLoaded", () => {
  const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement;
  const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement;
  const leftShiftBtn = document.getElementById("left-shift") as HTMLButtonElement;
+ const rightShiftBtn = document.getElementById("right-shift") as HTMLButtonElement;
 
   leftParenBtn.addEventListener("click", () => {
     currentExpression += "(";
@@ -66,6 +67,11 @@ leftShiftBtn.addEventListener("click", () => {
     let shifted = num << 1; // Left shift operation
     display.value = shifted.toString();
   });
+rightShiftBtn.addEventListener("click", () => {
+    let num = parseInt(display.value);
+    let shifted = num >> 1; // Right shift operation
+    display.value = shifted.toString();
+});
 //Rest of  existing code
 
     const equalsBtn = document.getElementById("equals") as HTMLButtonElement;
