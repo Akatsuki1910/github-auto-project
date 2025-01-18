@@ -13,8 +13,8 @@ let history: string[] = [];
 const historyDisplay = document.getElementById("history") as HTMLDivElement;
 let lastAnswer = 0;
 
-function addToHistory(expression: string) {
-    history.push(expression);
+function addToHistory(expression: string, result: string) {
+    history.push(`${expression} = ${result}`);
     historyDisplay.innerHTML = history.map(item => `<div>${item}</div>`).join('');
 }
 
@@ -45,6 +45,21 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
 //Rest of  existing code
+
+    const equalsBtn = document.getElementById("equals") as HTMLButtonElement;
+
+      equalsBtn.addEventListener("click", () => {
+          try {
+              const result = eval(currentExpression);
+              display.value = result.toString();
+              addToHistory(currentExpression, result.toString()); // Add result to history
+              lastAnswer = result;
+              currentExpression = "";
+              currentExpressionDisplay.textContent = currentExpression; // Added this to clear the display
+          } catch (error) {
+               display.value = "Error";
+          }
+      });
 });
 
 //Existing Pow Button Code...
