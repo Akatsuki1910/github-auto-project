@@ -78,6 +78,8 @@ const modeBtn = document.getElementById("mode") as HTMLButtonElement;
 const clearEntryBtn = document.getElementById("clear-entry") as HTMLButtonElement;
 const backBtn = document.getElementById("back") as HTMLButtonElement;
 const roundNearestBtn = document.getElementById("round-nearest") as HTMLButtonElement;
+const dateBtn = document.getElementById("date") as HTMLButtonElement;
+
 
   // ... existing code
 
@@ -98,6 +100,10 @@ const roundNearestBtn = document.getElementById("round-nearest") as HTMLButtonEl
                display.value = "Error";
           }
       });
+
+dateBtn.addEventListener("click", () => {
+  display.value = new Date().toLocaleDateString();
+});
 
 clearEntryBtn.addEventListener("click", () => {
     display.value = ""; // Clear the current entry/display
