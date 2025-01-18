@@ -13,6 +13,7 @@ let history: string[] = [];
 const historyDisplay = document.getElementById("history") as HTMLDivElement;
 let lastAnswer = 0;
 let memory = 0;
+let mode = "rad"; // Initialize mode to radians
 
 function addToHistory(expression: string, result: string) {
     history.push(`${expression} = ${result}`);
@@ -58,6 +59,7 @@ const cubeRootBtn = document.getElementById("cubeRoot") as HTMLButtonElement;
 const tenToThePowerOfXBtn = document.getElementById("ten-to-the-power-of-x") as HTMLButtonElement;
 const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
 const geoMeanBtn = document.getElementById("geoMean") as HTMLButtonElement;
+const modeBtn = document.getElementById("mode") as HTMLButtonElement;
 
 
   leftParenBtn.addEventListener("click", () => {
@@ -204,5 +206,8 @@ geoMeanBtn.addEventListener("click", () => {
         display.value = geoMean.toString();
     }
 });
-
+modeBtn.addEventListener("click", () => {
+    mode = mode === "rad" ? "deg" : "rad";
+    modeBtn.textContent = `Mode: ${mode.toUpperCase()}`;
+});
 });
