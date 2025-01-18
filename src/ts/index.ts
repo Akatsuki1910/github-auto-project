@@ -73,6 +73,22 @@ inverseBtn.addEventListener("click", () => {
   }
 });
 
+// Sum Functionality
+const sumBtn = document.getElementById("sum") as HTMLButtonElement;
+sumBtn.addEventListener("click", () => {
+  try {
+    const numbers = currentExpression.split('+').map(Number);
+    const result = numbers.reduce((a, b) => a + b, 0);
+    display.value = result.toString();
+    lastAnswer = result;
+    addToHistory(`sum(${currentExpression}) = ${result}`);
+    currentExpression = "";
+    currentExpressionDisplay.textContent = currentExpression;
+  } catch (error) {
+    display.value = "Error";
+  }
+});
+
 });
 
 //Existing Pow Button Code...
