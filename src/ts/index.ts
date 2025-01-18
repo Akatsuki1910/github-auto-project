@@ -12,6 +12,7 @@
 let history: string[] = [];
 const historyDisplay = document.getElementById("history") as HTMLDivElement;
 let lastAnswer = 0;
+let memory = 0;
 
 function addToHistory(expression: string, result: string) {
     history.push(`${expression} = ${result}`);
@@ -27,7 +28,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
   const leftParenBtn = document.getElementById("left-paren") as HTMLButtonElement;
   const rightParenBtn = document.getElementById("right-paren") as HTMLButtonElement;
-  const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement;
+  const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement; 
+ const memoryPlusBtn = document.getElementById("memoryPlus") as HTMLButtonElement; 
+ const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement;
+ const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement;
 
   leftParenBtn.addEventListener("click", () => {
     currentExpression += "(";
@@ -43,6 +47,19 @@ window.addEventListener("DOMContentLoaded", () => {
         history = [];
         historyDisplay.innerHTML = ''; // Clear the history display
     });
+
+memoryPlusBtn.addEventListener("click", () => {
+    memory += parseFloat(display.value);
+});
+
+memoryRecallBtn.addEventListener("click", () => {
+    currentExpression += memory.toString();
+    currentExpressionDisplay.textContent = currentExpression;
+});
+
+memoryClearBtn.addEventListener("click", () => {
+    memory = 0;
+});
 
 //Rest of  existing code
 
