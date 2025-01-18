@@ -34,6 +34,8 @@ window.addEventListener("DOMContentLoaded", () => {
  const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement;
  const leftShiftBtn = document.getElementById("left-shift") as HTMLButtonElement;
  const rightShiftBtn = document.getElementById("right-shift") as HTMLButtonElement;
+ const fibonacciBtn = document.getElementById("fibonacci") as HTMLButtonElement;
+
 
   leftParenBtn.addEventListener("click", () => {
     currentExpression += "(";
@@ -88,10 +90,27 @@ rightShiftBtn.addEventListener("click", () => {
                display.value = "Error";
           }
       });
-});
 
 //Existing Pow Button Code...
 
 //Existing Square Root Button Code...
 
 //Existing Cube Root Button Code...
+
+function fibonacci(n: number): number {
+    if (n <= 1) {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+fibonacciBtn.addEventListener("click", () => {
+    const n = parseInt(display.value);
+    if (isNaN(n) || n < 0) {
+        display.value = "Invalid input";
+    } else {
+        display.value = fibonacci(n).toString();
+    }
+});
+
+});
