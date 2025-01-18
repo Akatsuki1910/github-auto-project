@@ -89,6 +89,20 @@ maxBtn.addEventListener("click", () => {
   }
 });
 
+// Add 10 to the power of x button
+const exp10Btn = document.getElementById("exp10") as HTMLButtonElement;
+exp10Btn.addEventListener("click", () => {
+    try {
+        const num = parseFloat(display.value);
+        const result = Math.pow(10, num);
+        display.value = result.toString();
+        lastAnswer = result;
+        addToHistory(`10^(${num}) = ${result}`);
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
 });
 
 //Existing Pow Button Code...
