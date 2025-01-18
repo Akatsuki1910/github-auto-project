@@ -62,6 +62,7 @@ const geoMeanBtn = document.getElementById("geoMean") as HTMLButtonElement;
 const modeBtn = document.getElementById("mode") as HTMLButtonElement;
 const clearEntryBtn = document.getElementById("clear-entry") as HTMLButtonElement;
 const backBtn = document.getElementById("back") as HTMLButtonElement;
+const roundNearestBtn = document.getElementById("round-nearest") as HTMLButtonElement;
 
   // ... existing code
 
@@ -90,6 +91,11 @@ backBtn.addEventListener("click", () => {
   if (display.value.length > 0) {
     display.value = display.value.slice(0, -1); // Remove last character
   }
+});
+roundNearestBtn.addEventListener("click", () => {
+    if (display.value) {
+        display.value = Math.round(parseFloat(display.value)).toString();
+    }
 });
 
 // ... (Rest of the existing event listeners)
