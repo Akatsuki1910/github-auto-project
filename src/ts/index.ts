@@ -104,6 +104,11 @@ signChangeBtn.addEventListener("click", () => {
     }
 });
 
+const deleteBtn = document.getElementById("delete") as HTMLButtonElement;
+deleteBtn.addEventListener("click", () => {
+  display.value = display.value.slice(0, -1);
+});
+
 });
 
 //Existing Pow Button Code...
