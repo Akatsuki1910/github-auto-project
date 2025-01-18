@@ -61,6 +61,7 @@ const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
 const geoMeanBtn = document.getElementById("geoMean") as HTMLButtonElement;
 const modeBtn = document.getElementById("mode") as HTMLButtonElement;
 const clearEntryBtn = document.getElementById("clear-entry") as HTMLButtonElement;
+const backBtn = document.getElementById("back") as HTMLButtonElement;
 
   // ... existing code
 
@@ -84,6 +85,11 @@ const clearEntryBtn = document.getElementById("clear-entry") as HTMLButtonElemen
 
 clearEntryBtn.addEventListener("click", () => {
     display.value = ""; // Clear the current entry/display
+});
+backBtn.addEventListener("click", () => {
+  if (display.value.length > 0) {
+    display.value = display.value.slice(0, -1); // Remove last character
+  }
 });
 
 // ... (Rest of the existing event listeners)
