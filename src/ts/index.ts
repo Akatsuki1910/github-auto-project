@@ -82,30 +82,22 @@ const display = document.getElementById("display") as HTMLInputElement;
 const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
 let currentExpression = "";
 // Squared Functionality
-const squaredBtn = document.getElementById("squared") as HTMLButtonElement;
-squaredBtn.addEventListener("click", () => {
-    try {
-        const num = parseFloat(display.value);
-        const result = num * num;
-        display.value = result.toString();
-        lastAnswer = result;
-        addToHistory(`${num}² = ${result}`);
-        currentExpression = "";
-        currentExpressionDisplay.textContent = currentExpression;
-    } catch (error) {
-        display.value = "Error";
-    }
-});
+// ... existing Squared Functionality
 
 const percentBtn = document.getElementById("percent") as HTMLButtonElement;
 percentBtn.addEventListener("click", () => {
+    // ... existing percentBtn code
+});
+
+const signChangeBtn = document.getElementById("signChange") as HTMLButtonElement;
+signChangeBtn.addEventListener("click", () => {
     try {
-        const num = parseFloat(display.value);
-        const result = num / 100;
-        display.value = result.toString();
-        lastAnswer = result;
-        addToHistory(`${num}% = ${result}`);
-                currentExpression = "";
+        const currentValue = parseFloat(display.value);
+        const newValue = -currentValue;
+        display.value = newValue.toString();
+        lastAnswer = newValue;
+        addToHistory(`${currentValue} * -1 = ${newValue}`);
+        currentExpression = "";
         currentExpressionDisplay.textContent = currentExpression;
     } catch (error) {
         display.value = "Error";
