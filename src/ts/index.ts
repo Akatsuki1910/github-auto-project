@@ -59,29 +59,20 @@ function addToHistory(expression: string) {
 // ... existing mod button code ...
 
 //Inverse Functionality
-const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
-inverseBtn.addEventListener("click", () => {
-  try {
-    const result = 1 / eval(currentExpression);
-    display.value = result.toString();
-    lastAnswer = result;
-    addToHistory(`1/(${currentExpression}) = ${result}`);
-    currentExpression = "";
-    currentExpressionDisplay.textContent = currentExpression;
-  } catch (error) {
-    display.value = "Error";
-  }
-});
+// ... existing inverse button code ...
 
 // Sum Functionality
-const sumBtn = document.getElementById("sum") as HTMLButtonElement;
-sumBtn.addEventListener("click", () => {
+// ... existing sum button code ...
+
+// Average Functionality
+const avgBtn = document.getElementById("average") as HTMLButtonElement;
+avgBtn.addEventListener("click", () => {
   try {
     const numbers = currentExpression.split('+').map(Number);
-    const result = numbers.reduce((a, b) => a + b, 0);
+    const result = numbers.reduce((a, b) => a + b, 0) / numbers.length;
     display.value = result.toString();
     lastAnswer = result;
-    addToHistory(`sum(${currentExpression}) = ${result}`);
+    addToHistory(`avg(${currentExpression}) = ${result}`);
     currentExpression = "";
     currentExpressionDisplay.textContent = currentExpression;
   } catch (error) {
