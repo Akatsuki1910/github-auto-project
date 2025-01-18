@@ -115,6 +115,19 @@ swapBtn.addEventListener("click", () => {
     }
 });
 
+const lnBtn = document.getElementById("ln") as HTMLButtonElement;
+lnBtn.addEventListener("click", () => {
+    try {
+      currentExpression = Math.log(eval(currentExpression));
+      display.value = currentExpression.toString();
+      lastAnswer = currentExpression;
+      addToHistory(`ln(${currentExpression}) = ${currentExpression}`);
+        currentExpression = "";
+        currentExpressionDisplay.textContent = currentExpression;
+    } catch (e) {
+      display.value = "Error";
+    }
+});
 });
 
 //Existing Pow Button Code...
