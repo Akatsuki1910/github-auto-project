@@ -24,3 +24,16 @@
 .scientific {
   display: none;
 }
+
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+body.dark-mode #calculator {
+  border-color: #fff;
+}
+
+body.dark-mode #history {
+  border-color: #fff;
+}
