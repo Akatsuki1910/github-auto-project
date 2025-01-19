@@ -89,6 +89,14 @@ cosBtn.addEventListener("click", () => {
     currentExpressionDisplay.textContent = currentExpression;
 });
 
+const tanBtn = document.getElementById("tan") as HTMLButtonElement;
+tanBtn.addEventListener("click", () => {
+    currentExpression = isNaN(Number(currentExpression))
+        ? "Math.tan(" + currentExpression + ")"
+        : Math.tan(Number(currentExpression)).toString();
+    currentExpressionDisplay.textContent = currentExpression;
+});
+
 const clearEntryBtn = document.getElementById("clear-entry") as HTMLButtonElement;
 clearEntryBtn.addEventListener("click", () => {
   display.value = "0"; // Or clear the current input (display.value = "")
