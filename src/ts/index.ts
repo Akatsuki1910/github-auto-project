@@ -127,7 +127,11 @@ geoMeanBtn.addEventListener("click", () => {
     const display = document.getElementById("display") as HTMLInputElement;
     let currentExpression = "";
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
+      const exitBtn = document.getElementById("exit") as HTMLButtonElement;
 
+exitBtn.addEventListener("click", () => {
+    window.close();
+});
       equalsBtn.addEventListener("click", () => {
           try {
               const result = eval(currentExpression);
