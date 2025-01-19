@@ -99,4 +99,11 @@ lnBtn.addEventListener("click", () => {
         display.value = "Error";
     }
 });
+
+const ansBtn = document.getElementById("ans") as HTMLButtonElement;
+ansBtn.addEventListener("click", () => {
+  currentExpression += lastAnswer;
+  currentExpressionDisplay.textContent = currentExpression; // Update the display
+});
+
 });
