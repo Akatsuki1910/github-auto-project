@@ -153,5 +153,16 @@ maxBtn.addEventListener("click", () => {
         display.value = "Error";
     }
 });
+const sumBtn = document.getElementById("sum") as HTMLButtonElement;
+sumBtn.addEventListener("click", () => {
+    try {
+        const numbers = currentExpression.split(',').map(Number);
+        const sum = numbers.reduce((a, b) => a + b, 0);
+        currentExpression = sum.toString();
+        currentExpressionDisplay.textContent = currentExpression;
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 // ... (Rest of the existing event listeners)
 });
