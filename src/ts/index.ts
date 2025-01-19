@@ -81,6 +81,7 @@ const roundNearestBtn = document.getElementById("round-nearest") as HTMLButtonEl
 const dateBtn = document.getElementById("date") as HTMLButtonElement;
 const timeBtn = document.getElementById("time") as HTMLButtonElement;
 const plusMinusBtn = document.getElementById("plusMinus") as HTMLButtonElement;
+const powerOfTwoBtn = document.getElementById("powerOfTwo") as HTMLButtonElement;
 
   // ... existing code
 
@@ -123,6 +124,12 @@ backBtn.addEventListener("click", () => {
 roundNearestBtn.addEventListener("click", () => {
     if (display.value) {
         display.value = Math.round(parseFloat(display.value)).toString();
+    }
+});
+powerOfTwoBtn.addEventListener("click", () => {
+    if(display.value) {
+        const num = parseFloat(display.value);
+        display.value = (num * num).toString();
     }
 });
 
