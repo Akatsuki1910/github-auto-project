@@ -57,86 +57,14 @@ calculateSumBtn.addEventListener("click", () => {
     }
 });
 
-const calculateAverageBtn = document.getElementById("calculateAverage") as HTMLButtonElement;
+// ... (Other existing event listeners)
 
-calculateAverageBtn.addEventListener("click", () => {
-    const input = prompt("Enter numbers separated by commas:");
-    if (input) {
-        const numbers = input.split(',').map(Number).filter(num => !isNaN(num));
-		if (numbers.length === 0) {
-			display.value = "0";
-			return;		
-		}
-        const sum = numbers.reduce((a, b) => a + b, 0);
-        const average = sum / numbers.length;
-        display.value = average.toString();
-    }
-});
-const calculateProductBtn = document.getElementById("calculateProduct") as HTMLButtonElement;
-
-calculateProductBtn.addEventListener("click", () => {
-    const input = prompt("Enter numbers separated by commas:");
-    if (input) {
-        const numbers = input.split(',').map(Number).filter(num => !isNaN(num));
-        const product = numbers.reduce((a, b) => a * b, 1);
-        display.value = product.toString();
-    }
+const currentDateBtn = document.getElementById("current-date") as HTMLButtonElement;
+currentDateBtn.addEventListener("click", () => {
+    const currentDate = new Date().toLocaleDateString();
+    display.value = currentDate;
 });
 
-function gcd(a: number, b: number): number {
-    while (b) {
-        const temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
-}
-function lcm(a: number, b: number): number {
-    return (a * b) / gcd(a, b);
-}
-const calculateGcdBtn = document.getElementById("calculateGcd") as HTMLButtonElement;
-
-calculateGcdBtn.addEventListener("click", () => {
-    const input = prompt("Enter two numbers separated by a comma (e.g., 12,18):");
-    if (input) {
-        const numbers = input.split(',').map(Number);
-        if (numbers.length === 2 && !isNaN(numbers[0]) && !isNaN(numbers[1])) {
-            const result = gcd(numbers[0], numbers[1]);
-            display.value = result.toString();
-        } else {
-            display.value = "Invalid input";
-        }
-    }
-});
-const calculateLcmBtn = document.getElementById("calculateLcm") as HTMLButtonElement;
-
-calculateLcmBtn.addEventListener("click", () => {
-    const input = prompt("Enter two numbers separated by a comma (e.g., 12,18):");
-    if (input) {
-        const numbers = input.split(',').map(Number);
-        if (numbers.length === 2 && !isNaN(numbers[0]) && !isNaN(numbers[1])) {
-            const result = lcm(numbers[0], numbers[1]);
-            display.value = result.toString();
-        } else {
-            display.value = "Invalid input";
-        }
-    }
-});
-const geoMeanBtn = document.getElementById("geoMean") as HTMLButtonElement;
-geoMeanBtn.addEventListener("click", () => {
-    const input = prompt("Enter numbers separated by commas:");
-    if (input) {
-        const numbers = input.split(',').map(Number).filter(num => !isNaN(num) && num > 0);
-        if (numbers.length === 0) {
-            display.value = "Invalid input";
-            return;
-        }
-        const product = numbers.reduce((a, b) => a * b, 1);
-        const geoMean = Math.pow(product, 1 / numbers.length);
-        display.value = geoMean.toString();
-    }
-});
-  // ... existing code
 
     const equalsBtn = document.getElementById("equals") as HTMLButtonElement;
     const display = document.getElementById("display") as HTMLInputElement;
