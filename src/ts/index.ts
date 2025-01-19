@@ -57,6 +57,16 @@ calculateAverageBtn.addEventListener("click", () => {
         display.value = average.toString();
     }
 });
+const calculateProductBtn = document.getElementById("calculateProduct") as HTMLButtonElement;
+
+calculateProductBtn.addEventListener("click", () => {
+    const input = prompt("Enter numbers separated by commas:");
+    if (input) {
+        const numbers = input.split(',').map(Number).filter(num => !isNaN(num));
+        const product = numbers.reduce((a, b) => a * b, 1);
+        display.value = product.toString();
+    }
+});
   const leftParenBtn = document.getElementById("left-paren") as HTMLButtonElement;
   const rightParenBtn = document.getElementById("right-paren") as HTMLButtonElement;
   const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement; 
