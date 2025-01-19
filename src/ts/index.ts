@@ -101,5 +101,13 @@ const clearEntryBtn = document.getElementById("clear-entry") as HTMLButtonElemen
 clearEntryBtn.addEventListener("click", () => {
   display.value = "0"; // Or clear the current input (display.value = "")
 });
+
+const roundBtn = document.getElementById("round") as HTMLButtonElement;
+roundBtn.addEventListener("click", () => {
+    currentExpression = isNaN(Number(currentExpression))
+        ? "Math.round(" + currentExpression + ")"
+        : Math.round(Number(currentExpression)).toString();
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... (Rest of the existing event listeners)
 });
