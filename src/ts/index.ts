@@ -67,6 +67,7 @@ calculateProductBtn.addEventListener("click", () => {
         display.value = product.toString();
     }
 });
+
 function gcd(a: number, b: number): number {
     while (b) {
         const temp = b;
@@ -104,6 +105,20 @@ calculateLcmBtn.addEventListener("click", () => {
         } else {
             display.value = "Invalid input";
         }
+    }
+});
+const geoMeanBtn = document.getElementById("geoMean") as HTMLButtonElement;
+geoMeanBtn.addEventListener("click", () => {
+    const input = prompt("Enter numbers separated by commas:");
+    if (input) {
+        const numbers = input.split(',').map(Number).filter(num => !isNaN(num) && num > 0);
+        if (numbers.length === 0) {
+            display.value = "Invalid input";
+            return;
+        }
+        const product = numbers.reduce((a, b) => a * b, 1);
+        const geoMean = Math.pow(product, 1 / numbers.length);
+        display.value = geoMean.toString();
     }
 });
   // ... existing code
