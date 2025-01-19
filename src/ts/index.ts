@@ -122,5 +122,10 @@ expm1Btn.addEventListener("click", () => {
     : Math.expm1(Number(currentExpression)).toString();
     currentExpressionDisplay.textContent = currentExpression;
 });
+const duplicateBtn = document.getElementById("duplicate") as HTMLButtonElement;
+duplicateBtn.addEventListener("click", () => {
+    currentExpression += currentExpression; // Duplicate currentExpression
+    currentExpressionDisplay.textContent = currentExpression;
+});
 
 });
