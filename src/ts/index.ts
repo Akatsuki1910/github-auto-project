@@ -129,4 +129,11 @@ exitBtn.addEventListener("click", () => {
           }
       });
 // ... (Rest of the existing event listeners)
+const toggleDarkModeBtn = document.getElementById("toggleDarkMode") as HTMLButtonElement;
+let isDarkMode = false;
+
+toggleDarkModeBtn.addEventListener("click", () => {
+  isDarkMode = !isDarkMode;
+  document.body.classList.toggle("dark-mode", isDarkMode);
+});
 });
