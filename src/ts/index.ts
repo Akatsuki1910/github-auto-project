@@ -31,6 +31,21 @@ window.addEventListener("DOMContentLoaded", () => {
   // ... existing code
  // ... existing code ...
 
+// ... existing functions for calculations (sum, average, product, gcd, lcm, geoMean)
+const toggleScientificBtn = document.getElementById("toggleScientific") as HTMLButtonElement;
+let isScientificMode = false; // Flag to track scientific mode
+
+toggleScientificBtn.addEventListener("click", () => {
+  isScientificMode = !isScientificMode; // Toggle the mode
+
+  // Select all scientific buttons (you'll need to add appropriate IDs or classes to these buttons)
+  const scientificButtons = document.querySelectorAll('.scientific');
+
+  // Toggle their visibility based on the mode
+  scientificButtons.forEach((button) => {
+    (button as HTMLButtonElement).style.display = isScientificMode ? 'inline-block' : 'none';
+  });
+});
 const calculateSumBtn = document.getElementById("calculateSum") as HTMLButtonElement;
 
 calculateSumBtn.addEventListener("click", () => {

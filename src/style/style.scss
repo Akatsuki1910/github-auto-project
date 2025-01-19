@@ -19,3 +19,8 @@
     border: 1px solid #ccc;
     margin-top: 10px;
 }
+
+/* Initially hide scientific buttons. Add the 'scientific' class to all relevant buttons in your HTML */
+.scientific {
+  display: none;
+}
