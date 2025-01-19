@@ -188,5 +188,16 @@ minBtn.addEventListener("click", () => {
         display.value = "Error";
     }
 });
+const avgBtn = document.getElementById("average") as HTMLButtonElement;
+avgBtn.addEventListener("click", () => {
+    try {
+        const numbers = currentExpression.split(',').map(Number);
+        const sum = numbers.reduce((a, b) => a + b, 0);
+        currentExpression = (sum/numbers.length).toString();
+        currentExpressionDisplay.textContent = currentExpression; // Update the display
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 // ... (Rest of the existing event listeners)
 });
