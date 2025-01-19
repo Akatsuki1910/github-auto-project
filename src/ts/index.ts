@@ -105,5 +105,10 @@ ansBtn.addEventListener("click", () => {
   currentExpression += lastAnswer;
   currentExpressionDisplay.textContent = currentExpression; // Update the display
 });
+const parenthesesBtn = document.getElementById("parentheses") as HTMLButtonElement;
+parenthesesBtn.addEventListener("click", () => {
+    currentExpression += "()";
+    currentExpressionDisplay.textContent = currentExpression;
+});
 
 });
