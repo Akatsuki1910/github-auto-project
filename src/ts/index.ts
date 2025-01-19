@@ -67,6 +67,28 @@ calculateProductBtn.addEventListener("click", () => {
         display.value = product.toString();
     }
 });
+function gcd(a: number, b: number): number {
+    while (b) {
+        const temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+const calculateGcdBtn = document.getElementById("calculateGcd") as HTMLButtonElement;
+
+calculateGcdBtn.addEventListener("click", () => {
+    const input = prompt("Enter two numbers separated by a comma (e.g., 12,18):");
+    if (input) {
+        const numbers = input.split(',').map(Number);
+        if (numbers.length === 2 && !isNaN(numbers[0]) && !isNaN(numbers[1])) {
+            const result = gcd(numbers[0], numbers[1]);
+            display.value = result.toString();
+        } else {
+            display.value = "Invalid input";
+        }
+    }
+});
   const leftParenBtn = document.getElementById("left-paren") as HTMLButtonElement;
   const rightParenBtn = document.getElementById("right-paren") as HTMLButtonElement;
   const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement; 
