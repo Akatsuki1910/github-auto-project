@@ -148,5 +148,12 @@ deleteLastBtn.addEventListener("click", () => {
     currentExpression = currentExpression.slice(0,-1);
     currentExpressionDisplay.textContent = currentExpression;
 });
+const toRadiansBtn = document.getElementById("toRadians") as HTMLButtonElement;
+toRadiansBtn.addEventListener("click", () => {
+  currentExpression = isNaN(Number(currentExpression))
+    ? "("+currentExpression+") * Math.PI / 180"
+    : String(Number(currentExpression) * Math.PI / 180);
+    currentExpressionDisplay.textContent = currentExpression;
+});
 
 });
