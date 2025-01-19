@@ -65,6 +65,17 @@ currentDateBtn.addEventListener("click", () => {
     display.value = currentDate;
 });
 
+const squareRootBtn = document.getElementById("squareRoot") as HTMLButtonElement;
+squareRootBtn.addEventListener("click", () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    const result = Math.sqrt(currentValue);
+    display.value = result.toString();
+    addToHistory(`√(${currentValue})`, result.toString());
+  } else {
+    display.value = "Error";
+  }
+});
 
     const equalsBtn = document.getElementById("equals") as HTMLButtonElement;
     const display = document.getElementById("display") as HTMLInputElement;
