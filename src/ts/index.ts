@@ -199,5 +199,10 @@ avgBtn.addEventListener("click", () => {
         display.value = "Error";
     }
 });
+const eBtn = document.getElementById("e") as HTMLButtonElement;
+eBtn.addEventListener("click", () => {
+    currentExpression += Math.E.toString();
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... (Rest of the existing event listeners)
 });
