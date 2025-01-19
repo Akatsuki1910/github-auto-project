@@ -112,5 +112,15 @@ squareBtn.addEventListener("click", () => {
         display.value = "Error";
     }
 });
+const cuberootBtn = document.getElementById("cuberoot") as HTMLButtonElement;
+cuberootBtn.addEventListener("click", () => {
+    try {
+        const currentValue = parseFloat(currentExpression);
+        currentExpression = Math.cbrt(currentValue).toString();
+        currentExpressionDisplay.textContent = currentExpression;
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 // ... (Rest of the existing event listeners)
 });
