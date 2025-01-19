@@ -133,5 +133,15 @@ modeBtn.addEventListener("click", () => {
   modeBtn.textContent = mode === "rad" ? "rad" : "deg"; // Update button text
 });
 
+const floorBtn = document.getElementById("floor") as HTMLButtonElement;
+floorBtn.addEventListener("click", () => {
+    try {
+        currentExpression = `Math.floor(${currentExpression})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
 // ... (Rest of the existing event listeners)
 });
