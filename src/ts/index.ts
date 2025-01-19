@@ -109,5 +109,12 @@ roundBtn.addEventListener("click", () => {
         : Math.round(Number(currentExpression)).toString();
     currentExpressionDisplay.textContent = currentExpression;
 });
+const absBtn = document.getElementById("abs") as HTMLButtonElement;
+absBtn.addEventListener("click", () => {
+    currentExpression = isNaN(Number(currentExpression))
+        ? "Math.abs(" + currentExpression + ")"
+        : Math.abs(Number(currentExpression)).toString();
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... (Rest of the existing event listeners)
 });
