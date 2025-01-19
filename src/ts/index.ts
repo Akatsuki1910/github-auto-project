@@ -1,7 +1,6 @@
 // ... (Existing Code)
 
 // Add factorial button
-// ... (Existing factorial function)
 
 // Existing code ...
 
@@ -75,6 +74,25 @@ squareRootBtn.addEventListener("click", () => {
   } else {
     display.value = "Error";
   }
+});
+const calculateFactorialBtn = document.getElementById("calculateFactorial") as HTMLButtonElement;
+
+function factorial(n: number): number {
+    if (n === 0) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+calculateFactorialBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue >= 0 && Number.isInteger(currentValue)) { // Check for valid input
+        const result = factorial(currentValue);
+        display.value = result.toString();
+        addToHistory(`${currentValue}!`, result.toString());
+    } else {
+        display.value = "Error: Invalid input for factorial";
+    }
 });
 
     const equalsBtn = document.getElementById("equals") as HTMLButtonElement;
