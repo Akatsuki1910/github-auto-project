@@ -128,4 +128,13 @@ duplicateBtn.addEventListener("click", () => {
     currentExpressionDisplay.textContent = currentExpression;
 });
 
+const cubeBtn = document.getElementById("cube") as HTMLButtonElement;
+cubeBtn.addEventListener("click", () => {
+  currentExpression = isNaN(Number(currentExpression))
+  ? "Math.pow(" + currentExpression + ", 3)"
+  : Math.pow(Number(currentExpression), 3).toString();
+currentExpressionDisplay.textContent = currentExpression;
 });
+
+});
+
