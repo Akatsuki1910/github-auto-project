@@ -102,5 +102,15 @@ const clearEntryBtn = document.getElementById("clear-entry") as HTMLButtonElemen
 clearEntryBtn.addEventListener("click", () => {
   display.value = "0"; // Or clear the current input (display.value = "")
 });
+const squareBtn = document.getElementById("square") as HTMLButtonElement;
+squareBtn.addEventListener("click", () => {
+    try {
+        const currentValue = parseFloat(currentExpression);
+        currentExpression = (currentValue * currentValue).toString();
+        currentExpressionDisplay.textContent = currentExpression;
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 // ... (Rest of the existing event listeners)
 });
