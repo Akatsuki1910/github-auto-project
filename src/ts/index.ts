@@ -72,6 +72,14 @@ equalsBtn.addEventListener("click", () => {
          display.value = "Error";
     }
 });
+const sinBtn = document.getElementById("sin") as HTMLButtonElement;  // Get the sine button element
+sinBtn.addEventListener("click", () => {  // Add an event listener
+  // Assuming currentExpression is a number (you might need to parse it)
+  currentExpression = isNaN(Number(currentExpression))
+    ? "Math.sin(" + currentExpression + ")"
+    : Math.sin(Number(currentExpression)).toString();
+  currentExpressionDisplay.textContent = currentExpression; // Update the display
+});
 
 const clearEntryBtn = document.getElementById("clear-entry") as HTMLButtonElement;
 clearEntryBtn.addEventListener("click", () => {
