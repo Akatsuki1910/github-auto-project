@@ -143,5 +143,10 @@ cubeBtn.addEventListener("click", () => {
   : Math.pow(Number(currentExpression), 3).toString();
 currentExpressionDisplay.textContent = currentExpression;
 });
+const deleteLastBtn = document.getElementById("deleteLast") as HTMLButtonElement;
+deleteLastBtn.addEventListener("click", () => {
+    currentExpression = currentExpression.slice(0,-1);
+    currentExpressionDisplay.textContent = currentExpression;
+});
 
 });
