@@ -177,5 +177,16 @@ geoMeanBtn.addEventListener("click", () => {
     display.value = "Error";
   }
 });
+
+const minBtn = document.getElementById("min") as HTMLButtonElement;
+minBtn.addEventListener("click", () => {
+    try {
+        const numbers = currentExpression.split(',').map(Number);
+        currentExpression = Math.min(...numbers).toString();
+        currentExpressionDisplay.textContent = currentExpression; // Update the display
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 // ... (Rest of the existing event listeners)
 });
