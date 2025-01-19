@@ -75,6 +75,9 @@ function gcd(a: number, b: number): number {
     }
     return a;
 }
+function lcm(a: number, b: number): number {
+    return (a * b) / gcd(a, b);
+}
 const calculateGcdBtn = document.getElementById("calculateGcd") as HTMLButtonElement;
 
 calculateGcdBtn.addEventListener("click", () => {
@@ -89,32 +92,20 @@ calculateGcdBtn.addEventListener("click", () => {
         }
     }
 });
-  const leftParenBtn = document.getElementById("left-paren") as HTMLButtonElement;
-  const rightParenBtn = document.getElementById("right-paren") as HTMLButtonElement;
-  const clearHistoryBtn = document.getElementById("clearHistory") as HTMLButtonElement; 
- const memoryPlusBtn = document.getElementById("memoryPlus") as HTMLButtonElement; 
- const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement;
- const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement;
- const leftShiftBtn = document.getElementById("left-shift") as HTMLButtonElement;
- const rightShiftBtn = document.getElementById("right-shift") as HTMLButtonElement;
- const fibonacciBtn = document.getElementById("fibonacci") as HTMLButtonElement;
- const baseConversionBtn = document.getElementById("base-conversion") as HTMLButtonElement;
-const toggleHistoryBtn = document.getElementById("toggleHistory") as HTMLButtonElement;
-const copyBtn = document.getElementById("copy") as HTMLButtonElement;
-const exp2Btn = document.getElementById("exp2") as HTMLButtonElement;
-const cubeRootBtn = document.getElementById("cubeRoot") as HTMLButtonElement;
-const tenToThePowerOfXBtn = document.getElementById("ten-to-the-power-of-x") as HTMLButtonElement;
-const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
-const geoMeanBtn = document.getElementById("geoMean") as HTMLButtonElement;
-const modeBtn = document.getElementById("mode") as HTMLButtonElement;
-const clearEntryBtn = document.getElementById("clear-entry") as HTMLButtonElement;
-const backBtn = document.getElementById("back") as HTMLButtonElement;
-const roundNearestBtn = document.getElementById("round-nearest") as HTMLButtonElement;
-const dateBtn = document.getElementById("date") as HTMLButtonElement;
-const timeBtn = document.getElementById("time") as HTMLButtonElement;
-const plusMinusBtn = document.getElementById("plusMinus") as HTMLButtonElement;
-const powerOfTwoBtn = document.getElementById("powerOfTwo") as HTMLButtonElement;
+const calculateLcmBtn = document.getElementById("calculateLcm") as HTMLButtonElement;
 
+calculateLcmBtn.addEventListener("click", () => {
+    const input = prompt("Enter two numbers separated by a comma (e.g., 12,18):");
+    if (input) {
+        const numbers = input.split(',').map(Number);
+        if (numbers.length === 2 && !isNaN(numbers[0]) && !isNaN(numbers[1])) {
+            const result = lcm(numbers[0], numbers[1]);
+            display.value = result.toString();
+        } else {
+            display.value = "Invalid input";
+        }
+    }
+});
   // ... existing code
 
     const equalsBtn = document.getElementById("equals") as HTMLButtonElement;
@@ -134,36 +125,5 @@ const powerOfTwoBtn = document.getElementById("powerOfTwo") as HTMLButtonElement
                display.value = "Error";
           }
       });
-plusMinusBtn.addEventListener("click", () => {
-    if (display.value) {
-        display.value = (-parseFloat(display.value)).toString();
-    }
-});
-dateBtn.addEventListener("click", () => {
-  display.value = new Date().toLocaleDateString();
-});
-timeBtn.addEventListener("click", () => {
-    display.value = new Date().toLocaleTimeString();
-});
-clearEntryBtn.addEventListener("click", () => {
-    display.value = ""; // Clear the current entry/display
-});
-backBtn.addEventListener("click", () => {
-  if (display.value.length > 0) {
-    display.value = display.value.slice(0, -1); // Remove last character
-  }
-});
-roundNearestBtn.addEventListener("click", () => {
-    if (display.value) {
-        display.value = Math.round(parseFloat(display.value)).toString();
-    }
-});
-powerOfTwoBtn.addEventListener("click", () => {
-    if(display.value) {
-        const num = parseFloat(display.value);
-        display.value = (num * num).toString();
-    }
-});
-
 // ... (Rest of the existing event listeners)
 });
