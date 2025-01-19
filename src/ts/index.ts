@@ -115,5 +115,12 @@ modBtn.addEventListener("click", () => {
     currentExpression += "%";
     currentExpressionDisplay.textContent = currentExpression; 
 });
+const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
+expm1Btn.addEventListener("click", () => {
+    currentExpression = isNaN(Number(currentExpression))
+    ? "Math.expm1(" + currentExpression + ")"
+    : Math.expm1(Number(currentExpression)).toString();
+    currentExpressionDisplay.textContent = currentExpression;
+});
 
 });
