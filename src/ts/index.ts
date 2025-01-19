@@ -128,7 +128,19 @@ geoMeanBtn.addEventListener("click", () => {
     let currentExpression = "";
     const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
       const exitBtn = document.getElementById("exit") as HTMLButtonElement;
-
+const calculatorContainer = document.getElementById("calculator") as HTMLDivElement;
+const toggleCalculatorBtn = document.getElementById("toggleCalculator") as HTMLButtonElement;
+let calculatorVisible = true; // Initial state: calculator is visible
+toggleCalculatorBtn.addEventListener("click", () => {
+    calculatorVisible = !calculatorVisible;
+    if (calculatorVisible) {
+        calculatorContainer.style.display = "grid";
+        toggleCalculatorBtn.textContent = "Hide Calculator";
+    } else {
+        calculatorContainer.style.display = "none";
+        toggleCalculatorBtn.textContent = "Show Calculator";
+    }
+});
 exitBtn.addEventListener("click", () => {
     window.close();
 });
