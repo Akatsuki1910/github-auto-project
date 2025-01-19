@@ -110,5 +110,10 @@ parenthesesBtn.addEventListener("click", () => {
     currentExpression += "()";
     currentExpressionDisplay.textContent = currentExpression;
 });
+const modBtn = document.getElementById("mod") as HTMLButtonElement;
+modBtn.addEventListener("click", () => {
+    currentExpression += "%";
+    currentExpressionDisplay.textContent = currentExpression; 
+});
 
 });
