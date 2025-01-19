@@ -81,40 +81,26 @@ sinBtn.addEventListener("click", () => {  // Add an event listener
   currentExpressionDisplay.textContent = currentExpression; // Update the display
 });
 
-const cosBtn = document.getElementById("cos") as HTMLButtonElement;
-cosBtn.addEventListener("click", () => {
-    currentExpression = isNaN(Number(currentExpression))
-    ? "Math.cos(" + currentExpression + ")"
-    : Math.cos(Number(currentExpression)).toString();
-    currentExpressionDisplay.textContent = currentExpression;
-});
+// ... existing cos, tan, round, abs buttons
 
-const tanBtn = document.getElementById("tan") as HTMLButtonElement;
-tanBtn.addEventListener("click", () => {
-    currentExpression = isNaN(Number(currentExpression))
-        ? "Math.tan(" + currentExpression + ")"
-        : Math.tan(Number(currentExpression)).toString();
-    currentExpressionDisplay.textContent = currentExpression;
+const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
+inverseBtn.addEventListener("click", () => {
+    try {
+        const currentValue = parseFloat(currentExpression);
+        if (currentValue === 0) {
+            display.value = "Error: Division by zero";
+        } else {
+            currentExpression = (1 / currentValue).toString();
+            currentExpressionDisplay.textContent = currentExpression;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
 });
 
 const clearEntryBtn = document.getElementById("clear-entry") as HTMLButtonElement;
 clearEntryBtn.addEventListener("click", () => {
   display.value = "0"; // Or clear the current input (display.value = "")
-});
-
-const roundBtn = document.getElementById("round") as HTMLButtonElement;
-roundBtn.addEventListener("click", () => {
-    currentExpression = isNaN(Number(currentExpression))
-        ? "Math.round(" + currentExpression + ")"
-        : Math.round(Number(currentExpression)).toString();
-    currentExpressionDisplay.textContent = currentExpression;
-});
-const absBtn = document.getElementById("abs") as HTMLButtonElement;
-absBtn.addEventListener("click", () => {
-    currentExpression = isNaN(Number(currentExpression))
-        ? "Math.abs(" + currentExpression + ")"
-        : Math.abs(Number(currentExpression)).toString();
-    currentExpressionDisplay.textContent = currentExpression;
 });
 // ... (Rest of the existing event listeners)
 });
