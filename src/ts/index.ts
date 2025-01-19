@@ -30,7 +30,8 @@ window.addEventListener("DOMContentLoaded", () => {
   // ... existing code
  // ... existing code ...
 
-// ... existing functions for calculations (sum, average, product, gcd, lcm, geoMean)
+// ... existing functions for calculations (sum, average, product, gcd, lcm)
+
 const toggleScientificBtn = document.getElementById("toggleScientific") as HTMLButtonElement;
 let isScientificMode = false; // Flag to track scientific mode
 
@@ -163,6 +164,18 @@ sumBtn.addEventListener("click", () => {
     } catch (error) {
         display.value = "Error";
     }
+});
+
+const geoMeanBtn = document.getElementById("geoMean") as HTMLButtonElement;
+geoMeanBtn.addEventListener("click", () => {
+  try {
+    const numbers = currentExpression.split(',').map(Number);
+    const product = numbers.reduce((a, b) => a * b, 1);
+    currentExpression = Math.pow(product, 1 / numbers.length).toString();
+    currentExpressionDisplay.textContent = currentExpression;
+  } catch (error) {
+    display.value = "Error";
+  }
 });
 // ... (Rest of the existing event listeners)
 });
