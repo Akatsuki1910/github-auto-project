@@ -143,5 +143,15 @@ floorBtn.addEventListener("click", () => {
     }
 });
 
+const maxBtn = document.getElementById("max") as HTMLButtonElement;
+maxBtn.addEventListener("click", () => {
+    try {
+        const numbers = currentExpression.split(',').map(Number);
+        currentExpression = Math.max(...numbers).toString();
+        currentExpressionDisplay.textContent = currentExpression;
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 // ... (Rest of the existing event listeners)
 });
