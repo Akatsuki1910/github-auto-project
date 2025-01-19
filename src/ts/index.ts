@@ -127,5 +127,11 @@ randomBtn.addEventListener("click", () => {
     currentExpression = Math.random().toString();
     currentExpressionDisplay.textContent = currentExpression;
 });
+const modeBtn = document.getElementById("mode") as HTMLButtonElement;
+modeBtn.addEventListener("click", () => {
+  mode = mode === "rad" ? "deg" : "rad";
+  modeBtn.textContent = mode === "rad" ? "rad" : "deg"; // Update button text
+});
+
 // ... (Rest of the existing event listeners)
 });
