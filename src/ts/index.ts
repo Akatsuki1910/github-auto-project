@@ -84,125 +84,19 @@ sinBtn.addEventListener("click", () => {  // Add an event listener
 
 // ... existing cos, tan, round, abs buttons
 
-const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
-inverseBtn.addEventListener("click", () => {
+// ... (Rest of the existing event listeners)
+const lnBtn = document.getElementById("ln") as HTMLButtonElement;
+lnBtn.addEventListener("click", () => {
     try {
         const currentValue = parseFloat(currentExpression);
-        if (currentValue === 0) {
-            display.value = "Error: Division by zero";
+        if (currentValue <= 0) {
+            display.value = "Error: Invalid input for ln";
         } else {
-            currentExpression = (1 / currentValue).toString();
+            currentExpression = Math.log(currentValue).toString();
             currentExpressionDisplay.textContent = currentExpression;
         }
     } catch (error) {
         display.value = "Error";
     }
 });
-
-const clearEntryBtn = document.getElementById("clear-entry") as HTMLButtonElement;
-clearEntryBtn.addEventListener("click", () => {
-  display.value = "0"; // Or clear the current input (display.value = "")
-});
-const squareBtn = document.getElementById("square") as HTMLButtonElement;
-squareBtn.addEventListener("click", () => {
-    try {
-        const currentValue = parseFloat(currentExpression);
-        currentExpression = (currentValue * currentValue).toString();
-        currentExpressionDisplay.textContent = currentExpression;
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-const cuberootBtn = document.getElementById("cuberoot") as HTMLButtonElement;
-cuberootBtn.addEventListener("click", () => {
-    try {
-        const currentValue = parseFloat(currentExpression);
-        currentExpression = Math.cbrt(currentValue).toString();
-        currentExpressionDisplay.textContent = currentExpression;
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-const randomBtn = document.getElementById("random") as HTMLButtonElement;
-randomBtn.addEventListener("click", () => {
-    currentExpression = Math.random().toString();
-    currentExpressionDisplay.textContent = currentExpression;
-});
-const modeBtn = document.getElementById("mode") as HTMLButtonElement;
-modeBtn.addEventListener("click", () => {
-  mode = mode === "rad" ? "deg" : "rad";
-  modeBtn.textContent = mode === "rad" ? "rad" : "deg"; // Update button text
-});
-
-const floorBtn = document.getElementById("floor") as HTMLButtonElement;
-floorBtn.addEventListener("click", () => {
-    try {
-        currentExpression = `Math.floor(${currentExpression})`;
-        currentExpressionDisplay.textContent = currentExpression;
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-
-const maxBtn = document.getElementById("max") as HTMLButtonElement;
-maxBtn.addEventListener("click", () => {
-    try {
-        const numbers = currentExpression.split(',').map(Number);
-        currentExpression = Math.max(...numbers).toString();
-        currentExpressionDisplay.textContent = currentExpression;
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-const sumBtn = document.getElementById("sum") as HTMLButtonElement;
-sumBtn.addEventListener("click", () => {
-    try {
-        const numbers = currentExpression.split(',').map(Number);
-        const sum = numbers.reduce((a, b) => a + b, 0);
-        currentExpression = sum.toString();
-        currentExpressionDisplay.textContent = currentExpression;
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-
-const geoMeanBtn = document.getElementById("geoMean") as HTMLButtonElement;
-geoMeanBtn.addEventListener("click", () => {
-  try {
-    const numbers = currentExpression.split(',').map(Number);
-    const product = numbers.reduce((a, b) => a * b, 1);
-    currentExpression = Math.pow(product, 1 / numbers.length).toString();
-    currentExpressionDisplay.textContent = currentExpression;
-  } catch (error) {
-    display.value = "Error";
-  }
-});
-
-const minBtn = document.getElementById("min") as HTMLButtonElement;
-minBtn.addEventListener("click", () => {
-    try {
-        const numbers = currentExpression.split(',').map(Number);
-        currentExpression = Math.min(...numbers).toString();
-        currentExpressionDisplay.textContent = currentExpression; // Update the display
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-const avgBtn = document.getElementById("average") as HTMLButtonElement;
-avgBtn.addEventListener("click", () => {
-    try {
-        const numbers = currentExpression.split(',').map(Number);
-        const sum = numbers.reduce((a, b) => a + b, 0);
-        currentExpression = (sum/numbers.length).toString();
-        currentExpressionDisplay.textContent = currentExpression; // Update the display
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-const eBtn = document.getElementById("e") as HTMLButtonElement;
-eBtn.addEventListener("click", () => {
-    currentExpression += Math.E.toString();
-    currentExpressionDisplay.textContent = currentExpression;
-});
-// ... (Rest of the existing event listeners)
 });
