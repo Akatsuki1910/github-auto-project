@@ -122,5 +122,10 @@ cuberootBtn.addEventListener("click", () => {
         display.value = "Error";
     }
 });
+const randomBtn = document.getElementById("random") as HTMLButtonElement;
+randomBtn.addEventListener("click", () => {
+    currentExpression = Math.random().toString();
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... (Rest of the existing event listeners)
 });
