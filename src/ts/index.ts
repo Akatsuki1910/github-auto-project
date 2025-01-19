@@ -83,6 +83,14 @@ sinBtn.addEventListener("click", () => {  // Add an event listener
 });
 
 // ... existing cos, tan, round, abs buttons
+//added signChange button functionality
+const signChangeBtn = document.getElementById("signChange") as HTMLButtonElement;
+signChangeBtn.addEventListener("click", () => {
+    if (currentExpression) {
+        currentExpression = `(-(${currentExpression}))`;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
 
 // ... (Rest of the existing event listeners)
 const lnBtn = document.getElementById("ln") as HTMLButtonElement;
@@ -137,4 +145,3 @@ currentExpressionDisplay.textContent = currentExpression;
 });
 
 });
-
