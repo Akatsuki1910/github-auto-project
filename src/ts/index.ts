@@ -55,6 +55,25 @@ gcdBtn.addEventListener("click", () => {
     }
 });
 
+// Add LCM functionality
+function lcm(a: number, b: number): number {
+    return (a * b) / gcd(a, b);
+}
+
+const lcmBtn = document.getElementById("lcm") as HTMLButtonElement;
+
+lcmBtn.addEventListener("click", () => {
+    const num1 = parseInt(prompt("Enter the first number for LCM:", "0")!, 10);
+    const num2 = parseInt(prompt("Enter the second number for LCM:", "0")!, 10);
+    if (isNaN(num1) || isNaN(num2)) {
+        display.value = "Invalid input";
+    } else {
+        const result = lcm(num1, num2);
+        display.value = result.toString();
+        addToHistory(`lcm(${num1}, ${num2})`, result.toString());
+    }
+});
+
 const toggleScientificBtn = document.getElementById("toggleScientific") as HTMLButtonElement;
 let isScientificMode = false; // Flag to track scientific mode
 
