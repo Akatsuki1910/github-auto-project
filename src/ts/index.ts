@@ -125,4 +125,11 @@ sqrtBtn.addEventListener("click", () => {
   currentExpression += "Math.sqrt(";
   currentExpressionDisplay.textContent = currentExpression;
 });
+
+// Add percentage functionality
+const percentageBtn = document.getElementById("percentage") as HTMLButtonElement;
+percentageBtn.addEventListener("click", () => {
+  currentExpression += "/ 100"; // Calculate percentage by dividing by 100
+  currentExpressionDisplay.textContent = currentExpression;
+});
 });
