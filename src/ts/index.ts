@@ -81,6 +81,12 @@ powerOfTenBtn.addEventListener("click", () => {
     currentExpression = `10**(${currentExpression})`;
     currentExpressionDisplay.textContent = currentExpression;
 });
+// Add exp2 (2 to the power of x) functionality
+const exp2Btn = document.getElementById("exp2") as HTMLButtonElement;
+exp2Btn.addEventListener("click", () => {
+    currentExpression = `2**(${currentExpression})`;
+    currentExpressionDisplay.textContent = currentExpression;
+});
 
 const clearEntryBtn = document.getElementById("clear-entry") as HTMLButtonElement;
 clearEntryBtn.addEventListener("click", () => {
