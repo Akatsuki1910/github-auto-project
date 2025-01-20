@@ -32,67 +32,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // ... existing functions for calculations (sum, average, product)
 
-function gcd(a: number, b: number): number {
-    while (b) {
-        const temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
-}
-
-const gcdBtn = document.getElementById("gcd") as HTMLButtonElement;
-
-gcdBtn.addEventListener("click", () => {
-    const num1 = parseInt(prompt("Enter the first number for GCD:", "0")!, 10);
-    const num2 = parseInt(prompt("Enter the second number for GCD:", "0")!, 10);
-    if (isNaN(num1) || isNaN(num2)) {
-        display.value = "Invalid input";
-    } else {
-        const result = gcd(num1, num2);
-        display.value = result.toString();
-        addToHistory(`gcd(${num1}, ${num2})`, result.toString());
-    }
-});
-
-// Add LCM functionality
-function lcm(a: number, b: number): number {
-    return (a * b) / gcd(a, b);
-}
-
-const lcmBtn = document.getElementById("lcm") as HTMLButtonElement;
-
-lcmBtn.addEventListener("click", () => {
-    const num1 = parseInt(prompt("Enter the first number for LCM:", "0")!, 10);
-    const num2 = parseInt(prompt("Enter the second number for LCM:", "0")!, 10);
-    if (isNaN(num1) || isNaN(num2)) {
-        display.value = "Invalid input";
-    } else {
-        const result = lcm(num1, num2);
-        display.value = result.toString();
-        addToHistory(`lcm(${num1}, ${num2})`, result.toString());
-    }
-});
-
-const toggleScientificBtn = document.getElementById("toggleScientific") as HTMLButtonElement;
-let isScientificMode = false; // Flag to track scientific mode
-
-toggleScientificBtn.addEventListener("click", () => {
-  isScientificMode = !isScientificMode; // Toggle the mode
-
-  // Select all scientific buttons (you'll need to add appropriate IDs or classes to these buttons)
-  const scientificButtons = document.querySelectorAll('.scientific');
-
-  // Toggle their visibility based on the mode
-  scientificButtons.forEach((button) => {
-    (button as HTMLButtonElement).style.display = isScientificMode ? 'inline-block' : 'none';
-  });
-});
-
-// ... (Rest of the existing event listeners)
-
-// ... Existing code
-
 // Add fibonacci functionality
 const fibonacciBtn = document.getElementById("fibonacci") as HTMLButtonElement;
 
@@ -155,6 +94,78 @@ absoluteBtn.addEventListener("click", () => {
         display.value = result.toString();
         addToHistory(`abs(${num})`, result.toString());
     }
+});
+
+function gcd(a: number, b: number): number {
+    while (b) {
+        const temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+const gcdBtn = document.getElementById("gcd") as HTMLButtonElement;
+
+gcdBtn.addEventListener("click", () => {
+    const num1 = parseInt(prompt("Enter the first number for GCD:", "0")!, 10);
+    const num2 = parseInt(prompt("Enter the second number for GCD:", "0")!, 10);
+    if (isNaN(num1) || isNaN(num2)) {
+        display.value = "Invalid input";
+    } else {
+        const result = gcd(num1, num2);
+        display.value = result.toString();
+        addToHistory(`gcd(${num1}, ${num2})`, result.toString());
+    }
+});
+
+// Add LCM functionality
+function lcm(a: number, b: number): number {
+    return (a * b) / gcd(a, b);
+}
+
+const lcmBtn = document.getElementById("lcm") as HTMLButtonElement;
+
+lcmBtn.addEventListener("click", () => {
+    const num1 = parseInt(prompt("Enter the first number for LCM:", "0")!, 10);
+    const num2 = parseInt(prompt("Enter the second number for LCM:", "0")!, 10);
+    if (isNaN(num1) || isNaN(num2)) {
+        display.value = "Invalid input";
+    } else {
+        const result = lcm(num1, num2);
+        display.value = result.toString();
+        addToHistory(`lcm(${num1}, ${num2})`, result.toString());
+    }
+});
+const toggleScientificBtn = document.getElementById("toggleScientific") as HTMLButtonElement;
+let isScientificMode = false; // Flag to track scientific mode
+
+toggleScientificBtn.addEventListener("click", () => {
+  isScientificMode = !isScientificMode; // Toggle the mode
+
+  // Select all scientific buttons (you'll need to add appropriate IDs or classes to these buttons)
+  const scientificButtons = document.querySelectorAll('.scientific');
+
+  // Toggle their visibility based on the mode
+  scientificButtons.forEach((button) => {
+    (button as HTMLButtonElement).style.display = isScientificMode ? 'inline-block' : 'none';
+  });
+});
+
+const randIntBtn = document.getElementById("randInt") as HTMLButtonElement;
+
+randIntBtn.addEventListener("click", () => {
+    const min = parseInt(prompt("Enter minimum value:", "0")!, 10) || 0; // Default to 0 if prompt is cancelled
+    const max = parseInt(prompt("Enter maximum value:", "100")!, 10) || 100; // Default to 100
+
+    if (isNaN(min) || isNaN(max)) {
+        display.value = "Invalid input";
+        return;
+    }
+
+    const result = Math.floor(Math.random() * (max - min + 1)) + min;
+    display.value = result.toString();
+    addToHistory(`randInt(${min}, ${max})`, result.toString());
 });
 
 });
