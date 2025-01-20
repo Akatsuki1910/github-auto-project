@@ -203,5 +203,22 @@ clearAllHistoryBtn.addEventListener("click", () => {
     history = []; // Clear the history array
     updateHistoryDisplay(); // Update the display to reflect the empty history
 });
+// Add memory functionality
+const memoryPlusBtn = document.getElementById("memoryPlus") as HTMLButtonElement;
+const memoryRecallBtn = document.getElementById("memoryRecall") as HTMLButtonElement;
+const memoryClearBtn = document.getElementById("memoryClear") as HTMLButtonElement;
+
+memoryPlusBtn.addEventListener("click", () => {
+    memory += parseFloat(display.value);
+});
+
+memoryRecallBtn.addEventListener("click", () => {
+    currentExpression += memory.toString();
+    currentExpressionDisplay.textContent = currentExpression; 
+});
+
+memoryClearBtn.addEventListener("click", () => {
+  memory = 0;
+});
 
 });
