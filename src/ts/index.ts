@@ -232,5 +232,9 @@ cubeRootBtn.addEventListener("click", () => {
         display.value = "Error";
     }
 });
+const exitBtn = document.getElementById("exit") as HTMLButtonElement;
+exitBtn.addEventListener("click", () => {
+    window.close();
 
+});
 });
