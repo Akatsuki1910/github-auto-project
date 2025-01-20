@@ -132,4 +132,14 @@ percentageBtn.addEventListener("click", () => {
   currentExpression += "/ 100"; // Calculate percentage by dividing by 100
   currentExpressionDisplay.textContent = currentExpression;
 });
+
+const baseConverterBtn = document.getElementById("baseConverter") as HTMLButtonElement;
+baseConverterBtn.addEventListener("click", () => {
+    const base = prompt("Enter the base (2-36):", "10");
+    if (base !== null) {
+        const num = parseInt(display.value, 10); // Always parse from base 10
+        display.value = num.toString(parseInt(base,10)); 
+    }
+});
+
 });
