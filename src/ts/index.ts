@@ -86,6 +86,7 @@ const display = document.getElementById("display") as HTMLInputElement;
 const degRadBtn = document.getElementById("degRad") as HTMLButtonElement;
 const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
 const randomBtn = document.getElementById("random") as HTMLButtonElement;
+const cubeRootBtn = document.getElementById("cubeRoot") as HTMLButtonElement;
 
 sinBtn.addEventListener("click", () => {
     const num = parseFloat(display.value);
@@ -131,5 +132,14 @@ inverseBtn.addEventListener("click", () => {
 randomBtn.addEventListener("click", () => {
     const randomNumber = Math.random();
     display.value = randomNumber.toString();
+});
+
+cubeRootBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid input";
+    } else {
+        display.value = Math.cbrt(num).toString();
+    }
 });
 });
