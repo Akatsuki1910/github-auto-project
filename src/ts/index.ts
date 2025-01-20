@@ -151,4 +151,15 @@ toggleHistoryBtn.addEventListener("click", () => {
   }
 });
 
+const negateBtn = document.getElementById("negate") as HTMLButtonElement;
+negateBtn.addEventListener("click", () => {
+    if (currentExpression) {
+        if (currentExpression.startsWith("-")) {
+            currentExpression = currentExpression.substring(1);
+        } else {
+            currentExpression = "-" + currentExpression;
+        }
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
 });
