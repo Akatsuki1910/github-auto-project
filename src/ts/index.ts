@@ -79,4 +79,35 @@ base2Btn.addEventListener("click", () => {
     }
 });
 
+const sinBtn = document.getElementById("sin") as HTMLButtonElement;
+const cosBtn = document.getElementById("cos") as HTMLButtonElement;
+const tanBtn = document.getElementById("tan") as HTMLButtonElement;
+const display = document.getElementById("display") as HTMLInputElement;
+
+sinBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+      display.value = "Invalid input";
+    } else {
+      display.value = (mode === "deg" ? Math.sin(num * Math.PI / 180) : Math.sin(num)).toString();
+    }
+  });
+
+  cosBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+      display.value = "Invalid input";
+    } else {
+      display.value = (mode === "deg" ? Math.cos(num * Math.PI / 180) : Math.cos(num)).toString();
+    }
+  });
+
+  tanBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+      display.value = "Invalid input";
+    } else {
+      display.value = (mode === "deg" ? Math.tan(num * Math.PI / 180) : Math.tan(num)).toString();
+    }
+  });
 });
