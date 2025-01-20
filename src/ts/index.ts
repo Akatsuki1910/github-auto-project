@@ -73,86 +73,12 @@ equalsBtn.addEventListener("click", () => {
          display.value = "Error";
     }
 });
-const sinBtn = document.getElementById("sin") as HTMLButtonElement;  // Get the sine button element
-sinBtn.addEventListener("click", () => {  // Add an event listener
-  // Assuming currentExpression is a number (you might need to parse it)
-  currentExpression = isNaN(Number(currentExpression))
-    ? "Math.sin(" + currentExpression + ")"
-    : Math.sin(Number(currentExpression)).toString();
-  currentExpressionDisplay.textContent = currentExpression; // Update the display
-});
-
-// ... existing cos, tan, round, abs buttons
-//added signChange button functionality
-const signChangeBtn = document.getElementById("signChange") as HTMLButtonElement;
-signChangeBtn.addEventListener("click", () => {
-    if (currentExpression) {
-        currentExpression = `(-(${currentExpression}))`;
-        currentExpressionDisplay.textContent = currentExpression;
-    }
-});
-
 // ... (Rest of the existing event listeners)
-const lnBtn = document.getElementById("ln") as HTMLButtonElement;
-lnBtn.addEventListener("click", () => {
-    try {
-        const currentValue = parseFloat(currentExpression);
-        if (currentValue <= 0) {
-            display.value = "Error: Invalid input for ln";
-        } else {
-            currentExpression = Math.log(currentValue).toString();
-            currentExpressionDisplay.textContent = currentExpression;
-        }
-    } catch (error) {
-        display.value = "Error";
-    }
-});
 
-const ansBtn = document.getElementById("ans") as HTMLButtonElement;
-ansBtn.addEventListener("click", () => {
-  currentExpression += lastAnswer;
-  currentExpressionDisplay.textContent = currentExpression; // Update the display
-});
-const parenthesesBtn = document.getElementById("parentheses") as HTMLButtonElement;
-parenthesesBtn.addEventListener("click", () => {
-    currentExpression += "()";
-    currentExpressionDisplay.textContent = currentExpression;
-});
-const modBtn = document.getElementById("mod") as HTMLButtonElement;
-modBtn.addEventListener("click", () => {
-    currentExpression += "%";
-    currentExpressionDisplay.textContent = currentExpression; 
-});
-const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
-expm1Btn.addEventListener("click", () => {
-    currentExpression = isNaN(Number(currentExpression))
-    ? "Math.expm1(" + currentExpression + ")"
-    : Math.expm1(Number(currentExpression)).toString();
-    currentExpressionDisplay.textContent = currentExpression;
-});
-const duplicateBtn = document.getElementById("duplicate") as HTMLButtonElement;
-duplicateBtn.addEventListener("click", () => {
-    currentExpression += currentExpression; // Duplicate currentExpression
-    currentExpressionDisplay.textContent = currentExpression;
-});
-
-const cubeBtn = document.getElementById("cube") as HTMLButtonElement;
-cubeBtn.addEventListener("click", () => {
-  currentExpression = isNaN(Number(currentExpression))
-  ? "Math.pow(" + currentExpression + ", 3)"
-  : Math.pow(Number(currentExpression), 3).toString();
-currentExpressionDisplay.textContent = currentExpression;
-});
-const deleteLastBtn = document.getElementById("deleteLast") as HTMLButtonElement;
-deleteLastBtn.addEventListener("click", () => {
-    currentExpression = currentExpression.slice(0,-1);
-    currentExpressionDisplay.textContent = currentExpression;
-});
-const toRadiansBtn = document.getElementById("toRadians") as HTMLButtonElement;
-toRadiansBtn.addEventListener("click", () => {
-  currentExpression = isNaN(Number(currentExpression))
-    ? "("+currentExpression+") * Math.PI / 180"
-    : String(Number(currentExpression) * Math.PI / 180);
+//Power of ten button
+const powerOfTenBtn = document.getElementById("powerOfTen") as HTMLButtonElement;
+powerOfTenBtn.addEventListener("click", () => {
+    currentExpression = `10**(${currentExpression})`;
     currentExpressionDisplay.textContent = currentExpression;
 });
 
