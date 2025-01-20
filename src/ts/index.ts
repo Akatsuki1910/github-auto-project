@@ -220,5 +220,17 @@ memoryRecallBtn.addEventListener("click", () => {
 memoryClearBtn.addEventListener("click", () => {
   memory = 0;
 });
+// Add cube root functionality
+const cubeRootBtn = document.getElementById("cuberoot") as HTMLButtonElement;
+cubeRootBtn.addEventListener("click", () => {
+    try{
+    const num = parseFloat(display.value);
+    const result = Math.cbrt(num);
+    display.value = result.toString();
+    addToHistory(`cbrt(${num})`, result.toString());
+    }catch (error) {
+        display.value = "Error";
+    }
+});
 
 });
