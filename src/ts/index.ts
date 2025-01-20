@@ -32,111 +32,6 @@ window.addEventListener("DOMContentLoaded", () => {
 
 // ... existing functions for calculations (sum, average, product)
 
-// Add fibonacci functionality
-const fibonacciBtn = document.getElementById("fibonacci") as HTMLButtonElement;
-
-function fibonacci(n: number): number {
-    if (n <= 1) {
-      return n;
-    }
-    return fibonacci(n - 1) + fibonacci(n - 2);
-  }
-
-fibonacciBtn.addEventListener("click", () => {
-  try {
-    const num = parseInt(prompt("Enter the value of n for fibonacci(n):", "0")!,10); // Use prompt to get n
-    if (isNaN(num)) {
-      display.value = "Error: Invalid input for fibonacci";
-    } else {
-      const result = fibonacci(num);
-      display.value = result.toString();
-      addToHistory(`fibonacci(${num})`, result.toString());
-    }
-  } catch (error) {
-    display.value = "Error";
-  }
-});
-
-// isPrime function
-const isPrimeBtn = document.getElementById("isPrime") as HTMLButtonElement;
-
-function isPrime(num: number): boolean {
-    if (num <= 1) return false;
-    if (num <= 3) return true;
-    if (num % 2 === 0 || num % 3 === 0) return false;
-  
-    for (let i = 5; i * i <= num; i += 6) {
-        if (num % i === 0 || num % (i + 2) === 0) return false;
-    }
-    return true;
-}
-
-isPrimeBtn.addEventListener("click", () => {
-        const num = parseInt(prompt("Enter a number to check if it's prime:", "0")!, 10);
-        if (isNaN(num)){
-            display.value = "Invalid input";
-        } else {
-            const result = isPrime(num);
-            display.value = result.toString();
-            addToHistory(`isPrime(${num})`, result.toString());
-        }
-});
-//absolute value function
-const absoluteBtn = document.getElementById("absolute") as HTMLButtonElement;
-
-absoluteBtn.addEventListener("click", () => {
-  const num = parseFloat(display.value);
-    if (isNaN(num)) {
-        display.value = "Invalid input";
-}
-    else{
-        const result = Math.abs(num);
-        display.value = result.toString();
-        addToHistory(`abs(${num})`, result.toString());
-    }
-});
-
-function gcd(a: number, b: number): number {
-    while (b) {
-        const temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
-}
-
-const gcdBtn = document.getElementById("gcd") as HTMLButtonElement;
-
-gcdBtn.addEventListener("click", () => {
-    const num1 = parseInt(prompt("Enter the first number for GCD:", "0")!, 10);
-    const num2 = parseInt(prompt("Enter the second number for GCD:", "0")!, 10);
-    if (isNaN(num1) || isNaN(num2)) {
-        display.value = "Invalid input";
-    } else {
-        const result = gcd(num1, num2);
-        display.value = result.toString();
-        addToHistory(`gcd(${num1}, ${num2})`, result.toString());
-    }
-});
-
-// Add LCM functionality
-function lcm(a: number, b: number): number {
-    return (a * b) / gcd(a, b);
-}
-
-const lcmBtn = document.getElementById("lcm") as HTMLButtonElement;
-
-lcmBtn.addEventListener("click", () => {
-    const num1 = parseInt(prompt("Enter the first number for LCM:", "0")!, 10);
-    const num2 = parseInt(prompt("Enter the second number for LCM:", "0")!, 10);
-    if (isNaN(num1) || isNaN(num2)) {
-        display.value = "Invalid input";
-    } else {
-        const result = lcm(num1, num2);
-        display.value = result.toString();
-        addToHistory(`lcm(${num1}, ${num2})`, result.toString());
-    }
-});
 const toggleScientificBtn = document.getElementById("toggleScientific") as HTMLButtonElement;
 let isScientificMode = false; // Flag to track scientific mode
 
@@ -151,36 +46,37 @@ toggleScientificBtn.addEventListener("click", () => {
     (button as HTMLButtonElement).style.display = isScientificMode ? 'inline-block' : 'none';
   });
 });
+//Base Conversion
+const baseConverterBtn = document.getElementById("baseConverter") as HTMLButtonElement;
+const base10Btn = document.getElementById("base10") as HTMLButtonElement;
+const base2Btn = document.getElementById("base2") as HTMLButtonElement;
 
-const randIntBtn = document.getElementById("randInt") as HTMLButtonElement;
-
-randIntBtn.addEventListener("click", () => {
-    const min = parseInt(prompt("Enter minimum value:", "0")!, 10) || 0; // Default to 0 if prompt is cancelled
-    const max = parseInt(prompt("Enter maximum value:", "100")!, 10) || 100; // Default to 100
-
-    if (isNaN(min) || isNaN(max)) {
-        display.value = "Invalid input";
-        return;
-    }
-
-    const result = Math.floor(Math.random() * (max - min + 1)) + min;
-    display.value = result.toString();
-    addToHistory(`randInt(${min}, ${max})`, result.toString());
+baseConverterBtn.addEventListener("click", () => {
+    // Toggle visibility of the individual base buttons
+    base10Btn.style.display = (base10Btn.style.display === 'none' || base10Btn.style.display === '') ? 'inline-block' : 'none';
+    base2Btn.style.display = (base2Btn.style.display === 'none' || base2Btn.style.display === '') ? 'inline-block' : 'none';
 });
 
-// Add trunc functionality
-const truncBtn = document.getElementById("trunc") as HTMLButtonElement;
-
-truncBtn.addEventListener("click", () => {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
+base10Btn.addEventListener("click", () => {
+    const num = parseInt(prompt("Enter a binary number", "0")!, 2);
+    if(isNaN(num)) {
         display.value = "Invalid input";
-    } else {
-        const result = Math.trunc(num);
-        display.value = result.toString();
-        addToHistory(`trunc(${num})`, result.toString());
+    }
+    else{
+        display.value = num.toString(10);
+        addToHistory(`base10(${num})`, num.toString());
     }
 });
 
+base2Btn.addEventListener("click", () => {
+    const num = parseInt(prompt("Enter a decimal number", "0")!, 10);
+    if(isNaN(num)){
+        display.value = "Invalid input";
+    }
+    else{
+        display.value = num.toString(2);
+        addToHistory(`base2(${num})`, num.toString());
+    }
 });
 
+});
