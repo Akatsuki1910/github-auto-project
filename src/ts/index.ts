@@ -85,6 +85,7 @@ const tanBtn = document.getElementById("tan") as HTMLButtonElement;
 const display = document.getElementById("display") as HTMLInputElement;
 const degRadBtn = document.getElementById("degRad") as HTMLButtonElement;
 const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
+const randomBtn = document.getElementById("random") as HTMLButtonElement;
 
 sinBtn.addEventListener("click", () => {
     const num = parseFloat(display.value);
@@ -125,5 +126,10 @@ inverseBtn.addEventListener("click", () => {
     } else {
         display.value = (1/num).toString();
     }
+});
+
+randomBtn.addEventListener("click", () => {
+    const randomNumber = Math.random();
+    display.value = randomNumber.toString();
 });
 });
