@@ -73,4 +73,15 @@ ceilBtn.addEventListener("click", () => {
         addToHistory(`ceil(${num})`, Math.ceil(num).toString());
     }
 });
+
+const absBtn = document.getElementById("abs") as HTMLButtonElement;
+absBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid input";
+    } else {
+        display.value = Math.abs(num).toString();
+        addToHistory(`abs(${num})`, Math.abs(num).toString());
+    }
+});
 });
