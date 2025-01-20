@@ -82,4 +82,10 @@ powerOfTenBtn.addEventListener("click", () => {
     currentExpressionDisplay.textContent = currentExpression;
 });
 
+const clearEntryBtn = document.getElementById("clear-entry") as HTMLButtonElement;
+clearEntryBtn.addEventListener("click", () => {
+    currentExpression = ""; // Clear the current expression
+    currentExpressionDisplay.textContent = ""; // Clear the display
+});
+
 });
