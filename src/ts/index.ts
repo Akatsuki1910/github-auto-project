@@ -197,4 +197,11 @@ factorialBtn.addEventListener("click", () => {
   }
 });
 
+const clearAllHistoryBtn = document.getElementById("clearAllHistory") as HTMLButtonElement;
+
+clearAllHistoryBtn.addEventListener("click", () => {
+    history = []; // Clear the history array
+    updateHistoryDisplay(); // Update the display to reflect the empty history
+});
+
 });
