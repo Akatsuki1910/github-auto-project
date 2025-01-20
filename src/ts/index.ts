@@ -254,4 +254,10 @@ toFixedBtn.addEventListener("click", () => {
     }
 
 });
+
+const ceilBtn = document.getElementById("ceil") as HTMLButtonElement;
+ceilBtn.addEventListener("click", () => {
+    currentExpression += "Math.ceil(";
+    currentExpressionDisplay.textContent = currentExpression;
+});
 });
