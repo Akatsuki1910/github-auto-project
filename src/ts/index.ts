@@ -83,6 +83,7 @@ const sinBtn = document.getElementById("sin") as HTMLButtonElement;
 const cosBtn = document.getElementById("cos") as HTMLButtonElement;
 const tanBtn = document.getElementById("tan") as HTMLButtonElement;
 const display = document.getElementById("display") as HTMLInputElement;
+const degRadBtn = document.getElementById("degRad") as HTMLButtonElement;
 
 sinBtn.addEventListener("click", () => {
     const num = parseFloat(display.value);
@@ -109,5 +110,10 @@ sinBtn.addEventListener("click", () => {
     } else {
       display.value = (mode === "deg" ? Math.tan(num * Math.PI / 180) : Math.tan(num)).toString();
     }
+  });
+
+  degRadBtn.addEventListener("click", () => {
+    mode = (mode === "rad") ? "deg" : "rad";
+    degRadBtn.textContent = mode.toUpperCase();
   });
 });
