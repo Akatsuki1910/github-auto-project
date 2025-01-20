@@ -90,7 +90,7 @@ clearEntryBtn.addEventListener("click", () => {
 // Add keyboard support
 document.addEventListener('keydown', (event) => {
     const key = event.key;
-    const allowedKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.', 'Enter', 'Backspace', 'Delete'];
+    const allowedKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.', 'Enter', 'Backspace', 'Delete','(',')'];
     if (allowedKeys.includes(key)) {
         if (key === 'Enter') {
             equalsBtn.click();
@@ -101,6 +101,16 @@ document.addEventListener('keydown', (event) => {
             currentExpressionDisplay.textContent = currentExpression;
         }
     }
+});
+const openParenBtn = document.getElementById("openParen") as HTMLButtonElement;
+openParenBtn.addEventListener("click", () => {
+    currentExpression += "(";
+    currentExpressionDisplay.textContent = currentExpression; 
+});
+const closeParenBtn = document.getElementById("closeParen") as HTMLButtonElement;
+closeParenBtn.addEventListener("click", () => {
+    currentExpression += ")";
+    currentExpressionDisplay.textContent = currentExpression; 
 });
 
 });
