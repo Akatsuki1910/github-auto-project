@@ -62,4 +62,15 @@ floorBtn.addEventListener("click", () => {
         addToHistory(`floor(${num})`, Math.floor(num).toString());
     }
 });
+
+const ceilBtn = document.getElementById("ceil") as HTMLButtonElement;
+ceilBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid input";
+    } else {
+        display.value = Math.ceil(num).toString();
+        addToHistory(`ceil(${num})`, Math.ceil(num).toString());
+    }
+});
 });
