@@ -84,6 +84,7 @@ const cosBtn = document.getElementById("cos") as HTMLButtonElement;
 const tanBtn = document.getElementById("tan") as HTMLButtonElement;
 const display = document.getElementById("display") as HTMLInputElement;
 const degRadBtn = document.getElementById("degRad") as HTMLButtonElement;
+const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
 
 sinBtn.addEventListener("click", () => {
     const num = parseFloat(display.value);
@@ -116,4 +117,13 @@ sinBtn.addEventListener("click", () => {
     mode = (mode === "rad") ? "deg" : "rad";
     degRadBtn.textContent = mode.toUpperCase();
   });
+
+inverseBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if(isNaN(num) || num === 0) {
+        display.value = "Invalid input";
+    } else {
+        display.value = (1/num).toString();
+    }
+});
 });
