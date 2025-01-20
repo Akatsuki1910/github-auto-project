@@ -112,5 +112,10 @@ closeParenBtn.addEventListener("click", () => {
     currentExpression += ")";
     currentExpressionDisplay.textContent = currentExpression; 
 });
-
+const clearBtn = document.getElementById("clear") as HTMLButtonElement;
+clearBtn.addEventListener("click", () => {
+  display.value = '';
+  currentExpression = '';
+  currentExpressionDisplay.textContent = '';
+});
 });
