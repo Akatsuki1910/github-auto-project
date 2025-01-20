@@ -97,5 +97,18 @@ sumBtn.addEventListener("click", () => {
     addToHistory(nums.join(" + "), sum.toString());
   }
 });
+const avgBtn = document.getElementById("average") as HTMLButtonElement;
+avgBtn.addEventListener("click", () => {
+    const numStr = display.value;
+    const nums = numStr.split("+").map(Number);
+    if (nums.some(isNaN)) {
+        display.value = "Invalid input";
+    } else {
+        const sum = nums.reduce((a, b) => a + b, 0);
+        const average = sum / nums.length;
+        display.value = average.toString();
+        addToHistory(nums.join(" + "), average.toString());
+    }
+});
 
 });
