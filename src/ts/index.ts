@@ -142,5 +142,19 @@ isPrimeBtn.addEventListener("click", () => {
             addToHistory(`isPrime(${num})`, result.toString());
         }
 });
+//absolute value function
+const absoluteBtn = document.getElementById("absolute") as HTMLButtonElement;
+
+absoluteBtn.addEventListener("click", () => {
+  const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid input";
+}
+    else{
+        const result = Math.abs(num);
+        display.value = result.toString();
+        addToHistory(`abs(${num})`, result.toString());
+    }
+});
 
 });
