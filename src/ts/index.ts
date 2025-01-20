@@ -237,4 +237,21 @@ exitBtn.addEventListener("click", () => {
     window.close();
 
 });
+
+const toFixedBtn = document.getElementById("toFixed") as HTMLButtonElement;
+toFixedBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+  if (!isNaN(num)) {
+    const decimalPlaces = parseInt(prompt("Enter the number of decimal places:", "2")!,10);
+    if (!isNaN(decimalPlaces) && decimalPlaces >=0) {
+
+      display.value = num.toFixed(decimalPlaces);
+    } else {
+      display.value = "Invalid decimal places";
+    }
+  } else {
+      display.value = "Invalid number";
+    }
+
+});
 });
