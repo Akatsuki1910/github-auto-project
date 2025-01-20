@@ -162,4 +162,11 @@ negateBtn.addEventListener("click", () => {
         currentExpressionDisplay.textContent = currentExpression;
     }
 });
+
+// Add last answer functionality
+const lastAnswerBtn = document.getElementById("lastAnswer") as HTMLButtonElement;
+lastAnswerBtn.addEventListener("click", () => {
+    currentExpression += lastAnswer.toString();
+    currentExpressionDisplay.textContent = currentExpression;
+});
 });
