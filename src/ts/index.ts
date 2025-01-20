@@ -30,7 +30,30 @@ window.addEventListener("DOMContentLoaded", () => {
   // ... existing code
  // ... existing code ...
 
-// ... existing functions for calculations (sum, average, product, gcd, lcm)
+// ... existing functions for calculations (sum, average, product)
+
+function gcd(a: number, b: number): number {
+    while (b) {
+        const temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+
+const gcdBtn = document.getElementById("gcd") as HTMLButtonElement;
+
+gcdBtn.addEventListener("click", () => {
+    const num1 = parseInt(prompt("Enter the first number for GCD:", "0")!, 10);
+    const num2 = parseInt(prompt("Enter the second number for GCD:", "0")!, 10);
+    if (isNaN(num1) || isNaN(num2)) {
+        display.value = "Invalid input";
+    } else {
+        const result = gcd(num1, num2);
+        display.value = result.toString();
+        addToHistory(`gcd(${num1}, ${num2})`, result.toString());
+    }
+});
 
 const toggleScientificBtn = document.getElementById("toggleScientific") as HTMLButtonElement;
 let isScientificMode = false; // Flag to track scientific mode
