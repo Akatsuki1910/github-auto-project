@@ -168,4 +168,19 @@ randIntBtn.addEventListener("click", () => {
     addToHistory(`randInt(${min}, ${max})`, result.toString());
 });
 
+// Add trunc functionality
+const truncBtn = document.getElementById("trunc") as HTMLButtonElement;
+
+truncBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid input";
+    } else {
+        const result = Math.trunc(num);
+        display.value = result.toString();
+        addToHistory(`trunc(${num})`, result.toString());
+    }
 });
+
+});
+
