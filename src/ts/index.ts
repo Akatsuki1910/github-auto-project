@@ -30,7 +30,19 @@ window.addEventListener("DOMContentLoaded", () => {
   // ... existing code
  // ... existing code ...
 
-// ... existing functions for calculations (sum, average, product)
+// ... existing functions for calculations (sum, average)
+const productBtn = document.getElementById("product") as HTMLButtonElement;
+productBtn.addEventListener("click", () => {
+  const numStr = display.value;
+  const nums = numStr.split("*").map(Number);
+  if (nums.some(isNaN)) {
+    display.value = "Invalid input";
+  } else {
+    const product = nums.reduce((a, b) => a * b, 1);
+    display.value = product.toString();
+    addToHistory(nums.join(" * "), product.toString());
+  }
+});
 
 const toggleScientificBtn = document.getElementById("toggleScientific") as HTMLButtonElement;
 let isScientificMode = false; // Flag to track scientific mode
@@ -88,7 +100,7 @@ absBtn.addEventListener("click", () => {
 const sumBtn = document.getElementById("sum") as HTMLButtonElement;
 sumBtn.addEventListener("click", () => {
   const numStr = display.value;
-  const nums = numStr.split("+").map(Number);
+  const nums = numStr.split("\+").map(Number);
   if (nums.some(isNaN)) {
     display.value = "Invalid input";
   } else {
@@ -100,7 +112,7 @@ sumBtn.addEventListener("click", () => {
 const avgBtn = document.getElementById("average") as HTMLButtonElement;
 avgBtn.addEventListener("click", () => {
     const numStr = display.value;
-    const nums = numStr.split("+").map(Number);
+    const nums = numStr.split("\+").map(Number);
     if (nums.some(isNaN)) {
         display.value = "Invalid input";
     } else {
