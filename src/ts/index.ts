@@ -84,4 +84,18 @@ absBtn.addEventListener("click", () => {
         addToHistory(`abs(${num})`, Math.abs(num).toString());
     }
 });
+
+const sumBtn = document.getElementById("sum") as HTMLButtonElement;
+sumBtn.addEventListener("click", () => {
+  const numStr = display.value;
+  const nums = numStr.split("+").map(Number);
+  if (nums.some(isNaN)) {
+    display.value = "Invalid input";
+  } else {
+    const sum = nums.reduce((a, b) => a + b, 0);
+    display.value = sum.toString();
+    addToHistory(nums.join(" + "), sum.toString());
+  }
+});
+
 });
