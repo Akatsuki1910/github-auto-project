@@ -47,99 +47,19 @@ toggleScientificBtn.addEventListener("click", () => {
   });
 });
 //Base Conversion
-const baseConverterBtn = document.getElementById("baseConverter") as HTMLButtonElement;
-const base10Btn = document.getElementById("base10") as HTMLButtonElement;
-const base2Btn = document.getElementById("base2") as HTMLButtonElement;
+// ... existing base conversion code
 
-baseConverterBtn.addEventListener("click", () => {
-    // Toggle visibility of the individual base buttons
-    base10Btn.style.display = (base10Btn.style.display === 'none' || base10Btn.style.display === '') ? 'inline-block' : 'none';
-    base2Btn.style.display = (base2Btn.style.display === 'none' || base2Btn.style.display === '') ? 'inline-block' : 'none';
-});
+// ... existing trigonometric function code
 
-base10Btn.addEventListener("click", () => {
-    const num = parseInt(prompt("Enter a binary number", "0")!, 2);
-    if(isNaN(num)) {
-        display.value = "Invalid input";
-    }
-    else{
-        display.value = num.toString(10);
-        addToHistory(`base10(${num})`, num.toString());
-    }
-});
-
-base2Btn.addEventListener("click", () => {
-    const num = parseInt(prompt("Enter a decimal number", "0")!, 10);
-    if(isNaN(num)){
-        display.value = "Invalid input";
-    }
-    else{
-        display.value = num.toString(2);
-        addToHistory(`base2(${num})`, num.toString());
-    }
-});
-
-const sinBtn = document.getElementById("sin") as HTMLButtonElement;
-const cosBtn = document.getElementById("cos") as HTMLButtonElement;
-const tanBtn = document.getElementById("tan") as HTMLButtonElement;
-const display = document.getElementById("display") as HTMLInputElement;
-const degRadBtn = document.getElementById("degRad") as HTMLButtonElement;
-const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
-const randomBtn = document.getElementById("random") as HTMLButtonElement;
-const cubeRootBtn = document.getElementById("cubeRoot") as HTMLButtonElement;
-
-sinBtn.addEventListener("click", () => {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-      display.value = "Invalid input";
-    } else {
-      display.value = (mode === "deg" ? Math.sin(num * Math.PI / 180) : Math.sin(num)).toString();
-    }
-  });
-
-  cosBtn.addEventListener("click", () => {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-      display.value = "Invalid input";
-    } else {
-      display.value = (mode === "deg" ? Math.cos(num * Math.PI / 180) : Math.cos(num)).toString();
-    }
-  });
-
-  tanBtn.addEventListener("click", () => {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-      display.value = "Invalid input";
-    } else {
-      display.value = (mode === "deg" ? Math.tan(num * Math.PI / 180) : Math.tan(num)).toString();
-    }
-  });
-
-  degRadBtn.addEventListener("click", () => {
-    mode = (mode === "rad") ? "deg" : "rad";
-    degRadBtn.textContent = mode.toUpperCase();
-  });
-
-inverseBtn.addEventListener("click", () => {
-    const num = parseFloat(display.value);
-    if(isNaN(num) || num === 0) {
-        display.value = "Invalid input";
-    } else {
-        display.value = (1/num).toString();
-    }
-});
-
-randomBtn.addEventListener("click", () => {
-    const randomNumber = Math.random();
-    display.value = randomNumber.toString();
-});
-
-cubeRootBtn.addEventListener("click", () => {
+// ... existing other functions
+const floorBtn = document.getElementById("floor") as HTMLButtonElement;
+floorBtn.addEventListener("click", () => {
     const num = parseFloat(display.value);
     if (isNaN(num)) {
         display.value = "Invalid input";
     } else {
-        display.value = Math.cbrt(num).toString();
+        display.value = Math.floor(num).toString();
+        addToHistory(`floor(${num})`, Math.floor(num).toString());
     }
 });
 });
