@@ -87,5 +87,20 @@ clearEntryBtn.addEventListener("click", () => {
     currentExpression = ""; // Clear the current expression
     currentExpressionDisplay.textContent = ""; // Clear the display
 });
+// Add keyboard support
+document.addEventListener('keydown', (event) => {
+    const key = event.key;
+    const allowedKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.', 'Enter', 'Backspace', 'Delete'];
+    if (allowedKeys.includes(key)) {
+        if (key === 'Enter') {
+            equalsBtn.click();
+        } else if (key === 'Backspace' || key === 'Delete') {
+            clearEntryBtn.click();
+        } else {
+            currentExpression += key;
+            currentExpressionDisplay.textContent = currentExpression;
+        }
+    }
+});
 
 });
