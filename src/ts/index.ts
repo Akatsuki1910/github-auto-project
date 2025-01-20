@@ -142,4 +142,13 @@ baseConverterBtn.addEventListener("click", () => {
     }
 });
 
+const toggleHistoryBtn = document.getElementById("toggleHistory") as HTMLButtonElement;
+toggleHistoryBtn.addEventListener("click", () => {
+  if (historyDisplay.style.display === "none" || historyDisplay.style.display === "") {
+    historyDisplay.style.display = "block";
+  } else {
+    historyDisplay.style.display = "none";
+  }
+});
+
 });
