@@ -118,4 +118,11 @@ clearBtn.addEventListener("click", () => {
   currentExpression = '';
   currentExpressionDisplay.textContent = '';
 });
+
+// Add square root functionality
+const sqrtBtn = document.getElementById("sqrt") as HTMLButtonElement;
+sqrtBtn.addEventListener("click", () => {
+  currentExpression += "Math.sqrt(";
+  currentExpressionDisplay.textContent = currentExpression;
+});
 });
