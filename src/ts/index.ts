@@ -123,4 +123,16 @@ avgBtn.addEventListener("click", () => {
     }
 });
 
+const squareBtn = document.getElementById("square") as HTMLButtonElement;
+squareBtn?.addEventListener("click", () => {
+  const num = parseFloat(display.value);
+  if (isNaN(num)) {
+    display.value = "Invalid input";
+  } else {
+    const result = num * num; // Calculate square
+    display.value = result.toString();
+    addToHistory(`${num}²`, result.toString()); // Add to history
+  }
+});
+
 });
