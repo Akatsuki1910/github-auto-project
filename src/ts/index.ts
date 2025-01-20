@@ -169,4 +169,32 @@ lastAnswerBtn.addEventListener("click", () => {
     currentExpression += lastAnswer.toString();
     currentExpressionDisplay.textContent = currentExpression;
 });
+
+// Add factorial functionality
+const factorialBtn = document.getElementById("factorial") as HTMLButtonElement;
+
+function factorial(n: number): number {
+  if (n === 0) {
+    return 1;
+  } else {
+    return n * factorial(n - 1);
+  }
+}
+
+factorialBtn.addEventListener("click", () => {
+  try {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+      display.value = "Error: Invalid input for factorial";
+    } else {
+        const result = factorial(num);
+      display.value = result.toString();
+      addToHistory(`${num}!`, result.toString()); // Add to history
+    }
+
+  } catch (error) {
+    display.value = "Error";
+  }
+});
+
 });
