@@ -88,4 +88,16 @@ modBtn.addEventListener("click", () => {
         display.value = "Error";
     }
 });
+
+// New Feature: Reciprocal
+const reciprocalBtn = document.getElementById("reciprocal") as HTMLButtonElement;
+reciprocalBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num) || num === 0) {
+        display.value = "Error"; // Handle division by zero
+    } else {
+        display.value = (1 / num).toString();
+    }
+});
+
 });
