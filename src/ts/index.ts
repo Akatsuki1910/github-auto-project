@@ -13,6 +13,7 @@ const historyDisplay = document.getElementById("history") as HTMLDivElement;
 let lastAnswer = 0;
 let memory = 0;
 let mode = "rad"; // Initialize mode to radians
+let isInverse = false; // Flag for inverse mode
 
 function addToHistory(expression: string, result: string) {
     history.push(`${expression} = ${result}`);
@@ -110,6 +111,11 @@ lnBtn.addEventListener("click", () => {
 const modBtn = document.getElementById("mod") as HTMLButtonElement;
 modBtn.addEventListener("click", () => {
   display.value += "%";
+});
+const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
+inverseBtn.addEventListener("click", () => {
+  isInverse = !isInverse;
+  inverseBtn.textContent = isInverse ? "Inv On" : "Inv"; // Update button text
 });
 
 });
