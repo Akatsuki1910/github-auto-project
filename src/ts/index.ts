@@ -162,4 +162,14 @@ binaryToDecimalBtn.addEventListener("click", () => {
         display.value = "Error";
       }
     });
+
+const signChangeBtn = document.getElementById("signChange") as HTMLButtonElement;
+signChangeBtn.addEventListener("click", () => {
+    const currentValue = display.value;
+    if (currentValue.startsWith("-")) {
+        display.value = currentValue.substring(1);
+    } else {
+        display.value = "-" + currentValue;
+    }
+});
 });
