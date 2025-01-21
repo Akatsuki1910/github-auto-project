@@ -89,7 +89,7 @@ modBtn.addEventListener("click", () => {
     }
 });
 
-// New Feature: Reciprocal
+// Reciprocal
 const reciprocalBtn = document.getElementById("reciprocal") as HTMLButtonElement;
 reciprocalBtn.addEventListener("click", () => {
     const num = parseFloat(display.value);
@@ -97,6 +97,20 @@ reciprocalBtn.addEventListener("click", () => {
         display.value = "Error"; // Handle division by zero
     } else {
         display.value = (1 / num).toString();
+    }
+});
+
+//Sum Feature: sum button
+const sumBtn = document.getElementById("sum") as HTMLButtonElement;
+sumBtn.addEventListener("click", () => {
+    const numStr = display.value;
+    const nums = numStr.split("+").map(Number); // Split by '+' and convert to numbers
+    if (nums.some(isNaN)) { //check if any value is not valid number
+      display.value = "Invalid input"; //sets the error message
+    } else {
+      const sum = nums.reduce((a, b) => a + b, 0); // Calculate sum
+      display.value = sum.toString();
+      addToHistory(nums.join(" + "), sum.toString());
     }
 });
 
