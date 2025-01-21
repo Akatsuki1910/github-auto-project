@@ -191,16 +191,29 @@ nthRootBtn.addEventListener("click", () => {
     display.value = result.toString();
     addToHistory(`n√(${num}, ${n})`, result.toString());  
   });
-
   const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
 expm1Btn.addEventListener("click", () => {
+  const num = parseFloat(display.value);
+  if (isNaN(num)) {
+    display.value = "Invalid Input";
+    return;
+  }
+
+  const result = Math.expm1(num);
+  display.value = result.toString();
+  addToHistory(`expm1(${num})`, result.toString());
+});
+
+const cuberootBtn = document.getElementById("cuberoot") as HTMLButtonElement;
+cuberootBtn.addEventListener("click", () => {
     const num = parseFloat(display.value);
     if (isNaN(num)) {
-        display.value = "Invalid input";
-        return;
+        display.value = "Invalid Input";
+    } else {
+        const result = Math.cbrt(num);
+        display.value = result.toString();
+        addToHistory(`cbrt(${num})`, result.toString());
     }
-    const result = Math.expm1(num);
-    display.value = result.toString();
-    addToHistory(`expm1(${num})`, result.toString());
 });
 });
+
