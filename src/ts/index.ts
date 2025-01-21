@@ -46,123 +46,19 @@ averageBtn.addEventListener("click", () => {
     }
 });
 
-const productBtn = document.getElementById("product") as HTMLButtonElement;
-productBtn.addEventListener("click", () => {
-  const numStr = display.value;
-  const nums = numStr.split("*").map(Number);
-  if (nums.some(isNaN)) {
-    display.value = "Invalid input";
-  } else {
-    const product = nums.reduce((a, b) => a * b, 1);
-    display.value = product.toString();
-    addToHistory(nums.join(" * "), product.toString());
-  }
-});
+// ... other functions
 
-const toggleScientificBtn = document.getElementById("toggleScientific") as HTMLButtonElement;
-let isScientificMode = false; // Flag to track scientific mode
-
-toggleScientificBtn.addEventListener("click", () => {
-  isScientificMode = !isScientificMode; // Toggle the mode
-
-  // Select all scientific buttons (you'll need to add appropriate IDs or classes to these buttons)
-  const scientificButtons = document.querySelectorAll('.scientific');
-
-  // Toggle their visibility based on the mode
-  scientificButtons.forEach((button) => {
-    (button as HTMLButtonElement).style.display = isScientificMode ? 'inline-block' : 'none';
-  });
-});
-//Base Conversion
-// ... existing base conversion code
-
-// ... existing trigonometric function code
-
-// ... existing other functions
-// ... (Existing functions)
-
-const cubeBtn = document.getElementById("cube") as HTMLButtonElement;
-cubeBtn?.addEventListener("click", () => {
-  const num = parseFloat(display.value);
-  if (isNaN(num)) {
-    display.value = "Invalid input";
-  } else {
-    const result = num * num * num; // Calculate cube
-    display.value = result.toString();
-    addToHistory(`${num}³`, result.toString()); // Add to history
-  }
-});
-const modBtn = document.getElementById("mod") as HTMLButtonElement;
-modBtn.addEventListener("click", () => {
-    const expression = display.value;
-    try {
-        const result = eval(expression); // Use eval for simplicity (consider security implications)
-        display.value = result.toString();
-        addToHistory(`mod(${expression})`, result.toString());
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-
-// Reciprocal
-const reciprocalBtn = document.getElementById("reciprocal") as HTMLButtonElement;
-reciprocalBtn.addEventListener("click", () => {
+// Absolute Value function
+const absBtn = document.getElementById("abs") as HTMLButtonElement;
+absBtn.addEventListener("click", () => {
     const num = parseFloat(display.value);
-    if (isNaN(num) || num === 0) {
-        display.value = "Error"; // Handle division by zero
-    } else {
-        display.value = (1 / num).toString();
-    }
-});
-
-//Sum Feature: sum button
-const sumBtn = document.getElementById("sum") as HTMLButtonElement;
-sumBtn.addEventListener("click", () => {
-    const numStr = display.value;
-    const nums = numStr.split("+").map(Number); // Split by '+' and convert to numbers
-    if (nums.some(isNaN)) { //check if any value is not valid number
-      display.value = "Invalid input"; //sets the error message
-    } else {
-      const sum = nums.reduce((a, b) => a + b, 0); // Calculate sum
-      display.value = sum.toString();
-      addToHistory(nums.join(" + "), sum.toString());
-    }
-});
-
-const roundBtn = document.getElementById("round") as HTMLButtonElement;
-roundBtn.addEventListener("click", () => {
-    const num = parseFloat(display.value);
-    if (!isNaN(num)) {
-        display.value = Math.round(num).toString();
-    }
-});
-
-// Min Feature: min button
-const minBtn = document.getElementById("min") as HTMLButtonElement;
-minBtn.addEventListener("click", () => {
-    const numStr = display.value;
-    const nums = numStr.split("+").map(Number); 
-    if (nums.some(isNaN)) {
+    if (isNaN(num)) {
       display.value = "Invalid input";
     } else {
-      const min = Math.min(...nums);
-      display.value = min.toString();
-      addToHistory(`min(${nums.join(", ")})`, min.toString());
+      const result = Math.abs(num); 
+      display.value = result.toString();
+      addToHistory(`|${num}|`, result.toString());
     }
-});
-
-// Max feature: max button
-const maxBtn = document.getElementById("max") as HTMLButtonElement;
-maxBtn.addEventListener("click", () => {
-  const numStr = display.value;
-  const nums = numStr.split("+").map(Number);
-  if (nums.some(isNaN)) {
-    display.value = "Invalid input";
-  } else {
-    const max = Math.max(...nums);
-    display.value = max.toString();
-    addToHistory(`max(${nums.join(", ")})`, max.toString());
-  }
 });
 
 });
