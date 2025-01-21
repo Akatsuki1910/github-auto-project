@@ -49,7 +49,7 @@ averageBtn.addEventListener("click", () => {
 const productBtn = document.getElementById("product") as HTMLButtonElement;
 productBtn.addEventListener("click", () => {
   const numStr = display.value;
-  const nums = numStr.split("*").map(Number);
+  const nums = numStr.split("*).map(Number);
   if (nums.some(isNaN)) {
     display.value = "Invalid input";
   } else {
@@ -126,6 +126,14 @@ sumBtn.addEventListener("click", () => {
       const sum = nums.reduce((a, b) => a + b, 0); // Calculate sum
       display.value = sum.toString();
       addToHistory(nums.join(" + "), sum.toString());
+    }
+});
+
+const roundBtn = document.getElementById("round") as HTMLButtonElement;
+roundBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (!isNaN(num)) {
+        display.value = Math.round(num).toString();
     }
 });
 
