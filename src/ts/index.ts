@@ -227,4 +227,16 @@ exp2Btn.addEventListener("click", () => {
         addToHistory(`2^(${num})`, result.toString());
     }
 });
+
+const tenXBtn = document.getElementById("tenX") as HTMLButtonElement;
+tenXBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid input";
+    } else {
+        const result = Math.pow(10, num);
+        display.value = result.toString();
+        addToHistory(`10^(${num})`, result.toString());
+    }
+});
 });
