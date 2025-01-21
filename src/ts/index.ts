@@ -95,4 +95,16 @@ randBtn?.addEventListener("click", () => {
     addToHistory("rand", randNum.toString());
 });
 
+const sinBtn = document.getElementById("sin") as HTMLButtonElement;
+sinBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid input";
+    } else {
+        const result = Math.sin(num);
+        display.value = result.toString();
+        addToHistory(`sin(${num})`, result.toString());
+    }
+});
+
 });
