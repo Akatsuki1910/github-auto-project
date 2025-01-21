@@ -77,5 +77,15 @@ cubeBtn?.addEventListener("click", () => {
     addToHistory(`${num}³`, result.toString()); // Add to history
   }
 });
-
+const modBtn = document.getElementById("mod") as HTMLButtonElement;
+modBtn.addEventListener("click", () => {
+    const expression = display.value;
+    try {
+        const result = eval(expression); // Use eval for simplicity (consider security implications)
+        display.value = result.toString();
+        addToHistory(`mod(${expression})`, result.toString());
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 });
