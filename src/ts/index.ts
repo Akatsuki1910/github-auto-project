@@ -35,7 +35,7 @@ const averageBtn = document.getElementById("average") as HTMLButtonElement;
 
 averageBtn.addEventListener("click", () => {
     const numStr = display.value;
-    const nums = numStr.split("\+").map(Number); // Split by '+' and convert to numbers
+    const nums = numStr.split("+").map(Number); // Split by '+' and convert to numbers
     if (nums.some(isNaN)) {
         display.value = "Invalid input";
     } else {
@@ -90,6 +90,10 @@ squareBtn.addEventListener("click", () => {
         display.value = result.toString();
         addToHistory(`sqr(${num})`, result.toString());
     }
+});
+const eBtn = document.getElementById("e") as HTMLButtonElement;
+eBtn.addEventListener("click", () => {
+    display.value += Math.E;
 });
 
 });
