@@ -127,5 +127,10 @@ percentChangeBtn.addEventListener("click", () => {
         addToHistory(`%Change(${currentValue})`, percentageChange.toString());  
     }
 });
+const randomBtn = document.getElementById("random") as HTMLButtonElement;
+randomBtn.addEventListener("click", () => {
+    const randomNumber = Math.random();
+    display.value = randomNumber.toString();
+});
 
 });
