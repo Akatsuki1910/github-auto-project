@@ -172,4 +172,23 @@ signChangeBtn.addEventListener("click", () => {
         display.value = "-" + currentValue;
     }
 });
+
+const nthRootBtn = document.getElementById("nthRoot") as HTMLButtonElement;
+nthRootBtn.addEventListener("click", () => {
+    const n = parseFloat(prompt("Enter the root (n):", "2")); // Default to square root
+    if (isNaN(n)) {
+      display.value = "Invalid root";
+      return;
+    }
+  
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+      display.value = "Invalid input";
+      return;
+    }
+  
+    const result = Math.pow(num, 1 / n);
+    display.value = result.toString();
+    addToHistory(`n√(${num}, ${n})`, result.toString());  
+  });
 });
