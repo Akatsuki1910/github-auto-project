@@ -35,7 +35,7 @@ const averageBtn = document.getElementById("average") as HTMLButtonElement;
 
 averageBtn.addEventListener("click", () => {
     const numStr = display.value;
-    const nums = numStr.split("+").map(Number); // Split by '+' and convert to numbers  
+    const nums = numStr.split("\+").map(Number); // Split by '+' and convert to numbers
     if (nums.some(isNaN)) {
         display.value = "Invalid input";
     } else {
@@ -46,95 +46,19 @@ averageBtn.addEventListener("click", () => {
     }
 });
 
+const roundBtn = document.getElementById("round") as HTMLButtonElement;
+roundBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid input";
+    } else {
+        const result = Math.round(num);
+        display.value = result.toString();
+        addToHistory(`round(${num})`, result.toString());
+    }
+});
 // ... other functions
 
 // Absolute Value function
-const absBtn = document.getElementById("abs") as HTMLButtonElement;
-absBtn.addEventListener("click", () => {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-      display.value = "Invalid input";
-    } else {
-      const result = Math.abs(num); 
-      display.value = result.toString();
-      addToHistory(`|${num}|`, result.toString());
-    }
-});
-
-//Floor function
-const floorBtn = document.getElementById("floor") as HTMLButtonElement;
-floorBtn?.addEventListener("click", () => {
-    const num = parseFloat(display.value);
-    if(isNaN(num)){
-        display.value = "Invalid Input";
-    }
-    else{
-        const result = Math.floor(num);
-        display.value = result.toString();
-        addToHistory(`floor(${num})`, result.toString());
-    }
-});
-
-// Ceil function
-const ceilBtn = document.getElementById("ceil") as HTMLButtonElement;
-ceilBtn?.addEventListener("click", () => {
-  const num = parseFloat(display.value);
-  if (isNaN(num)) {
-    display.value = "Invalid Input";
-  } else {
-    const result = Math.ceil(num);
-    display.value = result.toString();
-    addToHistory(`ceil(${num})`, result.toString());
-  }
-});
-
-const randBtn = document.getElementById("rand") as HTMLButtonElement;
-randBtn?.addEventListener("click", () => {
-    const randNum = Math.random();
-    display.value = randNum.toString();
-    addToHistory("rand", randNum.toString());
-});
-
-const sinBtn = document.getElementById("sin") as HTMLButtonElement;
-sinBtn.addEventListener("click", () => {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-        display.value = "Invalid input";
-    } else {
-        const result = Math.sin(num);
-        display.value = result.toString();
-        addToHistory(`sin(${num})`, result.toString());
-    }
-});
-
-const cosBtn = document.getElementById("cos") as HTMLButtonElement;
-cosBtn.addEventListener("click", () => {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-        display.value = "Invalid input";
-    } else {
-        const result = Math.cos(num);
-        display.value = result.toString();
-        addToHistory(`cos(${num})`, result.toString());
-    }
-});
-
-const tanBtn = document.getElementById("tan") as HTMLButtonElement;
-tanBtn.addEventListener("click", () => {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-        display.value = "Invalid input";
-    } else {
-        const result = Math.tan(num);
-        display.value = result.toString();
-        addToHistory(`tan(${num})`, result.toString());
-    }
-});
-
-const modeBtn = document.getElementById("mode") as HTMLButtonElement;
-modeBtn.addEventListener("click", () => {
-  mode = mode === "rad" ? "deg" : "rad";
-  display.value = `Mode: ${mode.toUpperCase()}`;
-});
-
+// ... existing code
 });
