@@ -131,4 +131,10 @@ tanBtn.addEventListener("click", () => {
     }
 });
 
+const modeBtn = document.getElementById("mode") as HTMLButtonElement;
+modeBtn.addEventListener("click", () => {
+  mode = mode === "rad" ? "deg" : "rad";
+  display.value = `Mode: ${mode.toUpperCase()}`;
+});
+
 });
