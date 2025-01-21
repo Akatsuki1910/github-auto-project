@@ -96,4 +96,16 @@ eBtn.addEventListener("click", () => {
     display.value += Math.E;
 });
 
+const lnBtn = document.getElementById("ln") as HTMLButtonElement;
+lnBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid Input";
+    } else {
+        const result = Math.log(num);
+        display.value = result.toString();
+        addToHistory(`ln(${num})`, result.toString());
+    }
+});
+
 });
