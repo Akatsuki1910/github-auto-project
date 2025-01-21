@@ -61,4 +61,18 @@ absBtn.addEventListener("click", () => {
     }
 });
 
+//Floor function
+const floorBtn = document.getElementById("floor") as HTMLButtonElement;
+floorBtn?.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if(isNaN(num)){
+        display.value = "Invalid Input";
+    }
+    else{
+        const result = Math.floor(num);
+        display.value = result.toString();
+        addToHistory(`floor(${num})`, result.toString());
+    }
+});
+
 });
