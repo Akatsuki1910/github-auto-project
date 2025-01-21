@@ -107,5 +107,9 @@ lnBtn.addEventListener("click", () => {
         addToHistory(`ln(${num})`, result.toString());
     }
 });
+const modBtn = document.getElementById("mod") as HTMLButtonElement;
+modBtn.addEventListener("click", () => {
+  display.value += "%";
+});
 
 });
