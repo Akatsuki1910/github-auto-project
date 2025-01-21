@@ -68,4 +68,16 @@ duplicateBtn?.addEventListener("click", () => {
     display.value = currentValue + currentValue; // Duplicates the current value
 });
 
+const cubeBtn = document.getElementById("cube") as HTMLButtonElement;
+cubeBtn.addEventListener("click", () => {
+  const num = parseFloat(display.value);
+  if (isNaN(num)) {
+    display.value = "Invalid Input";
+  } else {
+    const result = num * num * num;
+    display.value = result.toString();
+    addToHistory(`cube(${num})`, result.toString());
+  }
+});
+
 });
