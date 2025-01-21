@@ -118,4 +118,14 @@ inverseBtn.addEventListener("click", () => {
   inverseBtn.textContent = isInverse ? "Inv On" : "Inv"; // Update button text
 });
 
+const percentChangeBtn = document.getElementById("percentChange") as HTMLButtonElement;
+percentChangeBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const percentageChange = (currentValue / 100);
+        display.value = percentageChange.toString();
+        addToHistory(`%Change(${currentValue})`, percentageChange.toString());  
+    }
+});
+
 });
