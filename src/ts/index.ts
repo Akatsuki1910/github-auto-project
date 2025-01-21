@@ -133,4 +133,15 @@ randomBtn.addEventListener("click", () => {
     display.value = randomNumber.toString();
 });
 
+const binaryToDecimalBtn = document.getElementById("binaryToDecimal") as HTMLButtonElement;
+binaryToDecimalBtn.addEventListener("click", () => {
+    const binaryValue = display.value;
+    const decimalValue = parseInt(binaryValue, 2);
+    if (isNaN(decimalValue)){
+        display.value = "Invalid Input";
+    } else {
+        display.value = decimalValue.toString();
+        addToHistory(`bin2dec(${binaryValue})`, decimalValue.toString());
+    }
+});
 });
