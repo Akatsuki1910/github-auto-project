@@ -151,4 +151,15 @@ binaryToDecimalBtn.addEventListener("click", () => {
       display.value = (-currentValue).toString();
     }
   });
+
+    const calculateExpressionBtn = document.getElementById("calculateExpression") as HTMLButtonElement;
+    calculateExpressionBtn.addEventListener("click", () => {
+      try {
+        const result = eval(display.value);
+        display.value = result.toString();
+        addToHistory(display.value, result.toString());
+      } catch (error) {
+        display.value = "Error";
+      }
+    });
 });
