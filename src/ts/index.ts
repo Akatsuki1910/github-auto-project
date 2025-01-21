@@ -75,4 +75,17 @@ floorBtn?.addEventListener("click", () => {
     }
 });
 
+// Ceil function
+const ceilBtn = document.getElementById("ceil") as HTMLButtonElement;
+ceilBtn?.addEventListener("click", () => {
+  const num = parseFloat(display.value);
+  if (isNaN(num)) {
+    display.value = "Invalid Input";
+  } else {
+    const result = Math.ceil(num);
+    display.value = result.toString();
+    addToHistory(`ceil(${num})`, result.toString());
+  }
+});
+
 });
