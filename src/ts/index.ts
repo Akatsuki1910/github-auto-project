@@ -245,4 +245,19 @@ dmsBtn.addEventListener("click", () => {
   // Implement DMS conversion logic here.  This is a placeholder.
   display.value = "DMS feature coming soon!";
 });
+
+const geoMeanBtn = document.getElementById("geoMean") as HTMLButtonElement;
+geoMeanBtn.addEventListener("click", () => {
+    const numStr = display.value;
+    const nums = numStr.split("*").map(Number);
+
+    if(nums.some(isNaN)) {
+        display.value = "Invalid input";
+    } else {
+        const product = nums.reduce((a,b) => a * b, 1);
+        const geoMean = Math.pow(product, 1 / nums.length);
+        display.value = geoMean.toString();
+        addToHistory(`geoMean(${nums.join("*")})`, geoMean.toString());
+    }
+});
 });
