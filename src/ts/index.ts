@@ -239,4 +239,10 @@ tenXBtn.addEventListener("click", () => {
         addToHistory(`10^(${num})`, result.toString());
     }
 });
+
+const dmsBtn = document.getElementById("dms") as HTMLButtonElement;
+dmsBtn.addEventListener("click", () => {
+  // Implement DMS conversion logic here.  This is a placeholder.
+  display.value = "DMS feature coming soon!";
+});
 });
