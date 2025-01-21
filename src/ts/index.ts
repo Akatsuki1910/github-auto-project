@@ -215,5 +215,16 @@ cuberootBtn.addEventListener("click", () => {
         addToHistory(`cbrt(${num})`, result.toString());
     }
 });
-});
 
+const exp2Btn = document.getElementById("exp2") as HTMLButtonElement;
+exp2Btn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid input";
+    } else {
+        const result = Math.pow(2, num);
+        display.value = result.toString();
+        addToHistory(`2^(${num})`, result.toString());
+    }
+});
+});
