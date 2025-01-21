@@ -191,4 +191,16 @@ nthRootBtn.addEventListener("click", () => {
     display.value = result.toString();
     addToHistory(`n√(${num}, ${n})`, result.toString());  
   });
+
+  const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
+expm1Btn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid input";
+        return;
+    }
+    const result = Math.expm1(num);
+    display.value = result.toString();
+    addToHistory(`expm1(${num})`, result.toString());
+});
 });
