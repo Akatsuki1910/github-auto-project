@@ -107,4 +107,16 @@ sinBtn.addEventListener("click", () => {
     }
 });
 
+const cosBtn = document.getElementById("cos") as HTMLButtonElement;
+cosBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid input";
+    } else {
+        const result = Math.cos(num);
+        display.value = result.toString();
+        addToHistory(`cos(${num})`, result.toString());
+    }
+});
+
 });
