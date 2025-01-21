@@ -35,7 +35,7 @@ const averageBtn = document.getElementById("average") as HTMLButtonElement;
 
 averageBtn.addEventListener("click", () => {
     const numStr = display.value;
-    const nums = numStr.split("+").map(Number); // Split by '+' and convert to numbers
+    const nums = numStr.split("\+").map(Number); // Split by '+' and convert to numbers
     if (nums.some(isNaN)) {
         display.value = "Invalid input";
     } else {
@@ -78,6 +78,18 @@ cubeBtn.addEventListener("click", () => {
     display.value = result.toString();
     addToHistory(`cube(${num})`, result.toString());
   }
+});
+
+const squareBtn = document.getElementById("square") as HTMLButtonElement;
+squareBtn.addEventListener("click", () => {
+    const num = parseFloat(display.value);
+    if(isNaN(num)) {
+        display.value = "Invalid Input";
+    } else {
+        const result = num * num;
+        display.value = result.toString();
+        addToHistory(`sqr(${num})`, result.toString());
+    }
 });
 
 });
