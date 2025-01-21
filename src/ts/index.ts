@@ -35,7 +35,7 @@ const averageBtn = document.getElementById("average") as HTMLButtonElement;
 
 averageBtn.addEventListener("click", () => {
     const numStr = display.value;
-    const nums = numStr.split("\+").map(Number); // Split by '+' and convert to numbers
+    const nums = numStr.split("+").map(Number); // Split by '+' and convert to numbers
     if (nums.some(isNaN)) {
         display.value = "Invalid input";
     } else {
@@ -61,4 +61,11 @@ roundBtn.addEventListener("click", () => {
 
 // Absolute Value function
 // ... existing code
+
+const duplicateBtn = document.getElementById("duplicate") as HTMLButtonElement;
+duplicateBtn?.addEventListener("click", () => {
+    const currentValue = display.value;
+    display.value = currentValue + currentValue; // Duplicates the current value
+});
+
 });
