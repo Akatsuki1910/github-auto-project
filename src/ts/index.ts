@@ -144,4 +144,11 @@ binaryToDecimalBtn.addEventListener("click", () => {
         addToHistory(`bin2dec(${binaryValue})`, decimalValue.toString());
     }
 });
+  const negationBtn = document.getElementById("negation") as HTMLButtonElement;
+  negationBtn.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+      display.value = (-currentValue).toString();
+    }
+  });
 });
