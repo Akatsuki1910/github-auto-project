@@ -151,4 +151,18 @@ minBtn.addEventListener("click", () => {
     }
 });
 
+// Max feature: max button
+const maxBtn = document.getElementById("max") as HTMLButtonElement;
+maxBtn.addEventListener("click", () => {
+  const numStr = display.value;
+  const nums = numStr.split("+").map(Number);
+  if (nums.some(isNaN)) {
+    display.value = "Invalid input";
+  } else {
+    const max = Math.max(...nums);
+    display.value = max.toString();
+    addToHistory(`max(${nums.join(", ")})`, max.toString());
+  }
+});
+
 });
