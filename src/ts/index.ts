@@ -49,7 +49,7 @@ averageBtn.addEventListener("click", () => {
 const productBtn = document.getElementById("product") as HTMLButtonElement;
 productBtn.addEventListener("click", () => {
   const numStr = display.value;
-  const nums = numStr.split("*).map(Number);
+  const nums = numStr.split("*").map(Number);
   if (nums.some(isNaN)) {
     display.value = "Invalid input";
   } else {
@@ -134,6 +134,20 @@ roundBtn.addEventListener("click", () => {
     const num = parseFloat(display.value);
     if (!isNaN(num)) {
         display.value = Math.round(num).toString();
+    }
+});
+
+// Min Feature: min button
+const minBtn = document.getElementById("min") as HTMLButtonElement;
+minBtn.addEventListener("click", () => {
+    const numStr = display.value;
+    const nums = numStr.split("+").map(Number); 
+    if (nums.some(isNaN)) {
+      display.value = "Invalid input";
+    } else {
+      const min = Math.min(...nums);
+      display.value = min.toString();
+      addToHistory(`min(${nums.join(", ")})`, min.toString());
     }
 });
 
