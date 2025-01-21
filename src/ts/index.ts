@@ -30,7 +30,22 @@ window.addEventListener("DOMContentLoaded", () => {
   // ... existing code
  // ... existing code ...
 
-// ... existing functions for calculations (sum, average)
+// ... existing functions for calculations (sum)
+const averageBtn = document.getElementById("average") as HTMLButtonElement;
+
+averageBtn.addEventListener("click", () => {
+    const numStr = display.value;
+    const nums = numStr.split("+").map(Number); // Split by '+' and convert to numbers  
+    if (nums.some(isNaN)) {
+        display.value = "Invalid input";
+    } else {
+        const sum = nums.reduce((a, b) => a + b, 0);
+        const average = sum / nums.length;
+        display.value = average.toString();
+        addToHistory(nums.join(" + "), average.toString());
+    }
+});
+
 const productBtn = document.getElementById("product") as HTMLButtonElement;
 productBtn.addEventListener("click", () => {
   const numStr = display.value;
