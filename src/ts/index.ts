@@ -88,4 +88,11 @@ ceilBtn?.addEventListener("click", () => {
   }
 });
 
+const randBtn = document.getElementById("rand") as HTMLButtonElement;
+randBtn?.addEventListener("click", () => {
+    const randNum = Math.random();
+    display.value = randNum.toString();
+    addToHistory("rand", randNum.toString());
+});
+
 });
