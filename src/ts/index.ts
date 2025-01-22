@@ -36,7 +36,7 @@ const averageBtn = document.getElementById("average") as HTMLButtonElement;
 
 averageBtn.addEventListener("click", () => {
     const numStr = display.value;
-    const nums = numStr.split("+").map(Number); // Split by '+' and convert to numbers
+    const nums = numStr.split("\+").map(Number); // Split by '+' and convert to numbers
     if (nums.some(isNaN)) {
         display.value = "Invalid input";
     } else {
@@ -159,6 +159,15 @@ calculateBtn.addEventListener('click', () => {
         addToHistory(display.value, result);
     } catch (error) {
         display.value = "Error";
+    }
+});
+const exp10Btn = document.getElementById("exp10") as HTMLButtonElement;
+exp10Btn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = 10 ** currentValue;
+        display.value = result.toString();
+        addToHistory(`10^${currentValue}`, result.toString());
     }
 });
 });
