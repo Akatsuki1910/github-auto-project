@@ -69,5 +69,24 @@ function fibonacci(n: number): number {
     }
     return fibonacci(n - 1) + fibonacci(n - 2);
 }
+const gcdBtn = document.getElementById("gcd") as HTMLButtonElement;
+gcdBtn.addEventListener("click", () => {
+  const numStr = display.value;
+  const nums = numStr.split(",").map(Number);
+  if (nums.some(isNaN)) {
+      display.value = "Invalid input";
+  } else {
+      const result = gcd(...nums);
+      display.value = result.toString();
+      addToHistory(`gcd(${nums.join(", ")})`, result.toString());
+  }
+});
+
+function gcd(a: number, b: number): number {
+    if (b === 0) {
+        return Math.abs(a); // Handle negative inputs
+    }
+    return gcd(b, a % b);
+}
 
 });
