@@ -44,6 +44,22 @@ calculateBtn.addEventListener('click', () => {
 
 // ... (Existing event listeners)
 
+//Add exp button functionality
+const expBtn = document.getElementById("exp") as HTMLButtonElement;
+expBtn.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Error: Invalid Input";
+            return;
+        }
+        const result = Math.exp(num);
+        display.value = result.toString();
+        addToHistory(`exp(${num})`, result.toString());
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 const cosBtn = document.getElementById("cos") as HTMLButtonElement;
 cosBtn.addEventListener('click', () => {
   try {
