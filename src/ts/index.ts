@@ -48,6 +48,23 @@ averageBtn.addEventListener("click", () => {
 });
 
 // ... other functions
+const medianBtn = document.getElementById("median") as HTMLButtonElement;
+
+medianBtn.addEventListener("click", () => {
+    const numStr = display.value;
+    const nums = numStr.split(",").map(Number).sort((a, b) => a - b);
+
+    if (nums.some(isNaN)) {
+        display.value = "Invalid input";
+        return;
+    }
+
+    const mid = Math.floor(nums.length / 2);
+    const median = nums.length % 2 !== 0 ? nums[mid] : (nums[mid - 1] + nums[mid]) / 2;
+
+    display.value = median.toString();
+    addToHistory(`median(${nums.join(", ")})`, median.toString());
+});
 
 // ... Existing Code
 
