@@ -149,4 +149,16 @@ currentDateBtn.addEventListener("click", () => {
     const dateString = today.toLocaleDateString();
     display.value = dateString;
 });
+
+const calculateBtn = document.getElementById("calculate") as HTMLButtonElement;
+const display = document.getElementById("display") as HTMLInputElement;
+calculateBtn.addEventListener('click', () => {
+    try {
+        const result = eval(display.value);
+        display.value = result.toString();
+        addToHistory(display.value, result);
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 });
