@@ -68,6 +68,17 @@ medianBtn.addEventListener("click", () => {
 
 // ... Existing Code
 
+// ... (Existing code)
+const toggleHistoryBtn = document.getElementById("toggleHistory") as HTMLButtonElement;
+
+toggleHistoryBtn.addEventListener("click", () => {
+  if (historyDisplay.style.display === "none" || historyDisplay.style.display === "") {
+    historyDisplay.style.display = "block";
+  } else {
+    historyDisplay.style.display = "none";
+  }
+});
+
 const fibonacciBtn = document.getElementById("fibonacci") as HTMLButtonElement;
 fibonacciBtn.addEventListener("click", () => {
     const n = parseInt(display.value);
