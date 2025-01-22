@@ -60,4 +60,20 @@ cosBtn.addEventListener('click', () => {
   }
 });
 
+const tanBtn = document.getElementById("tan") as HTMLButtonElement;
+tanBtn.addEventListener('click', () => {
+    try {
+      const num = parseFloat(display.value);
+      if (isNaN(num)) {
+        display.value = "Error: Invalid Input";
+        return;
+      }
+      const result = Math.tan(num);
+      display.value = result.toString();
+      addToHistory(`tan(${num})`, result.toString());
+    } catch (error) {
+      display.value = "Error";
+    }
+  });
+
 });
