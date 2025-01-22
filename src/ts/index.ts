@@ -237,4 +237,14 @@ negateBtn.addEventListener('click', () => {
         display.value = (-currentValue).toString();
     }
 });
+
+const signBtn = document.getElementById("sign") as HTMLButtonElement;
+signBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (-currentValue).toString();
+        addToHistory(`-(${currentValue})`, (-currentValue).toString()); // Add to history
+    }
+});
+
 });
