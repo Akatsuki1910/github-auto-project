@@ -229,5 +229,12 @@ roundToBtn.addEventListener('click', () => {
         display.value = "Invalid decimal places";
     }
 });
-});
 
+const negateBtn = document.getElementById("negate") as HTMLButtonElement;
+negateBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (-currentValue).toString();
+    }
+});
+});
