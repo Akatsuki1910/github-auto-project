@@ -130,4 +130,21 @@ function lcm(...numbers: number[]): number {
     }
     return result;
 }
+
+const geoMeanBtn = document.getElementById("geoMean") as HTMLButtonElement;
+geoMeanBtn.addEventListener("click", () => {
+    const numStr = display.value;
+    const nums = numStr.split(",").map(Number);
+
+    if (nums.some(isNaN) || nums.some(x => x < 0)) {
+        display.value = "Invalid input (positive numbers only)";
+        return;
+    }
+
+    const product = nums.reduce((a, b) => a * b, 1);
+    const geoMean = Math.pow(product, 1 / nums.length);
+
+    display.value = geoMean.toString();
+    addToHistory(`geoMean(${nums.join(", ")})`, geoMean.toString());
+});
 });
