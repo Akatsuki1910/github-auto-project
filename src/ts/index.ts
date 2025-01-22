@@ -107,4 +107,20 @@ logBtn.addEventListener('click', () => {
     display.value = "Error";
   }
 });
+
+const sinBtn = document.getElementById("sin") as HTMLButtonElement;
+sinBtn.addEventListener('click', () => {
+  try {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+      display.value = "Error: Invalid Input";
+      return;
+    }
+    const result = Math.sin(num);
+    display.value = result.toString();
+    addToHistory(`sin(${num})`, result.toString());
+  } catch (error) {
+    display.value = "Error";
+  }
+});
 });
