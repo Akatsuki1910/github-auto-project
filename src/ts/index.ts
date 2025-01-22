@@ -36,7 +36,7 @@ const averageBtn = document.getElementById("average") as HTMLButtonElement;
 
 averageBtn.addEventListener("click", () => {
     const numStr = display.value;
-    const nums = numStr.split("\+").map(Number); // Split by '+' and convert to numbers
+    const nums = numStr.split("+").map(Number); // Split by '+' and convert to numbers
     if (nums.some(isNaN)) {
         display.value = "Invalid input";
     } else {
@@ -133,7 +133,7 @@ parenthesesCheckBtn.addEventListener("click", () => {
       openCount++;
     } else if (char === ')') {
       closeCount++;
-    }
+    } 
   }
 
   if (openCount === closeCount) {
@@ -168,6 +168,18 @@ exp10Btn.addEventListener('click', () => {
         const result = 10 ** currentValue;
         display.value = result.toString();
         addToHistory(`10^${currentValue}`, result.toString());
+    }
+});
+
+const squareRootBtn = document.getElementById("squareRoot") as HTMLButtonElement;
+squareRootBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue >=0) {
+      const result = Math.sqrt(currentValue);
+      display.value = result.toString();
+      addToHistory(`√(${currentValue})`, result.toString());
+    }else{
+        display.value = "Invalid Input";
     }
 });
 });
