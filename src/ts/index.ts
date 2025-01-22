@@ -257,4 +257,11 @@ squaredBtn.addEventListener('click', () => {
     }
 });
 
+const rndBtn = document.getElementById("rnd") as HTMLButtonElement;
+rndBtn.addEventListener('click', () => {
+    const result = Math.random();
+    display.value = result.toString();
+    addToHistory('rnd', result.toString());
+});
+
 });
