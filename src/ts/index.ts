@@ -75,5 +75,20 @@ tanBtn.addEventListener('click', () => {
       display.value = "Error";
     }
   });
+const roundBtn = document.getElementById("round") as HTMLButtonElement;
+roundBtn.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Error: Invalid input";
+            return;
+        }
+        const result = Math.round(num);
+        display.value = result.toString();
+        addToHistory(`round(${num})`, result.toString());
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 
 });
