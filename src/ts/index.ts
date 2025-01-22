@@ -143,4 +143,10 @@ parenthesesCheckBtn.addEventListener("click", () => {
   }
 });
 
+const currentDateBtn = document.getElementById("current-date") as HTMLButtonElement;
+currentDateBtn.addEventListener("click", () => {
+    const today = new Date();
+    const dateString = today.toLocaleDateString();
+    display.value = dateString;
+});
 });
