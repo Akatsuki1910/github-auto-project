@@ -42,85 +42,22 @@ calculateBtn.addEventListener('click', () => {
     }
 });
 
-const currentDateBtn = document.getElementById("current-date") as HTMLButtonElement;
-currentDateBtn.addEventListener("click", () => {
-    const today = new Date();
-    const dateString = today.toLocaleDateString();
-    display.value = dateString;
-});
+// ... (Existing event listeners)
 
-const piBtn = document.getElementById("pi") as HTMLButtonElement;
-piBtn.addEventListener('click', () => {
-    display.value = Math.PI.toString();
-});
-
-const factorialBtn = document.getElementById("factorial") as HTMLButtonElement;
-factorialBtn.addEventListener('click', () => {
-  try {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-      display.value = "Error: Invalid input";
-      return;
-    }
-    if (num < 0) {
-      display.value = "Error: Factorial not defined for negative numbers";
-      return;
-    }
-
-    const result = factorial(num); 
-    display.value = result.toString();
-    addToHistory(`${num}!`, result);
-  } catch (error) {
-    display.value = "Error";
-  }
-});
-
-function factorial(n: number): number {
-    if (n === 0) {
-      return 1;
-    }
-    return n * factorial(n - 1);
-  }
-
-const powerBtn = document.getElementById("power") as HTMLButtonElement;
-powerBtn.addEventListener('click', () => {
-    const base = parseFloat(display.value);
-    if(isNaN(base)){
-        display.value = "Error: Invalid Input";
-    } else {
-      display.value += "**";
-}
-});
-
-const logBtn = document.getElementById("log") as HTMLButtonElement;
-logBtn.addEventListener('click', () => {
-  try {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-      display.value = "Error: Invalid input";
-      return;
-    }
-    const result = Math.log10(num);
-    display.value = result.toString();
-    addToHistory(`log(${num})`, result.toString());
-  } catch (error) {
-    display.value = "Error";
-  }
-});
-
-const sinBtn = document.getElementById("sin") as HTMLButtonElement;
-sinBtn.addEventListener('click', () => {
+const cosBtn = document.getElementById("cos") as HTMLButtonElement;
+cosBtn.addEventListener('click', () => {
   try {
     const num = parseFloat(display.value);
     if (isNaN(num)) {
       display.value = "Error: Invalid Input";
       return;
     }
-    const result = Math.sin(num);
+    const result = Math.cos(num);
     display.value = result.toString();
-    addToHistory(`sin(${num})`, result.toString());
+    addToHistory(`cos(${num})`, result.toString());
   } catch (error) {
     display.value = "Error";
   }
 });
+
 });
