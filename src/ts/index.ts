@@ -247,4 +247,14 @@ signBtn.addEventListener('click', () => {
     }
 });
 
+const squaredBtn = document.getElementById("squared") as HTMLButtonElement;
+squaredBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = currentValue * currentValue;
+        display.value = result.toString();
+        addToHistory(`${currentValue}²`, result.toString());
+    }
+});
+
 });
