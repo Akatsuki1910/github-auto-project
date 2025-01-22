@@ -53,4 +53,32 @@ const piBtn = document.getElementById("pi") as HTMLButtonElement;
 piBtn.addEventListener('click', () => {
     display.value = Math.PI.toString();
 });
+
+const factorialBtn = document.getElementById("factorial") as HTMLButtonElement;
+factorialBtn.addEventListener('click', () => {
+  try {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+      display.value = "Error: Invalid input";
+      return;
+    }
+    if (num < 0) {
+      display.value = "Error: Factorial not defined for negative numbers";
+      return;
+    }
+
+    const result = factorial(num); 
+    display.value = result.toString();
+    addToHistory(`${num}!`, result);
+  } catch (error) {
+    display.value = "Error";
+  }
+});
+
+function factorial(n: number): number {
+    if (n === 0) {
+      return 1;
+    }
+    return n * factorial(n - 1);
+  }
 });
