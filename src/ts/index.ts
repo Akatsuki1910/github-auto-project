@@ -122,4 +122,25 @@ clearAllBtn.addEventListener("click", () => {
     display.value = ""; // Optionally clear the current display value
 });
 
+const parenthesesCheckBtn = document.getElementById("parenthesesCheck") as HTMLButtonElement;
+parenthesesCheckBtn.addEventListener("click", () => {
+  const expression = display.value;
+  let openCount = 0;
+  let closeCount = 0;
+
+  for (let char of expression) {
+    if (char === '(') {
+      openCount++;
+    } else if (char === ')') {
+      closeCount++;
+    }
+  }
+
+  if (openCount === closeCount) {
+    display.value = "Parentheses are balanced.";
+  } else {
+    display.value = "Parentheses are NOT balanced.";
+  }
+});
+
 });
