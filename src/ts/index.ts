@@ -140,5 +140,9 @@ const modBtn = document.getElementById("mod") as HTMLButtonElement;
 modBtn.addEventListener('click', () => {
   display.value += '%';
 });
+const eBtn = document.getElementById("e") as HTMLButtonElement;
+eBtn.addEventListener('click', () => {
+  display.value += Math.E;
+});
 
 });
