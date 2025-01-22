@@ -212,4 +212,22 @@ modulusBtn.addEventListener('click', () => {
     display.value = "Invalid Input";
   }
 });
+
+const roundToBtn = document.getElementById("roundTo") as HTMLButtonElement;
+roundToBtn.addEventListener('click', () => {
+    const decimalPlaces = parseFloat(prompt("Enter the number of decimal places to round to:", "2")); // Get decimal places from user
+    if (!isNaN(decimalPlaces)){
+        const currentValue = parseFloat(display.value);
+        if(!isNaN(currentValue)){
+            const result = parseFloat(currentValue.toFixed(decimalPlaces));
+            display.value = result.toString();
+            addToHistory(`round(${currentValue}, ${decimalPlaces})`, result.toString());    
+        } else {
+            display.value = "Invalid input";
+        }
+    } else{
+        display.value = "Invalid decimal places";
+    }
 });
+});
+
