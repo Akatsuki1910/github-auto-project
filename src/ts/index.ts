@@ -90,5 +90,20 @@ roundBtn.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+const absBtn = document.getElementById("abs") as HTMLButtonElement;
+absBtn.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Error: Invalid input";
+            return;
+        }
+        const result = Math.abs(num);
+        display.value = result.toString();
+        addToHistory(`abs(${num})`, result.toString());
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 
 });
