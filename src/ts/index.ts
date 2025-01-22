@@ -147,4 +147,21 @@ geoMeanBtn.addEventListener("click", () => {
     display.value = geoMean.toString();
     addToHistory(`geoMean(${nums.join(", ")})`, geoMean.toString());
 });
+
+const harmonicMeanBtn = document.getElementById("harmonicMean") as HTMLButtonElement;
+harmonicMeanBtn.addEventListener("click", () => {
+    const numStr = display.value;
+    const nums = numStr.split(",").map(Number);
+
+    if (nums.some(isNaN) || nums.some(x => x <= 0)) {
+        display.value = "Invalid input (positive numbers only)";
+        return;
+    }
+
+    const sumOfReciprocals = nums.reduce((sum, num) => sum + (1 / num), 0);
+    const harmonicMean = nums.length / sumOfReciprocals;
+
+    display.value = harmonicMean.toString();
+    addToHistory(`harmonicMean(${nums.join(", ")})`, harmonicMean.toString());
+});
 });
