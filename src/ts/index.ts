@@ -81,4 +81,14 @@ function factorial(n: number): number {
     }
     return n * factorial(n - 1);
   }
+
+const powerBtn = document.getElementById("power") as HTMLButtonElement;
+powerBtn.addEventListener('click', () => {
+    const base = parseFloat(display.value);
+    if(isNaN(base)){
+        display.value = "Error: Invalid Input";
+    } else {
+      display.value += "**";
+}
+});
 });
