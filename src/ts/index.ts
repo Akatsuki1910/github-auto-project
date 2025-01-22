@@ -164,4 +164,15 @@ harmonicMeanBtn.addEventListener("click", () => {
     display.value = harmonicMean.toString();
     addToHistory(`harmonicMean(${nums.join(", ")})`, harmonicMean.toString());
 });
+
+const calculateHistoryBtn = document.getElementById("calculateHistory") as HTMLButtonElement;
+calculateHistoryBtn.addEventListener("click", () => {
+    let total = 0;
+    for (let i = 0; i < history.length; i++) {
+        let result = history[i].split(" = ")[1];
+        total += parseFloat(result); // Parse the result string to a number
+    }
+    display.value = total.toString();
+    addToHistory("Calculate History", total.toString());
+});
 });
