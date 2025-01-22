@@ -18,6 +18,7 @@ let isInverse = false; // Flag for inverse mode
 function addToHistory(expression: string, result: string) {
     history.push(`${expression} = ${result}`);
     updateHistoryDisplay();
+    lastAnswer = parseFloat(result); // Store the last answer
 }
 
 function updateHistoryDisplay(){
@@ -193,5 +194,10 @@ cubeRootBtn.addEventListener('click', () => {
     } else {
         display.value = "Invalid Input";
     }
+});
+
+const ansBtn = document.getElementById("ans") as HTMLButtonElement;
+ansBtn.addEventListener('click', () => {
+    display.value = lastAnswer.toString();
 });
 });
