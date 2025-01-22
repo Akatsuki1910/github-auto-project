@@ -121,5 +121,20 @@ absBtn.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+const lnBtn = document.getElementById("ln") as HTMLButtonElement;
+lnBtn.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num) || num <= 0) {
+            display.value = "Error: Invalid input (must be > 0)";
+            return;
+        }
+        const result = Math.log(num);
+        display.value = result.toString();
+        addToHistory(`ln(${num})`, result.toString());
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 
 });
