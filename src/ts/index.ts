@@ -200,4 +200,16 @@ const ansBtn = document.getElementById("ans") as HTMLButtonElement;
 ansBtn.addEventListener('click', () => {
     display.value = lastAnswer.toString();
 });
+//Modulus button event listener
+const modulusBtn = document.getElementById("modulus") as HTMLButtonElement;
+modulusBtn.addEventListener('click', () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    const result = currentValue / 100; // Calculate modulus (remainder after division by 100)
+    display.value = result.toString();
+    addToHistory(`${currentValue}%`, result.toString());
+  } else {
+    display.value = "Invalid Input";
+  }
+});
 });
