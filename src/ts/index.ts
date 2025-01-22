@@ -89,4 +89,28 @@ function gcd(a: number, b: number): number {
     return gcd(b, a % b);
 }
 
+const lcmBtn = document.getElementById("lcm") as HTMLButtonElement;
+lcmBtn.addEventListener("click", () => {
+    const numStr = display.value;
+    const nums = numStr.split(",").map(Number);
+    if (nums.some(isNaN)) {
+        display.value = "Invalid input";
+    } else {
+        const result = lcm(...nums);
+        display.value = result.toString();
+        addToHistory(`lcm(${nums.join(", ")})`, result.toString());
+    }
+});
+
+function lcm(a: number, b: number): number {
+    return Math.abs(a * b) / gcd(a, b);
+}
+
+function lcm(...numbers: number[]): number {
+    let result = numbers[0];
+    for (let i = 1; i < numbers.length; i++) {
+        result = lcm(result, numbers[i]);
+    }
+    return result;
+}
 });
