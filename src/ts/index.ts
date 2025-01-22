@@ -91,4 +91,20 @@ powerBtn.addEventListener('click', () => {
       display.value += "**";
 }
 });
+
+const logBtn = document.getElementById("log") as HTMLButtonElement;
+logBtn.addEventListener('click', () => {
+  try {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+      display.value = "Error: Invalid input";
+      return;
+    }
+    const result = Math.log10(num);
+    display.value = result.toString();
+    addToHistory(`log(${num})`, result.toString());
+  } catch (error) {
+    display.value = "Error";
+  }
+});
 });
