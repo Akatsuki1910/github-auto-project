@@ -85,4 +85,17 @@ localstorageBtn.addEventListener("click", () => {
     localStorage.setItem("calculatorHistory", JSON.stringify(history));
     display.value = "History saved to localStorage!";
 });
+
+const loadHistoryBtn = document.getElementById("loadHistory") as HTMLButtonElement;
+loadHistoryBtn.addEventListener("click", () => {
+    const storedHistory = localStorage.getItem("calculatorHistory");
+    if (storedHistory) {
+        history = JSON.parse(storedHistory);
+        updateHistoryDisplay();
+        display.value = "History loaded from localStorage!";
+    } else {
+        display.value = "No history found in localStorage.";
+    }
+});
+
 });
