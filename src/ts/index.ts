@@ -114,5 +114,12 @@ geoMeanBtn.addEventListener("click", () => {
   display.value = geoMean.toString();
   addToHistory(`geoMean(${nums.join(", ")})`, geoMean.toString());
 });
+const clearAllBtn = document.getElementById("clearAll") as HTMLButtonElement;
+
+clearAllBtn.addEventListener("click", () => {
+    history = []; // This line clears the history array
+    updateHistoryDisplay(); // Update the display to reflect the empty history
+    display.value = ""; // Optionally clear the current display value
+});
 
 });
