@@ -136,5 +136,9 @@ lnBtn.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+const modBtn = document.getElementById("mod") as HTMLButtonElement;
+modBtn.addEventListener('click', () => {
+  display.value += '%';
+});
 
 });
