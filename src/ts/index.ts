@@ -182,4 +182,16 @@ squareRootBtn.addEventListener('click', () => {
         display.value = "Invalid Input";
     }
 });
+
+const cubeRootBtn = document.getElementById("cubeRoot") as HTMLButtonElement;
+cubeRootBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+      const result = Math.cbrt(currentValue);
+      display.value = result.toString();
+      addToHistory(`∛(${currentValue})`, result.toString());
+    } else {
+        display.value = "Invalid Input";
+    }
+});
 });
