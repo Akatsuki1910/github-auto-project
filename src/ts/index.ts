@@ -104,5 +104,16 @@ truncateBtn.addEventListener('click', () => {
     display.value = result.toString();
     addToHistory(`trunc(${num})`, result.toString());
 });
+const cubeRootBtn = document.getElementById("cubeRoot") as HTMLButtonElement;
+cubeRootBtn.addEventListener('click', () => {
+  const num = parseFloat(display.value);
+  if (isNaN(num)) {
+    display.value = "Error: Invalid input";
+    return;
+  }
+  const result = Math.cbrt(num);
+  display.value = result.toString();
+  addToHistory(`cbrt(${num})`, result.toString());
+});
 
 });
