@@ -43,6 +43,7 @@ const closeParenBtn = document.getElementById("close-parenthesis") as HTMLButton
 const currentTimeBtn = document.getElementById("current-time") as HTMLButtonElement;
 const currentDateTimeBtn = document.getElementById("current-datetime") as HTMLButtonElement;
 const copyToClipboardBtn = document.getElementById("copy-to-clipboard") as HTMLButtonElement;
+const resetBtn = document.getElementById("reset") as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 backBtn.addEventListener('click', () => {
@@ -83,6 +84,11 @@ copyToClipboardBtn.addEventListener('click', () => {
       alert('Failed to copy to clipboard.');
     });
   });
+
+resetBtn.addEventListener('click', () => {
+    currentExpression = '';
+    display.value = '';
+});
 
 // ... other event listeners
 });
