@@ -45,6 +45,7 @@ const currentDateTimeBtn = document.getElementById("current-datetime") as HTMLBu
 const copyToClipboardBtn = document.getElementById("copy-to-clipboard") as HTMLButtonElement;
 const resetBtn = document.getElementById("reset") as HTMLButtonElement;
 const powerOfTwoBtn = document.getElementById("powerOfTwo") as HTMLButtonElement;
+const inverseSinBtn = document.getElementById("inverseSin") as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 backBtn.addEventListener('click', () => {
@@ -96,6 +97,14 @@ powerOfTwoBtn.addEventListener('click', () => {
         const result = currentValue * currentValue;
         display.value = result.toString();
         addToHistory(currentValue.toString() + "^2", result.toString());
+    }
+});
+inverseSinBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.asin(currentValue);
+        display.value = result.toString();
+        addToHistory("sin⁻¹(" + currentValue.toString() + ")", result.toString());
     }
 });
 
