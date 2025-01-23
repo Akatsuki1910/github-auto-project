@@ -42,6 +42,16 @@ calculateBtn.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+const sumBtn = document.getElementById("sum") as HTMLButtonElement;
+sumBtn.addEventListener('click', () => {
+    const numbers = prompt("Enter numbers separated by commas:");
+    if (!numbers) return;
+
+    const numArray = numbers.split(',').map(Number);
+    const sum = numArray.reduce((acc, curr) => acc + curr, 0);
+    display.value = sum.toString();
+    addToHistory(`sum(${numbers})`, sum.toString());
+});
 
 const floorBtn = document.getElementById("floor") as HTMLButtonElement;
 floorBtn.addEventListener('click', () => {
