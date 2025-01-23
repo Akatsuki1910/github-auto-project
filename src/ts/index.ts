@@ -122,5 +122,16 @@ signBtn.addEventListener('click', () => {
         display.value = (-currentValue).toString();
     }
 });
+const squaredBtn = document.getElementById("squared") as HTMLButtonElement;
+squaredBtn.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Error: Invalid input";
+        return;
+    }
+    const result = num * num; // Or Math.pow(num, 2)
+    display.value = result.toString();
+    addToHistory(`sqr(${num})`, result.toString());
+});
 
 });
