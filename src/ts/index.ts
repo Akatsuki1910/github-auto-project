@@ -143,5 +143,9 @@ negateBtn.addEventListener('click', () => {
         display.value = (parseFloat(currentValue) * -1).toString();
     }
 });
+const duplicateBtn = document.getElementById("duplicate") as HTMLButtonElement;
+duplicateBtn.addEventListener('click', () => {
+  display.value = display.value + display.value; 
+});
 
 });
