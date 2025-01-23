@@ -14,6 +14,7 @@ let lastAnswer = 0;
 let memory = 0;
 let mode = "rad"; // Initialize mode to radians
 let isInverse = false; // Flag for inverse mode
+let isParenthesesOpen = false;
 
 function addToHistory(expression: string, result: string) {
     history.push(`${expression} = ${result}`);
@@ -43,6 +44,16 @@ calculateBtn.addEventListener('click', () => {
 });
 
 // ... (Existing event listeners)
+const parenthesesBtn = document.getElementById("parentheses") as HTMLButtonElement;
+parenthesesBtn.addEventListener('click', () => {
+    if (isParenthesesOpen) {
+        display.value += ")";
+        isParenthesesOpen = false;
+    } else {
+        display.value += "(";
+        isParenthesesOpen = true;
+    }
+});
 
 //Add exp button functionality
 const expBtn = document.getElementById("exp") as HTMLButtonElement;
