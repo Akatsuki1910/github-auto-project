@@ -40,6 +40,7 @@ const plusminusBtn = document.getElementById("plusminus") as HTMLButtonElement;
 const factorialBtn = document.getElementById("factorial") as HTMLButtonElement;
 const exp2Btn = document.getElementById("exp2") as HTMLButtonElement; // New button
 const xrootBtn = document.getElementById("xroot") as HTMLButtonElement; //x√y button
+const geoMeanBtn = document.getElementById("geoMean") as HTMLButtonElement;
 
 modeBtn.addEventListener('click', () => {
     mode = mode === "rad" ? "deg" : "rad";
@@ -105,4 +106,14 @@ xrootBtn.addEventListener('click', () => {
     }
 });
 
+geoMeanBtn.addEventListener('click', () => {
+    const numbers = prompt("Enter numbers separated by commas for geometric mean:");
+    if (!numbers) return;
+    const numArray = numbers.split(',').map(Number);
+    const product = numArray.reduce((acc, curr) => acc * curr, 1);
+    const geoMean = Math.pow(product, 1/numArray.length);
+    display.value = geoMean.toString();
+    addToHistory(`geoMean(${numbers})`, geoMean.toString());
+
+});
 });
