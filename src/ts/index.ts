@@ -44,6 +44,7 @@ const currentTimeBtn = document.getElementById("current-time") as HTMLButtonElem
 const currentDateTimeBtn = document.getElementById("current-datetime") as HTMLButtonElement;
 const copyToClipboardBtn = document.getElementById("copy-to-clipboard") as HTMLButtonElement;
 const resetBtn = document.getElementById("reset") as HTMLButtonElement;
+const powerOfTwoBtn = document.getElementById("powerOfTwo") as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 backBtn.addEventListener('click', () => {
@@ -88,6 +89,14 @@ copyToClipboardBtn.addEventListener('click', () => {
 resetBtn.addEventListener('click', () => {
     currentExpression = '';
     display.value = '';
+});
+powerOfTwoBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = currentValue * currentValue;
+        display.value = result.toString();
+        addToHistory(currentValue.toString() + "^2", result.toString());
+    }
 });
 
 // ... other event listeners
