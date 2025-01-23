@@ -34,6 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
 const calculateBtn = document.getElementById("calculate") as HTMLButtonElement;
 const display = document.getElementById("display") as HTMLInputElement;
 const modeBtn = document.getElementById("mode") as HTMLButtonElement;
+const reciprocalBtn = document.getElementById("reciprocal") as HTMLButtonElement;
 
 modeBtn.addEventListener('click', () => {
     mode = mode === "rad" ? "deg" : "rad";
@@ -192,4 +193,13 @@ medianBtn.addEventListener('click', () => {
     addToHistory(`median(${numbers})`, median.toString());
 });
 
+reciprocalBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (isNaN(currentValue) || currentValue === 0) {
+        display.value = "Error: Invalid input or division by zero";
+    } else {
+        display.value = (1 / currentValue).toString();
+        addToHistory(`1/${currentValue}`, display.value);
+    }
+});
 });
