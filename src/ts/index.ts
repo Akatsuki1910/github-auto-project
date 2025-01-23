@@ -147,5 +147,15 @@ const duplicateBtn = document.getElementById("duplicate") as HTMLButtonElement;
 duplicateBtn.addEventListener('click', () => {
   display.value = display.value + display.value; 
 });
+const averageBtn = document.getElementById("average") as HTMLButtonElement;
+averageBtn.addEventListener('click', () => {
+    const numbers = prompt("Enter numbers separated by commas:");
+    if (!numbers) return;
+    const numArray = numbers.split(',').map(Number);
+    const sum = numArray.reduce((a, b) => a + b, 0);
+    const avg = sum / numArray.length;
+    display.value = avg.toString();
+    addToHistory(`avg(${numbers})`, avg.toString());
+});
 
 });
