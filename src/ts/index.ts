@@ -38,6 +38,8 @@ const display = document.getElementById("display") as HTMLInputElement;
 const modeBtn = document.getElementById("mode") as HTMLButtonElement;
 // ... other buttons
 const backBtn = document.getElementById("back") as HTMLButtonElement; // Back button
+const openParenBtn = document.getElementById("open-parenthesis") as HTMLButtonElement;
+const closeParenBtn = document.getElementById("close-parenthesis") as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 backBtn.addEventListener('click', () => {
@@ -46,6 +48,16 @@ backBtn.addEventListener('click', () => {
         display.value = currentExpression;
     }
 });
+
+openParenBtn.addEventListener('click', () => {
+    currentExpression += "(";
+    display.value = currentExpression;
+  });
+
+  closeParenBtn.addEventListener('click', () => {
+    currentExpression += ")";
+    display.value = currentExpression;
+  });
 
 // ... other event listeners
 });
