@@ -155,5 +155,10 @@ const eBtn = document.getElementById("e") as HTMLButtonElement;
 eBtn.addEventListener('click', () => {
   display.value += Math.E;
 });
+const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
+inverseBtn.addEventListener('click', () => {
+    isInverse = !isInverse;
+    inverseBtn.textContent = isInverse ? "inv(on)" : "inv"; // Update button text
+});
 
 });
