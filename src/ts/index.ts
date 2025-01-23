@@ -175,5 +175,20 @@ cubeBtn.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+const squareBtn = document.getElementById("square") as HTMLButtonElement;
+squareBtn.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Error: Invalid Input";
+            return;
+        }
+        const result = num * num;
+        display.value = result.toString();
+        addToHistory(`square(${num})`, result.toString());
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 
 });
