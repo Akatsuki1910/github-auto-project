@@ -33,6 +33,12 @@ window.addEventListener("DOMContentLoaded", () => {
   // ... existing code
 const calculateBtn = document.getElementById("calculate") as HTMLButtonElement;
 const display = document.getElementById("display") as HTMLInputElement;
+const modeBtn = document.getElementById("mode") as HTMLButtonElement;
+
+modeBtn.addEventListener('click', () => {
+    mode = mode === "rad" ? "deg" : "rad";
+    display.value = mode;
+});
 calculateBtn.addEventListener('click', () => {
     try {
         const result = eval(display.value);
