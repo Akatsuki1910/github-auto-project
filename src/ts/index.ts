@@ -76,5 +76,21 @@ ceilBtn.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+const roundToBtn = document.getElementById("roundTo") as HTMLButtonElement;
+roundToBtn.addEventListener('click', () => {
+    const n = parseFloat(prompt("Enter the number of decimal places to round to:"));
+    if(isNaN(n) || !Number.isInteger(n) || n < 0) {
+        display.value = "Invalid input for rounding";
+        return;
+    }
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Error: Invalid input";
+        return;
+    }
+    const result = parseFloat(num.toFixed(n)); // Parse to remove trailing zeros
+    display.value = result.toString();
+    addToHistory(`round(${num}, ${n})`, result.toString());
+});
 
 });
