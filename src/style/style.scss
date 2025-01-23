@@ -19,3 +19,10 @@
     border: 1px solid #ccc;
     margin-top: 10px;
 }
+#currentExpressionDisplay {
+    grid-column: span 4;
+    text-align: right; /* Align the expression to the right */
+    font-size: 14px;
+    color: #666; /* Slightly lighter color */
+    margin-bottom: 5px; 
+  }
