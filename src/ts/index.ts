@@ -115,13 +115,6 @@ cubeRootBtn.addEventListener('click', () => {
   display.value = result.toString();
   addToHistory(`cbrt(${num})`, result.toString());
 });
-const signBtn = document.getElementById("sign") as HTMLButtonElement;
-signBtn.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (-currentValue).toString();
-    }
-});
 const squaredBtn = document.getElementById("squared") as HTMLButtonElement;
 squaredBtn.addEventListener('click', () => {
     const num = parseFloat(display.value);
@@ -132,6 +125,13 @@ squaredBtn.addEventListener('click', () => {
     const result = num * num; // Or Math.pow(num, 2)
     display.value = result.toString();
     addToHistory(`sqr(${num})`, result.toString());
+});
+const negateBtn = document.getElementById("negate") as HTMLButtonElement;
+negateBtn.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        display.value = (parseFloat(currentValue) * -1).toString();
+    }
 });
 
 });
