@@ -175,5 +175,15 @@ maxBtn.addEventListener('click', () => {
     display.value = max.toString();
     addToHistory(`max(${numbers})`, max.toString());
 });
+const medianBtn = document.getElementById("median") as HTMLButtonElement;
+medianBtn.addEventListener('click', () => {
+    const numbers = prompt("Enter numbers separated by commas:");
+    if (!numbers) return;
+    const numArray = numbers.split(',').map(Number).sort((a, b) => a - b);
+    const mid = Math.floor(numArray.length / 2);
+    const median = numArray.length % 2 !== 0 ? numArray[mid] : (numArray[mid - 1] + numArray[mid]) / 2;
+    display.value = median.toString();
+    addToHistory(`median(${numbers})`, median.toString());
+});
 
 });
