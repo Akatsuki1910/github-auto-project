@@ -42,6 +42,8 @@ const exp2Btn = document.getElementById("exp2") as HTMLButtonElement; // New but
 const xrootBtn = document.getElementById("xroot") as HTMLButtonElement; //x√y button
 const geoMeanBtn = document.getElementById("geoMean") as HTMLButtonElement;
 const squared2Btn = document.getElementById("squared2") as HTMLButtonElement;
+const openParenthesisBtn = document.getElementById("open-parenthesis") as HTMLButtonElement;
+const closeParenthesisBtn = document.getElementById("close-parenthesis") as HTMLButtonElement;
 
 modeBtn.addEventListener('click', () => {
     mode = mode === "rad" ? "deg" : "rad";
@@ -124,4 +126,13 @@ squared2Btn.addEventListener('click', () => {
         display.value = (currentValue * currentValue).toString();
     }
 });
+
+openParenthesisBtn.addEventListener('click', () => {
+    display.value += '(';
+});
+
+closeParenthesisBtn.addEventListener('click', () => {
+    display.value += ')';
+});
+
 });
