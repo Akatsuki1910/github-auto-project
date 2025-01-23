@@ -160,5 +160,20 @@ inverseBtn.addEventListener('click', () => {
     isInverse = !isInverse;
     inverseBtn.textContent = isInverse ? "inv(on)" : "inv"; // Update button text
 });
+const cubeBtn = document.getElementById("cube") as HTMLButtonElement;
+cubeBtn.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Error: Invalid Input";
+            return;
+        }
+        const result = num * num * num;
+        display.value = result.toString();
+        addToHistory(`cube(${num})`, result.toString());
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 
 });
