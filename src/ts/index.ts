@@ -41,6 +41,7 @@ const backBtn = document.getElementById("back") as HTMLButtonElement; // Back bu
 const openParenBtn = document.getElementById("open-parenthesis") as HTMLButtonElement;
 const closeParenBtn = document.getElementById("close-parenthesis") as HTMLButtonElement;
 const currentTimeBtn = document.getElementById("current-time") as HTMLButtonElement;
+const currentDateTimeBtn = document.getElementById("current-datetime") as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 backBtn.addEventListener('click', () => {
@@ -64,6 +65,13 @@ currentTimeBtn.addEventListener('click', () => {
     const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
     display.value = timeString;
     addToHistory("Time", timeString);
+});
+
+currentDateTimeBtn.addEventListener('click', () => {
+    const now = new Date();
+    const dateTimeString = now.toLocaleString();
+    display.value = dateTimeString;
+    addToHistory("Date & Time", dateTimeString);
 });
 
 // ... other event listeners
