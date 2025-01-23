@@ -39,6 +39,7 @@ const percentBtn = document.getElementById("percent") as HTMLButtonElement;
 const plusminusBtn = document.getElementById("plusminus") as HTMLButtonElement;
 const factorialBtn = document.getElementById("factorial") as HTMLButtonElement;
 const exp2Btn = document.getElementById("exp2") as HTMLButtonElement; // New button
+const xrootBtn = document.getElementById("xroot") as HTMLButtonElement; //x√y button
 
 modeBtn.addEventListener('click', () => {
     mode = mode === "rad" ? "deg" : "rad";
@@ -95,6 +96,13 @@ factorialBtn.addEventListener('click', () => {
 
 exp2Btn.addEventListener('click', () => { // Event listener for the new button
   display.value = Math.exp(parseFloat(display.value) || 0).toString();
+});
+
+xrootBtn.addEventListener('click', () => {
+    const [x, y] = prompt("Enter x and y (x√y), separated by a comma:")?.split(',').map(Number);
+    if (x !== undefined && y !== undefined) {
+      display.value = Math.pow(y, 1/x).toString();
+    }
 });
 
 });
