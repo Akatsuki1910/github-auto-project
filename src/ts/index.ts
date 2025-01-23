@@ -41,6 +41,7 @@ const factorialBtn = document.getElementById("factorial") as HTMLButtonElement;
 const exp2Btn = document.getElementById("exp2") as HTMLButtonElement; // New button
 const xrootBtn = document.getElementById("xroot") as HTMLButtonElement; //x√y button
 const geoMeanBtn = document.getElementById("geoMean") as HTMLButtonElement;
+const squared2Btn = document.getElementById("squared2") as HTMLButtonElement;
 
 modeBtn.addEventListener('click', () => {
     mode = mode === "rad" ? "deg" : "rad";
@@ -115,5 +116,12 @@ geoMeanBtn.addEventListener('click', () => {
     display.value = geoMean.toString();
     addToHistory(`geoMean(${numbers})`, geoMean.toString());
 
+});
+
+squared2Btn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (currentValue * currentValue).toString();
+    }
 });
 });
