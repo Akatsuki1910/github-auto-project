@@ -115,5 +115,12 @@ cubeRootBtn.addEventListener('click', () => {
   display.value = result.toString();
   addToHistory(`cbrt(${num})`, result.toString());
 });
+const signBtn = document.getElementById("sign") as HTMLButtonElement;
+signBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (-currentValue).toString();
+    }
+});
 
 });
