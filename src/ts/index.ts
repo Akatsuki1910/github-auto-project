@@ -190,5 +190,16 @@ squareBtn.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+const signChangeBtn = document.getElementById("signChange") as HTMLButtonElement;
+signChangeBtn.addEventListener('click', () => {
+    try {
+      const currentValue = parseFloat(display.value);
+      if (!isNaN(currentValue)) {
+        display.value = (-currentValue).toString();
+      }
+    } catch (error) {
+      display.value = "Error";
+    }
+  });
 
 });
