@@ -208,5 +208,20 @@ signChangeBtn.addEventListener('click', () => {
     const randomNumber = Math.random();
     display.value = randomNumber.toString();
   });
+const floorBtn = document.getElementById("floor") as HTMLButtonElement;
+floorBtn.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Error: Invalid input";
+            return;
+        }
+        const result = Math.floor(num);
+        display.value = result.toString();
+        addToHistory(`floor(${num})`, result.toString());
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 
 });
