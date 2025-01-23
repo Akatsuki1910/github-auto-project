@@ -166,5 +166,14 @@ minBtn.addEventListener('click', () => {
     display.value = min.toString();
     addToHistory(`min(${numbers})`, min.toString());
 });
+const maxBtn = document.getElementById("max") as HTMLButtonElement;
+maxBtn.addEventListener('click', () => {
+    const numbers = prompt("Enter numbers separated by commas:");
+    if (!numbers) return;
+    const numArray = numbers.split(',').map(Number);
+    const max = Math.max(...numArray);
+    display.value = max.toString();
+    addToHistory(`max(${numbers})`, max.toString());
+});
 
 });
