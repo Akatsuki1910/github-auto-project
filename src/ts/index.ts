@@ -42,6 +42,7 @@ const openParenBtn = document.getElementById("open-parenthesis") as HTMLButtonEl
 const closeParenBtn = document.getElementById("close-parenthesis") as HTMLButtonElement;
 const currentTimeBtn = document.getElementById("current-time") as HTMLButtonElement;
 const currentDateTimeBtn = document.getElementById("current-datetime") as HTMLButtonElement;
+const copyToClipboardBtn = document.getElementById("copy-to-clipboard") as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 backBtn.addEventListener('click', () => {
@@ -73,6 +74,15 @@ currentDateTimeBtn.addEventListener('click', () => {
     display.value = dateTimeString;
     addToHistory("Date & Time", dateTimeString);
 });
+
+copyToClipboardBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(display.value).then(() => {
+      alert('Copied to clipboard!');
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+      alert('Failed to copy to clipboard.');
+    });
+  });
 
 // ... other event listeners
 });
