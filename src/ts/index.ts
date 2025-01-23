@@ -44,181 +44,18 @@ calculateBtn.addEventListener('click', () => {
 });
 
 // ... (Existing event listeners)
-const parenthesesBtn = document.getElementById("parentheses") as HTMLButtonElement;
-parenthesesBtn.addEventListener('click', () => {
-    if (isParenthesesOpen) {
-        display.value += ")";
-        isParenthesesOpen = false;
-    } else {
-        display.value += "(";
-        isParenthesesOpen = true;
-    }
-});
-
-//Add exp button functionality
-const expBtn = document.getElementById("exp") as HTMLButtonElement;
-expBtn.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        if (isNaN(num)) {
-            display.value = "Error: Invalid Input";
-            return;
-        }
-        const result = Math.exp(num);
-        display.value = result.toString();
-        addToHistory(`exp(${num})`, result.toString());
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-const cosBtn = document.getElementById("cos") as HTMLButtonElement;
-cosBtn.addEventListener('click', () => {
-  try {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-      display.value = "Error: Invalid Input";
-      return;
-    }
-    const result = Math.cos(num);
-    display.value = result.toString();
-    addToHistory(`cos(${num})`, result.toString());
-  } catch (error) {
-    display.value = "Error";
-  }
-});
-
-const tanBtn = document.getElementById("tan") as HTMLButtonElement;
-tanBtn.addEventListener('click', () => {
-    try {
-      const num = parseFloat(display.value);
-      if (isNaN(num)) {
-        display.value = "Error: Invalid Input";
-        return;
-      }
-      const result = Math.tan(num);
-      display.value = result.toString();
-      addToHistory(`tan(${num})`, result.toString());
-    } catch (error) {
-      display.value = "Error";
-    }
-  });
-const roundBtn = document.getElementById("round") as HTMLButtonElement;
-roundBtn.addEventListener('click', () => {
+// ... existing code ...
+const ceilBtn = document.getElementById("ceil") as HTMLButtonElement;
+ceilBtn.addEventListener('click', () => {
     try {
         const num = parseFloat(display.value);
         if (isNaN(num)) {
             display.value = "Error: Invalid input";
             return;
         }
-        const result = Math.round(num);
+        const result = Math.ceil(num);
         display.value = result.toString();
-        addToHistory(`round(${num})`, result.toString());
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-const absBtn = document.getElementById("abs") as HTMLButtonElement;
-absBtn.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        if (isNaN(num)) {
-            display.value = "Error: Invalid input";
-            return;
-        }
-        const result = Math.abs(num);
-        display.value = result.toString();
-        addToHistory(`abs(${num})`, result.toString());
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-const lnBtn = document.getElementById("ln") as HTMLButtonElement;
-lnBtn.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        if (isNaN(num) || num <= 0) {
-            display.value = "Error: Invalid input (must be > 0)";
-            return;
-        }
-        const result = Math.log(num);
-        display.value = result.toString();
-        addToHistory(`ln(${num})`, result.toString());
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-const modBtn = document.getElementById("mod") as HTMLButtonElement;
-modBtn.addEventListener('click', () => {
-  display.value += '%';
-});
-const eBtn = document.getElementById("e") as HTMLButtonElement;
-eBtn.addEventListener('click', () => {
-  display.value += Math.E;
-});
-const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
-inverseBtn.addEventListener('click', () => {
-    isInverse = !isInverse;
-    inverseBtn.textContent = isInverse ? "inv(on)" : "inv"; // Update button text
-});
-const cubeBtn = document.getElementById("cube") as HTMLButtonElement;
-cubeBtn.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        if (isNaN(num)) {
-            display.value = "Error: Invalid Input";
-            return;
-        }
-        const result = num * num * num;
-        display.value = result.toString();
-        addToHistory(`cube(${num})`, result.toString());
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-const squareBtn = document.getElementById("square") as HTMLButtonElement;
-squareBtn.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        if (isNaN(num)) {
-            display.value = "Error: Invalid Input";
-            return;
-        }
-        const result = num * num;
-        display.value = result.toString();
-        addToHistory(`square(${num})`, result.toString());
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-const signChangeBtn = document.getElementById("signChange") as HTMLButtonElement;
-signChangeBtn.addEventListener('click', () => {
-    try {
-      const currentValue = parseFloat(display.value);
-      if (!isNaN(currentValue)) {
-        display.value = (-currentValue).toString();
-      }
-    } catch (error) {
-      display.value = "Error";
-    }
-  });
-
-  // Add random number generation
-  const randomBtn = document.getElementById("random") as HTMLButtonElement;
-  randomBtn.addEventListener('click', () => {
-    const randomNumber = Math.random();
-    display.value = randomNumber.toString();
-  });
-const floorBtn = document.getElementById("floor") as HTMLButtonElement;
-floorBtn.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        if (isNaN(num)) {
-            display.value = "Error: Invalid input";
-            return;
-        }
-        const result = Math.floor(num);
-        display.value = result.toString();
-        addToHistory(`floor(${num})`, result.toString());
+        addToHistory(`ceil(${num})`, result.toString());
     } catch (error) {
         display.value = "Error";
     }
