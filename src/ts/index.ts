@@ -93,4 +93,16 @@ roundToBtn.addEventListener('click', () => {
     addToHistory(`round(${num}, ${n})`, result.toString());
 });
 
+const truncateBtn = document.getElementById("truncate") as HTMLButtonElement;
+truncateBtn.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Error: Invalid input";
+        return;
+    }
+    const result = Math.trunc(num);
+    display.value = result.toString();
+    addToHistory(`trunc(${num})`, result.toString());
+});
+
 });
