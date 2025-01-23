@@ -40,6 +40,7 @@ const modeBtn = document.getElementById("mode") as HTMLButtonElement;
 const backBtn = document.getElementById("back") as HTMLButtonElement; // Back button
 const openParenBtn = document.getElementById("open-parenthesis") as HTMLButtonElement;
 const closeParenBtn = document.getElementById("close-parenthesis") as HTMLButtonElement;
+const currentTimeBtn = document.getElementById("current-time") as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 backBtn.addEventListener('click', () => {
@@ -58,6 +59,12 @@ openParenBtn.addEventListener('click', () => {
     currentExpression += ")";
     display.value = currentExpression;
   });
+currentTimeBtn.addEventListener('click', () => {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+    display.value = timeString;
+    addToHistory("Time", timeString);
+});
 
 // ... other event listeners
 });
