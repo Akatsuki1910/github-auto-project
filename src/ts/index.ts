@@ -37,6 +37,7 @@ const modeBtn = document.getElementById("mode") as HTMLButtonElement;
 const reciprocalBtn = document.getElementById("reciprocal") as HTMLButtonElement;
 const percentBtn = document.getElementById("percent") as HTMLButtonElement;
 const plusminusBtn = document.getElementById("plusminus") as HTMLButtonElement;
+const factorialBtn = document.getElementById("factorial") as HTMLButtonElement;
 
 modeBtn.addEventListener('click', () => {
     mode = mode === "rad" ? "deg" : "rad";
@@ -76,6 +77,18 @@ plusminusBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
         display.value = (-currentValue).toString();
+    }
+});
+
+factorialBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        let result = 1;
+        for (let i = 1; i <= currentValue; i++) {
+            result *= i;
+        }
+        display.value = result.toString();
+        addToHistory(`${currentValue}!`, display.value);
     }
 });
 
