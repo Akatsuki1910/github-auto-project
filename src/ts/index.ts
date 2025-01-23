@@ -157,5 +157,14 @@ averageBtn.addEventListener('click', () => {
     display.value = avg.toString();
     addToHistory(`avg(${numbers})`, avg.toString());
 });
+const minBtn = document.getElementById("min") as HTMLButtonElement;
+minBtn.addEventListener('click', () => {
+    const numbers = prompt("Enter numbers separated by commas:");
+    if (!numbers) return;
+    const numArray = numbers.split(',').map(Number);
+    const min = Math.min(...numArray);
+    display.value = min.toString();
+    addToHistory(`min(${numbers})`, min.toString());
+});
 
 });
