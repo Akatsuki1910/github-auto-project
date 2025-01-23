@@ -202,4 +202,11 @@ signChangeBtn.addEventListener('click', () => {
     }
   });
 
+  // Add random number generation
+  const randomBtn = document.getElementById("random") as HTMLButtonElement;
+  randomBtn.addEventListener('click', () => {
+    const randomNumber = Math.random();
+    display.value = randomNumber.toString();
+  });
+
 });
