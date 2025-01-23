@@ -35,6 +35,7 @@ const calculateBtn = document.getElementById("calculate") as HTMLButtonElement;
 const display = document.getElementById("display") as HTMLInputElement;
 const modeBtn = document.getElementById("mode") as HTMLButtonElement;
 const reciprocalBtn = document.getElementById("reciprocal") as HTMLButtonElement;
+const percentBtn = document.getElementById("percent") as HTMLButtonElement;
 
 modeBtn.addEventListener('click', () => {
     mode = mode === "rad" ? "deg" : "rad";
@@ -60,146 +61,14 @@ sumBtn.addEventListener('click', () => {
     addToHistory(`sum(${numbers})`, sum.toString());
 });
 
-const floorBtn = document.getElementById("floor") as HTMLButtonElement;
-floorBtn.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        if (isNaN(num)) {
-            display.value = "Error: Invalid input";
-            return;
-        }
-        const result = Math.floor(num);
-        display.value = result.toString();
-        addToHistory(`floor(${num})`, result.toString());
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-
 // ... (Existing event listeners)
-// ... existing code ...
-const ceilBtn = document.getElementById("ceil") as HTMLButtonElement;
-ceilBtn.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        if (isNaN(num)) {
-            display.value = "Error: Invalid input";
-            return;
-        }
-        const result = Math.ceil(num);
-        display.value = result.toString();
-        addToHistory(`ceil(${num})`, result.toString());
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-const roundToBtn = document.getElementById("roundTo") as HTMLButtonElement;
-roundToBtn.addEventListener('click', () => {
-    const n = parseFloat(prompt("Enter the number of decimal places to round to:"));
-    if(isNaN(n) || !Number.isInteger(n) || n < 0) {
-        display.value = "Invalid input for rounding";
-        return;
-    }
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-        display.value = "Error: Invalid input";
-        return;
-    }
-    const result = parseFloat(num.toFixed(n)); // Parse to remove trailing zeros
-    display.value = result.toString();
-    addToHistory(`round(${num}, ${n})`, result.toString());
-});
 
-const truncateBtn = document.getElementById("truncate") as HTMLButtonElement;
-truncateBtn.addEventListener('click', () => {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-        display.value = "Error: Invalid input";
-        return;
-    }
-    const result = Math.trunc(num);
-    display.value = result.toString();
-    addToHistory(`trunc(${num})`, result.toString());
-});
-const cubeRootBtn = document.getElementById("cubeRoot") as HTMLButtonElement;
-cubeRootBtn.addEventListener('click', () => {
-  const num = parseFloat(display.value);
-  if (isNaN(num)) {
-    display.value = "Error: Invalid input";
-    return;
-  }
-  const result = Math.cbrt(num);
-  display.value = result.toString();
-  addToHistory(`cbrt(${num})`, result.toString());
-});
-const squaredBtn = document.getElementById("squared") as HTMLButtonElement;
-squaredBtn.addEventListener('click', () => {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-        display.value = "Error: Invalid input";
-        return;
-    }
-    const result = num * num; // Or Math.pow(num, 2)
-    display.value = result.toString();
-    addToHistory(`sqr(${num})`, result.toString());
-});
-const negateBtn = document.getElementById("negate") as HTMLButtonElement;
-negateBtn.addEventListener('click', () => {
-    const currentValue = display.value;
-    if (currentValue) {
-        display.value = (parseFloat(currentValue) * -1).toString();
-    }
-});
-const duplicateBtn = document.getElementById("duplicate") as HTMLButtonElement;
-duplicateBtn.addEventListener('click', () => {
-  display.value = display.value + display.value; 
-});
-const averageBtn = document.getElementById("average") as HTMLButtonElement;
-averageBtn.addEventListener('click', () => {
-    const numbers = prompt("Enter numbers separated by commas:");
-    if (!numbers) return;
-    const numArray = numbers.split(',').map(Number);
-    const sum = numArray.reduce((a, b) => a + b, 0);
-    const avg = sum / numArray.length;
-    display.value = avg.toString();
-    addToHistory(`avg(${numbers})`, avg.toString());
-});
-const minBtn = document.getElementById("min") as HTMLButtonElement;
-minBtn.addEventListener('click', () => {
-    const numbers = prompt("Enter numbers separated by commas:");
-    if (!numbers) return;
-    const numArray = numbers.split(',').map(Number);
-    const min = Math.min(...numArray);
-    display.value = min.toString();
-    addToHistory(`min(${numbers})`, min.toString());
-});
-const maxBtn = document.getElementById("max") as HTMLButtonElement;
-maxBtn.addEventListener('click', () => {
-    const numbers = prompt("Enter numbers separated by commas:");
-    if (!numbers) return;
-    const numArray = numbers.split(',').map(Number);
-    const max = Math.max(...numArray);
-    display.value = max.toString();
-    addToHistory(`max(${numbers})`, max.toString());
-});
-const medianBtn = document.getElementById("median") as HTMLButtonElement;
-medianBtn.addEventListener('click', () => {
-    const numbers = prompt("Enter numbers separated by commas:");
-    if (!numbers) return;
-    const numArray = numbers.split(',').map(Number).sort((a, b) => a - b);
-    const mid = Math.floor(numArray.length / 2);
-    const median = numArray.length % 2 !== 0 ? numArray[mid] : (numArray[mid - 1] + numArray[mid]) / 2;
-    display.value = median.toString();
-    addToHistory(`median(${numbers})`, median.toString());
-});
-
-reciprocalBtn.addEventListener('click', () => {
+percentBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (isNaN(currentValue) || currentValue === 0) {
-        display.value = "Error: Invalid input or division by zero";
-    } else {
-        display.value = (1 / currentValue).toString();
-        addToHistory(`1/${currentValue}`, display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (currentValue / 100).toString();
+        addToHistory(`${currentValue}%`, display.value);
     }
 });
+
 });
