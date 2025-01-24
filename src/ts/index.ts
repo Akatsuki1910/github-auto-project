@@ -43,6 +43,7 @@ const cubeBtn = document.getElementById("cube") as HTMLButtonElement;
 const logBtn = document.getElementById("log") as HTMLButtonElement;
 const expBtn = document.getElementById("exp") as HTMLButtonElement;
 const modBtn = document.getElementById("mod") as HTMLButtonElement;
+const sinBtn = document.getElementById("sin") as HTMLButtonElement;
 
 reciprocalBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
@@ -97,5 +98,13 @@ modBtn.addEventListener('click', () => {
   currentExpression += '%';
   currentExpressionDisplay.textContent = currentExpression;  
 })
+
+sinBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.sin(currentValue);
+        display.value = result.toString();
+    }
+});
 
 });
