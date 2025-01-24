@@ -41,6 +41,7 @@ const closeParenBtn = document.getElementById("closeParen") as HTMLButtonElement
 const squareBtn = document.getElementById("square") as HTMLButtonElement;
 const cubeBtn = document.getElementById("cube") as HTMLButtonElement;
 const logBtn = document.getElementById("log") as HTMLButtonElement;
+const expBtn = document.getElementById("exp") as HTMLButtonElement;
 
 reciprocalBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
@@ -81,6 +82,13 @@ logBtn.addEventListener('click', () => {
         display.value = Math.log10(currentValue).toString();
     } else {
         display.value = "Invalid input for log";
+    }
+});
+
+expBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.exp(currentValue).toString();
     }
 });
 
