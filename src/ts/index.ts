@@ -46,8 +46,13 @@ const ceilBtn = document.getElementById("ceil") as HTMLButtonElement; // ceil bu
 const absBtn = document.getElementById("abs") as HTMLButtonElement; // Absolute value button
 const randBtn = document.getElementById("rand") as HTMLButtonElement; //rand button
 const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
+const eBtn = document.getElementById("e") as HTMLButtonElement;
 
 // ... other event listeners
+
+eBtn.addEventListener('click', () => {
+    display.value = Math.E.toString();
+});
 
 cosBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
