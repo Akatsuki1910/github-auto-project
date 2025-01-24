@@ -42,6 +42,13 @@ const currentDatBtn = document.getElementById("current-date") as HTMLButtonEleme
 const keyboardBtn = document.getElementById("keyboard") as HTMLButtonElement;
 const keyboardContainer = document.getElementById("keyboardContainer") as HTMLDivElement;
 let isKeyboardVisible = false; // Flag to track keyboard visibility
+const keys = document.querySelectorAll('.key');
+
+keys.forEach(key => {
+    key.addEventListener('click', () => {
+        display.value += key.textContent;
+    });
+});
 
 //Rest of the code
 signBtn.addEventListener('click', () => {
