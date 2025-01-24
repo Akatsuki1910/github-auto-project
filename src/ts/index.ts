@@ -47,8 +47,18 @@ const resetBtn = document.getElementById("reset") as HTMLButtonElement;
 const powerOfTwoBtn = document.getElementById("powerOfTwo") as HTMLButtonElement;
 const inverseSinBtn = document.getElementById("inverseSin") as HTMLButtonElement;
 const degRadBtn = document.getElementById("deg-rad") as HTMLButtonElement;
+const squared3Btn = document.getElementById("squared3") as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
+
+squared3Btn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+      const result = currentValue * currentValue;
+      display.value = result.toString();
+      addToHistory(`sqr(${currentValue})`, result.toString());
+    }
+});
 
 // ... other event listeners
 
@@ -57,4 +67,3 @@ degRadBtn.addEventListener('click', () => {
     degRadBtn.textContent = (mode === "rad") ? "Rad" : "Deg";
 });
 });
-
