@@ -51,6 +51,9 @@ keys.forEach(key => {
     });
 });
 
+backspaceKey.addEventListener('click', () => {
+    display.value = display.value.slice(0, -1);
+});
 //Rest of the code
 signBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
@@ -80,10 +83,6 @@ copyResultBtn.addEventListener('click', () => {
 keyboardBtn.addEventListener('click', () => {
     isKeyboardVisible = !isKeyboardVisible;
     keyboardContainer.style.display = isKeyboardVisible ? "block" : "none";
-});
-
-backspaceKey.addEventListener('click', () => {
-    display.value = display.value.slice(0, -1);
 });
 
 });
