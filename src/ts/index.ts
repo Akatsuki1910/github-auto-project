@@ -42,6 +42,7 @@ const squareBtn = document.getElementById("square") as HTMLButtonElement;
 const cubeBtn = document.getElementById("cube") as HTMLButtonElement;
 const logBtn = document.getElementById("log") as HTMLButtonElement;
 const expBtn = document.getElementById("exp") as HTMLButtonElement;
+const modBtn = document.getElementById("mod") as HTMLButtonElement;
 
 reciprocalBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
@@ -91,5 +92,10 @@ expBtn.addEventListener('click', () => {
         display.value = Math.exp(currentValue).toString();
     }
 });
+
+modBtn.addEventListener('click', () => {
+  currentExpression += '%';
+  currentExpressionDisplay.textContent = currentExpression;  
+})
 
 });
