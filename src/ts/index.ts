@@ -42,6 +42,7 @@ const asinBtn = document.getElementById("asin") as HTMLButtonElement; //asin
 const atanBtn = document.getElementById("atan") as HTMLButtonElement; //atan
 const roundBtn = document.getElementById("round") as HTMLButtonElement;
 const floorBtn = document.getElementById("floor") as HTMLButtonElement; // floor button
+const ceilBtn = document.getElementById("ceil") as HTMLButtonElement; // ceil button
 
 // ... other event listeners
 
@@ -87,6 +88,14 @@ floorBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
         const result = Math.floor(currentValue);
+        display.value = result.toString();
+    }
+});
+
+ceilBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.ceil(currentValue);
         display.value = result.toString();
     }
 });
