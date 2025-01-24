@@ -48,6 +48,7 @@ const powerOfTwoBtn = document.getElementById("powerOfTwo") as HTMLButtonElement
 const inverseSinBtn = document.getElementById("inverseSin") as HTMLButtonElement;
 const degRadBtn = document.getElementById("deg-rad") as HTMLButtonElement;
 const squared3Btn = document.getElementById("squared3") as HTMLButtonElement;
+const nthRootBtn = document.getElementById("nthRoot") as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 
@@ -57,6 +58,16 @@ squared3Btn.addEventListener('click', () => {
       const result = currentValue * currentValue;
       display.value = result.toString();
       addToHistory(`sqr(${currentValue})`, result.toString());
+    }
+});
+
+thRootBtn.addEventListener('click', () => {
+    // Implement nth root logic here. This is a placeholder.
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+      // Example: Calculate the square root (replace with actual nth root logic)
+      const result = Math.sqrt(currentValue);
+      display.value = result.toString();
     }
 });
 
