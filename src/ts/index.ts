@@ -50,6 +50,7 @@ const degRadBtn = document.getElementById("deg-rad") as HTMLButtonElement;
 const squared3Btn = document.getElementById("squared3") as HTMLButtonElement;
 const nthRootBtn = document.getElementById("nthRoot") as HTMLButtonElement;
 const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
+const swapButton = document.getElementById("swap") as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 
@@ -85,6 +86,14 @@ expm1Btn.addEventListener('click', () => {
         const result = Math.expm1(currentValue);
         display.value = result.toString();
         addToHistory(`expm1(${currentValue})`, result.toString());
+    }
+});
+
+swapButton.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue.length >= 2) {
+        const swappedValue = currentValue.slice(-2) + currentValue.slice(0, -2);
+        display.value = swappedValue;    
     }
 });
 });
