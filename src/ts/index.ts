@@ -46,67 +46,15 @@ const copyToClipboardBtn = document.getElementById("copy-to-clipboard") as HTMLB
 const resetBtn = document.getElementById("reset") as HTMLButtonElement;
 const powerOfTwoBtn = document.getElementById("powerOfTwo") as HTMLButtonElement;
 const inverseSinBtn = document.getElementById("inverseSin") as HTMLButtonElement;
+const degRadBtn = document.getElementById("deg-rad") as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
-backBtn.addEventListener('click', () => {
-    if (currentExpression.length > 0) {
-        currentExpression = currentExpression.slice(0, -1);
-        display.value = currentExpression;
-    }
-});
-
-openParenBtn.addEventListener('click', () => {
-    currentExpression += "(";
-    display.value = currentExpression;
-  });
-
-  closeParenBtn.addEventListener('click', () => {
-    currentExpression += ")";
-    display.value = currentExpression;
-  });
-currentTimeBtn.addEventListener('click', () => {
-    const now = new Date();
-    const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
-    display.value = timeString;
-    addToHistory("Time", timeString);
-});
-
-currentDateTimeBtn.addEventListener('click', () => {
-    const now = new Date();
-    const dateTimeString = now.toLocaleString();
-    display.value = dateTimeString;
-    addToHistory("Date & Time", dateTimeString);
-});
-
-copyToClipboardBtn.addEventListener('click', () => {
-    navigator.clipboard.writeText(display.value).then(() => {
-      alert('Copied to clipboard!');
-    }).catch(err => {
-      console.error('Failed to copy: ', err);
-      alert('Failed to copy to clipboard.');
-    });
-  });
-
-resetBtn.addEventListener('click', () => {
-    currentExpression = '';
-    display.value = '';
-});
-powerOfTwoBtn.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        const result = currentValue * currentValue;
-        display.value = result.toString();
-        addToHistory(currentValue.toString() + "^2", result.toString());
-    }
-});
-inverseSinBtn.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        const result = Math.asin(currentValue);
-        display.value = result.toString();
-        addToHistory("sin⁻¹(" + currentValue.toString() + ")", result.toString());
-    }
-});
 
 // ... other event listeners
+
+degRadBtn.addEventListener('click', () => {
+    mode = (mode === "rad") ? "deg" : "rad";
+    degRadBtn.textContent = (mode === "rad") ? "Rad" : "Deg";
 });
+});
+
