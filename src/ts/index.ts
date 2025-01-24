@@ -48,6 +48,7 @@ const randBtn = document.getElementById("rand") as HTMLButtonElement; //rand but
 const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
 const eBtn = document.getElementById("e") as HTMLButtonElement;
 const lnBtn = document.getElementById("ln") as HTMLButtonElement; // Natural logarithm button
+const percentBtn = document.getElementById("percent") as HTMLButtonElement; // Percentage button
 
 // ... other event listeners
 
@@ -137,6 +138,14 @@ lnBtn.addEventListener('click', () => {
         display.value = result.toString();
     } else {
         display.value = "Error"; // Handle invalid input
+    }
+});
+
+percentBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = currentValue / 100;
+        display.value = result.toString();
     }
 });
 
