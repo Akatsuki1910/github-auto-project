@@ -50,6 +50,7 @@ const eBtn = document.getElementById("e") as HTMLButtonElement;
 const lnBtn = document.getElementById("ln") as HTMLButtonElement; // Natural logarithm button
 const percentBtn = document.getElementById("percent") as HTMLButtonElement; // Percentage button
 const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
+const factorialBtn = document.getElementById("factorial") as HTMLButtonElement;
 
 // ... other event listeners
 
@@ -152,5 +153,18 @@ percentBtn.addEventListener('click', () => {
 inverseBtn.addEventListener('click', () => {
     isInverse = !isInverse; // Toggle the inverse mode flag
 });
+
+factorialBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue >= 0 && Number.isInteger(currentValue)) {
+        let result = 1;
+        for (let i = 2; i <= currentValue; i++) {
+            result *= i;
+        }
+        display.value = result.toString();
+    } else {
+      display.value = "Error"; // Or handle the error as needed
+    }
+  });
 
 });
