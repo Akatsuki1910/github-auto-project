@@ -38,6 +38,7 @@ const display = document.getElementById("display") as HTMLInputElement;
 // ... other existing buttons
 const cosBtn = document.getElementById("cos") as HTMLButtonElement;
 const tanBtn = document.getElementById("tan") as HTMLButtonElement; // Add tan button
+const asinBtn = document.getElementById("asin") as HTMLButtonElement; //asin
 
 // ... other event listeners
 
@@ -53,6 +54,13 @@ tanBtn.addEventListener('click', () => { // Tan button functionality
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
         const result = Math.tan(currentValue);
+        display.value = result.toString();
+    }
+});
+asinBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.asin(currentValue);
         display.value = result.toString();
     }
 });
