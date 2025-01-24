@@ -37,6 +37,7 @@ const calculateBtn = document.getElementById("calculate") as HTMLButtonElement;
 const display = document.getElementById("display") as HTMLInputElement;
 // ... other existing buttons
 const signBtn = document.getElementById("sign") as HTMLButtonElement;
+const copyResultBtn = document.getElementById("copyResult") as HTMLButtonElement;
 //Rest of the code
 signBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
@@ -44,5 +45,18 @@ signBtn.addEventListener('click', () => {
         display.value = (-currentValue).toString();
     }
 });
+
+copyResultBtn.addEventListener('click', () => {
+    const result = display.value;
+    if (result) {
+      navigator.clipboard.writeText(result)
+        .then(() => {
+          alert('Result copied to clipboard!');
+        })
+        .catch(err => {
+          console.error('Failed to copy: ', err);
+        });
+    }
+  });
 
 });
