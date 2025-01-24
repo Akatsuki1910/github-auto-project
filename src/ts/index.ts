@@ -38,6 +38,7 @@ const display = document.getElementById("display") as HTMLInputElement;
 const reciprocalBtn = document.getElementById("reciprocal") as HTMLButtonElement;
 const openParenBtn = document.getElementById("openParen") as HTMLButtonElement;
 const closeParenBtn = document.getElementById("closeParen") as HTMLButtonElement;
+const squareBtn = document.getElementById("square") as HTMLButtonElement;
 
 reciprocalBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
@@ -56,6 +57,13 @@ openParenBtn.addEventListener('click', () => {
 closeParenBtn.addEventListener('click', () => {
     currentExpression += ")";
     currentExpressionDisplay.textContent = currentExpression;
+});
+
+squareBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (currentValue * currentValue).toString();
+    }
 });
 
 });
