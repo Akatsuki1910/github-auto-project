@@ -36,6 +36,8 @@ window.addEventListener("DOMContentLoaded", () => {
 const calculateBtn = document.getElementById("calculate") as HTMLButtonElement;
 const display = document.getElementById("display") as HTMLInputElement;
 const reciprocalBtn = document.getElementById("reciprocal") as HTMLButtonElement;
+const openParenBtn = document.getElementById("openParen") as HTMLButtonElement;
+const closeParenBtn = document.getElementById("closeParen") as HTMLButtonElement;
 
 reciprocalBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
@@ -44,6 +46,16 @@ reciprocalBtn.addEventListener('click', () => {
     } else if (currentValue === 0) {
         display.value = "Cannot divide by zero";
     }
+});
+
+openParenBtn.addEventListener('click', () => {
+    currentExpression += "(";
+    currentExpressionDisplay.textContent = currentExpression;
+});
+
+closeParenBtn.addEventListener('click', () => {
+    currentExpression += ")";
+    currentExpressionDisplay.textContent = currentExpression;
 });
 
 });
