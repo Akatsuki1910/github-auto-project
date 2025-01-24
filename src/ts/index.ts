@@ -39,6 +39,7 @@ const display = document.getElementById("display") as HTMLInputElement;
 const cosBtn = document.getElementById("cos") as HTMLButtonElement;
 const tanBtn = document.getElementById("tan") as HTMLButtonElement; // Add tan button
 const asinBtn = document.getElementById("asin") as HTMLButtonElement; //asin
+const atanBtn = document.getElementById("atan") as HTMLButtonElement; //atan
 
 // ... other event listeners
 
@@ -61,6 +62,13 @@ asinBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
         const result = Math.asin(currentValue);
+        display.value = result.toString();
+    }
+});
+atanBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.atan(currentValue);
         display.value = result.toString();
     }
 });
