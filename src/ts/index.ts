@@ -43,6 +43,7 @@ const atanBtn = document.getElementById("atan") as HTMLButtonElement; //atan
 const roundBtn = document.getElementById("round") as HTMLButtonElement;
 const floorBtn = document.getElementById("floor") as HTMLButtonElement; // floor button
 const ceilBtn = document.getElementById("ceil") as HTMLButtonElement; // ceil button
+const absBtn = document.getElementById("abs") as HTMLButtonElement; // Absolute value button
 
 // ... other event listeners
 
@@ -99,5 +100,13 @@ ceilBtn.addEventListener('click', () => {
         display.value = result.toString();
     }
 });
+
+absBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+      const result = Math.abs(currentValue);
+      display.value = result.toString();
+    }
+  });
 
 });
