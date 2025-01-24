@@ -52,6 +52,7 @@ const percentBtn = document.getElementById("percent") as HTMLButtonElement; // P
 const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
 const factorialBtn = document.getElementById("factorial") as HTMLButtonElement;
 const degRadBtn = document.getElementById("deg-rad") as HTMLButtonElement; // Deg/Rad Toggle
+const sumBtn = document.getElementById("sum") as HTMLButtonElement;
 
 // ... other event listeners
 
@@ -171,6 +172,13 @@ factorialBtn.addEventListener('click', () => {
   degRadBtn.addEventListener('click', () => {
     mode = mode === "rad" ? "deg" : "rad";
     degRadBtn.textContent = mode.toUpperCase(); // Update button label
+});
+
+sumBtn.addEventListener('click', () => {
+    const currentValue = display.value;
+    const numbers = currentValue.split('+').map(Number).filter(isFinite);
+    const sum = numbers.reduce((acc, num) => acc + num, 0);
+    display.value = sum.toString();
 });
 
 });
