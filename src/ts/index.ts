@@ -51,6 +51,7 @@ const lnBtn = document.getElementById("ln") as HTMLButtonElement; // Natural log
 const percentBtn = document.getElementById("percent") as HTMLButtonElement; // Percentage button
 const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
 const factorialBtn = document.getElementById("factorial") as HTMLButtonElement;
+const degRadBtn = document.getElementById("deg-rad") as HTMLButtonElement; // Deg/Rad Toggle
 
 // ... other event listeners
 
@@ -61,7 +62,7 @@ eBtn.addEventListener('click', () => {
 cosBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        const result = isInverse ? Math.acos(currentValue) : Math.cos(currentValue); // Use acos if inverse mode is on
+        const result = isInverse ? Math.acos(currentValue) : Math.cos(currentValue * (mode === "deg" ? Math.PI / 180 : 1)); // Convert to radians if in degree mode
         display.value = result.toString();
     }
 });
@@ -69,7 +70,7 @@ cosBtn.addEventListener('click', () => {
 tanBtn.addEventListener('click', () => { // Tan button functionality
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-         const result = isInverse ? Math.atan(currentValue) : Math.tan(currentValue); // Use atan if inverse mode is on
+         const result = isInverse ? Math.atan(currentValue) : Math.tan(currentValue * (mode === "deg" ? Math.PI / 180 : 1)); // Convert to radians if in degree mode
         display.value = result.toString();
     }
 });
@@ -166,5 +167,10 @@ factorialBtn.addEventListener('click', () => {
       display.value = "Error"; // Or handle the error as needed
     }
   });
+
+  degRadBtn.addEventListener('click', () => {
+    mode = mode === "rad" ? "deg" : "rad";
+    degRadBtn.textContent = mode.toUpperCase(); // Update button label
+});
 
 });
