@@ -35,31 +35,14 @@ window.addEventListener("DOMContentLoaded", () => {
   // ... existing code
 const calculateBtn = document.getElementById("calculate") as HTMLButtonElement;
 const display = document.getElementById("display") as HTMLInputElement;
-const modeBtn = document.getElementById("mode") as HTMLButtonElement;
-// ... other buttons
-const backBtn = document.getElementById("back") as HTMLButtonElement; // Back button
-const openParenBtn = document.getElementById("open-parenthesis") as HTMLButtonElement;
-const closeParenBtn = document.getElementById("close-parenthesis") as HTMLButtonElement;
-const currentTimeBtn = document.getElementById("current-time") as HTMLButtonElement;
-const currentDateTimeBtn = document.getElementById("current-datetime") as HTMLButtonElement;
-const copyToClipboardBtn = document.getElementById("copy-to-clipboard") as HTMLButtonElement;
-const resetBtn = document.getElementById("reset") as HTMLButtonElement;
-const powerOfTwoBtn = document.getElementById("powerOfTwo") as HTMLButtonElement;
-const inverseSinBtn = document.getElementById("inverseSin") as HTMLButtonElement;
-const degRadBtn = document.getElementById("deg-rad") as HTMLButtonElement;
-const squared3Btn = document.getElementById("squared3") as HTMLButtonElement;
-const nthRootBtn = document.getElementById("nthRoot") as HTMLButtonElement;
-const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
-const swapButton = document.getElementById("swap") as HTMLButtonElement;
-const signChangeBtn = document.getElementById("+/-") as HTMLButtonElement;
+const reciprocalBtn = document.getElementById("reciprocal") as HTMLButtonElement;
 
-// ... (Existing Event Listeners)
-
-// ... other event listeners
-signChangeBtn.addEventListener('click', () => {
+reciprocalBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (-currentValue).toString();
+    if (!isNaN(currentValue) && currentValue !== 0) {
+        display.value = (1 / currentValue).toString();
+    } else if (currentValue === 0) {
+        display.value = "Cannot divide by zero";
     }
 });
 
