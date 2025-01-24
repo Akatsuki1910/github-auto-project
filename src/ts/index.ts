@@ -49,6 +49,7 @@ const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
 const eBtn = document.getElementById("e") as HTMLButtonElement;
 const lnBtn = document.getElementById("ln") as HTMLButtonElement; // Natural logarithm button
 const percentBtn = document.getElementById("percent") as HTMLButtonElement; // Percentage button
+const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
 
 // ... other event listeners
 
@@ -59,7 +60,7 @@ eBtn.addEventListener('click', () => {
 cosBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        const result = Math.cos(currentValue);
+        const result = isInverse ? Math.acos(currentValue) : Math.cos(currentValue); // Use acos if inverse mode is on
         display.value = result.toString();
     }
 });
@@ -67,7 +68,7 @@ cosBtn.addEventListener('click', () => {
 tanBtn.addEventListener('click', () => { // Tan button functionality
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        const result = Math.tan(currentValue);
+         const result = isInverse ? Math.atan(currentValue) : Math.tan(currentValue); // Use atan if inverse mode is on
         display.value = result.toString();
     }
 });
@@ -147,6 +148,9 @@ percentBtn.addEventListener('click', () => {
         const result = currentValue / 100;
         display.value = result.toString();
     }
+});
+inverseBtn.addEventListener('click', () => {
+    isInverse = !isInverse; // Toggle the inverse mode flag
 });
 
 });
