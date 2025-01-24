@@ -38,6 +38,7 @@ const display = document.getElementById("display") as HTMLInputElement;
 // ... other existing buttons
 const signBtn = document.getElementById("sign") as HTMLButtonElement;
 const copyResultBtn = document.getElementById("copyResult") as HTMLButtonElement;
+const currentDatBtn = document.getElementById("current-date") as HTMLButtonElement;
 //Rest of the code
 signBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
@@ -58,5 +59,10 @@ copyResultBtn.addEventListener('click', () => {
         });
     }
   });
+
+  currentDatBtn.addEventListener('click', () => {
+    const currentDate = new Date().toLocaleDateString();
+    display.value = currentDate;
+});
 
 });
