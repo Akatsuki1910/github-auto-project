@@ -44,6 +44,7 @@ const roundBtn = document.getElementById("round") as HTMLButtonElement;
 const floorBtn = document.getElementById("floor") as HTMLButtonElement; // floor button
 const ceilBtn = document.getElementById("ceil") as HTMLButtonElement; // ceil button
 const absBtn = document.getElementById("abs") as HTMLButtonElement; // Absolute value button
+const randBtn = document.getElementById("rand") as HTMLButtonElement; //rand button
 
 // ... other event listeners
 
@@ -108,5 +109,10 @@ absBtn.addEventListener('click', () => {
       display.value = result.toString();
     }
   });
+
+randBtn.addEventListener('click', () => {
+    const randValue = Math.random();
+    display.value = randValue.toString();
+});
 
 });
