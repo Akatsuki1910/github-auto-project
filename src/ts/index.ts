@@ -47,6 +47,7 @@ const absBtn = document.getElementById("abs") as HTMLButtonElement; // Absolute 
 const randBtn = document.getElementById("rand") as HTMLButtonElement; //rand button
 const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
 const eBtn = document.getElementById("e") as HTMLButtonElement;
+const lnBtn = document.getElementById("ln") as HTMLButtonElement; // Natural logarithm button
 
 // ... other event listeners
 
@@ -126,6 +127,16 @@ expm1Btn.addEventListener('click', () => {
     if (!isNaN(currentValue)) {
         const result = Math.expm1(currentValue);
         display.value = result.toString();
+    }
+});
+
+lnBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue > 0) { // Check for positive value
+        const result = Math.log(currentValue);
+        display.value = result.toString();
+    } else {
+        display.value = "Error"; // Handle invalid input
     }
 });
 
