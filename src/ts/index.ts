@@ -51,49 +51,16 @@ const squared3Btn = document.getElementById("squared3") as HTMLButtonElement;
 const nthRootBtn = document.getElementById("nthRoot") as HTMLButtonElement;
 const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
 const swapButton = document.getElementById("swap") as HTMLButtonElement;
+const signChangeBtn = document.getElementById("+/-") as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 
-squared3Btn.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-      const result = currentValue * currentValue;
-      display.value = result.toString();
-      addToHistory(`sqr(${currentValue})`, result.toString());
-    }
-});
-
-nthRootBtn.addEventListener('click', () => {
-    // Implement nth root logic here. This is a placeholder.
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-      // Example: Calculate the square root (replace with actual nth root logic)
-      const result = Math.sqrt(currentValue);
-      display.value = result.toString();
-    }
-});
-
 // ... other event listeners
-
-degRadBtn.addEventListener('click', () => {
-    mode = (mode === "rad") ? "deg" : "rad";
-    degRadBtn.textContent = (mode === "rad") ? "Rad" : "Deg";
-});
-
-expm1Btn.addEventListener('click', () => {
+signChangeBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        const result = Math.expm1(currentValue);
-        display.value = result.toString();
-        addToHistory(`expm1(${currentValue})`, result.toString());
+        display.value = (-currentValue).toString();
     }
 });
 
-swapButton.addEventListener('click', () => {
-    const currentValue = display.value;
-    if (currentValue.length >= 2) {
-        const swappedValue = currentValue.slice(-2) + currentValue.slice(0, -2);
-        display.value = swappedValue;    
-    }
-});
 });
