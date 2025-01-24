@@ -49,6 +49,7 @@ const inverseSinBtn = document.getElementById("inverseSin") as HTMLButtonElement
 const degRadBtn = document.getElementById("deg-rad") as HTMLButtonElement;
 const squared3Btn = document.getElementById("squared3") as HTMLButtonElement;
 const nthRootBtn = document.getElementById("nthRoot") as HTMLButtonElement;
+const expm1Btn = document.getElementById("expm1") as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 
@@ -61,7 +62,7 @@ squared3Btn.addEventListener('click', () => {
     }
 });
 
-thRootBtn.addEventListener('click', () => {
+nthRootBtn.addEventListener('click', () => {
     // Implement nth root logic here. This is a placeholder.
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
@@ -76,5 +77,14 @@ thRootBtn.addEventListener('click', () => {
 degRadBtn.addEventListener('click', () => {
     mode = (mode === "rad") ? "deg" : "rad";
     degRadBtn.textContent = (mode === "rad") ? "Rad" : "Deg";
+});
+
+expm1Btn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.expm1(currentValue);
+        display.value = result.toString();
+        addToHistory(`expm1(${currentValue})`, result.toString());
+    }
 });
 });
