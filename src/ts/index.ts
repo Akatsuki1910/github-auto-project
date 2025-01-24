@@ -40,6 +40,7 @@ const signBtn = document.getElementById("sign") as HTMLButtonElement;
 const copyResultBtn = document.getElementById("copyResult") as HTMLButtonElement;
 const currentDatBtn = document.getElementById("current-date") as HTMLButtonElement;
 const keyboardBtn = document.getElementById("keyboard") as HTMLButtonElement;
+const keyboardContainer = document.getElementById("keyboardContainer") as HTMLDivElement;
 let isKeyboardVisible = false; // Flag to track keyboard visibility
 
 //Rest of the code
@@ -70,9 +71,7 @@ copyResultBtn.addEventListener('click', () => {
 
 keyboardBtn.addEventListener('click', () => {
     isKeyboardVisible = !isKeyboardVisible;
-    // Implement logic to show/hide on-screen keyboard based on isKeyboardVisible
-    // This might involve creating or showing/hiding a keyboard element
-    console.log("Keyboard button clicked!", isKeyboardVisible);
+    keyboardContainer.style.display = isKeyboardVisible ? "block" : "none";
 });
 
 });

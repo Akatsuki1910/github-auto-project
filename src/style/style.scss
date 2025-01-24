@@ -26,3 +26,12 @@
     color: #666; /* Slightly lighter color */
     margin-bottom: 5px; 
   }
+
+  #keyboardContainer {
+    grid-column: span 4; /* Make it occupy the full width */
+    background-color: #eee;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 10px; 
+  }
