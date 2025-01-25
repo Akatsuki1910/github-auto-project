@@ -51,6 +51,7 @@ const factorialBtn = document.getElementById('factorial') as HTMLButtonElement;
 const currentExpressionBtn = document.getElementById('currentExpressionBtn') as HTMLButtonElement;
 const lastAnswerBtn = document.getElementById('lastAnswer') as HTMLButtonElement;
 const memoryPlusBtn = document.getElementById('memoryPlus') as HTMLButtonElement; // Memory Plus button
+const memoryRecallBtn = document.getElementById('memoryRecall') as HTMLButtonElement; //Memory Recall
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -104,6 +105,11 @@ memoryPlusBtn.addEventListener('click', () => {
       memory += currentValue;
     }
   });
+memoryRecallBtn.addEventListener('click', () => {
+    display.value += memory;  // Append memory to current input
+  currentExpression += memory;
+  currentExpressionDisplay.textContent = currentExpression;
+});
 
   function factorial(n: number): number {
     if (n < 0) {
