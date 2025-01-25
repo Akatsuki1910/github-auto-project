@@ -55,6 +55,7 @@ const memoryRecallBtn = document.getElementById('memoryRecall') as HTMLButtonEle
 const memoryClearBtn = document.getElementById('memoryClear') as HTMLButtonElement; // Memory Clear
 const squareBtn = document.getElementById('square') as HTMLButtonElement;
 const cubeBtn = document.getElementById('cube') as HTMLButtonElement;
+const negateBtn = document.getElementById('negate') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -133,6 +134,16 @@ cubeBtn.addEventListener('click', () => {
     display.value = result.toString();
     addToHistory(currentValue.toString() + "³", result.toString());
   }
+});
+
+negateBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+      display.value = (-currentValue).toString();
+      currentExpression = `(-${currentExpression})`;
+    } else {
+        display.value = '-'; // Allow user to start with negative sign
+    }
 });
 
   function factorial(n: number): number {
