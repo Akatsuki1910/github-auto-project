@@ -50,6 +50,7 @@ const clearDisplayBtn = document.getElementById('clearDisplay') as HTMLButtonEle
 const factorialBtn = document.getElementById('factorial') as HTMLButtonElement;
 const currentExpressionBtn = document.getElementById('currentExpressionBtn') as HTMLButtonElement;
 const lastAnswerBtn = document.getElementById('lastAnswer') as HTMLButtonElement;
+const memoryPlusBtn = document.getElementById('memoryPlus') as HTMLButtonElement; // Memory Plus button
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -96,6 +97,13 @@ lastAnswerBtn.addEventListener('click', () => {
     currentExpression += lastAnswer;
     currentExpressionDisplay.textContent = currentExpression; // Update the display
 });
+
+memoryPlusBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+      memory += currentValue;
+    }
+  });
 
   function factorial(n: number): number {
     if (n < 0) {
