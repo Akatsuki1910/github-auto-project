@@ -53,6 +53,7 @@ const lastAnswerBtn = document.getElementById('lastAnswer') as HTMLButtonElement
 const memoryPlusBtn = document.getElementById('memoryPlus') as HTMLButtonElement; // Memory Plus button
 const memoryRecallBtn = document.getElementById('memoryRecall') as HTMLButtonElement; //Memory Recall
 const memoryClearBtn = document.getElementById('memoryClear') as HTMLButtonElement; // Memory Clear
+const squareBtn = document.getElementById('square') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -113,6 +114,15 @@ memoryRecallBtn.addEventListener('click', () => {
 });
 memoryClearBtn.addEventListener('click', () => {  // Clear memory
     memory = 0;
+});
+
+squareBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = currentValue * currentValue;
+        display.value = result.toString();
+        addToHistory(currentValue.toString() + "²", result.toString());
+    }
 });
 
   function factorial(n: number): number {
