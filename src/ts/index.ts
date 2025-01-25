@@ -51,96 +51,31 @@ const closeParenKey = document.getElementById('close-paren-key') as HTMLButtonEl
 const equalsKey = document.getElementById('equals-key') as HTMLButtonElement;
 const clearDisplayBtn = document.getElementById('clearDisplay') as HTMLButtonElement;
 const factorialBtn = document.getElementById('factorial') as HTMLButtonElement;
+const currentExpressionBtn = document.getElementById('currentExpressionBtn') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
         display.value += key.textContent;
+        currentExpression += key.textContent;
+        currentExpressionDisplay.textContent = currentExpression; // Update the display
     });
 });
 
 backspaceKey.addEventListener('click', () => {
-    display.value = display.value.slice(0, -1);
+  display.value = display.value.slice(0, -1);
+  currentExpression = currentExpression.slice(0, -1); // Update current expression
+  currentExpressionDisplay.textContent = currentExpression;
 });
 
 clearKey.addEventListener('click', () => {
   display.value = '';
+  currentExpression = ''; // Clear current expression
+  currentExpressionDisplay.textContent = currentExpression; 
 });
 //Rest of the code
-signBtn.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (-currentValue).toString();
-    }
-});
-
-copyResultBtn.addEventListener('click', () => {
-    const result = display.value;
-    if (result) {
-      navigator.clipboard.writeText(result)
-        .then(() => {
-          alert('Result copied to clipboard!');
-        })
-        .catch(err => {
-          console.error('Failed to copy: ', err);
-        });
-    }
-  });
-
-  currentDatBtn.addEventListener('click', () => {
-    const currentDate = new Date().toLocaleDateString();
-    display.value = currentDate;
-});
-
-keyboardBtn.addEventListener('click', () => {
-    isKeyboardVisible = !isKeyboardVisible;
-    keyboardContainer.style.display = isKeyboardVisible ? "block" : "none";
-});
-
-openParenKey.addEventListener('click', () => {
-  display.value += '(';
-});
-
-closeParenKey.addEventListener('click', () => {
-  display.value += ')';
-});
-
-exponentKey.addEventListener('click', () => {
-    display.value += '**'; // Use ** for exponent in JavaScript
-});
-equalsKey.addEventListener('click', () => {
-    try {
-      const result = eval(display.value);
-      display.value = result;
-    } catch (error) {
-      display.value = 'Error';
-    }
-  });
-
-clearDisplayBtn.addEventListener('click', () => {
-    display.value = '';
-});
-
-factorialBtn.addEventListener('click', () => {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-      display.value = 'Error';
-      return;
-    }
-  
-    function factorial(n: number): number {
-      if (n === 0) {
-        return 1;
-      } else if (n < 0) {
-        return -1; // Indicate error for negative numbers
-      } else if (n > 170) {
-        return Infinity; // Handle potential overflow
-      } else {
-        return n * factorial(n - 1);
-      }
-    }
-
-    const result = factorial(num);
-    display.value = isFinite(result) ? result.toString() : 'Error'; // Display result or error
+// ... (rest of the code)
+currentExpressionBtn.addEventListener('click', () => {
+  display.value = currentExpression;
 });
 
 });
