@@ -45,9 +45,6 @@ let isKeyboardVisible = false; // Flag to track keyboard visibility
 const keys = document.querySelectorAll('.key');
 const backspaceKey = document.getElementById('backspace-key') as HTMLButtonElement;
 const clearKey = document.getElementById('clear-key') as HTMLButtonElement;
-const exponentKey = document.getElementById('exponent-key') as HTMLButtonElement;
-const openParenKey = document.querySelector('.open-paren-key') as HTMLButtonElement;
-const closeParenKey = document.getElementById('close-paren-key') as HTMLButtonElement;
 const equalsKey = document.getElementById('equals-key') as HTMLButtonElement;
 const clearDisplayBtn = document.getElementById('clearDisplay') as HTMLButtonElement;
 const factorialBtn = document.getElementById('factorial') as HTMLButtonElement;
@@ -56,26 +53,55 @@ const currentExpressionBtn = document.getElementById('currentExpressionBtn') as 
 keys.forEach(key => {
     key.addEventListener('click', () => {
         display.value += key.textContent;
-        currentExpression += key.textContent;
-        currentExpressionDisplay.textContent = currentExpression; // Update the display
+        currentExpression += key.textContent; // Update currentExpression
+        currentExpressionDisplay.textContent = currentExpression;
     });
 });
 
 backspaceKey.addEventListener('click', () => {
   display.value = display.value.slice(0, -1);
-  currentExpression = currentExpression.slice(0, -1); // Update current expression
+  currentExpression = currentExpression.slice(0, -1);
   currentExpressionDisplay.textContent = currentExpression;
 });
 
 clearKey.addEventListener('click', () => {
   display.value = '';
-  currentExpression = ''; // Clear current expression
-  currentExpressionDisplay.textContent = currentExpression; 
+  currentExpression = '';
+  currentExpressionDisplay.textContent = currentExpression;
 });
 //Rest of the code
 // ... (rest of the code)
 currentExpressionBtn.addEventListener('click', () => {
   display.value = currentExpression;
 });
+
+factorialBtn.addEventListener('click', () => {
+    try {
+      const num = parseFloat(display.value);
+      if (isNaN(num)) {
+        display.value = "Error: Invalid input";
+      } else {
+        const result = factorial(num);
+        display.value = result.toString();
+        addToHistory(num.toString() + "!" , result.toString());
+      }
+    } catch (error) {
+      display.value = "Error";
+    }
+  });
+
+  function factorial(n: number): number {
+    if (n < 0) {
+      throw new Error("Factorial is not defined for negative numbers.");
+    } else if (n === 0) {
+      return 1;
+    } else {
+      let result = 1;
+      for (let i = 1; i <= n; i++) {
+        result *= i;
+      }
+      return result;
+    }
+  }
 
 });
