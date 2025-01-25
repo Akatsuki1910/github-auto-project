@@ -59,6 +59,7 @@ const negateBtn = document.getElementById('negate') as HTMLButtonElement;
 const sqrtBtn = document.getElementById('sqrt') as HTMLButtonElement;
 const percentBtn = document.getElementById('percent') as HTMLButtonElement;
 const roundToNDecimalBtn = document.getElementById('roundToNDecimal') as HTMLButtonElement; //New Button
+const exponentBtn = document.querySelector('.key[data-key="^"]') as HTMLButtonElement; //Added exponent
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -68,139 +69,11 @@ keys.forEach(key => {
     });
 });
 
-backspaceKey.addEventListener('click', () => {
-  display.value = display.value.slice(0, -1);
-  currentExpression = currentExpression.slice(0, -1);
-  currentExpressionDisplay.textContent = currentExpression;
-});
-
-clearKey.addEventListener('click', () => {
-  display.value = '';
-  currentExpression = '';
-  currentExpressionDisplay.textContent = currentExpression;
+exponentBtn.addEventListener('click', () => {
+  display.value += '**'; // Use ** for exponent in calculations
+  currentExpression += '**';
+  currentExpressionDisplay.textContent = currentExpression; 
 });
 //Rest of the code
-// ... (rest of the code)
-currentExpressionBtn.addEventListener('click', () => {
-  display.value = currentExpression;
-});
-
-factorialBtn.addEventListener('click', () => {
-    try {
-      const num = parseFloat(display.value);
-      if (isNaN(num)) {
-        display.value = "Error: Invalid input";
-      } else {
-        const result = factorial(num);
-        display.value = result.toString();
-        addToHistory(num.toString() + "!" , result.toString());
-      }
-    } catch (error) {
-      display.value = "Error";
-    }
-  });
-
-lastAnswerBtn.addEventListener('click', () => {
-    display.value += lastAnswer;
-    currentExpression += lastAnswer;
-    currentExpressionDisplay.textContent = currentExpression; // Update the display
-});
-
-memoryPlusBtn.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-      memory += currentValue;
-    }
-  });
-memoryRecallBtn.addEventListener('click', () => {
-    display.value += memory;  // Append memory to current input
-  currentExpression += memory;
-  currentExpressionDisplay.textContent = currentExpression;
-});
-memoryClearBtn.addEventListener('click', () => {  // Clear memory
-    memory = 0;
-});
-
-squareBtn.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        const result = currentValue * currentValue;
-        display.value = result.toString();
-        addToHistory(currentValue.toString() + "²", result.toString());
-    }
-});
-
-cubeBtn.addEventListener('click', () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    const result = currentValue * currentValue * currentValue; // Calculate cube
-    display.value = result.toString();
-    addToHistory(currentValue.toString() + "³", result.toString());
-  }
-});
-
-negateBtn.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-      display.value = (-currentValue).toString();
-      currentExpression = `(-${currentExpression})`;
-    } else {
-        display.value = '-'; // Allow user to start with negative sign
-    }
-});
-
-sqrtBtn.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        if (currentValue < 0) {
-            display.value = "Error: Cannot calculate square root of negative number";
-        } else {
-          const result = Math.sqrt(currentValue);
-          display.value = result.toString();
-          addToHistory("√" + currentValue.toString(), result.toString());
-        }
-    }
-});
-
-percentBtn.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-      display.value = (currentValue / 100).toString();
-      currentExpression = `(${currentExpression}/100)`; //Enclose in paraentheses to avoid incorrect calculation of percentage
-      currentExpressionDisplay.textContent = currentExpression; 
-    }
-});
-
-  function factorial(n: number): number {
-    if (n < 0) {
-      throw new Error("Factorial is not defined for negative numbers.");
-    } else if (n === 0) {
-      return 1;
-    } else {
-      let result = 1;
-      for (let i = 1; i <= n; i++) {
-        result *= i;
-      }
-      return result;
-    }
-  }
-
-  roundToNDecimalBtn.addEventListener('click', () => {
-    const numDecimals = parseInt(prompt("Enter the number of decimal places to round to:") || "0", 10);
-    if (isNaN(numDecimals) || numDecimals < 0) {
-        display.value = "Invalid number of decimal places";
-        return; //Don't try to round with wrong input
-    } 
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        const roundedValue = roundToDecimalPlaces(currentValue, numDecimals);
-        display.value = roundedValue.toString();
-        addToHistory(currentValue.toString() + ", rounded to " + numDecimals + " decimal places", roundedValue.toString());
-    }
-});
-
-function roundToDecimalPlaces(num: number, decimalPlaces: number): number {
-    const multiplier = Math.pow(10, decimalPlaces);
-    return Math.round(num * multiplier) / multiplier;
 }
-});
+);
