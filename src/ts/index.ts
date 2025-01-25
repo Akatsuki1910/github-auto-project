@@ -58,6 +58,7 @@ const cubeBtn = document.getElementById('cube') as HTMLButtonElement;
 const negateBtn = document.getElementById('negate') as HTMLButtonElement;
 const sqrtBtn = document.getElementById('sqrt') as HTMLButtonElement;
 const percentBtn = document.getElementById('percent') as HTMLButtonElement;
+const roundToNDecimalBtn = document.getElementById('roundToNDecimal') as HTMLButtonElement; //New Button
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -184,4 +185,22 @@ percentBtn.addEventListener('click', () => {
     }
   }
 
+  roundToNDecimalBtn.addEventListener('click', () => {
+    const numDecimals = parseInt(prompt("Enter the number of decimal places to round to:") || "0", 10);
+    if (isNaN(numDecimals) || numDecimals < 0) {
+        display.value = "Invalid number of decimal places";
+        return; //Don't try to round with wrong input
+    } 
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const roundedValue = roundToDecimalPlaces(currentValue, numDecimals);
+        display.value = roundedValue.toString();
+        addToHistory(currentValue.toString() + ", rounded to " + numDecimals + " decimal places", roundedValue.toString());
+    }
+});
+
+function roundToDecimalPlaces(num: number, decimalPlaces: number): number {
+    const multiplier = Math.pow(10, decimalPlaces);
+    return Math.round(num * multiplier) / multiplier;
+}
 });
