@@ -69,6 +69,7 @@ const calculateDiscountBtn = document.getElementById('calculateDiscount') as HTM
 const calculateProfitMarginBtn = document.getElementById('calculateProfitMargin') as HTMLButtonElement;
 const calculateSimpleInterestBtn = document.getElementById('calculateSimpleInterest') as HTMLButtonElement;
 const calculateCompoundInterestBtn = document.getElementById('calculateCompoundInterest') as HTMLButtonElement;
+const calculateAreaOfCircleBtn = document.getElementById('calculateAreaOfCircle') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -97,6 +98,17 @@ factorialBtn.addEventListener('click', () => {
         display.value = result.toString();
     addToHistory(`${num}!`, result.toString());
 }
+});
+
+calculateAreaOfCircleBtn.addEventListener('click', () => {
+    const radius = parseFloat(prompt('Enter the radius of the circle:', '0'));
+    if (isNaN(radius) || radius < 0) {
+        display.value = "Invalid input";
+        return;
+    }
+    const area = Math.PI * radius * radius;
+    display.value = area.toString();
+    addToHistory(`Area of Circle (r=${radius})`, area.toString());
 });
 
 // ... (rest of the existing code)
