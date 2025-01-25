@@ -63,6 +63,7 @@ const roundTo2DecimalBtn = document.getElementById('roundTo2Decimal') as HTMLBut
 const exponentBtn = document.querySelector('.key[data-key="^"]') as HTMLButtonElement; //Added exponent
 const rndBtn = document.getElementById('Rnd') as HTMLButtonElement;
 const roundToNDecimalPlacesBtn = document.getElementById('roundToNDecimalPlaces') as HTMLButtonElement;
+const calculateTaxBtn = document.getElementById('calculateTax') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -126,6 +127,24 @@ roundToNDecimalPlacesBtn.addEventListener('click', () => {
         addToHistory(`round(${num},${decimalPlaces})`, rounded.toString());
     }
 });
+
+calculateTaxBtn.addEventListener('click', () => {
+    const price = parseFloat(display.value);
+    if (isNaN(price)) {
+      display.value = "Invalid input";
+      return;
+    }
+    const taxRate = parseFloat(prompt('Enter tax rate (e.g., 8 for 8%):', '8') || '8');
+    if (isNaN(taxRate)) {
+      display.value = "Invalid tax rate";
+      return;
+    }
+    const taxAmount = price * (taxRate / 100);
+    const totalPrice = price + taxAmount;
+    display.value = totalPrice.toString();
+    addToHistory(`tax(${price}, ${taxRate})`, totalPrice.toString());
+  });
+
 //Rest of the code
 }
 );
