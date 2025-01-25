@@ -77,6 +77,27 @@ keys.forEach(key => {
     });
 });
 
+
+factorialBtn.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid input";
+        return;
+    }
+    if (num < 0) {
+        display.value = "Factorial is not defined for negative numbers";
+    } else if (!Number.isInteger(num)) {
+        display.value = "Factorial is only defined for integers";
+    } else {
+        let result = 1;
+        for (let i = 2; i <= num; i++) {
+            result *= i;
+        }
+        display.value = result.toString();
+    addToHistory(`${num}!`, result.toString());
+}
+});
+
 // ... (rest of the existing code)
 calculateProfitMarginBtn.addEventListener('click', () => {
     // ... (Existing profit margin calculation logic)
