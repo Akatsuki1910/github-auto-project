@@ -44,6 +44,7 @@ const keyboardContainer = document.getElementById("keyboardContainer") as HTMLDi
 let isKeyboardVisible = false; // Flag to track keyboard visibility
 const keys = document.querySelectorAll('.key');
 const backspaceKey = document.getElementById('backspace-key') as HTMLButtonElement;
+const clearKey = document.getElementById('clear-key') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -53,6 +54,10 @@ keys.forEach(key => {
 
 backspaceKey.addEventListener('click', () => {
     display.value = display.value.slice(0, -1);
+});
+
+clearKey.addEventListener('click', () => {
+  display.value = '';
 });
 //Rest of the code
 signBtn.addEventListener('click', () => {
