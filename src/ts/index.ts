@@ -104,7 +104,7 @@ closeParenKey.addEventListener('click', () => {
 });
 
 exponentKey.addEventListener('click', () => {
-  display.value += '^';
+    display.value += '**'; // Use ** for exponent in JavaScript
 });
 equalsKey.addEventListener('click', () => {
     try {
