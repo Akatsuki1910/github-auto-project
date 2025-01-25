@@ -64,6 +64,7 @@ const exponentBtn = document.querySelector('.key[data-key="^"]') as HTMLButtonEl
 const rndBtn = document.getElementById('Rnd') as HTMLButtonElement;
 const roundToNDecimalPlacesBtn = document.getElementById('roundToNDecimalPlaces') as HTMLButtonElement;
 const calculateTaxBtn = document.getElementById('calculateTax') as HTMLButtonElement;
+const calculateTipBtn = document.getElementById('calculateTip') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -144,6 +145,22 @@ calculateTaxBtn.addEventListener('click', () => {
     display.value = totalPrice.toString();
     addToHistory(`tax(${price}, ${taxRate})`, totalPrice.toString());
   });
+
+  calculateTipBtn.addEventListener('click', () => {
+    const billAmount = parseFloat(display.value);
+    if (isNaN(billAmount) || billAmount < 0) {
+        display.value = "Invalid input";
+        return;
+    }
+    const tipPercentage = parseFloat(prompt('Enter tip percentage (e.g., 15 for 15%):', '15') || '15');
+    if (isNaN(tipPercentage) || tipPercentage < 0) {
+        display.value = "Invalid tip percentage";
+        return;
+    }
+    const tipAmount = (billAmount * tipPercentage) / 100;
+    display.value = tipAmount.toString();
+    addToHistory(`tip(${billAmount}, ${tipPercentage})`, tipAmount.toString());
+});
 
 //Rest of the code
 }
