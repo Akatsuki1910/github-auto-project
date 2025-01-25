@@ -49,6 +49,7 @@ const equalsKey = document.getElementById('equals-key') as HTMLButtonElement;
 const clearDisplayBtn = document.getElementById('clearDisplay') as HTMLButtonElement;
 const factorialBtn = document.getElementById('factorial') as HTMLButtonElement;
 const currentExpressionBtn = document.getElementById('currentExpressionBtn') as HTMLButtonElement;
+const lastAnswerBtn = document.getElementById('lastAnswer') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -89,6 +90,12 @@ factorialBtn.addEventListener('click', () => {
       display.value = "Error";
     }
   });
+
+lastAnswerBtn.addEventListener('click', () => {
+    display.value += lastAnswer;
+    currentExpression += lastAnswer;
+    currentExpressionDisplay.textContent = currentExpression; // Update the display
+});
 
   function factorial(n: number): number {
     if (n < 0) {
