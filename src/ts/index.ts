@@ -61,6 +61,7 @@ const percentBtn = document.getElementById('percent') as HTMLButtonElement;
 const roundToNDecimalBtn = document.getElementById('roundToNDecimal') as HTMLButtonElement; //New Button
 const roundTo2DecimalBtn = document.getElementById('roundTo2Decimal') as HTMLButtonElement; //New Button
 const exponentBtn = document.querySelector('.key[data-key="^"]') as HTMLButtonElement; //Added exponent
+const rndBtn = document.getElementById('Rnd') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -104,6 +105,12 @@ factorialBtn.addEventListener('click', () => {
         addToHistory(`round(${num},2)`,rounded.toString())
     }
   });
+
+  rndBtn.addEventListener('click', () => {
+      const randomNumber = Math.random();
+      display.value = randomNumber.toString();
+      addToHistory('rnd',randomNumber.toString());
+    });
 //Rest of the code
 }
 );
