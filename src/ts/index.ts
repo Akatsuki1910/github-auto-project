@@ -54,6 +54,7 @@ const memoryPlusBtn = document.getElementById('memoryPlus') as HTMLButtonElement
 const memoryRecallBtn = document.getElementById('memoryRecall') as HTMLButtonElement; //Memory Recall
 const memoryClearBtn = document.getElementById('memoryClear') as HTMLButtonElement; // Memory Clear
 const squareBtn = document.getElementById('square') as HTMLButtonElement;
+const cubeBtn = document.getElementById('cube') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -123,6 +124,15 @@ squareBtn.addEventListener('click', () => {
         display.value = result.toString();
         addToHistory(currentValue.toString() + "²", result.toString());
     }
+});
+
+cubeBtn.addEventListener('click', () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    const result = currentValue * currentValue * currentValue; // Calculate cube
+    display.value = result.toString();
+    addToHistory(currentValue.toString() + "³", result.toString());
+  }
 });
 
   function factorial(n: number): number {
