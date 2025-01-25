@@ -68,6 +68,7 @@ const calculateTipBtn = document.getElementById('calculateTip') as HTMLButtonEle
 const calculateDiscountBtn = document.getElementById('calculateDiscount') as HTMLButtonElement;
 const calculateProfitMarginBtn = document.getElementById('calculateProfitMargin') as HTMLButtonElement;
 const calculateSimpleInterestBtn = document.getElementById('calculateSimpleInterest') as HTMLButtonElement;
+const calculateCompoundInterestBtn = document.getElementById('calculateCompoundInterest') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -108,18 +109,24 @@ calculateDiscountBtn.addEventListener('click', () => {
 });
 
 calculateSimpleInterestBtn.addEventListener('click', () => {
+    // ... (Existing simple interest calculation logic)
+});
+
+calculateCompoundInterestBtn.addEventListener('click', () => {
     const principal = parseFloat(prompt('Enter principal amount:', '0'));
     const rate = parseFloat(prompt('Enter annual interest rate (e.g., 5 for 5%):', '0'));
     const time = parseFloat(prompt('Enter time in years:', '0'));
+    const n = parseFloat(prompt('Enter number of times interest is compounded per year:', '1'));
 
-    if (isNaN(principal) || isNaN(rate) || isNaN(time) || principal < 0 || rate < 0 || time < 0) {
+    if (isNaN(principal) || isNaN(rate) || isNaN(time) || isNaN(n) || principal < 0 || rate < 0 || time < 0 || n < 0) {
         display.value = "Invalid input";
         return;
     }
 
-    const simpleInterest = (principal * rate * time) / 100;
-    display.value = simpleInterest.toString();
-    addToHistory(`Simple Interest`, simpleInterest.toString());
+    const amount = principal * Math.pow(1 + (rate / (100 * n)), n * time);
+    const compoundInterest = amount - principal;
+    display.value = compoundInterest.toString();
+    addToHistory(`Compound Interest`, compoundInterest.toString());
 });
 
 });
