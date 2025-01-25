@@ -57,6 +57,7 @@ const squareBtn = document.getElementById('square') as HTMLButtonElement;
 const cubeBtn = document.getElementById('cube') as HTMLButtonElement;
 const negateBtn = document.getElementById('negate') as HTMLButtonElement;
 const sqrtBtn = document.getElementById('sqrt') as HTMLButtonElement;
+const percentBtn = document.getElementById('percent') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -159,6 +160,16 @@ sqrtBtn.addEventListener('click', () => {
         }
     }
 });
+
+percentBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+      display.value = (currentValue / 100).toString();
+      currentExpression = `(${currentExpression}/100)`; //Enclose in paraentheses to avoid incorrect calculation of percentage
+      currentExpressionDisplay.textContent = currentExpression; 
+    }
+});
+
   function factorial(n: number): number {
     if (n < 0) {
       throw new Error("Factorial is not defined for negative numbers.");
