@@ -62,6 +62,7 @@ const roundToNDecimalBtn = document.getElementById('roundToNDecimal') as HTMLBut
 const roundTo2DecimalBtn = document.getElementById('roundTo2Decimal') as HTMLButtonElement; //New Button
 const exponentBtn = document.querySelector('.key[data-key="^"]') as HTMLButtonElement; //Added exponent
 const rndBtn = document.getElementById('Rnd') as HTMLButtonElement;
+const roundToNDecimalPlacesBtn = document.getElementById('roundToNDecimalPlaces') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -111,6 +112,20 @@ factorialBtn.addEventListener('click', () => {
       display.value = randomNumber.toString();
       addToHistory('rnd',randomNumber.toString());
     });
+
+roundToNDecimalPlacesBtn.addEventListener('click', () => {
+    const decimalPlaces = parseInt(prompt('Enter the number of decimal places:', '2') || '2', 10);
+  if (isNaN(decimalPlaces)){
+    display.value = "Invalid input";
+        return;
+    }
+    const num = parseFloat(display.value);
+    if (!isNaN(num)) {
+        const rounded = parseFloat(num.toFixed(decimalPlaces));
+        display.value = rounded.toString();
+        addToHistory(`round(${num},${decimalPlaces})`, rounded.toString());
+    }
+});
 //Rest of the code
 }
 );
