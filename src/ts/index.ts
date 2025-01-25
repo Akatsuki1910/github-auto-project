@@ -50,6 +50,7 @@ const openParenKey = document.querySelector('.open-paren-key') as HTMLButtonElem
 const closeParenKey = document.getElementById('close-paren-key') as HTMLButtonElement;
 const equalsKey = document.getElementById('equals-key') as HTMLButtonElement;
 const clearDisplayBtn = document.getElementById('clearDisplay') as HTMLButtonElement;
+const factorialBtn = document.getElementById('factorial') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -117,6 +118,29 @@ equalsKey.addEventListener('click', () => {
 
 clearDisplayBtn.addEventListener('click', () => {
     display.value = '';
+});
+
+factorialBtn.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+      display.value = 'Error';
+      return;
+    }
+  
+    function factorial(n: number): number {
+      if (n === 0) {
+        return 1;
+      } else if (n < 0) {
+        return -1; // Indicate error for negative numbers
+      } else if (n > 170) {
+        return Infinity; // Handle potential overflow
+      } else {
+        return n * factorial(n - 1);
+      }
+    }
+
+    const result = factorial(num);
+    display.value = isFinite(result) ? result.toString() : 'Error'; // Display result or error
 });
 
 });
