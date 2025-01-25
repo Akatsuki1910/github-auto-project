@@ -49,6 +49,7 @@ const exponentKey = document.getElementById('exponent-key') as HTMLButtonElement
 const openParenKey = document.querySelector('.open-paren-key') as HTMLButtonElement;
 const closeParenKey = document.getElementById('close-paren-key') as HTMLButtonElement;
 const equalsKey = document.getElementById('equals-key') as HTMLButtonElement;
+const clearDisplayBtn = document.getElementById('clearDisplay') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -113,5 +114,9 @@ equalsKey.addEventListener('click', () => {
       display.value = 'Error';
     }
   });
+
+clearDisplayBtn.addEventListener('click', () => {
+    display.value = '';
+});
 
 });
