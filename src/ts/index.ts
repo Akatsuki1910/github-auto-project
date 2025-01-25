@@ -66,6 +66,7 @@ const roundToNDecimalPlacesBtn = document.getElementById('roundToNDecimalPlaces'
 const calculateTaxBtn = document.getElementById('calculateTax') as HTMLButtonElement;
 const calculateTipBtn = document.getElementById('calculateTip') as HTMLButtonElement;
 const calculateDiscountBtn = document.getElementById('calculateDiscount') as HTMLButtonElement;
+const calculateProfitMarginBtn = document.getElementById('calculateProfitMargin') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -76,6 +77,19 @@ keys.forEach(key => {
 });
 
 // ... (rest of the existing code)
+calculateProfitMarginBtn.addEventListener('click', () => {
+    const costPrice = parseFloat(prompt('Enter cost price:', '0'));
+    const sellingPrice = parseFloat(prompt('Enter selling price:', '0'));
+    if (isNaN(costPrice) || isNaN(sellingPrice) || costPrice <= 0 || sellingPrice <= 0 || sellingPrice < costPrice) {
+        display.value = "Invalid input";
+        return;
+    }
+    const profit = sellingPrice - costPrice;
+    const profitMargin = (profit / sellingPrice) * 100;
+    display.value = profitMargin.toString() + '%';
+    addToHistory(`Profit Margin`, profitMargin.toString() + '%');
+});
+
 
 calculateDiscountBtn.addEventListener('click', () => {
     const originalPrice = parseFloat(display.value);
