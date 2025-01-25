@@ -70,6 +70,7 @@ const calculateProfitMarginBtn = document.getElementById('calculateProfitMargin'
 const calculateSimpleInterestBtn = document.getElementById('calculateSimpleInterest') as HTMLButtonElement;
 const calculateCompoundInterestBtn = document.getElementById('calculateCompoundInterest') as HTMLButtonElement;
 const calculateAreaOfCircleBtn = document.getElementById('calculateAreaOfCircle') as HTMLButtonElement;
+const calculateSphereVolumeBtn = document.getElementById('calculateSphereVolume') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -111,6 +112,16 @@ calculateAreaOfCircleBtn.addEventListener('click', () => {
     addToHistory(`Area of Circle (r=${radius})`, area.toString());
 });
 
+calculateSphereVolumeBtn.addEventListener('click', () => {
+  const radius = parseFloat(prompt('Enter the radius of the sphere:', '0'));
+  if (isNaN(radius) || radius < 0) {
+      display.value = "Invalid input";
+      return;
+  }
+  const volume = (4/3) * Math.PI * Math.pow(radius, 3);
+  display.value = volume.toString();
+  addToHistory(`Volume of sphere (r=${radius})`, volume.toString());
+});
 // ... (rest of the existing code)
 calculateProfitMarginBtn.addEventListener('click', () => {
     // ... (Existing profit margin calculation logic)
