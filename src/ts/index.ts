@@ -56,6 +56,7 @@ const memoryClearBtn = document.getElementById('memoryClear') as HTMLButtonEleme
 const squareBtn = document.getElementById('square') as HTMLButtonElement;
 const cubeBtn = document.getElementById('cube') as HTMLButtonElement;
 const negateBtn = document.getElementById('negate') as HTMLButtonElement;
+const sqrtBtn = document.getElementById('sqrt') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -146,6 +147,18 @@ negateBtn.addEventListener('click', () => {
     }
 });
 
+sqrtBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        if (currentValue < 0) {
+            display.value = "Error: Cannot calculate square root of negative number";
+        } else {
+          const result = Math.sqrt(currentValue);
+          display.value = result.toString();
+          addToHistory("√" + currentValue.toString(), result.toString());
+        }
+    }
+});
   function factorial(n: number): number {
     if (n < 0) {
       throw new Error("Factorial is not defined for negative numbers.");
