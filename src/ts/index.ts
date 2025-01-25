@@ -59,6 +59,7 @@ const negateBtn = document.getElementById('negate') as HTMLButtonElement;
 const sqrtBtn = document.getElementById('sqrt') as HTMLButtonElement;
 const percentBtn = document.getElementById('percent') as HTMLButtonElement;
 const roundToNDecimalBtn = document.getElementById('roundToNDecimal') as HTMLButtonElement; //New Button
+const roundTo2DecimalBtn = document.getElementById('roundTo2Decimal') as HTMLButtonElement; //New Button
 const exponentBtn = document.querySelector('.key[data-key="^"]') as HTMLButtonElement; //Added exponent
 
 keys.forEach(key => {
@@ -92,6 +93,13 @@ factorialBtn.addEventListener('click', () => {
       }
     } catch (error) {
       display.value = "Error";
+    }
+  });
+
+  roundTo2DecimalBtn.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (!isNaN(num)) {
+      display.value = num.toFixed(2);
     }
   });
 //Rest of the code
