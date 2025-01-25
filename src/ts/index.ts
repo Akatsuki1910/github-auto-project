@@ -45,6 +45,8 @@ let isKeyboardVisible = false; // Flag to track keyboard visibility
 const keys = document.querySelectorAll('.key');
 const backspaceKey = document.getElementById('backspace-key') as HTMLButtonElement;
 const clearKey = document.getElementById('clear-key') as HTMLButtonElement;
+const powerKey = document.querySelector('.key[textContent="^"]') as HTMLButtonElement;
+const closeParenKey = document.getElementById('close-paren-key') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -89,5 +91,9 @@ keyboardBtn.addEventListener('click', () => {
     isKeyboardVisible = !isKeyboardVisible;
     keyboardContainer.style.display = isKeyboardVisible ? "block" : "none";
 });
+closeParenKey.addEventListener('click', () => {
+  display.value += ')';
+});
+
 
 });
