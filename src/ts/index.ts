@@ -99,7 +99,9 @@ factorialBtn.addEventListener('click', () => {
   roundTo2DecimalBtn.addEventListener('click', () => {
     const num = parseFloat(display.value);
     if (!isNaN(num)) {
-      display.value = num.toFixed(2);
+      const rounded = Math.round(num * 100) / 100; // Round to 2 decimal places
+      display.value = rounded.toString();
+        addToHistory(`round(${num},2)`,rounded.toString())
     }
   });
 //Rest of the code
