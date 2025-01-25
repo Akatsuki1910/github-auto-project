@@ -40,7 +40,7 @@
   }
 
   .keyboard-row {
-    display: contents;
+    display: contents; /* Use contents to avoid extra spacing */
   }
 
   .key {
@@ -64,4 +64,10 @@
     border-radius: 3px;
     cursor: pointer;
 }
-
+#close-paren-key {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+}
