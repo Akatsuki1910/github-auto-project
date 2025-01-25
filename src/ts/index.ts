@@ -74,6 +74,26 @@ exponentBtn.addEventListener('click', () => {
   currentExpression += '**';
   currentExpressionDisplay.textContent = currentExpression; 
 });
+
+factorialBtn.addEventListener('click', () => {
+    try {
+      const num = parseFloat(display.value);
+      if (isNaN(num)) {
+        display.value = "Error: Invalid input";
+      } else if (num < 0) {
+        display.value = "Error: Factorial of negative number";
+      } else {
+        let result = 1;
+        for (let i = 2; i <= num; i++) {
+          result *= i;
+        }
+        display.value = result.toString();
+        addToHistory(`fact(${num})`, result.toString());
+      }
+    } catch (error) {
+      display.value = "Error";
+    }
+  });
 //Rest of the code
 }
 );
