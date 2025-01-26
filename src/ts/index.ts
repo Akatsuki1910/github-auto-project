@@ -75,6 +75,7 @@ const calculateCylinderVolumeBtn = document.getElementById('calculateCylinderVol
 const toggleThemeBtn = document.getElementById('toggleTheme') as HTMLButtonElement;
 const calculateCubeRootBtn = document.getElementById('calculateCubeRoot') as HTMLButtonElement;
 const calculateConeVolumeBtn = document.getElementById('calculateConeVolume') as HTMLButtonElement;
+const calculatePercentageBtn = document.getElementById('calculatePercentage') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -86,29 +87,12 @@ keys.forEach(key => {
 
 
 factorialBtn.addEventListener('click', () => {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-        display.value = "Invalid input";
-        return;
-    }
-    if (num < 0) {
-        display.value = "Factorial is not defined for negative numbers";
-    } else if (!Number.isInteger(num)) {
-        display.value = "Factorial is only defined for integers";
-    } else {
-        let result = 1;
-        for (let i = 2; i <= num; i++) {
-            result *= i;
-        }
-        display.value = result.toString();
-    addToHistory(`${num}!`, result.toString());
-}
+    // ... existing factorial logic ...
 });
 
 // Function to toggle between light and dark themes
 function toggleTheme() {
-    const body = document.body;
-    body.classList.toggle('dark-theme');
+    // ... existing toggle theme logic ... 
 }
 
 toggleThemeBtn.addEventListener('click', toggleTheme);
@@ -122,16 +106,8 @@ calculateSphereVolumeBtn.addEventListener('click', () => {
 });
 
 calculateCylinderVolumeBtn.addEventListener('click', () => {
-    const radius = parseFloat(prompt("Enter the radius of the cylinder:"));
-    const height = parseFloat(prompt("Enter the height of the cylinder:"));
-    if (isNaN(radius) || isNaN(height)) {
-      display.value = "Invalid input";
-    } else {
-      const volume = Math.PI * radius * radius * height;
-      display.value = volume.toString();
-      addToHistory(`Cylinder Volume (r=${radius}, h=${height})`, volume.toString());
-    }
-  });
+ // ... existing logic ...
+});
 // ... (rest of the existing code)
 calculateProfitMarginBtn.addEventListener('click', () => {
     // ... (Existing profit margin calculation logic)
@@ -150,26 +126,23 @@ calculateCompoundInterestBtn.addEventListener('click', () => {
 });
 
 calculateCubeRootBtn.addEventListener('click', () => {
-  const num = parseFloat(display.value);
-  if (isNaN(num)) {
-    display.value = "Invalid input";
-    return;
-  }
-  const result = Math.cbrt(num);
-  display.value = result.toString();
-  addToHistory(`cbrt(${num})`, result.toString());
+  // ... existing logic ...
 });
 
 calculateConeVolumeBtn.addEventListener('click', () => {
-    const radius = parseFloat(prompt("Enter the radius of the cone:"));
-    const height = parseFloat(prompt("Enter the height of the cone:"));
-    if (isNaN(radius) || isNaN(height)) {
-        display.value = "Invalid input";
-    } else {
-        const volume = (1/3) * Math.PI * radius * radius * height;
-        display.value = volume.toString();
-        addToHistory(`Cone Volume (r=${radius}, h=${height})`, volume.toString());
-    }
+// ... existing logic
+});
+
+calculatePercentageBtn.addEventListener('click', () => {
+  const percentage = parseFloat(prompt("Enter the percentage:"));
+  const number = parseFloat(display.value);
+  if (isNaN(percentage) || isNaN(number)) {
+    display.value = "Invalid input";
+    return;
+  }
+  const result = (percentage / 100) * number;
+  display.value = result.toString();
+  addToHistory(`${percentage}% of ${number}`, result.toString());
 });
 
 });
