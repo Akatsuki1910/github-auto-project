@@ -71,3 +71,13 @@
     border-radius: 3px;
     cursor: pointer;
 }
+
+body {
+    background-color: #fff; /* Light theme background color */
+    color: #333;       /* Light theme text color */
+  }
+  
+  body.dark-theme {
+    background-color: #333; /* Dark theme background color */
+    color: #eee;       /* Dark theme text color */
+  }
