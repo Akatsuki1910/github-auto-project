@@ -74,6 +74,7 @@ const calculateSphereVolumeBtn = document.getElementById('calculateSphereVolume'
 const calculateCylinderVolumeBtn = document.getElementById('calculateCylinderVolume') as HTMLButtonElement;
 const toggleThemeBtn = document.getElementById('toggleTheme') as HTMLButtonElement;
 const calculateCubeRootBtn = document.getElementById('calculateCubeRoot') as HTMLButtonElement;
+const calculateConeVolumeBtn = document.getElementById('calculateConeVolume') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -157,6 +158,18 @@ calculateCubeRootBtn.addEventListener('click', () => {
   const result = Math.cbrt(num);
   display.value = result.toString();
   addToHistory(`cbrt(${num})`, result.toString());
+});
+
+calculateConeVolumeBtn.addEventListener('click', () => {
+    const radius = parseFloat(prompt("Enter the radius of the cone:"));
+    const height = parseFloat(prompt("Enter the height of the cone:"));
+    if (isNaN(radius) || isNaN(height)) {
+        display.value = "Invalid input";
+    } else {
+        const volume = (1/3) * Math.PI * radius * radius * height;
+        display.value = volume.toString();
+        addToHistory(`Cone Volume (r=${radius}, h=${height})`, volume.toString());
+    }
 });
 
 });
