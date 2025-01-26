@@ -49,6 +49,7 @@ const calculateStandardDeviationBtn = document.getElementById('calculateStandard
 const calculateVarianceBtn = document.getElementById('calculateVariance') as HTMLButtonElement;
 const calculateFibonacciBtn = document.getElementById('calculateFibonacci') as HTMLButtonElement;
 const calculatePrimeBtn = document.getElementById('calculatePrime') as HTMLButtonElement;
+const clearAllHistoryBtn = document.getElementById('clear-all-history') as HTMLButtonElement;
 
 calculateStandardDeviationBtn.addEventListener('click', () => {
     // ... existing code for standard deviation
@@ -83,6 +84,11 @@ calculatePrimeBtn.addEventListener('click', () => {
 
     display.value = isPrime ? "Prime" : "Not Prime";
     addToHistory(`isPrime(${num})`, isPrime.toString());
+});
+
+clearAllHistoryBtn.addEventListener('click', () => {
+    history = [];
+    updateHistoryDisplay();
 });
 //Rest of the existing code
 });
