@@ -50,6 +50,7 @@ const calculateVarianceBtn = document.getElementById('calculateVariance') as HTM
 const calculateFibonacciBtn = document.getElementById('calculateFibonacci') as HTMLButtonElement;
 const calculatePrimeBtn = document.getElementById('calculatePrime') as HTMLButtonElement;
 const clearAllHistoryBtn = document.getElementById('clear-all-history') as HTMLButtonElement;
+const calculateFactorialBtn = document.getElementById('calculateFactorial') as HTMLButtonElement;
 
 calculateStandardDeviationBtn.addEventListener('click', () => {
     // ... existing code for standard deviation
@@ -89,6 +90,26 @@ calculatePrimeBtn.addEventListener('click', () => {
 clearAllHistoryBtn.addEventListener('click', () => {
     history = [];
     updateHistoryDisplay();
+});
+
+calculateFactorialBtn.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid input";
+        return;
+    }
+
+    function factorial(n: number): number {
+        if (n === 0) {
+            return 1;
+        } else {
+            return n * factorial(n - 1);
+        }
+    }
+
+    const result = factorial(num);
+    display.value = result.toString();
+    addToHistory(`factorial(${num})`, result.toString());
 });
 //Rest of the existing code
 });
