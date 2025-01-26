@@ -59,6 +59,7 @@ const log10Btn = document.getElementById('log10') as HTMLButtonElement;
 const calculateAgeBtn = document.getElementById('calculateAge') as HTMLButtonElement;
 const currentTimeBtn = document.getElementById('currentTime') as HTMLButtonElement;
 const currentDateBtn = document.getElementById('currentDate') as HTMLButtonElement;
+const binaryToDecimalBtn = document.getElementById('binaryToDecimal') as HTMLButtonElement;
 
 currentDateBtn.addEventListener('click', () => {
     const now = new Date();
@@ -83,6 +84,15 @@ calculateAgeBtn.addEventListener('click', () => {
         const age = Math.abs(ageDate.getUTCFullYear() - 1970);
         display.value = age.toString();
         addToHistory(`Age`, age.toString());
+    }
+});
+
+binaryToDecimalBtn.addEventListener('click', () => {
+    const binaryString = prompt("Enter a binary number:");
+    if (binaryString) {
+        const decimal = parseInt(binaryString, 2);
+        display.value = decimal.toString();
+        addToHistory(`Binary to Decimal (${binaryString})`, decimal.toString());
     }
 });
 
