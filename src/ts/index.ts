@@ -57,6 +57,14 @@ const cubeRootBtn = document.getElementById('cubeRoot') as HTMLButtonElement;
 const calculateExponentBtn = document.getElementById('calculateExponent') as HTMLButtonElement;
 const log10Btn = document.getElementById('log10') as HTMLButtonElement;
 const calculateAgeBtn = document.getElementById('calculateAge') as HTMLButtonElement;
+const currentTimeBtn = document.getElementById('currentTime') as HTMLButtonElement;
+
+currentTimeBtn.addEventListener('click', () => {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
+    display.value = timeString;
+    addToHistory('Current Time', timeString);
+});
 
 calculateAgeBtn.addEventListener('click', () => {
     const birthdate = prompt("Enter your birthdate (YYYY-MM-DD):");
