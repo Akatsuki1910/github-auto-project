@@ -73,6 +73,7 @@ const calculateAreaOfCircleBtn = document.getElementById('calculateAreaOfCircle'
 const calculateSphereVolumeBtn = document.getElementById('calculateSphereVolume') as HTMLButtonElement;
 const calculateCylinderVolumeBtn = document.getElementById('calculateCylinderVolume') as HTMLButtonElement;
 const toggleThemeBtn = document.getElementById('toggleTheme') as HTMLButtonElement;
+const calculateCubeRootBtn = document.getElementById('calculateCubeRoot') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -145,6 +146,17 @@ calculateSimpleInterestBtn.addEventListener('click', () => {
 
 calculateCompoundInterestBtn.addEventListener('click', () => {
     // ... existing logic ...
+});
+
+calculateCubeRootBtn.addEventListener('click', () => {
+  const num = parseFloat(display.value);
+  if (isNaN(num)) {
+    display.value = "Invalid input";
+    return;
+  }
+  const result = Math.cbrt(num);
+  display.value = result.toString();
+  addToHistory(`cbrt(${num})`, result.toString());
 });
 
 });
