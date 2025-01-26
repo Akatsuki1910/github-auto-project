@@ -37,12 +37,32 @@ const calculateBtn = document.getElementById("calculate") as HTMLButtonElement;
 const display = document.getElementById("display") as HTMLInputElement;
 // ... other existing buttons
 const calculateNthRootBtn = document.getElementById('calculateNthRoot') as HTMLButtonElement;
+const rndBtn = document.getElementById('Rnd') as HTMLButtonElement;
+const calculateGeometricMeanBtn = document.getElementById('calculateGeometricMean') as HTMLButtonElement;
+const calculateLogarithmBtn = document.getElementById('calculateLogarithm') as HTMLButtonElement;
+const calculateAverageBtn = document.getElementById('calculateAverage') as HTMLButtonElement;
+const calculateMedianBtn = document.getElementById('calculateMedian') as HTMLButtonElement;
+const calculateModeBtn = document.getElementById('calculateMode') as HTMLButtonElement;
+const factorialBtn = document.getElementById('factorial') as HTMLButtonElement;
+
+//Nth Root Function
+calculateNthRootBtn.addEventListener('click', () => {
+    const n = parseFloat(prompt("Enter the root (n):"));
+    const number = parseFloat(display.value);
+    if(isNaN(n) || isNaN(number)) {
+        display.value = "Invalid input";
+        return; 
+    }
+    const result = Math.pow(number, 1/n);
+    display.value = result.toString();
+    addToHistory(`The ${n}th root of ${number}`, result.toString());
+  });
+
+// Generate Random Number
 rndBtn.addEventListener('click', () => {
     const randomNumber = Math.random();
     display.value = randomNumber.toString();
 });
-
-const calculateGeometricMeanBtn = document.getElementById('calculateGeometricMean') as HTMLButtonElement;
 // Calculate Geometric Mean
 calculateGeometricMeanBtn.addEventListener('click', () => {
     const numbersStr = prompt("Enter numbers separated by commas:");
@@ -60,27 +80,6 @@ calculateGeometricMeanBtn.addEventListener('click', () => {
     display.value = geometricMean.toString();
     addToHistory(`Geometric Mean of ${numbers.join(',')}`, geometricMean.toString());  
 });
-const rndBtn = document.getElementById('Rnd') as HTMLButtonElement;
-const calculateLogarithmBtn = document.getElementById('calculateLogarithm') as HTMLButtonElement;
-const calculateAverageBtn = document.getElementById('calculateAverage') as HTMLButtonElement;
-const calculateMedianBtn = document.getElementById('calculateMedian') as HTMLButtonElement;
-const calculateModeBtn = document.getElementById('calculateMode') as HTMLButtonElement;
-
-
-//Nth Root Function
-calculateNthRootBtn.addEventListener('click', () => {
-    const n = parseFloat(prompt("Enter the root (n):"));
-    const number = parseFloat(display.value);
-    if(isNaN(n) || isNaN(number)) {
-        display.value = "Invalid input";
-        return; 
-    }
-    const result = Math.pow(number, 1/n);
-    display.value = result.toString();
-    addToHistory(`The ${n}th root of ${number}`, result.toString());
-  });
-
-// Generate Random Number
 
 // Calculate Logarithm
 calculateLogarithmBtn.addEventListener('click', () => {
@@ -159,5 +158,18 @@ calculateModeBtn.addEventListener('click', () => {
     }
 });
 
+factorialBtn.addEventListener('click', () => {
+    const number = parseFloat(display.value);
+    if (isNaN(number) || number < 0) {
+        display.value = "Invalid input for factorial";
+        return;
+    }
+    let result = 1;
+    for (let i = 2; i <= number; i++) {
+        result *= i;
+    }
+    display.value = result.toString();
+    addToHistory(`${number}!`, result.toString());
+});
 //Rest of the existing code
 });
