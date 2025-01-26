@@ -37,6 +37,29 @@ const calculateBtn = document.getElementById("calculate") as HTMLButtonElement;
 const display = document.getElementById("display") as HTMLInputElement;
 // ... other existing buttons
 const calculateNthRootBtn = document.getElementById('calculateNthRoot') as HTMLButtonElement;
+rndBtn.addEventListener('click', () => {
+    const randomNumber = Math.random();
+    display.value = randomNumber.toString();
+});
+
+const calculateGeometricMeanBtn = document.getElementById('calculateGeometricMean') as HTMLButtonElement;
+// Calculate Geometric Mean
+calculateGeometricMeanBtn.addEventListener('click', () => {
+    const numbersStr = prompt("Enter numbers separated by commas:");
+    if (!numbersStr) {
+        display.value = "Invalid input";
+        return; 
+    }
+    const numbers = numbersStr.split(',').map(Number).filter(n => !isNaN(n) && n > 0);
+    if (numbers.length === 0) {
+        display.value = "Invalid input for geometric mean (positive numbers only)";
+        return;
+    }
+    const product = numbers.reduce((acc, curr) => acc * curr, 1);
+    const geometricMean = Math.pow(product, 1 / numbers.length);
+    display.value = geometricMean.toString();
+    addToHistory(`Geometric Mean of ${numbers.join(',')}`, geometricMean.toString());  
+});
 const rndBtn = document.getElementById('Rnd') as HTMLButtonElement;
 const calculateLogarithmBtn = document.getElementById('calculateLogarithm') as HTMLButtonElement;
 const calculateAverageBtn = document.getElementById('calculateAverage') as HTMLButtonElement;
@@ -57,10 +80,6 @@ calculateNthRootBtn.addEventListener('click', () => {
   });
 
 // Generate Random Number
-rndBtn.addEventListener('click', () => {
-    const randomNumber = Math.random();
-    display.value = randomNumber.toString();
-});
 
 // Calculate Logarithm
 calculateLogarithmBtn.addEventListener('click', () => {
