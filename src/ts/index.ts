@@ -71,6 +71,7 @@ const calculateSimpleInterestBtn = document.getElementById('calculateSimpleInter
 const calculateCompoundInterestBtn = document.getElementById('calculateCompoundInterest') as HTMLButtonElement;
 const calculateAreaOfCircleBtn = document.getElementById('calculateAreaOfCircle') as HTMLButtonElement;
 const calculateSphereVolumeBtn = document.getElementById('calculateSphereVolume') as HTMLButtonElement;
+const calculateCylinderVolumeBtn = document.getElementById('calculateCylinderVolume') as HTMLButtonElement;
 const toggleThemeBtn = document.getElementById('toggleTheme') as HTMLButtonElement;
 
 keys.forEach(key => {
@@ -117,6 +118,18 @@ calculateAreaOfCircleBtn.addEventListener('click', () => {
 calculateSphereVolumeBtn.addEventListener('click', () => {
   // ... existing logic ...
 });
+
+calculateCylinderVolumeBtn.addEventListener('click', () => {
+    const radius = parseFloat(prompt("Enter the radius of the cylinder:"));
+    const height = parseFloat(prompt("Enter the height of the cylinder:"));
+    if (isNaN(radius) || isNaN(height)) {
+      display.value = "Invalid input";
+    } else {
+      const volume = Math.PI * radius * radius * height;
+      display.value = volume.toString();
+      addToHistory(`Cylinder Volume (r=${radius}, h=${height})`, volume.toString());
+    }
+  });
 // ... (rest of the existing code)
 calculateProfitMarginBtn.addEventListener('click', () => {
     // ... (Existing profit margin calculation logic)
