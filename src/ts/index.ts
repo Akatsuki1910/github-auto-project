@@ -47,6 +47,7 @@ const factorialBtn = document.getElementById('factorial') as HTMLButtonElement;
 const roundTo2DecimalBtn = document.getElementById('roundTo2Decimal') as HTMLButtonElement;
 const calculateStandardDeviationBtn = document.getElementById('calculateStandardDeviation') as HTMLButtonElement;
 const calculateVarianceBtn = document.getElementById('calculateVariance') as HTMLButtonElement;
+const calculateFibonacciBtn = document.getElementById('calculateFibonacci') as HTMLButtonElement;
 
 calculateStandardDeviationBtn.addEventListener('click', () => {
     // ... existing code for standard deviation
@@ -71,6 +72,25 @@ calculateVarianceBtn.addEventListener('click', () => {
 rndBtn.addEventListener('click', () => {
     const randomNumber = Math.random();
     display.value = randomNumber.toString();
+});
+
+calculateFibonacciBtn.addEventListener('click', () => {
+    const n = parseInt(prompt("Enter the number of terms for Fibonacci sequence:") || "0", 10);
+    if (isNaN(n) || n < 0) {
+        display.value = "Invalid input";
+        return;
+    }
+
+    let a = 0, b = 1, next;
+    let sequence = "";
+    for (let i = 0; i < n; i++) {
+        sequence += a + " ";
+        next = a + b;
+        a = b;
+        b = next;
+    }
+    display.value = sequence.trim();
+    addToHistory(`Fibonacci(${n})`, sequence.trim());
 });
 
 //Rest of the existing code
