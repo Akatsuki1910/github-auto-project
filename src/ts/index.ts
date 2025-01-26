@@ -37,10 +37,6 @@ const calculateBtn = document.getElementById("calculate") as HTMLButtonElement;
 const display = document.getElementById("display") as HTMLInputElement;
 // ... other existing buttons
 const calculateNthRootBtn = document.getElementById('calculateNthRoot') as HTMLButtonElement;
-rndBtn.addEventListener('click', () => {
-    const randomNumber = Math.random();
-    display.value = randomNumber.toString();
-});
 const rndBtn = document.getElementById('Rnd') as HTMLButtonElement;
 const calculateGeometricMeanBtn = document.getElementById('calculateGeometricMean') as HTMLButtonElement;
 const calculateLogarithmBtn = document.getElementById('calculateLogarithm') as HTMLButtonElement;
@@ -50,8 +46,13 @@ const calculateModeBtn = document.getElementById('calculateMode') as HTMLButtonE
 const factorialBtn = document.getElementById('factorial') as HTMLButtonElement;
 const roundTo2DecimalBtn = document.getElementById('roundTo2Decimal') as HTMLButtonElement;
 const calculateStandardDeviationBtn = document.getElementById('calculateStandardDeviation') as HTMLButtonElement;
+const calculateVarianceBtn = document.getElementById('calculateVariance') as HTMLButtonElement;
 
 calculateStandardDeviationBtn.addEventListener('click', () => {
+    // ... existing code for standard deviation
+});
+
+calculateVarianceBtn.addEventListener('click', () => {
     const numbersStr = prompt("Enter numbers separated by commas:");
     if (!numbersStr) return;
     const numbers = numbersStr.split(',').map(Number).filter(n => !isNaN(n));
@@ -63,10 +64,14 @@ calculateStandardDeviationBtn.addEventListener('click', () => {
 
     const sqDiffSum = numbers.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0);
     const variance = sqDiffSum / n;
-    const stdDev = Math.sqrt(variance);
 
-    display.value = stdDev.toString();
-    addToHistory(`Standard Deviation of ${numbers.join(',')}`, stdDev.toString());
+    display.value = variance.toString();
+    addToHistory(`Variance of ${numbers.join(',')}`, variance.toString());
 });
+rndBtn.addEventListener('click', () => {
+    const randomNumber = Math.random();
+    display.value = randomNumber.toString();
+});
+
 //Rest of the existing code
 });
