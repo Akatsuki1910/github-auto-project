@@ -44,6 +44,7 @@ const calculateAverageBtn = document.getElementById('calculateAverage') as HTMLB
 const calculateMedianBtn = document.getElementById('calculateMedian') as HTMLButtonElement;
 const calculateModeBtn = document.getElementById('calculateMode') as HTMLButtonElement;
 const factorialBtn = document.getElementById('factorial') as HTMLButtonElement;
+const roundTo2DecimalBtn = document.getElementById('roundTo2Decimal') as HTMLButtonElement;
 
 //Nth Root Function
 calculateNthRootBtn.addEventListener('click', () => {
@@ -170,6 +171,17 @@ factorialBtn.addEventListener('click', () => {
     }
     display.value = result.toString();
     addToHistory(`${number}!`, result.toString());
+});
+
+roundTo2DecimalBtn.addEventListener('click', () => {
+    const number = parseFloat(display.value);
+    if (isNaN(number)) {
+        display.value = "Invalid input";
+    } else {
+        const roundedNumber = number.toFixed(2);
+        display.value = roundedNumber; 
+        addToHistory(`round(${number}, 2)`, roundedNumber);
+    }
 });
 //Rest of the existing code
 });
