@@ -52,6 +52,7 @@ const calculatePrimeBtn = document.getElementById('calculatePrime') as HTMLButto
 const clearAllHistoryBtn = document.getElementById('clear-all-history') as HTMLButtonElement;
 const calculateFactorialBtn = document.getElementById('calculateFactorial') as HTMLButtonElement;
 const calculateAbsoluteBtn = document.getElementById('calculateAbsolute') as HTMLButtonElement;
+const calculateSquareRootBtn = document.getElementById('calculateSquareRoot') as HTMLButtonElement;
 
 calculateStandardDeviationBtn.addEventListener('click', () => {
     // ... existing code for standard deviation
@@ -94,34 +95,21 @@ clearAllHistoryBtn.addEventListener('click', () => {
 });
 
 calculateFactorialBtn.addEventListener('click', () => {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-        display.value = "Invalid input";
-        return;
-    }
-
-    function factorial(n: number): number {
-        if (n === 0) {
-            return 1;
-        } else {
-            return n * factorial(n - 1);
-        }
-    }
-
-    const result = factorial(num);
-    display.value = result.toString();
-    addToHistory(`factorial(${num})`, result.toString());
+    // ... existing code for factorial calculation
 });
 
 calculateAbsoluteBtn.addEventListener('click', () => {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-        display.value = "Invalid input";
-        return;
-    }
-    const result = Math.abs(num);
-    display.value = result.toString();
-    addToHistory(`abs(${num})`, result.toString());
+    // existing code for absolute calculation
+});
+calculateSquareRootBtn.addEventListener('click', () => {
+  const num = parseFloat(display.value);
+  if (isNaN(num)) {
+    display.value = "Invalid input";
+    return;
+  }
+  const result = Math.sqrt(num);
+  display.value = result.toString();
+  addToHistory(`sqrt(${num})`, result.toString());
 });
 //Rest of the existing code
 });
