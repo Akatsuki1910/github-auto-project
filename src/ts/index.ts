@@ -60,6 +60,7 @@ const calculateAgeBtn = document.getElementById('calculateAge') as HTMLButtonEle
 const currentTimeBtn = document.getElementById('currentTime') as HTMLButtonElement;
 const currentDateBtn = document.getElementById('currentDate') as HTMLButtonElement;
 const binaryToDecimalBtn = document.getElementById('binaryToDecimal') as HTMLButtonElement;
+const currentDayBtn = document.getElementById('current-day') as HTMLButtonElement;
 
 currentDateBtn.addEventListener('click', () => {
     const now = new Date();
@@ -73,6 +74,13 @@ currentTimeBtn.addEventListener('click', () => {
     const timeString = now.toLocaleTimeString();
     display.value = timeString;
     addToHistory('Current Time', timeString);
+});
+
+currentDayBtn.addEventListener('click', () => {
+    const now = new Date();
+    const dayOfWeek = now.toLocaleDateString('en-US', { weekday: 'long' });
+    display.value = dayOfWeek;
+    addToHistory('Current Day', dayOfWeek);
 });
 
 calculateAgeBtn.addEventListener('click', () => {
