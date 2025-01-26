@@ -39,6 +39,8 @@ const display = document.getElementById("display") as HTMLInputElement;
 const calculateNthRootBtn = document.getElementById('calculateNthRoot') as HTMLButtonElement;
 const rndBtn = document.getElementById('Rnd') as HTMLButtonElement;
 const calculateLogarithmBtn = document.getElementById('calculateLogarithm') as HTMLButtonElement;
+const calculateAverageBtn = document.getElementById('calculateAverage') as HTMLButtonElement;
+
 
 //Nth Root Function
 calculateNthRootBtn.addEventListener('click', () => {
@@ -70,6 +72,24 @@ calculateLogarithmBtn.addEventListener('click', () => {
     const result = Math.log(number) / Math.log(base); // Calculate logarithm with arbitrary base
     display.value = result.toString();
     addToHistory(`log${base}(${number})`, result.toString());
+});
+
+// Calculate Average
+calculateAverageBtn.addEventListener('click', () => {
+    const numbersStr = prompt("Enter numbers separated by commas:");
+    if (!numbersStr) {
+        display.value = "Invalid input";
+        return; 
+    }
+    const numbers = numbersStr.split(',').map(Number).filter(n => !isNaN(n));
+    if (numbers.length === 0) {
+        display.value = "Invalid input";
+        return;
+    }
+    const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+    const average = sum / numbers.length;
+    display.value = average.toString();
+    addToHistory(`Average of ${numbers.join(',')}`, average.toString());  
 });
 
 //Rest of the existing code
