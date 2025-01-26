@@ -54,6 +54,7 @@ const calculateFactorialBtn = document.getElementById('calculateFactorial') as H
 const calculateAbsoluteBtn = document.getElementById('calculateAbsolute') as HTMLButtonElement;
 const calculateSquareRootBtn = document.getElementById('calculateSquareRoot') as HTMLButtonElement;
 const cubeRootBtn = document.getElementById('cubeRoot') as HTMLButtonElement;
+const calculateExponentBtn = document.getElementById('calculateExponent') as HTMLButtonElement;
 
 calculateStandardDeviationBtn.addEventListener('click', () => {
     // ... existing code for standard deviation
@@ -122,6 +123,18 @@ cubeRootBtn.addEventListener('click', () => {
     const result = Math.cbrt(num);
     display.value = result.toString();
     addToHistory(`cbrt(${num})`, result.toString());
+  });
+
+  calculateExponentBtn.addEventListener('click', () => {
+    const base = parseFloat(prompt("Enter the base:") || "0");
+    const exponent = parseFloat(prompt("Enter the exponent:") || "0");
+    if (isNaN(base) || isNaN(exponent)) {
+      display.value = "Invalid input";
+      return;
+    }
+    const result = Math.pow(base, exponent);
+    display.value = result.toString();
+    addToHistory(`${base}^${exponent}`, result.toString());
   });
 //Rest of the existing code
 });
