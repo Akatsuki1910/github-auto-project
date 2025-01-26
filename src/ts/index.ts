@@ -32,6 +32,7 @@ window.addEventListener("DOMContentLoaded", () => {
 const display = document.getElementById("display") as HTMLInputElement;
 const negateBtn = document.getElementById("negate") as HTMLButtonElement;
 const currentDateBtn = document.getElementById('current-date') as HTMLButtonElement;
+const percentBtn = document.getElementById('percent') as HTMLButtonElement;
 
 currentDateBtn.addEventListener('click', () => {
     const now = new Date();
@@ -45,6 +46,15 @@ negateBtn.addEventListener('click', () => {
         const currentValue = parseFloat(display.value);
         const negatedValue = -currentValue;
         display.value = negatedValue.toString();
+    }
+});
+
+percentBtn.addEventListener('click', () => {
+    if (display.value) {
+        const currentValue = parseFloat(display.value);
+        const percentValue = currentValue / 100;
+        display.value = percentValue.toString();
+        addToHistory(`${currentValue}%`, percentValue.toString());
     }
 });
 
