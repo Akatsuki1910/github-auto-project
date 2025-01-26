@@ -64,6 +64,7 @@ const rndBtn = document.getElementById('Rnd') as HTMLButtonElement;
 const calculateLogarithmBtn = document.getElementById('calculateLogarithm') as HTMLButtonElement;
 const calculateAverageBtn = document.getElementById('calculateAverage') as HTMLButtonElement;
 const calculateMedianBtn = document.getElementById('calculateMedian') as HTMLButtonElement;
+const calculateModeBtn = document.getElementById('calculateMode') as HTMLButtonElement;
 
 
 //Nth Root Function
@@ -129,6 +130,33 @@ calculateMedianBtn.addEventListener('click', () => {
     const median = numbers.length % 2 !== 0 ? numbers[mid] : (numbers[mid -1] + numbers[mid]) / 2;
     display.value = median.toString();
     addToHistory(`Median of ${numbers.join(',')}`, median.toString());
+});
+// Calculate Mode
+calculateModeBtn.addEventListener('click', () => {
+    const numbersStr = prompt("Enter numbers separated by commas:");
+    if (!numbersStr) return;
+    const numbers = numbersStr.split(',').map(Number).filter(n => !isNaN(n));
+    if (numbers.length === 0) return;
+
+    const counts = new Map();
+    let mode: number | null = null;
+    let maxCount = 0;
+
+    for (const number of numbers) {
+      const count = (counts.get(number) || 0) + 1;
+      counts.set(number, count);
+      if (count > maxCount) {
+        mode = number;
+        maxCount = count;
+      }
+    }
+
+    if (mode !== null) {
+      display.value = mode.toString();
+      addToHistory(`Mode of ${numbers.join(',')}`, mode.toString());
+    } else {
+      display.value = "No mode found"; // Or handle the case where no mode exists as needed
+    }
 });
 
 //Rest of the existing code
