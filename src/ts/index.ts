@@ -33,6 +33,7 @@ const display = document.getElementById("display") as HTMLInputElement;
 const negateBtn = document.getElementById("negate") as HTMLButtonElement;
 const currentDateBtn = document.getElementById('current-date') as HTMLButtonElement;
 const percentBtn = document.getElementById('percent') as HTMLButtonElement;
+const decimalBtn = document.getElementById('decimal') as HTMLButtonElement;
 
 currentDateBtn.addEventListener('click', () => {
     const now = new Date();
@@ -55,6 +56,12 @@ percentBtn.addEventListener('click', () => {
         const percentValue = currentValue / 100;
         display.value = percentValue.toString();
         addToHistory(`${currentValue}%`, percentValue.toString());
+    }
+});
+
+decimalBtn.addEventListener('click', () => {
+    if (!display.value.includes('.')) {
+        display.value += '.';
     }
 });
 
