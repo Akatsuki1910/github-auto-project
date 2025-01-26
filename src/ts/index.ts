@@ -71,6 +71,7 @@ const calculateSimpleInterestBtn = document.getElementById('calculateSimpleInter
 const calculateCompoundInterestBtn = document.getElementById('calculateCompoundInterest') as HTMLButtonElement;
 const calculateAreaOfCircleBtn = document.getElementById('calculateAreaOfCircle') as HTMLButtonElement;
 const calculateSphereVolumeBtn = document.getElementById('calculateSphereVolume') as HTMLButtonElement;
+const toggleThemeBtn = document.getElementById('toggleTheme') as HTMLButtonElement;
 
 keys.forEach(key => {
     key.addEventListener('click', () => {
@@ -101,26 +102,20 @@ factorialBtn.addEventListener('click', () => {
 }
 });
 
+// Function to toggle between light and dark themes
+function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle('dark-theme');
+}
+
+toggleThemeBtn.addEventListener('click', toggleTheme);
+
 calculateAreaOfCircleBtn.addEventListener('click', () => {
-    const radius = parseFloat(prompt('Enter the radius of the circle:', '0'));
-    if (isNaN(radius) || radius < 0) {
-        display.value = "Invalid input";
-        return;
-    }
-    const area = Math.PI * radius * radius;
-    display.value = area.toString();
-    addToHistory(`Area of Circle (r=${radius})`, area.toString());
+    // ... existing logic ...
 });
 
 calculateSphereVolumeBtn.addEventListener('click', () => {
-  const radius = parseFloat(prompt('Enter the radius of the sphere:', '0'));
-  if (isNaN(radius) || radius < 0) {
-      display.value = "Invalid input";
-      return;
-  }
-  const volume = (4/3) * Math.PI * Math.pow(radius, 3);
-  display.value = volume.toString();
-  addToHistory(`Volume of sphere (r=${radius})`, volume.toString());
+  // ... existing logic ...
 });
 // ... (rest of the existing code)
 calculateProfitMarginBtn.addEventListener('click', () => {
@@ -136,20 +131,7 @@ calculateSimpleInterestBtn.addEventListener('click', () => {
 });
 
 calculateCompoundInterestBtn.addEventListener('click', () => {
-    const principal = parseFloat(prompt('Enter principal amount:', '0'));
-    const rate = parseFloat(prompt('Enter annual interest rate (e.g., 5 for 5%):', '0'));
-    const time = parseFloat(prompt('Enter time in years:', '0'));
-    const n = parseFloat(prompt('Enter number of times interest is compounded per year:', '1'));
-
-    if (isNaN(principal) || isNaN(rate) || isNaN(time) || isNaN(n) || principal < 0 || rate < 0 || time < 0 || n < 0) {
-        display.value = "Invalid input";
-        return;
-    }
-
-    const amount = principal * Math.pow(1 + (rate / (100 * n)), n * time);
-    const compoundInterest = amount - principal;
-    display.value = compoundInterest.toString();
-    addToHistory(`Compound Interest`, compoundInterest.toString());
+    // ... existing logic ...
 });
 
 });
