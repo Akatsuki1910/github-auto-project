@@ -37,6 +37,7 @@ const calculateBtn = document.getElementById("calculate") as HTMLButtonElement;
 const display = document.getElementById("display") as HTMLInputElement;
 // ... other existing buttons
 const calculateNthRootBtn = document.getElementById('calculateNthRoot') as HTMLButtonElement;
+const rndBtn = document.getElementById('Rnd') as HTMLButtonElement;
 
 //Nth Root Function
 calculateNthRootBtn.addEventListener('click', () => {
@@ -50,6 +51,12 @@ calculateNthRootBtn.addEventListener('click', () => {
     display.value = result.toString();
     addToHistory(`The ${n}th root of ${number}`, result.toString());
   });
+
+// Generate Random Number
+rndBtn.addEventListener('click', () => {
+    const randomNumber = Math.random();
+    display.value = randomNumber.toString();
+});
 
 //Rest of the existing code
 });
