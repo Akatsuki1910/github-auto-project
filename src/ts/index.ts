@@ -56,97 +56,19 @@ const calculateSquareRootBtn = document.getElementById('calculateSquareRoot') as
 const cubeRootBtn = document.getElementById('cubeRoot') as HTMLButtonElement;
 const calculateExponentBtn = document.getElementById('calculateExponent') as HTMLButtonElement;
 const log10Btn = document.getElementById('log10') as HTMLButtonElement;
+const calculateAgeBtn = document.getElementById('calculateAge') as HTMLButtonElement;
 
-calculateStandardDeviationBtn.addEventListener('click', () => {
-    // ... existing code for standard deviation
-});
-
-calculateVarianceBtn.addEventListener('click', () => {
-    // ... existing code for variance calculation
-});
-rndBtn.addEventListener('click', () => {
-    // ... existing code for random number generation
-});
-
-calculateFibonacciBtn.addEventListener('click', () => {
-    // ... existing code for fibonacci calculation
-});
-
-calculatePrimeBtn.addEventListener('click', () => {
-    const num = parseInt(prompt("Enter a number to check if it's prime:") || "0", 10);
-    if (isNaN(num)) {
-        display.value = "Invalid input";
-        return;
+calculateAgeBtn.addEventListener('click', () => {
+    const birthdate = prompt("Enter your birthdate (YYYY-MM-DD):");
+    if (birthdate) {
+        const birthDate = new Date(birthdate);
+        const ageDifMs = Date.now() - birthDate.getTime();
+        const ageDate = new Date(ageDifMs);
+        const age = Math.abs(ageDate.getUTCFullYear() - 1970);
+        display.value = age.toString();
+        addToHistory(`Age`, age.toString());
     }
-
-    let isPrime = true;
-    if (num <= 1) isPrime = false;
-    for (let i = 2; i <= Math.sqrt(num); i++) {
-        if (num % i === 0) {
-            isPrime = false;
-            break;
-        }
-    }
-
-    display.value = isPrime ? "Prime" : "Not Prime";
-    addToHistory(`isPrime(${num})`, isPrime.toString());
 });
 
-clearAllHistoryBtn.addEventListener('click', () => {
-    history = [];
-    updateHistoryDisplay();
-});
-
-calculateFactorialBtn.addEventListener('click', () => {
-    // ... existing code for factorial calculation
-});
-
-calculateAbsoluteBtn.addEventListener('click', () => {
-    // existing code for absolute calculation
-});
-calculateSquareRootBtn.addEventListener('click', () => {
-  const num = parseFloat(display.value);
-  if (isNaN(num)) {
-    display.value = "Invalid input";
-    return;
-  }
-  const result = Math.sqrt(num);
-  display.value = result.toString();
-  addToHistory(`sqrt(${num})`, result.toString());
-});
-
-cubeRootBtn.addEventListener('click', () => {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-      display.value = "Invalid input";
-      return;
-    }
-    const result = Math.cbrt(num);
-    display.value = result.toString();
-    addToHistory(`cbrt(${num})`, result.toString());
-  });
-
-  calculateExponentBtn.addEventListener('click', () => {
-    const base = parseFloat(prompt("Enter the base:") || "0");
-    const exponent = parseFloat(prompt("Enter the exponent:") || "0");
-    if (isNaN(base) || isNaN(exponent)) {
-      display.value = "Invalid input";
-      return;
-    }
-    const result = Math.pow(base, exponent);
-    display.value = result.toString();
-    addToHistory(`${base}^${exponent}`, result.toString());
-  });
-
-log10Btn.addEventListener('click', () => {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-      display.value = "Invalid input";
-      return;
-    }
-    const result = Math.log10(num);
-    display.value = result.toString();
-    addToHistory(`log10(${num})`, result.toString());
-});
-//Rest of the existing code
+// Rest of your existing code
 });
