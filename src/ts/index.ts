@@ -37,6 +37,10 @@ const calculateBtn = document.getElementById("calculate") as HTMLButtonElement;
 const display = document.getElementById("display") as HTMLInputElement;
 // ... other existing buttons
 const calculateNthRootBtn = document.getElementById('calculateNthRoot') as HTMLButtonElement;
+rndBtn.addEventListener('click', () => {
+    const randomNumber = Math.random();
+    display.value = randomNumber.toString();
+});
 const rndBtn = document.getElementById('Rnd') as HTMLButtonElement;
 const calculateGeometricMeanBtn = document.getElementById('calculateGeometricMean') as HTMLButtonElement;
 const calculateLogarithmBtn = document.getElementById('calculateLogarithm') as HTMLButtonElement;
@@ -45,143 +49,24 @@ const calculateMedianBtn = document.getElementById('calculateMedian') as HTMLBut
 const calculateModeBtn = document.getElementById('calculateMode') as HTMLButtonElement;
 const factorialBtn = document.getElementById('factorial') as HTMLButtonElement;
 const roundTo2DecimalBtn = document.getElementById('roundTo2Decimal') as HTMLButtonElement;
+const calculateStandardDeviationBtn = document.getElementById('calculateStandardDeviation') as HTMLButtonElement;
 
-//Nth Root Function
-calculateNthRootBtn.addEventListener('click', () => {
-    const n = parseFloat(prompt("Enter the root (n):"));
-    const number = parseFloat(display.value);
-    if(isNaN(n) || isNaN(number)) {
-        display.value = "Invalid input";
-        return; 
-    }
-    const result = Math.pow(number, 1/n);
-    display.value = result.toString();
-    addToHistory(`The ${n}th root of ${number}`, result.toString());
-  });
-
-// Generate Random Number
-rndBtn.addEventListener('click', () => {
-    const randomNumber = Math.random();
-    display.value = randomNumber.toString();
-});
-// Calculate Geometric Mean
-calculateGeometricMeanBtn.addEventListener('click', () => {
-    const numbersStr = prompt("Enter numbers separated by commas:");
-    if (!numbersStr) {
-        display.value = "Invalid input";
-        return; 
-    }
-    const numbers = numbersStr.split(',').map(Number).filter(n => !isNaN(n) && n > 0);
-    if (numbers.length === 0) {
-        display.value = "Invalid input for geometric mean (positive numbers only)";
-        return;
-    }
-    const product = numbers.reduce((acc, curr) => acc * curr, 1);
-    const geometricMean = Math.pow(product, 1 / numbers.length);
-    display.value = geometricMean.toString();
-    addToHistory(`Geometric Mean of ${numbers.join(',')}`, geometricMean.toString());  
-});
-
-// Calculate Logarithm
-calculateLogarithmBtn.addEventListener('click', () => {
-    const base = parseFloat(prompt("Enter the base of the logarithm:"));
-    const number = parseFloat(display.value);
-    if (isNaN(base) || isNaN(number) || base <= 0 || base === 1 || number <= 0) {
-        display.value = "Invalid input for logarithm";
-        return;
-    }
-    const result = Math.log(number) / Math.log(base); // Calculate logarithm with arbitrary base
-    display.value = result.toString();
-    addToHistory(`log${base}(${number})`, result.toString());
-});
-
-// Calculate Average
-calculateAverageBtn.addEventListener('click', () => {
-    const numbersStr = prompt("Enter numbers separated by commas:");
-    if (!numbersStr) {
-        display.value = "Invalid input";
-        return; 
-    }
-    const numbers = numbersStr.split(',').map(Number).filter(n => !isNaN(n));
-    if (numbers.length === 0) {
-        display.value = "Invalid input";
-        return;
-    }
-    const sum = numbers.reduce((acc, curr) => acc + curr, 0);
-    const average = sum / numbers.length;
-    display.value = average.toString();
-    addToHistory(`Average of ${numbers.join(',')}`, average.toString());  
-});
-
-//Calculate Median
-calculateMedianBtn.addEventListener('click', () => {
-    const numbersStr = prompt("Enter numbers separated by commas:");
-    if (!numbersStr) {
-        display.value = "Invalid Input";
-        return;
-    }
-    const numbers = numbersStr.split(',').map(Number).filter(n => !isNaN(n));
-    if(numbers.length === 0) {
-        display.value = "Invalid Input";
-        return;
-    }
-    numbers.sort((a, b) => a - b); // Sort numbers in ascending order
-    const mid = Math.floor(numbers.length / 2);
-    const median = numbers.length % 2 !== 0 ? numbers[mid] : (numbers[mid -1] + numbers[mid]) / 2;
-    display.value = median.toString();
-    addToHistory(`Median of ${numbers.join(',')}`, median.toString());
-});
-// Calculate Mode
-calculateModeBtn.addEventListener('click', () => {
+calculateStandardDeviationBtn.addEventListener('click', () => {
     const numbersStr = prompt("Enter numbers separated by commas:");
     if (!numbersStr) return;
     const numbers = numbersStr.split(',').map(Number).filter(n => !isNaN(n));
     if (numbers.length === 0) return;
 
-    const counts = new Map();
-    let mode: number | null = null;
-    let maxCount = 0;
+    const n = numbers.length;
+    const sum = numbers.reduce((acc, val) => acc + val, 0);
+    const mean = sum / n;
 
-    for (const number of numbers) {
-      const count = (counts.get(number) || 0) + 1;
-      counts.set(number, count);
-      if (count > maxCount) {
-        mode = number;
-        maxCount = count;
-      }
-    }
+    const sqDiffSum = numbers.reduce((acc, val) => acc + Math.pow(val - mean, 2), 0);
+    const variance = sqDiffSum / n;
+    const stdDev = Math.sqrt(variance);
 
-    if (mode !== null) {
-      display.value = mode.toString();
-      addToHistory(`Mode of ${numbers.join(',')}`, mode.toString());
-    } else {
-      display.value = "No mode found"; // Or handle the case where no mode exists as needed
-    }
-});
-
-factorialBtn.addEventListener('click', () => {
-    const number = parseFloat(display.value);
-    if (isNaN(number) || number < 0) {
-        display.value = "Invalid input for factorial";
-        return;
-    }
-    let result = 1;
-    for (let i = 2; i <= number; i++) {
-        result *= i;
-    }
-    display.value = result.toString();
-    addToHistory(`${number}!`, result.toString());
-});
-
-roundTo2DecimalBtn.addEventListener('click', () => {
-    const number = parseFloat(display.value);
-    if (isNaN(number)) {
-        display.value = "Invalid input";
-    } else {
-        const roundedNumber = number.toFixed(2);
-        display.value = roundedNumber; 
-        addToHistory(`round(${number}, 2)`, roundedNumber);
-    }
+    display.value = stdDev.toString();
+    addToHistory(`Standard Deviation of ${numbers.join(',')}`, stdDev.toString());
 });
 //Rest of the existing code
 });
