@@ -55,6 +55,7 @@ const calculateAbsoluteBtn = document.getElementById('calculateAbsolute') as HTM
 const calculateSquareRootBtn = document.getElementById('calculateSquareRoot') as HTMLButtonElement;
 const cubeRootBtn = document.getElementById('cubeRoot') as HTMLButtonElement;
 const calculateExponentBtn = document.getElementById('calculateExponent') as HTMLButtonElement;
+const log10Btn = document.getElementById('log10') as HTMLButtonElement;
 
 calculateStandardDeviationBtn.addEventListener('click', () => {
     // ... existing code for standard deviation
@@ -136,5 +137,16 @@ cubeRootBtn.addEventListener('click', () => {
     display.value = result.toString();
     addToHistory(`${base}^${exponent}`, result.toString());
   });
+
+log10Btn.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+      display.value = "Invalid input";
+      return;
+    }
+    const result = Math.log10(num);
+    display.value = result.toString();
+    addToHistory(`log10(${num})`, result.toString());
+});
 //Rest of the existing code
 });
