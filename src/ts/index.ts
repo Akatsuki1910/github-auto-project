@@ -40,6 +40,7 @@ const calculateNthRootBtn = document.getElementById('calculateNthRoot') as HTMLB
 const rndBtn = document.getElementById('Rnd') as HTMLButtonElement;
 const calculateLogarithmBtn = document.getElementById('calculateLogarithm') as HTMLButtonElement;
 const calculateAverageBtn = document.getElementById('calculateAverage') as HTMLButtonElement;
+const calculateMedianBtn = document.getElementById('calculateMedian') as HTMLButtonElement;
 
 
 //Nth Root Function
@@ -90,6 +91,25 @@ calculateAverageBtn.addEventListener('click', () => {
     const average = sum / numbers.length;
     display.value = average.toString();
     addToHistory(`Average of ${numbers.join(',')}`, average.toString());  
+});
+
+//Calculate Median
+calculateMedianBtn.addEventListener('click', () => {
+    const numbersStr = prompt("Enter numbers separated by commas:");
+    if (!numbersStr) {
+        display.value = "Invalid Input";
+        return;
+    }
+    const numbers = numbersStr.split(',').map(Number).filter(n => !isNaN(n));
+    if(numbers.length === 0) {
+        display.value = "Invalid Input";
+        return;
+    }
+    numbers.sort((a, b) => a - b); // Sort numbers in ascending order
+    const mid = Math.floor(numbers.length / 2);
+    const median = numbers.length % 2 !== 0 ? numbers[mid] : (numbers[mid -1] + numbers[mid]) / 2;
+    display.value = median.toString();
+    addToHistory(`Median of ${numbers.join(',')}`, median.toString());
 });
 
 //Rest of the existing code
