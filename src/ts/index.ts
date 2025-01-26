@@ -38,6 +38,7 @@ const display = document.getElementById("display") as HTMLInputElement;
 // ... other existing buttons
 const calculateNthRootBtn = document.getElementById('calculateNthRoot') as HTMLButtonElement;
 const rndBtn = document.getElementById('Rnd') as HTMLButtonElement;
+const calculateLogarithmBtn = document.getElementById('calculateLogarithm') as HTMLButtonElement;
 
 //Nth Root Function
 calculateNthRootBtn.addEventListener('click', () => {
@@ -56,6 +57,19 @@ calculateNthRootBtn.addEventListener('click', () => {
 rndBtn.addEventListener('click', () => {
     const randomNumber = Math.random();
     display.value = randomNumber.toString();
+});
+
+// Calculate Logarithm
+calculateLogarithmBtn.addEventListener('click', () => {
+    const base = parseFloat(prompt("Enter the base of the logarithm:"));
+    const number = parseFloat(display.value);
+    if (isNaN(base) || isNaN(number) || base <= 0 || base === 1 || number <= 0) {
+        display.value = "Invalid input for logarithm";
+        return;
+    }
+    const result = Math.log(number) / Math.log(base); // Calculate logarithm with arbitrary base
+    display.value = result.toString();
+    addToHistory(`log${base}(${number})`, result.toString());
 });
 
 //Rest of the existing code
