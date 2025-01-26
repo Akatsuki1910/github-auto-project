@@ -51,6 +51,7 @@ const calculateFibonacciBtn = document.getElementById('calculateFibonacci') as H
 const calculatePrimeBtn = document.getElementById('calculatePrime') as HTMLButtonElement;
 const clearAllHistoryBtn = document.getElementById('clear-all-history') as HTMLButtonElement;
 const calculateFactorialBtn = document.getElementById('calculateFactorial') as HTMLButtonElement;
+const calculateAbsoluteBtn = document.getElementById('calculateAbsolute') as HTMLButtonElement;
 
 calculateStandardDeviationBtn.addEventListener('click', () => {
     // ... existing code for standard deviation
@@ -110,6 +111,17 @@ calculateFactorialBtn.addEventListener('click', () => {
     const result = factorial(num);
     display.value = result.toString();
     addToHistory(`factorial(${num})`, result.toString());
+});
+
+calculateAbsoluteBtn.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid input";
+        return;
+    }
+    const result = Math.abs(num);
+    display.value = result.toString();
+    addToHistory(`abs(${num})`, result.toString());
 });
 //Rest of the existing code
 });
