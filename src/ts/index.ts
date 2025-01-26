@@ -58,6 +58,14 @@ const calculateExponentBtn = document.getElementById('calculateExponent') as HTM
 const log10Btn = document.getElementById('log10') as HTMLButtonElement;
 const calculateAgeBtn = document.getElementById('calculateAge') as HTMLButtonElement;
 const currentTimeBtn = document.getElementById('currentTime') as HTMLButtonElement;
+const currentDateBtn = document.getElementById('currentDate') as HTMLButtonElement;
+
+currentDateBtn.addEventListener('click', () => {
+    const now = new Date();
+    const dateString = now.toLocaleDateString();
+    display.value = dateString;
+    addToHistory('Current Date', dateString);
+});
 
 currentTimeBtn.addEventListener('click', () => {
     const now = new Date();
