@@ -53,6 +53,7 @@ const clearAllHistoryBtn = document.getElementById('clear-all-history') as HTMLB
 const calculateFactorialBtn = document.getElementById('calculateFactorial') as HTMLButtonElement;
 const calculateAbsoluteBtn = document.getElementById('calculateAbsolute') as HTMLButtonElement;
 const calculateSquareRootBtn = document.getElementById('calculateSquareRoot') as HTMLButtonElement;
+const cubeRootBtn = document.getElementById('cubeRoot') as HTMLButtonElement;
 
 calculateStandardDeviationBtn.addEventListener('click', () => {
     // ... existing code for standard deviation
@@ -111,5 +112,16 @@ calculateSquareRootBtn.addEventListener('click', () => {
   display.value = result.toString();
   addToHistory(`sqrt(${num})`, result.toString());
 });
+
+cubeRootBtn.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+      display.value = "Invalid input";
+      return;
+    }
+    const result = Math.cbrt(num);
+    display.value = result.toString();
+    addToHistory(`cbrt(${num})`, result.toString());
+  });
 //Rest of the existing code
 });
