@@ -36,6 +36,7 @@ const display = document.getElementById("display") as HTMLInputElement;
 const memoryStoreBtn = document.getElementById("memory-store") as HTMLButtonElement;
 const memoryRecallBtn = document.getElementById("memory-recall") as HTMLButtonElement;
 const memoryClearBtn = document.getElementById("memory-clear") as HTMLButtonElement;
+const sinBtn = document.getElementById("sin") as HTMLButtonElement;
 
 // ... other existing event listeners
 
@@ -49,6 +50,14 @@ memoryRecallBtn.addEventListener('click', () => {
 
 memoryClearBtn.addEventListener('click', () => {
     memoryValue = 0;
+});
+sinBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    const result = Math.sin(currentValue);
+    display.value = result.toString();
+    currentExpression = `sin(${currentValue})`;
+    currentExpressionDisplay.textContent = currentExpression;
+    addToHistory(currentExpression, result.toString());
 });
 
 // Rest of your existing code
