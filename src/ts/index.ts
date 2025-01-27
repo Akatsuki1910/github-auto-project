@@ -41,6 +41,7 @@ const cosBtn = document.getElementById("cos") as HTMLButtonElement;
 const tanBtn = document.getElementById("tan") as HTMLButtonElement;
 const logBtn = document.getElementById("log") as HTMLButtonElement;
 const expBtn = document.getElementById("exp") as HTMLButtonElement;
+const ansBtn = document.getElementById("ans") as HTMLButtonElement; // Get the Ans button
 
 // ... other existing event listeners
 
@@ -97,6 +98,10 @@ expBtn.addEventListener('click', () => {
     currentExpression = `exp(${currentValue})`;
     currentExpressionDisplay.textContent = currentExpression;
     addToHistory(currentExpression, result.toString());
+});
+
+ansBtn.addEventListener('click', () => { // Ans button functionality
+    display.value = lastAnswer.toString();
 });
 
 // Rest of your existing code
