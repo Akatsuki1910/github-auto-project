@@ -37,6 +37,7 @@ const decimalBtn = document.getElementById('decimal') as HTMLButtonElement;
 const multiplyBtn = document.getElementById('multiply') as HTMLButtonElement;
 const divideBtn = document.getElementById('divide') as HTMLButtonElement;
 const piBtn = document.getElementById('pi') as HTMLButtonElement;
+const powerBtn = document.getElementById('power') as HTMLButtonElement;
 
 currentDateBtn.addEventListener('click', () => {
     const now = new Date();
@@ -81,6 +82,12 @@ divideBtn.addEventListener('click', () => {
 
 piBtn.addEventListener('click', () => {
     display.value += Math.PI.toString();
+});
+
+powerBtn.addEventListener('click', () => {
+    display.value += '**'; // Use ** for power operator
+    currentExpression += '**';
+    currentExpressionDisplay.textContent = currentExpression;
 });
 
 // Rest of your existing code
