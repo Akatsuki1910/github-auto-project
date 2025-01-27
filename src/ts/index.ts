@@ -40,6 +40,7 @@ const sinBtn = document.getElementById("sin") as HTMLButtonElement;
 const cosBtn = document.getElementById("cos") as HTMLButtonElement;
 const tanBtn = document.getElementById("tan") as HTMLButtonElement;
 const logBtn = document.getElementById("log") as HTMLButtonElement;
+const expBtn = document.getElementById("exp") as HTMLButtonElement;
 
 // ... other existing event listeners
 
@@ -86,6 +87,14 @@ logBtn.addEventListener('click', () => {
     const result = Math.log10(currentValue);
     display.value = result.toString();
     currentExpression = `log(${currentValue})`;
+    currentExpressionDisplay.textContent = currentExpression;
+    addToHistory(currentExpression, result.toString());
+});
+expBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    const result = Math.exp(currentValue);
+    display.value = result.toString();
+    currentExpression = `exp(${currentValue})`;
     currentExpressionDisplay.textContent = currentExpression;
     addToHistory(currentExpression, result.toString());
 });
