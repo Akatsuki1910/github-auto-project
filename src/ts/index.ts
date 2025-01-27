@@ -37,6 +37,7 @@ const memoryStoreBtn = document.getElementById("memory-store") as HTMLButtonElem
 const memoryRecallBtn = document.getElementById("memory-recall") as HTMLButtonElement;
 const memoryClearBtn = document.getElementById("memory-clear") as HTMLButtonElement;
 const sinBtn = document.getElementById("sin") as HTMLButtonElement;
+const cosBtn = document.getElementById("cos") as HTMLButtonElement;
 
 // ... other existing event listeners
 
@@ -56,6 +57,15 @@ sinBtn.addEventListener('click', () => {
     const result = Math.sin(currentValue);
     display.value = result.toString();
     currentExpression = `sin(${currentValue})`;
+    currentExpressionDisplay.textContent = currentExpression;
+    addToHistory(currentExpression, result.toString());
+});
+
+cosBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    const result = Math.cos(currentValue);
+    display.value = result.toString();
+    currentExpression = `cos(${currentValue})`;
     currentExpressionDisplay.textContent = currentExpression;
     addToHistory(currentExpression, result.toString());
 });
