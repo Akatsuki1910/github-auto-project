@@ -35,6 +35,7 @@ const currentDateBtn = document.getElementById('current-date') as HTMLButtonElem
 const percentBtn = document.getElementById('percent') as HTMLButtonElement;
 const decimalBtn = document.getElementById('decimal') as HTMLButtonElement;
 const multiplyBtn = document.getElementById('multiply') as HTMLButtonElement;
+const divideBtn = document.getElementById('divide') as HTMLButtonElement;
 
 currentDateBtn.addEventListener('click', () => {
     const now = new Date();
@@ -69,6 +70,11 @@ decimalBtn.addEventListener('click', () => {
 multiplyBtn.addEventListener('click', () => {
     display.value += '*';
     currentExpression += '*';
+    currentExpressionDisplay.textContent = currentExpression;
+});
+divideBtn.addEventListener('click', () => {
+    display.value += '/';
+    currentExpression += '/';
     currentExpressionDisplay.textContent = currentExpression;
 });
 
