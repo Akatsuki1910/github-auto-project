@@ -38,6 +38,7 @@ const multiplyBtn = document.getElementById('multiply') as HTMLButtonElement;
 const divideBtn = document.getElementById('divide') as HTMLButtonElement;
 const piBtn = document.getElementById('pi') as HTMLButtonElement;
 const powerBtn = document.getElementById('power') as HTMLButtonElement;
+const factorialBtn = document.getElementById('factorial') as HTMLButtonElement;
 
 currentDateBtn.addEventListener('click', () => {
     const now = new Date();
@@ -88,6 +89,24 @@ powerBtn.addEventListener('click', () => {
     display.value += '**'; // Use ** for power operator
     currentExpression += '**';
     currentExpressionDisplay.textContent = currentExpression;
+});
+
+function factorial(n: number): number {
+    if (n === 0) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+factorialBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue >= 0 && Number.isInteger(currentValue)) {  // Check for valid input
+        const result = factorial(currentValue);
+        display.value = result.toString();
+        addToHistory(`${currentValue}!`, result.toString());
+    } else {
+        display.value = "Invalid input for factorial";
+    }
 });
 
 // Rest of your existing code
