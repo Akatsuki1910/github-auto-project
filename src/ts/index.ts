@@ -14,6 +14,8 @@ let lastAnswer = 0;
 let currentExpression = "";
 const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
 
+let memoryValue = 0; // Initialize memory value
+
 function addToHistory(expression: string, result: string) {
     history.push(`${expression} = ${result}`);
     updateHistoryDisplay();
@@ -30,104 +32,24 @@ function updateHistoryDisplay(){
 window.addEventListener("DOMContentLoaded", () => {
   // ... existing code
 const display = document.getElementById("display") as HTMLInputElement;
-const negateBtn = document.getElementById("negate") as HTMLButtonElement;
-const currentDateBtn = document.getElementById('current-date') as HTMLButtonElement;
-const percentBtn = document.getElementById('percent') as HTMLButtonElement;
-const decimalBtn = document.getElementById('decimal') as HTMLButtonElement;
-const multiplyBtn = document.getElementById('multiply') as HTMLButtonElement;
-const divideBtn = document.getElementById('divide') as HTMLButtonElement;
-const piBtn = document.getElementById('pi') as HTMLButtonElement;
-const powerBtn = document.getElementById('power') as HTMLButtonElement;
-const factorialBtn = document.getElementById('factorial') as HTMLButtonElement;
-const leftParenthesisBtn = document.getElementById('left-parenthesis') as HTMLButtonElement;
-const rightParenthesisBtn = document.getElementById('right-parenthesis') as HTMLButtonElement;
-const backspaceBtn = document.getElementById('backspace') as HTMLButtonElement;
+// ... other existing button declarations
+const memoryStoreBtn = document.getElementById("memory-store") as HTMLButtonElement;
+const memoryRecallBtn = document.getElementById("memory-recall") as HTMLButtonElement;
+const memoryClearBtn = document.getElementById("memory-clear") as HTMLButtonElement;
 
-currentDateBtn.addEventListener('click', () => {
-    const now = new Date();
-    const dateString = now.toLocaleDateString();
-    display.value = dateString;
-    addToHistory('Current Date', dateString);
+// ... other existing event listeners
+
+memoryStoreBtn.addEventListener('click', () => {
+    memoryValue = parseFloat(display.value);
 });
 
-negateBtn.addEventListener('click', () => {
-    if (display.value) {
-        const currentValue = parseFloat(display.value);
-        const negatedValue = -currentValue;
-        display.value = negatedValue.toString();
-    }
+memoryRecallBtn.addEventListener('click', () => {
+    display.value = memoryValue.toString();
 });
 
-percentBtn.addEventListener('click', () => {
-    if (display.value) {
-        const currentValue = parseFloat(display.value);
-        const percentValue = currentValue / 100;
-        display.value = percentValue.toString();
-        addToHistory(`${currentValue}%`, percentValue.toString());
-    }
+memoryClearBtn.addEventListener('click', () => {
+    memoryValue = 0;
 });
 
-decimalBtn.addEventListener('click', () => {
-    if (!display.value.includes('.')) {
-        display.value += '.';
-    }
-});
-
-multiplyBtn.addEventListener('click', () => {
-    display.value += '*';
-    currentExpression += '*';
-    currentExpressionDisplay.textContent = currentExpression;
-});
-divideBtn.addEventListener('click', () => {
-    display.value += '/';
-    currentExpression += '/';
-    currentExpressionDisplay.textContent = currentExpression;
-});
-
-piBtn.addEventListener('click', () => {
-    display.value += Math.PI.toString();
-});
-
-powerBtn.addEventListener('click', () => {
-    display.value += '**'; // Use ** for power operator
-    currentExpression += '**';
-    currentExpressionDisplay.textContent = currentExpression;
-});
-
-function factorial(n: number): number {
-    if (n === 0) {
-        return 1;
-    }
-    return n * factorial(n - 1);
-}
-
-factorialBtn.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue >= 0 && Number.isInteger(currentValue)) {  // Check for valid input
-        const result = factorial(currentValue);
-        display.value = result.toString();
-        addToHistory(`${currentValue}!`, result.toString());
-    } else {
-        display.value = "Invalid input for factorial";
-    }
-});
-
-leftParenthesisBtn.addEventListener('click', () => {
-    display.value += '(';
-    currentExpression += '(';
-    currentExpressionDisplay.textContent = currentExpression;
-});
-
-rightParenthesisBtn.addEventListener('click', () => {
-    display.value += ')';
-    currentExpression += ')';
-    currentExpressionDisplay.textContent = currentExpression;
-});
-
-backspaceBtn.addEventListener('click', () => {
-    display.value = display.value.slice(0, -1);
-    currentExpression = currentExpression.slice(0,-1);
-    currentExpressionDisplay.textContent = currentExpression;
-});
 // Rest of your existing code
 });
