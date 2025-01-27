@@ -41,6 +41,7 @@ const powerBtn = document.getElementById('power') as HTMLButtonElement;
 const factorialBtn = document.getElementById('factorial') as HTMLButtonElement;
 const leftParenthesisBtn = document.getElementById('left-parenthesis') as HTMLButtonElement;
 const rightParenthesisBtn = document.getElementById('right-parenthesis') as HTMLButtonElement;
+const backspaceBtn = document.getElementById('backspace') as HTMLButtonElement;
 
 currentDateBtn.addEventListener('click', () => {
     const now = new Date();
@@ -123,5 +124,10 @@ rightParenthesisBtn.addEventListener('click', () => {
     currentExpressionDisplay.textContent = currentExpression;
 });
 
+backspaceBtn.addEventListener('click', () => {
+    display.value = display.value.slice(0, -1);
+    currentExpression = currentExpression.slice(0,-1);
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // Rest of your existing code
 });
