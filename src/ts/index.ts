@@ -39,6 +39,7 @@ const memoryClearBtn = document.getElementById("memory-clear") as HTMLButtonElem
 const sinBtn = document.getElementById("sin") as HTMLButtonElement;
 const cosBtn = document.getElementById("cos") as HTMLButtonElement;
 const tanBtn = document.getElementById("tan") as HTMLButtonElement;
+const logBtn = document.getElementById("log") as HTMLButtonElement;
 
 // ... other existing event listeners
 
@@ -76,6 +77,15 @@ tanBtn.addEventListener('click', () => {
     const result = Math.tan(currentValue);
     display.value = result.toString();
     currentExpression = `tan(${currentValue})`;
+    currentExpressionDisplay.textContent = currentExpression;
+    addToHistory(currentExpression, result.toString());
+});
+
+logBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    const result = Math.log10(currentValue);
+    display.value = result.toString();
+    currentExpression = `log(${currentValue})`;
     currentExpressionDisplay.textContent = currentExpression;
     addToHistory(currentExpression, result.toString());
 });
