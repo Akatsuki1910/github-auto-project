@@ -39,6 +39,8 @@ const divideBtn = document.getElementById('divide') as HTMLButtonElement;
 const piBtn = document.getElementById('pi') as HTMLButtonElement;
 const powerBtn = document.getElementById('power') as HTMLButtonElement;
 const factorialBtn = document.getElementById('factorial') as HTMLButtonElement;
+const leftParenthesisBtn = document.getElementById('left-parenthesis') as HTMLButtonElement;
+const rightParenthesisBtn = document.getElementById('right-parenthesis') as HTMLButtonElement;
 
 currentDateBtn.addEventListener('click', () => {
     const now = new Date();
@@ -107,6 +109,18 @@ factorialBtn.addEventListener('click', () => {
     } else {
         display.value = "Invalid input for factorial";
     }
+});
+
+leftParenthesisBtn.addEventListener('click', () => {
+    display.value += '(';
+    currentExpression += '(';
+    currentExpressionDisplay.textContent = currentExpression;
+});
+
+rightParenthesisBtn.addEventListener('click', () => {
+    display.value += ')';
+    currentExpression += ')';
+    currentExpressionDisplay.textContent = currentExpression;
 });
 
 // Rest of your existing code
