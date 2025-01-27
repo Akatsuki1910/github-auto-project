@@ -34,6 +34,7 @@ const negateBtn = document.getElementById("negate") as HTMLButtonElement;
 const currentDateBtn = document.getElementById('current-date') as HTMLButtonElement;
 const percentBtn = document.getElementById('percent') as HTMLButtonElement;
 const decimalBtn = document.getElementById('decimal') as HTMLButtonElement;
+const multiplyBtn = document.getElementById('multiply') as HTMLButtonElement;
 
 currentDateBtn.addEventListener('click', () => {
     const now = new Date();
@@ -63,6 +64,12 @@ decimalBtn.addEventListener('click', () => {
     if (!display.value.includes('.')) {
         display.value += '.';
     }
+});
+
+multiplyBtn.addEventListener('click', () => {
+    display.value += '*';
+    currentExpression += '*';
+    currentExpressionDisplay.textContent = currentExpression;
 });
 
 // Rest of your existing code
