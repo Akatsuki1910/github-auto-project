@@ -42,6 +42,7 @@ const tanBtn = document.getElementById("tan") as HTMLButtonElement;
 const logBtn = document.getElementById("log") as HTMLButtonElement;
 const expBtn = document.getElementById("exp") as HTMLButtonElement;
 const ansBtn = document.getElementById("ans") as HTMLButtonElement; // Get the Ans button
+const roundBtn = document.getElementById("round") as HTMLButtonElement;
 
 // ... other existing event listeners
 
@@ -102,6 +103,13 @@ expBtn.addEventListener('click', () => {
 
 ansBtn.addEventListener('click', () => { // Ans button functionality
     display.value = lastAnswer.toString();
+});
+
+roundBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    const result = Math.round(currentValue);
+    display.value = result.toString();
+    addToHistory(`round(${currentValue})`, result.toString());
 });
 
 // Rest of your existing code
