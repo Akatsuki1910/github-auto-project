@@ -45,6 +45,7 @@ const sumBtn = document.getElementById("sum") as HTMLButtonElement; // Sum butto
 const meanBtn = document.getElementById("mean") as HTMLButtonElement; // Mean button element
 const calculateMaxBtn = document.getElementById("calculateMax") as HTMLButtonElement; // Calculate Max button
 const calculateMinBtn = document.getElementById("calculateMin") as HTMLButtonElement;
+const calculateSumBtn = document.getElementById("calculateSum") as HTMLButtonElement; // Calculate Sum button
 let maxValues: number[] = [];
 let minValues: number[] = [];
 let sumValues: number[] = [];
@@ -156,5 +157,18 @@ calculateMinBtn.addEventListener('click', () => {
     }
     minValues = []; // Clear minValues after calculation
   });
+
+calculateSumBtn.addEventListener('click', () => {
+    if (sumValues.length === 0) {
+      display.value = "No values entered";
+    } else {
+      const result = sumValues.reduce((a, b) => a + b, 0);
+      display.value = result.toString();
+      currentExpression = `sum(${sumValues.join('+')})`;
+      currentExpressionDisplay.textContent = currentExpression;
+      addToHistory(currentExpression, result.toString());
+    }
+    sumValues = []; // Clear sumValues after calculation
+});
 
 });
