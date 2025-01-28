@@ -36,6 +36,7 @@ const display = document.getElementById("display") as HTMLInputElement;
 // ... existing event listeners
 const cubeBtn = document.getElementById("cube") as HTMLButtonElement; // Get the cube button element
 const modBtn = document.getElementById("mod") as HTMLButtonElement;
+const absBtn = document.getElementById("abs") as HTMLButtonElement;
 
 // Cube functionality
 cubeBtn.addEventListener('click', () => {
@@ -65,5 +66,13 @@ modBtn.addEventListener('click', () => {
   addToHistory(currentExpression, result.toString());
 });
 
+absBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    const result = Math.abs(currentValue);
+    display.value = result.toString();
+    currentExpression = `|${currentValue}|`;
+    currentExpressionDisplay.textContent = currentExpression;
+    addToHistory(currentExpression, result.toString());
+});
 
 });
