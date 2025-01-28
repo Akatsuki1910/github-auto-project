@@ -34,6 +34,14 @@ window.addEventListener("DOMContentLoaded", () => {
 const display = document.getElementById("display") as HTMLInputElement;
 // ... other existing button declarations
 // ... existing event listeners
+const eBtn = document.getElementById("e") as HTMLButtonElement;
+
+//Euler's number button
+eBtn.addEventListener('click', () => {
+    display.value += Math.E;
+    currentExpression += Math.E;
+    currentExpressionDisplay.textContent = currentExpression;
+});
 const reciprocalBtn = document.getElementById("reciprocal") as HTMLButtonElement;
 const squared2Btn = document.getElementById("squared2") as HTMLButtonElement; // Get x^2 button
 const exp2Btn = document.getElementById("exp2") as HTMLButtonElement; // Get 2^x button
