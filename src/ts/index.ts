@@ -39,6 +39,7 @@ const modBtn = document.getElementById("mod") as HTMLButtonElement;
 const absBtn = document.getElementById("abs") as HTMLButtonElement;
 const floorBtn = document.getElementById("floor") as HTMLButtonElement;
 const randomBtn = document.getElementById("random") as HTMLButtonElement;
+const maxBtn = document.getElementById("max") as HTMLButtonElement; // Max button element
 
 // Cube functionality
 cubeBtn.addEventListener('click', () => {
@@ -60,12 +61,7 @@ modBtn.addEventListener('click', () => {
   // Example (you'll need to implement the actual calculation):
   // Let's assume we have the first operand stored and the second operand is entered
   const firstOperand = currentValue; // Replace with the actual stored first operand
-  const secondOperand =  parseFloat(display.value); // When the next operand is entered
-  const result = firstOperand % secondOperand;
-  display.value = result.toString();
-  currentExpression = `${firstOperand} % ${secondOperand}`; // Or build the expression as you go
-  currentExpressionDisplay.textContent = currentExpression;
-  addToHistory(currentExpression, result.toString());
+ 
 });
 
 absBtn.addEventListener('click', () => {
@@ -94,4 +90,12 @@ randomBtn.addEventListener('click', () => {
     addToHistory(currentExpression, randomNumber.toString());
 });
 
+maxBtn.addEventListener('click', () => {
+    currentExpression += 'max('; // Add 'max(' to current expression
+    currentExpressionDisplay.textContent = currentExpression;  // Update current expression display
+
+    // You'll need to implement logic here to handle multiple numbers for max
+    // For example, you might use a temporary array to store numbers entered after max is clicked
+    // Then, when equals is pressed, calculate the max of all numbers in the array.
+});
 });
