@@ -40,6 +40,7 @@ const exp2Btn = document.getElementById("exp2") as HTMLButtonElement; // Get 2^x
 const cubeRootBtn = document.getElementById("cube-root") as HTMLButtonElement;
 const signChangeBtn = document.getElementById("signChange") as HTMLButtonElement;
 const percentageBtn = document.getElementById("percentage") as HTMLButtonElement;
+const exitBtn = document.getElementById("exit") as HTMLButtonElement;
 
 percentageBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
@@ -74,6 +75,10 @@ signChangeBtn.addEventListener('click', () => {
         currentExpressionDisplay.textContent = currentExpression;
     }
 });
+exitBtn.addEventListener('click', () => {
+    window.close(); // Close the current browser window/tab
+});
+
 
 // ... (rest of the existing code)
 });
