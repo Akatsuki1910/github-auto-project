@@ -45,6 +45,7 @@ const ansBtn = document.getElementById("ans") as HTMLButtonElement; // Get the A
 const roundBtn = document.getElementById("round") as HTMLButtonElement;
 const signBtn = document.getElementById("sign") as HTMLButtonElement; // Get the sign button element
 const inverseBtn = document.getElementById("inverse") as HTMLButtonElement; // Get the inverse button element
+const squaredBtn = document.getElementById("squared") as HTMLButtonElement; // Get the squared button element
 
 // ... other existing event listeners
 
@@ -129,6 +130,15 @@ roundBtn.addEventListener('click', () => {
 signBtn.addEventListener('click', () => { // Sign change functionality
     const currentValue = parseFloat(display.value);
     display.value = (-currentValue).toString();
+});
+
+squaredBtn.addEventListener('click', () => { // Squared functionality
+    const currentValue = parseFloat(display.value);
+    const result = currentValue * currentValue;
+    display.value = result.toString();
+    currentExpression = `(${currentValue})^2`;
+    currentExpressionDisplay.textContent = currentExpression;
+    addToHistory(currentExpression, result.toString());
 });
 
 // Rest of your existing code
