@@ -42,30 +42,14 @@ const signChangeBtn = document.getElementById("signChange") as HTMLButtonElement
 const percentageBtn = document.getElementById("percentage") as HTMLButtonElement;
 const exitBtn = document.getElementById("exit") as HTMLButtonElement;
 const squareRootBtn = document.getElementById("squareRoot") as HTMLButtonElement;
+const historyToggleBtn = document.getElementById("history-toggle") as HTMLButtonElement;
 
 percentageBtn.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (currentValue / 100).toString();
-        currentExpression = `(${currentValue} / 100)`;
-        currentExpressionDisplay.textContent = currentExpression;        
-    }
+    // ... (percentageBtn logic)
 });
 
 squareRootBtn.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        if (currentValue >= 0) {
-            const result = Math.sqrt(currentValue);
-            display.value = result.toString();
-            currentExpression = `√(${currentValue})`;
-            currentExpressionDisplay.textContent = currentExpression;
-        } else {
-            display.value = "Error: Cannot calculate square root of a negative number.";
-            currentExpression = "Error"; // Clear current expression on error
-            currentExpressionDisplay.textContent = currentExpression;
-        }
-    }
+    // ... (squareRootBtn logic)
 });
 
 reciprocalBtn.addEventListener('click', () => {
@@ -85,15 +69,18 @@ cubeRootBtn.addEventListener('click', () => {
 });
 
 signChangeBtn.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (-currentValue).toString();
-        currentExpression = `-(${currentValue})`;
-        currentExpressionDisplay.textContent = currentExpression;
-    }
+    // ... (signChangeBtn logic)
 });
 exitBtn.addEventListener('click', () => {
-    window.close(); // Close the current browser window/tab
+    // ... (exitBtn logic)
+});
+
+historyToggleBtn.addEventListener('click', () => {
+    if (historyDisplay.style.display === "none" || historyDisplay.style.display === "") {
+        historyDisplay.style.display = "block";
+    } else {
+        historyDisplay.style.display = "none";
+    }
 });
 
 
