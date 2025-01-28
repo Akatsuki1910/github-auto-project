@@ -40,6 +40,8 @@ const absBtn = document.getElementById("abs") as HTMLButtonElement;
 const floorBtn = document.getElementById("floor") as HTMLButtonElement;
 const randomBtn = document.getElementById("random") as HTMLButtonElement;
 const maxBtn = document.getElementById("max") as HTMLButtonElement; // Max button element
+const minBtn = document.getElementById("min") as HTMLButtonElement; // Min button element
+let minValues: number[] = [];
 
 // Cube functionality
 cubeBtn.addEventListener('click', () => {
@@ -98,4 +100,12 @@ maxBtn.addEventListener('click', () => {
     // For example, you might use a temporary array to store numbers entered after max is clicked
     // Then, when equals is pressed, calculate the max of all numbers in the array.
 });
+minBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    minValues.push(currentValue);
+    currentExpression += `${currentValue},`;
+    currentExpressionDisplay.textContent = currentExpression + "..."; // Indicate more inputs expected
+    display.value = ""; // Clear the display for next input
+});
+
 });
