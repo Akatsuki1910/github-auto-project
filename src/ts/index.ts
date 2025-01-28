@@ -43,6 +43,8 @@ const maxBtn = document.getElementById("max") as HTMLButtonElement; // Max butto
 const minBtn = document.getElementById("min") as HTMLButtonElement; // Min button element
 const sumBtn = document.getElementById("sum") as HTMLButtonElement; // Sum button element
 const meanBtn = document.getElementById("mean") as HTMLButtonElement; // Mean button element
+const calculateMaxBtn = document.getElementById("calculateMax") as HTMLButtonElement; // Calculate Max button
+let maxValues: number[] = [];
 let minValues: number[] = [];
 let sumValues: number[] = [];
 let meanValues: number[] = [];
@@ -97,13 +99,13 @@ randomBtn.addEventListener('click', () => {
 });
 
 maxBtn.addEventListener('click', () => {
-    currentExpression += 'max('; // Add 'max(' to current expression
-    currentExpressionDisplay.textContent = currentExpression;  // Update current expression display
-
-    // You'll need to implement logic here to handle multiple numbers for max
-    // For example, you might use a temporary array to store numbers entered after max is clicked
-    // Then, when equals is pressed, calculate the max of all numbers in the array.
+    const currentValue = parseFloat(display.value);
+    maxValues.push(currentValue);
+    currentExpression += `${currentValue},`;
+    currentExpressionDisplay.textContent = currentExpression + "..."; // Indicate more inputs expected
+    display.value = ""; // Clear the display for next input
 });
+
 minBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     minValues.push(currentValue);
@@ -126,6 +128,19 @@ meanBtn.addEventListener('click', () => {
     currentExpression += `${currentValue},`; // Use comma as separator for mean
     currentExpressionDisplay.textContent = currentExpression + "...";
     display.value = "";
+});
+
+calculateMaxBtn.addEventListener('click', () => {
+  if (maxValues.length === 0) {
+    display.value = "No values entered";
+  } else {
+    const result = Math.max(...maxValues);
+    display.value = result.toString();
+    currentExpression = `max(${maxValues.join(',')})`;
+    currentExpressionDisplay.textContent = currentExpression; // Update current expression display
+    addToHistory(currentExpression, result.toString()); 
+  }
+  maxValues = []; // Clear maxValues after calculation
 });
 
 });
