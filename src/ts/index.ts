@@ -49,6 +49,7 @@ const calculateSumBtn = document.getElementById("calculateSum") as HTMLButtonEle
 const calculateMeanBtn = document.getElementById("calculateMean") as HTMLButtonElement;
 const duplicateBtn = document.getElementById("duplicate") as HTMLButtonElement; // Duplicate button element
 const eulerBtn = document.getElementById("Euler") as HTMLButtonElement; // Euler's number button
+const lnBtn = document.getElementById("ln") as HTMLButtonElement; // Natural logarithm button
 let maxValues: number[] = [];
 let minValues: number[] = [];
 let sumValues: number[] = [];
@@ -80,5 +81,18 @@ duplicateBtn.addEventListener('click', () => {
 eulerBtn.addEventListener('click', () => {
   display.value = Math.E.toString();
 });
+
+lnBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue > 0) { // Check for valid input and positive number
+      const result = Math.log(currentValue);
+      display.value = result.toString();
+      currentExpression = `ln(${currentValue})`;
+      currentExpressionDisplay.textContent = currentExpression;
+      addToHistory(currentExpression, result.toString());
+    } else {
+      display.value = "Invalid input";
+    }
+  });
 
 });
