@@ -44,9 +44,22 @@ const expBtn = document.getElementById("exp") as HTMLButtonElement;
 const ansBtn = document.getElementById("ans") as HTMLButtonElement; // Get the Ans button
 const roundBtn = document.getElementById("round") as HTMLButtonElement;
 const signBtn = document.getElementById("sign") as HTMLButtonElement; // Get the sign button element
+const inverseBtn = document.getElementById("inverse") as HTMLButtonElement; // Get the inverse button element
 
 // ... other existing event listeners
 
+inverseBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (currentValue === 0) {
+        display.value = "Error: Division by zero";
+    } else {
+        const result = 1 / currentValue;
+        display.value = result.toString();
+        currentExpression = `1/(${currentValue})`;
+        currentExpressionDisplay.textContent = currentExpression;
+        addToHistory(currentExpression, result.toString());
+    }
+});
 memoryStoreBtn.addEventListener('click', () => {
     memoryValue = parseFloat(display.value);
 });
