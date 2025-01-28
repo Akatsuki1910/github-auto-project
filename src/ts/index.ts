@@ -50,12 +50,27 @@ const calculateMeanBtn = document.getElementById("calculateMean") as HTMLButtonE
 const duplicateBtn = document.getElementById("duplicate") as HTMLButtonElement; // Duplicate button element
 const eulerBtn = document.getElementById("Euler") as HTMLButtonElement; // Euler's number button
 const lnBtn = document.getElementById("ln") as HTMLButtonElement; // Natural logarithm button
+const exp10Btn = document.getElementById("exp10") as HTMLButtonElement; // 10^x button
 let maxValues: number[] = [];
 let minValues: number[] = [];
 let sumValues: number[] = [];
 let meanValues: number[] = [];
 
 // ... (Existing button event listeners)
+
+exp10Btn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.pow(10, currentValue);
+        display.value = result.toString();
+        currentExpression = `10^(${currentValue})`;
+        currentExpressionDisplay.textContent = currentExpression;
+        addToHistory(currentExpression, result.toString());
+    } else {
+        display.value = "Invalid input";
+    }
+});
+
 
 calculateMeanBtn.addEventListener('click', () => {
     if (meanValues.length === 0) {
