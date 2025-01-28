@@ -41,7 +41,9 @@ const floorBtn = document.getElementById("floor") as HTMLButtonElement;
 const randomBtn = document.getElementById("random") as HTMLButtonElement;
 const maxBtn = document.getElementById("max") as HTMLButtonElement; // Max button element
 const minBtn = document.getElementById("min") as HTMLButtonElement; // Min button element
+const sumBtn = document.getElementById("sum") as HTMLButtonElement; // Sum button element
 let minValues: number[] = [];
+let sumValues: number[] = [];
 
 // Cube functionality
 cubeBtn.addEventListener('click', () => {
@@ -106,6 +108,14 @@ minBtn.addEventListener('click', () => {
     currentExpression += `${currentValue},`;
     currentExpressionDisplay.textContent = currentExpression + "..."; // Indicate more inputs expected
     display.value = ""; // Clear the display for next input
+});
+
+sumBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    sumValues.push(currentValue);
+    currentExpression += `${currentValue}+`;
+    currentExpressionDisplay.textContent = currentExpression + "...";
+    display.value = "";
 });
 
 });
