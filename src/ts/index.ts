@@ -39,6 +39,16 @@ const squared2Btn = document.getElementById("squared2") as HTMLButtonElement; //
 const exp2Btn = document.getElementById("exp2") as HTMLButtonElement; // Get 2^x button
 const cubeRootBtn = document.getElementById("cube-root") as HTMLButtonElement;
 const signChangeBtn = document.getElementById("signChange") as HTMLButtonElement;
+const percentageBtn = document.getElementById("percentage") as HTMLButtonElement;
+
+percentageBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (currentValue / 100).toString();
+        currentExpression = `(${currentValue} / 100)`;
+        currentExpressionDisplay.textContent = currentExpression;        
+    }
+});
 
 reciprocalBtn.addEventListener('click', () => {
     // ... (reciprocalBtn logic)
