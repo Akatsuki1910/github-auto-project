@@ -35,6 +35,7 @@ const display = document.getElementById("display") as HTMLInputElement;
 // ... other existing button declarations
 // ... existing event listeners
 const reciprocalBtn = document.getElementById("reciprocal") as HTMLButtonElement;
+const squared2Btn = document.getElementById("squared2") as HTMLButtonElement; // Get x^2 button
 
 reciprocalBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
@@ -49,6 +50,18 @@ reciprocalBtn.addEventListener('click', () => {
     }
 });
 
+squared2Btn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = currentValue * currentValue; // Calculate square
+        display.value = result.toString();
+        currentExpression = `(${currentValue})^2`;
+        currentExpressionDisplay.textContent = currentExpression; // Update the display
+        addToHistory(currentExpression, result.toString());
+    } else {
+        display.value = "Invalid input";
+    }
+});
 
 const cubeBtn = document.getElementById("cube") as HTMLButtonElement; // Get the cube button element
 const modBtn = document.getElementById("mod") as HTMLButtonElement;
