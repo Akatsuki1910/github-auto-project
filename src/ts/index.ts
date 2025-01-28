@@ -42,8 +42,10 @@ const randomBtn = document.getElementById("random") as HTMLButtonElement;
 const maxBtn = document.getElementById("max") as HTMLButtonElement; // Max button element
 const minBtn = document.getElementById("min") as HTMLButtonElement; // Min button element
 const sumBtn = document.getElementById("sum") as HTMLButtonElement; // Sum button element
+const meanBtn = document.getElementById("mean") as HTMLButtonElement; // Mean button element
 let minValues: number[] = [];
 let sumValues: number[] = [];
+let meanValues: number[] = [];
 
 // Cube functionality
 cubeBtn.addEventListener('click', () => {
@@ -114,6 +116,14 @@ sumBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     sumValues.push(currentValue);
     currentExpression += `${currentValue}+`;
+    currentExpressionDisplay.textContent = currentExpression + "...";
+    display.value = "";
+});
+
+meanBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    meanValues.push(currentValue);
+    currentExpression += `${currentValue},`; // Use comma as separator for mean
     currentExpressionDisplay.textContent = currentExpression + "...";
     display.value = "";
 });
