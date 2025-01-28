@@ -48,6 +48,7 @@ const calculateMinBtn = document.getElementById("calculateMin") as HTMLButtonEle
 const calculateSumBtn = document.getElementById("calculateSum") as HTMLButtonElement; // Calculate Sum button
 const calculateMeanBtn = document.getElementById("calculateMean") as HTMLButtonElement;
 const duplicateBtn = document.getElementById("duplicate") as HTMLButtonElement; // Duplicate button element
+const eulerBtn = document.getElementById("Euler") as HTMLButtonElement; // Euler's number button
 let maxValues: number[] = [];
 let minValues: number[] = [];
 let sumValues: number[] = [];
@@ -74,6 +75,10 @@ duplicateBtn.addEventListener('click', () => {
     if (currentValue) {
         display.value = currentValue + currentValue;
     }
+});
+
+eulerBtn.addEventListener('click', () => {
+  display.value = Math.E.toString();
 });
 
 });
