@@ -34,6 +34,22 @@ window.addEventListener("DOMContentLoaded", () => {
 const display = document.getElementById("display") as HTMLInputElement;
 // ... other existing button declarations
 // ... existing event listeners
+const reciprocalBtn = document.getElementById("reciprocal") as HTMLButtonElement;
+
+reciprocalBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue !== 0) { // Check for valid input and non-zero value
+        const result = 1 / currentValue;
+        display.value = result.toString();
+        currentExpression = `1/(${currentValue})`;
+        currentExpressionDisplay.textContent = currentExpression;
+        addToHistory(currentExpression, result.toString());
+    } else {
+        display.value = "Cannot divide by zero";
+    }
+});
+
+
 const cubeBtn = document.getElementById("cube") as HTMLButtonElement; // Get the cube button element
 const modBtn = document.getElementById("mod") as HTMLButtonElement;
 const absBtn = document.getElementById("abs") as HTMLButtonElement;
