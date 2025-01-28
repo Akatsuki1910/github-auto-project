@@ -38,6 +38,7 @@ const cubeBtn = document.getElementById("cube") as HTMLButtonElement; // Get the
 const modBtn = document.getElementById("mod") as HTMLButtonElement;
 const absBtn = document.getElementById("abs") as HTMLButtonElement;
 const floorBtn = document.getElementById("floor") as HTMLButtonElement;
+const randomBtn = document.getElementById("random") as HTMLButtonElement;
 
 // Cube functionality
 cubeBtn.addEventListener('click', () => {
@@ -83,6 +84,14 @@ floorBtn.addEventListener('click', () => {
     currentExpression = `floor(${currentValue})`;
     currentExpressionDisplay.textContent = currentExpression;
     addToHistory(currentExpression, result.toString());
+});
+
+randomBtn.addEventListener('click', () => {
+    const randomNumber = Math.random();
+    display.value = randomNumber.toString();
+    currentExpression = "random";
+    currentExpressionDisplay.textContent = currentExpression;
+    addToHistory(currentExpression, randomNumber.toString());
 });
 
 });
