@@ -37,6 +37,7 @@ const display = document.getElementById("display") as HTMLInputElement;
 const reciprocalBtn = document.getElementById("reciprocal") as HTMLButtonElement;
 const squared2Btn = document.getElementById("squared2") as HTMLButtonElement; // Get x^2 button
 const exp2Btn = document.getElementById("exp2") as HTMLButtonElement; // Get 2^x button
+const cubeRootBtn = document.getElementById("cube-root") as HTMLButtonElement;
 
 reciprocalBtn.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
@@ -70,6 +71,19 @@ exp2Btn.addEventListener('click', () => {
         const result = Math.pow(2, currentValue);
         display.value = result.toString();
         currentExpression = `2^(${currentValue})`; // Update currentExpression
+        currentExpressionDisplay.textContent = currentExpression;
+        addToHistory(currentExpression, result.toString());
+    } else {
+        display.value = "Invalid input";
+    }
+});
+
+cubeRootBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.cbrt(currentValue);
+        display.value = result.toString();
+        currentExpression = `∛(${currentValue})`;
         currentExpressionDisplay.textContent = currentExpression;
         addToHistory(currentExpression, result.toString());
     } else {
