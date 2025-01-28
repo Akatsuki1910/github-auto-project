@@ -43,6 +43,7 @@ const logBtn = document.getElementById("log") as HTMLButtonElement;
 const expBtn = document.getElementById("exp") as HTMLButtonElement;
 const ansBtn = document.getElementById("ans") as HTMLButtonElement; // Get the Ans button
 const roundBtn = document.getElementById("round") as HTMLButtonElement;
+const signBtn = document.getElementById("sign") as HTMLButtonElement; // Get the sign button element
 
 // ... other existing event listeners
 
@@ -110,6 +111,11 @@ roundBtn.addEventListener('click', () => {
     const result = Math.round(currentValue);
     display.value = result.toString();
     addToHistory(`round(${currentValue})`, result.toString());
+});
+
+signBtn.addEventListener('click', () => { // Sign change functionality
+    const currentValue = parseFloat(display.value);
+    display.value = (-currentValue).toString();
 });
 
 // Rest of your existing code
