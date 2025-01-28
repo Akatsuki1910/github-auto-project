@@ -47,6 +47,7 @@ const calculateMaxBtn = document.getElementById("calculateMax") as HTMLButtonEle
 const calculateMinBtn = document.getElementById("calculateMin") as HTMLButtonElement;
 const calculateSumBtn = document.getElementById("calculateSum") as HTMLButtonElement; // Calculate Sum button
 const calculateMeanBtn = document.getElementById("calculateMean") as HTMLButtonElement;
+const duplicateBtn = document.getElementById("duplicate") as HTMLButtonElement; // Duplicate button element
 let maxValues: number[] = [];
 let minValues: number[] = [];
 let sumValues: number[] = [];
@@ -66,6 +67,13 @@ calculateMeanBtn.addEventListener('click', () => {
         addToHistory(currentExpression, result.toString());
     }
     meanValues = []; // Clear meanValues after calculation
+});
+
+duplicateBtn.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        display.value = currentValue + currentValue;
+    }
 });
 
 });
