@@ -150,5 +150,9 @@ floorBtn.addEventListener('click', () => {
         console.error("Error calculating floor:", error);
     }
 });
+const exitBtn = document.getElementById("exit") as HTMLButtonElement;
+exitBtn.addEventListener('click', () => {
+    window.close();
+});
 
 });
