@@ -137,5 +137,18 @@ modBtn.addEventListener('click', () => {
 currentExpression += '%';
 currentExpressionDisplay.textContent = currentExpression;
 });
+const floorBtn = document.getElementById("floor") as HTMLButtonElement;
+floorBtn.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const result = Math.floor(currentValue);
+        display.value = result.toString();
+        currentExpression += `floor(${currentValue})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    } catch (error) {
+        display.value = "Error";
+        console.error("Error calculating floor:", error);
+    }
+});
 
 });
