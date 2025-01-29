@@ -154,5 +154,17 @@ const exitBtn = document.getElementById("exit") as HTMLButtonElement;
 exitBtn.addEventListener('click', () => {
     window.close();
 });
+const ceilBtn = document.getElementById("ceil") as HTMLButtonElement;
+ceilBtn.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const result = Math.ceil(currentValue);
+        display.value = result.toString();
+        currentExpression += `ceil(${currentValue})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 
 });
