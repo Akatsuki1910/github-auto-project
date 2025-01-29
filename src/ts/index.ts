@@ -126,5 +126,11 @@ eulerBtn.addEventListener('click', () => {
     currentExpression = Math.E.toString();
     currentExpressionDisplay.textContent = currentExpression;
 });
+const ansBtn = document.getElementById("ans") as HTMLButtonElement;
+ansBtn.addEventListener('click', () => {
+    display.value = lastAnswer.toString();
+    currentExpression += lastAnswer.toString(); // Update currentExpression with last answer
+    currentExpressionDisplay.textContent = currentExpression;
+});
 
 });
