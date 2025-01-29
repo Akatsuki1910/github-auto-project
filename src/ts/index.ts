@@ -76,6 +76,14 @@ memoryRecallBtn.addEventListener('click', () => {
 memoryClearBtn.addEventListener('click', () => {
   memoryValue = 0;
 });
+const sinBtn = document.getElementById("sin") as HTMLButtonElement;
+sinBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    const result = Math.sin(currentValue);
+    display.value = result.toString();
+    currentExpression += `sin(${currentValue})`;
+        currentExpressionDisplay.textContent = currentExpression;
+});
 
 // ... (rest of the existing code)
 });
