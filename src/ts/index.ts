@@ -115,5 +115,18 @@ logBtn.addEventListener('click', () => {
         console.error("Error calculating log:", error);
     }
 });
+const lnBtn = document.getElementById("ln") as HTMLButtonElement;
+lnBtn.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const result = Math.log(currentValue);
+        display.value = result.toString();
+        currentExpression += `ln(${currentValue})`;
+        currentExpressionDisplay.textContent = currentExpression; // Update the display
+    } catch (error) {
+        display.value = "Error";
+        console.error("Error calculating ln:", error);
+    }
+});
 // ... (rest of the existing code)
 });
