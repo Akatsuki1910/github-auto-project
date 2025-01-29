@@ -51,4 +51,20 @@ maxBtn.addEventListener('click', () => {
   }
 });
 
+//Min/Max button
+const minMaxBtn = document.getElementById("min-max") as HTMLButtonElement;
+minMaxBtn.addEventListener('click', () => {
+    try{
+        const numbers = display.value.split(',').map(Number);
+        const minVal = Math.min(...numbers);
+        const maxVal = Math.max(...numbers);
+        display.value = `Min: ${minVal}, Max: ${maxVal}`;
+        currentExpression += `min/max(${numbers.join(',')})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    } catch (error) {
+        display.value = "Error";
+        console.error("Error calculating min/max:", error);
+    }
+});
+
 });
