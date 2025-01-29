@@ -128,5 +128,18 @@ lnBtn.addEventListener('click', () => {
         console.error("Error calculating ln:", error);
     }
 });
+const absBtn = document.getElementById("abs") as HTMLButtonElement;
+absBtn.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const result = Math.abs(currentValue);
+        display.value = result.toString();
+        currentExpression += `abs(${currentValue})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    } catch (error) {
+        display.value = "Error";
+        console.error("Error calculating abs:", error); // Add error handling
+    }
+});
 // ... (rest of the existing code)
 });
