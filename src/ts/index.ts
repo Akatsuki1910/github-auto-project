@@ -51,6 +51,7 @@ const percentageBtn = document.getElementById("percentage") as HTMLButtonElement
 const exitBtn = document.getElementById("exit") as HTMLButtonElement;
 const squareRootBtn = document.getElementById("squareRoot") as HTMLButtonElement;
 const historyToggleBtn = document.getElementById("history-toggle") as HTMLButtonElement;
+const plusMinusBtn = document.getElementById("plusMinus") as HTMLButtonElement;
 
 percentageBtn.addEventListener('click', () => {
     // ... (percentageBtn logic)
@@ -89,6 +90,15 @@ historyToggleBtn.addEventListener('click', () => {
     } else {
         historyDisplay.style.display = "none";
     }
+});
+
+plusMinusBtn.addEventListener('click', () => {
+  if (display.value) {
+    display.value = (parseFloat(display.value) * -1).toString();
+    // Update current expression
+currentExpression = display.value; 
+currentExpressionDisplay.textContent = currentExpression;
+  }
 });
 
 
