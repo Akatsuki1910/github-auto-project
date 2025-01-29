@@ -85,5 +85,14 @@ sinBtn.addEventListener('click', () => {
         currentExpressionDisplay.textContent = currentExpression;
 });
 
+const cosBtn = document.getElementById("cos") as HTMLButtonElement;
+cosBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    const result = Math.cos(currentValue);
+    display.value = result.toString();
+        currentExpression += `cos(${currentValue})`;
+        currentExpressionDisplay.textContent = currentExpression;
+});
+
 // ... (rest of the existing code)
 });
