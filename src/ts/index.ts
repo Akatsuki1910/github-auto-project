@@ -167,4 +167,22 @@ ceilBtn.addEventListener('click', () => {
     }
 });
 
+//Summation
+const sumBtn = document.getElementById("sum") as HTMLButtonElement;
+sumBtn.addEventListener('click', () => {
+  try{
+    const currentValue = parseFloat(display.value);
+    let sum = 0;
+    for (let i = 1; i <= currentValue; i++) {
+      sum += i;
+    }
+    display.value = sum.toString();
+    currentExpression += `Σ(${currentValue})`; // Update current expression
+    currentExpressionDisplay.textContent = currentExpression;
+  } catch (error) {
+    display.value = "Error";
+    console.error("Error calculating summation:", error);
+  }
+});
+
 });
