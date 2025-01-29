@@ -141,5 +141,18 @@ absBtn.addEventListener('click', () => {
         console.error("Error calculating abs:", error); // Add error handling
     }
 });
+const roundBtn = document.getElementById("round") as HTMLButtonElement;
+roundBtn.addEventListener('click', () => {
+  try {
+    const currentValue = parseFloat(display.value);
+    const result = Math.round(currentValue);
+    display.value = result.toString();
+    currentExpression += `round(${currentValue})`;
+    currentExpressionDisplay.textContent = currentExpression;
+  } catch (error) {
+    display.value = "Error";
+    console.error("Error calculating round:", error);
+  }
+});
 // ... (rest of the existing code)
 });
