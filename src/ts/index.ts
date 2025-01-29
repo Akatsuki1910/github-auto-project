@@ -132,5 +132,10 @@ ansBtn.addEventListener('click', () => {
     currentExpression += lastAnswer.toString(); // Update currentExpression with last answer
     currentExpressionDisplay.textContent = currentExpression;
 });
+const modBtn = document.getElementById("mod") as HTMLButtonElement;
+modBtn.addEventListener('click', () => {
+currentExpression += '%';
+currentExpressionDisplay.textContent = currentExpression;
+});
 
 });
