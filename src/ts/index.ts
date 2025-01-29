@@ -94,5 +94,13 @@ cosBtn.addEventListener('click', () => {
         currentExpressionDisplay.textContent = currentExpression;
 });
 
+const tanBtn = document.getElementById("tan") as HTMLButtonElement;
+tanBtn.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    const result = Math.tan(currentValue);
+    display.value = result.toString();
+    currentExpression += `tan(${currentValue})`;
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... (rest of the existing code)
 });
