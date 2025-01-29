@@ -102,5 +102,18 @@ tanBtn.addEventListener('click', () => {
     currentExpression += `tan(${currentValue})`;
     currentExpressionDisplay.textContent = currentExpression;
 });
+const logBtn = document.getElementById("log") as HTMLButtonElement;
+logBtn.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const result = Math.log10(currentValue);
+        display.value = result.toString();
+        currentExpression += `log(${currentValue})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    } catch (error) {
+        display.value = "Error";
+        console.error("Error calculating log:", error);
+    }
+});
 // ... (rest of the existing code)
 });
