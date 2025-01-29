@@ -50,9 +50,9 @@ exp10Btn.addEventListener('click', () => {
 });
 
 
-const plusMinusBtn = document.getElementById("plusMinus") as HTMLButtonElement;
+const negateBtn = document.getElementById("negate") as HTMLButtonElement;
 
-plusMinusBtn.addEventListener('click', () => {
+negateBtn.addEventListener('click', () => {
   if (display.value) {
     display.value = (parseFloat(display.value) * -1).toString();
     // Update current expression
@@ -61,6 +61,21 @@ currentExpressionDisplay.textContent = currentExpression;
   }
 });
 
+const memoryPlusBtn = document.getElementById("memory-plus") as HTMLButtonElement;
+const memoryRecallBtn = document.getElementById("memory-recall") as HTMLButtonElement;
+const memoryClearBtn = document.getElementById("memory-clear") as HTMLButtonElement;
+
+memoryPlusBtn.addEventListener('click', () => {
+  memoryValue += parseFloat(display.value || '0');
+});
+
+memoryRecallBtn.addEventListener('click', () => {
+  display.value = memoryValue.toString();
+});
+
+memoryClearBtn.addEventListener('click', () => {
+  memoryValue = 0;
+});
 
 // ... (rest of the existing code)
 });
