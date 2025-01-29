@@ -100,5 +100,18 @@ inverseBtn.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+const squareBtn = document.getElementById("square") as HTMLButtonElement;
+squareBtn.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const result = Math.pow(currentValue, 2);
+        display.value = result.toString();
+        currentExpression += `${currentValue}^2`;
+        currentExpressionDisplay.textContent = currentExpression;
+    } catch (error) {
+        display.value = "Error";
+        console.error("Error calculating x²:", error);
+    }
+});
 
 });
