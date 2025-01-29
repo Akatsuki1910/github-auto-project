@@ -84,5 +84,21 @@ cubeBtn.addEventListener('click', () => {
     console.error("Error calculating cube:", error);
   }
 });
+const inverseBtn = document.getElementById("inverse") as HTMLButtonElement;
+inverseBtn.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        if (currentValue === 0) {
+            display.value = "Error";
+        } else {
+            const result = 1 / currentValue;
+            display.value = result.toString();
+            currentExpression += `1/(${currentValue})`; // Add to current expression
+            currentExpressionDisplay.textContent = currentExpression;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 
 });
