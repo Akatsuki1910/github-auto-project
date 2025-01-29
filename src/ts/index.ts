@@ -113,5 +113,12 @@ squareBtn.addEventListener('click', () => {
         console.error("Error calculating x²:", error);
     }
 });
+const randomBtn = document.getElementById("random") as HTMLButtonElement;
+randomBtn.addEventListener('click', () => {
+    const randomNumber = Math.random();
+    display.value = randomNumber.toString();
+    currentExpression = randomNumber.toString();
+    currentExpressionDisplay.textContent = currentExpression;  
+});
 
 });
