@@ -120,5 +120,11 @@ randomBtn.addEventListener('click', () => {
     currentExpression = randomNumber.toString();
     currentExpressionDisplay.textContent = currentExpression;  
 });
+const eulerBtn = document.getElementById("euler") as HTMLButtonElement;
+eulerBtn.addEventListener('click', () => {
+    display.value = Math.E.toString();
+    currentExpression = Math.E.toString();
+    currentExpressionDisplay.textContent = currentExpression;
+});
 
 });
