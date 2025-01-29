@@ -184,5 +184,18 @@ sumBtn.addEventListener('click', () => {
     console.error("Error calculating summation:", error);
   }
 });
-
+// Min function
+const minBtn = document.getElementById("min") as HTMLButtonElement;
+minBtn.addEventListener('click', () => {
+  try {
+    const numbers = display.value.split(',').map(Number);
+    const minVal = Math.min(...numbers);
+    display.value = minVal.toString();
+    currentExpression += `min(${numbers.join(',')})`;
+    currentExpressionDisplay.textContent = currentExpression;
+  } catch (error) {
+    display.value = "Error";
+    console.error("Error calculating min:", error); // Add error handling
+  }
+});
 });
