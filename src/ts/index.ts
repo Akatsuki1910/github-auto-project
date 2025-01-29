@@ -70,5 +70,19 @@ signBtn.addEventListener('click', () => {
     currentExpression += `sgn(${currentValue})`;
     currentExpressionDisplay.textContent = currentExpression;  
 });
+const cubeBtn = document.getElementById("cube") as HTMLButtonElement;
+
+cubeBtn.addEventListener('click', () => {
+  try {
+    const currentValue = parseFloat(display.value);
+    const result = Math.pow(currentValue, 3);
+    display.value = result.toString();
+    currentExpression += `${currentValue}^3`; // Update currentExpression
+    currentExpressionDisplay.textContent = currentExpression;
+  } catch (error) {
+    display.value = "Error";
+    console.error("Error calculating cube:", error);
+  }
+});
 
 });
