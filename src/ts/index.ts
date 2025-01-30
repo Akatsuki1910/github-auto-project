@@ -61,6 +61,22 @@ summationBtn.addEventListener('click', () => {
 
 // ... (rest of existing code)
 
+//Geometric mean
+const geoMeanButton = document.getElementById("geo-mean") as HTMLButtonElement;
+geoMeanButton.addEventListener('click', () => {
+    try {
+        const numbers = display.value.split(',').map(Number);
+        const product = numbers.reduce((acc, num) => acc * num, 1);
+        const geoMean = Math.pow(product, 1 / numbers.length);
+        display.value = geoMean.toString();
+        addToHistory(`geoMean(${numbers.join(',')})`, display.value); // Add to history
+    } catch (error) {
+        display.value = "Error";
+        console.error("Error calculating geometric mean:", error);
+    }
+});
+
+
 const calculateExpressionButton = document.getElementById("calculate-expression") as HTMLButtonElement;
 calculateExpressionButton.addEventListener('click', () => {
     try {
