@@ -111,4 +111,13 @@ cubeRootButton.addEventListener('click', () => {
     }
 });
 
+const tenToThePowerOfXButton = document.getElementById("ten-to-the-power-of-x") as HTMLButtonElement;
+tenToThePowerOfXButton.addEventListener('click', () => {
+    const value = parseFloat(display.value);
+    if (!isNaN(value)) {
+        display.value = Math.pow(10, value).toString();
+        addToHistory(`10^${value}`, display.value);
+    }
+});
+
 });
