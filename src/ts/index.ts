@@ -99,4 +99,12 @@ function fibonacci(n: number): number {
     return fibonacci(n - 1) + fibonacci(n - 2);
 }
 
+const timeButton = document.getElementById("time") as HTMLButtonElement;
+timeButton.addEventListener('click', () => {
+  const now = new Date();
+  const timeString = now.toLocaleTimeString();
+  display.value = timeString;
+  addToHistory('Time', timeString);
+});
+
 });
