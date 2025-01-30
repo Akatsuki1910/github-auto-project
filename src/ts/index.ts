@@ -128,5 +128,23 @@ expButton.addEventListener('click', () => {
         addToHistory(`e^${value}`, display.value);
     }
 });
+const leftShiftButton = document.getElementById("left-shift") as HTMLButtonElement;
+const rightShiftButton = document.getElementById("right-shift") as HTMLButtonElement;
+
+leftShiftButton.addEventListener('click', () => {
+    const value = parseInt(display.value, 10);
+    if (!isNaN(value)) {
+        display.value = (value << 1).toString(); // Left shift by 1
+        addToHistory(`(${value} << 1)`, display.value);
+    }
+});
+
+rightShiftButton.addEventListener('click', () => {
+    const value = parseInt(display.value, 10);
+    if (!isNaN(value)) {
+        display.value = (value >> 1).toString(); // Right shift by 1
+        addToHistory(`(${value} >> 1)`, display.value);
+    }
+});
 
 });
