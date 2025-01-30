@@ -81,4 +81,22 @@ parenthesesButton.addEventListener('click', () => {
     display.selectionStart = display.selectionEnd = cursorPosition + 1;
 });
 
+const fibonacciButton = document.getElementById("fibonacci") as HTMLButtonElement;
+fibonacciButton.addEventListener('click', () => {
+    const n = parseInt(display.value);
+    if (isNaN(n) || n < 0) {
+        display.value = "Error";
+    } else {
+        display.value = fibonacci(n).toString();
+        addToHistory(`fibonacci(${n})`, display.value);
+    }
+});
+
+function fibonacci(n: number): number {
+    if (n <= 1) {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
 });
