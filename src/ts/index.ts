@@ -78,5 +78,9 @@ const openNewWindowButton = document.getElementById("open-new-window") as HTMLBu
 openNewWindowButton.addEventListener('click', () => {
   window.open('https://www.example.com', '_blank');
 });
+const duplicateButton = document.getElementById("duplicate") as HTMLButtonElement;
+duplicateButton.addEventListener('click', () => {
+    display.value = display.value + display.value; 
+});
 
 });
