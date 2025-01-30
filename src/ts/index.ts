@@ -67,4 +67,19 @@ minMaxBtn.addEventListener('click', () => {
     }
 });
 
+const avgBtn = document.getElementById("average") as HTMLButtonElement;
+avgBtn.addEventListener('click', () => {
+    try{
+        const numbers = display.value.split(',').map(Number); //split the string of numbers into array
+        const sum = numbers.reduce((acc, num) => acc + num,0); //calculate the sum of numbers
+        const avg = sum/numbers.length;
+        display.value = avg.toString(); //sets the display to avg
+        currentExpression += `avg(${numbers.join(',')})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    }catch(error) {
+        display.value = "Error";
+        console.error("Error calculating average",error);
+    }
+});
+
 });
