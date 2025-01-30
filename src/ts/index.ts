@@ -166,5 +166,15 @@ gcdButton.addEventListener('click', () => {
     currentExpressionDisplay.textContent = currentExpression;
     addToHistory(currentExpression, display.value); // Add to history
 });
+const reciprocalButton = document.getElementById("reciprocal") as HTMLButtonElement;
+reciprocalButton.addEventListener('click', () => {
+    const value = parseFloat(display.value);
+    if (!isNaN(value) && value !== 0) { // Check for division by zero
+        display.value = (1 / value).toString();
+        addToHistory(`1/(${value})`, display.value);
+    } else if (value === 0) {
+         display.value = "Error: Division by zero";
+    }
+});
 
 });
