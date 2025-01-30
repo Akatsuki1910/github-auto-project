@@ -135,4 +135,11 @@ const backspace2Button = document.getElementById("backspace2") as HTMLButtonElem
 backspace2Button.addEventListener('click', () => {
   display.value = display.value.slice(0,-1);
 });
+
+const randomNumberButton = document.getElementById("random-number") as HTMLButtonElement;
+randomNumberButton.addEventListener('click', () => {
+    const randomNumber = Math.random();
+    display.value = randomNumber.toString();
+    addToHistory('Random', randomNumber.toString());
+});
 });
