@@ -120,4 +120,13 @@ tenToThePowerOfXButton.addEventListener('click', () => {
     }
 });
 
+const expButton = document.getElementById("exp") as HTMLButtonElement;
+expButton.addEventListener('click', () => {
+    const value = parseFloat(display.value);
+    if (!isNaN(value)) {
+        display.value = Math.exp(value).toString();
+        addToHistory(`e^${value}`, display.value);
+    }
+});
+
 });
