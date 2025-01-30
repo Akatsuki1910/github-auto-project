@@ -91,4 +91,14 @@ scientificNotationButton.addEventListener('click', () => {
   }
 });
 
+const baseConverterButton = document.getElementById("base-converter") as HTMLButtonElement;
+baseConverterButton.addEventListener('click', () => {
+  // Implement base conversion logic here
+  // For simplicity, this example converts to binary
+  const decimalValue = parseInt(display.value, 10);
+  if (!isNaN(decimalValue)) {
+    display.value = decimalValue.toString(2);
+  }
+});
+
 });
