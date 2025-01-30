@@ -131,5 +131,8 @@ exp2Button.addEventListener('click', () => {
       display.value = "Error";
     }
   });
-
+const backspace2Button = document.getElementById("backspace2") as HTMLButtonElement;
+backspace2Button.addEventListener('click', () => {
+  display.value = display.value.slice(0,-1);
+});
 });
