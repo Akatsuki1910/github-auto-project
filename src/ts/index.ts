@@ -59,4 +59,19 @@ summationBtn.addEventListener('click', () => {
     }
 });
 
+const productBtn = document.getElementById("product") as HTMLButtonElement;
+productBtn.addEventListener('click', () => {
+    try {
+        const numbers = display.value.split(',').map(Number);
+        const product = numbers.reduce((acc, num) => acc * num, 1);
+        display.value = product.toString();
+        currentExpression += `product(${numbers.join(',')})`;
+        currentExpressionDisplay.textContent = currentExpression;
+        addToHistory(currentExpression, display.value);
+    } catch (error) {
+        display.value = "Error";
+        console.error("Error calculating product:", error);
+    }
+});
+
 });
