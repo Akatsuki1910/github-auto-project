@@ -142,4 +142,22 @@ randomNumberButton.addEventListener('click', () => {
     display.value = randomNumber.toString();
     addToHistory('Random', randomNumber.toString());
 });
+
+const roundToDecimalButton = document.getElementById("round-to-decimal") as HTMLButtonElement;
+roundToDecimalButton.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (!isNaN(num)) {
+        const decimalPlaces = parseInt(prompt("Enter the number of decimal places to round to:", "2") || "2"); // Default to 2 decimal places
+        if (!isNaN(decimalPlaces)) {
+            const roundedNum = num.toFixed(decimalPlaces);
+            display.value = roundedNum;
+            addToHistory(`round(${num}, ${decimalPlaces})`, roundedNum);
+        } else {
+            display.value = "Invalid decimal places";
+        }
+    } else {
+        display.value = "Invalid number";
+    }
+});
+
 });
