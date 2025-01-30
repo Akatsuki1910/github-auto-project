@@ -188,4 +188,13 @@ log10Button.addEventListener('click', () => {
     }
 });
 
+const squaredButton = document.getElementById("squared") as HTMLButtonElement;
+squaredButton.addEventListener('click', () => {
+  const value = parseFloat(display.value);
+  if (!isNaN(value)) {
+    const result = value * value;
+    display.value = result.toString();
+    addToHistory(`${value}²`, display.value); // Add to history, using superscript 2
+  }
+});
 });
