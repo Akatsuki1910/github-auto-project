@@ -107,4 +107,29 @@ timeButton.addEventListener('click', () => {
   addToHistory('Time', timeString);
 });
 
+const exp2Button = document.getElementById("exp2") as HTMLButtonElement;
+exp2Button.addEventListener('click', () => {
+    try {
+      const base = parseFloat(display.value);
+      if (isNaN(base)) {
+        display.value = "Error";
+        return;
+      }
+      const exponent = prompt("Enter the exponent:");
+      if (exponent === null || exponent.trim() === "") {
+        return; // User cancelled or entered nothing
+      }
+      const exp = parseFloat(exponent);
+      if (isNaN(exp)) {
+        display.value = "Error";
+        return;
+      }
+      const result = Math.pow(base, exp);
+      display.value = result.toString();
+      addToHistory(`${base}^${exp}`, result.toString());
+    } catch (error) {
+      display.value = "Error";
+    }
+  });
+
 });
