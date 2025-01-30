@@ -37,48 +37,25 @@ const display = document.getElementById("display") as HTMLInputElement;
 // ... (rest of the existing code)
 
 // Max function
-const maxBtn = document.getElementById("max") as HTMLButtonElement;
-maxBtn.addEventListener('click', () => {
-  try {
-    const numbers = display.value.split(',').map(Number);
-    const maxVal = Math.max(...numbers);
-    display.value = maxVal.toString();
-    currentExpression += `max(${numbers.join(',')})`;
-    currentExpressionDisplay.textContent = currentExpression;
-  } catch (error) {
-    display.value = "Error";
-    console.error("Error calculating max:", error); // Add error handling
-  }
-});
+// ... existing max function
 
 //Min/Max button
-const minMaxBtn = document.getElementById("min-max") as HTMLButtonElement;
-minMaxBtn.addEventListener('click', () => {
-    try{
+// ... existing min-max function
+
+// Average function
+// ... existing avg function
+const summationBtn = document.getElementById("summation") as HTMLButtonElement;
+summationBtn.addEventListener('click', () => {
+    try {
         const numbers = display.value.split(',').map(Number);
-        const minVal = Math.min(...numbers);
-        const maxVal = Math.max(...numbers);
-        display.value = `Min: ${minVal}, Max: ${maxVal}`;
-        currentExpression += `min/max(${numbers.join(',')})`;
+        const sum = numbers.reduce((acc, num) => acc + num, 0);
+        display.value = sum.toString();
+        currentExpression += `sum(${numbers.join(',')})`;
         currentExpressionDisplay.textContent = currentExpression;
+        addToHistory(currentExpression, display.value); // Add to history
     } catch (error) {
         display.value = "Error";
-        console.error("Error calculating min/max:", error);
-    }
-});
-
-const avgBtn = document.getElementById("average") as HTMLButtonElement;
-avgBtn.addEventListener('click', () => {
-    try{
-        const numbers = display.value.split(',').map(Number); //split the string of numbers into array
-        const sum = numbers.reduce((acc, num) => acc + num,0); //calculate the sum of numbers
-        const avg = sum/numbers.length;
-        display.value = avg.toString(); //sets the display to avg
-        currentExpression += `avg(${numbers.join(',')})`;
-        currentExpressionDisplay.textContent = currentExpression;
-    }catch(error) {
-        display.value = "Error";
-        console.error("Error calculating average",error);
+        console.error("Error calculating sum:", error);
     }
 });
 
