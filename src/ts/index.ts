@@ -177,4 +177,15 @@ reciprocalButton.addEventListener('click', () => {
     }
 });
 
+const log10Button = document.getElementById("log10") as HTMLButtonElement;
+log10Button.addEventListener('click', () => {
+    const value = parseFloat(display.value);
+    if (!isNaN(value) && value > 0) { 
+        display.value = Math.log10(value).toString();
+        addToHistory(`log10(${value})`, display.value);
+    } else if (value <=0) {
+        display.value = "Error: Input must be greater than zero for log10"
+    }
+});
+
 });
