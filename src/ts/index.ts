@@ -83,4 +83,12 @@ duplicateButton.addEventListener('click', () => {
     display.value = display.value + display.value; 
 });
 
+const scientificNotationButton = document.getElementById("scientific-notation") as HTMLButtonElement;
+scientificNotationButton.addEventListener('click', () => {
+  const value = parseFloat(display.value);
+  if (!isNaN(value)) {
+    display.value = value.toExponential();
+  }
+});
+
 });
