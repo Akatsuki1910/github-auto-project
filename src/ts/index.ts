@@ -100,5 +100,15 @@ baseConverterButton.addEventListener('click', () => {
     display.value = decimalValue.toString(2);
   }
 });
+const cubeRootButton = document.getElementById("cube-root") as HTMLButtonElement;
+cubeRootButton.addEventListener('click', () => {
+    const value = parseFloat(display.value);
+    if (!isNaN(value)) {
+        display.value = Math.cbrt(value).toString();
+        currentExpression += `cbrt(${value})`;
+        currentExpressionDisplay.textContent = currentExpression;
+        addToHistory(currentExpression, display.value); // Add to history
+    }
+});
 
 });
