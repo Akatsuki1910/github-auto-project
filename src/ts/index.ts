@@ -71,5 +71,14 @@ calculateExpressionButton.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+const parenthesesButton = document.getElementById("parentheses") as HTMLButtonElement;
+parenthesesButton.addEventListener('click', () => {
+    // Get the current cursor position
+    const cursorPosition = display.selectionStart;
+    // Insert parentheses at the cursor position
+    display.value = display.value.slice(0, cursorPosition) + "()" + display.value.slice(cursorPosition);
+    // Move the cursor between the parentheses
+    display.selectionStart = display.selectionEnd = cursorPosition + 1;
+});
 
 });
