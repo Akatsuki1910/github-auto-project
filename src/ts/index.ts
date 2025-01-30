@@ -147,4 +147,24 @@ rightShiftButton.addEventListener('click', () => {
     }
 });
 
+const gcdButton = document.getElementById("gcd") as HTMLButtonElement;
+gcdButton.addEventListener('click', () => {
+    const numbers = display.value.split(',').map(Number);
+    if (numbers.length < 2) {
+        display.value = "Error: Enter at least two numbers separated by commas.";
+        return;
+    }
+    function gcd(a: number, b: number): number {
+        return b === 0 ? a : gcd(b, a % b);  // Euclidean algorithm
+    }
+    let result = gcd(numbers[0], numbers[1]);
+    for (let i = 2; i < numbers.length; i++) {
+        result = gcd(result, numbers[i]);
+    }
+    display.value = result.toString();
+    currentExpression += `gcd(${numbers.join(',')})`;
+    currentExpressionDisplay.textContent = currentExpression;
+    addToHistory(currentExpression, display.value); // Add to history
+});
+
 });
