@@ -94,4 +94,19 @@ signButton.addEventListener('click', () => {
     }
 });
 
+//New Feature: Logarithm button
+const logButton = document.getElementById('log') as HTMLButtonElement;
+logButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue > 0) { // Check for valid input
+        const result = Math.log10(currentValue);
+        display.value = result.toString();
+        currentExpression = `log(${currentExpression})`;
+        currentExpressionDisplay.textContent = currentExpression;
+        addToHistory(currentExpression, result.toString());
+    } else {
+        display.value = "Invalid input"; // Handle cases like log(0) or log(negative number)
+    }
+});
+
 });
