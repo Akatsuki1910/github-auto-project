@@ -64,6 +64,19 @@ squaredButton.addEventListener('click', () => {
     }
   });
 
+//Cubed Functionality (New Feature)
+const cubedButton = document.getElementById("cubed") as HTMLButtonElement;
+cubedButton.addEventListener('click', () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = Math.pow(currentValue, 3).toString();
+    currentExpression += `cube(${currentValue})`;
+    currentExpressionDisplay.textContent = currentExpression;
+    addToHistory(currentExpression, display.value);
+  }
+});
+
+
 // Max function
 // ... existing max function
 
