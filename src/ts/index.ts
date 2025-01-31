@@ -120,5 +120,10 @@ eulerButton.addEventListener('click', () => {
     currentExpression = Math.E.toString();
     currentExpressionDisplay.textContent = currentExpression;
 });
+const modButton = document.getElementById('mod') as HTMLButtonElement;
+modButton.addEventListener('click', () => {
+  currentExpression += '%';
+  currentExpressionDisplay.textContent = currentExpression;
+});
 
 });
