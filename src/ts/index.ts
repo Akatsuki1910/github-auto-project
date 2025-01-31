@@ -54,17 +54,7 @@ const display = document.getElementById("display") as HTMLInputElement;
 // ...existing avg function
 
 // Summation Function (New Feature Implementation)
-const sumButton = document.getElementById("sum") as HTMLButtonElement;
-sumButton.addEventListener('click', () => {
-    const numbers = display.value.split(',').map(Number);
-    if (numbers.some(isNaN)) {
-        display.value = "Invalid Input";
-    } else {
-        const sum = numbers.reduce((a, b) => a + b, 0);
-        display.value = sum.toString();
-        addToHistory(numbers.join('+'), sum.toString());
-    }
-});
+// ... existing sumButton code
 
 //Geometric mean
 // ... existing geoMean function
@@ -88,15 +78,7 @@ sumButton.addEventListener('click', () => {
 //New Feature: Absolute Value Button
 // ... Existing absButton code
 
-const signButton = document.getElementById("sign") as HTMLButtonElement;
-signButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (-currentValue).toString();
-        currentExpression = `-(${currentExpression})`; // Update currentExpression
-        currentExpressionDisplay.textContent = currentExpression;
-    }
-});
+// ... existing signButton code
 
 //New Feature: Logarithm button (base 10)
 // ... (existing logButton code)
@@ -123,26 +105,23 @@ signButton.addEventListener('click', () => {
 // ... existing floorButton code
 
 // New Feature: Euler's number button
-const eulerButton = document.getElementById('euler') as HTMLButtonElement;
-eulerButton.addEventListener('click', () => {
-    display.value = Math.E.toString();
-    currentExpression = Math.E.toString();
-    currentExpressionDisplay.textContent = currentExpression;
-});
-const modButton = document.getElementById('mod') as HTMLButtonElement;
-modButton.addEventListener('click', () => {
-  currentExpression += '%';
-  currentExpressionDisplay.textContent = currentExpression;
-});
+// ... existing eulerButton code
+
+// ... existing modButton code
 
 //New Feature: Cube Root button
-const cubeRootButton = document.getElementById('cubeRoot') as HTMLButtonElement;
-cubeRootButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        const result = Math.cbrt(currentValue);
+// ... existing cubeRootButton code
+
+// New Feature: Nth Root button
+const nthRootButton = document.getElementById('nthRoot') as HTMLButtonElement;
+nthRootButton.addEventListener('click', () => {
+    const [x, y] = display.value.split(',').map(Number);
+    if (isNaN(x) || isNaN(y)) {
+        display.value = "Invalid Input";
+    } else {
+        const result = Math.pow(x, 1/y);
         display.value = result.toString();
-        addToHistory(`∛(${currentValue})`, result.toString());
+        addToHistory(`${y}√${x}`, result.toString());
     }
 });
 
