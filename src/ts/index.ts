@@ -187,5 +187,16 @@ absoluteButton.addEventListener('click', () => {
         display.value = "Invalid number";
     }
 });
+const truncButton = document.getElementById("trunc") as HTMLButtonElement;
+truncButton.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (!isNaN(num)) {
+        const truncatedValue = Math.trunc(num);
+        display.value = truncatedValue.toString();
+        addToHistory(`trunc(${num})`, truncatedValue.toString());
+    } else {
+        display.value = "Invalid number";
+    }
+});
 
 });
