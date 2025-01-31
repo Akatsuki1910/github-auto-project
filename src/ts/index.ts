@@ -160,4 +160,15 @@ maxButton.addEventListener('click', () => {
   }
 });
 
+// Add min button functionality
+const minButton = document.getElementById('min') as HTMLButtonElement;
+minButton.addEventListener('click', () => {
+    const numbers = display.value.split(',').map(Number);
+    if (numbers.some(isNaN)) {
+        display.value = "Invalid input";
+    } else {
+        display.value = Math.min(...numbers).toString();
+    }
+});
+
 });
