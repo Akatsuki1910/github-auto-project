@@ -176,4 +176,16 @@ roundToDecimalButton.addEventListener('click', () => {
     }
 });
 
+const absoluteButton = document.getElementById("absolute") as HTMLButtonElement;
+absoluteButton.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (!isNaN(num)) {
+        const absoluteValue = Math.abs(num);
+        display.value = absoluteValue.toString();
+        addToHistory(`|${num}|`, absoluteValue.toString());
+    } else {
+        display.value = "Invalid number";
+    }
+});
+
 });
