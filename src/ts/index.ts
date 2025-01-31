@@ -38,7 +38,6 @@ const display = document.getElementById("display") as HTMLInputElement;
 
 // ... existing functions ...
 
-    // Reciprocal button functionality (New Feature)
     // ... existing reciprocal button code
 // Squared functionality
 // ... existing squared button code
@@ -123,4 +122,15 @@ duplicateButton.addEventListener('click', () => {
     const currentValue = display.value;
     display.value += currentValue; 
 });
+
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
+inverseButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue !== 0) {
+        display.value = (1 / currentValue).toString();
+    } else {
+        display.value = "Error"; // Handle division by zero or non-numeric input
+    }
+});
+
 });
