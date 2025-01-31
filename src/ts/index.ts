@@ -47,8 +47,6 @@ const display = document.getElementById("display") as HTMLInputElement;
 
 // ...existing max function
 
-//Min/Max button
-// ... existing min-max function
 
 // ...existing avg function
 
@@ -151,6 +149,15 @@ percentageButton.addEventListener('click', () => {
     } else {
         display.value = "Error"; // Or handle the error as needed
     }
+});
+const maxButton = document.getElementById('max') as HTMLButtonElement;
+maxButton.addEventListener('click', () => {
+  const numbers = display.value.split(',').map(Number);
+  if (numbers.some(isNaN)) {
+    display.value = "Invalid input";
+  } else {
+    display.value = Math.max(...numbers).toString();
+  }
 });
 
 });
