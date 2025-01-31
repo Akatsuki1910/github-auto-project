@@ -36,6 +36,22 @@ const display = document.getElementById("display") as HTMLInputElement;
 // ... existing event listeners
 // ... (rest of the existing code)
 
+// ... existing functions ...
+
+    // Reciprocal button functionality (New Feature)
+    const reciprocalButton = document.getElementById("reciprocal") as HTMLButtonElement;
+    reciprocalButton.addEventListener('click', () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue) && currentValue !== 0) {
+            display.value = (1 / currentValue).toString();
+            currentExpression += `1/(${currentValue})`;
+            currentExpressionDisplay.textContent = currentExpression;
+             addToHistory(currentExpression, display.value);
+        } else if(currentValue === 0) {
+            display.value = "Cannot divide by zero";
+        }
+    });
+
 // Max function
 // ... existing max function
 
