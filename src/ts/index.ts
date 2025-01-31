@@ -99,4 +99,13 @@ clearAllButton.addEventListener('click', () => {
     currentExpressionDisplay.textContent = ""; 
 });
 
+const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
+memoryStoreButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        memoryValue = currentValue;
+        console.log(`Stored ${memoryValue} in memory`); // Log to console for debugging
+    }
+});
+
 });
