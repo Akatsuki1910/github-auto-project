@@ -51,6 +51,18 @@ const display = document.getElementById("display") as HTMLInputElement;
             display.value = "Cannot divide by zero";
         }
     });
+// Squared functionality
+const squaredButton = document.getElementById("squared") as HTMLButtonElement;
+squaredButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+      const result = currentValue * currentValue;
+      display.value = result.toString();
+      currentExpression += `sqr(${currentValue})`;
+      currentExpressionDisplay.textContent = currentExpression;
+      addToHistory(currentExpression, display.value); // Add to history
+    }
+  });
 
 // Max function
 // ... existing max function
