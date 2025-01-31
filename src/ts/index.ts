@@ -50,6 +50,17 @@ const display = document.getElementById("display") as HTMLInputElement;
 
 // ...existing avg function
 
+//Calculating average of numbers
+const averageButton = document.getElementById('average') as HTMLButtonElement;
+averageButton.addEventListener('click', () => {
+    const numbers = display.value.split(',').map(Number);
+    if (numbers.some(isNaN)) {
+        display.value = "Invalid input";
+    } else {
+        const sum = numbers.reduce((a, b) => a + b, 0);
+        display.value = (sum / numbers.length).toString();
+    }
+});
 // Summation Function (New Feature Implementation)
 // ... existing sumButton code
 
