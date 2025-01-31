@@ -113,29 +113,14 @@ const display = document.getElementById("display") as HTMLInputElement;
 // ... existing cubeRootButton code
 
 // New Feature: Nth Root button
-const nthRootButton = document.getElementById('nthRoot') as HTMLButtonElement;
-nthRootButton.addEventListener('click', () => {
-    const [x, y] = display.value.split(',').map(Number);
-    if (isNaN(x) || isNaN(y)) {
-        display.value = "Invalid Input";
-    } else {
-        const result = Math.pow(x, 1/y);
-        display.value = result.toString();
-        addToHistory(`${y}√${x}`, result.toString());
-    }
-});
+// ... existing nthRootButton code
 
 // New Feature: Inverse Sine button
-const inverseSinButton = document.getElementById('inverseSin') as HTMLButtonElement;
-inverseSinButton.addEventListener('click', () => {
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-        display.value = "Invalid Input";
-    } else {
-        const result = Math.asin(num);
-        display.value = result.toString();
-        addToHistory(`sin⁻¹(${num})`, result.toString());
-    }
-});
+// ... existing inverseSinButton code
 
+const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
+duplicateButton.addEventListener('click', () => {
+    const currentValue = display.value;
+    display.value += currentValue; 
+});
 });
