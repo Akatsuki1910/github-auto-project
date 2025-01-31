@@ -124,5 +124,19 @@ expButton.addEventListener('click', () => {
         display.value = "Invalid input";
     }
 });
+//New Feature: sin button 
+const sinButton = document.getElementById('sin') as HTMLButtonElement;
+sinButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if(!isNaN(currentValue)){
+        const result = Math.sin(currentValue);
+        display.value = result.toString();
+        currentExpression = `sin(${currentExpression})`;
+        currentExpressionDisplay.textContent = currentExpression;
+        addToHistory(currentExpression, result.toString())
+    } else {
+        display.value = "Invalid input";
+    }
+})
 
 });
