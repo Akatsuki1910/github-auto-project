@@ -143,4 +143,15 @@ randomButton.addEventListener('click', () => {
   currentExpressionDisplay.textContent = currentExpression;
 });
 
+//New Feature: Floor button
+const floorButton = document.getElementById('floor') as HTMLButtonElement;
+floorButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.floor(currentValue).toString();
+        currentExpression = `floor(${currentExpression})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
+
 });
