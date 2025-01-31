@@ -138,5 +138,19 @@ sinButton.addEventListener('click', () => {
         display.value = "Invalid input";
     }
 })
+//New Feature: cos button
+const cosButton = document.getElementById('cos') as HTMLButtonElement;
+cosButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if(!isNaN(currentValue)){
+        const result = Math.cos(currentValue);
+        display.value = result.toString();
+        currentExpression = `cos(${currentExpression})`;
+        currentExpressionDisplay.textContent = currentExpression;
+        addToHistory(currentExpression, result.toString())
+    } else {
+        display.value = "Invalid input";
+    }
+});
 
 });
