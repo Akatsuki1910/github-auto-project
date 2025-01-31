@@ -135,4 +135,12 @@ roundButton.addEventListener('click', () => {
     }
 });
 
+const randomButton = document.getElementById('random') as HTMLButtonElement;
+randomButton.addEventListener('click', () => {
+  const randomNumber = Math.random();
+  display.value = randomNumber.toString();
+  currentExpression = randomNumber.toString();
+  currentExpressionDisplay.textContent = currentExpression;
+});
+
 });
