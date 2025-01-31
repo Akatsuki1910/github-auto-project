@@ -125,4 +125,17 @@ nthRootButton.addEventListener('click', () => {
     }
 });
 
+// New Feature: Inverse Sine button
+const inverseSinButton = document.getElementById('inverseSin') as HTMLButtonElement;
+inverseSinButton.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid Input";
+    } else {
+        const result = Math.asin(num);
+        display.value = result.toString();
+        addToHistory(`sin⁻¹(${num})`, result.toString());
+    }
+});
+
 });
