@@ -135,4 +135,15 @@ modButton.addEventListener('click', () => {
   currentExpressionDisplay.textContent = currentExpression;
 });
 
+//New Feature: Cube Root button
+const cubeRootButton = document.getElementById('cubeRoot') as HTMLButtonElement;
+cubeRootButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.cbrt(currentValue);
+        display.value = result.toString();
+        addToHistory(`∛(${currentValue})`, result.toString());
+    }
+});
+
 });
