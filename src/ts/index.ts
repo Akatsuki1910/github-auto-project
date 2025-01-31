@@ -91,5 +91,12 @@ signChangeButton.addEventListener('click', () => {
         display.value = (-currentValue).toString();
     }
 });
+const clearAllButton = document.getElementById("clear-all") as HTMLButtonElement;
+
+clearAllButton.addEventListener('click', () => {
+    display.value = "0";
+    currentExpression = "";
+    currentExpressionDisplay.textContent = ""; 
+});
 
 });
