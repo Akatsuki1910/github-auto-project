@@ -125,5 +125,14 @@ tanButton.addEventListener('click', () => {
         display.value = "Invalid input";
     }
 });
+const roundButton = document.getElementById('round') as HTMLButtonElement;
+roundButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.round(currentValue).toString();
+        currentExpression = `round(${currentExpression})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
 
 });
