@@ -111,5 +111,18 @@ lnButton.addEventListener('click', () => {
         display.value = "Invalid input"; // Handle cases like ln(0) or ln(negative number)
     }
 });
+const expButton = document.getElementById('exp') as HTMLButtonElement;
+expButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.exp(currentValue);
+        display.value = result.toString();
+        currentExpression = `e^(${currentExpression})`;
+        currentExpressionDisplay.textContent = currentExpression;
+        addToHistory(currentExpression, result.toString());
+    } else {
+        display.value = "Invalid input";
+    }
+});
 
 });
