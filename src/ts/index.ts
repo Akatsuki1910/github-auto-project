@@ -76,13 +76,16 @@ const display = document.getElementById("display") as HTMLInputElement;
 
 // ... existing roundToDecimalButton
 
-// ... existing absoluteButton
-
-// ... existing truncButton
-
-// ... existing clearAllButton
-
-// ... existing memoryStoreButton
+//New Feature: Absolute Value Button
+const absButton = document.getElementById("abs") as HTMLButtonElement;
+absButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.abs(currentValue).toString();
+        currentExpression = `abs(${currentExpression})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
 
 const signButton = document.getElementById("sign") as HTMLButtonElement;
 signButton.addEventListener('click', () => {
