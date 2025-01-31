@@ -94,18 +94,21 @@ signButton.addEventListener('click', () => {
     }
 });
 
-//New Feature: Logarithm button
-const logButton = document.getElementById('log') as HTMLButtonElement;
-logButton.addEventListener('click', () => {
+//New Feature: Logarithm button (base 10)
+// ... (existing logButton code)
+
+// New Feature: Natural Logarithm button (base e)
+const lnButton = document.getElementById('ln') as HTMLButtonElement;
+lnButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue) && currentValue > 0) { // Check for valid input
-        const result = Math.log10(currentValue);
+        const result = Math.log(currentValue); // Natural logarithm (base e)
         display.value = result.toString();
-        currentExpression = `log(${currentExpression})`;
+        currentExpression = `ln(${currentExpression})`;
         currentExpressionDisplay.textContent = currentExpression;
         addToHistory(currentExpression, result.toString());
     } else {
-        display.value = "Invalid input"; // Handle cases like log(0) or log(negative number)
+        display.value = "Invalid input"; // Handle cases like ln(0) or ln(negative number)
     }
 });
 
