@@ -46,16 +46,25 @@ const display = document.getElementById("display") as HTMLInputElement;
 //Cubed Functionality (New Feature)
 // ... existing cubed button code
 
-// Max function
-// ... existing max function
+// ...existing max function
 
 //Min/Max button
 // ... existing min-max function
 
-// Average function
-// ... existing avg function
+// ...existing avg function
 
-// ... existing summation function
+// Summation Function (New Feature Implementation)
+const sumButton = document.getElementById("sum") as HTMLButtonElement;
+sumButton.addEventListener('click', () => {
+    const numbers = display.value.split(',').map(Number);
+    if (numbers.some(isNaN)) {
+        display.value = "Invalid Input";
+    } else {
+        const sum = numbers.reduce((a, b) => a + b, 0);
+        display.value = sum.toString();
+        addToHistory(numbers.join('+'), sum.toString());
+    }
+});
 
 //Geometric mean
 // ... existing geoMean function
