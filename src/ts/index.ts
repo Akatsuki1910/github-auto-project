@@ -98,56 +98,26 @@ signButton.addEventListener('click', () => {
 // ... (existing logButton code)
 
 // New Feature: Natural Logarithm button (base e)
-const lnButton = document.getElementById('ln') as HTMLButtonElement;
-lnButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue > 0) { // Check for valid input
-        const result = Math.log(currentValue); // Natural logarithm (base e)
-        display.value = result.toString();
-        currentExpression = `ln(${currentExpression})`;
-        currentExpressionDisplay.textContent = currentExpression;
-        addToHistory(currentExpression, result.toString());
-    } else {
-        display.value = "Invalid input"; // Handle cases like ln(0) or ln(negative number)
-    }
-});
-const expButton = document.getElementById('exp') as HTMLButtonElement;
-expButton.addEventListener('click', () => {
+// ... existing lnButton code
+
+// ... existing expButton code
+
+//New Feature: sin button 
+// ... existing sinButton code
+
+//New Feature: cos button
+// ... existing cosButton code
+
+// New Feature: tan button
+const tanButton = document.getElementById('tan') as HTMLButtonElement;
+tanButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        const result = Math.exp(currentValue);
+        const result = Math.tan(currentValue);
         display.value = result.toString();
-        currentExpression = `e^(${currentExpression})`;
+        currentExpression = `tan(${currentExpression})`;
         currentExpressionDisplay.textContent = currentExpression;
         addToHistory(currentExpression, result.toString());
-    } else {
-        display.value = "Invalid input";
-    }
-});
-//New Feature: sin button 
-const sinButton = document.getElementById('sin') as HTMLButtonElement;
-sinButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if(!isNaN(currentValue)){
-        const result = Math.sin(currentValue);
-        display.value = result.toString();
-        currentExpression = `sin(${currentExpression})`;
-        currentExpressionDisplay.textContent = currentExpression;
-        addToHistory(currentExpression, result.toString())
-    } else {
-        display.value = "Invalid input";
-    }
-})
-//New Feature: cos button
-const cosButton = document.getElementById('cos') as HTMLButtonElement;
-cosButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if(!isNaN(currentValue)){
-        const result = Math.cos(currentValue);
-        display.value = result.toString();
-        currentExpression = `cos(${currentExpression})`;
-        currentExpressionDisplay.textContent = currentExpression;
-        addToHistory(currentExpression, result.toString())
     } else {
         display.value = "Invalid input";
     }
