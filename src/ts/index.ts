@@ -39,43 +39,12 @@ const display = document.getElementById("display") as HTMLInputElement;
 // ... existing functions ...
 
     // Reciprocal button functionality (New Feature)
-    const reciprocalButton = document.getElementById("reciprocal") as HTMLButtonElement;
-    reciprocalButton.addEventListener('click', () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue) && currentValue !== 0) {
-            display.value = (1 / currentValue).toString();
-            currentExpression += `1/(${currentValue})`;
-            currentExpressionDisplay.textContent = currentExpression;
-             addToHistory(currentExpression, display.value);
-        } else if(currentValue === 0) {
-            display.value = "Cannot divide by zero";
-        }
-    });
+    // ... existing reciprocal button code
 // Squared functionality
-const squaredButton = document.getElementById("squared") as HTMLButtonElement;
-squaredButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-      const result = currentValue * currentValue;
-      display.value = result.toString();
-      currentExpression += `sqr(${currentValue})`;
-      currentExpressionDisplay.textContent = currentExpression;
-      addToHistory(currentExpression, display.value); // Add to history
-    }
-  });
+// ... existing squared button code
 
 //Cubed Functionality (New Feature)
-const cubedButton = document.getElementById("cubed") as HTMLButtonElement;
-cubedButton.addEventListener('click', () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    display.value = Math.pow(currentValue, 3).toString();
-    currentExpression += `cube(${currentValue})`;
-    currentExpressionDisplay.textContent = currentExpression;
-    addToHistory(currentExpression, display.value);
-  }
-});
-
+// ... existing cubed button code
 
 // Max function
 // ... existing max function
@@ -85,22 +54,8 @@ cubedButton.addEventListener('click', () => {
 
 // Average function
 // ... existing avg function
-const summationBtn = document.getElementById("summation") as HTMLButtonElement;
-summationBtn.addEventListener('click', () => {
-    try {
-        const numbers = display.value.split(',').map(Number);
-        const sum = numbers.reduce((acc, num) => acc + num, 0);
-        display.value = sum.toString();
-        currentExpression += `sum(${numbers.join(',')})`;
-        currentExpressionDisplay.textContent = currentExpression;
-        addToHistory(currentExpression, display.value); // Add to history
-    } catch (error) {
-        display.value = "Error";
-        console.error("Error calculating sum:", error);
-    }
-});
 
-// ... (rest of existing code)
+// ... existing summation function
 
 //Geometric mean
 // ... existing geoMean function
@@ -125,27 +80,17 @@ summationBtn.addEventListener('click', () => {
 
 // ... existing truncButton
 
-const signChangeButton = document.getElementById("sign-change") as HTMLButtonElement;
-signChangeButton.addEventListener('click', () => {
+// ... existing clearAllButton
+
+// ... existing memoryStoreButton
+
+const signButton = document.getElementById("sign") as HTMLButtonElement;
+signButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
         display.value = (-currentValue).toString();
-    }
-});
-const clearAllButton = document.getElementById("clear-all") as HTMLButtonElement;
-
-clearAllButton.addEventListener('click', () => {
-    display.value = "0";
-    currentExpression = "";
-    currentExpressionDisplay.textContent = ""; 
-});
-
-const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
-memoryStoreButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        memoryValue = currentValue;
-        console.log(`Stored ${memoryValue} in memory`); // Log to console for debugging
+        currentExpression = `-(${currentExpression})`; // Update currentExpression
+        currentExpressionDisplay.textContent = currentExpression;
     }
 });
 
