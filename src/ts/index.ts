@@ -84,6 +84,15 @@ currentMonthButton.addEventListener('click', () => {
   const month = now.toLocaleString('default', { month: 'long' });
   showMessage(`Current Month: ${month}`);
 });
-
+const squareButton = document.getElementById('square') as HTMLButtonElement;
+squareButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    const squaredValue = currentValue * currentValue;
+    display.value = squaredValue.toString();
+    currentExpression = `${currentValue}^2`;
+    currentExpressionDisplay.textContent = currentExpression; 
+    addToHistory(currentExpression, squaredValue.toString());
+  });
 // ... (Rest of the existing code)
 });
