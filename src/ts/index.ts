@@ -64,4 +64,11 @@ currentExpressionBtn.addEventListener('click', () => {
   (document.getElementById('display') as HTMLInputElement).value = currentExpression;
 });
 
+const backButton = document.getElementById('back') as HTMLButtonElement;
+
+backButton.addEventListener('click', () => {
+    currentExpression = currentExpression.slice(0, -1);
+    (document.getElementById('display') as HTMLInputElement).value = currentExpression;
+});
+
 });
