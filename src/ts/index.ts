@@ -63,6 +63,13 @@ currentTimeButton.addEventListener('click', () => {
     const timeString = now.toLocaleTimeString();
     showMessage(`Current Time: ${timeString}`);
 });
+const currentDayButton = document.getElementById('current-day') as HTMLButtonElement;
+
+currentDayButton.addEventListener('click', () => {
+  const now = new Date();
+  const dayString = now.toLocaleDateString();
+  showMessage(`Current Day: ${dayString}`);
+});
 
 // ... (Rest of the existing code)
 });
