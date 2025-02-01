@@ -122,5 +122,30 @@ currentMillisecondsButton.addEventListener('click', () => {
     showMessage(`Current Milliseconds: ${milliseconds}`);
     addToHistory('Milliseconds', milliseconds.toString());
 });
+const roundToNButton = document.getElementById('round-to-n') as HTMLButtonElement;
+const roundToNInput = document.getElementById('round-to-n-input') as HTMLInputElement;
+
+roundToNButton.addEventListener('click', () => {
+  if (roundToNInput.style.display === 'none' || roundToNInput.style.display === '') {
+    roundToNInput.style.display = 'inline-block'; // Show the input field
+  } else {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    const decimalPlaces = parseInt(roundToNInput.value);
+
+    if (!isNaN(currentValue) && !isNaN(decimalPlaces)) {
+      const roundedValue = parseFloat(currentValue.toFixed(decimalPlaces));
+      display.value = roundedValue.toString();
+      currentExpression = `round(${currentValue}, ${decimalPlaces})`;
+      currentExpressionDisplay.textContent = currentExpression;
+      addToHistory(currentExpression, roundedValue.toString());
+
+      roundToNInput.style.display = 'none'; // Hide the input field again
+      roundToNInput.value = ''; // Clear the input field
+    } else {
+      showMessage('Invalid input for rounding');
+    }
+  }
+});
 // ... (Rest of the existing code)
 });
