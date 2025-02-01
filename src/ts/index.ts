@@ -124,4 +124,15 @@ memoryStoreButton.addEventListener('click', () => {
         console.error('Failed to copy: ', err);
       });
   });
+
+    // Toggle Calculator Visibility
+    const toggleCalculatorButton = document.getElementById('toggleCalculator') as HTMLButtonElement;
+    const calculatorContainer = document.getElementById('calculator') as HTMLDivElement;
+    toggleCalculatorButton.addEventListener('click', () => {
+        if (calculatorContainer.style.display === 'none' || calculatorContainer.style.display === '') {
+            calculatorContainer.style.display = 'block';
+        } else {
+            calculatorContainer.style.display = 'none';
+        }
+    });
 });
