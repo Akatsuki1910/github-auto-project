@@ -154,5 +154,13 @@ currentHourButton.addEventListener('click', () => {
     showMessage(`Current Hour: ${hour}`);
     addToHistory('Hour', hour.toString());
 });
+const randomNumberButton = document.getElementById('random-number') as HTMLButtonElement;
+randomNumberButton.addEventListener('click', () => {
+    const randomNumber = Math.random();
+    (document.getElementById('display') as HTMLInputElement).value = randomNumber.toString();
+    currentExpression = 'random()';
+    currentExpressionDisplay.textContent = currentExpression;
+    addToHistory(currentExpression, randomNumber.toString());
+});
 // ... (Rest of the existing code)
 });
