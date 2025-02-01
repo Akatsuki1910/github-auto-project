@@ -70,6 +70,13 @@ currentDayButton.addEventListener('click', () => {
   const dayString = now.toLocaleDateString();
   showMessage(`Current Day: ${dayString}`);
 });
+const currentYearButton = document.getElementById('current-year') as HTMLButtonElement;
+
+currentYearButton.addEventListener('click', () => {
+  const now = new Date();
+  const year = now.getFullYear();
+  showMessage(`Current Year: ${year}`);
+});
 
 // ... (Rest of the existing code)
 });
