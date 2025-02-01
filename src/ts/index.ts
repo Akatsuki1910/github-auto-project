@@ -252,4 +252,25 @@ percentageChangeButton.addEventListener('click', () => {
     display.value = percentageChange.toString();
 });
 
+//New Feature: Base Conversion
+const baseConversionButton = document.getElementById('baseConversion') as HTMLButtonElement;
+baseConversionButton.addEventListener('click', () => {
+    const values = display.value.split(',').map(Number);
+
+    if(values.length !== 2 || values.some(isNaN)) {
+        display.value = 'Invalid Input. Enter number,base';
+        return;
+    }
+
+    const number = values[0];
+    const base = values[1];
+
+    if(base < 2 || base > 36) {
+        display.value = 'Invalid base. Base must be between 2 and 36';
+        return;
+    }
+
+    display.value = number.toString(base);
+});
+
 });
