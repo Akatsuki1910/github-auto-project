@@ -98,5 +98,13 @@ squareButton.addEventListener('click', () => {
     currentExpressionDisplay.textContent = currentExpression; 
     addToHistory(currentExpression, squaredValue.toString());
   });
+const currentSecondsButton = document.getElementById('current-seconds') as HTMLButtonElement;
+
+currentSecondsButton.addEventListener('click', () => {
+  const now = new Date();
+  const seconds = now.getSeconds();
+  showMessage(`Current Seconds: ${seconds}`);
+  addToHistory('Seconds', seconds.toString());
+});
 // ... (Rest of the existing code)
 });
