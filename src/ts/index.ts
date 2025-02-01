@@ -147,5 +147,12 @@ roundToNButton.addEventListener('click', () => {
     }
   }
 });
+const currentHourButton = document.getElementById('current-hour') as HTMLButtonElement;
+currentHourButton.addEventListener('click', () => {
+    const now = new Date();
+    const hour = now.getHours();
+    showMessage(`Current Hour: ${hour}`);
+    addToHistory('Hour', hour.toString());
+});
 // ... (Rest of the existing code)
 });
