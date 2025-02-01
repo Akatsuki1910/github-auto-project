@@ -237,4 +237,19 @@ function factorial(n: number): number {
     return n * factorial(n - 1);
 }
 
+const percentageChangeButton = document.getElementById('percentageChange') as HTMLButtonElement;
+percentageChangeButton.addEventListener('click', () => {
+    const values = display.value.split(',').map(Number);
+    if (values.length !== 2 || values.some(isNaN)) {
+        display.value = "Invalid input";
+        return;
+    }
+
+    const originalValue = values[0];
+    const newValue = values[1];
+
+    const percentageChange = ((newValue - originalValue) / originalValue) * 100;
+    display.value = percentageChange.toString();
+});
+
 });
