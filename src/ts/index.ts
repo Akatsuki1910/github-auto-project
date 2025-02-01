@@ -62,6 +62,7 @@ currentTimeButton.addEventListener('click', () => {
     const now = new Date();
     const timeString = now.toLocaleTimeString();
     showMessage(`Current Time: ${timeString}`);
+    addToHistory('Time', timeString); // Add time to history
 });
 const currentDayButton = document.getElementById('current-day') as HTMLButtonElement;
 
@@ -69,6 +70,7 @@ currentDayButton.addEventListener('click', () => {
   const now = new Date();
   const dayString = now.toLocaleDateString();
   showMessage(`Current Day: ${dayString}`);
+  addToHistory('Date', dayString);
 });
 const currentYearButton = document.getElementById('current-year') as HTMLButtonElement;
 
@@ -76,6 +78,7 @@ currentYearButton.addEventListener('click', () => {
   const now = new Date();
   const year = now.getFullYear();
   showMessage(`Current Year: ${year}`);
+  addToHistory('Year', year.toString());
 });
 const currentMonthButton = document.getElementById('current-month') as HTMLButtonElement;
 
@@ -83,6 +86,7 @@ currentMonthButton.addEventListener('click', () => {
   const now = new Date();
   const month = now.toLocaleString('default', { month: 'long' });
   showMessage(`Current Month: ${month}`);
+  addToHistory('Month', month);
 });
 const squareButton = document.getElementById('square') as HTMLButtonElement;
 squareButton.addEventListener('click', () => {
