@@ -103,4 +103,11 @@ memoryStoreButton.addEventListener('click', () => {
       memoryValue = displayValue;
     }
   });
+
+    const clearAllEntriesButton = document.getElementById('clearAllEntries') as HTMLButtonElement;
+  clearAllEntriesButton.addEventListener('click', () => {
+      currentExpression = '';
+      (document.getElementById('display') as HTMLInputElement).value = '';
+      currentExpressionDisplay.textContent = ''; // Clear current expression display 
+  });
 });
