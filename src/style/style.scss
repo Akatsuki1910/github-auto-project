@@ -39,3 +39,13 @@
   border: 1px solid #ccc;
   padding: 10px;
 }
+.keyboard{
+display:grid;
+ grid-template-columns:repeat(4,1fr);
+ grid-gap:5px;
+}
+.keyboard button {
+width: 100%;
+padding: 10px;
+box-sizing: border-box;
+}
