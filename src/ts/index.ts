@@ -70,5 +70,10 @@ backButton.addEventListener('click', () => {
     currentExpression = currentExpression.slice(0, -1);
     (document.getElementById('display') as HTMLInputElement).value = currentExpression;
 });
+const clearDisplayButton = document.getElementById('clearDisplay') as HTMLButtonElement;
+
+clearDisplayButton.addEventListener('click', () => {
+  (document.getElementById('display') as HTMLInputElement).value = '';
+});
 
 });
