@@ -206,4 +206,35 @@ expm1Button.addEventListener('click', () => {
     }
 });
 
+//Combination (nCr)
+const comboButton = document.getElementById('combo') as HTMLButtonElement;
+comboButton.addEventListener('click', () => {
+    const values = display.value.split(',').map(Number);
+    if (values.length !== 2 || values.some(isNaN)){
+        display.value = "Invalid input";
+        return;
+    }
+
+    const n = values[0];
+    const r = values[1];
+
+    if (n < 0 || r < 0 || r > n || !Number.isInteger(n) || !Number.isInteger(r)) {
+        display.value = "Invalid input";
+        return;
+    }
+
+    const nFact = factorial(n);
+    const rFact = factorial(r);
+    const nMinusRFact = factorial(n - r);
+
+    display.value = (nFact / (rFact * nMinusRFact)).toString();
+});
+
+function factorial(n: number): number {
+    if (n === 0) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
 });
