@@ -38,6 +38,22 @@ const display = document.getElementById("display") as HTMLInputElement;
 
 // ... existing functions ...
 
+// Add event listeners for open and close parenthesis buttons
+const openParenthesisButton = document.getElementById('open-parenthesis') as HTMLButtonElement;
+const closeParenthesisButton = document.getElementById('close-parenthesis') as HTMLButtonElement;
+
+openParenthesisButton.addEventListener('click', () => {
+  display.value += '(';
+  currentExpression += '(';
+  currentExpressionDisplay.textContent = currentExpression;
+});
+
+closeParenthesisButton.addEventListener('click', () => {
+  display.value += ')';
+  currentExpression += ')';
+  currentExpressionDisplay.textContent = currentExpression;
+});
+
     // ... existing reciprocal button code
 // Squared functionality
 // ... existing squared button code
