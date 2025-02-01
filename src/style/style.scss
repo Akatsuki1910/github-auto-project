@@ -18,6 +18,7 @@
     max-height: 100px;
     border: 1px solid #ccc;
     margin-top: 10px;
+    display: none; /* Initially hidden */
 }
 #currentExpressionDisplay {
     grid-column: span 4;
