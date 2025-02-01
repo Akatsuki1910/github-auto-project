@@ -110,4 +110,18 @@ memoryStoreButton.addEventListener('click', () => {
       (document.getElementById('display') as HTMLInputElement).value = '';
       currentExpressionDisplay.textContent = ''; // Clear current expression display 
   });
+
+  // Copy Result to Clipboard
+  const copyResultButton = document.getElementById('copyResult') as HTMLButtonElement;
+  copyResultButton.addEventListener('click', () => {
+    const displayValue = (document.getElementById('display') as HTMLInputElement).value;
+    navigator.clipboard.writeText(displayValue)
+      .then(() => {
+        // Optional: Show a brief message indicating success
+        alert('Result copied to clipboard!');
+      })
+      .catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+  });
 });
