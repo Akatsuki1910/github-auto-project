@@ -182,4 +182,20 @@ minButton.addEventListener('click', () => {
     }
 });
 
+const medianButton = document.getElementById('median') as HTMLButtonElement;
+medianButton.addEventListener('click', () => {
+    const numbers = display.value.split(',').map(Number).sort((a, b) => a - b);
+    if (numbers.some(isNaN)) {
+        display.value = "Invalid Input";
+        return;
+    }
+
+    const mid = Math.floor(numbers.length / 2);
+    if (numbers.length % 2 === 0) {
+        display.value = ((numbers[mid - 1] + numbers[mid]) / 2).toString();
+    } else {
+        display.value = numbers[mid].toString();
+    }
+});
+
 });
