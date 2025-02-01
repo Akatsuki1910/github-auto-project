@@ -56,6 +56,13 @@ const clearAllButton = document.getElementById('clearAll') as HTMLButtonElement;
     history = [];
     updateHistoryDisplay();
 });
+const currentTimeButton = document.getElementById('current-time') as HTMLButtonElement;
+
+currentTimeButton.addEventListener('click', () => {
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
+    showMessage(`Current Time: ${timeString}`);
+});
 
 // ... (Rest of the existing code)
 });
