@@ -77,6 +77,13 @@ currentYearButton.addEventListener('click', () => {
   const year = now.getFullYear();
   showMessage(`Current Year: ${year}`);
 });
+const currentMonthButton = document.getElementById('current-month') as HTMLButtonElement;
+
+currentMonthButton.addEventListener('click', () => {
+  const now = new Date();
+  const month = now.toLocaleString('default', { month: 'long' });
+  showMessage(`Current Month: ${month}`);
+});
 
 // ... (Rest of the existing code)
 });
