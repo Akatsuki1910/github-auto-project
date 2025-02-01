@@ -24,6 +24,18 @@ function updateHistoryDisplay(){
 window.addEventListener("DOMContentLoaded", () => {
   // ... existing code
 // ... existing code and event listeners
+const messageContainer = document.getElementById('message-container') as HTMLDivElement;
+
+function showMessage(message: string) {
+  const messageElement = document.createElement('div');
+  messageElement.textContent = message;
+  messageContainer.appendChild(messageElement);
+
+  // Automatically remove the message after 3 seconds
+  setTimeout(() => {
+    messageElement.remove();
+  }, 3000); 
+}
 
 // Toggle History Display (New Feature)
 const toggleHistoryButton = document.getElementById('toggleHistory') as HTMLButtonElement;
@@ -31,8 +43,10 @@ const toggleHistoryButton = document.getElementById('toggleHistory') as HTMLButt
 toggleHistoryButton.addEventListener('click', () => {
     if (historyDisplay.style.display === 'none' || historyDisplay.style.display === '') {
         historyDisplay.style.display = 'block';
+        showMessage("History Displayed"); // Show message
     } else {
         historyDisplay.style.display = 'none';
+        showMessage("History Hidden"); // Show message
     }
 });
 
@@ -43,96 +57,5 @@ const clearAllButton = document.getElementById('clearAll') as HTMLButtonElement;
     updateHistoryDisplay();
 });
 
-const keyboardButton = document.getElementById('keyboard') as HTMLButtonElement;
-const keyboardContainer = document.getElementById('keyboard-container') as HTMLDivElement;
-let keyboardVisible = false;
-
-keyboardButton.addEventListener('click', () => {
-  keyboardVisible = !keyboardVisible;
-  // Implement logic to show/hide on-screen keyboard
-  if (keyboardVisible) {
-    keyboardContainer.style.display = 'block';
-  } else {
-    keyboardContainer.style.display = 'none';
-  }
-});
-
-const currentExpressionBtn = document.getElementById('currentExpressionBtn') as HTMLButtonElement;
-
-currentExpressionBtn.addEventListener('click', () => {
-  // Show current expression in the display
-  (document.getElementById('display') as HTMLInputElement).value = currentExpression;
-});
-
-const backButton = document.getElementById('back') as HTMLButtonElement;
-
-backButton.addEventListener('click', () => {
-    currentExpression = currentExpression.slice(0, -1);
-    (document.getElementById('display') as HTMLInputElement).value = currentExpression;
-});
-const clearDisplayButton = document.getElementById('clearDisplay') as HTMLButtonElement;
-
-clearDisplayButton.addEventListener('click', () => {
-  (document.getElementById('display') as HTMLInputElement).value = '';
-});
-
-//Memory Feature
-const memoryPlusButton = document.getElementById('memory-plus') as HTMLButtonElement;
-const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
-const memoryClearButton = document.getElementById('memory-clear') as HTMLButtonElement;
-const memoryStoreButton = document.getElementById('memory-store') as HTMLButtonElement;
-
-memoryPlusButton.addEventListener('click', () => {
-  const displayValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
-  if (!isNaN(displayValue)) {
-    memoryValue += displayValue;
-  }
-});
-
-memoryRecallButton.addEventListener('click', () => {
-  (document.getElementById('display') as HTMLInputElement).value = memoryValue.toString();
-});
-
-memoryClearButton.addEventListener('click', () => {
-  memoryValue = 0;
-});
-
-memoryStoreButton.addEventListener('click', () => {
-    const displayValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
-    if (!isNaN(displayValue)) {
-      memoryValue = displayValue;
-    }
-  });
-
-    const clearAllEntriesButton = document.getElementById('clearAllEntries') as HTMLButtonElement;
-  clearAllEntriesButton.addEventListener('click', () => {
-      currentExpression = '';
-      (document.getElementById('display') as HTMLInputElement).value = '';
-      currentExpressionDisplay.textContent = ''; // Clear current expression display 
-  });
-
-  // Copy Result to Clipboard
-  const copyResultButton = document.getElementById('copyResult') as HTMLButtonElement;
-  copyResultButton.addEventListener('click', () => {
-    const displayValue = (document.getElementById('display') as HTMLInputElement).value;
-    navigator.clipboard.writeText(displayValue)
-      .then(() => {
-        // Optional: Show a brief message indicating success
-        alert('Result copied to clipboard!');
-      })
-      .catch(err => {
-        console.error('Failed to copy: ', err);
-      });
-  });
-
-    // Toggle Calculator Visibility
-    const toggleCalculatorButton = document.getElementById('toggleCalculator') as HTMLButtonElement;
-    const calculatorContainer = document.getElementById('calculator') as HTMLDivElement;
-    toggleCalculatorButton.addEventListener('click', () => {
-        if (calculatorContainer.style.display === 'none' || calculatorContainer.style.display === '') {
-            calculatorContainer.style.display = 'block';
-        } else {
-            calculatorContainer.style.display = 'none';
-        }
-    });
+// ... (Rest of the existing code)
 });

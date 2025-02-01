@@ -49,3 +49,9 @@ width: 100%;
 padding: 10px;
 box-sizing: border-box;
 }
+
+#message-container {
+    grid-column: span 4; /* Span across all columns */
+    margin-top: 10px;
+    text-align: center;
+  }
