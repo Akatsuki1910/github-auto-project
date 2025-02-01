@@ -43,4 +43,14 @@ const clearAllButton = document.getElementById('clearAll') as HTMLButtonElement;
     updateHistoryDisplay();
 });
 
+const keyboardButton = document.getElementById('keyboard') as HTMLButtonElement;
+let keyboardVisible = false;
+
+keyboardButton.addEventListener('click', () => {
+  keyboardVisible = !keyboardVisible;
+  // Implement logic to show/hide on-screen keyboard
+  // Placeholder for now - you'll need to create the actual keyboard UI
+  alert(keyboardVisible ? "Keyboard Shown" : "Keyboard Hidden");
+});
+
 });
