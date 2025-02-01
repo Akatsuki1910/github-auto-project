@@ -36,4 +36,11 @@ toggleHistoryButton.addEventListener('click', () => {
     }
 });
 
+const clearAllButton = document.getElementById('clearAll') as HTMLButtonElement;
+
+  clearAllButton.addEventListener('click', () => {
+    history = [];
+    updateHistoryDisplay();
+});
+
 });
