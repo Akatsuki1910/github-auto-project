@@ -152,4 +152,12 @@ ansButton.addEventListener('click', () => {
     display.value += lastAnswer.toString();
 });
 
+//Exit Button (New Feature): Clears the display
+const exitButton = document.getElementById('exit') as HTMLButtonElement;
+exitButton.addEventListener('click', () => {
+  display.value = ''; // Clear the display value
+  currentExpression = '';
+  currentExpressionDisplay.textContent = '';
+});
+
 });
