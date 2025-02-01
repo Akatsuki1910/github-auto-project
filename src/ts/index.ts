@@ -88,6 +88,27 @@ calculateExpressionButton.addEventListener('click', () => {
 
 // ... existing calculateExpressionButton
 
+//Parentheses Button
+const parenthesesButton = document.getElementById('parentheses') as HTMLButtonElement;
+parenthesesButton.addEventListener('click', () => {
+  // Get the current value from the display
+  let currentValue = display.value;
+
+  // Count the number of open and close parentheses
+  let openCount = (currentValue.match(/\(/g) || []).length;
+  let closeCount = (currentValue.match(/\)/g) || []).length;
+
+  // Add an open parenthesis if there are more close than open parentheses,
+  // or if there are no parentheses yet
+  if (openCount <= closeCount) {
+    currentValue += '(';
+  } else {
+    currentValue += ')';
+  }
+
+  // Update the display with the new value
+  display.value = currentValue;
+});
 // ... existing parenthesesButton
 
 // ... existing fibonacciButton
