@@ -76,6 +76,16 @@ geoMeanButton.addEventListener('click', () => {
     }
 });
 
+// Calculate Expression Button (New Feature)
+const calculateExpressionButton = document.getElementById('calculateExpression') as HTMLButtonElement;
+calculateExpressionButton.addEventListener('click', () => {
+    try {
+        display.value = eval(display.value).toString();
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
 // ... existing calculateExpressionButton
 
 // ... existing parenthesesButton
