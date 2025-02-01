@@ -106,5 +106,13 @@ currentSecondsButton.addEventListener('click', () => {
   showMessage(`Current Seconds: ${seconds}`);
   addToHistory('Seconds', seconds.toString());
 });
+
+const currentMinutesButton = document.getElementById('current-minutes') as HTMLButtonElement;
+currentMinutesButton.addEventListener('click', () => {
+    const now = new Date();
+    const minutes = now.getMinutes();
+    showMessage(`Current Minutes: ${minutes}`);
+    addToHistory('Minutes', minutes.toString());
+});
 // ... (Rest of the existing code)
 });
