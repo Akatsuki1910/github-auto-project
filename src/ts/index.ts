@@ -122,8 +122,11 @@ closeParenthesisButton.addEventListener('click', () => {
 //New Feature: Floor button
 // ... existing floorButton code
 
-// New Feature: Euler's number button
-// ... existing eulerButton code
+// Adding Euler's number (e) functionality
+const eButton = document.getElementById('e') as HTMLButtonElement;
+eButton.addEventListener('click', () => {
+  display.value += Math.E;
+});
 
 // ... existing modButton code
 
