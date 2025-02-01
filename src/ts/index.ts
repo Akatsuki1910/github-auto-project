@@ -192,4 +192,19 @@ toggleScientificButton.addEventListener('click', () => {
   });
 });
 
+//New Feature: Generate Random Integer
+const randIntButton = document.getElementById('rand-int') as HTMLButtonElement;
+randIntButton.addEventListener('click', () => {
+    const min = parseInt(prompt("Enter minimum value:") || "0"); // Default to 0 if no input
+    const max = parseInt(prompt("Enter maximum value:") || "100"); // Default to 100 if no input
+
+    if (isNaN(min) || isNaN(max)) {
+        alert("Invalid input. Please enter numbers.");
+        return;
+    }
+
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    display.value = randomNumber.toString();
+});
+
 });
