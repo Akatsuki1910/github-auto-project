@@ -64,8 +64,17 @@ averageButton.addEventListener('click', () => {
 // Summation Function (New Feature Implementation)
 // ... existing sumButton code
 
-//Geometric mean
-// ... existing geoMean function
+// Add Geometric Mean button functionality
+const geoMeanButton = document.getElementById('geoMean') as HTMLButtonElement;
+geoMeanButton.addEventListener('click', () => {
+    const numbers = display.value.split(',').map(Number);
+    if (numbers.some(isNaN) || numbers.some(n => n <= 0)) {
+        display.value = "Invalid input (positive numbers only)";
+    } else {
+        const product = numbers.reduce((a, b) => a * b, 1);
+        display.value = Math.pow(product, 1 / numbers.length).toString();
+    }
+});
 
 // ... existing calculateExpressionButton
 
