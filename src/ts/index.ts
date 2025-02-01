@@ -160,4 +160,17 @@ exitButton.addEventListener('click', () => {
   currentExpressionDisplay.textContent = '';
 });
 
+// Toggle Scientific Calculator Buttons
+const scientificButtons = document.querySelectorAll('.scientific') as NodeListOf<HTMLButtonElement>;
+const toggleScientificButton = document.getElementById('toggleScientific') as HTMLButtonElement;
+
+let isScientificMode = false;
+
+toggleScientificButton.addEventListener('click', () => {
+  isScientificMode = !isScientificMode;
+  scientificButtons.forEach(button => {
+    button.style.display = isScientificMode ? 'inline-block' : 'none';
+  });
+});
+
 });
