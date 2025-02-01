@@ -198,4 +198,26 @@ medianButton.addEventListener('click', () => {
     }
 });
 
+//Mode button
+const modeButton = document.getElementById('mode') as HTMLButtonElement;
+modeButton.addEventListener('click', () => {
+    const numbers = display.value.split(',').map(Number);
+    if (numbers.some(isNaN)) {
+        display.value = "Invalid Input";
+        return;
+    }
+
+    const counts = {};
+    let mode = null;
+    let maxCount = 0;
+
+    for (const num of numbers) {
+        counts[num] = (counts[num] || 0) + 1;
+        if (counts[num] > maxCount) {
+            mode = num;
+            maxCount = counts[num];
+        }
+    }
+    display.value = mode.toString(); 
+});
 });
