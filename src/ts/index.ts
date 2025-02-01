@@ -76,4 +76,31 @@ clearDisplayButton.addEventListener('click', () => {
   (document.getElementById('display') as HTMLInputElement).value = '';
 });
 
+//Memory Feature
+const memoryPlusButton = document.getElementById('memory-plus') as HTMLButtonElement;
+const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
+const memoryClearButton = document.getElementById('memory-clear') as HTMLButtonElement;
+const memoryStoreButton = document.getElementById('memory-store') as HTMLButtonElement;
+
+memoryPlusButton.addEventListener('click', () => {
+  const displayValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
+  if (!isNaN(displayValue)) {
+    memoryValue += displayValue;
+  }
+});
+
+memoryRecallButton.addEventListener('click', () => {
+  (document.getElementById('display') as HTMLInputElement).value = memoryValue.toString();
+});
+
+memoryClearButton.addEventListener('click', () => {
+  memoryValue = 0;
+});
+
+memoryStoreButton.addEventListener('click', () => {
+    const displayValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
+    if (!isNaN(displayValue)) {
+      memoryValue = displayValue;
+    }
+  });
 });
