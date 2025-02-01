@@ -165,4 +165,14 @@ standardDeviationButton.addEventListener('click', () => {
     display.value = sd.toString();
 });
 
+const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
+expm1Button.addEventListener('click', () => {
+    const value = parseFloat(display.value);
+    if (isNaN(value)) {
+        display.value = "Invalid input";
+    } else {
+        display.value = Math.expm1(value).toString();
+    }
+});
+
 });
