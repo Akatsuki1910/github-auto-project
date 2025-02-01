@@ -57,4 +57,11 @@ keyboardButton.addEventListener('click', () => {
   }
 });
 
+const currentExpressionBtn = document.getElementById('currentExpressionBtn') as HTMLButtonElement;
+
+currentExpressionBtn.addEventListener('click', () => {
+  // Show current expression in the display
+  (document.getElementById('display') as HTMLInputElement).value = currentExpression;
+});
+
 });
