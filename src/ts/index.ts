@@ -87,4 +87,15 @@ memoryRecallButton.addEventListener('click', () => {
   showMessage(`Recalled from memory: ${memoryValue}`);
 });
 
+const sinButton = document.getElementById('sin') as HTMLButtonElement;
+sinButton.addEventListener('click', () => {
+    const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
+    if (!isNaN(currentValue)) {
+        const result = Math.sin(currentValue);
+        (document.getElementById('display') as HTMLInputElement).value = result.toString();
+        showMessage(`sin(${currentValue}): ${result}`);
+        addToHistory(`sin(${currentValue})`, result.toString());
+    }
+});
+
 });
