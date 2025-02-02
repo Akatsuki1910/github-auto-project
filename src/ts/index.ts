@@ -46,7 +46,7 @@ signButton.addEventListener('click', () => {
   const display = document.getElementById('display') as HTMLInputElement;
   let currentValue = display.value;
 
-  if (currentValue) {
+if (currentValue) {
     display.value = (parseFloat(currentValue) * -1).toString();
   }
 });
@@ -65,6 +65,14 @@ currentDateTimeMillisecondsButton.addEventListener('click', () => {
   const dateTimeMilliseconds = now.toString();
   showMessage(`Current Date & Time in Milliseconds: ${dateTimeMilliseconds}`);
   addToHistory('Date & Time in Milliseconds', dateTimeMilliseconds);
+});
+
+const currentDateTimeIsoButton = document.getElementById('current-date-time-iso') as HTMLButtonElement;
+currentDateTimeIsoButton.addEventListener('click', () => {
+  const now = new Date();
+  const dateTimeIso = now.toISOString();
+  showMessage(`Current Date & Time (ISO): ${dateTimeIso}`);
+  addToHistory('Date & Time (ISO)', dateTimeIso);
 });
 
 // ... (Rest of the existing code)
