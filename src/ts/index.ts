@@ -92,4 +92,18 @@ signButton.addEventListener('click', () => {
   }
 });
 
+const lnButton = document.getElementById('ln') as HTMLButtonElement;
+
+lnButton.addEventListener('click', () => {
+  const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
+  if (!isNaN(currentValue) && currentValue > 0) { // Check for positive value
+    const result = Math.log(currentValue);
+    (document.getElementById('display') as HTMLInputElement).value = result.toString();
+    showMessage(`ln(${currentValue}): ${result}`);
+    addToHistory(`ln(${currentValue})`, result.toString());
+  } else {
+    showMessage("Invalid input for ln (must be > 0)");
+  }
+});
+
 });
