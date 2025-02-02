@@ -106,4 +106,15 @@ lnButton.addEventListener('click', () => {
   }
 });
 
+const expButton = document.getElementById('exp') as HTMLButtonElement;
+expButton.addEventListener('click', () => {
+    const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
+    if (!isNaN(currentValue)) {
+        const result = Math.exp(currentValue);
+        (document.getElementById('display') as HTMLInputElement).value = result.toString();
+        showMessage(`exp(${currentValue}): ${result}`);
+        addToHistory(`exp(${currentValue})`, result.toString());
+    }
+});
+
 });
