@@ -64,4 +64,12 @@ piButton.addEventListener('click', () => {
     addToHistory('π', pi.toString());
 });
 
+const eulerButton = document.getElementById('euler') as HTMLButtonElement;
+eulerButton.addEventListener('click', () => {
+    const euler = Math.E;
+    (document.getElementById('display') as HTMLInputElement).value = euler.toString();
+    showMessage(`e: ${euler}`);
+    addToHistory('e', euler.toString());
+});
+
 });
