@@ -83,5 +83,13 @@ currentTimeStringButton.addEventListener('click', () => {
   addToHistory('Time String', timeString);
 });
 
+const currentDateTimeUtcButton = document.getElementById('current-date-time-utc') as HTMLButtonElement;
+currentDateTimeUtcButton.addEventListener('click', () => {
+  const now = new Date();
+  const dateTimeUtc = now.toUTCString();
+  showMessage(`Current Date & Time (UTC): ${dateTimeUtc}`);
+  addToHistory('Date & Time (UTC)', dateTimeUtc);
+});
+
 // ... (Rest of the existing code)
 });
