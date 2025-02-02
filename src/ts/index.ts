@@ -39,51 +39,15 @@ function showMessage(message: string) {
 
 // ... (Existing code for other buttons)
 
-const currentDateTimeButton = document.getElementById('current-date-time') as HTMLButtonElement;
-currentDateTimeButton.addEventListener('click', () => {
+// ... existing date and time buttons
+
+const currentTimeMillisecondsButton = document.getElementById('current-time-milliseconds') as HTMLButtonElement;
+currentTimeMillisecondsButton.addEventListener('click', () => {
     const now = new Date();
-    const dateTimeString = now.toLocaleString(); // Get both date and time
-    showMessage(`Current Date & Time: ${dateTimeString}`);
-    addToHistory('Date & Time', dateTimeString); // Add to history
+    const timeMilliseconds = now.getTime();
+    showMessage(`Current Time in Milliseconds: ${timeMilliseconds}`);
+    addToHistory('Time in Milliseconds', timeMilliseconds.toString());
 });
-
-const currentTimestampButton = document.getElementById('current-timestamp') as HTMLButtonElement;
-currentTimestampButton.addEventListener('click', () => {
-  const timestamp = Date.now();
-  showMessage(`Current Timestamp: ${timestamp}`);
-  addToHistory('Timestamp', timestamp.toString());
-});
-
-const currentTimezoneButton = document.getElementById('current-timezone') as HTMLButtonElement;
-currentTimezoneButton.addEventListener('click', () => {
-    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-    showMessage(`Current Timezone: ${timezone}`);
-    addToHistory('Timezone', timezone);
-});
-
-const currentLocaleButton = document.getElementById('current-locale') as HTMLButtonElement;
-currentLocaleButton.addEventListener('click', () => {
-    const locale = navigator.language;
-    showMessage(`Current Locale: ${locale}`);
-    addToHistory('Locale', locale); // Add to history
-});
-
-const currentGMTButton = document.getElementById('current-gmt') as HTMLButtonElement;
-currentGMTButton.addEventListener('click', () => {
-    const now = new Date();
-    const gmtString = now.toGMTString();
-    showMessage(`Current GMT: ${gmtString}`);
-    addToHistory('GMT', gmtString);
-});
-
-const currentDateStringButton = document.getElementById('current-date-string') as HTMLButtonElement;
-currentDateStringButton.addEventListener('click', () => {
-    const now = new Date();
-    const dateString = now.toDateString();
-    showMessage(`Current Date (String): ${dateString}`);
-    addToHistory('Date String', dateString);
-});
-
 
 // ... (Rest of the existing code)
 });
