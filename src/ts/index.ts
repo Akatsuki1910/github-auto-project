@@ -72,4 +72,13 @@ eulerButton.addEventListener('click', () => {
     addToHistory('e', euler.toString());
 });
 
+const memoryPlusButton = document.getElementById('memory-plus') as HTMLButtonElement;
+memoryPlusButton.addEventListener('click', () => {
+    const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
+    if (!isNaN(currentValue)) {
+        memoryValue += currentValue;
+        showMessage(`Added ${currentValue} to memory. Memory: ${memoryValue}`);
+    }
+});
+
 });
