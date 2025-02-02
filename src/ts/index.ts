@@ -95,4 +95,12 @@ customDateTimeButton.addEventListener('click', () => {
   }
 });
 
+const currentYearButton = document.getElementById('current-date-time-year') as HTMLButtonElement;
+currentYearButton.addEventListener('click',()=>{
+    const now = new Date();
+    const year = now.getFullYear();
+    showMessage(`Current Year : ${year}`);
+    addToHistory('Year',year.toString());
+});
+
 });
