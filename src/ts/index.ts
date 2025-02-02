@@ -48,73 +48,17 @@ currentTimeSecondsButton.addEventListener('click',()=>{
     addToHistory('Time in seconds',seconds.toString());
 });
 
-// ... (Existing code for other buttons)
-const absoluteButton = document.getElementById('absolute') as HTMLButtonElement;
-
-absoluteButton.addEventListener('click', () => {
+// ... existing buttons
+const squareButton = document.getElementById('square') as HTMLButtonElement;
+squareButton.addEventListener('click', () => {
     const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
     if (!isNaN(currentValue)) {
-        const result = Math.abs(currentValue);
+        const result = Math.pow(currentValue, 2);
         (document.getElementById('display') as HTMLInputElement).value = result.toString();
-        showMessage(`|${currentValue}|: ${result}`);
-        addToHistory(`|${currentValue}|`, result.toString());
+        showMessage(`(${currentValue})²: ${result}`);
+        addToHistory(`(${currentValue})²`, result.toString());
     }
 });
 
-const backspaceButton = document.getElementById('backspace') as HTMLButtonElement;
-
-backspaceButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = display.value.slice(0, -1);
-});
-
-const cubeButton = document.getElementById('cube') as HTMLButtonElement;
-
-cubeButton.addEventListener('click', () => {
-    const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
-    if (!isNaN(currentValue)) {
-        const result = Math.pow(currentValue, 3);
-        (document.getElementById('display') as HTMLInputElement).value = result.toString();
-        showMessage(`(${currentValue})³: ${result}`);
-        addToHistory(`(${currentValue})³`, result.toString());
-    }
-});
-
-const signButton = document.getElementById('sign') as HTMLButtonElement;
-
-signButton.addEventListener('click', () => {
-  const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
-  if (!isNaN(currentValue)) {
-    const result = Math.sign(currentValue);
-    (document.getElementById('display') as HTMLInputElement).value = result.toString();
-    showMessage(`sgn(${currentValue}): ${result}`);
-    addToHistory(`sgn(${currentValue})`, result.toString());
-  }
-});
-
-const lnButton = document.getElementById('ln') as HTMLButtonElement;
-
-lnButton.addEventListener('click', () => {
-  const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
-  if (!isNaN(currentValue) && currentValue > 0) { // Check for positive value
-    const result = Math.log(currentValue);
-    (document.getElementById('display') as HTMLInputElement).value = result.toString();
-    showMessage(`ln(${currentValue}): ${result}`);
-    addToHistory(`ln(${currentValue})`, result.toString());
-  } else {
-    showMessage("Invalid input for ln (must be > 0)");
-  }
-});
-
-const expButton = document.getElementById('exp') as HTMLButtonElement;
-expButton.addEventListener('click', () => {
-    const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
-    if (!isNaN(currentValue)) {
-        const result = Math.exp(currentValue);
-        (document.getElementById('display') as HTMLInputElement).value = result.toString();
-        showMessage(`exp(${currentValue}): ${result}`);
-        addToHistory(`exp(${currentValue})`, result.toString());
-    }
-});
-
+// ... other existing buttons
 });
