@@ -68,6 +68,14 @@ currentLocaleButton.addEventListener('click', () => {
     addToHistory('Locale', locale); // Add to history
 });
 
+const currentGMTButton = document.getElementById('current-gmt') as HTMLButtonElement;
+currentGMTButton.addEventListener('click', () => {
+    const now = new Date();
+    const gmtString = now.toGMTString();
+    showMessage(`Current GMT: ${gmtString}`);
+    addToHistory('GMT', gmtString);
+});
+
 
 // ... (Rest of the existing code)
 });
