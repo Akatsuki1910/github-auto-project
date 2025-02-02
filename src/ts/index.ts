@@ -113,4 +113,13 @@ currentDateTimeLongButton.addEventListener('click', () => {
     addToHistory('Date and Time (Long)', dateTimeString);
 });
 
+// Added Feature: get current date and time in full format
+const currentDateTimeFullButton = document.getElementById('current-date-time-full') as HTMLButtonElement;
+currentDateTimeFullButton.addEventListener('click', () => {
+    const now = new Date();
+    const dateTimeFull = now.toString();
+    showMessage(`Date and Time (Full) : ${dateTimeFull}`);
+    (document.getElementById('display') as HTMLInputElement).value = dateTimeFull;
+    addToHistory('Date and Time (Full)', dateTimeFull);
+});
 });
