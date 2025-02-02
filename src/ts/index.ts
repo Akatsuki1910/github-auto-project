@@ -71,5 +71,18 @@ cubeRootButton.addEventListener('click', () => {
     }
 });
 
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
+inverseButton.addEventListener('click', () => {
+    const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
+    if (!isNaN(currentValue) && currentValue !== 0) { // Check for division by zero
+        const result = 1 / currentValue;
+        (document.getElementById('display') as HTMLInputElement).value = result.toString();
+        showMessage(`1/(${currentValue}): ${result}`);
+        addToHistory(`1/(${currentValue})`, result.toString());
+    } else if (currentValue === 0) {
+      showMessage("Division by zero error!");
+    }
+});
+
 // ... other existing buttons
 });
