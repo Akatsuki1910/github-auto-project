@@ -101,5 +101,13 @@ currentDateTimeUtcButton.addEventListener('click', () => {
   addToHistory('Date & Time (UTC)', dateTimeUtc);
 });
 
-// ... (Rest of the existing code)
+//Generate Random decimal number
+const randomDecimalBtn = document.getElementById('random-decimal') as HTMLButtonElement;
+randomDecimalBtn.addEventListener('click', () => {
+    const randomNumber = Math.random();
+    showMessage(`Random Decimal (0-1): ${randomNumber}`);
+    (document.getElementById('display') as HTMLInputElement).value = randomNumber.toString();
+    addToHistory('Random Decimal', randomNumber.toString());
+});
+
 });
