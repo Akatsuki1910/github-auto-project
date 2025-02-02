@@ -40,6 +40,16 @@ function showMessage(message: string) {
 // ... (Existing code for other buttons)
 
 // ... existing date and time buttons
+const signButton = document.getElementById('sign') as HTMLButtonElement;
+
+signButton.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  let currentValue = display.value;
+
+  if (currentValue) {
+    display.value = (parseFloat(currentValue) * -1).toString();
+  }
+});
 
 const currentTimeMillisecondsButton = document.getElementById('current-time-milliseconds') as HTMLButtonElement;
 currentTimeMillisecondsButton.addEventListener('click', () => {
