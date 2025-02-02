@@ -76,6 +76,14 @@ currentGMTButton.addEventListener('click', () => {
     addToHistory('GMT', gmtString);
 });
 
+const currentDateStringButton = document.getElementById('current-date-string') as HTMLButtonElement;
+currentDateStringButton.addEventListener('click', () => {
+    const now = new Date();
+    const dateString = now.toDateString();
+    showMessage(`Current Date (String): ${dateString}`);
+    addToHistory('Date String', dateString);
+});
+
 
 // ... (Rest of the existing code)
 });
