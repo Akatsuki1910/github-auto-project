@@ -61,53 +61,25 @@ currentTimeSecondsButton.addEventListener('click',()=>{
     addToHistory('Time in seconds',seconds.toString());
 });
 
-const currentTimeMillisecondsButton = document.getElementById('current-time-milliseconds') as HTMLButtonElement;
-currentTimeMillisecondsButton.addEventListener('click', () => {
-    const now = new Date();
-    const timeMilliseconds = now.getTime();
-    showMessage(`Current Time in Milliseconds: ${timeMilliseconds}`);
-    addToHistory('Time in Milliseconds', timeMilliseconds.toString());
-});
+// ... Other existing date/time buttons
 
-const currentDateTimeMillisecondsButton = document.getElementById('current-date-time-milliseconds') as HTMLButtonElement;
-currentDateTimeMillisecondsButton.addEventListener('click', () => {
-  const now = new Date();
-  const dateTimeMilliseconds = now.toString();
-  showMessage(`Current Date & Time in Milliseconds: ${dateTimeMilliseconds}`);
-  addToHistory('Date & Time in Milliseconds', dateTimeMilliseconds);
-});
-
-const currentDateTimeIsoButton = document.getElementById('current-date-time-iso') as HTMLButtonElement;
-currentDateTimeIsoButton.addEventListener('click', () => {
-  const now = new Date();
-  const dateTimeIso = now.toISOString();
-  showMessage(`Current Date & Time (ISO): ${dateTimeIso}`);
-  addToHistory('Date & Time (ISO)', dateTimeIso);
-});
-
-const currentTimeStringButton = document.getElementById('current-time-string') as HTMLButtonElement;
-currentTimeStringButton.addEventListener('click', () => {
-  const now = new Date();
-  const timeString = now.toLocaleTimeString(); // Get current time as a string
-  showMessage(`Current Time String: ${timeString}`);
-  addToHistory('Time String', timeString);
-});
-
-const currentDateTimeUtcButton = document.getElementById('current-date-time-utc') as HTMLButtonElement;
-currentDateTimeUtcButton.addEventListener('click', () => {
-  const now = new Date();
-  const dateTimeUtc = now.toUTCString();
-  showMessage(`Current Date & Time (UTC): ${dateTimeUtc}`);
-  addToHistory('Date & Time (UTC)', dateTimeUtc);
-});
-
-//Generate Random decimal number
+// Generate Random decimal number
 const randomDecimalBtn = document.getElementById('random-decimal') as HTMLButtonElement;
 randomDecimalBtn.addEventListener('click', () => {
     const randomNumber = Math.random();
     showMessage(`Random Decimal (0-1): ${randomNumber}`);
     (document.getElementById('display') as HTMLInputElement).value = randomNumber.toString();
     addToHistory('Random Decimal', randomNumber.toString());
+});
+
+// Get current date and time as a formatted string
+const currentDateTimeStringButton = document.getElementById('current-date-time-string') as HTMLButtonElement;
+currentDateTimeStringButton.addEventListener('click', () => {
+    const now = new Date();
+    const dateTimeString = now.toLocaleString(); // Get current date & time string
+    showMessage(`Date and Time String: ${dateTimeString}`);
+    (document.getElementById('display') as HTMLInputElement).value = dateTimeString;
+    addToHistory('Date and Time String', dateTimeString);
 });
 
 });
