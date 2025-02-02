@@ -51,6 +51,16 @@ if (currentValue) {
   }
 });
 
+//Added Feature: get current time in seconds
+const currentTimeSecondsButton = document.getElementById('current-time-seconds') as HTMLButtonElement;
+
+currentTimeSecondsButton.addEventListener('click',()=>{
+    const now = new Date();
+    const seconds = now.getSeconds();
+    showMessage(`Current Time in seconds : ${seconds}`);
+    addToHistory('Time in seconds',seconds.toString());
+});
+
 const currentTimeMillisecondsButton = document.getElementById('current-time-milliseconds') as HTMLButtonElement;
 currentTimeMillisecondsButton.addEventListener('click', () => {
     const now = new Date();
