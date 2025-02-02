@@ -92,4 +92,14 @@ currentDateTimeLocalStringButton?.addEventListener('click', () => {
     addToHistory('Date and Time Local String', dateTimeString);
 });
 
+const currentDateTimeShortButton = document.getElementById('current-date-time-short') as HTMLButtonElement;
+currentDateTimeShortButton.addEventListener('click', () => {
+    const now = new Date();
+    const options = { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' } as const;
+    const dateTimeString = now.toLocaleString(undefined, options);
+    showMessage(`Date and Time (Short): ${dateTimeString}`);
+    (document.getElementById('display') as HTMLInputElement).value = dateTimeString;
+    addToHistory('Date and Time (Short)', dateTimeString);
+});
+
 });
