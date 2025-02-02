@@ -48,77 +48,16 @@ currentTimeSecondsButton.addEventListener('click',()=>{
     addToHistory('Time in seconds',seconds.toString());
 });
 
-const randomDecimalBtn = document.getElementById('random-decimal') as HTMLButtonElement;
-randomDecimalBtn.addEventListener('click', () => {
-    const randomNumber = Math.random();
-    showMessage(`Random Decimal (0-1): ${randomNumber}`);
-    (document.getElementById('display') as HTMLInputElement).value = randomNumber.toString();
-    addToHistory('Random Decimal', randomNumber.toString());
-});
+// ... (Existing code for other buttons)
+const absoluteButton = document.getElementById('absolute') as HTMLButtonElement;
 
-const piButton = document.getElementById('pi') as HTMLButtonElement;
-piButton.addEventListener('click', () => {
-  const pi = Math.PI;
-  (document.getElementById('display') as HTMLInputElement).value = pi.toString();
-  showMessage(`π: ${pi}`);
-    addToHistory('π', pi.toString());
-});
-
-const eulerButton = document.getElementById('euler') as HTMLButtonElement;
-eulerButton.addEventListener('click', () => {
-    const euler = Math.E;
-    (document.getElementById('display') as HTMLInputElement).value = euler.toString();
-    showMessage(`e: ${euler}`);
-    addToHistory('e', euler.toString());
-});
-
-const memoryPlusButton = document.getElementById('memory-plus') as HTMLButtonElement;
-memoryPlusButton.addEventListener('click', () => {
+absoluteButton.addEventListener('click', () => {
     const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
     if (!isNaN(currentValue)) {
-        memoryValue += currentValue;
-        showMessage(`Added ${currentValue} to memory. Memory: ${memoryValue}`);
-    }
-});
-
-const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
-memoryRecallButton.addEventListener('click', () => {
-  (document.getElementById('display') as HTMLInputElement).value = memoryValue.toString();
-  showMessage(`Recalled from memory: ${memoryValue}`);
-});
-
-const sinButton = document.getElementById('sin') as HTMLButtonElement;
-sinButton.addEventListener('click', () => {
-    const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
-    if (!isNaN(currentValue)) {
-        const result = Math.sin(currentValue);
+        const result = Math.abs(currentValue);
         (document.getElementById('display') as HTMLInputElement).value = result.toString();
-        showMessage(`sin(${currentValue}): ${result}`);
-        addToHistory(`sin(${currentValue})`, result.toString());
-    }
-});
-
-const logButton = document.getElementById('log') as HTMLButtonElement;
-logButton.addEventListener('click', () => {
-    const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
-    if (!isNaN(currentValue) && currentValue > 0) { // Check for positive value
-        const result = Math.log10(currentValue);
-        (document.getElementById('display') as HTMLInputElement).value = result.toString();
-        showMessage(`log(${currentValue}): ${result}`);
-        addToHistory(`log(${currentValue})`, result.toString());
-    } else {
-        showMessage("Invalid input for log (must be positive)");
-    }
-});
-
-const roundButton = document.getElementById('round') as HTMLButtonElement;
-roundButton.addEventListener('click', () => {
-    const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
-    if (!isNaN(currentValue)) {
-        const roundedValue = Math.round(currentValue);
-        (document.getElementById('display') as HTMLInputElement).value = roundedValue.toString();
-        addToHistory(`round(${currentValue})`, roundedValue.toString());
-        showMessage(`Rounded value: ${roundedValue}`);
+        showMessage(`|${currentValue}|: ${result}`);
+        addToHistory(`|${currentValue}|`, result.toString());
     }
 });
 
