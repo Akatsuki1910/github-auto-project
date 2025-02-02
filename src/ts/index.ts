@@ -122,4 +122,16 @@ currentDateTimeFullButton.addEventListener('click', () => {
     (document.getElementById('display') as HTMLInputElement).value = dateTimeFull;
     addToHistory('Date and Time (Full)', dateTimeFull);
 });
+
+// Added Feature: get current date and time in medium format
+const currentDateTimeMediumButton = document.getElementById('current-date-time-medium') as HTMLButtonElement;
+currentDateTimeMediumButton.addEventListener('click', () => {
+    const now = new Date();
+    const options = { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' } as const;
+    const dateTimeMedium = now.toLocaleString(undefined, options);
+    showMessage(`Date and Time (Medium) : ${dateTimeMedium}`);
+    (document.getElementById('display') as HTMLInputElement).value = dateTimeMedium;
+    addToHistory('Date and Time (Medium)', dateTimeMedium);
+});
+
 });
