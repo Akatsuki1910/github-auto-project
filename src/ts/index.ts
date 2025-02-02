@@ -60,5 +60,16 @@ squareButton.addEventListener('click', () => {
     }
 });
 
+const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
+cubeRootButton.addEventListener('click', () => {
+    const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
+    if (!isNaN(currentValue)) {
+        const result = Math.cbrt(currentValue);
+        (document.getElementById('display') as HTMLInputElement).value = result.toString();
+        showMessage(`∛(${currentValue}): ${result}`);
+        addToHistory(`∛(${currentValue})`, result.toString());
+    }
+});
+
 // ... other existing buttons
 });
