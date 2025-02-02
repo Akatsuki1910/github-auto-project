@@ -61,6 +61,13 @@ currentTimezoneButton.addEventListener('click', () => {
     addToHistory('Timezone', timezone);
 });
 
+const currentLocaleButton = document.getElementById('current-locale') as HTMLButtonElement;
+currentLocaleButton.addEventListener('click', () => {
+    const locale = navigator.language;
+    showMessage(`Current Locale: ${locale}`);
+    addToHistory('Locale', locale); // Add to history
+});
+
 
 // ... (Rest of the existing code)
 });
