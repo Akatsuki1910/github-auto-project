@@ -54,5 +54,13 @@ currentTimestampButton.addEventListener('click', () => {
   addToHistory('Timestamp', timestamp.toString());
 });
 
+const currentTimezoneButton = document.getElementById('current-timezone') as HTMLButtonElement;
+currentTimezoneButton.addEventListener('click', () => {
+    const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    showMessage(`Current Timezone: ${timezone}`);
+    addToHistory('Timezone', timezone);
+});
+
+
 // ... (Rest of the existing code)
 });
