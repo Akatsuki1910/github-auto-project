@@ -49,5 +49,13 @@ currentTimeMillisecondsButton.addEventListener('click', () => {
     addToHistory('Time in Milliseconds', timeMilliseconds.toString());
 });
 
+const currentDateTimeMillisecondsButton = document.getElementById('current-date-time-milliseconds') as HTMLButtonElement;
+currentDateTimeMillisecondsButton.addEventListener('click', () => {
+  const now = new Date();
+  const dateTimeMilliseconds = now.toString();
+  showMessage(`Current Date & Time in Milliseconds: ${dateTimeMilliseconds}`);
+  addToHistory('Date & Time in Milliseconds', dateTimeMilliseconds);
+});
+
 // ... (Rest of the existing code)
 });
