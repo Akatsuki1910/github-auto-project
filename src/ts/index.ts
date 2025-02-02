@@ -68,4 +68,16 @@ backspaceButton.addEventListener('click', () => {
     display.value = display.value.slice(0, -1);
 });
 
+const cubeButton = document.getElementById('cube') as HTMLButtonElement;
+
+cubeButton.addEventListener('click', () => {
+    const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
+    if (!isNaN(currentValue)) {
+        const result = Math.pow(currentValue, 3);
+        (document.getElementById('display') as HTMLInputElement).value = result.toString();
+        showMessage(`(${currentValue})³: ${result}`);
+        addToHistory(`(${currentValue})³`, result.toString());
+    }
+});
+
 });
