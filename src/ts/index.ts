@@ -182,5 +182,12 @@ function getWeekNumber(d: Date): number {
   return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000
                         - 3 + (week1.getDay() + 6) % 7) / 7);
 }   
+const currentNanosecondsButton = document.getElementById('current-nanoseconds') as HTMLButtonElement;
+currentNanosecondsButton.addEventListener('click', () => {
+  const now = new Date();
+  const nanoseconds = now.getTime() * 1000000; // Milliseconds to nanoseconds
+  showMessage(`Current Nanoseconds: ${nanoseconds}`);
+  addToHistory('Nanoseconds', nanoseconds.toString());
+});
 // ... (Rest of the existing code)
 });
