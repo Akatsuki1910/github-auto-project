@@ -56,4 +56,12 @@ randomDecimalBtn.addEventListener('click', () => {
     addToHistory('Random Decimal', randomNumber.toString());
 });
 
+const piButton = document.getElementById('pi') as HTMLButtonElement;
+piButton.addEventListener('click', () => {
+  const pi = Math.PI;
+  (document.getElementById('display') as HTMLInputElement).value = pi.toString();
+  showMessage(`π: ${pi}`);
+    addToHistory('π', pi.toString());
+});
+
 });
