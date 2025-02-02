@@ -103,4 +103,13 @@ currentYearButton.addEventListener('click',()=>{
     addToHistory('Year',year.toString());
 });
 
+// Added feature: Get current Month
+const currentMonthButton = document.getElementById('current-date-time-month') as HTMLButtonElement;
+currentMonthButton.addEventListener('click', () => {
+    const now = new Date();
+    const month = now.getMonth() +1; // Add 1 since getMonth() returns 0-indexed month
+    showMessage(`Current Month: ${month}`);
+    addToHistory('Month', month.toString());
+});
+
 });
