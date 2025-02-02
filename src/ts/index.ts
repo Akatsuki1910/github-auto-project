@@ -98,4 +98,17 @@ sinButton.addEventListener('click', () => {
     }
 });
 
+const logButton = document.getElementById('log') as HTMLButtonElement;
+logButton.addEventListener('click', () => {
+    const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
+    if (!isNaN(currentValue) && currentValue > 0) { // Check for positive value
+        const result = Math.log10(currentValue);
+        (document.getElementById('display') as HTMLInputElement).value = result.toString();
+        showMessage(`log(${currentValue}): ${result}`);
+        addToHistory(`log(${currentValue})`, result.toString());
+    } else {
+        showMessage("Invalid input for log (must be positive)");
+    }
+});
+
 });
