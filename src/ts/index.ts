@@ -80,4 +80,16 @@ cubeButton.addEventListener('click', () => {
     }
 });
 
+const signButton = document.getElementById('sign') as HTMLButtonElement;
+
+signButton.addEventListener('click', () => {
+  const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
+  if (!isNaN(currentValue)) {
+    const result = Math.sign(currentValue);
+    (document.getElementById('display') as HTMLInputElement).value = result.toString();
+    showMessage(`sgn(${currentValue}): ${result}`);
+    addToHistory(`sgn(${currentValue})`, result.toString());
+  }
+});
+
 });
