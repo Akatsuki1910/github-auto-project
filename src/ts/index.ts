@@ -72,66 +72,27 @@ randomDecimalBtn.addEventListener('click', () => {
     addToHistory('Random Decimal', randomNumber.toString());
 });
 
-// Get current date and time as a formatted string
-const currentDateTimeStringButton = document.getElementById('current-date-time-string') as HTMLButtonElement;
-currentDateTimeStringButton.addEventListener('click', () => {
-    const now = new Date();
-    const dateTimeString = now.toLocaleString(); // Get current date & time string
-    showMessage(`Date and Time String: ${dateTimeString}`);
-    (document.getElementById('display') as HTMLInputElement).value = dateTimeString;
-    addToHistory('Date and Time String', dateTimeString);
-});
+// ... (Existing code for other buttons) 
 
-// Get current date and time as a local formatted string
-const currentDateTimeLocalStringButton = document.getElementById('current-date-time-local-string') as HTMLButtonElement;
-currentDateTimeLocalStringButton?.addEventListener('click', () => {
-    const now = new Date();
-    const dateTimeString = now.toLocaleString();
-    showMessage(`Date and Time Local String: ${dateTimeString}`);
-    (document.getElementById('display') as HTMLInputElement).value = dateTimeString;
-    addToHistory('Date and Time Local String', dateTimeString);
-});
+// Added Feature: Custom Date and Time Button
+const customDateTimeButton = document.getElementById('current-date-time-custom') as HTMLButtonElement;
+const customDateTimeInput = document.getElementById('custom-date-time-input') as HTMLInputElement;
 
-const currentDateTimeShortButton = document.getElementById('current-date-time-short') as HTMLButtonElement;
-currentDateTimeShortButton.addEventListener('click', () => {
-    const now = new Date();
-    const options = { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric' } as const;
-    const dateTimeString = now.toLocaleString(undefined, options);
-    showMessage(`Date and Time (Short): ${dateTimeString}`);
-    (document.getElementById('display') as HTMLInputElement).value = dateTimeString;
-    addToHistory('Date and Time (Short)', dateTimeString);
-});
-
-// Added Feature: get current date and time as a long formatted string
-const currentDateTimeLongButton = document.getElementById('current-date-time-long') as HTMLButtonElement;
-currentDateTimeLongButton.addEventListener('click', () => {
-    const now = new Date();
-    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' } as const;
-    const dateTimeString = now.toLocaleString(undefined, options);
-    showMessage(`Date and Time (Long): ${dateTimeString}`);
-    (document.getElementById('display') as HTMLInputElement).value = dateTimeString;
-    addToHistory('Date and Time (Long)', dateTimeString);
-});
-
-// Added Feature: get current date and time in full format
-const currentDateTimeFullButton = document.getElementById('current-date-time-full') as HTMLButtonElement;
-currentDateTimeFullButton.addEventListener('click', () => {
-    const now = new Date();
-    const dateTimeFull = now.toString();
-    showMessage(`Date and Time (Full) : ${dateTimeFull}`);
-    (document.getElementById('display') as HTMLInputElement).value = dateTimeFull;
-    addToHistory('Date and Time (Full)', dateTimeFull);
-});
-
-// Added Feature: get current date and time in medium format
-const currentDateTimeMediumButton = document.getElementById('current-date-time-medium') as HTMLButtonElement;
-currentDateTimeMediumButton.addEventListener('click', () => {
-    const now = new Date();
-    const options = { year: 'numeric', month: 'short', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' } as const;
-    const dateTimeMedium = now.toLocaleString(undefined, options);
-    showMessage(`Date and Time (Medium) : ${dateTimeMedium}`);
-    (document.getElementById('display') as HTMLInputElement).value = dateTimeMedium;
-    addToHistory('Date and Time (Medium)', dateTimeMedium);
+customDateTimeButton.addEventListener('click', () => {
+  if (customDateTimeInput.style.display === 'none') {
+    customDateTimeInput.style.display = 'block';
+  } else {
+    const selectedDateTime = customDateTimeInput.value;
+    if (selectedDateTime) {
+      const customDate = new Date(selectedDateTime);
+      showMessage(`Custom Date and Time: ${customDate.toLocaleString()}`);
+      (document.getElementById('display') as HTMLInputElement).value = customDate.toLocaleString();
+      addToHistory('Custom Date and Time', customDate.toLocaleString());      
+      customDateTimeInput.style.display = 'none'; // Hide after selection
+    } else {
+      showMessage('Please select a date and time.');
+    }
+  }
 });
 
 });
