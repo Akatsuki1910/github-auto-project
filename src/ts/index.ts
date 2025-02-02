@@ -47,5 +47,12 @@ currentDateTimeButton.addEventListener('click', () => {
     addToHistory('Date & Time', dateTimeString); // Add to history
 });
 
+const currentTimestampButton = document.getElementById('current-timestamp') as HTMLButtonElement;
+currentTimestampButton.addEventListener('click', () => {
+  const timestamp = Date.now();
+  showMessage(`Current Timestamp: ${timestamp}`);
+  addToHistory('Timestamp', timestamp.toString());
+});
+
 // ... (Rest of the existing code)
 });
