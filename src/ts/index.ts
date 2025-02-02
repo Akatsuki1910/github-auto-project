@@ -75,5 +75,13 @@ currentDateTimeIsoButton.addEventListener('click', () => {
   addToHistory('Date & Time (ISO)', dateTimeIso);
 });
 
+const currentTimeStringButton = document.getElementById('current-time-string') as HTMLButtonElement;
+currentTimeStringButton.addEventListener('click', () => {
+  const now = new Date();
+  const timeString = now.toLocaleTimeString(); // Get current time as a string
+  showMessage(`Current Time String: ${timeString}`);
+  addToHistory('Time String', timeString);
+});
+
 // ... (Rest of the existing code)
 });
