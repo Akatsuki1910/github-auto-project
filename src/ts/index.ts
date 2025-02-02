@@ -102,4 +102,15 @@ currentDateTimeShortButton.addEventListener('click', () => {
     addToHistory('Date and Time (Short)', dateTimeString);
 });
 
+// Added Feature: get current date and time as a long formatted string
+const currentDateTimeLongButton = document.getElementById('current-date-time-long') as HTMLButtonElement;
+currentDateTimeLongButton.addEventListener('click', () => {
+    const now = new Date();
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric', timeZoneName: 'short' } as const;
+    const dateTimeString = now.toLocaleString(undefined, options);
+    showMessage(`Date and Time (Long): ${dateTimeString}`);
+    (document.getElementById('display') as HTMLInputElement).value = dateTimeString;
+    addToHistory('Date and Time (Long)', dateTimeString);
+});
+
 });
