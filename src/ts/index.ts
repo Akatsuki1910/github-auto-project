@@ -82,4 +82,14 @@ currentDateTimeStringButton.addEventListener('click', () => {
     addToHistory('Date and Time String', dateTimeString);
 });
 
+// Get current date and time as a local formatted string
+const currentDateTimeLocalStringButton = document.getElementById('current-date-time-local-string') as HTMLButtonElement;
+currentDateTimeLocalStringButton?.addEventListener('click', () => {
+    const now = new Date();
+    const dateTimeString = now.toLocaleString();
+    showMessage(`Date and Time Local String: ${dateTimeString}`);
+    (document.getElementById('display') as HTMLInputElement).value = dateTimeString;
+    addToHistory('Date and Time Local String', dateTimeString);
+});
+
 });
