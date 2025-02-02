@@ -111,4 +111,15 @@ logButton.addEventListener('click', () => {
     }
 });
 
+const roundButton = document.getElementById('round') as HTMLButtonElement;
+roundButton.addEventListener('click', () => {
+    const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
+    if (!isNaN(currentValue)) {
+        const roundedValue = Math.round(currentValue);
+        (document.getElementById('display') as HTMLInputElement).value = roundedValue.toString();
+        addToHistory(`round(${currentValue})`, roundedValue.toString());
+        showMessage(`Rounded value: ${roundedValue}`);
+    }
+});
+
 });
