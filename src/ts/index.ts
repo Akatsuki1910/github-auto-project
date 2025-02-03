@@ -82,6 +82,13 @@ window.addEventListener("DOMContentLoaded", () => {
             currentExpressionDisplay.textContent = currentExpression;
         }
     });
+    const piButton = document.getElementById("pi") as HTMLButtonElement;
+    piButton.addEventListener("click", () => {
+        currentInput += Math.PI;
+        currentExpression += Math.PI
+        display.value = currentInput;
+        currentExpressionDisplay.textContent = currentExpression;
+    });
 
     // ... (rest of the existing code)
 });
