@@ -17,6 +17,21 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = currentInput; // Update the main display as well
     });
 
+    const sqrtButton = document.getElementById("sqrt") as HTMLButtonElement;
+    sqrtButton.addEventListener("click", () => {
+        try {
+            const result = Math.sqrt(parseFloat(currentInput));
+            display.value = result.toString();
+            currentInput = result.toString();
+            currentExpression = "";
+            currentExpressionDisplay.textContent = "";
+        } catch (error) {
+            display.value = "Error";
+            currentInput = "";
+        }
+
+    });
+
     const keyboardButtons = document.querySelectorAll('.keyboard button');
     keyboardButtons.forEach(button => {
         button.addEventListener('click', () => {
