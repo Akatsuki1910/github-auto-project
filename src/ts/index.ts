@@ -49,51 +49,19 @@ currentTimeSecondsButton.addEventListener('click',()=>{
 });
 
 // ... existing buttons
-const squareButton = document.getElementById('square') as HTMLButtonElement;
-squareButton.addEventListener('click', () => {
-    const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
-    if (!isNaN(currentValue)) {
-        const result = Math.pow(currentValue, 2);
-        (document.getElementById('display') as HTMLInputElement).value = result.toString();
-        showMessage(`(${currentValue})²: ${result}`);
-        addToHistory(`(${currentValue})²`, result.toString());
-    }
-});
-
-const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
-cubeRootButton.addEventListener('click', () => {
-    const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
-    if (!isNaN(currentValue)) {
-        const result = Math.cbrt(currentValue);
-        (document.getElementById('display') as HTMLInputElement).value = result.toString();
-        showMessage(`∛(${currentValue}): ${result}`);
-        addToHistory(`∛(${currentValue})`, result.toString());
-    }
-});
-
-const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
-inverseButton.addEventListener('click', () => {
-    const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
-    if (!isNaN(currentValue) && currentValue !== 0) { // Check for division by zero
-        const result = 1 / currentValue;
-        (document.getElementById('display') as HTMLInputElement).value = result.toString();
-        showMessage(`1/(${currentValue}): ${result}`);
-        addToHistory(`1/(${currentValue})`, result.toString());
-    } else if (currentValue === 0) {
-      showMessage("Division by zero error!");
-    }
-});
-//Floor Functionality
-const floorButton = document.getElementById('floor') as HTMLButtonElement;
-floorButton.addEventListener('click', () => {
-    const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
-    if (!isNaN(currentValue)) {
-        const result = Math.floor(currentValue);
-        (document.getElementById('display') as HTMLInputElement).value = result.toString();
-        showMessage(`floor(${currentValue}): ${result}`);
-        addToHistory(`floor(${currentValue})`, result.toString());
-    }
-});
-
 // ... other existing buttons
+const sumButton = document.getElementById('sum') as HTMLButtonElement;
+sumButton.addEventListener('click', () => {
+    const currentValue = (document.getElementById('display') as HTMLInputElement).value;
+    const numbers = currentValue.split('+').map(Number).filter(num => !isNaN(num)); //added filter
+    if (numbers.length > 0) {
+        const result = numbers.reduce((sum, num) => sum + num, 0);
+        (document.getElementById('display') as HTMLInputElement).value = result.toString();
+        showMessage(`Sum of numbers: ${result}`);
+        addToHistory(`Sum(${currentValue})`, result.toString()); //Fixed history
+    } else{
+        showMessage("Invalid input for Sum operation")
+    }
+});
+
 });
