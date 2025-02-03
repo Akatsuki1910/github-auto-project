@@ -26,6 +26,11 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = currentInput;
         displayMessage("Memory recalled");
     });
+    const msButton = document.getElementById("ms") as HTMLButtonElement;
+    msButton.addEventListener("click", () => {
+        // If there's a current input value, convert it to a number and store it in memory, else display 0
+        memory = parseFloat(display.value) || 0;        displayMessage("Memory saved");
+    });
 
     const ansButton = document.getElementById("ans") as HTMLButtonElement;
     // ... (rest of the existing code)
