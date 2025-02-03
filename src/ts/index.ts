@@ -50,67 +50,17 @@ currentTimeSecondsButton.addEventListener('click',()=>{
 
 // ... existing buttons
 // ... other existing buttons
-const sumButton = document.getElementById('sum') as HTMLButtonElement;
-sumButton.addEventListener('click', () => {
-    const currentValue = (document.getElementById('display') as HTMLInputElement).value;
-    const numbers = currentValue.split('+').map(Number).filter(num => !isNaN(num)); //added filter
-    if (numbers.length > 0) {
-        const result = numbers.reduce((sum, num) => sum + num, 0);
-        (document.getElementById('display') as HTMLInputElement).value = result.toString();
-        showMessage(`Sum of numbers: ${result}`);
-        addToHistory(`Sum(${currentValue})`, result.toString()); //Fixed history
-    } else{
-        showMessage("Invalid input for Sum operation")
-    }
-});
+// ... (Other existing event listeners)
 
-const averageButton = document.getElementById('average') as HTMLButtonElement;
-averageButton.addEventListener('click', () => {
-  const currentValue = (document.getElementById('display') as HTMLInputElement).value;
-  const numbers = currentValue.split('+').map(Number).filter(num => !isNaN(num));
-  if (numbers.length > 0) {
-    const sum = numbers.reduce((total, num) => total + num, 0);
-    const average = sum / numbers.length;
-    (document.getElementById('display') as HTMLInputElement).value = average.toString();
-    showMessage(`Average of numbers: ${average}`);
-    addToHistory(`Avg(${currentValue})`, average.toString());
+const toggleKeyboardButton = document.getElementById('toggleKeyboard') as HTMLButtonElement;
+const keyboardContainer = document.getElementById('keyboard-container') as HTMLDivElement;
+
+toggleKeyboardButton.addEventListener('click', () => {
+  if (keyboardContainer.style.display === 'none') {
+    keyboardContainer.style.display = 'block';
   } else {
-    showMessage("Invalid input for Average operation");
+    keyboardContainer.style.display = 'none';
   }
-});
-
-const minButton = document.getElementById('min') as HTMLButtonElement;
-minButton.addEventListener('click', () => {
-    const currentValue = (document.getElementById('display') as HTMLInputElement).value;
-    const numbers = currentValue.split(',').map(Number).filter(num => !isNaN(num));
-    if (numbers.length > 0) {
-        const min = Math.min(...numbers); // Using spread syntax
-        (document.getElementById('display') as HTMLInputElement).value = min.toString();
-        showMessage(`Minimum of numbers: ${min}`);
-        addToHistory(`Min(${currentValue})`, min.toString());
-    } else {
-        showMessage("Invalid input for Min operation");
-    }
-});
-
-const maxButton = document.getElementById('max') as HTMLButtonElement;
-maxButton.addEventListener('click', () => {
-    const currentValue = (document.getElementById('display') as HTMLInputElement).value;
-    const numbers = currentValue.split(',').map(Number).filter(num => !isNaN(num));
-    if (numbers.length > 0) {
-        const max = Math.max(...numbers); // Using spread syntax
-        (document.getElementById('display') as HTMLInputElement).value = max.toString();
-        showMessage(`Maximum of numbers: ${max}`);
-        addToHistory(`Max(${currentValue})`, max.toString());
-    } else {
-        showMessage("Invalid input for Max operation");
-    }
-});
-
-const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
-duplicateButton.addEventListener('click', () => {
-    const currentValue = (document.getElementById('display') as HTMLInputElement).value;
-    (document.getElementById('display') as HTMLInputElement).value = currentValue + currentValue; 
 });
 
 });
