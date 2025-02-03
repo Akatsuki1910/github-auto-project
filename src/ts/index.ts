@@ -107,4 +107,10 @@ maxButton.addEventListener('click', () => {
     }
 });
 
+const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
+duplicateButton.addEventListener('click', () => {
+    const currentValue = (document.getElementById('display') as HTMLInputElement).value;
+    (document.getElementById('display') as HTMLInputElement).value = currentValue + currentValue; 
+});
+
 });
