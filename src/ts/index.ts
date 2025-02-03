@@ -71,9 +71,23 @@ window.addEventListener("DOMContentLoaded", () => {
             displayMessage("Cannot divide by zero");
             display.value = "Error";
             currentInput = "";
-        }
-        else{
+        } else {
             displayMessage("Invalid input for inverse");
+        }
+    });
+
+    const sinButton = document.getElementById("sign") as HTMLButtonElement;
+    sinButton.addEventListener("click", () => {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            const sinValue = Math.sin(num);
+            display.value = sinValue.toString();
+            currentInput = sinValue.toString();
+            displayMessage("sin(" + num + ") calculated");  // Display the message
+        } else {
+            displayMessage("Invalid input for sin");
+            display.value = "Error";
+            currentInput = "";
         }
     });
 });
