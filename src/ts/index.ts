@@ -34,6 +34,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const ansButton = document.getElementById("ans") as HTMLButtonElement;
     // ... (rest of the existing code)
+
+    const copyButton = document.getElementById("copy") as HTMLButtonElement;
+    copyButton.addEventListener("click", () => {
+        navigator.clipboard.writeText(display.value).then(() => {
+            displayMessage("Copied to clipboard");
+        }).catch(err => {
+            displayMessage("Could not copy to clipboard");
+            console.error("Failed to copy: ", err);
+        });
+    });
 });
 
 function displayMessage(message: string) {
