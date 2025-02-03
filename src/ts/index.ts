@@ -71,4 +71,12 @@ randomIntegerButton.addEventListener('click', () => {
   addToHistory('Random Integer', randomNumber.toString());
 });
 
+const randomNumberButton = document.getElementById('random-number') as HTMLButtonElement;
+
+randomNumberButton.addEventListener('click', () => {
+  const randomNumber = Math.random();
+  showMessage(`Random Number (0-1): ${randomNumber}`);
+  addToHistory('Random Number (0-1)', randomNumber.toString());
+});
+
 });
