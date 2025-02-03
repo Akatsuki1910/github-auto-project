@@ -87,4 +87,10 @@ currentTimestampButton.addEventListener('click', () => {
   addToHistory('Timestamp', timestamp.toString());
 });
 
+const modButton = document.getElementById('mod') as HTMLButtonElement;
+modButton.addEventListener('click', () => {
+    currentExpression += '%';
+    currentExpressionDisplay.textContent = currentExpression;
+});
+
 });
