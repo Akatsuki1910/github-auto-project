@@ -44,6 +44,19 @@ window.addEventListener("DOMContentLoaded", () => {
             console.error("Failed to copy: ", err);
         });
     });
+
+    const roundButton = document.getElementById("round") as HTMLButtonElement;
+    roundButton.addEventListener("click", () => {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            const roundedNum = Math.round(num);
+            display.value = roundedNum.toString();
+            currentInput = roundedNum.toString();
+            displayMessage("Rounded to " + roundedNum);
+        } else {
+            displayMessage("Invalid input for rounding");
+        }
+    });
 });
 
 function displayMessage(message: string) {
