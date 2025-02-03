@@ -55,3 +55,7 @@
     margin-top: 10px;
     text-align: center;
 }
+#toggle-history {
+    grid-column: span 4; /* Make it span all columns */
+    margin-top: 10px; /* Add some spacing */
+}
