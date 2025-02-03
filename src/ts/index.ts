@@ -29,7 +29,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const msButton = document.getElementById("ms") as HTMLButtonElement;
     msButton.addEventListener("click", () => {
         // If there's a current input value, convert it to a number and store it in memory, else display 0
-        memory = parseFloat(display.value) || 0;        displayMessage("Memory saved");
+        memory = parseFloat(display.value) || 0;
+        displayMessage("Memory saved");
     });
 
     const ansButton = document.getElementById("ans") as HTMLButtonElement;
@@ -55,6 +56,24 @@ window.addEventListener("DOMContentLoaded", () => {
             displayMessage("Rounded to " + roundedNum);
         } else {
             displayMessage("Invalid input for rounding");
+        }
+    });
+
+    const inverseButton = document.getElementById("inverse") as HTMLButtonElement;
+    inverseButton.addEventListener("click", () => {
+        const num = parseFloat(display.value);
+        if (num !== 0 && !isNaN(num)) {
+            const inverse = 1 / num;
+            display.value = inverse.toString();
+            currentInput = inverse.toString();
+            displayMessage("Inverse calculated");
+        } else if (num === 0) {
+            displayMessage("Cannot divide by zero");
+            display.value = "Error";
+            currentInput = "";
+        }
+        else{
+            displayMessage("Invalid input for inverse");
         }
     });
 });
