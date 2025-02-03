@@ -55,6 +55,11 @@ currentTimeSecondsButton.addEventListener('click',()=>{
 const toggleKeyboardButton = document.getElementById('toggleKeyboard') as HTMLButtonElement;
 const keyboardContainer = document.getElementById('keyboard-container') as HTMLDivElement;
 
+// Add exit button functionality
+const exitButton = document.getElementById('exit') as HTMLButtonElement;
+exitButton.addEventListener('click', () => {
+    keyboardContainer.style.display = 'none';
+});
 toggleKeyboardButton.addEventListener('click', () => {
   if (keyboardContainer.style.display === 'none') {
     keyboardContainer.style.display = 'block';
