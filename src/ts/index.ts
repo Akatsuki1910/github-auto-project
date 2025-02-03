@@ -17,9 +17,14 @@ window.addEventListener("DOMContentLoaded", () => {
     const mcButton = document.getElementById("mc") as HTMLButtonElement;
     mcButton.addEventListener("click", () => {
         memory = 0; // Clear memory
-        // Optionally provide feedback to the user that memory has been cleared
-        console.log("Memory cleared");
         displayMessage("Memory cleared");
+    });
+
+    const mrButton = document.getElementById("mr") as HTMLButtonElement;
+    mrButton.addEventListener("click", () => {
+        currentInput = memory.toString();
+        display.value = currentInput;
+        displayMessage("Memory recalled");
     });
 
     const ansButton = document.getElementById("ans") as HTMLButtonElement;
