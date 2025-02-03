@@ -44,6 +44,13 @@ window.addEventListener("DOMContentLoaded", () => {
             currentInput = "";
         }
     });
+
+     const clearHistoryButton = document.getElementById("clear-history") as HTMLButtonElement;
+    clearHistoryButton.addEventListener("click", () => {
+        history = [];
+        historyDiv.innerHTML = "";
+        displayMessage("History cleared");
+    });
 });
 
 function displayMessage(message: string) {
