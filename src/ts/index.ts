@@ -63,4 +63,12 @@ toggleKeyboardButton.addEventListener('click', () => {
   }
 });
 
+const randomIntegerButton = document.getElementById('random-integer') as HTMLButtonElement;
+
+randomIntegerButton.addEventListener('click', () => {
+  const randomNumber = Math.floor(Math.random() * 100) + 1; // Generates a random integer between 1 and 100
+  showMessage(`Random Integer: ${randomNumber}`);
+  addToHistory('Random Integer', randomNumber.toString());
+});
+
 });
