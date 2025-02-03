@@ -79,4 +79,18 @@ averageButton.addEventListener('click', () => {
   }
 });
 
+const minButton = document.getElementById('min') as HTMLButtonElement;
+minButton.addEventListener('click', () => {
+    const currentValue = (document.getElementById('display') as HTMLInputElement).value;
+    const numbers = currentValue.split(',').map(Number).filter(num => !isNaN(num));
+    if (numbers.length > 0) {
+        const min = Math.min(...numbers); // Using spread syntax
+        (document.getElementById('display') as HTMLInputElement).value = min.toString();
+        showMessage(`Minimum of numbers: ${min}`);
+        addToHistory(`Min(${currentValue})`, min.toString());
+    } else {
+        showMessage("Invalid input for Min operation");
+    }
+});
+
 });
