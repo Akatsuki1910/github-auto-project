@@ -7,11 +7,19 @@ const currentExpressionDisplay = document.getElementById("currentExpressionDispl
 const historyDiv = document.getElementById("history") as HTMLDivElement;
 let history: string[] = [];
 let parenthesisOpen = false;
+let lastAnswer = 0;
 
 // ... (Other existing code)
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
+    const ansButton = document.getElementById("ans") as HTMLButtonElement;
+    ansButton.addEventListener("click", () => {
+        currentInput += lastAnswer.toString();
+        currentExpression += lastAnswer.toString();
+        display.value = currentInput;
+        currentExpressionDisplay.textContent = currentExpression;
+    });
 
     const parenthesisButton = document.getElementById("parenthesis") as HTMLButtonElement;
     parenthesisButton.addEventListener("click", () => {
@@ -36,6 +44,23 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // ... (rest of the existing code)
+    document.querySelectorAll('#calculator button').forEach(button => {
+        button.addEventListener('click', () => {
+          // ... existing button click logic
+        });
+    });
+
+    const equalsButton = document.getElementById("equals") as HTMLButtonElement;
+    equalsButton.addEventListener("click", () =>{
+        try {
+            const result = eval(currentExpression);
+            lastAnswer = result;
+            display.value = result.toString();
+
+        } catch(error) {
+            // ... error handling ...
+        }
+    })
 });
 
 // ... (Existing functions like factorial)
