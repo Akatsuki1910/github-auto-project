@@ -8,73 +8,30 @@ const historyDiv = document.getElementById("history") as HTMLDivElement;
 let history: string[] = [];
 let parenthesisOpen = false;
 let lastAnswer = 0;
+let memory = 0;
 
 // ... (Other existing code)
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
+    const mcButton = document.getElementById("mc") as HTMLButtonElement;
+    mcButton.addEventListener("click", () => {
+        memory = 0; // Clear memory
+        // Optionally provide feedback to the user that memory has been cleared
+        console.log("Memory cleared");
+        displayMessage("Memory cleared");
+    });
+
     const ansButton = document.getElementById("ans") as HTMLButtonElement;
-    ansButton.addEventListener("click", () => {
-        currentInput += lastAnswer.toString();
-        currentExpression += lastAnswer.toString();
-        display.value = currentInput;
-        currentExpressionDisplay.textContent = currentExpression;
-    });
-
-    const parenthesisButton = document.getElementById("parenthesis") as HTMLButtonElement;
-    parenthesisButton.addEventListener("click", () => {
-        if (parenthesisOpen) {
-            currentInput += ")";
-            currentExpression += ")";
-            parenthesisOpen = false;
-        } else {
-            currentInput += "(";
-            currentExpression += "(";
-            parenthesisOpen = true;
-        }
-        display.value = currentInput;
-        currentExpressionDisplay.textContent = currentExpression;
-    });
-    const eButton = document.getElementById("e") as HTMLButtonElement;
-    eButton.addEventListener("click", () => {
-        currentInput += "e";
-        currentExpression += Math.E;
-        display.value = currentInput;
-        currentExpressionDisplay.textContent = currentExpression;    
-    });
-
-    const signButton = document.getElementById("sign") as HTMLButtonElement;
-    signButton.addEventListener("click", () => {
-        if (currentInput.startsWith("-")) {
-            currentInput = currentInput.substring(1);
-            currentExpression = currentExpression.substring(1);
-        } else {
-            currentInput = "-" + currentInput;
-            currentExpression = "-" + currentExpression;  
-        }
-        display.value = currentInput;
-        currentExpressionDisplay.textContent = currentExpression;
-    });
-
-
     // ... (rest of the existing code)
-    document.querySelectorAll('#calculator button').forEach(button => {
-        button.addEventListener('click', () => {
-          // ... existing button click logic
-        });
-    });
-
-    const equalsButton = document.getElementById("equals") as HTMLButtonElement;
-    equalsButton.addEventListener("click", () =>{
-        try {
-            const result = eval(currentExpression);
-            lastAnswer = result;
-            display.value = result.toString();
-
-        } catch(error) {
-            // ... error handling ...
-        }
-    })
 });
+
+function displayMessage(message: string) {
+    const messageContainer = document.getElementById("message-container") as HTMLDivElement;
+    messageContainer.textContent = message;
+    setTimeout(() => {
+        messageContainer.textContent = ""; // Clear the message after a short delay
+    }, 2000); // Clear message after 2 seconds
+}
 
 // ... (Existing functions like factorial)
