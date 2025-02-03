@@ -93,4 +93,18 @@ modButton.addEventListener('click', () => {
     currentExpressionDisplay.textContent = currentExpression;
 });
 
+const geoLocationButton = document.getElementById('geoLocation') as HTMLButtonElement;
+geoLocationButton.addEventListener('click', () => {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const latitude = position.coords.latitude;
+      const longitude = position.coords.longitude;
+      showMessage(`Latitude: ${latitude}, Longitude: ${longitude}`);
+      addToHistory('Geolocation', `Lat: ${latitude}, Lon: ${longitude}`);
+    });
+  } else {
+    showMessage("Geolocation is not supported by this browser.");
+  }
+});
+
 });
