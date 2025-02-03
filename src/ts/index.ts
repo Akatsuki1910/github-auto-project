@@ -50,6 +50,21 @@ window.addEventListener("DOMContentLoaded", () => {
                 currentInput = "";
             }
         });
+
+    const absButton = document.getElementById("abs") as HTMLButtonElement;
+        absButton.addEventListener("click", () => {
+            const num = parseFloat(display.value);
+            if (!isNaN(num)) {
+                const absValue = Math.abs(num);
+                display.value = absValue.toString();
+                currentInput = absValue.toString();
+                displayMessage("abs(" + num + ") calculated");
+            } else {
+                displayMessage("Invalid input for abs");
+                display.value = "Error";
+                currentInput = "";
+            }
+        });    
 });
 
 function displayMessage(message: string) {
