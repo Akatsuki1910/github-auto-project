@@ -59,6 +59,21 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = randomNumber.toString();
         displayMessage("Random number generated");
     });
+
+    const floorButton = document.getElementById("floor") as HTMLButtonElement;
+    floorButton.addEventListener("click", () => {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            const result = Math.floor(num);
+            display.value = result.toString();
+            currentInput = result.toString();
+            displayMessage("Floor of " + num + " calculated");
+        } else {
+            displayMessage("Invalid input for floor");
+            display.value = "Error";
+            currentInput = "";
+        }
+    });
 });
 
 function displayMessage(message: string) {
