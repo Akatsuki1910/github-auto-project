@@ -83,6 +83,17 @@ inverseButton.addEventListener('click', () => {
       showMessage("Division by zero error!");
     }
 });
+//Floor Functionality
+const floorButton = document.getElementById('floor') as HTMLButtonElement;
+floorButton.addEventListener('click', () => {
+    const currentValue = parseFloat((document.getElementById('display') as HTMLInputElement).value);
+    if (!isNaN(currentValue)) {
+        const result = Math.floor(currentValue);
+        (document.getElementById('display') as HTMLInputElement).value = result.toString();
+        showMessage(`floor(${currentValue}): ${result}`);
+        addToHistory(`floor(${currentValue})`, result.toString());
+    }
+});
 
 // ... other existing buttons
 });
