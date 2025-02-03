@@ -18,5 +18,18 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpressionDisplay.textContent = currentExpression;
     });
 
+    const negateButton = document.getElementById("negate") as HTMLButtonElement;
+    negateButton.addEventListener("click", () => {
+        if (currentInput !== "") {
+            currentInput = (parseFloat(currentInput) * -1).toString();
+            display.value = currentInput;
+
+            // Update currentExpression (replace last number with negated value)
+            const lastNumberRegex = /([\d.]+)$/;
+            currentExpression = currentExpression.replace(lastNumberRegex, currentInput);
+            currentExpressionDisplay.textContent = currentExpression;
+        }
+    });
+
     // ... (rest of the existing code)
 });
