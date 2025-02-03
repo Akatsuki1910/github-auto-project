@@ -93,4 +93,18 @@ minButton.addEventListener('click', () => {
     }
 });
 
+const maxButton = document.getElementById('max') as HTMLButtonElement;
+maxButton.addEventListener('click', () => {
+    const currentValue = (document.getElementById('display') as HTMLInputElement).value;
+    const numbers = currentValue.split(',').map(Number).filter(num => !isNaN(num));
+    if (numbers.length > 0) {
+        const max = Math.max(...numbers); // Using spread syntax
+        (document.getElementById('display') as HTMLInputElement).value = max.toString();
+        showMessage(`Maximum of numbers: ${max}`);
+        addToHistory(`Max(${currentValue})`, max.toString());
+    } else {
+        showMessage("Invalid input for Max operation");
+    }
+});
+
 });
