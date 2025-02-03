@@ -25,7 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = logValue.toString();
             currentInput = logValue.toString();
             displayMessage("log(" + num + ") calculated");
-        } else if (num <=0) {
+        } else if (num <= 0) {
             displayMessage("Invalid input for log (must be positive)");
             display.value = "Error";
             currentInput = "";
@@ -35,6 +35,21 @@ window.addEventListener("DOMContentLoaded", () => {
             currentInput = "";
         }
     });
+
+        const expButton = document.getElementById("exp") as HTMLButtonElement;
+        expButton.addEventListener("click", () => {
+            const num = parseFloat(display.value);
+            if (!isNaN(num)) {
+                const expValue = Math.exp(num);
+                display.value = expValue.toString();
+                currentInput = expValue.toString();
+                displayMessage("exp(" + num + ") calculated");
+            } else {
+                displayMessage("Invalid input for exp");
+                display.value = "Error";
+                currentInput = "";
+            }
+        });
 });
 
 function displayMessage(message: string) {
