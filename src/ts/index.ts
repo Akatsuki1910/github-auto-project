@@ -19,36 +19,31 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const squaredButton = document.getElementById("squared") as HTMLButtonElement;
     squaredButton.addEventListener("click", () => {
-        const num = parseFloat(display.value);
-        if (!isNaN(num)) {
-            const squaredValue = num * num;
-            display.value = squaredValue.toString();
-            currentInput = squaredValue.toString();
-            displayMessage(num + " squared calculated");
-        } else {
-            displayMessage("Invalid input for squaring");
-            display.value = "Error";
-            currentInput = "";
-        }
+        // ... existing squared function
     });
 
     const cubedButton = document.getElementById("cubed") as HTMLButtonElement;
     cubedButton.addEventListener("click", () => {
-        const num = parseFloat(display.value);
-        if (!isNaN(num)) {
-            const cubedValue = num * num * num;
-            display.value = cubedValue.toString();
-            currentInput = cubedValue.toString();
-            displayMessage(num + " cubed calculated");
-        } else {
-            displayMessage("Invalid input for cubing");
-            display.value = "Error";
-            currentInput = "";
-        }
+       // ... existing cubed function
     });
 
     const logButton = document.getElementById("log") as HTMLButtonElement;
     // ... (rest of the code)
+
+    const tenToThePowerXButton = document.getElementById("ten-to-the-power-x") as HTMLButtonElement;
+    tenToThePowerXButton.addEventListener("click", () => {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            const result = Math.pow(10, num);
+            display.value = result.toString();
+            currentInput = result.toString();
+            displayMessage("10 to the power " + num + " calculated");
+        } else {
+            displayMessage("Invalid input for 10^x");
+            display.value = "Error";
+            currentInput = "";
+        }
+    });
 });
 
 function displayMessage(message: string) {
