@@ -17,62 +17,27 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ... (rest of the existing code)
 
-    const logButton = document.getElementById("log") as HTMLButtonElement;
-    logButton.addEventListener("click", () => {
+    const squaredButton = document.getElementById("squared") as HTMLButtonElement;
+    squaredButton.addEventListener("click", () => {
         const num = parseFloat(display.value);
-        if (!isNaN(num) && num > 0) {  // Check for valid input and positive number
-            const logValue = Math.log10(num);
-            display.value = logValue.toString();
-            currentInput = logValue.toString();
-            displayMessage("log(" + num + ") calculated");
-        } else if (num <= 0) {
-            displayMessage("Invalid input for log (must be positive)");
-            display.value = "Error";
-            currentInput = "";
-        }        else {
-            displayMessage("Invalid input for log");
+        if (!isNaN(num)) {
+            const squaredValue = num * num;
+            display.value = squaredValue.toString();
+            currentInput = squaredValue.toString();
+            displayMessage(num + " squared calculated");
+        } else {
+            displayMessage("Invalid input for squaring");
             display.value = "Error";
             currentInput = "";
         }
     });
 
-        const expButton = document.getElementById("exp") as HTMLButtonElement;
-        expButton.addEventListener("click", () => {
-            const num = parseFloat(display.value);
-            if (!isNaN(num)) {
-                const expValue = Math.exp(num);
-                display.value = expValue.toString();
-                currentInput = expValue.toString();
-                displayMessage("exp(" + num + ") calculated");
-            } else {
-                displayMessage("Invalid input for exp");
-                display.value = "Error";
-                currentInput = "";
-            }
-        });
-
-    const absButton = document.getElementById("abs") as HTMLButtonElement;
-        absButton.addEventListener("click", () => {
-            const num = parseFloat(display.value);
-            if (!isNaN(num)) {
-                const absValue = Math.abs(num);
-                display.value = absValue.toString();
-                currentInput = absValue.toString();
-                displayMessage("abs(" + num + ") calculated");
-            } else {
-                displayMessage("Invalid input for abs");
-                display.value = "Error";
-                currentInput = "";
-            }
-        });    
+    const logButton = document.getElementById("log") as HTMLButtonElement;
+    // ... (rest of the code)
 });
 
 function displayMessage(message: string) {
-    const messageContainer = document.getElementById("message-container") as HTMLDivElement;
-    messageContainer.textContent = message;
-    setTimeout(() => {
-        messageContainer.textContent = ""; // Clear the message after a short delay
-    }, 2000); // Clear message after 2 seconds
+    // ... (existing code)
 }
 
 // ... (Existing functions like factorial)
