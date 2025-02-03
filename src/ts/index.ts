@@ -2,6 +2,8 @@
 
 const display = document.getElementById("display") as HTMLInputElement;
 let currentInput = "";
+let currentExpression = "";
+const currentExpressionDisplay = document.getElementById("currentExpressionDisplay") as HTMLDivElement;
 
 // ... (Other existing code)
 
@@ -10,7 +12,9 @@ window.addEventListener("DOMContentLoaded", () => {
     const powerButton = document.getElementById("power") as HTMLButtonElement;
     powerButton.addEventListener("click", () => {
         currentExpression += "**";
+        currentInput += "**"; // Also append to currentInput for evaluation
         currentExpressionDisplay.textContent = currentExpression;
+        display.value = currentInput; // Update the main display as well
     });
 
     const keyboardButtons = document.querySelectorAll('.keyboard button');
@@ -23,17 +27,22 @@ window.addEventListener("DOMContentLoaded", () => {
                         const result = eval(currentInput);
                         display.value = result.toString();
                         currentInput = result.toString(); // Update currentInput with result
+                        currentExpression = ""; // Clear currentExpression after evaluation
+                        currentExpressionDisplay.textContent = ""; // Clear the display
                     } catch (error) {
                         display.value = "Error";
                         currentInput = ""; // Reset currentInput on error
                     }
                 } else if (['+', '-', '*', '/', '**'].includes(buttonText)) {
                     currentInput += buttonText;
+                    currentExpression += buttonText;
                     display.value = currentInput;
-                }
-                 else {
+                    currentExpressionDisplay.textContent = currentExpression;
+                } else {
                     currentInput += buttonText;
+                    currentExpression += buttonText; // Update currentExpression
                     display.value = currentInput;
+                    currentExpressionDisplay.textContent = currentExpression;
                 }
             }
         });

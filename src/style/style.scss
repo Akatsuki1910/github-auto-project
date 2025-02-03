@@ -26,32 +26,32 @@
     font-size: 14px;
     color: #666; /* Slightly lighter color */
     margin-bottom: 5px; 
-  }
+}
 
 /* Initially hide scientific buttons */
 .scientific {
-  display: none;
+    display: none;
 }
 
 #keyboard-container {
-  grid-column: span 4;
-  margin-top: 10px;
-  border: 1px solid #ccc;
-  padding: 10px;
+    grid-column: span 4;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
 }
 .keyboard{
-display:grid;
- grid-template-columns:repeat(4,1fr);
- grid-gap:5px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    grid-gap:5px;
 }
 .keyboard button {
-width: 100%;
-padding: 10px;
-box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 #message-container {
     grid-column: span 4; /* Span across all columns */
     margin-top: 10px;
     text-align: center;
-  }
+}
