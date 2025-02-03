@@ -43,6 +43,20 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpressionDisplay.textContent = currentExpression;    
     });
 
+    const signButton = document.getElementById("sign") as HTMLButtonElement;
+    signButton.addEventListener("click", () => {
+        if (currentInput.startsWith("-")) {
+            currentInput = currentInput.substring(1);
+            currentExpression = currentExpression.substring(1);
+        } else {
+            currentInput = "-" + currentInput;
+            currentExpression = "-" + currentExpression;  
+        }
+        display.value = currentInput;
+        currentExpressionDisplay.textContent = currentExpression;
+    });
+
+
     // ... (rest of the existing code)
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
