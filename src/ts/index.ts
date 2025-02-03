@@ -64,4 +64,19 @@ sumButton.addEventListener('click', () => {
     }
 });
 
+const averageButton = document.getElementById('average') as HTMLButtonElement;
+averageButton.addEventListener('click', () => {
+  const currentValue = (document.getElementById('display') as HTMLInputElement).value;
+  const numbers = currentValue.split('+').map(Number).filter(num => !isNaN(num));
+  if (numbers.length > 0) {
+    const sum = numbers.reduce((total, num) => total + num, 0);
+    const average = sum / numbers.length;
+    (document.getElementById('display') as HTMLInputElement).value = average.toString();
+    showMessage(`Average of numbers: ${average}`);
+    addToHistory(`Avg(${currentValue})`, average.toString());
+  } else {
+    showMessage("Invalid input for Average operation");
+  }
+});
+
 });
