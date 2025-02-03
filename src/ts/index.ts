@@ -79,4 +79,12 @@ randomNumberButton.addEventListener('click', () => {
   addToHistory('Random Number (0-1)', randomNumber.toString());
 });
 
+const currentTimestampButton = document.getElementById('current-timestamp') as HTMLButtonElement;
+
+currentTimestampButton.addEventListener('click', () => {
+  const timestamp = Date.now();
+  showMessage(`Current Timestamp: ${timestamp}`);
+  addToHistory('Timestamp', timestamp.toString());
+});
+
 });
