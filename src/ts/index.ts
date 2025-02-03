@@ -32,6 +32,21 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    const cubedButton = document.getElementById("cubed") as HTMLButtonElement;
+    cubedButton.addEventListener("click", () => {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            const cubedValue = num * num * num;
+            display.value = cubedValue.toString();
+            currentInput = cubedValue.toString();
+            displayMessage(num + " cubed calculated");
+        } else {
+            displayMessage("Invalid input for cubing");
+            display.value = "Error";
+            currentInput = "";
+        }
+    });
+
     const logButton = document.getElementById("log") as HTMLButtonElement;
     // ... (rest of the code)
 });
