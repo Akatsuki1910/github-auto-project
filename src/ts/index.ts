@@ -23,7 +23,18 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // ... (rest of the existing code)
+    // Percentage button functionality
+    const percentageButton = document.getElementById("percentage") as HTMLButtonElement;
+    percentageButton.addEventListener("click", () => {
+        if (currentInput !== "") {
+            const percentageValue = parseFloat(currentInput) / 100;
+            currentInput = percentageValue.toString();
+            display.value = currentInput;
+            currentExpression += currentInput; // Append percentage value to expression
+            currentExpressionDisplay.textContent = currentExpression;
+        }
+    });
+
 
     const equalsButton = document.getElementById("equals") as HTMLButtonElement;
     equalsButton.addEventListener("click", () => {
