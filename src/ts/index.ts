@@ -27,6 +27,13 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = currentInput;
         currentExpressionDisplay.textContent = currentExpression;
     });
+    const eButton = document.getElementById("e") as HTMLButtonElement;
+    eButton.addEventListener("click", () => {
+        currentInput += "e";
+        currentExpression += Math.E;
+        display.value = currentInput;
+        currentExpressionDisplay.textContent = currentExpression;    
+    });
 
     // ... (rest of the existing code)
 });
