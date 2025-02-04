@@ -64,6 +64,11 @@ minButton.addEventListener("click", () => {
     currentInput += "Math.min(";
     display.value = currentInput;
 });
+const expm1Button = document.getElementById("expm1") as HTMLButtonElement;
+expm1Button.addEventListener("click", () => {
+currentInput += "Math.expm1(";
+display.value = currentInput;
+});
 
 });
 
