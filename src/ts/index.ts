@@ -53,6 +53,12 @@ window.addEventListener("DOMContentLoaded", () => {
   memoryClearButton.addEventListener("click", () => {
     memoryValue = 0;
   });
+
+  const sinButton = document.getElementById("sin") as HTMLButtonElement;
+  sinButton.addEventListener("click", () => {
+    currentInput += "Math.sin(";
+    display.value = currentInput;
+  });
 });
 
 // ... (rest of the code)
