@@ -46,6 +46,11 @@ logButton.addEventListener("click", () => {
 currentInput += "Math.log10(";
 display.value = currentInput;
 });
+const absButton = document.getElementById("abs") as HTMLButtonElement;
+absButton.addEventListener("click", () => {
+currentInput += "Math.abs(";
+display.value = currentInput;
+});
 
 });
 
