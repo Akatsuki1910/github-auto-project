@@ -59,6 +59,11 @@ maxButton.addEventListener("click", () => {
 currentInput += "Math.max(";
 display.value = currentInput;
 });
+const minButton = document.getElementById("min") as HTMLButtonElement;
+minButton.addEventListener("click", () => {
+    currentInput += "Math.min(";
+    display.value = currentInput;
+});
 
 });
 
