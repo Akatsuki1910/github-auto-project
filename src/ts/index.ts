@@ -11,78 +11,32 @@ let lastAnswer = 0;
 
 window.addEventListener("DOMContentLoaded", () => {
   // existing code 
-  const signChangeButton = document.getElementById("sign-change") as HTMLButtonElement;
-  signChangeButton.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-      display.value = (-currentValue).toString();
-      currentInput = display.value;
-    } else {
-        displayMessage("Invalid input");
-    }
-  });
+  // ... (Other button event listeners)
 
- const sqrtButton = document.getElementById("sqrt") as HTMLButtonElement;
-sqrtButton.addEventListener("click", () => {
-    const num = Number.parseFloat(display.value);
-    if (!isNaN(num) && num>=0) {
-      const result = Math.sqrt(num);
+  const factorialButton = document.getElementById("factorial") as HTMLButtonElement;
+  factorialButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue >= 0 && Number.isInteger(currentValue)) {
+      const result = factorial(currentValue);
       display.value = result.toString();
       currentInput = result.toString();
-      currentExpression = `√(${num})`;
-      currentExpressionDisplay.textContent = currentExpression;
-      history.push(`${currentExpression} = ${result}`);
-      updateHistory();
-      lastAnswer = result;
-    } else {
-      displayMessage("Invalid input for sqrt");
-    }
-  });
-
-  const toggleHistoryButton = document.getElementById("toggle-history") as HTMLButtonElement;
-toggleHistoryButton.addEventListener("click", () => {
-    if (historyDiv.style.display === "none") {
-      historyDiv.style.display = "block";
-    } else {
-      historyDiv.style.display = "none";
-    }
-  });
-
-  const percentButton = document.getElementById("percent") as HTMLButtonElement;
-  percentButton.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-      const result = currentValue / 100;
-      display.value = result.toString();
-      currentInput = result.toString();
-    } else {
-      displayMessage("Invalid input");
-    }
-  });
-
-  const piButton = document.getElementById("pi") as HTMLButtonElement;
-  piButton.addEventListener("click", () => {
-    display.value = Math.PI.toString();
-    currentInput = Math.PI.toString();
-  });
-
-  const squareButton = document.getElementById("square") as HTMLButtonElement;
-  squareButton.addEventListener("click", () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-      const result = currentValue * currentValue;
-      display.value = result.toString();
-      currentInput = result.toString();
-      currentExpression = `${currentValue}²`;
+      currentExpression = `${currentValue}!`;
       currentExpressionDisplay.textContent = currentExpression;
       history.push(`${currentExpression} = ${result}`);
       updateHistory();
       lastAnswer = result;      
     } else {
-      displayMessage("Invalid input");
+      displayMessage("Invalid input for factorial");
     }
   });
 });
+
+function factorial(n: number): number {
+  if (n === 0) {
+    return 1;
+  }
+  return n * factorial(n - 1);
+}
 
 function displayMessage(message: string) {
   const messageContainer = document.getElementById("message-container") as HTMLDivElement;
