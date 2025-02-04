@@ -2,7 +2,7 @@
   "scripts": {
     "auto-add": "bun run git.ts",
     "lint": "biome check --write ./src",
-    "build": "bun build ./src/index.html --out-dir=dist"
+    "build": "bun build ./src/index.html --outdir=dist"
   },
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
