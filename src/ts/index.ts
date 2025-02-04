@@ -34,35 +34,11 @@ window.addEventListener("DOMContentLoaded", () => {
   });
   // ... (Other button event listeners)
 
-  const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
-  memoryStoreButton.addEventListener("click", () => {
-    try {
-      memoryValue = eval(currentInput);
-    } catch (error) {
-      display.value = "Error";
-    }
-  });
+  // ... existing code
 
-  const memoryRecallButton = document.getElementById("memory-recall") as HTMLButtonElement;
-  memoryRecallButton.addEventListener("click", () => {
-    currentInput += memoryValue.toString();
-    display.value = currentInput;
-  });
-
-  const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonElement;
-  memoryClearButton.addEventListener("click", () => {
-    memoryValue = 0;
-  });
-
-  const sinButton = document.getElementById("sin") as HTMLButtonElement;
-  sinButton.addEventListener("click", () => {
-    currentInput += "Math.sin(";
-    display.value = currentInput;
-  });
-
-  const cosButton = document.getElementById("cos") as HTMLButtonElement;
-  cosButton.addEventListener("click", () => {
-    currentInput += "Math.cos(";
+  const tanButton = document.getElementById("tan") as HTMLButtonElement;
+  tanButton.addEventListener("click", () => {
+    currentInput += "Math.tan(";
     display.value = currentInput;
   });
 });
