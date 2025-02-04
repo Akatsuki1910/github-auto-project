@@ -8,7 +8,7 @@ const currentExpressionDisplay = document.getElementById(
 const historyDiv = document.getElementById("history") as HTMLDivElement;
 const historyArr: string[] = [];
 let lastAnswer = 0;
-let memoryValue = 0; // Added memory functionality
+let memoryValue = 0; 
 
 window.addEventListener("DOMContentLoaded", () => {
   // existing code
@@ -47,6 +47,11 @@ window.addEventListener("DOMContentLoaded", () => {
   memoryRecallButton.addEventListener("click", () => {
     currentInput += memoryValue.toString();
     display.value = currentInput;
+  });
+
+  const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonElement;
+  memoryClearButton.addEventListener("click", () => {
+    memoryValue = 0;
   });
 });
 
