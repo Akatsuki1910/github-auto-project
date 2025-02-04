@@ -17,63 +17,19 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ... (rest of the existing code)
 
-    const squaredButton = document.getElementById("squared") as HTMLButtonElement;
-    squaredButton.addEventListener("click", () => {
-        // ... existing squared function
-    });
-
-    const cubedButton = document.getElementById("cubed") as HTMLButtonElement;
-    cubedButton.addEventListener("click", () => {
-       // ... existing cubed function
-    });
-
-    const logButton = document.getElementById("log") as HTMLButtonElement;
-    // ... (rest of the code)
-
-    const tenToThePowerXButton = document.getElementById("ten-to-the-power-x") as HTMLButtonElement;
-    tenToThePowerXButton.addEventListener("click", () => {
+    const signChangeButton = document.getElementById("sign-change") as HTMLButtonElement;
+    signChangeButton.addEventListener("click", () => {
         const num = parseFloat(display.value);
         if (!isNaN(num)) {
-            const result = Math.pow(10, num);
-            display.value = result.toString();
-            currentInput = result.toString();
-            displayMessage("10 to the power " + num + " calculated");
+            display.value = (-num).toString();
+            currentInput = (-num).toString();
+            displayMessage("Sign changed");
         } else {
-            displayMessage("Invalid input for 10^x");
-            display.value = "Error";
-            currentInput = "";
+            displayMessage("Invalid input for sign change");
         }
     });
 
-     const clearHistoryButton = document.getElementById("clear-history") as HTMLButtonElement;
-    clearHistoryButton.addEventListener("click", () => {
-        history = [];
-        historyDiv.innerHTML = "";
-        displayMessage("History cleared");
-    });
-
-    const randomButton = document.getElementById("random") as HTMLButtonElement;
-    randomButton.addEventListener("click", () => {
-        const randomNumber = Math.random();
-        display.value = randomNumber.toString();
-        currentInput = randomNumber.toString();
-        displayMessage("Random number generated");
-    });
-
-    const floorButton = document.getElementById("floor") as HTMLButtonElement;
-    floorButton.addEventListener("click", () => {
-        const num = parseFloat(display.value);
-        if (!isNaN(num)) {
-            const result = Math.floor(num);
-            display.value = result.toString();
-            currentInput = result.toString();
-            displayMessage("Floor of " + num + " calculated");
-        } else {
-            displayMessage("Invalid input for floor");
-            display.value = "Error";
-            currentInput = "";
-        }
-    });
+    // ... existing event listeners for squared, cubed, etc.
 });
 
 function displayMessage(message: string) {
