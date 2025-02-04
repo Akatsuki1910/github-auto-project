@@ -37,7 +37,10 @@ window.addEventListener("DOMContentLoaded", () => {
     openNewWindowButton.addEventListener("click", () => {
         window.open("https://www.example.com", "_blank");
     });
-
+    const exitButton = document.getElementById("exit") as HTMLButtonElement;
+    exitButton.addEventListener("click",()=>{
+        window.close();
+    })
     // ... (Rest of the existing code)
 });
 
