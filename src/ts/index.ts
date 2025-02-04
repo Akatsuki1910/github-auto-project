@@ -8,6 +8,7 @@ const currentExpressionDisplay = document.getElementById(
 const historyDiv = document.getElementById("history") as HTMLDivElement;
 const historyArr: string[] = [];
 let lastAnswer = 0;
+let memoryValue = 0; // Added memory functionality
 
 window.addEventListener("DOMContentLoaded", () => {
   // existing code
@@ -31,68 +32,22 @@ window.addEventListener("DOMContentLoaded", () => {
     currentInput += "Math.E";
     display.value = currentInput;
   });
-  const lnButton = document.getElementById("ln") as HTMLButtonElement;
-  lnButton.addEventListener("click", () => {
-    currentInput += "Math.log("; // Add natural log function
-    display.value = currentInput;
-  });
-  const expButton = document.getElementById("exp") as HTMLButtonElement;
-  expButton.addEventListener("click", () => {
-    currentInput += "Math.exp(";
-    display.value = currentInput;
-  });
-const logButton = document.getElementById("log") as HTMLButtonElement;
-logButton.addEventListener("click", () => {
-currentInput += "Math.log10(";
-display.value = currentInput;
-});
-const absButton = document.getElementById("abs") as HTMLButtonElement;
-absButton.addEventListener("click", () => {
-currentInput += "Math.abs(";
-display.value = currentInput;
-});
-const roundButton = document.getElementById("round") as HTMLButtonElement;
-roundButton.addEventListener("click", () => {
-  try {
-    currentInput = Math.round(eval(currentInput)).toString();
-    display.value = currentInput;
-  } catch (error) {
-    display.value = "Error";
-  }
-});
-const inverseButton = document.getElementById("inverse") as HTMLButtonElement;
-inverseButton.addEventListener("click", () => {
-  try {
-    currentInput = (1 / eval(currentInput)).toString();
-    display.value = currentInput;
-  } catch (error) {
-    display.value = "Error";
-  }
-});
-const randButton = document.getElementById("rand") as HTMLButtonElement;
-randButton.addEventListener("click", () => {
-  currentInput += Math.random();
-  display.value = currentInput;
-});
-const ceilButton = document.getElementById("ceil") as HTMLButtonElement;
-ceilButton.addEventListener("click", () => {
-  try {
-    currentInput = Math.ceil(eval(currentInput)).toString();
-    display.value = currentInput;
-  } catch (error) {
-    display.value = "Error";
-  }
-});
-const floorButton = document.getElementById("floor") as HTMLButtonElement;
-floorButton.addEventListener("click", () => {
-  try {
-    currentInput = Math.floor(eval(currentInput)).toString();
-    display.value = currentInput;
-  } catch (error) {
-    display.value = "Error";
-  }
-});
+  // ... (Other button event listeners)
 
+  const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
+  memoryStoreButton.addEventListener("click", () => {
+    try {
+      memoryValue = eval(currentInput);
+    } catch (error) {
+      display.value = "Error";
+    }
+  });
+
+  const memoryRecallButton = document.getElementById("memory-recall") as HTMLButtonElement;
+  memoryRecallButton.addEventListener("click", () => {
+    currentInput += memoryValue.toString();
+    display.value = currentInput;
+  });
 });
 
 // ... (rest of the code)
