@@ -13,6 +13,11 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Other button event listeners)
 
     // ... other button listeners
+    const modButton = document.getElementById("mod") as HTMLButtonElement;
+    modButton.addEventListener("click", () => {
+        currentInput += "%";
+        display.value = currentInput;
+    });
 
     const leftParenButton = document.getElementById("left-paren") as HTMLButtonElement;
     leftParenButton.addEventListener("click", () => {
