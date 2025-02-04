@@ -60,6 +60,15 @@ roundButton.addEventListener("click", () => {
     display.value = "Error";
   }
 });
+const inverseButton = document.getElementById("inverse") as HTMLButtonElement;
+inverseButton.addEventListener("click", () => {
+  try {
+    currentInput = (1 / eval(currentInput)).toString();
+    display.value = currentInput;
+  } catch (error) {
+    display.value = "Error";
+  }
+});
 
 });
 
