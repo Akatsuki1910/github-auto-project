@@ -65,6 +65,23 @@ toggleHistoryButton.addEventListener("click", () => {
     display.value = Math.PI.toString();
     currentInput = Math.PI.toString();
   });
+
+  const squareButton = document.getElementById("square") as HTMLButtonElement;
+  squareButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+      const result = currentValue * currentValue;
+      display.value = result.toString();
+      currentInput = result.toString();
+      currentExpression = `${currentValue}²`;
+      currentExpressionDisplay.textContent = currentExpression;
+      history.push(`${currentExpression} = ${result}`);
+      updateHistory();
+      lastAnswer = result;      
+    } else {
+      displayMessage("Invalid input");
+    }
+  });
 });
 
 function displayMessage(message: string) {
