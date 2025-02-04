@@ -5,26 +5,32 @@ let currentExpression = "";
 const currentExpressionDisplay = document.getElementById(
   "currentExpressionDisplay",
 ) as HTMLDivElement;
-const historyDiv = document.getElementById("history") as HTMLDivElement;
-const history: string[] = [];
+const historyDiv = document.getElementById("historyArr") as HTMLDivElement;
+const historyArr: string[] = [];
 let lastAnswer = 0;
 
 window.addEventListener("DOMContentLoaded", () => {
-  // existing code 
+  // existing code
   // ... (Other button event listeners)
 
-  const factorialButton = document.getElementById("factorial") as HTMLButtonElement;
+  const factorialButton = document.getElementById(
+    "factorial",
+  ) as HTMLButtonElement;
   factorialButton.addEventListener("click", () => {
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue >= 0 && Number.isInteger(currentValue)) {
+    if (
+      !isNaN(currentValue) &&
+      currentValue >= 0 &&
+      Number.isInteger(currentValue)
+    ) {
       const result = factorial(currentValue);
       display.value = result.toString();
       currentInput = result.toString();
       currentExpression = `${currentValue}!`;
       currentExpressionDisplay.textContent = currentExpression;
-      history.push(`${currentExpression} = ${result}`);
+      historyArr.push(`${currentExpression} = ${result}`);
       updateHistory();
-      lastAnswer = result;      
+      lastAnswer = result;
     } else {
       displayMessage("Invalid input for factorial");
     }
@@ -39,7 +45,9 @@ function factorial(n: number): number {
 }
 
 function displayMessage(message: string) {
-  const messageContainer = document.getElementById("message-container") as HTMLDivElement;
+  const messageContainer = document.getElementById(
+    "message-container",
+  ) as HTMLDivElement;
   messageContainer.textContent = message;
   setTimeout(() => {
     messageContainer.textContent = "";
@@ -48,7 +56,7 @@ function displayMessage(message: string) {
 
 function updateHistory() {
   historyDiv.innerHTML = "";
-  history.forEach((item) => {
+  historyArr.forEach((item) => {
     const p = document.createElement("p");
     p.textContent = item;
     historyDiv.appendChild(p);

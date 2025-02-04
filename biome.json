@@ -16,7 +16,16 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "recommended": true
+      "complexity": {
+        "noForEach": "off"
+      },
+      "recommended": true,
+      "style": {
+        "useNumberNamespace": "off"
+      },
+      "suspicious": {
+        "noGlobalIsNan": "off"
+      }
     }
   },
   "organizeImports": {
