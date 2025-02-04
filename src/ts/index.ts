@@ -44,6 +44,20 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    const nthrootButton = document.getElementById("nthroot") as HTMLButtonElement;
+    nthrootButton.addEventListener("click", () => {
+        try {
+            const n = parseFloat(prompt("Enter the root (n):", "2") || "2"); // Default to square root
+            const num = parseFloat(currentInput);
+            currentInput = Math.pow(num, 1/n).toString();
+            display.value = currentInput;
+        }
+        catch (error) {
+            console.error("Error calculating nth root:", error);
+            display.value = "Error";
+        }
+    });
+
 });
 
 // ... (rest of the code)
