@@ -1,5 +1,6 @@
 // ... (Existing code)
 
+// ... (Existing code)
 const display = document.getElementById("display") as HTMLInputElement;
 let currentInput = "";
 let currentExpression = "";
@@ -8,9 +9,7 @@ const currentExpressionDisplay = document.getElementById(
 ) as HTMLDivElement;
 const historyDiv = document.getElementById("history") as HTMLDivElement;
 const history: string[] = [];
-const parenthesisOpen = false;
 let lastAnswer = 0;
-const memory = 0;
 
 // ... (Other existing code)
 
@@ -19,50 +18,37 @@ window.addEventListener("DOMContentLoaded", () => {
 
   // ... (rest of the existing code)
 
-  const signChangeButton = document.getElementById(
-    "sign-change",
-  ) as HTMLButtonElement;
-  signChangeButton.addEventListener("click", () => {
+  const ceilButton = document.getElementById("ceil") as HTMLButtonElement;
+  ceilButton.addEventListener("click", () => {
     const num = Number.parseFloat(display.value);
     if (!isNaN(num)) {
-      display.value = (-num).toString();
-      currentInput = (-num).toString();
-      displayMessage("Sign changed");
-    } else {
-      displayMessage("Invalid input for sign change");
-    }
-  });
-
-  const lnButton = document.getElementById("ln") as HTMLButtonElement;
-  lnButton.addEventListener("click", () => {
-    const num = Number.parseFloat(display.value);
-    if (!isNaN(num) && num > 0) {
-      const result = Math.log(num);
+      const result = Math.ceil(num);
       display.value = result.toString();
       currentInput = result.toString();
-      currentExpression = `ln(${num})`;
+      currentExpression = `ceil(${num})`;
       currentExpressionDisplay.textContent = currentExpression;
       history.push(`${currentExpression} = ${result}`);
       updateHistory();
       lastAnswer = result;
     } else {
-      displayMessage("Invalid input for natural logarithm (ln)");
+      displayMessage("Invalid input for ceil");
     }
   });
-  // ... existing event listeners for squared, cubed, etc.
+
+  // ... existing event listeners
 });
 
+// ... existing functions
+
 function displayMessage(message: string) {
-  // ... (existing code)
+  // ... existing code
 }
 
 function updateHistory() {
-  historyDiv.innerHTML = ""; // Clear existing history
+  historyDiv.innerHTML = "";
   history.forEach((item) => {
     const p = document.createElement("p");
     p.textContent = item;
     historyDiv.appendChild(p);
   });
 }
-
-// ... (Existing functions like factorial)
