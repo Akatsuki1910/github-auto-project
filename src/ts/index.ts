@@ -74,6 +74,15 @@ randButton.addEventListener("click", () => {
   currentInput += Math.random();
   display.value = currentInput;
 });
+const ceilButton = document.getElementById("ceil") as HTMLButtonElement;
+ceilButton.addEventListener("click", () => {
+  try {
+    currentInput = Math.ceil(eval(currentInput)).toString();
+    display.value = currentInput;
+  } catch (error) {
+    display.value = "Error";
+  }
+});
 
 });
 
