@@ -32,6 +32,17 @@ window.addEventListener("DOMContentLoaded", () => {
         historyArr = [];
         historyDiv.innerHTML = "";
     });
+    const cuberootButton = document.getElementById("cuberoot") as HTMLButtonElement;
+    cuberootButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(currentInput);
+            currentInput = Math.cbrt(num).toString();
+            display.value = currentInput;
+        } catch (error) {
+            console.error("Error calculating cuberoot:", error);
+            display.value = "Error";
+        }
+    });
 
 });
 
