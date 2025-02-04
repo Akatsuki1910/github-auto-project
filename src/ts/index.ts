@@ -47,6 +47,18 @@ toggleHistoryButton.addEventListener("click", () => {
       historyDiv.style.display = "none";
     }
   });
+
+  const percentButton = document.getElementById("percent") as HTMLButtonElement;
+  percentButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+      const result = currentValue / 100;
+      display.value = result.toString();
+      currentInput = result.toString();
+    } else {
+      displayMessage("Invalid input");
+    }
+  });
 });
 
 function displayMessage(message: string) {
