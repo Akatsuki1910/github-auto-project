@@ -41,6 +41,11 @@ window.addEventListener("DOMContentLoaded", () => {
     currentInput += "Math.exp(";
     display.value = currentInput;
   });
+const logButton = document.getElementById("log") as HTMLButtonElement;
+logButton.addEventListener("click", () => {
+currentInput += "Math.log10(";
+display.value = currentInput;
+});
 
 });
 
