@@ -54,6 +54,11 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = "Error";
     }
 });
+const maxButton = document.getElementById("max") as HTMLButtonElement;
+maxButton.addEventListener("click", () => {
+currentInput += "Math.max(";
+display.value = currentInput;
+});
 
 });
 
