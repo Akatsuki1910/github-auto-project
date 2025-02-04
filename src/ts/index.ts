@@ -29,11 +29,36 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    const lnButton = document.getElementById("ln") as HTMLButtonElement;
+    lnButton.addEventListener("click", () => {
+        const num = parseFloat(display.value);
+        if (!isNaN(num) && num > 0) {
+            const result = Math.log(num);
+            display.value = result.toString();
+            currentInput = result.toString();
+            currentExpression = `ln(${num})`;
+            currentExpressionDisplay.textContent = currentExpression;
+            history.push(`${currentExpression} = ${result}`);
+            updateHistory();
+            lastAnswer = result;        
+        } else {
+            displayMessage("Invalid input for natural logarithm (ln)");
+        }
+    });
     // ... existing event listeners for squared, cubed, etc.
 });
 
 function displayMessage(message: string) {
     // ... (existing code)
+}
+
+function updateHistory() {
+  historyDiv.innerHTML = ""; // Clear existing history
+  history.forEach(item => {
+    const p = document.createElement("p");
+    p.textContent = item;
+    historyDiv.appendChild(p);
+  });
 }
 
 // ... (Existing functions like factorial)
