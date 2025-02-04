@@ -5,7 +5,7 @@ let currentExpression = "";
 const currentExpressionDisplay = document.getElementById(
   "currentExpressionDisplay",
 ) as HTMLDivElement;
-const historyDiv = document.getElementById("historyArr") as HTMLDivElement;
+const historyDiv = document.getElementById("history") as HTMLDivElement;
 const historyArr: string[] = [];
 let lastAnswer = 0;
 
@@ -35,6 +35,13 @@ window.addEventListener("DOMContentLoaded", () => {
       displayMessage("Invalid input for factorial");
     }
   });
+
+    const ansButton = document.getElementById("ans") as HTMLButtonElement;
+    ansButton.addEventListener("click", () => {
+      currentInput += lastAnswer;
+      display.value = currentInput;
+    });
+
 });
 
 function factorial(n: number): number {
