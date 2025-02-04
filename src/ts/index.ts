@@ -26,6 +26,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += ")";
         display.value = currentInput;
     });
+  const eButton = document.getElementById("e") as HTMLButtonElement;
+  eButton.addEventListener("click", () => {
+    currentInput += "Math.E";
+    display.value = currentInput;
+  });
 
 });
 
