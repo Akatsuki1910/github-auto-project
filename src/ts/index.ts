@@ -59,6 +59,12 @@ toggleHistoryButton.addEventListener("click", () => {
       displayMessage("Invalid input");
     }
   });
+
+  const piButton = document.getElementById("pi") as HTMLButtonElement;
+  piButton.addEventListener("click", () => {
+    display.value = Math.PI.toString();
+    currentInput = Math.PI.toString();
+  });
 });
 
 function displayMessage(message: string) {
