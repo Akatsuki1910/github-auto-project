@@ -57,6 +57,17 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    const tenToThePowerButton = document.getElementById("ten-to-the-power") as HTMLButtonElement;
+    tenToThePowerButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(currentInput);
+            currentInput = Math.pow(10, num).toString();
+            display.value = currentInput;
+        } catch (error) {
+            console.error("Error calculating 10 to the power:", error);
+            display.value = "Error";
+        }
+    });
 
 });
 
