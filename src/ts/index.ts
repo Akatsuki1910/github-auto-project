@@ -69,6 +69,11 @@ inverseButton.addEventListener("click", () => {
     display.value = "Error";
   }
 });
+const randButton = document.getElementById("rand") as HTMLButtonElement;
+randButton.addEventListener("click", () => {
+  currentInput += Math.random();
+  display.value = currentInput;
+});
 
 });
 
