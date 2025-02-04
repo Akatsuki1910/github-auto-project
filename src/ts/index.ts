@@ -51,6 +51,15 @@ absButton.addEventListener("click", () => {
 currentInput += "Math.abs(";
 display.value = currentInput;
 });
+const roundButton = document.getElementById("round") as HTMLButtonElement;
+roundButton.addEventListener("click", () => {
+  try {
+    currentInput = Math.round(eval(currentInput)).toString();
+    display.value = currentInput;
+  } catch (error) {
+    display.value = "Error";
+  }
+});
 
 });
 
