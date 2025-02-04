@@ -33,6 +33,10 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    const openNewWindowButton = document.getElementById("open-new-window") as HTMLButtonElement;
+    openNewWindowButton.addEventListener("click", () => {
+        window.open("https://www.example.com", "_blank");
+    });
 
     // ... (Rest of the existing code)
 });
