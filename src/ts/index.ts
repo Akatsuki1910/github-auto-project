@@ -41,6 +41,20 @@ window.addEventListener("DOMContentLoaded", () => {
     currentInput += "Math.tan(";
     display.value = currentInput;
   });
+
+  const cubeButton = document.getElementById("cube") as HTMLButtonElement;
+  cubeButton.addEventListener("click", () => {
+    try {
+        const num = parseFloat(currentInput);
+        currentInput = Math.pow(num,3).toString();
+
+        display.value = currentInput;
+    } catch (error) {
+        console.error("Error calculating cube:", error);
+        display.value = "Error";
+    }
+});
+
 });
 
 // ... (rest of the code)
