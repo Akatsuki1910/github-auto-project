@@ -42,6 +42,12 @@ window.addEventListener("DOMContentLoaded", () => {
       display.value = currentInput;
     });
 
+    const powerButton = document.getElementById("power") as HTMLButtonElement;
+    powerButton.addEventListener("click", () => {
+      currentInput += "^";
+      display.value = currentInput;    
+    });
+
 });
 
 function factorial(n: number): number {
