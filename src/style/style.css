@@ -28,28 +28,6 @@
   margin-bottom: 5px;
 }
 
-/* Initially hide scientific buttons */
-.scientific {
-  display: none;
-}
-
-#keyboard-container {
-  grid-column: span 4;
-  margin-top: 10px;
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-.keyboard {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap: 5px;
-}
-.keyboard button {
-  width: 100%;
-  padding: 10px;
-  box-sizing: border-box;
-}
-
 #message-container {
   grid-column: span 4; /* Span across all columns */
   margin-top: 10px;
@@ -58,10 +36,4 @@
 #toggle-history {
   grid-column: span 4; /* Make it span all columns */
   margin-top: 10px; /* Add some spacing */
-}
-#copy {
-  grid-column: span 2; /* Or adjust as needed */
-}
-#clear-history {
-  grid-column: span 4;
 }

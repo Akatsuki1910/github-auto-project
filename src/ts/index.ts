@@ -1,6 +1,4 @@
 // ... (Existing code)
-
-// ... (Existing code)
 const display = document.getElementById("display") as HTMLInputElement;
 let currentInput = "";
 let currentExpression = "";
@@ -11,37 +9,52 @@ const historyDiv = document.getElementById("history") as HTMLDivElement;
 const history: string[] = [];
 let lastAnswer = 0;
 
-// ... (Other existing code)
-
 window.addEventListener("DOMContentLoaded", () => {
-  // ... existing code
+  // existing code 
+  const signChangeButton = document.getElementById("sign-change") as HTMLButtonElement;
+  signChangeButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+      display.value = (-currentValue).toString();
+      currentInput = display.value;
+    } else {
+        displayMessage("Invalid input");
+    }
+  });
 
-  // ... (rest of the existing code)
-
-  const ceilButton = document.getElementById("ceil") as HTMLButtonElement;
-  ceilButton.addEventListener("click", () => {
+ const sqrtButton = document.getElementById("sqrt") as HTMLButtonElement;
+sqrtButton.addEventListener("click", () => {
     const num = Number.parseFloat(display.value);
-    if (!isNaN(num)) {
-      const result = Math.ceil(num);
+    if (!isNaN(num) && num>=0) {
+      const result = Math.sqrt(num);
       display.value = result.toString();
       currentInput = result.toString();
-      currentExpression = `ceil(${num})`;
+      currentExpression = `√(${num})`;
       currentExpressionDisplay.textContent = currentExpression;
       history.push(`${currentExpression} = ${result}`);
       updateHistory();
       lastAnswer = result;
     } else {
-      displayMessage("Invalid input for ceil");
+      displayMessage("Invalid input for sqrt");
     }
   });
 
-  // ... existing event listeners
+  const toggleHistoryButton = document.getElementById("toggle-history") as HTMLButtonElement;
+toggleHistoryButton.addEventListener("click", () => {
+    if (historyDiv.style.display === "none") {
+      historyDiv.style.display = "block";
+    } else {
+      historyDiv.style.display = "none";
+    }
+  });
 });
 
-// ... existing functions
-
 function displayMessage(message: string) {
-  // ... existing code
+  const messageContainer = document.getElementById("message-container") as HTMLDivElement;
+  messageContainer.textContent = message;
+  setTimeout(() => {
+    messageContainer.textContent = "";
+  }, 3000);
 }
 
 function updateHistory() {
