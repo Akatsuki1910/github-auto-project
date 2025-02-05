@@ -76,6 +76,16 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += ")";
         display.value = currentInput;
     });
+        const log2Button = document.getElementById("log2") as HTMLButtonElement;
+    log2Button.addEventListener("click", () => {
+        try {
+            const num = parseFloat(currentInput);
+            currentInput = Math.log2(num).toString();
+            display.value = currentInput;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... rest of the code
 });
 
