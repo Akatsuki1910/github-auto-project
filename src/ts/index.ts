@@ -76,11 +76,20 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += ")";
         display.value = currentInput;
     });
-        const log2Button = document.getElementById("log2") as HTMLButtonElement;
+    const log2Button = document.getElementById("log2") as HTMLButtonElement;
     log2Button.addEventListener("click", () => {
         try {
             const num = parseFloat(currentInput);
             currentInput = Math.log2(num).toString();
+            display.value = currentInput;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
+    const exp10Button = document.getElementById("exp10") as HTMLButtonElement;
+    exp10Button.addEventListener("click", () => {
+        try {
+            currentInput = Math.pow(10, parseFloat(currentInput)).toString();
             display.value = currentInput;
         } catch (error) {
             display.value = "Error";
