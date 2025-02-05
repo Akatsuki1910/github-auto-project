@@ -95,11 +95,21 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
-     const squaredButton = document.getElementById("squared") as HTMLButtonElement;
+    const squaredButton = document.getElementById("squared") as HTMLButtonElement;
     squaredButton.addEventListener("click", () => {
         try {
             const num = parseFloat(currentInput);
             currentInput = (num * num).toString();
+            display.value = currentInput;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
+    const signButton = document.getElementById("sign") as HTMLButtonElement;
+    signButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(currentInput);
+            currentInput = Math.sign(num).toString();
             display.value = currentInput;
         } catch (error) {
             display.value = "Error";
