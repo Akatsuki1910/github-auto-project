@@ -38,6 +38,16 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = currentInput;
         }
     });
+    const allClearButton = document.getElementById("all-clear") as HTMLButtonElement;
+    allClearButton.addEventListener("click", () => {
+        currentInput = "";
+        currentExpression = "";
+        display.value = "0"; // Set display to 0
+        historyArr.length = 0; // Clear history array
+        historyDiv.innerHTML = ""; // Clear history display
+        currentExpressionDisplay.textContent = "";
+
+    });
     // ... rest of the code
 });
 
