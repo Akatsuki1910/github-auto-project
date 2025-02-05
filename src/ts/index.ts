@@ -72,6 +72,16 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = currentInput;
         }
     });
+        const randomBetweenButton = document.getElementById("random-between") as HTMLButtonElement;
+    randomBetweenButton.addEventListener("click", () => {
+            const [min, max] = currentInput.split(',').map(Number);
+            if (!isNaN(min) && !isNaN(max)) {
+                    currentInput = (Math.random() * (max - min) + min).toString();
+                display.value = currentInput;
+            } else {
+                display.value = "Invalid Input";
+            }
+    });
     // ... (Rest of the existing code)
 });
 
