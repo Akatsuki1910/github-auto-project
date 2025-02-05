@@ -65,64 +65,13 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
     //Parentheses buttons
-    const openParenButton = document.getElementById("open-paren") as HTMLButtonElement;
-    openParenButton.addEventListener("click", () => {
-        currentInput += "(";
-        display.value = currentInput;
-    });
-
-    const closeParenButton = document.getElementById("close-paren") as HTMLButtonElement;
-    closeParenButton.addEventListener("click", () => {
-        currentInput += ")";
-        display.value = currentInput;
-    });
-    const log2Button = document.getElementById("log2") as HTMLButtonElement;
-    log2Button.addEventListener("click", () => {
+    // ... existing code
+    const calculateButton = document.getElementById("calculate") as HTMLButtonElement;
+    calculateButton.addEventListener("click", () => {
         try {
-            const num = parseFloat(currentInput);
-            currentInput = Math.log2(num).toString();
+            currentInput = eval(currentInput);
             display.value = currentInput;
         } catch (error) {
-            display.value = "Error";
-        }
-    });
-    const exp10Button = document.getElementById("exp10") as HTMLButtonElement;
-    exp10Button.addEventListener("click", () => {
-        try {
-            currentInput = Math.pow(10, parseFloat(currentInput)).toString();
-            display.value = currentInput;
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-    const squaredButton = document.getElementById("squared") as HTMLButtonElement;
-    squaredButton.addEventListener("click", () => {
-        try {
-            const num = parseFloat(currentInput);
-            currentInput = (num * num).toString();
-            display.value = currentInput;
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-    const signButton = document.getElementById("sign") as HTMLButtonElement;
-    signButton.addEventListener("click", () => {
-        try {
-            const num = parseFloat(currentInput);
-            currentInput = Math.sign(num).toString();
-            display.value = currentInput;
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-    const roundNearest10Button = document.getElementById("round-nearest-10") as HTMLButtonElement;
-    roundNearest10Button.addEventListener("click", () => {
-        try {
-            const num = parseFloat(currentInput);
-            currentInput = (Math.round(num / 10) * 10).toString();
-            display.value = currentInput;
-        }
-        catch (error) {
             display.value = "Error";
         }
     });
