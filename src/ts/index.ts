@@ -45,7 +45,17 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
-
+    const cubeRootButton = document.getElementById("cube-root") as HTMLButtonElement;
+    cubeRootButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(currentInput);
+            currentInput = Math.cbrt(num).toString();
+            display.value = currentInput;
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... (Rest of the existing code)
 });
 
