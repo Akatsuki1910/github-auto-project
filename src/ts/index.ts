@@ -115,6 +115,17 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    const roundNearest10Button = document.getElementById("round-nearest-10") as HTMLButtonElement;
+    roundNearest10Button.addEventListener("click", () => {
+        try {
+            const num = parseFloat(currentInput);
+            currentInput = (Math.round(num / 10) * 10).toString();
+            display.value = currentInput;
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... rest of the code
 });
 
