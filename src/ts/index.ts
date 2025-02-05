@@ -91,6 +91,15 @@ window.addEventListener("DOMContentLoaded", () => {
       currentInput = currentInput.slice(0,-1);
       display.value = currentInput; 
     });
+    const logButton = document.getElementById("log-button") as HTMLButtonElement;
+  logButton.addEventListener("click", () => {
+    try {
+        currentInput = Math.log1p(parseFloat(currentInput)).toString();
+      display.value = currentInput;
+    } catch (error) {
+      display.value = "Error";
+    }
+  });
     // ... rest of the code
 });
 
