@@ -22,61 +22,20 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    const signButton = document.getElementById("sign") as HTMLButtonElement;
-    signButton.addEventListener("click", () => {
+    // ... (Other button event listeners)
+
+    const log10Button = document.getElementById("log10") as HTMLButtonElement;
+    log10Button.addEventListener("click", () => {
         try {
             const num = parseFloat(currentInput);
-            currentInput = Math.sign(num).toString();
+            currentInput = Math.log10(num).toString();
             display.value = currentInput;
-        }
-        catch (error) {
-            console.error("Error calculating sign:", error);
+        } catch (error) {
+            console.error("Error calculating log10:", error);
             display.value = "Error";
         }
     });
-    const openNewWindowButton = document.getElementById("open-new-window") as HTMLButtonElement;
-    openNewWindowButton.addEventListener("click", () => {
-        window.open("https://www.example.com", "_blank");
-    });
-    const exitButton = document.getElementById("exit") as HTMLButtonElement;
-    exitButton.addEventListener("click", () => {
-        window.close();
-    });
-    const exp2Button = document.getElementById("exp2") as HTMLButtonElement;
-    exp2Button.addEventListener("click", () => {
-        try {
-            const num = parseFloat(currentInput);
-            currentInput = Math.pow(2, num).toString();
-            display.value = currentInput;
-        }
-        catch (error) {
-            console.error("Error calculating 2^x:", error);
-            display.value = "Error";
-        }
-    });
-    const randomIntButton = document.getElementById("random-int") as HTMLButtonElement;
-    randomIntButton.addEventListener("click", () => {
-        currentInput = Math.floor(Math.random() * 100).toString(); // Generates random integer between 0 and 99
-        display.value = currentInput;
-    });
-    const dateButton = document.getElementById("date") as HTMLButtonElement;
-    dateButton.addEventListener("click", () => {
-        currentInput = new Date().toLocaleDateString();
-        display.value = currentInput;
-    });
-    const negateButton = document.getElementById("negate") as HTMLButtonElement;
-    negateButton.addEventListener("click", () => {
-        if (currentInput) {
-            currentInput = (-parseFloat(currentInput)).toString();
-            display.value = currentInput;
-        }
-    });
-    const copyButton = document.getElementById("copy") as HTMLButtonElement;
-    copyButton.addEventListener("click", () => {
-        if (display.value) {
-            navigator.clipboard.writeText(display.value);
-        }
-    });
+
     // ... (Rest of the existing code)
 });
 
