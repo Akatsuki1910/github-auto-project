@@ -92,6 +92,13 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    const sumButton = document.getElementById("sum") as HTMLButtonElement;
+    sumButton.addEventListener("click", () => {
+        const numbers = currentInput.split(',').map(Number);
+        const sum = numbers.reduce((acc, num) => acc + num, 0);
+        currentInput = sum.toString();
+        display.value = currentInput;
+    });
     // ... (Rest of the existing code)
 });
 
