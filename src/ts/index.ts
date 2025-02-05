@@ -71,6 +71,12 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = currentInput;
         }
     });
+    const copyButton = document.getElementById("copy") as HTMLButtonElement;
+    copyButton.addEventListener("click", () => {
+        if (display.value) {
+            navigator.clipboard.writeText(display.value);
+        }
+    });
     // ... (Rest of the existing code)
 });
 
