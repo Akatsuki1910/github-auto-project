@@ -41,6 +41,17 @@ window.addEventListener("DOMContentLoaded", () => {
     exitButton.addEventListener("click",()=>{
         window.close();
     })
+    const exp2Button = document.getElementById("exp2") as HTMLButtonElement;
+    exp2Button.addEventListener("click", () => {
+      try {
+        const num = parseFloat(currentInput);
+        currentInput = Math.pow(2, num).toString();
+        display.value = currentInput;
+      } catch (error) {
+        console.error("Error calculating 2^x:", error);
+        display.value = "Error";
+      }
+    });
     // ... (Rest of the existing code)
 });
 
