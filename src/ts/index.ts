@@ -56,6 +56,14 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    const modulusButton = document.getElementById("modulus") as HTMLButtonElement;
+    modulusButton.addEventListener("click", () => {
+        if (currentInput) {
+            currentExpression += `%`;
+            currentInput = "";
+            currentExpressionDisplay.textContent = currentExpression;
+        }
+    });
     // ... (Rest of the existing code)
 });
 
