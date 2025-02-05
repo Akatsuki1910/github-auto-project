@@ -82,6 +82,10 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+        const openNewTabButton = document.getElementById("open-new-tab") as HTMLButtonElement;
+    openNewTabButton.addEventListener("click", () => {
+        window.open('https://www.google.com', '_blank');
+    });
     // ... rest of the code
 });
 
