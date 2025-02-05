@@ -31,6 +31,13 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = "";
         currentExpressionDisplay.textContent = "";
     });
+    const plusMinusButton = document.getElementById("plus-minus") as HTMLButtonElement;
+    plusMinusButton.addEventListener("click", () => {
+        if (currentInput) {
+            currentInput = (parseFloat(currentInput) * -1).toString();
+            display.value = currentInput;
+        }
+    });
     // ... rest of the code
 });
 
