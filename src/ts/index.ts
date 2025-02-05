@@ -64,6 +64,18 @@ window.addEventListener("DOMContentLoaded", () => {
                 });
         }
     });
+    //Parentheses buttons
+    const openParenButton = document.getElementById("open-paren") as HTMLButtonElement;
+    openParenButton.addEventListener("click", () => {
+        currentInput += "(";
+        display.value = currentInput;
+    });
+
+    const closeParenButton = document.getElementById("close-paren") as HTMLButtonElement;
+    closeParenButton.addEventListener("click", () => {
+        currentInput += ")";
+        display.value = currentInput;
+    });
     // ... rest of the code
 });
 
