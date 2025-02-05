@@ -64,6 +64,13 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = new Date().toLocaleDateString();
         display.value = currentInput;
     });
+    const negateButton = document.getElementById("negate") as HTMLButtonElement;
+    negateButton.addEventListener("click", () => {
+        if (currentInput) {
+            currentInput = (-parseFloat(currentInput)).toString();
+            display.value = currentInput;
+        }
+    });
     // ... (Rest of the existing code)
 });
 
