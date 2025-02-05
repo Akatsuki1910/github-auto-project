@@ -82,6 +82,16 @@ window.addEventListener("DOMContentLoaded", () => {
                 display.value = "Invalid Input";
             }
     });
+    const asecButton = document.getElementById("asec") as HTMLButtonElement;
+    asecButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(currentInput);
+            currentInput = (1 / Math.cos(num)).toString();
+            display.value = currentInput;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... (Rest of the existing code)
 });
 
