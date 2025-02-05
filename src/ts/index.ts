@@ -48,6 +48,22 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpressionDisplay.textContent = "";
 
     });
+    const copyButton = document.getElementById("copy") as HTMLButtonElement;
+    copyButton.addEventListener("click", () => {
+        if (display.value) {
+            navigator.clipboard.writeText(display.value)
+                .then(() => {
+                    const messageContainer = document.getElementById("message-container") as HTMLDivElement;
+                    messageContainer.textContent = "Copied to clipboard!";
+                    setTimeout(() => {
+                        messageContainer.textContent = "";
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.error("Failed to copy: ", err);
+                });
+        }
+    });
     // ... rest of the code
 });
 
