@@ -95,6 +95,16 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+     const squaredButton = document.getElementById("squared") as HTMLButtonElement;
+    squaredButton.addEventListener("click", () => {
+        try {
+            const num = parseFloat(currentInput);
+            currentInput = (num * num).toString();
+            display.value = currentInput;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
     // ... rest of the code
 });
 
