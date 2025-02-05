@@ -64,6 +64,14 @@ window.addEventListener("DOMContentLoaded", () => {
             currentExpressionDisplay.textContent = currentExpression;
         }
     });
+    const doubleButton = document.getElementById("double") as HTMLButtonElement;
+    doubleButton.addEventListener("click", () => {
+        const num = parseFloat(currentInput);
+        if (!isNaN(num)) {
+            currentInput = (num * 2).toString();
+            display.value = currentInput;
+        }
+    });
     // ... (Rest of the existing code)
 });
 
