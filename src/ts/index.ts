@@ -65,6 +65,13 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
     //Parentheses buttons
+    const percentageButton = document.getElementById("percentage") as HTMLButtonElement;
+    percentageButton.addEventListener("click", () => {
+        if (currentInput) {
+            currentInput = (parseFloat(currentInput) / 100).toString();
+            display.value = currentInput;
+        }
+    });
     // ... existing code
     const calculateButton = document.getElementById("calculate") as HTMLButtonElement;
     calculateButton.addEventListener("click", () => {
