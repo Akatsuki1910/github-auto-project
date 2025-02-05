@@ -82,9 +82,14 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
-        const openNewTabButton = document.getElementById("open-new-tab") as HTMLButtonElement;
+    const openNewTabButton = document.getElementById("open-new-tab") as HTMLButtonElement;
     openNewTabButton.addEventListener("click", () => {
         window.open('https://www.google.com', '_blank');
+    });
+    const leftArrowButton = document.getElementById("left-arrow") as HTMLButtonElement;
+    leftArrowButton.addEventListener("click", () => {
+      currentInput = currentInput.slice(0,-1);
+      display.value = currentInput; 
     });
     // ... rest of the code
 });
