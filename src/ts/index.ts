@@ -35,6 +35,16 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    const calculateExpressionButton = document.getElementById("calculate-expression") as HTMLButtonElement;
+    calculateExpressionButton.addEventListener("click", () => {
+        try {
+            const result = eval(currentExpression);
+            display.value = result.toString();
+            currentInput = result.toString();
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
 
     // ... (Rest of the existing code)
 });
