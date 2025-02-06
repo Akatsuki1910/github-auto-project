@@ -45,6 +45,14 @@ window.addEventListener("DOMContentLoaded", () => {
             memoryValue *= currentValue;
         }
     });
+ // Memory Divide
+    const memoryDivideButton = document.getElementById("memory-divide") as HTMLButtonElement;
+    memoryDivideButton.addEventListener("click", () => {
+        const currentValue = parseFloat(currentInput);
+        if (!isNaN(currentValue) && currentValue !== 0) {
+            memoryValue /= currentValue;
+        }
+    });
 
     // ... (rest of the existing code)
 });
