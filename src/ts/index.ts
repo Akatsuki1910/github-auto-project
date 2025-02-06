@@ -87,6 +87,21 @@ random1To100Button.addEventListener("click", () => {
   currentInput = Math.floor(Math.random() * 100 + 1).toString();
   display.value = currentInput;
 });
+const invertButton = document.getElementById("invert") as HTMLButtonElement;
+invertButton.addEventListener("click", () => {
+    try {
+        const currentValue = parseFloat(currentInput);
+        if(currentValue === 0){
+            display.value = "Cannot divide by zero";
+        } else{
+            const invertedValue = 1 / currentValue;
+            currentInput = invertedValue.toString();
+            display.value = currentInput;
+        }
+    } catch (error) {
+        display.value = "Invalid Input";
+    }
+});
 
     // ... (rest of the existing code)
 });
