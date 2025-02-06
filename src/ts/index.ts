@@ -94,4 +94,12 @@ window.addEventListener("DOMContentLoaded", () => {
         isDegreeMode = !isDegreeMode;
         toggleDegRadButton.textContent = isDegreeMode ? "Deg" : "Rad";
     });
+
+    const currentTimeButton = document.getElementById("current-time") as HTMLButtonElement;
+    currentTimeButton.addEventListener("click", () => {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString();
+        currentInput = timeString;
+        display.value = currentInput;
+    });
 });
