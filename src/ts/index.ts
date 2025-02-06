@@ -7,6 +7,7 @@ const historyDiv = document.getElementById("history") as HTMLDivElement;
 const historyArr: string[] = [];
 let lastAnswer = 0;
 let memoryValue = 0;
+let isDegreeMode = true; // Flag to track degree/radian mode
 
 window.addEventListener("DOMContentLoaded", () => {
     // existing code
@@ -26,24 +27,25 @@ window.addEventListener("DOMContentLoaded", () => {
     //Reset Button
     // ... existing code
 
-        const fibonacciButton = document.getElementById("fibonacci") as HTMLButtonElement;
-        fibonacciButton.addEventListener("click", () => {
-          if (currentInput) {
+    const fibonacciButton = document.getElementById("fibonacci") as HTMLButtonElement;
+    fibonacciButton.addEventListener("click", () => {
+        if (currentInput) {
             const n = parseInt(currentInput);
             if (n >= 0) {
-              currentInput = fibonacci(n).toString();
-              display.value = currentInput;
+                currentInput = fibonacci(n).toString();
+                display.value = currentInput;
             } else {
-              display.value = "Error: Input must be non-negative";
+                display.value = "Error: Input must be non-negative";
             }
-          }
-        });
-        function fibonacci(n: number): number {
-          if (n <= 1) {
-            return n;
-          }
-          return fibonacci(n - 1) + fibonacci(n - 2);
         }
+    });
+
+    function fibonacci(n: number): number {
+        if (n <= 1) {
+            return n;
+        }
+        return fibonacci(n - 1) + fibonacci(n - 2);
+    }
     // ... rest of the code
     const roundTo2DecimalsButton = document.getElementById("round-to-2-decimals") as HTMLButtonElement;
     roundTo2DecimalsButton.addEventListener("click", () => {
@@ -70,20 +72,26 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const log1pButton = document.getElementById("log1p") as HTMLButtonElement;
     log1pButton.addEventListener("click", () => {
-      if (currentInput) {
-        const num = parseFloat(currentInput);
-        if (!isNaN(num)) {
-          const result = Math.log1p(num);
-          currentInput = result.toString();
-          display.value = currentInput;
+        if (currentInput) {
+            const num = parseFloat(currentInput);
+            if (!isNaN(num)) {
+                const result = Math.log1p(num);
+                currentInput = result.toString();
+                display.value = currentInput;
+            }
         }
-      }
     });
 
     const randomIntegerButton = document.getElementById("random-integer") as HTMLButtonElement;
     randomIntegerButton.addEventListener("click", () => {
         const randomNumber = Math.floor(Math.random() * 100); // Generates a random integer between 0 and 99
         currentInput = randomNumber.toString();
-        display.value = currentInput; 
+        display.value = currentInput;
+    });
+
+    const toggleDegRadButton = document.getElementById("toggle-deg-rad") as HTMLButtonElement;
+    toggleDegRadButton.addEventListener("click", () => {
+        isDegreeMode = !isDegreeMode;
+        toggleDegRadButton.textContent = isDegreeMode ? "Deg" : "Rad";
     });
 });
