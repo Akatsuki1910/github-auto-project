@@ -7,14 +7,12 @@ const historyDiv = document.getElementById("history") as HTMLDivElement;
 const historyArr: string[] = [];
 let lastAnswer = 0;
 let memoryValue = 0;
-let isDegreeMode = true; // Flag to track degree/radian mode
+let isDegreeMode = true; 
 
 window.addEventListener("DOMContentLoaded", () => {
     // existing code
     // ... (Other button event listeners)
 
-    // ... other button listeners
-    // ... existing code
     const duplicateButton = document.getElementById("duplicate") as HTMLButtonElement;
     duplicateButton.addEventListener("click", () => {
         if (currentInput) {
@@ -22,10 +20,6 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = currentInput;
         }
     });
-
-    // ... (Other button event listeners)
-    //Reset Button
-    // ... existing code
 
     const fibonacciButton = document.getElementById("fibonacci") as HTMLButtonElement;
     fibonacciButton.addEventListener("click", () => {
@@ -46,7 +40,7 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
-    // ... rest of the code
+
     const roundTo2DecimalsButton = document.getElementById("round-to-2-decimals") as HTMLButtonElement;
     roundTo2DecimalsButton.addEventListener("click", () => {
         if (currentInput) {
@@ -84,7 +78,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const randomIntegerButton = document.getElementById("random-integer") as HTMLButtonElement;
     randomIntegerButton.addEventListener("click", () => {
-        const randomNumber = Math.floor(Math.random() * 100); // Generates a random integer between 0 and 99
+        const randomNumber = Math.floor(Math.random() * 100); 
         currentInput = randomNumber.toString();
         display.value = currentInput;
     });
@@ -104,9 +98,9 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     const randomNumberButton = document.getElementById("random-number") as HTMLButtonElement;
- randomNumberButton.addEventListener("click", () => {
-        const min = parseFloat(prompt("Enter minimum value:") || "0"); // Prompt for min value
-        const max = parseFloat(prompt("Enter maximum value:") || "1"); // Prompt for max value
+    randomNumberButton.addEventListener("click", () => {
+        const min = parseFloat(prompt("Enter minimum value:") || "0");
+        const max = parseFloat(prompt("Enter maximum value:") || "1");
 
         if (!isNaN(min) && !isNaN(max)) {
             const randomNumber = Math.random() * (max - min) + min;
@@ -115,5 +109,10 @@ window.addEventListener("DOMContentLoaded", () => {
         } else {
             display.value = "Invalid input";
         }
+    });
+
+    const toggleThemeButton = document.getElementById("toggle-theme") as HTMLButtonElement;
+    toggleThemeButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-theme");
     });
 });
