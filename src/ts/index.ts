@@ -62,5 +62,21 @@ rightParenthesisButton.addEventListener("click", () => {
   currentInput += ")";
   display.value = currentInput;
 });
+const roundToNDecimalsButton = document.getElementById("round-to-n-decimals") as HTMLButtonElement;
+roundToNDecimalsButton.addEventListener("click", () => {
+  const n = parseInt(prompt("Enter the number of decimal places:", "2") || "2", 10);
+  if (!isNaN(n)) {
+    const num = parseFloat(currentInput);
+    if (!isNaN(num)) {
+      currentInput = num.toFixed(n);
+      display.value = currentInput;
+    } else {
+      display.value = "Invalid Input";
+    }
+  } else {
+    display.value = "Invalid Input for n";
+  }
+});
+
     // ... (rest of the existing code)
 });
