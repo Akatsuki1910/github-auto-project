@@ -24,7 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
     //Memory Plus (adds current input to memory)
     const memoryPlusButton = document.getElementById("memory-plus") as HTMLButtonElement;
     memoryPlusButton.addEventListener("click", () => {
-      const currentValue = parseFloat(currentInput);
+        const currentValue = parseFloat(currentInput);
         if (!isNaN(currentValue)) {
             memoryValue += currentValue;
         }
@@ -35,6 +35,14 @@ window.addEventListener("DOMContentLoaded", () => {
         const currentValue = parseFloat(currentInput);
         if (!isNaN(currentValue)) {
             memoryValue -= currentValue;
+        }
+    });
+    // Memory Multiply
+    const memoryMultiplyButton = document.getElementById("memory-multiply") as HTMLButtonElement;
+    memoryMultiplyButton.addEventListener("click", () => {
+        const currentValue = parseFloat(currentInput);
+        if (!isNaN(currentValue)) {
+            memoryValue *= currentValue;
         }
     });
 
