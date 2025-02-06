@@ -55,4 +55,10 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
+
+    const clearEntryButton = document.getElementById("clear-entry") as HTMLButtonElement;
+    clearEntryButton.addEventListener("click", () => {
+        currentInput = "";
+        display.value = currentInput;
+    });
 });
