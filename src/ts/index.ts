@@ -28,6 +28,15 @@ window.addEventListener("DOMContentLoaded", () => {
     toggleDarkModeButton.addEventListener("click", () => {
         document.body.classList.toggle("dark-theme");
     });
+    const currentTimButton = document.getElementById("current-time") as HTMLButtonElement;
+    currentTimButton.addEventListener("click",()=>{
+        const now = new Date();
+        const currentTime = now.toLocaleTimeString();
+        display.value = currentTime;
+        currentExpressionDisplay.textContent = ""; // Clear the current expression display
+        currentInput = currentTime;  //sets the current time to the input
+        //No need to push to history since its not a calculation
+    });
 
     // ... (rest of the existing code)
 });
