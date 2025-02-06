@@ -45,4 +45,14 @@ window.addEventListener("DOMContentLoaded", () => {
           return fibonacci(n - 1) + fibonacci(n - 2);
         }
     // ... rest of the code
+    const roundTo2DecimalsButton = document.getElementById("round-to-2-decimals") as HTMLButtonElement;
+    roundTo2DecimalsButton.addEventListener("click", () => {
+        if (currentInput) {
+            const num = parseFloat(currentInput);
+            if (!isNaN(num)) {
+                currentInput = num.toFixed(2);
+                display.value = currentInput;
+            }
+        }
+    });
 });
