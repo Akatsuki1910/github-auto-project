@@ -123,6 +123,16 @@ roundUpButton.addEventListener("click", () => {
     }
 
 });
+const roundDownButton = document.getElementById("round-down") as HTMLButtonElement;
+roundDownButton.addEventListener("click", () => {
+    try {
+        const currentValue = parseFloat(currentInput);
+        currentInput = Math.floor(currentValue).toString();
+        display.value = currentInput;
+    } catch (error) {
+        display.value = "Invalid input";
+    }
+});
 
     // ... (rest of the existing code)
 });
