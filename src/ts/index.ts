@@ -19,8 +19,12 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryResetButton = document.getElementById("mr") as HTMLButtonElement;
     memoryResetButton.addEventListener("click", () => {
         memoryValue = 0; // Reset memory value to 0
+        display.value = "0";
+         currentExpressionDisplay.textContent = ""; // Clear the current expression display
+        currentInput = "";
+        updateDisplay();
     });
-     const toggleDarkModeButton = document.getElementById("toggle-dark-mode") as HTMLButtonElement;
+    const toggleDarkModeButton = document.getElementById("toggle-dark-mode") as HTMLButtonElement;
     toggleDarkModeButton.addEventListener("click", () => {
         document.body.classList.toggle("dark-theme");
     });
