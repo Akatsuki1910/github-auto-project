@@ -100,6 +100,11 @@ window.addEventListener("DOMContentLoaded", () => {
       display.value = "Error";
     }
   });
+    const eulerButton = document.getElementById("euler") as HTMLButtonElement;
+    eulerButton.addEventListener("click",()=>{
+        currentInput += Math.E.toString();
+        display.value = currentInput;
+    })
     // ... rest of the code
 });
 
