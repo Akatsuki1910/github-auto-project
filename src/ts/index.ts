@@ -13,106 +13,14 @@ window.addEventListener("DOMContentLoaded", () => {
     // existing code
     // ... (Other button event listeners)
 
-    const duplicateButton = document.getElementById("duplicate") as HTMLButtonElement;
-    duplicateButton.addEventListener("click", () => {
-        if (currentInput) {
-            currentInput += currentInput;
-            display.value = currentInput;
+    //Memory Add
+    const memoryAddButton = document.getElementById("memory-add") as HTMLButtonElement;
+    memoryAddButton.addEventListener("click", () => {
+        const currentValue = parseFloat(currentInput);
+        if (!isNaN(currentValue)) {
+            memoryValue += currentValue;
         }
     });
 
-    const fibonacciButton = document.getElementById("fibonacci") as HTMLButtonElement;
-    fibonacciButton.addEventListener("click", () => {
-        if (currentInput) {
-            const n = parseInt(currentInput);
-            if (n >= 0) {
-                currentInput = fibonacci(n).toString();
-                display.value = currentInput;
-            } else {
-                display.value = "Error: Input must be non-negative";
-            }
-        }
-    });
-
-    function fibonacci(n: number): number {
-        if (n <= 1) {
-            return n;
-        }
-        return fibonacci(n - 1) + fibonacci(n - 2);
-    }
-
-    const roundTo2DecimalsButton = document.getElementById("round-to-2-decimals") as HTMLButtonElement;
-    roundTo2DecimalsButton.addEventListener("click", () => {
-        if (currentInput) {
-            const num = parseFloat(currentInput);
-            if (!isNaN(num)) {
-                currentInput = num.toFixed(2);
-                display.value = currentInput;
-            }
-        }
-    });
-
-    const clearEntryButton = document.getElementById("clear-entry") as HTMLButtonElement;
-    clearEntryButton.addEventListener("click", () => {
-        currentInput = "";
-        display.value = currentInput;
-    });
-    const random01Button = document.getElementById("random-0-1") as HTMLButtonElement;
-    random01Button.addEventListener("click", () => {
-        const randomNumber = Math.random();
-        currentInput = randomNumber.toString();
-        display.value = currentInput;
-    });
-
-    const log1pButton = document.getElementById("log1p") as HTMLButtonElement;
-    log1pButton.addEventListener("click", () => {
-        if (currentInput) {
-            const num = parseFloat(currentInput);
-            if (!isNaN(num)) {
-                const result = Math.log1p(num);
-                currentInput = result.toString();
-                display.value = currentInput;
-            }
-        }
-    });
-
-    const randomIntegerButton = document.getElementById("random-integer") as HTMLButtonElement;
-    randomIntegerButton.addEventListener("click", () => {
-        const randomNumber = Math.floor(Math.random() * 100); 
-        currentInput = randomNumber.toString();
-        display.value = currentInput;
-    });
-
-    const toggleDegRadButton = document.getElementById("toggle-deg-rad") as HTMLButtonElement;
-    toggleDegRadButton.addEventListener("click", () => {
-        isDegreeMode = !isDegreeMode;
-        toggleDegRadButton.textContent = isDegreeMode ? "Deg" : "Rad";
-    });
-
-    const currentTimeButton = document.getElementById("current-time") as HTMLButtonElement;
-    currentTimeButton.addEventListener("click", () => {
-        const now = new Date();
-        const timeString = now.toLocaleTimeString();
-        currentInput = timeString;
-        display.value = currentInput;
-    });
-
-    const randomNumberButton = document.getElementById("random-number") as HTMLButtonElement;
-    randomNumberButton.addEventListener("click", () => {
-        const min = parseFloat(prompt("Enter minimum value:") || "0");
-        const max = parseFloat(prompt("Enter maximum value:") || "1");
-
-        if (!isNaN(min) && !isNaN(max)) {
-            const randomNumber = Math.random() * (max - min) + min;
-            currentInput = randomNumber.toString();
-            display.value = currentInput;
-        } else {
-            display.value = "Invalid input";
-        }
-    });
-
-    const toggleThemeButton = document.getElementById("toggle-theme") as HTMLButtonElement;
-    toggleThemeButton.addEventListener("click", () => {
-        document.body.classList.toggle("dark-theme");
-    });
+    // ... (rest of the existing code)
 });
