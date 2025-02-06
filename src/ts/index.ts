@@ -82,6 +82,11 @@ random0To1Button.addEventListener("click", () => {
     currentInput = Math.random().toString();
     display.value = currentInput;
 });
+const random1To100Button = document.getElementById("random-1-to-100") as HTMLButtonElement;
+random1To100Button.addEventListener("click", () => {
+  currentInput = Math.floor(Math.random() * 100 + 1).toString();
+  display.value = currentInput;
+});
 
     // ... (rest of the existing code)
 });
