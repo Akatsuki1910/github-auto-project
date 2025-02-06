@@ -67,4 +67,16 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = randomNumber.toString();
         display.value = currentInput;
     });
+
+    const log1pButton = document.getElementById("log1p") as HTMLButtonElement;
+    log1pButton.addEventListener("click", () => {
+      if (currentInput) {
+        const num = parseFloat(currentInput);
+        if (!isNaN(num)) {
+          const result = Math.log1p(num);
+          currentInput = result.toString();
+          display.value = currentInput;
+        }
+      }
+    });
 });
