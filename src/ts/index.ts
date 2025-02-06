@@ -34,4 +34,19 @@ window.addEventListener("DOMContentLoaded", () => {
     toggleCalculatorButton.addEventListener("click", () => {
         calculatorDiv.style.display = calculatorDiv.style.display === "none" ? "grid" : "none";
     });
+
+    const copyToClipboardButton = document.getElementById("copy-to-clipboard") as HTMLButtonElement;
+    copyToClipboardButton.addEventListener("click", () => {
+        navigator.clipboard.writeText(display.value)
+            .then(() => {
+                const messageContainer = document.getElementById("message-container") as HTMLDivElement;
+                messageContainer.textContent = "Copied to clipboard!";
+                setTimeout(() => {
+                    messageContainer.textContent = "";
+                }, 2000);
+            })
+            .catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+    });
 });
