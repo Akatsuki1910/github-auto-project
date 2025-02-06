@@ -20,6 +20,10 @@ window.addEventListener("DOMContentLoaded", () => {
     memoryResetButton.addEventListener("click", () => {
         memoryValue = 0; // Reset memory value to 0
     });
+     const toggleDarkModeButton = document.getElementById("toggle-dark-mode") as HTMLButtonElement;
+    toggleDarkModeButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-theme");
+    });
 
     // ... (rest of the existing code)
 });
