@@ -61,4 +61,10 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = "";
         display.value = currentInput;
     });
+    const random01Button = document.getElementById("random-0-1") as HTMLButtonElement;
+    random01Button.addEventListener("click", () => {
+        const randomNumber = Math.random();
+        currentInput = randomNumber.toString();
+        display.value = currentInput;
+    });
 });
