@@ -105,6 +105,13 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += Math.E.toString();
         display.value = currentInput;
     })
+  const degButton = document.getElementById("deg") as HTMLButtonElement;
+  degButton.addEventListener("click", () => {
+    if (currentInput) {
+      currentInput = (parseFloat(currentInput) * (180 / Math.PI)).toString();
+      display.value = currentInput;
+    }
+  });
     // ... rest of the code
 });
 
