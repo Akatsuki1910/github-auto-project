@@ -112,6 +112,17 @@ absValueButton.addEventListener("click", () => {
         display.value = "Invalid Input";
     }
 });
+const roundUpButton = document.getElementById("round-up") as HTMLButtonElement;
+roundUpButton.addEventListener("click", () => {
+    try{
+        const currentValue = parseFloat(currentInput);
+        currentInput = Math.ceil(currentValue).toString();
+        display.value = currentInput;
+    } catch(error) {
+        display.value = "Invalid Input";
+    }
+
+});
 
     // ... (rest of the existing code)
 });
