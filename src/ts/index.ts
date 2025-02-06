@@ -112,6 +112,13 @@ window.addEventListener("DOMContentLoaded", () => {
       display.value = currentInput;
     }
   });
+    const radButton = document.getElementById("rad") as HTMLButtonElement;
+    radButton.addEventListener("click", () => {
+        if(currentInput) {
+            currentInput = (parseFloat(currentInput) * (Math.PI / 180)).toString();
+            display.value = currentInput;
+        }
+    });
     // ... rest of the code
 });
 
