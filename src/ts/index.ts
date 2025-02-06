@@ -79,4 +79,11 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       }
     });
+
+    const randomIntegerButton = document.getElementById("random-integer") as HTMLButtonElement;
+    randomIntegerButton.addEventListener("click", () => {
+        const randomNumber = Math.floor(Math.random() * 100); // Generates a random integer between 0 and 99
+        currentInput = randomNumber.toString();
+        display.value = currentInput; 
+    });
 });
