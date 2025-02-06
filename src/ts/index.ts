@@ -102,4 +102,18 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = timeString;
         display.value = currentInput;
     });
+
+    const randomNumberButton = document.getElementById("random-number") as HTMLButtonElement;
+ randomNumberButton.addEventListener("click", () => {
+        const min = parseFloat(prompt("Enter minimum value:") || "0"); // Prompt for min value
+        const max = parseFloat(prompt("Enter maximum value:") || "1"); // Prompt for max value
+
+        if (!isNaN(min) && !isNaN(max)) {
+            const randomNumber = Math.random() * (max - min) + min;
+            currentInput = randomNumber.toString();
+            display.value = currentInput;
+        } else {
+            display.value = "Invalid input";
+        }
+    });
 });
