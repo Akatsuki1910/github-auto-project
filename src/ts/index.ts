@@ -77,6 +77,11 @@ roundToNDecimalsButton.addEventListener("click", () => {
     display.value = "Invalid Input for n";
   }
 });
+const random0To1Button = document.getElementById("random-0-to-1") as HTMLButtonElement;
+random0To1Button.addEventListener("click", () => {
+    currentInput = Math.random().toString();
+    display.value = currentInput;
+});
 
     // ... (rest of the existing code)
 });
