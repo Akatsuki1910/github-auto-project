@@ -37,6 +37,12 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = currentTime;  //sets the current time to the input
         //No need to push to history since its not a calculation
     });
+    const randomDigitButton = document.getElementById("random-digit") as HTMLButtonElement;
+    randomDigitButton.addEventListener("click", () => {
+        const randomDigit = Math.floor(Math.random() * 10);
+        currentInput += randomDigit;
+        display.value = currentInput;
+    });
 
     // ... (rest of the existing code)
 });
