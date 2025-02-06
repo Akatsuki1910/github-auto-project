@@ -133,6 +133,11 @@ roundDownButton.addEventListener("click", () => {
         display.value = "Invalid input";
     }
 });
+const deleteLastDigit = document.getElementById("delete-last-digit") as HTMLButtonElement;
+deleteLastDigit.addEventListener("click", () => {
+  currentInput = currentInput.slice(0, -1);
+  display.value = currentInput;
+});
 
     // ... (rest of the existing code)
 });
