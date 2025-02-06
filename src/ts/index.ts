@@ -20,7 +20,7 @@ window.addEventListener("DOMContentLoaded", () => {
     memoryResetButton.addEventListener("click", () => {
         memoryValue = 0; // Reset memory value to 0
         display.value = "0";
-         currentExpressionDisplay.textContent = ""; // Clear the current expression display
+        currentExpressionDisplay.textContent = ""; // Clear the current expression display
         currentInput = "";
         updateDisplay();
     });
@@ -43,6 +43,14 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += randomDigit;
         display.value = currentInput;
     });
+    const currentDateButton = document.getElementById("current-date") as HTMLButtonElement;
+currentDateButton.addEventListener("click", () => {
+    const now = new Date();
+    const currentDate = now.toLocaleDateString();
+    display.value = currentDate;
+    currentExpressionDisplay.textContent = "";
+    currentInput = currentDate;
+});
 
     // ... (rest of the existing code)
 });
