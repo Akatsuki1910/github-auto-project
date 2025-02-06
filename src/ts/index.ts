@@ -49,4 +49,9 @@ window.addEventListener("DOMContentLoaded", () => {
                 console.error("Failed to copy: ", err);
             });
     });
+
+    const openInNewWindowButton = document.getElementById("open-in-new-window") as HTMLButtonElement;
+    openInNewWindowButton.addEventListener("click", () => {
+        window.open(window.location.href, '_blank');
+    });
 });
