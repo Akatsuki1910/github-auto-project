@@ -13,6 +13,25 @@ window.addEventListener("DOMContentLoaded", () => {
     // existing code
     // ... (Other button event listeners)
 
+    //Memory Features
+    const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
+    memoryStoreButton.addEventListener("click", () => {
+        const currentValue = parseFloat(currentInput);
+        if (!isNaN(currentValue)) {
+            memoryValue = currentValue;
+        }
+    });
+
+    const memoryRecallButton = document.getElementById("memory-recall") as HTMLButtonElement;
+    memoryRecallButton.addEventListener("click", () => {
+        currentInput = memoryValue.toString();
+        display.value = currentInput;
+    });
+
+    const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonElement;
+    memoryClearButton.addEventListener("click", () => {
+        memoryValue = 0;
+    });
     //Memory Add
     const memoryAddButton = document.getElementById("memory-add") as HTMLButtonElement;
     memoryAddButton.addEventListener("click", () => {
@@ -21,7 +40,7 @@ window.addEventListener("DOMContentLoaded", () => {
             memoryValue += currentValue;
         }
     });
-    //Memory Plus (adds current input to memory)
+    //Memory Plus (adds current input to memory) - intentionally duplicated for demonstration
     const memoryPlusButton = document.getElementById("memory-plus") as HTMLButtonElement;
     memoryPlusButton.addEventListener("click", () => {
         const currentValue = parseFloat(currentInput);
@@ -45,7 +64,7 @@ window.addEventListener("DOMContentLoaded", () => {
             memoryValue *= currentValue;
         }
     });
- // Memory Divide
+    // Memory Divide
     const memoryDivideButton = document.getElementById("memory-divide") as HTMLButtonElement;
     memoryDivideButton.addEventListener("click", () => {
         const currentValue = parseFloat(currentInput);
