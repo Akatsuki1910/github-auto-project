@@ -7,7 +7,7 @@ const historyDiv = document.getElementById("history") as HTMLDivElement;
 const historyArr: string[] = [];
 let lastAnswer = 0;
 let memoryValue = 0;
-let isDegreeMode = true; 
+let isDegreeMode = true;
 
 window.addEventListener("DOMContentLoaded", () => {
     // existing code
@@ -17,6 +17,14 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryAddButton = document.getElementById("memory-add") as HTMLButtonElement;
     memoryAddButton.addEventListener("click", () => {
         const currentValue = parseFloat(currentInput);
+        if (!isNaN(currentValue)) {
+            memoryValue += currentValue;
+        }
+    });
+    //Memory Plus (adds current input to memory)
+    const memoryPlusButton = document.getElementById("memory-plus") as HTMLButtonElement;
+    memoryPlusButton.addEventListener("click", () => {
+      const currentValue = parseFloat(currentInput);
         if (!isNaN(currentValue)) {
             memoryValue += currentValue;
         }
