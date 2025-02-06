@@ -102,6 +102,16 @@ invertButton.addEventListener("click", () => {
         display.value = "Invalid Input";
     }
 });
+const absValueButton = document.getElementById("abs-value") as HTMLButtonElement;
+absValueButton.addEventListener("click", () => {
+    try {
+        const currentValue = parseFloat(currentInput);
+        currentInput = Math.abs(currentValue).toString();
+        display.value = currentInput;
+    } catch (error) {
+        display.value = "Invalid Input";
+    }
+});
 
     // ... (rest of the existing code)
 });
