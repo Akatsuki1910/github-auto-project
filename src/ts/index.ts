@@ -51,6 +51,16 @@ currentDateButton.addEventListener("click", () => {
     currentExpressionDisplay.textContent = "";
     currentInput = currentDate;
 });
+const leftParenthesisButton = document.getElementById("left-parenthesis") as HTMLButtonElement;
+leftParenthesisButton.addEventListener("click", () => {
+  currentInput += "(";
+  display.value = currentInput;
+});
 
+const rightParenthesisButton = document.getElementById("right-parenthesis") as HTMLButtonElement;
+rightParenthesisButton.addEventListener("click", () => {
+  currentInput += ")";
+  display.value = currentInput;
+});
     // ... (rest of the existing code)
 });
