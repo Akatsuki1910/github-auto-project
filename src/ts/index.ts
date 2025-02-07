@@ -7,7 +7,6 @@ const historyDiv = document.getElementById("history") as HTMLDivElement;
 const historyArr: string[] = [];
 let lastAnswer = 0;
 let memoryValue = 0;
-let isDegreeMode = true;
 
 window.addEventListener("DOMContentLoaded", () => {
     // existing code
@@ -23,6 +22,22 @@ window.addEventListener("DOMContentLoaded", () => {
             .catch(err => {
             console.error("Failed to copy: ", err);
         });
+    });
+
+    const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
+    memoryStoreButton.addEventListener("click", () => {
+        memoryValue = parseFloat(display.value);
+    });
+
+    const memoryRecallButton = document.getElementById("memory-recall") as HTMLButtonElement;
+    memoryRecallButton.addEventListener("click", () => {
+        currentInput = memoryValue.toString();
+        updateDisplay();
+    });
+
+    const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonElement;
+    memoryClearButton.addEventListener("click", () => {
+        memoryValue = 0;
     });
 });
 
