@@ -32,6 +32,12 @@ window.addEventListener("DOMContentLoaded", () => {
             if (buttonText === "="){
                 calculate();
             }
+            if (buttonText === "C"){
+                currentInput = "";
+                currentExpression = "";
+                updateDisplay();
+                updateCurrentExpressionDisplay();
+            }
         });
     });
     // ... other event listeners
