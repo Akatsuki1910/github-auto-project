@@ -20,6 +20,12 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = "";
         calculate();
     });
+     const tanButton = document.getElementById("tan") as HTMLButtonElement;
+    tanButton.addEventListener("click", () => {
+        currentExpression += "Math.tan(" + currentInput + ")";
+        currentInput = "";
+        calculate();
+    });
 
     // ... other event listeners
 });
