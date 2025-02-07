@@ -29,6 +29,9 @@ window.addEventListener("DOMContentLoaded", () => {
                 updateDisplay();
                 updateCurrentExpressionDisplay();
             }
+            if (buttonText === "="){
+                calculate();
+            }
         });
     });
     // ... other event listeners
