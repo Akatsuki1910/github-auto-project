@@ -32,6 +32,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = "";
         calculate();
     });
+    const eButton = document.getElementById("e") as HTMLButtonElement;
+    eButton.addEventListener("click", () => {
+        currentInput += Math.E.toString();
+        updateDisplay();
+    });
 
     // ... other event listeners
 });
