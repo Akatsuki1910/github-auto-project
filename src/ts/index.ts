@@ -37,6 +37,16 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += Math.E.toString();
         updateDisplay();
     });
+    const leftParenthesisButton = document.getElementById("left-parenthesis") as HTMLButtonElement;
+    leftParenthesisButton.addEventListener("click", () => {
+        currentInput += "(";
+        updateDisplay();
+    });
+    const rightParenthesisButton = document.getElementById("right-parenthesis") as HTMLButtonElement;
+    rightParenthesisButton.addEventListener("click", () => {
+        currentInput += ")";
+        updateDisplay();
+    });
 
     // ... other event listeners
 });
