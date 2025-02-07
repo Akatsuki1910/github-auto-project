@@ -13,45 +13,10 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Other button event listeners)
 
     // ... (Other buttons)
-    const powerButton = document.getElementById("power") as HTMLButtonElement;
-    powerButton.addEventListener("click", () => {
-        currentExpression += currentInput + "**";
-        currentInput = "";
-        updateDisplay();
-        updateCurrentExpressionDisplay();
-    });
-    const logButton = document.getElementById("log") as HTMLButtonElement;
-    logButton.addEventListener("click", () => {
-        const num = Number(currentInput);
-        if(isNaN(num)) return;
-        currentExpression += "Math.log10(" + currentInput + ")";
-        currentInput = "";
-        calculate();
-    });
-    const expButton = document.getElementById("exp") as HTMLButtonElement;
-    expButton.addEventListener("click", () => {
-        const num = Number(currentInput);
-        if (isNaN(num)) return;
-        currentExpression += "Math.exp(" + currentInput + ")";
-        currentInput = "";
-        calculate();
-    });
-    const roundButton = document.getElementById("round") as HTMLButtonElement;
-    roundButton.addEventListener("click", () => {
-        const num = Number(currentInput);
-        if (isNaN(num)) return;
-        currentInput = Math.round(num).toString();
-        updateDisplay();
-    });
-
-    const lastAnswerButton = document.getElementById("last-answer") as HTMLButtonElement;
-    lastAnswerButton.addEventListener("click", () => {
-        currentInput = lastAnswer.toString();
-        updateDisplay();
-    });
-    const sinButton = document.getElementById("sin") as HTMLButtonElement;
-    sinButton.addEventListener("click", () => {
-        currentExpression += "Math.sin(" + currentInput + ")";
+    // ... existing buttons
+    const cosButton = document.getElementById("cos") as HTMLButtonElement;
+    cosButton.addEventListener("click", () => {
+        currentExpression += "Math.cos(" + currentInput + ")";
         currentInput = "";
         calculate();
     });
