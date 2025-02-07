@@ -12,50 +12,18 @@ window.addEventListener("DOMContentLoaded", () => {
     // existing code
     // ... (Other button event listeners)
 
-    const copyToClipboardButton = document.getElementById("copy-to-clipboard") as HTMLButtonElement;
-    copyToClipboardButton.addEventListener("click", () => {
-        navigator.clipboard.writeText(display.value)
-            .then(() => {
-            // Optional: Show a success message
-            console.log("Copied to clipboard: " + display.value);
-        })
-            .catch(err => {
-            console.error("Failed to copy: ", err);
-        });
-    });
-
-    const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
-    memoryStoreButton.addEventListener("click", () => {
-        memoryValue = parseFloat(display.value);
-    });
-
-    const memoryRecallButton = document.getElementById("memory-recall") as HTMLButtonElement;
-    memoryRecallButton.addEventListener("click", () => {
-        currentInput = memoryValue.toString();
-        updateDisplay();
-    });
-
-    const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonElement;
-    memoryClearButton.addEventListener("click", () => {
-        memoryValue = 0;
-    });
-
-    const piButton = document.getElementById("pi") as HTMLButtonElement;
-    piButton.addEventListener("click", () => {
-        currentInput += Math.PI.toString();
-        updateDisplay();
-    });
-
-    const factorialButton = document.getElementById("factorial") as HTMLButtonElement;
-    factorialButton.addEventListener("click", () => {
+    const squareButton = document.getElementById("square") as HTMLButtonElement;
+    squareButton.addEventListener("click", () => {
         const num = parseFloat(currentInput);
         if (isNaN(num)) {
             currentInput = "Error";
         } else {
-            currentInput = factorial(num).toString();
+            currentInput = (num * num).toString();
         }
         updateDisplay();
     });
+
+    // ... other event listeners
 });
 
 function factorial(n: number): number {
