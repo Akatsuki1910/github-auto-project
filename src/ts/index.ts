@@ -54,4 +54,16 @@ window.addEventListener("DOMContentLoaded", () => {
     openInNewWindowButton.addEventListener("click", () => {
         window.open(window.location.href, '_blank');
     });
+
+    const changeFontSizeButton = document.getElementById("change-font-size") as HTMLButtonElement;
+    let fontSize = 16;
+    changeFontSizeButton.addEventListener("click", () => {
+        fontSize += 2;
+        display.style.fontSize = fontSize + "px";
+    });
 });
+
+
+function updateDisplay() {
+    display.value = currentInput;
+}
