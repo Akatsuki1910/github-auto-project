@@ -20,6 +20,14 @@ window.addEventListener("DOMContentLoaded", () => {
         updateDisplay();
         updateCurrentExpressionDisplay();
     });
+    const logButton = document.getElementById("log") as HTMLButtonElement;
+    logButton.addEventListener("click", () => {
+        const num = Number(currentInput);
+        if(isNaN(num)) return;
+        currentExpression += "Math.log10(" + currentInput + ")";
+        currentInput = "";
+        calculate();
+    });
 
     // ... other event listeners
 });
@@ -36,4 +44,19 @@ function updateDisplay() {
 
 function updateCurrentExpressionDisplay(){
     currentExpressionDisplay.textContent = currentExpression;
+}
+
+function calculate(){
+    try{
+        const result = eval(currentExpression);
+        currentInput = result.toString();
+        lastAnswer = result;
+        historyArr.push(currentExpression + " = " + currentInput);
+        updateDisplay();
+        currentExpression = "";
+        updateCurrentExpressionDisplay();
+    }
+    catch(e){
+
+    }
 }
