@@ -86,6 +86,13 @@ fullscreenButton.addEventListener("click", () => {
         document.documentElement.requestFullscreen();
     }
 });
+// Clear Display button
+    const clearDisplayButton = document.getElementById("clear-display") as HTMLButtonElement;
+    clearDisplayButton.addEventListener("click", () => {
+        display.value = ''; // Clear the display
+        currentInput = ""; // Clear the input
+        updateDisplay(); // Update the display
+    });
 });
 
 function updateDisplay() {
