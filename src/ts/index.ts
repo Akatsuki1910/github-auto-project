@@ -45,7 +45,24 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += Math.PI.toString();
         updateDisplay();
     });
+
+    const factorialButton = document.getElementById("factorial") as HTMLButtonElement;
+    factorialButton.addEventListener("click", () => {
+        const num = parseFloat(currentInput);
+        if (isNaN(num)) {
+            currentInput = "Error";
+        } else {
+            currentInput = factorial(num).toString();
+        }
+        updateDisplay();
+    });
 });
+
+function factorial(n: number): number {
+    if (n < 0) return -1; // Error: Factorial not defined for negative numbers
+    if (n === 0) return 1;
+    return n * factorial(n - 1);
+}
 
 function updateDisplay() {
     display.value = currentInput;
