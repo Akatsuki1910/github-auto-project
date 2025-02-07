@@ -31,6 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
             }
             if (buttonText === "="){
                 calculate();
+                displayHistory();
             }
             if (buttonText === "C"){
                 currentInput = "";
@@ -72,8 +73,17 @@ function calculate(){
         updateDisplay();
         currentExpression = "";
         updateCurrentExpressionDisplay();
+
     }
     catch(e){
 
     }
+}
+function displayHistory(){
+    historyDiv.innerHTML = "";
+    historyArr.forEach(item => {
+        const p = document.createElement("p");
+        p.textContent = item;
+        historyDiv.appendChild(p);
+    });
 }

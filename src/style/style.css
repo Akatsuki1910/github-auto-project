@@ -11,3 +11,8 @@ border-radius: 5px;
 max-width: 300px; /* Adjust as needed */
 margin: 0 auto;
 }
+#history{
+    grid-column: span 4;
+    overflow-y: auto;   
+    max-height: 200px;
+}
