@@ -93,6 +93,16 @@ fullscreenButton.addEventListener("click", () => {
         currentInput = ""; // Clear the input
         updateDisplay(); // Update the display
     });
+//Round to the nearest Integer Button
+const roundToNearestIntegerButton = document.getElementById("round-to-nearest-integer") as HTMLButtonElement;
+roundToNearestIntegerButton.addEventListener("click", () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+    const roundedValue = Math.round(currentValue);
+    display.value = roundedValue.toString();
+    currentInput = roundedValue.toString();
+}
+});
 });
 
 function updateDisplay() {
