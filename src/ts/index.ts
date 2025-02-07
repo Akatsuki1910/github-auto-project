@@ -23,6 +23,17 @@ window.addEventListener("DOMContentLoaded", () => {
         updateDisplay();
     });
 
+    const cubeButton = document.getElementById("cube") as HTMLButtonElement;
+    cubeButton.addEventListener("click", () => {
+        const num = parseFloat(currentInput);
+        if (isNaN(num)) {
+            currentInput = "Error";
+        } else {
+            currentInput = (num * num * num).toString();
+        }
+        updateDisplay();
+    });    
+
     // ... other event listeners
 });
 
