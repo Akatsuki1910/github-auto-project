@@ -36,6 +36,13 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = "";
         calculate();
     });
+    const roundButton = document.getElementById("round") as HTMLButtonElement;
+    roundButton.addEventListener("click", () => {
+        const num = Number(currentInput);
+        if (isNaN(num)) return;
+        currentInput = Math.round(num).toString();
+        updateDisplay();
+    });
 
     // ... other event listeners
 });
