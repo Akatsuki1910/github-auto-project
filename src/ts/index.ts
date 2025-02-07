@@ -38,6 +38,12 @@ window.addEventListener("DOMContentLoaded", () => {
                 updateDisplay();
                 updateCurrentExpressionDisplay();
             }
+            if (buttonText === "⌫") {
+                currentInput = currentInput.slice(0, -1);
+                currentExpression = currentExpression.slice(0, -1);
+                updateDisplay();
+                updateCurrentExpressionDisplay();
+            }
         });
     });
     // ... other event listeners
