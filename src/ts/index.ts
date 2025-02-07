@@ -26,6 +26,12 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = "";
         calculate();
     });
+    const absButton = document.getElementById("abs") as HTMLButtonElement;
+    absButton.addEventListener("click", () => {
+        currentExpression += "Math.abs(" + currentInput + ")";
+        currentInput = "";
+        calculate();
+    });
 
     // ... other event listeners
 });
