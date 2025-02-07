@@ -32,7 +32,18 @@ window.addEventListener("DOMContentLoaded", () => {
             currentInput = (num * num * num).toString();
         }
         updateDisplay();
-    });    
+    });
+
+    const inverseButton = document.getElementById("inverse") as HTMLButtonElement;
+    inverseButton.addEventListener("click", () => {
+        const num = parseFloat(currentInput);
+        if (isNaN(num) || num === 0) {
+            currentInput = "Error";
+        } else {
+            currentInput = (1 / num).toString();
+        }
+        updateDisplay();
+    });
 
     // ... other event listeners
 });
