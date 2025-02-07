@@ -47,3 +47,7 @@ body.dark-theme {
     background-color: #333; /* Dark mode background */
     color: #eee;        /* Dark mode text */
 }
+
+.scientific {
+    display: none;
+}

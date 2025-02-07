@@ -61,8 +61,15 @@ window.addEventListener("DOMContentLoaded", () => {
         fontSize += 2;
         display.style.fontSize = fontSize + "px";
     });
-});
 
+    const toggleScientificModeButton = document.getElementById("toggle-scientific-mode") as HTMLButtonElement;
+    const scientificButtons = document.querySelectorAll('.scientific') as NodeListOf<HTMLButtonElement>;
+    toggleScientificModeButton.addEventListener('click', () => {
+        scientificButtons.forEach(button => {
+            button.style.display = button.style.display === 'none' ? 'grid' : 'none';
+        });
+    });
+});
 
 function updateDisplay() {
     display.value = currentInput;
