@@ -14,44 +14,11 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ... (Other buttons)
     // ... existing buttons
-    const cosButton = document.getElementById("cos") as HTMLButtonElement;
-    cosButton.addEventListener("click", () => {
-        currentExpression += "Math.cos(" + currentInput + ")";
-        currentInput = "";
-        calculate();
-    });
-     const tanButton = document.getElementById("tan") as HTMLButtonElement;
-    tanButton.addEventListener("click", () => {
-        currentExpression += "Math.tan(" + currentInput + ")";
-        currentInput = "";
-        calculate();
-    });
-    const absButton = document.getElementById("abs") as HTMLButtonElement;
-    absButton.addEventListener("click", () => {
-        currentExpression += "Math.abs(" + currentInput + ")";
-        currentInput = "";
-        calculate();
-    });
-    const eButton = document.getElementById("e") as HTMLButtonElement;
-    eButton.addEventListener("click", () => {
-        currentInput += Math.E.toString();
-        updateDisplay();
-    });
-    const leftParenthesisButton = document.getElementById("left-parenthesis") as HTMLButtonElement;
-    leftParenthesisButton.addEventListener("click", () => {
-        currentInput += "(";
-        updateDisplay();
-    });
-    const rightParenthesisButton = document.getElementById("right-parenthesis") as HTMLButtonElement;
-    rightParenthesisButton.addEventListener("click", () => {
-        currentInput += ")";
-        updateDisplay();
-    });
-    const modButton = document.getElementById("mod") as HTMLButtonElement;
-    modButton.addEventListener("click", () => {
-        currentExpression += "%";
-        currentInput = "";
-        calculate();
+    //Added clear history button
+    const clearHistoryButton = document.getElementById("clear-history") as HTMLButtonElement;
+    clearHistoryButton.addEventListener("click", () => {
+        historyArr.length = 0; // Clear the history array
+        historyDiv.innerHTML = ""; // Clear the history display
     });
 
     // ... other event listeners
