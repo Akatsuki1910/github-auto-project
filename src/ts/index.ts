@@ -12,37 +12,13 @@ window.addEventListener("DOMContentLoaded", () => {
     // existing code
     // ... (Other button event listeners)
 
-    const squareButton = document.getElementById("square") as HTMLButtonElement;
-    squareButton.addEventListener("click", () => {
-        const num = parseFloat(currentInput);
-        if (isNaN(num)) {
-            currentInput = "Error";
-        } else {
-            currentInput = (num * num).toString();
-        }
+    // ... (Other buttons)
+    const powerButton = document.getElementById("power") as HTMLButtonElement;
+    powerButton.addEventListener("click", () => {
+        currentExpression += currentInput + "**";
+        currentInput = "";
         updateDisplay();
-    });
-
-    const cubeButton = document.getElementById("cube") as HTMLButtonElement;
-    cubeButton.addEventListener("click", () => {
-        const num = parseFloat(currentInput);
-        if (isNaN(num)) {
-            currentInput = "Error";
-        } else {
-            currentInput = (num * num * num).toString();
-        }
-        updateDisplay();
-    });
-
-    const inverseButton = document.getElementById("inverse") as HTMLButtonElement;
-    inverseButton.addEventListener("click", () => {
-        const num = parseFloat(currentInput);
-        if (isNaN(num) || num === 0) {
-            currentInput = "Error";
-        } else {
-            currentInput = (1 / num).toString();
-        }
-        updateDisplay();
+        updateCurrentExpressionDisplay();
     });
 
     // ... other event listeners
@@ -56,4 +32,8 @@ function factorial(n: number): number {
 
 function updateDisplay() {
     display.value = currentInput;
+}
+
+function updateCurrentExpressionDisplay(){
+    currentExpressionDisplay.textContent = currentExpression;
 }
