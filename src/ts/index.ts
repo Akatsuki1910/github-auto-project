@@ -76,6 +76,16 @@ window.addEventListener("DOMContentLoaded", () => {
     button.style.display = button.style.display === 'none' ? 'grid' : 'none';
     });
     });
+
+    //Fullscreen Functionality
+const fullscreenButton = document.getElementById("fullscreen") as HTMLButtonElement;
+fullscreenButton.addEventListener("click", () => {
+    if (document.fullscreenElement) {
+        document.exitFullscreen();
+    } else {
+        document.documentElement.requestFullscreen();
+    }
+});
 });
 
 function updateDisplay() {
