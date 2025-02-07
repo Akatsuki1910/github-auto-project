@@ -49,6 +49,12 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = lastAnswer.toString();
         updateDisplay();
     });
+    const sinButton = document.getElementById("sin") as HTMLButtonElement;
+    sinButton.addEventListener("click", () => {
+        currentExpression += "Math.sin(" + currentInput + ")";
+        currentInput = "";
+        calculate();
+    });
 
     // ... other event listeners
 });
