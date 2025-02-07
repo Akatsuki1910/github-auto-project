@@ -39,15 +39,15 @@ window.addEventListener("DOMContentLoaded", () => {
     copyToClipboardButton.addEventListener("click", () => {
         navigator.clipboard.writeText(display.value)
             .then(() => {
-                const messageContainer = document.getElementById("message-container") as HTMLDivElement;
-                messageContainer.textContent = "Copied to clipboard!";
-                setTimeout(() => {
-                    messageContainer.textContent = "";
-                }, 2000);
-            })
+            const messageContainer = document.getElementById("message-container") as HTMLDivElement;
+            messageContainer.textContent = "Copied to clipboard!";
+            setTimeout(() => {
+                messageContainer.textContent = "";
+            }, 2000);
+        })
             .catch(err => {
-                console.error("Failed to copy: ", err);
-            });
+            console.error("Failed to copy: ", err);
+        });
     });
 
     const openInNewWindowButton = document.getElementById("open-in-new-window") as HTMLButtonElement;
@@ -68,6 +68,13 @@ window.addEventListener("DOMContentLoaded", () => {
         scientificButtons.forEach(button => {
             button.style.display = button.style.display === 'none' ? 'grid' : 'none';
         });
+    });
+        const toggleBasicModeButton = document.getElementById("toggle-basic-mode") as HTMLButtonElement;
+    const basicButtons = document.querySelectorAll('.basic') as NodeListOf<HTMLButtonElement>;
+    toggleBasicModeButton.addEventListener('click', () => {
+    basicButtons.forEach(button => {
+    button.style.display = button.style.display === 'none' ? 'grid' : 'none';
+    });
     });
 });
 
