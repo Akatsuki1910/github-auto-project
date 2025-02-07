@@ -28,6 +28,14 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = "";
         calculate();
     });
+    const expButton = document.getElementById("exp") as HTMLButtonElement;
+    expButton.addEventListener("click", () => {
+        const num = Number(currentInput);
+        if (isNaN(num)) return;
+        currentExpression += "Math.exp(" + currentInput + ")";
+        currentInput = "";
+        calculate();
+    });
 
     // ... other event listeners
 });
