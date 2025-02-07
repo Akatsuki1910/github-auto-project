@@ -47,6 +47,12 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += ")";
         updateDisplay();
     });
+    const modButton = document.getElementById("mod") as HTMLButtonElement;
+    modButton.addEventListener("click", () => {
+        currentExpression += "%";
+        currentInput = "";
+        calculate();
+    });
 
     // ... other event listeners
 });
