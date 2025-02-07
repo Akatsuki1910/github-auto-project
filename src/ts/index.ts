@@ -20,7 +20,17 @@ window.addEventListener("DOMContentLoaded", () => {
         historyArr.length = 0; // Clear the history array
         historyDiv.innerHTML = ""; // Clear the history display
     });
-
+    document.querySelectorAll('#calculator button').forEach(button => {
+        button.addEventListener('click', () => {
+            const buttonText = button.textContent;
+            if (!isNaN(Number(buttonText)) || buttonText === '.') {
+                currentInput += buttonText;
+                currentExpression += buttonText;
+                updateDisplay();
+                updateCurrentExpressionDisplay();
+            }
+        });
+    });
     // ... other event listeners
 });
 
