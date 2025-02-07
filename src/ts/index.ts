@@ -44,6 +44,12 @@ window.addEventListener("DOMContentLoaded", () => {
         updateDisplay();
     });
 
+    const lastAnswerButton = document.getElementById("last-answer") as HTMLButtonElement;
+    lastAnswerButton.addEventListener("click", () => {
+        currentInput = lastAnswer.toString();
+        updateDisplay();
+    });
+
     // ... other event listeners
 });
 
