@@ -62,7 +62,12 @@ window.addEventListener("DOMContentLoaded", () => {
             updateDisplay();
         }
     });
-
+//Add Binary button
+const binaryButton = document.getElementById("binary") as HTMLButtonElement;
+binaryButton.addEventListener('click', () => {
+currentInput = (parseInt(currentInput, 10) >>> 0).toString(2);
+updateDisplay();
+});
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             // ... existing button click logic
