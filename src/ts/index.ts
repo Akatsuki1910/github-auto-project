@@ -86,6 +86,12 @@ inverseSignButton.addEventListener('click', () => {
 currentInput = (-parseFloat(currentInput)).toString();
 updateDisplay();
 });
+const sumButton = document.getElementById("sum") as HTMLButtonElement;
+sumButton.addEventListener('click', () => {
+    const numbers = currentInput.split('+').map(Number);
+    currentInput = numbers.reduce((a, b) => a + b, 0).toString();
+    updateDisplay();
+});
 
 document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
