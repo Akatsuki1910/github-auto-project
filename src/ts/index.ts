@@ -41,14 +41,20 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.sinh(parseFloat(currentInput)).toString();
         updateDisplay();
     });
-        const toggleSignButton = document.getElementById("+/-Btn") as HTMLButtonElement;
+    const toggleSignButton = document.getElementById("+/-Btn") as HTMLButtonElement;
     toggleSignButton.addEventListener('click', () => {
         currentInput = (parseFloat(currentInput) * -1).toString();
         updateDisplay();
     });
 
+    const truncateButton = document.getElementById("truncate") as HTMLButtonElement;
+    truncateButton.addEventListener('click', () => {
+        currentInput = Math.trunc(parseFloat(currentInput)).toString();
+        updateDisplay();
+    });
+
 document.querySelectorAll('#calculator button').forEach(button => {
-        button.addEventListener('click', () => {
+    button.addEventListener('click', () => {
             // ... existing button click logic
         });
     });
