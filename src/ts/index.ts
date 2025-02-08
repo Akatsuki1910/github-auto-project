@@ -21,7 +21,7 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.pow(10, parseFloat(currentInput)).toString();
         updateDisplay();
     });
-    const expm1Button = document.getElementById("expm1") as HTMLButtonElement;
+        const expm1Button = document.getElementById("expm1") as HTMLButtonElement;
     expm1Button.addEventListener('click', () => {
         currentInput = Math.expm1(parseFloat(currentInput)).toString();
         updateDisplay();
@@ -52,13 +52,16 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.trunc(parseFloat(currentInput)).toString();
         updateDisplay();
     });
-
-document.querySelectorAll('#calculator button').forEach(button => {
-    button.addEventListener('click', () => {
-            // ... existing button click logic
+       document.querySelectorAll('#calculator button').forEach(button => {
+        button.addEventListener('click', () => {
+                // ... existing button click logic
+            });
+        });    
+        const cubeRootButton = document.getElementById("cbrt") as HTMLButtonElement;  // New button
+        cubeRootButton.addEventListener('click', () => {  // New functionality
+          currentInput = Math.cbrt(parseFloat(currentInput)).toString();
+          updateDisplay();
         });
-    });
-    // ... other event listeners
 });
 
 // ... other functions
