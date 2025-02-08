@@ -28,6 +28,15 @@ window.addEventListener("DOMContentLoaded", () => {
         updateDisplay();
         updateCurrentExpressionDisplay();
     });
+    //Added max2 button
+    const max2Button = document.getElementById("max2") as HTMLButtonElement;
+    max2Button.addEventListener("click", () => {
+        currentInput += "Math.max(";
+        currentExpression += "Math.max(";
+        updateDisplay();
+        updateCurrentExpressionDisplay();
+
+    });
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             // ... existing button click logic
@@ -37,3 +46,10 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // ... other functions
+
+function updateDisplay() {
+    display.value = currentInput;
+}
+function updateCurrentExpressionDisplay() {
+    currentExpressionDisplay.textContent = currentExpression;
+}
