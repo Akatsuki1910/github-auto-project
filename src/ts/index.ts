@@ -39,6 +39,12 @@ window.addEventListener("DOMContentLoaded", () => {
             currentInput = "";
             updateDisplay();
         });
+//Double Button
+const doubleButton=document.getElementById("double") as HTMLButtonElement;
+doubleButton.addEventListener("click", () => {
+    currentInput = (parseFloat(currentInput) * 2).toString();
+    updateDisplay();
+});
 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
