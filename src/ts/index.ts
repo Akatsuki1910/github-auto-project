@@ -34,7 +34,15 @@ window.addEventListener("DOMContentLoaded", () => {
             updateDisplay();
             updateCurrentExpressionDisplay();
         });
-    document.querySelectorAll('#calculator button').forEach(button => {
+//Added ln button
+const lnButton = document.getElementById("ln") as HTMLButtonElement;
+lnButton.addEventListener("click", () => {
+currentInput += "Math.log(";
+currentExpression += "Math.log(";
+updateDisplay();
+updateCurrentExpressionDisplay();
+});
+document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             const buttonText = button.textContent;
             if (!isNaN(Number(buttonText)) || buttonText === '.') {
