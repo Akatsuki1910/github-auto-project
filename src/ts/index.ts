@@ -51,6 +51,14 @@ randomButton.addEventListener("click", () => {
     updateDisplay();
     updateCurrentExpressionDisplay();
 });
+//Added nthRoot button
+const nthRootButton = document.getElementById("nthRoot") as HTMLButtonElement;
+nthRootButton.addEventListener("click", () => {
+    currentInput += "nthroot(";
+    currentExpression += "nthroot(";
+    updateDisplay();
+    updateCurrentExpressionDisplay();
+});
 document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             const buttonText = button.textContent;
@@ -117,4 +125,8 @@ function displayHistory(){
         p.textContent = item;
         historyDiv.appendChild(p);
     });
+}
+//Add nthroot function
+function nthroot(x: number, n: number): number {
+    return Math.pow(x, 1/n);
 }
