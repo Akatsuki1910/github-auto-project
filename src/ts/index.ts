@@ -75,6 +75,14 @@ currentExpression += "Math.ceil(";
 updateDisplay();
 updateCurrentExpressionDisplay();
 });
+//Added max button
+const maxButton = document.getElementById("max") as HTMLButtonElement;
+maxButton.addEventListener("click", () => {
+currentInput += "Math.max(";
+currentExpression += "Math.max(";
+updateDisplay();
+updateCurrentExpressionDisplay();
+});
 document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             const buttonText = button.textContent;
