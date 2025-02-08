@@ -37,6 +37,15 @@ window.addEventListener("DOMContentLoaded", () => {
         updateCurrentExpressionDisplay();
 
     });
+        //Added 10 to the power of x button
+    const powerOfTenButton = document.getElementById("power-of-ten") as HTMLButtonElement;
+    powerOfTenButton.addEventListener("click", () => {
+        currentInput += "10**";
+        currentExpression += "10**";
+        updateDisplay();
+        updateCurrentExpressionDisplay();
+    });
+
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             // ... existing button click logic
