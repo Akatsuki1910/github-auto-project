@@ -41,6 +41,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.sinh(parseFloat(currentInput)).toString();
         updateDisplay();
     });
+        const toggleSignButton = document.getElementById("+/-Btn") as HTMLButtonElement;
+    toggleSignButton.addEventListener('click', () => {
+        currentInput = (parseFloat(currentInput) * -1).toString();
+        updateDisplay();
+    });
 
 document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
