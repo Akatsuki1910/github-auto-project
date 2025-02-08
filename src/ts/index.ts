@@ -21,56 +21,15 @@ window.addEventListener("DOMContentLoaded", () => {
         historyDiv.innerHTML = ""; // Clear the history display
     });
     //Added min button
-    const minButton = document.getElementById("min") as HTMLButtonElement;
-    minButton.addEventListener("click", () => {
-        currentInput += "Math.min(";
-        currentExpression += "Math.min(";
-        updateDisplay();
-        updateCurrentExpressionDisplay();
-    });
-    //Added max2 button
-    const max2Button = document.getElementById("max2") as HTMLButtonElement;
-    max2Button.addEventListener("click", () => {
-        currentInput += "Math.max(";
-        currentExpression += "Math.max(";
-        updateDisplay();
-        updateCurrentExpressionDisplay();
+    // ... other buttons
 
-    });
-        //Added 10 to the power of x button
-    const powerOfTenButton = document.getElementById("power-of-ten") as HTMLButtonElement;
-    powerOfTenButton.addEventListener("click", () => {
-        currentInput += "10**";
-        currentExpression += "10**";
+    const signButton = document.getElementById("sign") as HTMLButtonElement;
+    signButton.addEventListener("click", () => {
+        currentInput += "Math.sign(";
+        currentExpression += "Math.sign(";
         updateDisplay();
         updateCurrentExpressionDisplay();
     });
-//Added Duplicate Button
-const duplicateButton = document.getElementById("duplicate") as HTMLButtonElement;
-duplicateButton.addEventListener("click", () => {
- if (currentInput.length > 0) {
-    const lastChar = currentInput[currentInput.length - 1];
-    currentInput += lastChar; 
-    currentExpression += lastChar;
-    updateDisplay();
-    updateCurrentExpressionDisplay();
- }
-});
-const expm1Button = document.getElementById("expm1") as HTMLButtonElement;
-expm1Button.addEventListener("click", () => {
-    currentInput += "Math.expm1(";
-    currentExpression += "Math.expm1(";
-    updateDisplay();
-    updateCurrentExpressionDisplay();
-});
-//Added Cube Root Button
-const cbrtButton = document.getElementById("cbrt") as HTMLButtonElement;
-cbrtButton.addEventListener("click", () => {
-    currentInput += "Math.cbrt(";
-    currentExpression += "Math.cbrt(";
-    updateDisplay();
-    updateCurrentExpressionDisplay();
-});
 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
