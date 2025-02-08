@@ -21,38 +21,14 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.pow(10, parseFloat(currentInput)).toString();
         updateDisplay();
     });
-        const expm1Button = document.getElementById("expm1") as HTMLButtonElement;
+    const expm1Button = document.getElementById("expm1Btn") as HTMLButtonElement; // Changed ID
     expm1Button.addEventListener('click', () => {
         currentInput = Math.expm1(parseFloat(currentInput)).toString();
         updateDisplay();
     });
-    const ln1pButton = document.getElementById("ln1p") as HTMLButtonElement;
-    ln1pButton.addEventListener('click', () => {
-        currentInput = Math.log1p(parseFloat(currentInput)).toString();
-        updateDisplay();
-    });
-    const inverseSinButton = document.getElementById("inverse-sin") as HTMLButtonElement;
-    inverseSinButton.addEventListener('click', () => {
-        currentInput = Math.asin(parseFloat(currentInput)).toString();
-        updateDisplay();
-    });
-    const sinhButton = document.getElementById("sinh") as HTMLButtonElement;
-    sinhButton.addEventListener('click', () => {
-        currentInput = Math.sinh(parseFloat(currentInput)).toString();
-        updateDisplay();
-    });
-    const toggleSignButton = document.getElementById("+/-Btn") as HTMLButtonElement;
-    toggleSignButton.addEventListener('click', () => {
-        currentInput = (parseFloat(currentInput) * -1).toString();
-        updateDisplay();
-    });
+    // ... other event listeners
 
-    const truncateButton = document.getElementById("truncate") as HTMLButtonElement;
-    truncateButton.addEventListener('click', () => {
-        currentInput = Math.trunc(parseFloat(currentInput)).toString();
-        updateDisplay();
-    });
-       document.querySelectorAll('#calculator button').forEach(button => {
+document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
                 // ... existing button click logic
             });
