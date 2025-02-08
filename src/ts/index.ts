@@ -51,6 +51,17 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.exp(parseFloat(currentInput)).toString();
         updateDisplay();
     });
+    const calculateExpressionButton = document.getElementById("calculate-expression") as HTMLButtonElement;
+    calculateExpressionButton.addEventListener("click", () => {
+        try {
+            const result = eval(currentExpression);
+            currentInput = result.toString();
+            updateDisplay();
+        } catch (error) {
+            currentInput = "Error";
+            updateDisplay();
+        }
+    });
 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
