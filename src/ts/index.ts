@@ -45,6 +45,17 @@ window.addEventListener("DOMContentLoaded", () => {
         updateDisplay();
         updateCurrentExpressionDisplay();
     });
+//Added Duplicate Button
+const duplicateButton = document.getElementById("duplicate") as HTMLButtonElement;
+duplicateButton.addEventListener("click", () => {
+ if (currentInput.length > 0) {
+    const lastChar = currentInput[currentInput.length - 1];
+    currentInput += lastChar; 
+    currentExpression += lastChar;
+    updateDisplay();
+    updateCurrentExpressionDisplay();
+ }
+});
 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
