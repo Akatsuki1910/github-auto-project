@@ -26,18 +26,21 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.expm1(parseFloat(currentInput)).toString();
         updateDisplay();
     });
-    // ... other event listeners
-
-document.querySelectorAll('#calculator button').forEach(button => {
-        button.addEventListener('click', () => {
-                // ... existing button click logic
-            });
-        });    
-        const cubeRootButton = document.getElementById("cbrt") as HTMLButtonElement;  // New button
-        cubeRootButton.addEventListener('click', () => {  // New functionality
-          currentInput = Math.cbrt(parseFloat(currentInput)).toString();
-          updateDisplay();
+        const tenToThePowerXButton = document.getElementById("ten-to-the-power-x") as HTMLButtonElement;
+        tenToThePowerXButton.addEventListener('click', () => {
+            currentInput = Math.pow(10, parseFloat(currentInput)).toString();
+            updateDisplay();
         });
+    document.querySelectorAll('#calculator button').forEach(button => {
+        button.addEventListener('click', () => {
+            // ... existing button click logic
+        });
+    });
+    const cubeRootButton = document.getElementById("cbrt") as HTMLButtonElement; // New button
+    cubeRootButton.addEventListener('click', () => { // New functionality
+        currentInput = Math.cbrt(parseFloat(currentInput)).toString();
+        updateDisplay();
+    });
 });
 
 // ... other functions
