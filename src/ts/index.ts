@@ -80,7 +80,14 @@ resetButton.addEventListener('click', () => {
     updateDisplay();
     updateCurrentExpressionDisplay();
 });
-    document.querySelectorAll('#calculator button').forEach(button => {
+//Add Inverse Sign button
+const inverseSignButton = document.getElementById("inverse-sign") as HTMLButtonElement;
+inverseSignButton.addEventListener('click', () => {
+currentInput = (-parseFloat(currentInput)).toString();
+updateDisplay();
+});
+
+document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             // ... existing button click logic
         });
