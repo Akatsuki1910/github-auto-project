@@ -53,6 +53,12 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = parseFloat(currentInput).toFixed(2);
         updateDisplay();
     });
+
+    const clearEntryButton = document.getElementById("clear-entry") as HTMLButtonElement;
+    clearEntryButton.addEventListener('click', () => {
+        currentInput = "";
+        updateDisplay();
+    });
 });
 
 // ... other functions
