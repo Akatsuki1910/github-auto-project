@@ -47,6 +47,12 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.LN2.toString();
         updateDisplay();
     });
+
+    const roundTo2DecimalsButton = document.getElementById("round-to-2-decimals") as HTMLButtonElement;
+    roundTo2DecimalsButton.addEventListener('click', () => {
+        currentInput = parseFloat(currentInput).toFixed(2);
+        updateDisplay();
+    });
 });
 
 // ... other functions
