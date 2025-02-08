@@ -41,6 +41,12 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.cbrt(parseFloat(currentInput)).toString();
         updateDisplay();
     });
+
+    const ln2Button = document.getElementById("ln2") as HTMLButtonElement;
+    ln2Button.addEventListener('click', () => {
+        currentInput = Math.LN2.toString();
+        updateDisplay();
+    });
 });
 
 // ... other functions
