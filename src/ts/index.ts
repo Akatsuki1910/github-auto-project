@@ -36,6 +36,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.asin(parseFloat(currentInput)).toString();
         updateDisplay();
     });
+    const sinhButton = document.getElementById("sinh") as HTMLButtonElement;
+    sinhButton.addEventListener('click', () => {
+        currentInput = Math.sinh(parseFloat(currentInput)).toString();
+        updateDisplay();
+    });
 
 document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
