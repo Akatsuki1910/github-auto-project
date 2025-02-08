@@ -31,6 +31,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.log1p(parseFloat(currentInput)).toString();
         updateDisplay();
     });
+    const inverseSinButton = document.getElementById("inverse-sin") as HTMLButtonElement;
+    inverseSinButton.addEventListener('click', () => {
+        currentInput = Math.asin(parseFloat(currentInput)).toString();
+        updateDisplay();
+    });
 
 document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
