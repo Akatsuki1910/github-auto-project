@@ -68,6 +68,18 @@ binaryButton.addEventListener('click', () => {
 currentInput = (parseInt(currentInput, 10) >>> 0).toString(2);
 updateDisplay();
 });
+//Add reset button
+const resetButton = document.getElementById("reset") as HTMLButtonElement;
+resetButton.addEventListener('click', () => {
+    currentInput = '';
+    currentExpression = '';
+    lastAnswer = 0;
+    memoryValue = 0;
+    historyArr.length = 0;
+    historyDiv.innerHTML = '';
+    updateDisplay();
+    updateCurrentExpressionDisplay();
+});
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             // ... existing button click logic
