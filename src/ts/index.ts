@@ -59,6 +59,14 @@ nthRootButton.addEventListener("click", () => {
     updateDisplay();
     updateCurrentExpressionDisplay();
 });
+//Added floor button
+const floorButton = document.getElementById("floor") as HTMLButtonElement;
+floorButton.addEventListener("click", () => {
+currentInput += "Math.floor(";
+currentExpression += "Math.floor(";
+updateDisplay();
+updateCurrentExpressionDisplay();
+});
 document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             const buttonText = button.textContent;
