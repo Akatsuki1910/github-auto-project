@@ -21,6 +21,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.pow(10, parseFloat(currentInput)).toString();
         updateDisplay();
     });
+    const expm1Button = document.getElementById("expm1") as HTMLButtonElement;
+    expm1Button.addEventListener('click', () => {
+        currentInput = Math.expm1(parseFloat(currentInput)).toString();
+        updateDisplay();
+    });
 
 document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
