@@ -22,7 +22,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     //Added min button
     // ... other buttons
-
     const signButton = document.getElementById("sign") as HTMLButtonElement;
     signButton.addEventListener("click", () => {
         currentInput += "Math.sign(";
@@ -31,10 +30,18 @@ window.addEventListener("DOMContentLoaded", () => {
         updateCurrentExpressionDisplay();
     });
     const exitButton = document.getElementById("exit") as HTMLButtonElement;
-exitButton.addEventListener("click",()=>{
-    window.close();
-});
-
+    exitButton.addEventListener("click", () => {
+        window.close();
+    });
+    const negateButton = document.getElementById("negate") as HTMLButtonElement;
+    negateButton.addEventListener("click", () => {
+        if (currentInput) {
+            currentInput = `-${currentInput}`;
+            currentExpression = `-${currentExpression}`;
+            updateDisplay();
+            updateCurrentExpressionDisplay();
+        }
+    });
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             // ... existing button click logic
