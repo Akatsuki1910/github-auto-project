@@ -15,83 +15,12 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Other buttons)
     // ... existing buttons
     //Added clear history button
-    const clearHistoryButton = document.getElementById("clear-history") as HTMLButtonElement;
-    clearHistoryButton.addEventListener("click", () => {
-        historyArr.length = 0; // Clear the history array
-        historyDiv.innerHTML = ""; // Clear the history display
-    });
-    //Added min button
     // ... other buttons
-    //Add delete last entry button
-    const deleteLastEntryButton = document.getElementById("delete-last-entry") as HTMLButtonElement;
-    deleteLastEntryButton.addEventListener("click", () => {
-        currentInput = currentInput.slice(0, -1);
-        currentExpression = currentExpression.slice(0, -1);
-        updateDisplay();
-        updateCurrentExpressionDisplay();
-    });
-    const openNewTabButton = document.getElementById("open-new-tab") as HTMLButtonElement;
-    openNewTabButton.addEventListener("click", () => {
-        window.open('https://www.example.com', '_blank');
-    });
-    const clearDisplayButton = document.getElementById("clear-display") as HTMLButtonElement;
-    clearDisplayButton.addEventListener("click", () => {
-        currentInput = "";
+    const exp10Button = document.getElementById("exp10") as HTMLButtonElement;
+    exp10Button.addEventListener('click', () => {
+        currentInput = Math.pow(10, parseFloat(currentInput)).toString();
         updateDisplay();
     });
-    //Double Button
-    // ... other buttons
-    const percentageButton = document.getElementById("percentage") as HTMLButtonElement;
-    percentageButton.addEventListener("click", () => {
-        currentInput = (parseFloat(currentInput) / 100).toString();
-        updateDisplay();
-    });
-    const exp2Button = document.getElementById("exp2") as HTMLButtonElement;
-    exp2Button.addEventListener("click", () => {
-        currentInput = Math.exp(parseFloat(currentInput)).toString();
-        updateDisplay();
-    });
-    const calculateExpressionButton = document.getElementById("calculate-expression") as HTMLButtonElement;
-    calculateExpressionButton.addEventListener("click", () => {
-        try {
-            const result = eval(currentExpression);
-            currentInput = result.toString();
-            updateDisplay();
-        } catch (error) {
-            currentInput = "Error";
-            updateDisplay();
-        }
-    });
-//Add Binary button
-const binaryButton = document.getElementById("binary") as HTMLButtonElement;
-binaryButton.addEventListener('click', () => {
-currentInput = (parseInt(currentInput, 10) >>> 0).toString(2);
-updateDisplay();
-});
-//Add reset button
-const resetButton = document.getElementById("reset") as HTMLButtonElement;
-resetButton.addEventListener('click', () => {
-    currentInput = '';
-    currentExpression = '';
-    lastAnswer = 0;
-    memoryValue = 0;
-    historyArr.length = 0;
-    historyDiv.innerHTML = '';
-    updateDisplay();
-    updateCurrentExpressionDisplay();
-});
-//Add Inverse Sign button
-const inverseSignButton = document.getElementById("inverse-sign") as HTMLButtonElement;
-inverseSignButton.addEventListener('click', () => {
-currentInput = (-parseFloat(currentInput)).toString();
-updateDisplay();
-});
-const sumButton = document.getElementById("sum") as HTMLButtonElement;
-sumButton.addEventListener('click', () => {
-    const numbers = currentInput.split('+').map(Number);
-    currentInput = numbers.reduce((a, b) => a + b, 0).toString();
-    updateDisplay();
-});
 
 document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
