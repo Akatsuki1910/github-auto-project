@@ -60,6 +60,15 @@ window.addEventListener("DOMContentLoaded", () => {
             updateDisplay();
         }
     });
+    //Cubed Button
+    const cubedButton = document.getElementById("cubed") as HTMLButtonElement;
+    cubedButton.addEventListener("click", () => {
+        const num = parseFloat(currentInput);
+        if (!isNaN(num)) {
+            currentInput = (num * num * num).toString();
+            updateDisplay();
+        }
+    });
 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
