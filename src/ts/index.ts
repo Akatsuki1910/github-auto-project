@@ -30,6 +30,10 @@ window.addEventListener("DOMContentLoaded", () => {
         updateDisplay();
         updateCurrentExpressionDisplay();
     });
+    const exitButton = document.getElementById("exit") as HTMLButtonElement;
+exitButton.addEventListener("click",()=>{
+    window.close();
+});
 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
