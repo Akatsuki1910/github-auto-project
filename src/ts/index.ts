@@ -27,6 +27,13 @@ window.addEventListener("DOMContentLoaded", () => {
         updateDisplay();
         updateCurrentExpressionDisplay();  
     });
+        const exponentiationButton = document.getElementById("exponentiation") as HTMLButtonElement;
+        exponentiationButton.addEventListener("click", () => {
+            currentInput += "**";
+            currentExpression += "**";
+            updateDisplay();
+            updateCurrentExpressionDisplay();
+        });
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             const buttonText = button.textContent;
