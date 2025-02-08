@@ -22,39 +22,13 @@ window.addEventListener("DOMContentLoaded", () => {
     });
     //Added min button
     // ... other buttons
-    const signButton = document.getElementById("sign") as HTMLButtonElement;
-    signButton.addEventListener("click", () => {
-        currentInput += "Math.sign(";
-        currentExpression += "Math.sign(";
+    //Add delete last entry button
+    const deleteLastEntryButton = document.getElementById("delete-last-entry") as HTMLButtonElement;
+    deleteLastEntryButton.addEventListener("click", () => {
+        currentInput = currentInput.slice(0, -1);
+        currentExpression = currentExpression.slice(0, -1);
         updateDisplay();
         updateCurrentExpressionDisplay();
-    });
-    const exitButton = document.getElementById("exit") as HTMLButtonElement;
-    exitButton.addEventListener("click", () => {
-        window.close();
-    });
-    const negateButton = document.getElementById("negate") as HTMLButtonElement;
-    negateButton.addEventListener("click", () => {
-        if (currentInput) {
-            currentInput = `-${currentInput}`;
-            currentExpression = `-${currentExpression}`;
-            updateDisplay();
-            updateCurrentExpressionDisplay();
-        }
-    });
-
-    const roundNearestIntButton = document.getElementById("round-nearest-int") as HTMLButtonElement;
-    roundNearestIntButton.addEventListener("click", () => {
-        try {
-            const result = Math.round(eval(currentExpression));
-            currentInput = result.toString();
-            currentExpression = result.toString();
-            updateDisplay();
-            updateCurrentExpressionDisplay();
-        } catch (error) {
-            console.error("Error rounding to nearest integer:", error);
-            display.value = "Error";
-        }
     });
 
     document.querySelectorAll('#calculator button').forEach(button => {
