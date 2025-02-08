@@ -63,6 +63,14 @@ expm1Button.addEventListener("click", () => {
     updateDisplay();
     updateCurrentExpressionDisplay();
 });
+//Added Cube Root Button
+const cbrtButton = document.getElementById("cbrt") as HTMLButtonElement;
+cbrtButton.addEventListener("click", () => {
+    currentInput += "Math.cbrt(";
+    currentExpression += "Math.cbrt(";
+    updateDisplay();
+    updateCurrentExpressionDisplay();
+});
 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
