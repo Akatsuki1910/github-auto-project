@@ -34,6 +34,11 @@ window.addEventListener("DOMContentLoaded", () => {
     openNewTabButton.addEventListener("click", () => {
         window.open('https://www.example.com', '_blank');
     });
+        const clearDisplayButton = document.getElementById("clear-display") as HTMLButtonElement;
+        clearDisplayButton.addEventListener("click", () => {
+            currentInput = "";
+            updateDisplay();
+        });
 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
