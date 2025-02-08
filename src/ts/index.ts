@@ -30,6 +30,10 @@ window.addEventListener("DOMContentLoaded", () => {
         updateDisplay();
         updateCurrentExpressionDisplay();
     });
+    const openNewTabButton = document.getElementById("open-new-tab") as HTMLButtonElement;
+    openNewTabButton.addEventListener("click", () => {
+        window.open('https://www.example.com', '_blank');
+    });
 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
