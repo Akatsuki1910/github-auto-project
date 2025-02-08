@@ -42,6 +42,15 @@ currentExpression += "Math.log(";
 updateDisplay();
 updateCurrentExpressionDisplay();
 });
+//Added Random Number Generator
+const randomButton = document.getElementById("random") as HTMLButtonElement;
+randomButton.addEventListener("click", () => {
+    const randomNumber = Math.random();
+    currentInput += randomNumber.toString();
+    currentExpression += randomNumber.toString();
+    updateDisplay();
+    updateCurrentExpressionDisplay();
+});
 document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             const buttonText = button.textContent;
