@@ -42,6 +42,21 @@ window.addEventListener("DOMContentLoaded", () => {
             updateCurrentExpressionDisplay();
         }
     });
+
+    const roundNearestIntButton = document.getElementById("round-nearest-int") as HTMLButtonElement;
+    roundNearestIntButton.addEventListener("click", () => {
+        try {
+            const result = Math.round(eval(currentExpression));
+            currentInput = result.toString();
+            currentExpression = result.toString();
+            updateDisplay();
+            updateCurrentExpressionDisplay();
+        } catch (error) {
+            console.error("Error rounding to nearest integer:", error);
+            display.value = "Error";
+        }
+    });
+
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             // ... existing button click logic
