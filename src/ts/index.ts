@@ -34,17 +34,23 @@ window.addEventListener("DOMContentLoaded", () => {
     openNewTabButton.addEventListener("click", () => {
         window.open('https://www.example.com', '_blank');
     });
-        const clearDisplayButton = document.getElementById("clear-display") as HTMLButtonElement;
-        clearDisplayButton.addEventListener("click", () => {
-            currentInput = "";
-            updateDisplay();
-        });
-//Double Button
-const doubleButton=document.getElementById("double") as HTMLButtonElement;
-doubleButton.addEventListener("click", () => {
-    currentInput = (parseFloat(currentInput) * 2).toString();
-    updateDisplay();
-});
+    const clearDisplayButton = document.getElementById("clear-display") as HTMLButtonElement;
+    clearDisplayButton.addEventListener("click", () => {
+        currentInput = "";
+        updateDisplay();
+    });
+    //Double Button
+    const doubleButton = document.getElementById("double") as HTMLButtonElement;
+    doubleButton.addEventListener("click", () => {
+        currentInput = (parseFloat(currentInput) * 2).toString();
+        updateDisplay();
+    });
+    //Triple Button
+    const tripleButton = document.getElementById("triple") as HTMLButtonElement;
+    tripleButton.addEventListener("click", () => {
+        currentInput = (parseFloat(currentInput) * 3).toString();
+        updateDisplay();
+    });
 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
