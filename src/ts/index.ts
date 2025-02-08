@@ -20,6 +20,13 @@ window.addEventListener("DOMContentLoaded", () => {
         historyArr.length = 0; // Clear the history array
         historyDiv.innerHTML = ""; // Clear the history display
     });
+     const parenthesisButton = document.getElementById("parenthesis") as HTMLButtonElement;
+    parenthesisButton.addEventListener("click", () => {
+      currentInput += "()";
+        currentExpression += "()";
+        updateDisplay();
+        updateCurrentExpressionDisplay();  
+    });
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             const buttonText = button.textContent;
