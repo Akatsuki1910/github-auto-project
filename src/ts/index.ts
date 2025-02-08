@@ -67,6 +67,14 @@ currentExpression += "Math.floor(";
 updateDisplay();
 updateCurrentExpressionDisplay();
 });
+//Added ceil button
+const ceilButton = document.getElementById("ceil") as HTMLButtonElement;
+ceilButton.addEventListener("click", () => {
+currentInput += "Math.ceil(";
+currentExpression += "Math.ceil(";
+updateDisplay();
+updateCurrentExpressionDisplay();
+});
 document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             const buttonText = button.textContent;
