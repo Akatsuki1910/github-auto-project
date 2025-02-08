@@ -51,6 +51,15 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = (parseFloat(currentInput) * 3).toString();
         updateDisplay();
     });
+    //Squared Button
+    const squaredButton = document.getElementById("squared") as HTMLButtonElement;
+    squaredButton.addEventListener("click", () => {
+        const num = parseFloat(currentInput);
+        if (!isNaN(num)) {
+            currentInput = (num * num).toString();
+            updateDisplay();
+        }
+    });
 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
