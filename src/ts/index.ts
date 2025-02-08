@@ -56,6 +56,13 @@ duplicateButton.addEventListener("click", () => {
     updateCurrentExpressionDisplay();
  }
 });
+const expm1Button = document.getElementById("expm1") as HTMLButtonElement;
+expm1Button.addEventListener("click", () => {
+    currentInput += "Math.expm1(";
+    currentExpression += "Math.expm1(";
+    updateDisplay();
+    updateCurrentExpressionDisplay();
+});
 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
