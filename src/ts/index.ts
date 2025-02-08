@@ -40,34 +40,11 @@ window.addEventListener("DOMContentLoaded", () => {
         updateDisplay();
     });
     //Double Button
-    const doubleButton = document.getElementById("double") as HTMLButtonElement;
-    doubleButton.addEventListener("click", () => {
-        currentInput = (parseFloat(currentInput) * 2).toString();
+    // ... other buttons
+    const percentageButton = document.getElementById("percentage") as HTMLButtonElement;
+    percentageButton.addEventListener("click", () => {
+        currentInput = (parseFloat(currentInput) / 100).toString();
         updateDisplay();
-    });
-    //Triple Button
-    const tripleButton = document.getElementById("triple") as HTMLButtonElement;
-    tripleButton.addEventListener("click", () => {
-        currentInput = (parseFloat(currentInput) * 3).toString();
-        updateDisplay();
-    });
-    //Squared Button
-    const squaredButton = document.getElementById("squared") as HTMLButtonElement;
-    squaredButton.addEventListener("click", () => {
-        const num = parseFloat(currentInput);
-        if (!isNaN(num)) {
-            currentInput = (num * num).toString();
-            updateDisplay();
-        }
-    });
-    //Cubed Button
-    const cubedButton = document.getElementById("cubed") as HTMLButtonElement;
-    cubedButton.addEventListener("click", () => {
-        const num = parseFloat(currentInput);
-        if (!isNaN(num)) {
-            currentInput = (num * num * num).toString();
-            updateDisplay();
-        }
     });
 
     document.querySelectorAll('#calculator button').forEach(button => {
