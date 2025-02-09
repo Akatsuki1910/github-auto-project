@@ -21,8 +21,20 @@ nthRootButton.addEventListener('click', () => {
         const num = parseFloat(currentInput);
         if (isNaN(num) || isNaN(n)) {
             currentInput = "Invalid input";
-        } else {
+        }
+        else {
             currentInput = Math.pow(num, 1 / n).toString();
+        }
+        updateDisplay();
+    });
+    const log2Button = document.getElementById("log2") as HTMLButtonElement;
+    log2Button.addEventListener('click', () => {
+        const num = parseFloat(currentInput);
+        if (isNaN(num)) {
+            currentInput = "Invalid input";
+        }
+        else {
+            currentInput = (Math.log2(num)).toString();
         }
         updateDisplay();
     });
