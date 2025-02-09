@@ -8,6 +8,7 @@ const historyArr: string[] = [];
 let lastAnswer = 0;
 let memoryValue = 0;
 let mode = 'rad';
+let keypadVisible = true; // Track keypad visibility
 
 window.addEventListener("DOMContentLoaded", () => {
     // existing code
@@ -34,6 +35,16 @@ window.addEventListener("DOMContentLoaded", () => {
     clearMemoryButton.addEventListener('click', () => {
         memoryValue = 0;
     });
+    const toggleKeypadButton = document.getElementById("toggle-keypad") as HTMLButtonElement;
+    toggleKeypadButton.addEventListener('click', () => {
+        const calculatorDiv = document.getElementById("calculator") as HTMLDivElement;
+        keypadVisible = !keypadVisible;
+        if (keypadVisible) {
+            calculatorDiv.style.display = "grid";
+        } else {
+            calculatorDiv.style.display = "none";
+        }
+    });
 
     // ... existing button event listeners
     document.querySelectorAll('#calculator button').forEach(button => {
@@ -50,7 +61,7 @@ function updateDisplay() {
 function updateCurrentExpressionDisplay() {
     currentExpressionDisplay.textContent = currentExpression;
 }
-function updateHistory(){
+function updateHistory() {
     historyDiv.innerHTML = historyArr.map(item => `<div>${item}</div>`).join('');
 }
 // ... other existing functions
