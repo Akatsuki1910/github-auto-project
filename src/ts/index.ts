@@ -85,6 +85,11 @@ nthRootButton.addEventListener('click', () => {
         }
         updateDisplay();
     });
+       const absoluteButton = document.getElementById("absolute") as HTMLButtonElement;
+        absoluteButton.addEventListener('click', () => {
+            currentInput = Math.abs(parseFloat(currentInput)).toString();
+            updateDisplay();
+        });
     // ... other functions
 });
 // ... other existing functions
