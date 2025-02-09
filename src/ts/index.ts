@@ -29,55 +29,13 @@ window.addEventListener("DOMContentLoaded", () => {
         updateCurrentExpressionDisplay();
         updateHistory();
     });
-    const toggleGridButton = document.getElementById("toggle-grid") as HTMLButtonElement;
-    toggleGridButton.addEventListener('click', () => {
-        const calculator = document.getElementById('calculator') as HTMLDivElement;
-        calculator.classList.toggle('grid-view');
-    });
-    const copyDisplayButton = document.getElementById("copy-display") as HTMLButtonElement;
-    copyDisplayButton.addEventListener('click', () => {
-        navigator.clipboard.writeText(display.value);
-    });
-    const clearLastCharButton = document.getElementById("clear-last-char") as HTMLButtonElement;
-    clearLastCharButton.addEventListener('click', () => {
-        currentInput = currentInput.slice(0, -1);
-        updateDisplay();
-    });
-    const openLinkButton = document.getElementById("open-link") as HTMLButtonElement;
-    openLinkButton.addEventListener('click', () => {
-        window.open('https://www.google.com', '_blank');
-    });
-    const currentOperandButton = document.getElementById("current-operand") as HTMLButtonElement;
-    currentOperandButton.addEventListener('click', () => {
-        currentInput = currentInput + currentExpression;
-        updateDisplay();
-    });
-     const keyboardButton = document.getElementById("keyboard") as HTMLButtonElement;
-    keyboardButton.addEventListener('click', () => {
-      const keyboard = document.createElement('div');
-      keyboard.id = 'keyboard-container';
-      // Add keyboard elements (buttons, etc.) here
-      document.body.appendChild(keyboard);
+    // ... other functions
+    const clearMemoryButton = document.getElementById("clear-memory") as HTMLButtonElement;
+    clearMemoryButton.addEventListener('click', () => {
+        memoryValue = 0;
     });
 
-    const toggleCalculatorButton = document.getElementById("toggle-calculator") as HTMLButtonElement;
-    const calculatorDiv = document.getElementById("calculator") as HTMLDivElement;
-    toggleCalculatorButton.addEventListener('click', () => {
-        calculatorDiv.style.display = calculatorDiv.style.display === "none" ? "block" : "none";
-    });
-    const log10Btn = document.getElementById("log10Btn") as HTMLButtonElement;
-    log10Btn.addEventListener('click', () => {
-        try {
-            const num = parseFloat(currentInput);
-            currentInput = Math.log10(num).toString();
-            updateDisplay();
-        } catch (error) {
-            currentInput = "Error";
-            updateDisplay();
-        }
-    });
-
-    // ... (Other existing button event listeners) 
+    // ... existing button event listeners
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             // ... existing button click logic
