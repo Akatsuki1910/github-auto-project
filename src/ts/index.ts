@@ -27,6 +27,20 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         updateDisplay();
     });
+    const oneOverXButton = document.getElementById("one-over-x") as HTMLButtonElement;
+    oneOverXButton.addEventListener('click', () => {
+        const num = parseFloat(currentInput);
+        if (isNaN(num)) {
+            currentInput = "Invalid input";
+        }
+        else if (num === 0) {
+            currentInput = "Cannot divide by zero";
+        }
+        else {
+            currentInput = (1 / num).toString();
+        }
+        updateDisplay();
+    });
     // ... (Other existing button event listeners) 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
