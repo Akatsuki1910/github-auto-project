@@ -41,6 +41,21 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         updateDisplay();
     });
+
+    const squareRootButton = document.getElementById("square-root") as HTMLButtonElement;
+    squareRootButton.addEventListener('click', () => {
+        const num = parseFloat(currentInput);
+        if (isNaN(num)) {
+            currentInput = "Invalid input";
+        }
+        else if (num < 0) {
+            currentInput = "Cannot calculate square root of negative number";
+        }
+        else {
+            currentInput = Math.sqrt(num).toString();
+        }
+        updateDisplay();
+    });
     // ... (Other existing button event listeners) 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
