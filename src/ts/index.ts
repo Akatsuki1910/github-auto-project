@@ -20,6 +20,15 @@ window.addEventListener("DOMContentLoaded", () => {
     toggleDarkModeButton.addEventListener('click', () => {
         document.body.classList.toggle('dark-mode');
     });
+    const clearAllButton = document.getElementById("clear-all") as HTMLButtonElement;
+    clearAllButton.addEventListener('click', () => {
+        currentInput = '';
+        currentExpression = '';
+        historyArr.length = 0;
+        updateDisplay();
+        updateCurrentExpressionDisplay();
+        updateHistory();
+    });
     // ... (Other existing button event listeners) 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
@@ -34,5 +43,8 @@ function updateDisplay() {
 }
 function updateCurrentExpressionDisplay() {
     currentExpressionDisplay.textContent = currentExpression;
+}
+function updateHistory(){
+    historyDiv.innerHTML = historyArr.map(item => `<div>${item}</div>`).join('');
 }
 // ... other existing functions
