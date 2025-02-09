@@ -75,6 +75,16 @@ const toBinaryButton = document.getElementById("to-binary") as HTMLButtonElement
         }
         updateDisplay();
     });
+        const inverseCosineButton = document.getElementById("inverse-cosine") as HTMLButtonElement;
+    inverseCosineButton.addEventListener('click', () => {
+        const num = parseFloat(currentInput);
+        if (isNaN(num)) {
+            currentInput = "Invalid input";
+        } else {
+            currentInput = Math.acos(num).toString();
+        }
+        updateDisplay();
+    });
     // ... existing buttons
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
