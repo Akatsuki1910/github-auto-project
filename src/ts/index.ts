@@ -56,6 +56,11 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         updateDisplay();
     });
+    const changeSignButton = document.getElementById("change-sign") as HTMLButtonElement;
+    changeSignButton.addEventListener('click', () => {
+        currentInput = (-parseFloat(currentInput)).toString();
+        updateDisplay();
+    })
     // ... (Other existing button event listeners) 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
