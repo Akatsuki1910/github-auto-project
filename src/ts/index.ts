@@ -59,6 +59,12 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = now.toLocaleString();
         updateDisplay();
     });
+     const clearLastNumberButton = document.getElementById("clear-last-number") as HTMLButtonElement;
+    clearLastNumberButton.addEventListener('click', () => {
+        currentInput = currentInput.slice(0, -1);
+        updateDisplay();
+    });
+
     // ... existing buttons
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
