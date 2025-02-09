@@ -28,3 +28,9 @@ body.dark-mode {
 body.dark-mode #calculator {
     border-color: #666;
 }
+.grid-view{
+    display:grid;
+}
+.no-grid-view {
+    display: block; /* or flex, depending on your desired layout */
+}
