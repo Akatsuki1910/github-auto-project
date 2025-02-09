@@ -16,51 +16,10 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Other buttons)
     // ... existing buttons
     // ... existing functions
-    const tenPercentButton = document.getElementById("ten-percent") as HTMLButtonElement;
-    tenPercentButton.addEventListener('click', () => {
-        const num = parseFloat(currentInput);
-        if (isNaN(num)) {
-            currentInput = "Invalid input";
-        }
-        else {
-            currentInput = (num * 0.1).toString();
-        }
-        updateDisplay();
+    const toggleDarkModeButton = document.getElementById("toggle-dark-mode") as HTMLButtonElement;
+    toggleDarkModeButton.addEventListener('click', () => {
+        document.body.classList.toggle('dark-mode');
     });
-    const oneOverXButton = document.getElementById("one-over-x") as HTMLButtonElement;
-    oneOverXButton.addEventListener('click', () => {
-        const num = parseFloat(currentInput);
-        if (isNaN(num)) {
-            currentInput = "Invalid input";
-        }
-        else if (num === 0) {
-            currentInput = "Cannot divide by zero";
-        }
-        else {
-            currentInput = (1 / num).toString();
-        }
-        updateDisplay();
-    });
-
-    const squareRootButton = document.getElementById("square-root") as HTMLButtonElement;
-    squareRootButton.addEventListener('click', () => {
-        const num = parseFloat(currentInput);
-        if (isNaN(num)) {
-            currentInput = "Invalid input";
-        }
-        else if (num < 0) {
-            currentInput = "Cannot calculate square root of negative number";
-        }
-        else {
-            currentInput = Math.sqrt(num).toString();
-        }
-        updateDisplay();
-    });
-    const changeSignButton = document.getElementById("change-sign") as HTMLButtonElement;
-    changeSignButton.addEventListener('click', () => {
-        currentInput = (-parseFloat(currentInput)).toString();
-        updateDisplay();
-    })
     // ... (Other existing button event listeners) 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
