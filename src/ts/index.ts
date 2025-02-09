@@ -21,6 +21,12 @@ window.addEventListener("DOMContentLoaded", () => {
         document.body.classList.toggle('dark-mode', darkMode);
     });
 
+    const modeButton = document.getElementById("mode") as HTMLButtonElement;
+    modeButton.addEventListener('click', () => {
+        mode = mode === 'rad' ? 'deg' : 'rad';
+        modeButton.textContent = `Mode: ${mode.toUpperCase()}`;
+    });
+
     // ... existing buttons
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
