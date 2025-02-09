@@ -52,6 +52,13 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = currentInput + currentExpression;
         updateDisplay();
     });
+     const keyboardButton = document.getElementById("keyboard") as HTMLButtonElement;
+    keyboardButton.addEventListener('click', () => {
+      const keyboard = document.createElement('div');
+      keyboard.id = 'keyboard-container';
+      // Add keyboard elements (buttons, etc.) here
+      document.body.appendChild(keyboard);
+    });
 
     // ... (Other existing button event listeners) 
     document.querySelectorAll('#calculator button').forEach(button => {
