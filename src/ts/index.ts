@@ -38,6 +38,16 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = now.toLocaleTimeString();
         updateDisplay();
     });
+     const isPrimeButton = document.getElementById("isPrime") as HTMLButtonElement;
+    isPrimeButton.addEventListener('click', () => {
+        const num = parseInt(currentInput);
+        if (isNaN(num)) {
+            currentInput = "Invalid input";
+        } else {
+            currentInput = isPrime(num) ? "Prime" : "Not Prime";
+        }
+        updateDisplay();
+    });
     // ... existing buttons
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
@@ -47,6 +57,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ... other functions
 });
+function isPrime(num: number): boolean {
+    if (num <= 1) return false;
+    if (num <= 3) return true;
+    if (num % 2 === 0 || num % 3 === 0) return false;
+    for (let i = 5; i * i <= num; i += 6) {
+        if (num % i === 0 || num % (i + 2) === 0) return false;
+    }
+    return true;
+}
 
 function updateDisplay() {
     display.value = currentInput;
