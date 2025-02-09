@@ -48,6 +48,11 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         updateDisplay();
     });
+        const clearAllHistoryButton = document.getElementById("clear-all-history") as HTMLButtonElement;
+    clearAllHistoryButton.addEventListener('click', () => {
+        historyArr.length = 0; // Clear the history array
+        historyDiv.innerHTML = ''; // Clear the history display
+    });
     // ... existing buttons
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
