@@ -27,54 +27,27 @@ nthRootButton.addEventListener('click', () => {
         }
         updateDisplay();
     });
-    const log2Button = document.getElementById("log2") as HTMLButtonElement;
-    log2Button.addEventListener('click', () => {
-        const num = parseFloat(currentInput);
-        if (isNaN(num)) {
+    // ... (Other existing button event listeners) 
+        const averageButton = document.getElementById("average") as HTMLButtonElement;
+    averageButton.addEventListener('click', () => {
+        const numbersStr = prompt("Enter numbers separated by commas:");
+        if (!numbersStr) {
+            currentInput = "Invalid input";
+            updateDisplay();
+            return;
+        }
+        const numbers = numbersStr.split(',').map(Number).filter(n => !isNaN(n));
+        if (numbers.length === 0) {
             currentInput = "Invalid input";
         }
         else {
-            currentInput = (Math.log2(num)).toString();
-        }
-        updateDisplay();
-    });
-    const gcdButton = document.getElementById("gcd") as HTMLButtonElement;
-    gcdButton.addEventListener('click', () => {
-        const num1 = parseFloat(prompt("Enter the first number:"));
-        const num2 = parseFloat(prompt("Enter the second number:"));
-        if (isNaN(num1) || isNaN(num2)) {
-            currentInput = "Invalid input";
-        }
-        else {
-            currentInput = gcd(num1, num2).toString();
-        }
-        updateDisplay();
-    });
-    const lcmButton = document.getElementById("lcm") as HTMLButtonElement;
-    lcmButton.addEventListener('click', () => {
-        const num1 = parseFloat(prompt("Enter the first number:"));
-        const num2 = parseFloat(prompt("Enter the second number:"));
-        if (isNaN(num1) || isNaN(num2)) {
-            currentInput = "Invalid input";
-        }
-        else {
-            currentInput = lcm(num1, num2).toString();
-        }
-        updateDisplay();
-    });
-    const fibonacciButton = document.getElementById("fibonacci") as HTMLButtonElement;
-    fibonacciButton.addEventListener('click', () => {
-        const n = parseInt(prompt("Enter the term number for Fibonacci:"));
-        if (isNaN(n) || n < 0) {
-            currentInput = "Invalid input";
-        }
-        else {
-            currentInput = fibonacci(n).toString();
+            const sum = numbers.reduce((total, num) => total + num, 0);
+            currentInput = (sum / numbers.length).toString();
         }
         updateDisplay();
     });
 
-    document.querySelectorAll('#calculator button').forEach(button => {
+document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             // ... existing button click logic
         });
@@ -82,40 +55,11 @@ nthRootButton.addEventListener('click', () => {
 
     // ... other functions
 });
-function isPrime(num) {
-    if (num <= 1)
-        return false;
-    if (num <= 3)
-        return true;
-    if (num % 2 === 0 || num % 3 === 0)
-        return false;
-    for (let i = 5; i * i <= num; i += 6) {
-        if (num % i === 0 || num % (i + 2) === 0)
-            return false;
-    }
-    return true;
-}
-
+// ... other existing functions
 function updateDisplay() {
     display.value = currentInput;
 }
 function updateCurrentExpressionDisplay() {
     currentExpressionDisplay.textContent = currentExpression;
 }
-function gcd(a, b) {
-    while (b) {
-        const temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return Math.abs(a); // Handle negative inputs
-}
-function lcm(a, b) {
-    return (Math.abs(a * b) / gcd(a, b));
-}
-function fibonacci(n) {
-    if (n <= 1) {
-        return n;
-    }
-    return fibonacci(n - 1) + fibonacci(n - 2);
-}
+// ... other existing functions
