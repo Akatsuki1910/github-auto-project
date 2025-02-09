@@ -60,6 +60,12 @@ window.addEventListener("DOMContentLoaded", () => {
       document.body.appendChild(keyboard);
     });
 
+    const toggleCalculatorButton = document.getElementById("toggle-calculator") as HTMLButtonElement;
+    const calculatorDiv = document.getElementById("calculator") as HTMLDivElement;
+    toggleCalculatorButton.addEventListener('click', () => {
+        calculatorDiv.style.display = calculatorDiv.style.display === "none" ? "block" : "none";
+    });
+
     // ... (Other existing button event listeners) 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
