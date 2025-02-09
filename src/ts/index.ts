@@ -16,7 +16,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (Other buttons)
     // ... existing buttons
     const nthRootButton = document.getElementById("nth-root") as HTMLButtonElement;
-nthRootButton.addEventListener('click', () => {
+    nthRootButton.addEventListener('click', () => {
         const n = parseFloat(prompt("Enter the root (n):") || "2"); // Default to square root if no input
         const num = parseFloat(currentInput);
         if (isNaN(num) || isNaN(n)) {
@@ -28,7 +28,7 @@ nthRootButton.addEventListener('click', () => {
         updateDisplay();
     });
     // ... (Other existing button event listeners) 
-        const averageButton = document.getElementById("average") as HTMLButtonElement;
+    const averageButton = document.getElementById("average") as HTMLButtonElement;
     averageButton.addEventListener('click', () => {
         const numbersStr = prompt("Enter numbers separated by commas:");
         if (!numbersStr) {
@@ -52,12 +52,13 @@ nthRootButton.addEventListener('click', () => {
             // ... existing button click logic
         });
     });
-     const log1pButton = document.getElementById("log1p") as HTMLButtonElement;
+    const log1pButton = document.getElementById("log1p") as HTMLButtonElement;
     log1pButton.addEventListener('click', () => {
         const num = parseFloat(currentInput);
-        if(isNaN(num)){
+        if (isNaN(num)) {
             currentInput = "Invalid Input";
-        }else{
+        }
+        else {
             currentInput = Math.log1p(num).toString();
         }
         updateDisplay();
@@ -85,17 +86,38 @@ nthRootButton.addEventListener('click', () => {
         }
         updateDisplay();
     });
-       const absoluteButton = document.getElementById("absolute") as HTMLButtonElement;
-        absoluteButton.addEventListener('click', () => {
-            currentInput = Math.abs(parseFloat(currentInput)).toString();
-            updateDisplay();
-        });
-        const randomIntButton = document.getElementById("random-int") as HTMLButtonElement;
+    const absoluteButton = document.getElementById("absolute") as HTMLButtonElement;
+    absoluteButton.addEventListener('click', () => {
+        currentInput = Math.abs(parseFloat(currentInput)).toString();
+        updateDisplay();
+    });
+    const randomIntButton = document.getElementById("random-int") as HTMLButtonElement;
     randomIntButton.addEventListener('click', () => {
         currentInput = Math.floor(Math.random() * 100).toString();
         updateDisplay();
     });
-
+    const calculateFactorialButton = document.getElementById("calculate-factorial") as HTMLButtonElement;
+    calculateFactorialButton.addEventListener('click', () => {
+        const num = parseInt(currentInput);
+        if (isNaN(num)) {
+            currentInput = "Invalid input";
+        }
+        else {
+            currentInput = factorial(num).toString();
+        }
+        updateDisplay();
+    });
+    function factorial(n) {
+        if (n === 0) {
+            return 1;
+        }
+        else if (n < 0) {
+            return "Invalid input";
+        }
+        else {
+            return n * factorial(n - 1);
+        }
+    }
     // ... other functions
 });
 // ... other existing functions
