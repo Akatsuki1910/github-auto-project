@@ -49,6 +49,18 @@ nthRootButton.addEventListener('click', () => {
         }
         updateDisplay();
     });
+    const lcmButton = document.getElementById("lcm") as HTMLButtonElement;
+    lcmButton.addEventListener('click', () => {
+        const num1 = parseFloat(prompt("Enter the first number:"));
+        const num2 = parseFloat(prompt("Enter the second number:"));
+        if (isNaN(num1) || isNaN(num2)) {
+            currentInput = "Invalid input";
+        }
+        else {
+            currentInput = lcm(num1, num2).toString();
+        }
+        updateDisplay();
+    });
 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
@@ -81,4 +93,7 @@ function gcd(a: number, b: number): number {
         a = temp;
     }
     return Math.abs(a); // Handle negative inputs
+}
+function lcm(a: number, b: number): number {
+    return (Math.abs(a * b) / gcd(a, b));
 }
