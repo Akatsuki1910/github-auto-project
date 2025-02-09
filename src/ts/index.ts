@@ -29,6 +29,12 @@ window.addEventListener("DOMContentLoaded", () => {
         updateCurrentExpressionDisplay();
         updateHistory();
     });
+    const toggleGridButton = document.getElementById("toggle-grid") as HTMLButtonElement;
+    toggleGridButton.addEventListener('click', () => {
+        const calculator = document.getElementById('calculator') as HTMLDivElement;
+        calculator.classList.toggle('grid-view');
+    });
+
     // ... (Other existing button event listeners) 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
