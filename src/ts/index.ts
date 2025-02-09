@@ -90,7 +90,17 @@ const toBinaryButton = document.getElementById("to-binary") as HTMLButtonElement
         currentExpression = '';
         updateCurrentExpressionDisplay();
     });
-
+const log10Button = document.getElementById("log10") as HTMLButtonElement;
+log10Button.addEventListener('click',()=>{
+    const num = parseFloat(currentInput);
+    if(isNaN(num)){
+        currentInput = "Invalid Input";
+    }
+    else{
+        currentInput = Math.log10(num).toString();
+    }
+    updateDisplay();
+});
     // ... existing buttons
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
