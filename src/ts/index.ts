@@ -53,6 +53,12 @@ window.addEventListener("DOMContentLoaded", () => {
         historyArr.length = 0; // Clear the history array
         historyDiv.innerHTML = ''; // Clear the history display
     });
+     const currentDateTimeButton = document.getElementById("current-date-time") as HTMLButtonElement;
+    currentDateTimeButton.addEventListener('click', () => {
+        const now = new Date();
+        currentInput = now.toLocaleString();
+        updateDisplay();
+    });
     // ... existing buttons
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
