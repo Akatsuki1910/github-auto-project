@@ -26,7 +26,12 @@ window.addEventListener("DOMContentLoaded", () => {
         mode = mode === 'rad' ? 'deg' : 'rad';
         modeButton.textContent = `Mode: ${mode.toUpperCase()}`;
     });
-
+    const dateButton = document.getElementById("date") as HTMLButtonElement;
+    dateButton.addEventListener('click',()=>{
+        const now = new Date();
+        currentInput = now.toLocaleDateString();
+        updateDisplay();
+    });
     // ... existing buttons
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
