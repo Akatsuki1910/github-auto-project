@@ -73,7 +73,18 @@ nthRootButton.addEventListener('click', () => {
             currentInput = num.toFixed(n);
         }
         updateDisplay();
-    });    
+    });
+    const cubeRootButton = document.getElementById("cube-root") as HTMLButtonElement;
+    cubeRootButton.addEventListener('click', () => {
+        const num = parseFloat(currentInput);
+        if (isNaN(num)) {
+            currentInput = "Invalid input";
+        }
+        else {
+            currentInput = Math.cbrt(num).toString();
+        }
+        updateDisplay();
+    });
     // ... other functions
 });
 // ... other existing functions
