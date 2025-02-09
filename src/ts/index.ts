@@ -38,6 +38,18 @@ nthRootButton.addEventListener('click', () => {
         }
         updateDisplay();
     });
+        const gcdButton = document.getElementById("gcd") as HTMLButtonElement;
+    gcdButton.addEventListener('click', () => {
+        const num1 = parseFloat(prompt("Enter the first number:"));
+        const num2 = parseFloat(prompt("Enter the second number:"));
+        if(isNaN(num1) || isNaN(num2)) {
+            currentInput = "Invalid input";
+        } else {
+            currentInput = gcd(num1, num2).toString();
+        }
+        updateDisplay();
+    });
+
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             // ... existing button click logic
@@ -61,4 +73,12 @@ function updateDisplay() {
 }
 function updateCurrentExpressionDisplay() {
     currentExpressionDisplay.textContent = currentExpression;
+}
+function gcd(a: number, b: number): number {
+    while (b) {
+        const temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return Math.abs(a); // Handle negative inputs
 }
