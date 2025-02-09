@@ -47,6 +47,11 @@ window.addEventListener("DOMContentLoaded", () => {
     openLinkButton.addEventListener('click', () => {
         window.open('https://www.google.com', '_blank');
     });
+    const currentOperandButton = document.getElementById("current-operand") as HTMLButtonElement;
+    currentOperandButton.addEventListener('click', () => {
+        currentInput = currentInput + currentExpression;
+        updateDisplay();
+    });
 
     // ... (Other existing button event listeners) 
     document.querySelectorAll('#calculator button').forEach(button => {
