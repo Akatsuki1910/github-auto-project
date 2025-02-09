@@ -38,13 +38,14 @@ nthRootButton.addEventListener('click', () => {
         }
         updateDisplay();
     });
-        const gcdButton = document.getElementById("gcd") as HTMLButtonElement;
+    const gcdButton = document.getElementById("gcd") as HTMLButtonElement;
     gcdButton.addEventListener('click', () => {
         const num1 = parseFloat(prompt("Enter the first number:"));
         const num2 = parseFloat(prompt("Enter the second number:"));
-        if(isNaN(num1) || isNaN(num2)) {
+        if (isNaN(num1) || isNaN(num2)) {
             currentInput = "Invalid input";
-        } else {
+        }
+        else {
             currentInput = gcd(num1, num2).toString();
         }
         updateDisplay();
@@ -61,6 +62,17 @@ nthRootButton.addEventListener('click', () => {
         }
         updateDisplay();
     });
+    const fibonacciButton = document.getElementById("fibonacci") as HTMLButtonElement;
+    fibonacciButton.addEventListener('click', () => {
+        const n = parseInt(prompt("Enter the term number for Fibonacci:"));
+        if (isNaN(n) || n < 0) {
+            currentInput = "Invalid input";
+        }
+        else {
+            currentInput = fibonacci(n).toString();
+        }
+        updateDisplay();
+    });
 
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
@@ -71,11 +83,15 @@ nthRootButton.addEventListener('click', () => {
     // ... other functions
 });
 function isPrime(num) {
-    if (num <= 1) return false;
-    if (num <= 3) return true;
-    if (num % 2 === 0 || num % 3 === 0) return false;
+    if (num <= 1)
+        return false;
+    if (num <= 3)
+        return true;
+    if (num % 2 === 0 || num % 3 === 0)
+        return false;
     for (let i = 5; i * i <= num; i += 6) {
-        if (num % i === 0 || num % (i + 2) === 0) return false;
+        if (num % i === 0 || num % (i + 2) === 0)
+            return false;
     }
     return true;
 }
@@ -86,7 +102,7 @@ function updateDisplay() {
 function updateCurrentExpressionDisplay() {
     currentExpressionDisplay.textContent = currentExpression;
 }
-function gcd(a: number, b: number): number {
+function gcd(a, b) {
     while (b) {
         const temp = b;
         b = a % b;
@@ -94,6 +110,12 @@ function gcd(a: number, b: number): number {
     }
     return Math.abs(a); // Handle negative inputs
 }
-function lcm(a: number, b: number): number {
+function lcm(a, b) {
     return (Math.abs(a * b) / gcd(a, b));
+}
+function fibonacci(n) {
+    if (n <= 1) {
+        return n;
+    }
+    return fibonacci(n - 1) + fibonacci(n - 2);
 }
