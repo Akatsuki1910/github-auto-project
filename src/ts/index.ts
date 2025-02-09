@@ -7,6 +7,7 @@ const historyDiv = document.getElementById("history") as HTMLDivElement;
 const historyArr: string[] = [];
 let lastAnswer = 0;
 let memoryValue = 0;
+let mode = 'rad'; // Initial mode is radians
 
 window.addEventListener("DOMContentLoaded", () => {
     // existing code
@@ -26,11 +27,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.expm1(parseFloat(currentInput)).toString();
         updateDisplay();
     });
-        const tenToThePowerXButton = document.getElementById("ten-to-the-power-x") as HTMLButtonElement;
-        tenToThePowerXButton.addEventListener('click', () => {
-            currentInput = Math.pow(10, parseFloat(currentInput)).toString();
-            updateDisplay();
-        });
+    const tenToThePowerXButton = document.getElementById("ten-to-the-power-x") as HTMLButtonElement;
+    tenToThePowerXButton.addEventListener('click', () => {
+        currentInput = Math.pow(10, parseFloat(currentInput)).toString();
+        updateDisplay();
+    });
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             // ... existing button click logic
@@ -68,6 +69,12 @@ window.addEventListener("DOMContentLoaded", () => {
         scientificButtons.forEach(button => {
             (button as HTMLElement).style.display = scientificMode ? 'inline-block' : 'none';
         });
+    });
+
+    const modeButton = document.getElementById("mode") as HTMLButtonElement;
+    modeButton.addEventListener('click', () => {
+        mode = mode === 'rad' ? 'deg' : 'rad';
+        modeButton.textContent = `Mode: ${mode.toUpperCase()}`;
     });
 });
 
