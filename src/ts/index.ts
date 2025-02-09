@@ -85,6 +85,12 @@ const toBinaryButton = document.getElementById("to-binary") as HTMLButtonElement
         }
         updateDisplay();
     });
+       const clearExpressionButton = document.getElementById("clear-expression") as HTMLButtonElement;
+    clearExpressionButton.addEventListener('click', () => {
+        currentExpression = '';
+        updateCurrentExpressionDisplay();
+    });
+
     // ... existing buttons
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
