@@ -16,3 +16,7 @@
     overflow-y: auto;
     max-height: 200px;
 }
+
+.scientific {
+    display: none; /* Initially hide scientific buttons */
+}
