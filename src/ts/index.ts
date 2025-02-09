@@ -47,12 +47,21 @@ nthRootButton.addEventListener('click', () => {
         updateDisplay();
     });
 
-document.querySelectorAll('#calculator button').forEach(button => {
+    document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
             // ... existing button click logic
         });
     });
-
+     const log1pButton = document.getElementById("log1p") as HTMLButtonElement;
+    log1pButton.addEventListener('click', () => {
+        const num = parseFloat(currentInput);
+        if(isNaN(num)){
+            currentInput = "Invalid Input";
+        }else{
+            currentInput = Math.log1p(num).toString();
+        }
+        updateDisplay();
+    });
     // ... other functions
 });
 // ... other existing functions
