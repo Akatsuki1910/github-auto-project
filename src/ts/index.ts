@@ -64,7 +64,17 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = currentInput.slice(0, -1);
         updateDisplay();
     });
-
+const toBinaryButton = document.getElementById("to-binary") as HTMLButtonElement;
+    toBinaryButton.addEventListener('click', () => {
+        const num = parseInt(currentInput);
+        if(isNaN(num)){
+            currentInput = "Invalid input";
+        }
+        else{
+            currentInput = num.toString(2);
+        }
+        updateDisplay();
+    });
     // ... existing buttons
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
