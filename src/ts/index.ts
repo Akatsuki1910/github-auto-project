@@ -90,6 +90,12 @@ nthRootButton.addEventListener('click', () => {
             currentInput = Math.abs(parseFloat(currentInput)).toString();
             updateDisplay();
         });
+        const randomIntButton = document.getElementById("random-int") as HTMLButtonElement;
+    randomIntButton.addEventListener('click', () => {
+        currentInput = Math.floor(Math.random() * 100).toString();
+        updateDisplay();
+    });
+
     // ... other functions
 });
 // ... other existing functions
