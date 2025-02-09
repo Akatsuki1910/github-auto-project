@@ -32,6 +32,12 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = now.toLocaleDateString();
         updateDisplay();
     });
+    const timeButton = document.getElementById("time") as HTMLButtonElement;
+    timeButton.addEventListener('click', () => {
+        const now = new Date();
+        currentInput = now.toLocaleTimeString();
+        updateDisplay();
+    });
     // ... existing buttons
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
