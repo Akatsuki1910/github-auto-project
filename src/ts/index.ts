@@ -59,6 +59,16 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = "";
         updateDisplay();
     });
+
+    const toggleScientificButton = document.getElementById("toggleScientific") as HTMLButtonElement;
+    let scientificMode = false;
+    toggleScientificButton.addEventListener('click', () => {
+        scientificMode = !scientificMode;
+        const scientificButtons = document.querySelectorAll('.scientific');
+        scientificButtons.forEach(button => {
+            (button as HTMLElement).style.display = scientificMode ? 'inline-block' : 'none';
+        });
+    });
 });
 
 // ... other functions
