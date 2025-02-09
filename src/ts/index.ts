@@ -8,7 +8,7 @@ const historyArr: string[] = [];
 let lastAnswer = 0;
 let memoryValue = 0;
 let mode = 'rad';
-let keypadVisible = true; // Track keypad visibility
+let keypadVisible = true; 
 
 window.addEventListener("DOMContentLoaded", () => {
     // existing code
@@ -44,6 +44,17 @@ window.addEventListener("DOMContentLoaded", () => {
         } else {
             calculatorDiv.style.display = "none";
         }
+    });
+
+    const copyExpressionButton = document.getElementById("copy-expression") as HTMLButtonElement;
+    copyExpressionButton.addEventListener('click', () => {
+        navigator.clipboard.writeText(currentExpression)
+            .then(() => {
+                alert("Expression copied to clipboard: " + currentExpression);
+            })
+            .catch(err => {
+                console.error("Failed to copy expression: ", err);
+            });
     });
 
     // ... existing button event listeners
