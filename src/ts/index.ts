@@ -65,6 +65,17 @@ window.addEventListener("DOMContentLoaded", () => {
     toggleCalculatorButton.addEventListener('click', () => {
         calculatorDiv.style.display = calculatorDiv.style.display === "none" ? "block" : "none";
     });
+    const log10Btn = document.getElementById("log10Btn") as HTMLButtonElement;
+    log10Btn.addEventListener('click', () => {
+        try {
+            const num = parseFloat(currentInput);
+            currentInput = Math.log10(num).toString();
+            updateDisplay();
+        } catch (error) {
+            currentInput = "Error";
+            updateDisplay();
+        }
+    });
 
     // ... (Other existing button event listeners) 
     document.querySelectorAll('#calculator button').forEach(button => {
