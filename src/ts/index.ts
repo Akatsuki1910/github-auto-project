@@ -43,6 +43,10 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = currentInput.slice(0, -1);
         updateDisplay();
     });
+    const openLinkButton = document.getElementById("open-link") as HTMLButtonElement;
+    openLinkButton.addEventListener('click', () => {
+        window.open('https://www.google.com', '_blank');
+    });
 
     // ... (Other existing button event listeners) 
     document.querySelectorAll('#calculator button').forEach(button => {
