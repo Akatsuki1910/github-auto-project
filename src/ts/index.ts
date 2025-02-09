@@ -101,6 +101,16 @@ log10Button.addEventListener('click',()=>{
     }
     updateDisplay();
 });
+const powerOfTwoButton = document.getElementById("power-of-two") as HTMLButtonElement;
+powerOfTwoButton.addEventListener('click', () => {
+    const num = parseFloat(currentInput);
+    if (isNaN(num)) {
+        currentInput = "Invalid input";
+    } else {
+        currentInput = (num * num).toString();
+    }
+    updateDisplay();
+});
     // ... existing buttons
     document.querySelectorAll('#calculator button').forEach(button => {
         button.addEventListener('click', () => {
