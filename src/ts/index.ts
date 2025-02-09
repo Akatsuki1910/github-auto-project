@@ -38,6 +38,11 @@ window.addEventListener("DOMContentLoaded", () => {
     copyDisplayButton.addEventListener('click', () => {
         navigator.clipboard.writeText(display.value);
     });
+    const clearLastCharButton = document.getElementById("clear-last-char") as HTMLButtonElement;
+    clearLastCharButton.addEventListener('click', () => {
+        currentInput = currentInput.slice(0, -1);
+        updateDisplay();
+    });
 
     // ... (Other existing button event listeners) 
     document.querySelectorAll('#calculator button').forEach(button => {
