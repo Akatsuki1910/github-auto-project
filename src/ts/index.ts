@@ -34,6 +34,10 @@ window.addEventListener("DOMContentLoaded", () => {
         const calculator = document.getElementById('calculator') as HTMLDivElement;
         calculator.classList.toggle('grid-view');
     });
+    const copyDisplayButton = document.getElementById("copy-display") as HTMLButtonElement;
+    copyDisplayButton.addEventListener('click', () => {
+        navigator.clipboard.writeText(display.value);
+    });
 
     // ... (Other existing button event listeners) 
     document.querySelectorAll('#calculator button').forEach(button => {
