@@ -23,62 +23,29 @@ let audioEnabled = true;
 let calculatorSize = 'medium';
 let inputBorder = true;
 let inputWidth = 'medium';
+let buttonColor = 'default';
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
-    const toggleCalculatorSizeButton = document.getElementById("toggle-calculator-size") as HTMLButtonElement;
-    toggleCalculatorSizeButton.addEventListener('click', () => {
-        const calculator = document.getElementById('calculator') as HTMLDivElement;
-        switch (calculatorSize) {
-            case 'small':
-                calculatorSize = 'medium';
-                calculator.style.maxWidth = '300px';
+    const toggleButtonColorButton = document.getElementById("toggle-button-color") as HTMLButtonElement;
+    toggleButtonColorButton.addEventListener('click', () => {
+        const buttons = document.querySelectorAll('#calculator button');
+        switch (buttonColor) {
+            case 'default':
+                buttonColor = 'red';
+                buttons.forEach(button => button.style.backgroundColor = 'red');
                 break;
-            case 'medium':
-                calculatorSize = 'large';
-                calculator.style.maxWidth = '450px';
+            case 'red':
+                buttonColor = 'green';
+                buttons.forEach(button => button.style.backgroundColor = 'green');
                 break;
-            case 'large':
-                calculatorSize = 'small';
-                calculator.style.maxWidth = '150px';
+            case 'green':
+                buttonColor = 'blue';
+                buttons.forEach(button => button.style.backgroundColor = 'blue');
                 break;
-        }
-    });
-
-    const toggleContrastButton = document.getElementById("toggle-contrast") as HTMLButtonElement;
-    toggleContrastButton.addEventListener('click', () => {
-        highContrast = !highContrast;
-        if (highContrast) {
-            document.body.classList.add('high-contrast');
-        } else {
-            document.body.classList.remove('high-contrast');
-        }
-    });
-    const toggleAudioButton = document.getElementById("toggle-audio") as HTMLButtonElement;
-    toggleAudioButton.addEventListener('click', () => {
-        audioEnabled = !audioEnabled;
-    });
-    const toggleInputBorderButton = document.getElementById("toggle-input-border") as HTMLButtonElement;
-    toggleInputBorderButton.addEventListener('click', () => {
-        inputBorder = !inputBorder;
-        const display = document.getElementById('display') as HTMLInputElement;
-        display.style.border = inputBorder ? '1px solid #ccc' : 'none';
-    });
-    const toggleInputWidthButton = document.getElementById("toggle-input-width") as HTMLButtonElement;
-    toggleInputWidthButton.addEventListener('click', () => {
-        const display = document.getElementById('display') as HTMLInputElement;
-        switch (inputWidth) {
-            case 'small':
-                inputWidth = 'medium';
-                display.style.width = '200px';
-                break;
-            case 'medium':
-                inputWidth = 'large';
-                display.style.width = '300px';
-                break;
-            case 'large':
-                inputWidth = 'small';
-                display.style.width = '100px';
+            case 'blue':
+                buttonColor = 'default';
+                buttons.forEach(button => button.style.backgroundColor = '');
                 break;
         }
     });
