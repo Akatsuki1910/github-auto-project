@@ -16,10 +16,18 @@ let timeFormat24H = true;
 let timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 let showTime = false;
 let borderRadius = 5;
-let calculatorVisible = true; // Added for show/hide functionality
+let calculatorVisible = true;
+let opacity = 1;
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
+    const toggleOpacityButton = document.getElementById("toggle-opacity") as HTMLButtonElement;
+    toggleOpacityButton.addEventListener('click', () => {
+        opacity = opacity === 1 ? 0.5 : 1;
+        const calculator = document.getElementById('calculator') as HTMLDivElement;
+        calculator.style.opacity = opacity.toString();
+    });
+
     const toggleBorderRadiusButton = document.getElementById("toggle-border-radius") as HTMLButtonElement;
     toggleBorderRadiusButton.addEventListener('click', () => {
         borderRadius = borderRadius === 5 ? 20 : 5;
