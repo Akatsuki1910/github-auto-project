@@ -9,6 +9,7 @@ let lastAnswer = 0;
 let memoryValue = 0;
 let mode = 'rad';
 let keypadVisible = true; 
+let scientificMode = false;
 
 window.addEventListener("DOMContentLoaded", () => {
     // existing code
@@ -30,7 +31,7 @@ window.addEventListener("DOMContentLoaded", () => {
         updateCurrentExpressionDisplay();
         updateHistory();
     });
-    // ... other functions
+
     const clearMemoryButton = document.getElementById("clear-memory") as HTMLButtonElement;
     clearMemoryButton.addEventListener('click', () => {
         memoryValue = 0;
@@ -50,19 +51,22 @@ window.addEventListener("DOMContentLoaded", () => {
     copyExpressionButton.addEventListener('click', () => {
         navigator.clipboard.writeText(currentExpression)
             .then(() => {
-                alert("Expression copied to clipboard: " + currentExpression);
+                //alert("Expression copied to clipboard: " + currentExpression);
             })
             .catch(err => {
                 console.error("Failed to copy expression: ", err);
             });
     });
-
-    // ... existing button event listeners
-    document.querySelectorAll('#calculator button').forEach(button => {
-        button.addEventListener('click', () => {
-            // ... existing button click logic
+     const toggleScientificButton = document.getElementById("toggle-scientific") as HTMLButtonElement;
+    toggleScientificButton.addEventListener('click', () => {
+        scientificMode = !scientificMode;
+        const scientificButtons = document.querySelectorAll('.scientific');
+        scientificButtons.forEach(button => {
+            button.style.display = scientificMode ? 'block' : 'none';
         });
     });
+
+    // ... existing button event listeners
     // ... other functions
 });
 // ... other existing functions
