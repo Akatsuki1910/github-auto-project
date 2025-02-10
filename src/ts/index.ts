@@ -33,6 +33,13 @@ window.addEventListener("DOMContentLoaded", () => {
             document.documentElement.requestFullscreen();
         }
     });
+    const duplicateButton = document.getElementById("duplicate") as HTMLButtonElement;
+    duplicateButton.addEventListener('click', () => {
+        if (currentInput !== "") {
+            currentInput += currentInput;
+            display.value = currentInput;
+        }
+    });
     // existing code ...
 });
 // ... other existing functions
