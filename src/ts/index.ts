@@ -8,7 +8,7 @@ const historyArr: string[] = [];
 let lastAnswer = 0;
 let memoryValue = 0;
 let mode = 'rad';
-let keypadVisible = true; 
+let keypadVisible = true;
 let scientificMode = false;
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -42,7 +42,8 @@ window.addEventListener("DOMContentLoaded", () => {
         keypadVisible = !keypadVisible;
         if (keypadVisible) {
             calculatorDiv.style.display = "grid";
-        } else {
+        }
+        else {
             calculatorDiv.style.display = "none";
         }
     });
@@ -51,13 +52,13 @@ window.addEventListener("DOMContentLoaded", () => {
     copyExpressionButton.addEventListener('click', () => {
         navigator.clipboard.writeText(currentExpression)
             .then(() => {
-                //alert("Expression copied to clipboard: " + currentExpression);
+            //alert("Expression copied to clipboard: " + currentExpression);
             })
             .catch(err => {
-                console.error("Failed to copy expression: ", err);
-            });
+            console.error("Failed to copy expression: ", err);
+        });
     });
-     const toggleScientificButton = document.getElementById("toggle-scientific") as HTMLButtonElement;
+    const toggleScientificButton = document.getElementById("toggle-scientific") as HTMLButtonElement;
     toggleScientificButton.addEventListener('click', () => {
         scientificMode = !scientificMode;
         const scientificButtons = document.querySelectorAll('.scientific');
@@ -65,9 +66,13 @@ window.addEventListener("DOMContentLoaded", () => {
             button.style.display = scientificMode ? 'block' : 'none';
         });
     });
-const exitButton = document.getElementById("exit") as HTMLButtonElement;
-    exitButton.addEventListener('click',()=>{
+    const exitButton = document.getElementById("exit") as HTMLButtonElement;
+    exitButton.addEventListener('click', () => {
         window.close();
+    });
+    const openNewTabButton = document.getElementById("open-new-tab") as HTMLButtonElement;
+    openNewTabButton.addEventListener('click', () => {
+        window.open('https://www.example.com', '_blank');
     });
     // ... existing button event listeners
     // ... other functions
