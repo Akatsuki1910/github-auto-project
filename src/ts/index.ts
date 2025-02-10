@@ -19,6 +19,7 @@ let borderRadius = 5;
 let calculatorVisible = true;
 let opacity = 1;
 let highContrast = false;
+let audioEnabled = true; // Added audio toggle
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
@@ -31,5 +32,11 @@ window.addEventListener("DOMContentLoaded", () => {
             document.body.classList.remove('high-contrast');
         }
     });
+    const toggleAudioButton = document.getElementById("toggle-audio") as HTMLButtonElement; // Audio toggle
+    toggleAudioButton.addEventListener('click', () => {
+        audioEnabled = !audioEnabled;
+        // Add logic to enable/disable audio feedback here (e.g., play a beep on button clicks)
+    });
+
     // ... other existing event listeners
 });
