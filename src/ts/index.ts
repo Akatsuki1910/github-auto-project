@@ -19,10 +19,30 @@ let borderRadius = 5;
 let calculatorVisible = true;
 let opacity = 1;
 let highContrast = false;
-let audioEnabled = true; // Added audio toggle
+let audioEnabled = true;
+let calculatorSize = 'medium';
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
+    const toggleCalculatorSizeButton = document.getElementById("toggle-calculator-size") as HTMLButtonElement;
+    toggleCalculatorSizeButton.addEventListener('click', () => {
+        const calculator = document.getElementById('calculator') as HTMLDivElement;
+        switch (calculatorSize) {
+            case 'small':
+                calculatorSize = 'medium';
+                calculator.style.maxWidth = '300px';
+                break;
+            case 'medium':
+                calculatorSize = 'large';
+                calculator.style.maxWidth = '450px';
+                break;
+            case 'large':
+                calculatorSize = 'small';
+                calculator.style.maxWidth = '150px';
+                break;
+        }
+    });
+
     const toggleContrastButton = document.getElementById("toggle-contrast") as HTMLButtonElement;
     toggleContrastButton.addEventListener('click', () => {
         highContrast = !highContrast;
@@ -32,10 +52,9 @@ window.addEventListener("DOMContentLoaded", () => {
             document.body.classList.remove('high-contrast');
         }
     });
-    const toggleAudioButton = document.getElementById("toggle-audio") as HTMLButtonElement; // Audio toggle
+    const toggleAudioButton = document.getElementById("toggle-audio") as HTMLButtonElement;
     toggleAudioButton.addEventListener('click', () => {
         audioEnabled = !audioEnabled;
-        // Add logic to enable/disable audio feedback here (e.g., play a beep on button clicks)
     });
 
     // ... other existing event listeners
