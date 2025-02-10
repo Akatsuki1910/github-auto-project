@@ -29,6 +29,11 @@ let inputBackgroundColor = 'white';
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
+    const openNewWindowButton = document.getElementById("open-new-window") as HTMLButtonElement;
+    openNewWindowButton.addEventListener('click', () => {
+        window.open('https://www.example.com', '_blank');
+    });
+
     const toggleInputFontSizeButton = document.getElementById("toggle-input-font-size") as HTMLButtonElement;
     toggleInputFontSizeButton.addEventListener('click', () => {
         inputFontSize += 2;
@@ -36,50 +41,6 @@ window.addEventListener("DOMContentLoaded", () => {
             inputFontSize = 16;
         }
         display.style.fontSize = inputFontSize + "px";
-    });
-    const toggleButtonColorButton = document.getElementById("toggle-button-color") as HTMLButtonElement;
-    toggleButtonColorButton.addEventListener('click', () => {
-        const buttons = document.querySelectorAll('#calculator button');
-        switch (buttonColor) {
-            case 'default':
-                buttonColor = 'red';
-                buttons.forEach(button => button.style.backgroundColor = 'red');
-                break;
-            case 'red':
-                buttonColor = 'green';
-                buttons.forEach(button => button.style.backgroundColor = 'green');
-                break;
-            case 'green':
-                buttonColor = 'blue';
-                buttons.forEach(button => button.style.backgroundColor = 'blue');
-                break;
-            case 'blue':
-                buttonColor = 'default';
-                buttons.forEach(button => button.style.backgroundColor = '');
-                break;
-        }
-    });
-    const toggleInputBackgroundColorButton = document.getElementById("toggle-input-background-color") as HTMLButtonElement;
-    toggleInputBackgroundColorButton.addEventListener('click', () => {
-        switch (inputBackgroundColor) {
-            case 'white':
-                inputBackgroundColor = 'lightblue';
-                break;
-            case 'lightblue':
-                inputBackgroundColor = 'lightgreen';
-                break;
-            case 'lightgreen':
-                inputBackgroundColor = 'lightyellow';
-                break;
-            case 'lightyellow':
-                inputBackgroundColor = 'white';
-                break;
-        }
-        display.style.backgroundColor = inputBackgroundColor;
-    });
-    const toggleInputReadonlyButton = document.getElementById("toggle-input-readonly") as HTMLButtonElement;
-    toggleInputReadonlyButton.addEventListener('click', () => {
-        display.readOnly = !display.readOnly;
     });
     // ... other existing event listeners
 });
