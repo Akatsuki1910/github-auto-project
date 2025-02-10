@@ -40,6 +40,14 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = Math.ceil(num).toString();
         }
     });
-
-    // ... other existing event listeners
+    const nthRootButton = document.getElementById("nth-root") as HTMLButtonElement;
+    nthRootButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            const root = parseFloat(prompt("Enter the root (e.g., 2 for square root, 3 for cube root):", "2"));
+            if (!isNaN(root)) {
+                display.value = Math.pow(num, 1 / root).toString();
+            }
+        }
+    });
 });
