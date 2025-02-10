@@ -15,77 +15,15 @@ let fontSize = 16;
 let timeFormat24H = true;
 let timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 let showTime = false;
+let borderRadius = 5; // Initial border radius
 
 window.addEventListener("DOMContentLoaded", () => {
-    // existing code
-    // ... (Other button event listeners)
-    // ... (Other buttons)
-    // ... existing buttons
-    // ... existing functions
-    // ... existing button event listeners
-    // ... other functions
-    const toggleRadDegButton = document.getElementById("toggle-rad-deg") as HTMLButtonElement;
-    toggleRadDegButton.addEventListener('click', () => {
-        mode = mode === 'rad' ? 'deg' : 'rad';
-        toggleRadDegButton.textContent = mode.toUpperCase();
-    });
-
-    // ... other existing event listeners
     // ... existing code
-    // ... existing functions
-    const ceilButton = document.getElementById("ceil") as HTMLButtonElement;
-    ceilButton.addEventListener('click', () => {
-        const num = parseFloat(display.value);
-        if (!isNaN(num)) {
-            display.value = Math.ceil(num).toString();
-        }
+    const toggleBorderRadiusButton = document.getElementById("toggle-border-radius") as HTMLButtonElement;
+    toggleBorderRadiusButton.addEventListener('click', () => {
+        borderRadius = borderRadius === 5 ? 20 : 5;
+        const calculator = document.getElementById('calculator') as HTMLDivElement;
+        calculator.style.borderRadius = `${borderRadius}px`;
     });
-    const nthRootButton = document.getElementById("nth-root") as HTMLButtonElement;
-    nthRootButton.addEventListener('click', () => {
-        const num = parseFloat(display.value);
-        if (!isNaN(num)) {
-            const root = parseFloat(prompt("Enter the root (e.g., 2 for square root, 3 for cube root):", "2"));
-            if (!isNaN(root)) {
-                display.value = Math.pow(num, 1 / root).toString();
-            }
-        }
-    });
-    const exp10Button = document.getElementById("exp10") as HTMLButtonElement;
-    exp10Button.addEventListener('click', () => {
-        const num = parseFloat(display.value);
-        if (!isNaN(num)) {
-            display.value = Math.pow(10, num).toString();
-        }
-    });
-
-    const floorButton = document.getElementById("floor") as HTMLButtonElement;
-    floorButton.addEventListener('click', () => {
-        const num = parseFloat(display.value);
-        if (!isNaN(num)) {
-            display.value = Math.floor(num).toString();
-        }
-    });
-    const cbrtButton = document.getElementById("cbrt") as HTMLButtonElement;
-    cbrtButton.addEventListener('click', () => {
-        const num = parseFloat(display.value);
-        if (!isNaN(num)) {
-            display.value = Math.cbrt(num).toString();
-        }
-    });
-    const expm1Button = document.getElementById("expm1") as HTMLButtonElement;
-    expm1Button.addEventListener('click', () => {
-        const num = parseFloat(display.value);
-        if (!isNaN(num)) {
-            display.value = Math.expm1(num).toString();
-        }
-    });
-    const lnButton = document.getElementById("ln") as HTMLButtonElement;
-    lnButton.addEventListener('click', () => {
-        const num = parseFloat(display.value);
-        if (!isNaN(num) && num > 0) {
-            display.value = Math.log(num).toString();
-        } else {
-            display.value = "Error";
-        }
-    });
+    // ... other existing event listeners
 });
