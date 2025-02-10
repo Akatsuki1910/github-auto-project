@@ -11,6 +11,7 @@ let mode = 'rad';
 let keypadVisible = true;
 let scientificMode = false;
 let theme = 'light';
+let fontSize = 16;
 
 window.addEventListener("DOMContentLoaded", () => {
     // existing code
@@ -58,6 +59,11 @@ window.addEventListener("DOMContentLoaded", () => {
         document.body.classList.toggle('dark-theme', theme === 'dark');
         document.body.classList.toggle('light-theme', theme === 'light');
     });
+    const toggleFontsizeButton = document.getElementById("toggle-fontsize") as HTMLButtonElement;
+    toggleFontsizeButton.addEventListener('click', () => {
+        fontSize = fontSize === 16 ? 24 : 16; // Toggle between 16px and 24px
+        display.style.fontSize = fontSize + "px";
+    })
     // existing code ...
 });
 // ... other existing functions
