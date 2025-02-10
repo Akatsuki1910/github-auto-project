@@ -18,36 +18,18 @@ let showTime = false;
 let borderRadius = 5;
 let calculatorVisible = true;
 let opacity = 1;
+let highContrast = false;
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
-    const toggleOpacityButton = document.getElementById("toggle-opacity") as HTMLButtonElement;
-    toggleOpacityButton.addEventListener('click', () => {
-        opacity = opacity === 1 ? 0.5 : 1;
-        const calculator = document.getElementById('calculator') as HTMLDivElement;
-        calculator.style.opacity = opacity.toString();
-    });
-
-    const toggleBorderRadiusButton = document.getElementById("toggle-border-radius") as HTMLButtonElement;
-    toggleBorderRadiusButton.addEventListener('click', () => {
-        borderRadius = borderRadius === 5 ? 20 : 5;
-        const calculator = document.getElementById('calculator') as HTMLDivElement;
-        calculator.style.borderRadius = `${borderRadius}px`;
-    });
-    const clearExpressionButton = document.getElementById("clear-expression") as HTMLButtonElement;
-    clearExpressionButton.addEventListener('click', () => {
-        currentExpression = '';
-        currentExpressionDisplay.textContent = currentExpression;
-    });
-    const toggleVisibilityButton = document.getElementById("toggle-visibility") as HTMLButtonElement;
-    const calculatorDiv = document.getElementById("calculator") as HTMLDivElement;
-    toggleVisibilityButton.addEventListener('click', () => {
-        calculatorVisible = !calculatorVisible;
-        calculatorDiv.style.display = calculatorVisible ? 'grid' : 'none';
-    });
-    const openHelpButton = document.getElementById("open-help") as HTMLButtonElement;
-    openHelpButton.addEventListener('click', () => {
-        window.open('https://www.example.com/calculator-help', '_blank');
+    const toggleContrastButton = document.getElementById("toggle-contrast") as HTMLButtonElement;
+    toggleContrastButton.addEventListener('click', () => {
+        highContrast = !highContrast;
+        if (highContrast) {
+            document.body.classList.add('high-contrast');
+        } else {
+            document.body.classList.remove('high-contrast');
+        }
     });
     // ... other existing event listeners
 });
