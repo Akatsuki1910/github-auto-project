@@ -21,6 +21,7 @@ let opacity = 1;
 let highContrast = false;
 let audioEnabled = true;
 let calculatorSize = 'medium';
+let inputBorder = true;
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
@@ -55,6 +56,12 @@ window.addEventListener("DOMContentLoaded", () => {
     const toggleAudioButton = document.getElementById("toggle-audio") as HTMLButtonElement;
     toggleAudioButton.addEventListener('click', () => {
         audioEnabled = !audioEnabled;
+    });
+    const toggleInputBorderButton = document.getElementById("toggle-input-border") as HTMLButtonElement;
+    toggleInputBorderButton.addEventListener('click', () => {
+        inputBorder = !inputBorder;
+        const display = document.getElementById('display') as HTMLInputElement;
+        display.style.border = inputBorder ? '1px solid #ccc' : 'none';
     });
 
     // ... other existing event listeners
