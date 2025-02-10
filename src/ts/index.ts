@@ -25,5 +25,10 @@ window.addEventListener("DOMContentLoaded", () => {
         const calculator = document.getElementById('calculator') as HTMLDivElement;
         calculator.style.borderRadius = `${borderRadius}px`;
     });
+    const clearExpressionButton = document.getElementById("clear-expression") as HTMLButtonElement;
+    clearExpressionButton.addEventListener('click', () => {
+        currentExpression = '';
+        currentExpressionDisplay.textContent = currentExpression;
+    });
     // ... other existing event listeners
 });
