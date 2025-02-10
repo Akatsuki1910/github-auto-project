@@ -57,4 +57,12 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = Math.pow(10, num).toString();
         }
     });
+
+    const floorButton = document.getElementById("floor") as HTMLButtonElement;
+    floorButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            display.value = Math.floor(num).toString();
+        }
+    });
 });
