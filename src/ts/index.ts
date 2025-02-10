@@ -14,6 +14,7 @@ let theme = 'light';
 let fontSize = 16;
 let timeFormat24H = true;
 let timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+let showTime = false;
 
 window.addEventListener("DOMContentLoaded", () => {
     // existing code
@@ -30,7 +31,19 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // ... other existing event listeners
-    const toggleCalculatorButton = document.getElementById("toggle-calculator") as HTMLButtonElement;
+    // ... existing code
+    const toggleTimeButton = document.getElementById("toggle-time") as HTMLButtonElement;
+    toggleTimeButton.addEventListener('click', () => {
+        showTime = !showTime;
+        if (showTime) {
+            setInterval(() => {
+                const now = new Date();
+                const timeString = timeFormat24H ? now.toLocaleTimeString('en-GB', { timeZone: timeZone }) : now.toLocaleTimeString('en-US', { timeZone: timeZone });
+                display.value = timeString;
+            }, 1000);
+        }
+    });
+        const toggleCalculatorButton = document.getElementById("toggle-calculator") as HTMLButtonElement;
     const calculatorDiv = document.getElementById("calculator") as HTMLDivElement;
     toggleCalculatorButton.addEventListener('click', () => {
         calculatorDiv.style.display = calculatorDiv.style.display === 'none' ? 'grid' : 'none';
