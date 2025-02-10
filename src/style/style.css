@@ -28,8 +28,8 @@ body.dark-theme {
 body.dark-theme #calculator {
     border-color: #666;
 }
-.grid-view{
-    display:grid;
+.grid-view {
+    display: grid;
 }
 .no-grid-view {
     display: block; /* or flex, depending on your desired layout */
@@ -38,6 +38,6 @@ body.light-theme {
     background-color: #fff;
     color: #000;
 }
-body.light-theme #calculator{
+body.light-theme #calculator {
     border-color: #ccc;
 }

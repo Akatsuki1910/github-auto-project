@@ -35,10 +35,16 @@ window.addEventListener("DOMContentLoaded", () => {
         calculatorDiv.style.display = calculatorDiv.style.display === 'none' ? 'grid' : 'none';
     });
     const toggleDateButton = document.getElementById("toggle-date") as HTMLButtonElement;
-    toggleDateButton.addEventListener('click',()=>{
+    toggleDateButton.addEventListener('click', () => {
         const now = new Date();
         const dateString = now.toLocaleDateString();
         display.value = dateString;
+    });
+    const currentTimeButton = document.getElementById("current-time") as HTMLButtonElement;
+    currentTimeButton.addEventListener('click', () => {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString();
+        display.value = timeString;
     });
 });
 
