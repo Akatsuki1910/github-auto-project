@@ -79,4 +79,13 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = Math.expm1(num).toString();
         }
     });
+    const lnButton = document.getElementById("ln") as HTMLButtonElement;
+    lnButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        if (!isNaN(num) && num > 0) {
+            display.value = Math.log(num).toString();
+        } else {
+            display.value = "Error";
+        }
+    });
 });
