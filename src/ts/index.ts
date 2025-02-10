@@ -64,6 +64,11 @@ window.addEventListener("DOMContentLoaded", () => {
         timeZone = timeZone === 'UTC' ? Intl.DateTimeFormat().resolvedOptions().timeZone : 'UTC';
         toggleTimeZoneButton.textContent = `Time Zone: ${timeZone}`;
     });
+    const currentYearButton = document.getElementById("current-year") as HTMLButtonElement;
+    currentYearButton.addEventListener('click', () => {
+        const now = new Date();
+        display.value = now.getFullYear().toString();
+    });
 });
 
 // ... other existing functions
