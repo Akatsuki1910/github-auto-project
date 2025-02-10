@@ -15,7 +15,8 @@ let fontSize = 16;
 let timeFormat24H = true;
 let timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 let showTime = false;
-let borderRadius = 5; // Initial border radius
+let borderRadius = 5;
+let calculatorVisible = true; // Added for show/hide functionality
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
@@ -29,6 +30,12 @@ window.addEventListener("DOMContentLoaded", () => {
     clearExpressionButton.addEventListener('click', () => {
         currentExpression = '';
         currentExpressionDisplay.textContent = currentExpression;
+    });
+    const toggleVisibilityButton = document.getElementById("toggle-visibility") as HTMLButtonElement;
+    const calculatorDiv = document.getElementById("calculator") as HTMLDivElement;
+    toggleVisibilityButton.addEventListener('click', () => {
+        calculatorVisible = !calculatorVisible;
+        calculatorDiv.style.display = calculatorVisible ? 'grid' : 'none';
     });
     // ... other existing event listeners
 });
