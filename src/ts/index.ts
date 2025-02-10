@@ -13,6 +13,7 @@ let scientificMode = false;
 let theme = 'light';
 let fontSize = 16;
 let timeFormat24H = true;
+let timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 
 window.addEventListener("DOMContentLoaded", () => {
     // existing code
@@ -44,7 +45,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const currentTimeButton = document.getElementById("current-time") as HTMLButtonElement;
     currentTimeButton.addEventListener('click', () => {
         const now = new Date();
-        const timeString = timeFormat24H ? now.toLocaleTimeString('en-GB') : now.toLocaleTimeString('en-US');
+        const timeString = timeFormat24H ? now.toLocaleTimeString('en-GB', { timeZone: timeZone }) : now.toLocaleTimeString('en-US', { timeZone: timeZone });
         display.value = timeString;
     });
     const toggle24hButton = document.getElementById("toggle-24h") as HTMLButtonElement;
@@ -55,8 +56,13 @@ window.addEventListener("DOMContentLoaded", () => {
     const currentDatetimeButton = document.getElementById("current-datetime") as HTMLButtonElement;
     currentDatetimeButton.addEventListener('click', () => {
         const now = new Date();
-        const datetimeString = now.toLocaleString();
+        const datetimeString = now.toLocaleString(undefined, { timeZone: timeZone });
         display.value = datetimeString;
+    });
+    const toggleTimeZoneButton = document.getElementById("toggle-time-zone") as HTMLButtonElement;
+    toggleTimeZoneButton.addEventListener('click', () => {
+        timeZone = timeZone === 'UTC' ? Intl.DateTimeFormat().resolvedOptions().timeZone : 'UTC';
+        toggleTimeZoneButton.textContent = `Time Zone: ${timeZone}`;
     });
 });
 
