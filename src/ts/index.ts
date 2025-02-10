@@ -65,7 +65,10 @@ window.addEventListener("DOMContentLoaded", () => {
             button.style.display = scientificMode ? 'block' : 'none';
         });
     });
-
+const exitButton = document.getElementById("exit") as HTMLButtonElement;
+    exitButton.addEventListener('click',()=>{
+        window.close();
+    });
     // ... existing button event listeners
     // ... other functions
 });
