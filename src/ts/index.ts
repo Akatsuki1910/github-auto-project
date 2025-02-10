@@ -40,6 +40,17 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = currentInput;
         }
     });
+    const resetButton = document.getElementById("reset-calculator") as HTMLButtonElement;
+    resetButton.addEventListener('click', () => {
+        display.value = '';
+        currentInput = '';
+        currentExpression = '';
+        currentExpressionDisplay.textContent = '';
+        historyArr.length = 0;  // Clear history array
+        historyDiv.innerHTML = ''; // Clear history display
+        lastAnswer = 0;
+        memoryValue = 0;
+    });
     // existing code ...
 });
 // ... other existing functions
