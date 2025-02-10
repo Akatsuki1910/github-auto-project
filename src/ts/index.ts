@@ -12,6 +12,7 @@ let keypadVisible = true;
 let scientificMode = false;
 let theme = 'light';
 let fontSize = 16;
+let timeFormat24H = true;
 
 window.addEventListener("DOMContentLoaded", () => {
     // existing code
@@ -43,8 +44,13 @@ window.addEventListener("DOMContentLoaded", () => {
     const currentTimeButton = document.getElementById("current-time") as HTMLButtonElement;
     currentTimeButton.addEventListener('click', () => {
         const now = new Date();
-        const timeString = now.toLocaleTimeString();
+        const timeString = timeFormat24H ? now.toLocaleTimeString('en-GB') : now.toLocaleTimeString('en-US');
         display.value = timeString;
+    });
+    const toggle24hButton = document.getElementById("toggle-24h") as HTMLButtonElement;
+    toggle24hButton.addEventListener('click', () => {
+        timeFormat24H = !timeFormat24H;
+        toggle24hButton.textContent = timeFormat24H ? "24H" : "12H";
     });
 });
 
