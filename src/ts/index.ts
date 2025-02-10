@@ -26,6 +26,7 @@ let inputWidth = 'medium';
 let buttonColor = 'default';
 let inputFontSize = 16;
 let inputBackgroundColor = 'white';
+let inputBorderColor = 'black';
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
@@ -41,6 +42,16 @@ window.addEventListener("DOMContentLoaded", () => {
             inputFontSize = 16;
         }
         display.style.fontSize = inputFontSize + "px";
+    });
+
+    const toggleInputBorderColorButton = document.getElementById("toggle-input-border-color") as HTMLButtonElement;
+    toggleInputBorderColorButton.addEventListener('click', () => {
+        if (inputBorderColor === 'black') {
+            inputBorderColor = 'red';
+        } else {
+            inputBorderColor = 'black';
+        }
+        display.style.borderColor = inputBorderColor;
     });
     // ... other existing event listeners
 });
