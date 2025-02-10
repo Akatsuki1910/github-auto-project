@@ -77,5 +77,9 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         display.style.backgroundColor = inputBackgroundColor;
     });
+    const toggleInputReadonlyButton = document.getElementById("toggle-input-readonly") as HTMLButtonElement;
+    toggleInputReadonlyButton.addEventListener('click', () => {
+        display.readOnly = !display.readOnly;
+    });
     // ... other existing event listeners
 });
