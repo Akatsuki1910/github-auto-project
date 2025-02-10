@@ -41,3 +41,13 @@ body.light-theme {
 body.light-theme #calculator {
     border-color: #ccc;
 }
+
+body.high-contrast {
+    background-color: black;
+    color: white;
+}
+body.high-contrast button {
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+}
