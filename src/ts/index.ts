@@ -69,6 +69,10 @@ window.addEventListener("DOMContentLoaded", () => {
         // Placeholder for opening settings
         alert("Settings functionality will be added later.");
     });
+    const openInNewButton = document.getElementById("open-in-new") as HTMLButtonElement;
+    openInNewButton.addEventListener('click', () => {
+        window.open(window.location.href, '_blank');
+    });
     // existing code ...
 });
 // ... other existing functions
