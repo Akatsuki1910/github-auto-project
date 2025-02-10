@@ -21,11 +21,11 @@
     display: none; /* Initially hide scientific buttons */
 }
 
-body.dark-mode {
+body.dark-theme {
     background-color: #333;
     color: #fff;
 }
-body.dark-mode #calculator {
+body.dark-theme #calculator {
     border-color: #666;
 }
 .grid-view{
@@ -33,4 +33,11 @@ body.dark-mode #calculator {
 }
 .no-grid-view {
     display: block; /* or flex, depending on your desired layout */
+}
+body.light-theme {
+    background-color: #fff;
+    color: #000;
+}
+body.light-theme #calculator{
+    border-color: #ccc;
 }
