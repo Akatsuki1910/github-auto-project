@@ -25,6 +25,7 @@ let inputBorder = true;
 let inputWidth = 'medium';
 let buttonColor = 'default';
 let inputFontSize = 16;
+let inputBackgroundColor = 'white';
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
@@ -57,6 +58,24 @@ window.addEventListener("DOMContentLoaded", () => {
                 buttons.forEach(button => button.style.backgroundColor = '');
                 break;
         }
+    });
+    const toggleInputBackgroundColorButton = document.getElementById("toggle-input-background-color") as HTMLButtonElement;
+    toggleInputBackgroundColorButton.addEventListener('click', () => {
+        switch (inputBackgroundColor) {
+            case 'white':
+                inputBackgroundColor = 'lightblue';
+                break;
+            case 'lightblue':
+                inputBackgroundColor = 'lightgreen';
+                break;
+            case 'lightgreen':
+                inputBackgroundColor = 'lightyellow';
+                break;
+            case 'lightyellow':
+                inputBackgroundColor = 'white';
+                break;
+        }
+        display.style.backgroundColor = inputBackgroundColor;
     });
     // ... other existing event listeners
 });
