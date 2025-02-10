@@ -45,5 +45,9 @@ window.addEventListener("DOMContentLoaded", () => {
         calculatorVisible = !calculatorVisible;
         calculatorDiv.style.display = calculatorVisible ? 'grid' : 'none';
     });
+    const openHelpButton = document.getElementById("open-help") as HTMLButtonElement;
+    openHelpButton.addEventListener('click', () => {
+        window.open('https://www.example.com/calculator-help', '_blank');
+    });
     // ... other existing event listeners
 });
