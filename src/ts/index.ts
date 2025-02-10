@@ -50,4 +50,11 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
+    const exp10Button = document.getElementById("exp10") as HTMLButtonElement;
+    exp10Button.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            display.value = Math.pow(10, num).toString();
+        }
+    });
 });
