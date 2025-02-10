@@ -65,4 +65,11 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = Math.floor(num).toString();
         }
     });
+    const cbrtButton = document.getElementById("cbrt") as HTMLButtonElement;
+    cbrtButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            display.value = Math.cbrt(num).toString();
+        }
+    });
 });
