@@ -22,6 +22,7 @@ let highContrast = false;
 let audioEnabled = true;
 let calculatorSize = 'medium';
 let inputBorder = true;
+let inputWidth = 'medium';
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
@@ -63,6 +64,23 @@ window.addEventListener("DOMContentLoaded", () => {
         const display = document.getElementById('display') as HTMLInputElement;
         display.style.border = inputBorder ? '1px solid #ccc' : 'none';
     });
-
+    const toggleInputWidthButton = document.getElementById("toggle-input-width") as HTMLButtonElement;
+    toggleInputWidthButton.addEventListener('click', () => {
+        const display = document.getElementById('display') as HTMLInputElement;
+        switch (inputWidth) {
+            case 'small':
+                inputWidth = 'medium';
+                display.style.width = '200px';
+                break;
+            case 'medium':
+                inputWidth = 'large';
+                display.style.width = '300px';
+                break;
+            case 'large':
+                inputWidth = 'small';
+                display.style.width = '100px';
+                break;
+        }
+    });
     // ... other existing event listeners
 });
