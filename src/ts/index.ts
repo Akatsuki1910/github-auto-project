@@ -24,9 +24,18 @@ let calculatorSize = 'medium';
 let inputBorder = true;
 let inputWidth = 'medium';
 let buttonColor = 'default';
+let inputFontSize = 16;
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
+    const toggleInputFontSizeButton = document.getElementById("toggle-input-font-size") as HTMLButtonElement;
+    toggleInputFontSizeButton.addEventListener('click', () => {
+        inputFontSize += 2;
+        if (inputFontSize > 24) {
+            inputFontSize = 16;
+        }
+        display.style.fontSize = inputFontSize + "px";
+    });
     const toggleButtonColorButton = document.getElementById("toggle-button-color") as HTMLButtonElement;
     toggleButtonColorButton.addEventListener('click', () => {
         const buttons = document.querySelectorAll('#calculator button');
