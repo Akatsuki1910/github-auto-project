@@ -52,6 +52,12 @@ window.addEventListener("DOMContentLoaded", () => {
         timeFormat24H = !timeFormat24H;
         toggle24hButton.textContent = timeFormat24H ? "24H" : "12H";
     });
+    const currentDatetimeButton = document.getElementById("current-datetime") as HTMLButtonElement;
+    currentDatetimeButton.addEventListener('click', () => {
+        const now = new Date();
+        const datetimeString = now.toLocaleString();
+        display.value = datetimeString;
+    });
 });
 
 // ... other existing functions
