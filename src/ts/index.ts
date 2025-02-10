@@ -64,6 +64,11 @@ window.addEventListener("DOMContentLoaded", () => {
         fontSize = fontSize === 16 ? 24 : 16; // Toggle between 16px and 24px
         display.style.fontSize = fontSize + "px";
     })
+    const openSettingsButton = document.getElementById("open-settings") as HTMLButtonElement;
+    openSettingsButton.addEventListener('click', () => {
+        // Placeholder for opening settings
+        alert("Settings functionality will be added later.");
+    });
     // existing code ...
 });
 // ... other existing functions
