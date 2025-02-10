@@ -34,6 +34,12 @@ window.addEventListener("DOMContentLoaded", () => {
     toggleCalculatorButton.addEventListener('click', () => {
         calculatorDiv.style.display = calculatorDiv.style.display === 'none' ? 'grid' : 'none';
     });
+    const toggleDateButton = document.getElementById("toggle-date") as HTMLButtonElement;
+    toggleDateButton.addEventListener('click',()=>{
+        const now = new Date();
+        const dateString = now.toLocaleDateString();
+        display.value = dateString;
+    });
 });
 
 // ... other existing functions
