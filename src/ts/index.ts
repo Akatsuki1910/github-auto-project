@@ -32,67 +32,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ... other existing event listeners
     // ... existing code
-    const toggleTimeButton = document.getElementById("toggle-time") as HTMLButtonElement;
-    toggleTimeButton.addEventListener('click', () => {
-        showTime = !showTime;
-        if (showTime) {
-            setInterval(() => {
-                const now = new Date();
-                const timeString = timeFormat24H ? now.toLocaleTimeString('en-GB', { timeZone: timeZone }) : now.toLocaleTimeString('en-US', { timeZone: timeZone });
-                display.value = timeString;
-            }, 1000);
-        }
-    });
-    const toggleCalculatorButton = document.getElementById("toggle-calculator") as HTMLDivElement;
-    const calculatorDiv = document.getElementById("calculator") as HTMLDivElement;
-    toggleCalculatorButton.addEventListener('click', () => {
-        calculatorDiv.style.display = calculatorDiv.style.display === 'none' ? 'grid' : 'none';
-    });
-    const toggleDateButton = document.getElementById("toggle-date") as HTMLButtonElement;
-    toggleDateButton.addEventListener('click', () => {
-        const now = new Date();
-        const dateString = now.toLocaleDateString();
-        display.value = dateString;
-    });
-    const currentTimeButton = document.getElementById("current-time") as HTMLButtonElement;
-    currentTimeButton.addEventListener('click', () => {
-        const now = new Date();
-        const timeString = timeFormat24H ? now.toLocaleTimeString('en-GB', { timeZone: timeZone }) : now.toLocaleTimeString('en-US', { timeZone: timeZone });
-        display.value = timeString;
-    });
-    const toggle24hButton = document.getElementById("toggle-24h") as HTMLButtonElement;
-    toggle24hButton.addEventListener('click', () => {
-        timeFormat24H = !timeFormat24H;
-        toggle24hButton.textContent = timeFormat24H ? "24H" : "12H";
-    });
-    const currentDatetimeButton = document.getElementById("current-datetime") as HTMLButtonElement;
-    currentDatetimeButton.addEventListener('click', () => {
-        const now = new Date();
-        const datetimeString = now.toLocaleString(undefined, { timeZone: timeZone });
-        display.value = datetimeString;
-    });
-    const toggleTimeZoneButton = document.getElementById("toggle-time-zone") as HTMLButtonElement;
-    toggleTimeZoneButton.addEventListener('click', () => {
-        timeZone = timeZone === 'UTC' ? Intl.DateTimeFormat().resolvedOptions().timeZone : 'UTC';
-        toggleTimeZoneButton.textContent = `Time Zone: ${timeZone}`;
-    });
-    const currentYearButton = document.getElementById("current-year") as HTMLButtonElement;
-    currentYearButton.addEventListener('click', () => {
-        const now = new Date();
-        display.value = now.getFullYear().toString();
-    });
-    const randomButton = document.getElementById("random") as HTMLButtonElement;
-    randomButton.addEventListener('click', () => {
-        const randomNumber = Math.random();
-        display.value = randomNumber.toString();
-    });
-    const floorButton = document.getElementById("floor") as HTMLButtonElement;
-    floorButton.addEventListener('click', () => {
+    // ... existing functions
+    const ceilButton = document.getElementById("ceil") as HTMLButtonElement;
+    ceilButton.addEventListener('click', () => {
         const num = parseFloat(display.value);
         if (!isNaN(num)) {
-            display.value = Math.floor(num).toString();
+            display.value = Math.ceil(num).toString();
         }
     });
-});
 
-// ... other existing functions
+    // ... other existing event listeners
+});
