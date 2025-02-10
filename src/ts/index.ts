@@ -27,56 +27,13 @@ window.addEventListener("DOMContentLoaded", () => {
         toggleRadDegButton.textContent = mode.toUpperCase();
     });
 
-    const toggleFullscreenButton = document.getElementById("toggle-fullscreen") as HTMLButtonElement;
-    toggleFullscreenButton.addEventListener('click', () => {
-        if (document.fullscreenElement) {
-            document.exitFullscreen();
-        } else {
-            document.documentElement.requestFullscreen();
-        }
-    });
-    const duplicateButton = document.getElementById("duplicate") as HTMLButtonElement;
-    duplicateButton.addEventListener('click', () => {
-        if (currentInput !== "") {
-            currentInput += currentInput;
-            display.value = currentInput;
-        }
-    });
-    const resetButton = document.getElementById("reset-calculator") as HTMLButtonElement;
-    resetButton.addEventListener('click', () => {
-        display.value = '';
-        currentInput = '';
-        currentExpression = '';
-        currentExpressionDisplay.textContent = '';
-        historyArr.length = 0;  // Clear history array
-        historyDiv.innerHTML = ''; // Clear history display
-        lastAnswer = 0;
-        memoryValue = 0;
-    });
-    const toggleThemeButton = document.getElementById("toggle-theme") as HTMLButtonElement;
-    toggleThemeButton.addEventListener('click', () => {
-        theme = theme === 'light' ? 'dark' : 'light';
-        document.body.classList.toggle('dark-theme', theme === 'dark');
-        document.body.classList.toggle('light-theme', theme === 'light');
-    });
-    const toggleFontsizeButton = document.getElementById("toggle-fontsize") as HTMLButtonElement;
-    toggleFontsizeButton.addEventListener('click', () => {
-        fontSize = fontSize === 16 ? 24 : 16; // Toggle between 16px and 24px
-        display.style.fontSize = fontSize + "px";
-    })
-    const openSettingsButton = document.getElementById("open-settings") as HTMLButtonElement;
-    openSettingsButton.addEventListener('click', () => {
-        // Placeholder for opening settings
-        alert("Settings functionality will be added later.");
-    });
-    const openInNewButton = document.getElementById("open-in-new") as HTMLButtonElement;
-    openInNewButton.addEventListener('click', () => {
-        window.open(window.location.href, '_blank');
-    });
-    // existing code ...
-});
-// ... other existing functions
+    // ... other existing event listeners
 
-// ... (Existing code)
+    const toggleCalculatorButton = document.getElementById("toggle-calculator") as HTMLButtonElement;
+    const calculatorDiv = document.getElementById("calculator") as HTMLDivElement;
+    toggleCalculatorButton.addEventListener('click', () => {
+        calculatorDiv.style.display = calculatorDiv.style.display === 'none' ? 'grid' : 'none';
+    });
+});
 
 // ... other existing functions
