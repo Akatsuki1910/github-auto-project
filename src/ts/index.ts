@@ -10,6 +10,7 @@ let memoryValue = 0;
 let mode = 'rad';
 let keypadVisible = true;
 let scientificMode = false;
+let theme = 'light';
 
 window.addEventListener("DOMContentLoaded", () => {
     // existing code
@@ -50,6 +51,12 @@ window.addEventListener("DOMContentLoaded", () => {
         historyDiv.innerHTML = ''; // Clear history display
         lastAnswer = 0;
         memoryValue = 0;
+    });
+    const toggleThemeButton = document.getElementById("toggle-theme") as HTMLButtonElement;
+    toggleThemeButton.addEventListener('click', () => {
+        theme = theme === 'light' ? 'dark' : 'light';
+        document.body.classList.toggle('dark-theme', theme === 'dark');
+        document.body.classList.toggle('light-theme', theme === 'light');
     });
     // existing code ...
 });
