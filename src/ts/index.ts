@@ -30,7 +30,6 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // ... other existing event listeners
-
     const toggleCalculatorButton = document.getElementById("toggle-calculator") as HTMLButtonElement;
     const calculatorDiv = document.getElementById("calculator") as HTMLDivElement;
     toggleCalculatorButton.addEventListener('click', () => {
@@ -68,6 +67,11 @@ window.addEventListener("DOMContentLoaded", () => {
     currentYearButton.addEventListener('click', () => {
         const now = new Date();
         display.value = now.getFullYear().toString();
+    });
+    const randomButton = document.getElementById("random") as HTMLButtonElement;
+    randomButton.addEventListener('click', () => {
+        const randomNumber = Math.random();
+        display.value = randomNumber.toString();
     });
 });
 
