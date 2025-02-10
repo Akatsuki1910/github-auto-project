@@ -24,6 +24,15 @@ window.addEventListener("DOMContentLoaded", () => {
         mode = mode === 'rad' ? 'deg' : 'rad';
         toggleRadDegButton.textContent = mode.toUpperCase();
     });
+
+    const toggleFullscreenButton = document.getElementById("toggle-fullscreen") as HTMLButtonElement;
+    toggleFullscreenButton.addEventListener('click', () => {
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        } else {
+            document.documentElement.requestFullscreen();
+        }
+    });
     // existing code ...
 });
 // ... other existing functions
