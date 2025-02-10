@@ -43,7 +43,7 @@ window.addEventListener("DOMContentLoaded", () => {
             }, 1000);
         }
     });
-        const toggleCalculatorButton = document.getElementById("toggle-calculator") as HTMLButtonElement;
+    const toggleCalculatorButton = document.getElementById("toggle-calculator") as HTMLDivElement;
     const calculatorDiv = document.getElementById("calculator") as HTMLDivElement;
     toggleCalculatorButton.addEventListener('click', () => {
         calculatorDiv.style.display = calculatorDiv.style.display === 'none' ? 'grid' : 'none';
@@ -85,6 +85,13 @@ window.addEventListener("DOMContentLoaded", () => {
     randomButton.addEventListener('click', () => {
         const randomNumber = Math.random();
         display.value = randomNumber.toString();
+    });
+    const floorButton = document.getElementById("floor") as HTMLButtonElement;
+    floorButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            display.value = Math.floor(num).toString();
+        }
     });
 });
 
