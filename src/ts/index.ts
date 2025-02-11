@@ -33,4 +33,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpressionDisplay.textContent = currentExpression;
         currentInput = "";
     });
+
+    const expButton = document.getElementById("exp") as HTMLButtonElement;
+    expButton.addEventListener('click', () => {
+        currentExpression += 'Math.exp('; 
+        currentExpressionDisplay.textContent = currentExpression;
+        currentInput = "";
+    });
 });
