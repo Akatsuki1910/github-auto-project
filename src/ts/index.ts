@@ -27,6 +27,7 @@ let buttonColor = 'default';
 let inputFontSize = 16;
 let inputBackgroundColor = 'white';
 let inputBorderColor = 'black';
+let inputBorderStyle = 'solid';
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
@@ -65,6 +66,15 @@ window.addEventListener("DOMContentLoaded", () => {
     const openGithubButton = document.getElementById("open-github") as HTMLButtonElement;
     openGithubButton.addEventListener('click', () => {
         window.open('https://github.com', '_blank');
+    });
+    const toggleInputBorderStyleButton = document.getElementById("toggle-input-border-style") as HTMLButtonElement;
+    toggleInputBorderStyleButton.addEventListener('click', () => {
+        if (inputBorderStyle === 'solid') {
+            inputBorderStyle = 'dashed';
+        } else {
+            inputBorderStyle = 'solid';
+        }
+        display.style.borderStyle = inputBorderStyle;
     });
     // ... other existing event listeners
 });
