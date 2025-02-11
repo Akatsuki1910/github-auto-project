@@ -32,4 +32,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpressionDisplay.textContent = currentExpression;
         currentInput = "";
     });
+
+    const sinButton = document.getElementById("sin") as HTMLButtonElement;
+    sinButton.addEventListener('click', () => {
+        currentExpression += 'sin('; // Add sin function to expression
+        currentExpressionDisplay.textContent = currentExpression;
+        currentInput = "";
+    });
 });
