@@ -53,5 +53,14 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         display.style.borderColor = inputBorderColor;
     });
+    const toggleInputBackgroundColorButton = document.getElementById("toggle-input-background") as HTMLButtonElement;
+    toggleInputBackgroundColorButton.addEventListener('click', () => {
+        if (inputBackgroundColor === 'white') {
+            inputBackgroundColor = 'lightblue';
+        } else {
+            inputBackgroundColor = 'white';
+        }
+        display.style.backgroundColor = inputBackgroundColor;
+    });
     // ... other existing event listeners
 });
