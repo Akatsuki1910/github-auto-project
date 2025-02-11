@@ -28,53 +28,18 @@ let inputFontSize = 16;
 let inputBackgroundColor = 'white';
 let inputBorderColor = 'black';
 let inputBorderStyle = 'solid';
+let inputBorderWidth = 1;
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
-    const openNewWindowButton = document.getElementById("open-new-window") as HTMLButtonElement;
-    openNewWindowButton.addEventListener('click', () => {
-        window.open('https://www.example.com', '_blank');
+    const toggleInputBorderWidthButton = document.getElementById("toggle-input-border-width") as HTMLButtonElement;
+    toggleInputBorderWidthButton.addEventListener('click', () => {
+        inputBorderWidth++;
+        if (inputBorderWidth > 5) {
+            inputBorderWidth = 1;
+        }
+        display.style.borderWidth = inputBorderWidth + "px";
     });
 
-    const toggleInputFontSizeButton = document.getElementById("toggle-input-font-size") as HTMLButtonElement;
-    toggleInputFontSizeButton.addEventListener('click', () => {
-        inputFontSize += 2;
-        if (inputFontSize > 24) {
-            inputFontSize = 16;
-        }
-        display.style.fontSize = inputFontSize + "px";
-    });
-
-    const toggleInputBorderColorButton = document.getElementById("toggle-input-border-color") as HTMLButtonElement;
-    toggleInputBorderColorButton.addEventListener('click', () => {
-        if (inputBorderColor === 'black') {
-            inputBorderColor = 'red';
-        } else {
-            inputBorderColor = 'black';
-        }
-        display.style.borderColor = inputBorderColor;
-    });
-    const toggleInputBackgroundColorButton = document.getElementById("toggle-input-background") as HTMLButtonElement;
-    toggleInputBackgroundColorButton.addEventListener('click', () => {
-        if (inputBackgroundColor === 'white') {
-            inputBackgroundColor = 'lightblue';
-        } else {
-            inputBackgroundColor = 'white';
-        }
-        display.style.backgroundColor = inputBackgroundColor;
-    });
-    const openGithubButton = document.getElementById("open-github") as HTMLButtonElement;
-    openGithubButton.addEventListener('click', () => {
-        window.open('https://github.com', '_blank');
-    });
-    const toggleInputBorderStyleButton = document.getElementById("toggle-input-border-style") as HTMLButtonElement;
-    toggleInputBorderStyleButton.addEventListener('click', () => {
-        if (inputBorderStyle === 'solid') {
-            inputBorderStyle = 'dashed';
-        } else {
-            inputBorderStyle = 'solid';
-        }
-        display.style.borderStyle = inputBorderStyle;
-    });
     // ... other existing event listeners
 });
