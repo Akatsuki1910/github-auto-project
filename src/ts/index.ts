@@ -19,24 +19,16 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // ... other existing event listeners
-
-    const powerButton = document.getElementById("power") as HTMLButtonElement;
-    powerButton.addEventListener('click', () => {
-        currentExpression += '**';
+    const openParenButton = document.getElementById("open-paren") as HTMLButtonElement;
+    openParenButton.addEventListener('click', () => {
+        currentExpression += '(';
         currentExpressionDisplay.textContent = currentExpression;
         currentInput = "";
     });
 
-    const logButton = document.getElementById("log") as HTMLButtonElement;
-    logButton.addEventListener('click', () => {
-        currentExpression += 'Math.log10('; // Base 10 logarithm
-        currentExpressionDisplay.textContent = currentExpression;
-        currentInput = "";
-    });
-
-    const expButton = document.getElementById("exp") as HTMLButtonElement;
-    expButton.addEventListener('click', () => {
-        currentExpression += 'Math.exp('; 
+    const closeParenButton = document.getElementById("close-paren") as HTMLButtonElement;
+    closeParenButton.addEventListener('click', () => {
+        currentExpression += ')';
         currentExpressionDisplay.textContent = currentExpression;
         currentInput = "";
     });
