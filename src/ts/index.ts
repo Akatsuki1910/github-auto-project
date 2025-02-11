@@ -73,6 +73,16 @@ window.addEventListener("DOMContentLoaded", () => {
             }
         }
     });
+        const binaryButton = document.getElementById("binary") as HTMLButtonElement;
+    binaryButton.addEventListener('click', () => {
+      try {
+          const num = parseInt(currentInput, 10);
+        currentInput = num.toString(2);
+        display.value = currentInput;
+      } catch (error) {
+        display.value = "Error";
+      }
+    });
 
     // ... other existing event listeners
 });
