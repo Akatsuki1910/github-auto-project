@@ -72,6 +72,11 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = "Error";
       }
     });
-        const openParenButton = document.getElementById("open-paren") as HTMLButtonElement;
-    // ... (rest of the code)
+        //Sign function
+        const signButton = document.getElementById("sign") as HTMLButtonElement;
+        signButton.addEventListener('click', () =>{
+            const num = parseFloat(currentInput);
+            currentInput = Math.sign(num).toString();
+            display.value = currentInput;
+        });
 });
