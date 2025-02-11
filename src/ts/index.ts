@@ -50,6 +50,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpression = currentExpression.concat('%');
         display.value = currentInput;
     });
+    const eButton = document.getElementById("e") as HTMLButtonElement;
+    eButton.addEventListener('click', () => {
+        currentInput = currentInput.concat(Math.E.toString());
+        display.value = currentInput;
+    });
 
     // ... other existing event listeners
 });
