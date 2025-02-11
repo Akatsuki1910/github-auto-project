@@ -60,6 +60,19 @@ window.addEventListener("DOMContentLoaded", () => {
         historyArr.length = 0; // Clear the history array
         historyDiv.innerHTML = ''; // Clear the history display
     });
+    const baseConversionButton = document.getElementById("base-conversion") as HTMLButtonElement;
+    baseConversionButton.addEventListener('click', () => {
+        const base = prompt("Enter base (2-36):", "10");
+        if (base !== null) {
+            try {
+                const num = parseInt(currentInput, 10);
+                currentInput = num.toString(parseInt(base, 10));
+                display.value = currentInput;
+            } catch (error) {
+                display.value = "Error";
+            }
+        }
+    });
 
     // ... other existing event listeners
 });
