@@ -7,8 +7,6 @@ const historyDiv = document.getElementById("history") as HTMLDivElement;
 const historyArr: string[] = [];
 let lastAnswer = 0;
 let memoryValue = 0;
-let mode = 'rad';
-// ... other existing variables
 let displayColor = "black";
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -23,6 +21,12 @@ window.addEventListener("DOMContentLoaded", () => {
     const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
     memoryStoreButton.addEventListener('click', () => {
         memoryValue = parseFloat(display.value);
+    });
+
+    const memoryRecallButton = document.getElementById("memory-recall") as HTMLButtonElement;
+    memoryRecallButton.addEventListener('click', () => {
+        display.value = memoryValue.toString();
+        currentInput = display.value;
     });
 
     // ... other existing event listeners
