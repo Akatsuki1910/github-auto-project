@@ -12,6 +12,7 @@ let mode = 'rad';
 let displayFontSize = 20;
 let displayBackgroundColor = "white";
 let displayBorderRadius = 0;
+let displayBorderColor = "black";
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
@@ -34,6 +35,12 @@ window.addEventListener("DOMContentLoaded", () => {
     toggleDisplayBorderRadiusButton.addEventListener('click', () => {
         displayBorderRadius = (displayBorderRadius === 0) ? 10 : 0;
         display.style.borderRadius = displayBorderRadius + "px";
+    });
+
+    const toggleDisplayBorderButton = document.getElementById("toggle-display-border") as HTMLButtonElement;
+    toggleDisplayBorderButton.addEventListener('click', () => {
+        displayBorderColor = displayBorderColor === "black" ? "red" : "black";
+        display.style.borderColor = displayBorderColor;
     });
 
     // ... other existing event listeners
