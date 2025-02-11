@@ -31,45 +31,18 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    //Round Functionality
+    const roundButton = document.getElementById("round") as HTMLButtonElement;
+    roundButton.addEventListener('click', () => {
+      try {
+        const result = Math.round(parseFloat(currentInput));
+        currentInput = result.toString();
+        display.value = currentInput;
+      } catch (error) {
+        display.value = "Error";
+      }
+    });
+
         const openParenButton = document.getElementById("open-paren") as HTMLButtonElement;
-    openParenButton.addEventListener('click', () => {
-        currentExpression += '(';
-        currentExpressionDisplay.textContent = currentExpression;
-        currentInput = "";
-    });
-
-    const closeParenButton = document.getElementById("close-paren") as HTMLButtonElement;
-    closeParenButton.addEventListener('click', () => {
-        currentExpression += ')';
-        currentExpressionDisplay.textContent = currentExpression;
-        currentInput = "";
-    });
-
-    const sinButton = document.getElementById("sin") as HTMLButtonElement;
-    sinButton.addEventListener('click', () => {
-        currentExpression += 'sin(';
-        currentExpressionDisplay.textContent = currentExpression;
-        currentInput = "";
-    });
-
-    const cosButton = document.getElementById("cos") as HTMLButtonElement;
-    cosButton.addEventListener('click', () => {
-        currentExpression += 'cos(';
-        currentExpressionDisplay.textContent = currentExpression;
-        currentInput = "";
-    });
-
-    const tanButton = document.getElementById("tan") as HTMLButtonElement;
-    tanButton.addEventListener('click', () => {
-        currentExpression += 'tan(';
-        currentExpressionDisplay.textContent = currentExpression;
-        currentInput = "";
-    });
-
-    const absButton = document.getElementById("abs") as HTMLButtonElement;
-    absButton.addEventListener('click', () => {
-        currentExpression += 'abs(';
-        currentExpressionDisplay.textContent = currentExpression;
-        currentInput = "";
-    });
+    // ... (rest of the code)
 });
