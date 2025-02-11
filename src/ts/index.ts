@@ -28,6 +28,13 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = memoryValue.toString();
         currentInput = display.value;
     });
+    const percentButton = document.getElementById("percent") as HTMLButtonElement;
+    percentButton.addEventListener('click', () => {
+        const currentValue = parseFloat(display.value);
+        const percentValue = currentValue / 100;
+        display.value = percentValue.toString();
+        currentInput = display.value;
+    });
 
     // ... other existing event listeners
 });
