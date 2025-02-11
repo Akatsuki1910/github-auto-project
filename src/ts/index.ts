@@ -11,6 +11,7 @@ let mode = 'rad';
 // ... other existing variables
 let displayFontSize = 20;
 let displayBackgroundColor = "white";
+let displayBorderRadius = 0;
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
@@ -27,6 +28,12 @@ window.addEventListener("DOMContentLoaded", () => {
     toggleDisplayBackgroundColor.addEventListener('click', () => {
         displayBackgroundColor = displayBackgroundColor === "white" ? "lightblue" : "white";
         display.style.backgroundColor = displayBackgroundColor;
+    });
+
+    const toggleDisplayBorderRadiusButton = document.getElementById("toggle-display-border-radius") as HTMLButtonElement;
+    toggleDisplayBorderRadiusButton.addEventListener('click', () => {
+        displayBorderRadius = (displayBorderRadius === 0) ? 10 : 0;
+        display.style.borderRadius = displayBorderRadius + "px";
     });
 
     // ... other existing event listeners
