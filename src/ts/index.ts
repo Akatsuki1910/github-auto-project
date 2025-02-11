@@ -97,4 +97,10 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = "Error";
       }
     });
+
+    const randButton = document.getElementById("rand") as HTMLButtonElement;
+    randButton.addEventListener('click', () => {
+        currentInput = Math.random().toString();
+        display.value = currentInput;
+    });
 });
