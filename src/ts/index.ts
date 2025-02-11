@@ -46,4 +46,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpressionDisplay.textContent = currentExpression;
         currentInput = "";
     });
+
+    const tanButton = document.getElementById("tan") as HTMLButtonElement;
+    tanButton.addEventListener('click', () => {
+        currentExpression += 'tan(';
+        currentExpressionDisplay.textContent = currentExpression;
+        currentInput = "";
+    });
 });
