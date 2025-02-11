@@ -55,6 +55,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = currentInput.concat(Math.E.toString());
         display.value = currentInput;
     });
+    const clearHistoryButton = document.getElementById("clear-history") as HTMLButtonElement;
+    clearHistoryButton.addEventListener('click', () => {
+        historyArr.length = 0; // Clear the history array
+        historyDiv.innerHTML = ''; // Clear the history display
+    });
 
     // ... other existing event listeners
 });
