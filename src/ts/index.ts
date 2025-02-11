@@ -40,4 +40,14 @@ window.addEventListener("DOMContentLoaded", () => {
     exitButton.addEventListener('click',()=>{
         window.close();
     })
+
+    const exp10Button = document.getElementById("exp10") as HTMLButtonElement;
+    exp10Button.addEventListener('click', () => {
+        try {
+            currentInput = Math.pow(10, parseFloat(currentInput)).toString();
+            display.value = currentInput;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
 });
