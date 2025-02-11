@@ -18,49 +18,12 @@ window.addEventListener("DOMContentLoaded", () => {
         display.style.color = displayColor;
     });
 
-    const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
-    memoryStoreButton.addEventListener('click', () => {
-        memoryValue = parseFloat(display.value);
-    });
-
-    const memoryRecallButton = document.getElementById("memory-recall") as HTMLButtonElement;
-    memoryRecallButton.addEventListener('click', () => {
-        display.value = memoryValue.toString();
-        currentInput = display.value;
-    });
-    const percentButton = document.getElementById("percent") as HTMLButtonElement;
-    percentButton.addEventListener('click', () => {
-        const currentValue = parseFloat(display.value);
-        const percentValue = currentValue / 100;
-        display.value = percentValue.toString();
-        currentInput = display.value;
-    });
-
-    const squareRootButton = document.getElementById("square-root") as HTMLButtonElement;
-    squareRootButton.addEventListener('click', () => {
-        const currentValue = parseFloat(display.value);
-        const squareRootValue = Math.sqrt(currentValue);
-        display.value = squareRootValue.toString();
-        currentInput = display.value;
-    });
-    const piButton = document.getElementById("pi") as HTMLButtonElement;
-    piButton.addEventListener('click', () => {
-        display.value = Math.PI.toString();
-        currentInput = display.value;
-    });
-    const factorialButton = document.getElementById("factorial") as HTMLButtonElement;
-    factorialButton.addEventListener('click', () => {
-        const currentValue = parseInt(display.value);
-        if (isNaN(currentValue) || currentValue < 0) {
-          display.value = "Error";
-        } else {
-            let result = 1;
-            for (let i = 1; i <= currentValue; i++) {
-              result *= i;
-            }
-            display.value = result.toString();
-          }
-          currentInput = display.value;
-    });
     // ... other existing event listeners
+
+    const powerButton = document.getElementById("power") as HTMLButtonElement;
+    powerButton.addEventListener('click', () => {
+        currentExpression += '**';
+        currentExpressionDisplay.textContent = currentExpression;
+        currentInput = "";
+    });
 });
