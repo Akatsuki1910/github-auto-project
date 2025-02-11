@@ -43,6 +43,17 @@ window.addEventListener("DOMContentLoaded", () => {
       }
     });
 
+    const cubeButton = document.getElementById("cube") as HTMLButtonElement;
+    cubeButton.addEventListener('click', () => {
+        try {
+            const result = Math.pow(parseFloat(currentInput), 3);
+            currentInput = result.toString();
+            display.value = currentInput;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
+
         const openParenButton = document.getElementById("open-paren") as HTMLButtonElement;
     // ... (rest of the code)
 });
