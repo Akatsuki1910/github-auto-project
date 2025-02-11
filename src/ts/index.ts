@@ -26,4 +26,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpressionDisplay.textContent = currentExpression;
         currentInput = "";
     });
+
+    const logButton = document.getElementById("log") as HTMLButtonElement;
+    logButton.addEventListener('click', () => {
+        currentExpression += 'Math.log10('; // Base 10 logarithm
+        currentExpressionDisplay.textContent = currentExpression;
+        currentInput = "";
+    });
 });
