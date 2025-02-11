@@ -35,7 +35,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
     const sinButton = document.getElementById("sin") as HTMLButtonElement;
     sinButton.addEventListener('click', () => {
-        currentExpression += 'sin('; // Add sin function to expression
+        currentExpression += 'sin(';
+        currentExpressionDisplay.textContent = currentExpression;
+        currentInput = "";
+    });
+
+    const cosButton = document.getElementById("cos") as HTMLButtonElement;
+    cosButton.addEventListener('click', () => {
+        currentExpression += 'cos(';
         currentExpressionDisplay.textContent = currentExpression;
         currentInput = "";
     });
