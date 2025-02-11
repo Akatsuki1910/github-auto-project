@@ -19,7 +19,19 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // ... other existing event listeners
-    const openParenButton = document.getElementById("open-paren") as HTMLButtonElement;
+    //Added Inverse Functionality
+    const inverseButton = document.getElementById("inverse") as HTMLButtonElement;
+    inverseButton.addEventListener('click', () => {
+        try {
+            const result = 1 / parseFloat(currentInput);
+            currentInput = result.toString();
+            display.value = currentInput;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
+
+        const openParenButton = document.getElementById("open-paren") as HTMLButtonElement;
     openParenButton.addEventListener('click', () => {
         currentExpression += '(';
         currentExpressionDisplay.textContent = currentExpression;
