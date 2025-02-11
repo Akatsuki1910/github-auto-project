@@ -20,5 +20,10 @@ window.addEventListener("DOMContentLoaded", () => {
         display.style.color = displayColor;
     });
 
+    const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
+    memoryStoreButton.addEventListener('click', () => {
+        memoryValue = parseFloat(display.value);
+    });
+
     // ... other existing event listeners
 });
