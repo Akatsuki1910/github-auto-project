@@ -88,4 +88,13 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    const floorButton = document.getElementById("floor") as HTMLButtonElement;
+    floorButton.addEventListener('click', () => {
+      try {
+        currentInput = Math.floor(parseFloat(currentInput)).toString();
+        display.value = currentInput;
+      } catch (error) {
+        display.value = "Error";
+      }
+    });
 });
