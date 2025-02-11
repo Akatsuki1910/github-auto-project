@@ -53,7 +53,25 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    const sqrtNButton = document.getElementById("sqrt-n") as HTMLButtonElement;
+    sqrtNButton.addEventListener('click', () => {
+      try {
+        const n = parseFloat(prompt("Enter the root (e.g., 2 for square root, 3 for cube root):", "2") || "2");
+        const x = parseFloat(currentInput);
 
+        if (isNaN(n) || isNaN(x)) {
+          display.value = "Invalid input";
+          return;
+        }
+
+        const result = Math.pow(x, 1/n);
+        currentInput = result.toString();
+        display.value = currentInput;
+
+      } catch (error) {
+        display.value = "Error";
+      }
+    });
         const openParenButton = document.getElementById("open-paren") as HTMLButtonElement;
     // ... (rest of the code)
 });
