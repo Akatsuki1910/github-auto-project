@@ -10,6 +10,7 @@ let memoryValue = 0;
 let mode = 'rad';
 // ... other existing variables
 let displayFontSize = 20;
+let displayBackgroundColor = "white";
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
@@ -21,6 +22,11 @@ window.addEventListener("DOMContentLoaded", () => {
             displayFontSize = 20;
         }
         display.style.fontSize = displayFontSize + "px";
+    });
+    const toggleDisplayBackgroundColor = document.getElementById("toggle-display-background-color") as HTMLButtonElement;
+    toggleDisplayBackgroundColor.addEventListener('click', () => {
+        displayBackgroundColor = displayBackgroundColor === "white" ? "lightblue" : "white";
+        display.style.backgroundColor = displayBackgroundColor;
     });
 
     // ... other existing event listeners
