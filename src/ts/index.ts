@@ -24,6 +24,16 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = currentInput.concat(currentInput);
         display.value = currentInput;
     });
+    const squareButton = document.getElementById("square") as HTMLButtonElement;
+    squareButton.addEventListener('click', () => {
+        try {
+            const num = parseFloat(currentInput);
+            currentInput = (num * num).toString();
+            display.value = currentInput;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
 
     // ... other existing event listeners
 });
