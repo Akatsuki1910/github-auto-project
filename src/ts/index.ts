@@ -44,6 +44,12 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    const modButton = document.getElementById("mod") as HTMLButtonElement;
+    modButton.addEventListener('click', () => {
+        currentInput = currentInput.concat('%');
+        currentExpression = currentExpression.concat('%');
+        display.value = currentInput;
+    });
 
     // ... other existing event listeners
 });
