@@ -36,5 +36,12 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = display.value;
     });
 
+    const squareRootButton = document.getElementById("square-root") as HTMLButtonElement;
+    squareRootButton.addEventListener('click', () => {
+        const currentValue = parseFloat(display.value);
+        const squareRootValue = Math.sqrt(currentValue);
+        display.value = squareRootValue.toString();
+        currentInput = display.value;
+    });    
     // ... other existing event listeners
 });
