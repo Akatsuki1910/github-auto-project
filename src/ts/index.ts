@@ -35,4 +35,9 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+
+    const exitButton = document.getElementById("exit") as HTMLButtonElement;
+    exitButton.addEventListener('click',()=>{
+        window.close();
+    })
 });
