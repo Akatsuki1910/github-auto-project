@@ -29,6 +29,7 @@ let inputBackgroundColor = 'white';
 let inputBorderColor = 'black';
 let inputBorderStyle = 'solid';
 let inputBorderWidth = 1;
+let inputPadding = 5; // Added inputPadding variable
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
@@ -41,5 +42,13 @@ window.addEventListener("DOMContentLoaded", () => {
         display.style.borderWidth = inputBorderWidth + "px";
     });
 
+    const toggleInputPaddingButton = document.getElementById("toggle-input-padding") as HTMLButtonElement; // Added button for padding
+    toggleInputPaddingButton.addEventListener('click', () => { // Added event listener for padding
+        inputPadding++;
+        if(inputPadding > 20){
+            inputPadding = 5;
+        }
+        display.style.padding = inputPadding + "px";
+    });
     // ... other existing event listeners
 });
