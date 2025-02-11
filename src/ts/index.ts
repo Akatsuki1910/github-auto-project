@@ -62,5 +62,9 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         display.style.backgroundColor = inputBackgroundColor;
     });
+    const openGithubButton = document.getElementById("open-github") as HTMLButtonElement;
+    openGithubButton.addEventListener('click', () => {
+        window.open('https://github.com', '_blank');
+    });
     // ... other existing event listeners
 });
