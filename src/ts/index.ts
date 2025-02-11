@@ -42,6 +42,11 @@ window.addEventListener("DOMContentLoaded", () => {
         const squareRootValue = Math.sqrt(currentValue);
         display.value = squareRootValue.toString();
         currentInput = display.value;
-    });    
+    });
+    const piButton = document.getElementById("pi") as HTMLButtonElement;
+    piButton.addEventListener('click', () => {
+        display.value = Math.PI.toString();
+        currentInput = display.value;
+    });
     // ... other existing event listeners
 });
