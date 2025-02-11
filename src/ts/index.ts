@@ -53,4 +53,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpressionDisplay.textContent = currentExpression;
         currentInput = "";
     });
+
+    const absButton = document.getElementById("abs") as HTMLButtonElement;
+    absButton.addEventListener('click', () => {
+        currentExpression += 'abs(';
+        currentExpressionDisplay.textContent = currentExpression;
+        currentInput = "";
+    });
 });
