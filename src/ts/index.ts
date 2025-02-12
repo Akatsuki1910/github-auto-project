@@ -79,4 +79,14 @@ window.addEventListener("DOMContentLoaded", () => {
             console.error('Failed to copy: ', err);
         });
     });
+
+    const inverseSinButton = document.getElementById("inverse-sin") as HTMLButtonElement;
+    inverseSinButton.addEventListener('click', () => {
+        try {
+            currentInput = Math.asin(parseFloat(currentInput)).toString();
+            display.value = currentInput;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
 });
