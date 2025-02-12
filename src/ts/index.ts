@@ -44,80 +44,23 @@ window.addEventListener("DOMContentLoaded", () => {
     })
 
     // ... other event listeners
-    const nthRootButton = document.getElementById("nth-root") as HTMLButtonElement;
-    nthRootButton.addEventListener('click', () => {
-      if (currentExpression.length > 0 && currentInput.length > 0) {
-        try {
-          const base = parseFloat(currentInput);
-          currentExpression = `Math.pow(${currentExpression}, 1/${base})`;
-          currentInput = eval(currentExpression).toString();
-          display.value = currentInput;
-          currentExpression = currentInput;
-        } catch (error) {
-          display.value = "Error";
-        }
-      }
-    });
-        const expm1Button = document.getElementById("expm1") as HTMLButtonElement;
-    expm1Button.addEventListener('click', () => {
-        try {
-            currentInput = Math.expm1(parseFloat(currentInput)).toString();
-            display.value = currentInput;
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-     const deleteLastEntryButton = document.getElementById("delete-last-entry") as HTMLButtonElement;
-    deleteLastEntryButton.addEventListener('click', () => {
-        historyArr.pop();
-        historyDiv.innerHTML = historyArr.join('<br>');
-    });
-    const inverseCosButton = document.getElementById("inverse-cos") as HTMLButtonElement;
-    inverseCosButton.addEventListener('click', () => {
-        try {
-            currentInput = Math.acos(parseFloat(currentInput)).toString();
-            display.value = currentInput;
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-    const inverseTanButton = document.getElementById("inverse-tan") as HTMLButtonElement;
-    inverseTanButton.addEventListener('click', () => {
-        try {
-            currentInput = Math.atan(parseFloat(currentInput)).toString();
-            display.value = currentInput;
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-    const clearEntryButton = document.getElementById("clear-entry") as HTMLButtonElement;
-    clearEntryButton.addEventListener('click', () => {
-        currentInput = '';
-        display.value = currentInput;
-    });
-    const allClearButton = document.getElementById("all-clear") as HTMLButtonElement;
-    allClearButton.addEventListener('click', () => {
-        currentInput = '';
-        currentExpression = '';
-        display.value = currentInput;
-        currentExpressionDisplay.textContent = '';        
-    });
-    const squaredButton = document.getElementById("squared") as HTMLButtonElement;
-    squaredButton.addEventListener('click', () => {
-        try {
-            const num = parseFloat(currentInput);
-            currentInput = (num * num).toString();
-            display.value = currentInput;
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-//sign-toggle
+// ... other event listeners
     const signToggleButton = document.getElementById("sign-toggle") as HTMLButtonElement;
     signToggleButton.addEventListener('click',()=>{
         isNegative = !isNegative;
         currentInput = isNegative ? `-${currentInput}`:Math.abs(parseFloat(currentInput)).toString();
         display.value = currentInput;
     })
+    const leftShiftButton = document.getElementById("left-shift") as HTMLButtonElement;
+    leftShiftButton.addEventListener('click', () => {
+        try {
+            const num = parseInt(currentInput);
+            currentInput = (num << 1).toString();
+            display.value = currentInput;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
+
     // ... existing event listeners
 });
