@@ -94,6 +94,13 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = '';
         display.value = currentInput;
     });
+    const allClearButton = document.getElementById("all-clear") as HTMLButtonElement;
+    allClearButton.addEventListener('click', () => {
+        currentInput = '';
+        currentExpression = '';
+        display.value = currentInput;
+        currentExpressionDisplay.textContent = '';        
+    });
 
     // ... existing event listeners
 });
