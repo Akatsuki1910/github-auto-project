@@ -78,6 +78,15 @@ const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonE
 memoryClearButton.addEventListener('click', () => {
     memoryValue = 0;
 });
+const swapButton = document.getElementById("swap") as HTMLButtonElement;
+swapButton.addEventListener('click', () => {
+    if (currentInput.length >= 2) {
+        const lastTwo = currentInput.slice(-2);
+        const swapped = lastTwo[1] + lastTwo[0];
+        currentInput = currentInput.slice(0, -2) + swapped;
+        display.value = currentInput;
+    }
+});
 
     // ... existing event listeners
 });
