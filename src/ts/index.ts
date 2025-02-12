@@ -66,6 +66,11 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+     const deleteLastEntryButton = document.getElementById("delete-last-entry") as HTMLButtonElement;
+    deleteLastEntryButton.addEventListener('click', () => {
+        historyArr.pop();
+        historyDiv.innerHTML = historyArr.join('<br>');
+    });
 
     // ... existing event listeners
 });
