@@ -74,6 +74,10 @@ toggleCalculatorThemeButton.addEventListener('click', () => {
     isDarkTheme = !isDarkTheme;
     document.body.classList.toggle("dark-theme", isDarkTheme);
 });
+const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonElement;
+memoryClearButton.addEventListener('click', () => {
+    memoryValue = 0;
+});
 
     // ... existing event listeners
 });
