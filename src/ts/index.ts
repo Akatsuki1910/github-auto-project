@@ -71,6 +71,15 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    const calculatorDiv = document.getElementById("calculator") as HTMLDivElement;
+    const toggleCalculatorVisibilityButton = document.getElementById("toggle-calculator-visibility") as HTMLButtonElement;
+    toggleCalculatorVisibilityButton.addEventListener('click', () => {
+        if (calculatorDiv.style.display === "none") {
+            calculatorDiv.style.display = "block";
+        } else {
+            calculatorDiv.style.display = "none";
+        }
+    });
 
     // ... existing event listeners
 });
