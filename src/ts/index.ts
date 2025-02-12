@@ -93,6 +93,11 @@ randomNumberButton.addEventListener('click', () => {
   currentInput = randomNumber.toString();
   display.value = currentInput;
 });
+const dateButton = document.getElementById("date") as HTMLButtonElement;
+dateButton.addEventListener('click', () => {
+    currentInput = new Date().toLocaleDateString();
+    display.value = currentInput;
+});
 
     // ... existing event listeners
 });
