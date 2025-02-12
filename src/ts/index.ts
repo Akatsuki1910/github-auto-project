@@ -80,6 +80,13 @@ window.addEventListener("DOMContentLoaded", () => {
             calculatorDiv.style.display = "none";
         }
     });
+//Font Size Change Feature
+const changeFontSizeButton = document.getElementById("change-font-size") as HTMLButtonElement;
+let fontSize = 16;
+changeFontSizeButton.addEventListener('click', () => {
+  fontSize += 2;
+  display.style.fontSize = fontSize + "px";
+});
 
     // ... existing event listeners
 });
