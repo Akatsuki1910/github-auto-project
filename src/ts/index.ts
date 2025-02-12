@@ -37,4 +37,19 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = (currentValue * currentValue * currentValue).toString();
         display.value = currentInput;
     });
+
+    const factorialButton = document.getElementById("factorial") as HTMLButtonElement;
+    factorialButton.addEventListener('click', () => {
+        const currentValue = parseInt(display.value);
+        if (isNaN(currentValue)|| currentValue < 0) {
+            currentInput = "Error";
+        }else{
+            let result = 1;
+            for (let i = 1; i <= currentValue; i++) {
+                result *= i;
+            }
+        currentInput = result.toString();
+        }
+        display.value = currentInput;
+    });
 });
