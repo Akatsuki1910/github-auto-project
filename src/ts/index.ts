@@ -53,4 +53,10 @@ display.value = currentInput;});
             display.value = "Error";
         }
     });
+
+    const percentButton = document.getElementById("percent") as HTMLButtonElement;
+    percentButton.addEventListener('click', () => {
+        currentInput = (parseFloat(currentInput) / 100).toString();
+        display.value = currentInput;
+    });
 });
