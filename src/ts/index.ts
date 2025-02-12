@@ -89,6 +89,11 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    const clearEntryButton = document.getElementById("clear-entry") as HTMLButtonElement;
+    clearEntryButton.addEventListener('click', () => {
+        currentInput = '';
+        display.value = currentInput;
+    });
 
     // ... existing event listeners
 });
