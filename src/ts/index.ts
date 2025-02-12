@@ -30,6 +30,13 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = lastAnswer.toString();
         display.value = currentInput;
     });
-
+    document.getElementById("open-parenthesis")?.addEventListener("click",()=>{
+        currentInput+="(";
+        display.value = currentInput;
+    });
+    document.getElementById("close-parenthesis")?.addEventListener("click",()=>{
+        currentInput+=")";
+        display.value = currentInput;
+    });
     //Rest of the code
 });
