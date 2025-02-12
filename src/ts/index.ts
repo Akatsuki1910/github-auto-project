@@ -25,7 +25,8 @@ window.addEventListener("DOMContentLoaded", () => {
     const clearButton = document.getElementById("clear") as HTMLButtonElement;
     clearButton.addEventListener('click', () => {
         currentInput = "";
-display.value = currentInput;});
+        display.value = currentInput;
+    });
 
     const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
     memoryStoreButton.addEventListener('click', () => {
@@ -57,6 +58,12 @@ display.value = currentInput;});
     const percentButton = document.getElementById("percent") as HTMLButtonElement;
     percentButton.addEventListener('click', () => {
         currentInput = (parseFloat(currentInput) / 100).toString();
+        display.value = currentInput;
+    });
+
+    const piButton = document.getElementById("pi") as HTMLButtonElement;
+    piButton.addEventListener('click', () => {
+        currentInput = Math.PI.toString();
         display.value = currentInput;
     });
 });
