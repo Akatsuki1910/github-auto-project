@@ -30,4 +30,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = (currentValue * currentValue).toString();
         display.value = currentInput;
     });
+
+    const cubeButton = document.getElementById("cube") as HTMLButtonElement;
+    cubeButton.addEventListener('click', () => {
+        const currentValue = parseFloat(display.value);
+        currentInput = (currentValue * currentValue * currentValue).toString();
+        display.value = currentInput;
+    });
 });
