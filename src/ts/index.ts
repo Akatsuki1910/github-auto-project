@@ -59,4 +59,15 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    const resetButton = document.getElementById("reset") as HTMLButtonElement;
+    resetButton.addEventListener('click', () => {
+        currentInput = "";
+        currentExpression = "";
+        display.value = "";
+        currentExpressionDisplay.textContent = "";
+        historyArr.length = 0;
+        historyDiv.innerHTML = "";
+        lastAnswer = 0;
+        memoryValue = 0;
+    });
 });
