@@ -50,4 +50,15 @@ window.addEventListener("DOMContentLoaded", () => {
         currentExpressionDisplay.textContent = currentExpression;
         display.value = "";
     });
+
+    const log10Button = document.getElementById("log10") as HTMLButtonElement;
+    log10Button.addEventListener('click', () => {
+        const currentValue = parseFloat(display.value);
+        if (currentValue <= 0) {
+            currentInput = "Error";
+        } else {
+            currentInput = Math.log10(currentValue).toString();
+        }
+        display.value = currentInput;
+    });
 });
