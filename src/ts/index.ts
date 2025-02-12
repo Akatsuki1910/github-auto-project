@@ -61,4 +61,10 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         display.value = currentInput;
     });
+
+    const absButton = document.getElementById("abs") as HTMLButtonElement;
+    absButton.addEventListener('click', () => {
+        currentInput = Math.abs(parseFloat(display.value)).toString();
+        display.value = currentInput;
+    });
 });
