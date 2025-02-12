@@ -8,6 +8,7 @@ const historyArr: string[] = [];
 let lastAnswer = 0;
 let memoryValue = 0;
 let displayColor = "black";
+let isNegative = false;
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
@@ -111,6 +112,12 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
-
+//sign-toggle
+    const signToggleButton = document.getElementById("sign-toggle") as HTMLButtonElement;
+    signToggleButton.addEventListener('click',()=>{
+        isNegative = !isNegative;
+        currentInput = isNegative ? `-${currentInput}`:Math.abs(parseFloat(currentInput)).toString();
+        display.value = currentInput;
+    })
     // ... existing event listeners
 });
