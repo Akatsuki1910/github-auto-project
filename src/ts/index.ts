@@ -23,6 +23,12 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // ... other existing event listeners
+    const expButton = document.getElementById("exp") as HTMLButtonElement;
+    expButton.addEventListener('click', () => {
+        const currentValue = parseFloat(display.value);
+        currentInput = Math.exp(currentValue).toString();
+        display.value = currentInput;
+    });
 
     const squareButton = document.getElementById("square") as HTMLButtonElement;
     squareButton.addEventListener('click', () => {
