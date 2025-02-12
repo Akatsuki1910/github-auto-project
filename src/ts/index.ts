@@ -92,6 +92,11 @@ clearDisplayButton.addEventListener('click', () => {
     currentInput = '';
     display.value = '';
 });
+const toggleBorderRadiusButton = document.getElementById("toggle-border-radius") as HTMLButtonElement;
+toggleBorderRadiusButton.addEventListener('click', () => {
+    const displayElement = document.getElementById("display") as HTMLInputElement;
+    displayElement.style.borderRadius = displayElement.style.borderRadius === "10px" ? "0px" : "10px";
+});
 
     // ... existing event listeners
 });
