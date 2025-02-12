@@ -80,6 +80,15 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    const inverseTanButton = document.getElementById("inverse-tan") as HTMLButtonElement;
+    inverseTanButton.addEventListener('click', () => {
+        try {
+            currentInput = Math.atan(parseFloat(currentInput)).toString();
+            display.value = currentInput;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
 
     // ... existing event listeners
 });
