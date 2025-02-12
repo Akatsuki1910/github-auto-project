@@ -87,6 +87,12 @@ swapButton.addEventListener('click', () => {
         display.value = currentInput;
     }
 });
+const randomNumberButton = document.getElementById("random-number") as HTMLButtonElement;
+randomNumberButton.addEventListener('click', () => {
+  const randomNumber = Math.random();
+  currentInput = randomNumber.toString();
+  display.value = currentInput;
+});
 
     // ... existing event listeners
 });
