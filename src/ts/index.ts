@@ -22,48 +22,12 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    const clearButton = document.getElementById("clear") as HTMLButtonElement;
-    clearButton.addEventListener('click', () => {
-        currentInput = "";
-        display.value = currentInput;
-    });
+    // ... other existing event listeners
 
-    const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
-    memoryStoreButton.addEventListener('click', () => {
-        memoryValue = parseFloat(display.value);
-    });
-
-    const memoryRecallButton = document.getElementById("memory-recall") as HTMLButtonElement;
-    memoryRecallButton.addEventListener('click', () => {
-        currentInput = memoryValue.toString();
-        display.value = currentInput;    
-    });
-
-    const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonElement;
-    memoryClearButton.addEventListener('click', () => {
-        memoryValue = 0;
-    });
-
-    const sqrtButton = document.getElementById("sqrt") as HTMLButtonElement;
-    sqrtButton.addEventListener('click', () => {
+    const squareButton = document.getElementById("square") as HTMLButtonElement;
+    squareButton.addEventListener('click', () => {
         const currentValue = parseFloat(display.value);
-        if (currentValue >= 0) {
-            currentInput = Math.sqrt(currentValue).toString();
-            display.value = currentInput;
-        } else {
-            display.value = "Error";
-        }
-    });
-
-    const percentButton = document.getElementById("percent") as HTMLButtonElement;
-    percentButton.addEventListener('click', () => {
-        currentInput = (parseFloat(currentInput) / 100).toString();
-        display.value = currentInput;
-    });
-
-    const piButton = document.getElementById("pi") as HTMLButtonElement;
-    piButton.addEventListener('click', () => {
-        currentInput = Math.PI.toString();
+        currentInput = (currentValue * currentValue).toString();
         display.value = currentInput;
     });
 });
