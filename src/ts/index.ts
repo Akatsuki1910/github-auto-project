@@ -23,48 +23,13 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
     // ... other existing event listeners
-    const expButton = document.getElementById("exp") as HTMLButtonElement;
-    expButton.addEventListener('click', () => {
-        const currentValue = parseFloat(display.value);
-        currentInput = Math.exp(currentValue).toString();
-        display.value = currentInput;
-    });
-
     // ... other functions (square, cube, factorial, inverse, sign)
 
-    const lnButton = document.getElementById("ln") as HTMLButtonElement;
-    lnButton.addEventListener('click', () => {
-        const currentValue = parseFloat(display.value);
-        if (currentValue <= 0) {
-            currentInput = "Error";
-        } else {
-            currentInput = Math.log(currentValue).toString();
-        }
+    const ansButton = document.getElementById("ans") as HTMLButtonElement;
+    ansButton.addEventListener('click', () => {
+        currentInput = lastAnswer.toString();
         display.value = currentInput;
     });
 
-    const powerButton = document.getElementById("power") as HTMLButtonElement;
-    powerButton.addEventListener('click', () => {
-        currentExpression += display.value + "**";
-        currentInput = "";
-        currentExpressionDisplay.textContent = currentExpression;
-        display.value = "";
-    });
-
-    const log10Button = document.getElementById("log10") as HTMLButtonElement;
-    log10Button.addEventListener('click', () => {
-        const currentValue = parseFloat(display.value);
-        if (currentValue <= 0) {
-            currentInput = "Error";
-        } else {
-            currentInput = Math.log10(currentValue).toString();
-        }
-        display.value = currentInput;
-    });
-
-    const absButton = document.getElementById("abs") as HTMLButtonElement;
-    absButton.addEventListener('click', () => {
-        currentInput = Math.abs(parseFloat(display.value)).toString();
-        display.value = currentInput;
-    });
+    //Rest of the code
 });
