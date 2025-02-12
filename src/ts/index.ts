@@ -71,6 +71,15 @@ window.addEventListener("DOMContentLoaded", () => {
         historyArr.pop();
         historyDiv.innerHTML = historyArr.join('<br>');
     });
+    const inverseCosButton = document.getElementById("inverse-cos") as HTMLButtonElement;
+    inverseCosButton.addEventListener('click', () => {
+        try {
+            currentInput = Math.acos(parseFloat(currentInput)).toString();
+            display.value = currentInput;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
 
     // ... existing event listeners
 });
