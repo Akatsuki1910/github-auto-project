@@ -61,6 +61,16 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = "Error";
         }
     });
+    const rightShiftButton = document.getElementById("right-shift") as HTMLButtonElement;
+    rightShiftButton.addEventListener('click', () => {
+        try {
+            const num = parseInt(currentInput);
+            currentInput = (num >> 1).toString();
+            display.value = currentInput;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
 
     // ... existing event listeners
 });
