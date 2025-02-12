@@ -57,6 +57,15 @@ window.addEventListener("DOMContentLoaded", () => {
         }
       }
     });
+        const expm1Button = document.getElementById("expm1") as HTMLButtonElement;
+    expm1Button.addEventListener('click', () => {
+        try {
+            currentInput = Math.expm1(parseFloat(currentInput)).toString();
+            display.value = currentInput;
+        } catch (error) {
+            display.value = "Error";
+        }
+    });
 
     // ... existing event listeners
 });
