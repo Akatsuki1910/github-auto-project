@@ -42,4 +42,12 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         display.value = currentInput;
     });
+
+    const powerButton = document.getElementById("power") as HTMLButtonElement;
+    powerButton.addEventListener('click', () => {
+        currentExpression += display.value + "**";
+        currentInput = "";
+        currentExpressionDisplay.textContent = currentExpression;
+        display.value = "";
+    });
 });
