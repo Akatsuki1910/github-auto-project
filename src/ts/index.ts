@@ -51,6 +51,16 @@ timeButton.addEventListener('click', () => {
     currentInput = new Date().toLocaleTimeString();
     display.value = currentInput;
 });
+const roundToDecimalButton = document.getElementById("round-to-decimal") as HTMLButtonElement;
+roundToDecimalButton.addEventListener('click', () => {
+    try{
+        const num = parseFloat(currentInput);
+        currentInput = num.toFixed(2).toString();
+        display.value = currentInput;
+    }catch(error){
+        display.value="Error";
+    }
+});
 
     // ... existing event listeners
 });
