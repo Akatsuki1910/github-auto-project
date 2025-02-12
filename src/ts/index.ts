@@ -42,4 +42,15 @@ display.value = currentInput;});
     memoryClearButton.addEventListener('click', () => {
         memoryValue = 0;
     });
+
+    const sqrtButton = document.getElementById("sqrt") as HTMLButtonElement;
+    sqrtButton.addEventListener('click', () => {
+        const currentValue = parseFloat(display.value);
+        if (currentValue >= 0) {
+            currentInput = Math.sqrt(currentValue).toString();
+            display.value = currentInput;
+        } else {
+            display.value = "Error";
+        }
+    });
 });
