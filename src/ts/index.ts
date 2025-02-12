@@ -52,4 +52,15 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         display.value = currentInput;
     });
+
+    const inverseButton = document.getElementById("inverse") as HTMLButtonElement;
+    inverseButton.addEventListener('click', () => {
+        const currentValue = parseFloat(display.value);
+        if (currentValue === 0) {
+            currentInput = "Error";
+        } else {
+            currentInput = (1 / currentValue).toString();
+        }
+        display.value = currentInput;
+    });
 });
