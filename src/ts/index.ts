@@ -13,19 +13,12 @@ let isNegative = false;
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
 
-    const toggleDisplayColorButton = document.getElementById("toggle-display-color") as HTMLButtonElement;
-    toggleDisplayColorButton.addEventListener('click', () => {
-        displayColor = displayColor === "black" ? "red" : "black";
-        display.style.color = displayColor;
-    });
-
     // ... other existing event listeners
        const duplicateButton = document.getElementById("duplicate") as HTMLButtonElement;
     duplicateButton.addEventListener('click', () => {
         currentInput = currentInput.concat(currentInput);
         display.value = currentInput;
     });
-    // ... other event listeners
     // ... other event listeners
     const lnButton = document.getElementById("ln") as HTMLButtonElement;
     lnButton.addEventListener('click', () => {
@@ -44,33 +37,12 @@ window.addEventListener("DOMContentLoaded", () => {
     })
 
     // ... other event listeners
-// ... other event listeners
     const signToggleButton = document.getElementById("sign-toggle") as HTMLButtonElement;
     signToggleButton.addEventListener('click',()=>{
         isNegative = !isNegative;
         currentInput = isNegative ? `-${currentInput}`:Math.abs(parseFloat(currentInput)).toString();
         display.value = currentInput;
     })
-    const leftShiftButton = document.getElementById("left-shift") as HTMLButtonElement;
-    leftShiftButton.addEventListener('click', () => {
-        try {
-            const num = parseInt(currentInput);
-            currentInput = (num << 1).toString();
-            display.value = currentInput;
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-    const rightShiftButton = document.getElementById("right-shift") as HTMLButtonElement;
-    rightShiftButton.addEventListener('click', () => {
-        try {
-            const num = parseInt(currentInput);
-            currentInput = (num >> 1).toString();
-            display.value = currentInput;
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
     const calculatorDiv = document.getElementById("calculator") as HTMLDivElement;
     const toggleCalculatorVisibilityButton = document.getElementById("toggle-calculator-visibility") as HTMLButtonElement;
     toggleCalculatorVisibilityButton.addEventListener('click', () => {
@@ -80,7 +52,6 @@ window.addEventListener("DOMContentLoaded", () => {
             calculatorDiv.style.display = "none";
         }
     });
-//Font Size Change Feature
 const changeFontSizeButton = document.getElementById("change-font-size") as HTMLButtonElement;
 let fontSize = 16;
 changeFontSizeButton.addEventListener('click', () => {
@@ -96,6 +67,12 @@ const toggleBorderRadiusButton = document.getElementById("toggle-border-radius")
 toggleBorderRadiusButton.addEventListener('click', () => {
     const displayElement = document.getElementById("display") as HTMLInputElement;
     displayElement.style.borderRadius = displayElement.style.borderRadius === "10px" ? "0px" : "10px";
+});
+const toggleCalculatorThemeButton = document.getElementById("toggle-calculator-theme") as HTMLButtonElement;
+let isDarkTheme = false;
+toggleCalculatorThemeButton.addEventListener('click', () => {
+    isDarkTheme = !isDarkTheme;
+    document.body.classList.toggle("dark-theme", isDarkTheme);
 });
 
     // ... existing event listeners
