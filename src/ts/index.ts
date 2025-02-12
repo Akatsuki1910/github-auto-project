@@ -25,6 +25,7 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = currentInput;
     });
     // ... other event listeners
+    // ... other event listeners
     const lnButton = document.getElementById("ln") as HTMLButtonElement;
     lnButton.addEventListener('click', () => {
         try {
@@ -41,52 +42,21 @@ window.addEventListener("DOMContentLoaded", () => {
         window.close();
     })
 
-    const exp10Button = document.getElementById("exp10") as HTMLButtonElement;
-    exp10Button.addEventListener('click', () => {
+    // ... other event listeners
+    const nthRootButton = document.getElementById("nth-root") as HTMLButtonElement;
+    nthRootButton.addEventListener('click', () => {
+      if (currentExpression.length > 0 && currentInput.length > 0) {
         try {
-            currentInput = Math.pow(10, parseFloat(currentInput)).toString();
-            display.value = currentInput;
+          const base = parseFloat(currentInput);
+          currentExpression = `Math.pow(${currentExpression}, 1/${base})`;
+          currentInput = eval(currentExpression).toString();
+          display.value = currentInput;
+          currentExpression = currentInput;
         } catch (error) {
-            display.value = "Error";
+          display.value = "Error";
         }
-    });
-        const exp2Button = document.getElementById("exp2") as HTMLButtonElement;
-    exp2Button.addEventListener('click', () => {
-        try {
-            currentInput = Math.pow(2, parseFloat(currentInput)).toString();
-            display.value = currentInput;
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
-    const resetButton = document.getElementById("reset") as HTMLButtonElement;
-    resetButton.addEventListener('click', () => {
-        currentInput = "";
-        currentExpression = "";
-        display.value = "";
-        currentExpressionDisplay.textContent = "";
-        historyArr.length = 0;
-        historyDiv.innerHTML = "";
-        lastAnswer = 0;
-        memoryValue = 0;
+      }
     });
 
-    const copyButton = document.getElementById("copy") as HTMLButtonElement;
-    copyButton.addEventListener('click', () => {
-        navigator.clipboard.writeText(display.value).then(() => {
-            alert('Copied to clipboard!');
-        }).catch(err => {
-            console.error('Failed to copy: ', err);
-        });
-    });
-
-    const inverseSinButton = document.getElementById("inverse-sin") as HTMLButtonElement;
-    inverseSinButton.addEventListener('click', () => {
-        try {
-            currentInput = Math.asin(parseFloat(currentInput)).toString();
-            display.value = currentInput;
-        } catch (error) {
-            display.value = "Error";
-        }
-    });
+    // ... existing event listeners
 });
