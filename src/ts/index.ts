@@ -14,7 +14,7 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
 
     // ... other existing event listeners
-       const negationButton = document.getElementById("negation") as HTMLButtonElement;
+    const negationButton = document.getElementById("negation") as HTMLButtonElement;
     negationButton.addEventListener('click', () => {
         if (currentInput !== "") {
             currentInput = (parseFloat(currentInput) * -1).toString();
@@ -26,4 +26,20 @@ window.addEventListener("DOMContentLoaded", () => {
     clearButton.addEventListener('click', () => {
         currentInput = "";
 display.value = currentInput;});
+
+    const memoryStoreButton = document.getElementById("memory-store") as HTMLButtonElement;
+    memoryStoreButton.addEventListener('click', () => {
+        memoryValue = parseFloat(display.value);
+    });
+
+    const memoryRecallButton = document.getElementById("memory-recall") as HTMLButtonElement;
+    memoryRecallButton.addEventListener('click', () => {
+        currentInput = memoryValue.toString();
+        display.value = currentInput;    
+    });
+
+    const memoryClearButton = document.getElementById("memory-clear") as HTMLButtonElement;
+    memoryClearButton.addEventListener('click', () => {
+        memoryValue = 0;
+    });
 });
