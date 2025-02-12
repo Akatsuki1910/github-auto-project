@@ -87,6 +87,11 @@ changeFontSizeButton.addEventListener('click', () => {
   fontSize += 2;
   display.style.fontSize = fontSize + "px";
 });
+const clearDisplayButton = document.getElementById("clear-display") as HTMLButtonElement;
+clearDisplayButton.addEventListener('click', () => {
+    currentInput = '';
+    display.value = '';
+});
 
     // ... existing event listeners
 });
