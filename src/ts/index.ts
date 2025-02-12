@@ -41,14 +41,14 @@ window.addEventListener("DOMContentLoaded", () => {
     const factorialButton = document.getElementById("factorial") as HTMLButtonElement;
     factorialButton.addEventListener('click', () => {
         const currentValue = parseInt(display.value);
-        if (isNaN(currentValue)|| currentValue < 0) {
+        if (isNaN(currentValue) || currentValue < 0) {
             currentInput = "Error";
-        }else{
+        } else {
             let result = 1;
             for (let i = 1; i <= currentValue; i++) {
                 result *= i;
             }
-        currentInput = result.toString();
+            currentInput = result.toString();
         }
         display.value = currentInput;
     });
@@ -62,5 +62,11 @@ window.addEventListener("DOMContentLoaded", () => {
             currentInput = (1 / currentValue).toString();
         }
         display.value = currentInput;
+    });
+
+    const signButton = document.getElementById("sign") as HTMLButtonElement;
+    signButton.addEventListener('click', () => {
+        currentInput = (parseFloat(currentInput) * -1).toString();
+        display.value = currentInput;    
     });
 });
