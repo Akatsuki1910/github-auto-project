@@ -38,5 +38,13 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = currentInput;        
         }
     });
+     document.getElementById("calculate-circumference")?.addEventListener("click", () => {
+        if (currentInput !== "") {
+            const radius = parseFloat(currentInput);
+            const circumference = 2 * Math.PI * radius;
+            currentInput = circumference.toString();
+            display.value = currentInput;
+        }
+    });
     // Existing code for other buttons
 });
