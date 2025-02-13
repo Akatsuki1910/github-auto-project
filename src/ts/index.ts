@@ -46,5 +46,9 @@ window.addEventListener("DOMContentLoaded", () => {
         historyArr.length = 0;
         historyDiv.innerHTML="";
     });
+     document.getElementById("sin")?.addEventListener("click", () => {
+        currentInput += "sin(";
+        display.value = currentInput;
+    });
     //Rest of the code
 });
