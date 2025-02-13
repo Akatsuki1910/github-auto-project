@@ -43,4 +43,13 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = currentInput;
         }
     });
+
+document.getElementById("calculate-sphere-volume")?.addEventListener("click", () => {
+        if(currentInput !== ""){
+            const radius = parseFloat(currentInput);
+            const volume = (4/3) * Math.PI * Math.pow(radius, 3);
+            currentInput = volume.toString();
+            display.value = currentInput;
+        }
+    });
 });
