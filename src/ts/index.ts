@@ -33,4 +33,14 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = currentInput;
         }
     });
+
+    document.getElementById("calculate-cone-volume")?.addEventListener("click", () => {
+        if (currentInput !== "") {
+            const radius = parseFloat(currentInput);
+            const height = 5; // Fixed height for now
+            const volume = (1/3) * Math.PI * Math.pow(radius, 2) * height;
+            currentInput = volume.toString();
+            display.value = currentInput;
+        }
+    });
 });
