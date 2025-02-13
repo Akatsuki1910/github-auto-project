@@ -41,4 +41,11 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = isNegative ? "-" : "";
         }
     });
+
+    document.getElementById("reciprocal")?.addEventListener("click", () => {
+        if (currentInput !== "") {
+            currentInput = (1 / parseFloat(currentInput)).toString();
+            display.value = currentInput;
+        }
+    });
 });
