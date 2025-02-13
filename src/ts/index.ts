@@ -70,5 +70,9 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += currentInput;
         display.value = currentInput;    
     });
+    document.getElementById("exp10")?.addEventListener("click", () => {
+        currentInput = Math.pow(10,parseFloat(currentInput)).toString();
+        display.value = currentInput;
+    });
     //Rest of the code
 });
