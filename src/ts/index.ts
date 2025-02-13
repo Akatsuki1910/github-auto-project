@@ -9,6 +9,7 @@ let lastAnswer = 0;
 let memoryValue = 0;
 let displayColor = "black";
 let isNegative = false;
+let fontSize = "1.5em";
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
@@ -61,5 +62,10 @@ window.addEventListener("DOMContentLoaded", () => {
             currentInput = (parseFloat(currentInput) * 3).toString();
             display.value = currentInput;
         }
+    });
+
+    document.getElementById("toggle-fontsize")?.addEventListener("click", () => {
+      fontSize = fontSize === "1.5em" ? "2em" : "1.5em";
+      display.style.fontSize = fontSize;
     });
 });
