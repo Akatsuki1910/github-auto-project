@@ -50,5 +50,9 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += "sin(";
         display.value = currentInput;
     });
+    document.getElementById("cos")?.addEventListener("click", () => {
+        currentInput += "cos(";
+        display.value = currentInput;
+    });
     //Rest of the code
 });
