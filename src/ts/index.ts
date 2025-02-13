@@ -46,5 +46,14 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = currentInput;
         }
     });
+
+    document.getElementById("calculate-sphere-surface-area")?.addEventListener("click", () => {
+        if (currentInput !== "") {
+            const radius = parseFloat(currentInput);
+            const surfaceArea = 4 * Math.PI * Math.pow(radius, 2);
+            currentInput = surfaceArea.toString();
+            display.value = currentInput;
+        }
+    });    
     // Existing code for other buttons
 });
