@@ -55,4 +55,11 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = currentInput;
         }
     });
+
+    document.getElementById("triple")?.addEventListener("click", () => {
+        if (currentInput !== "") {
+            currentInput = (parseFloat(currentInput) * 3).toString();
+            display.value = currentInput;
+        }
+    });
 });
