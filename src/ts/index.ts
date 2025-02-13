@@ -30,5 +30,13 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
+    document.getElementById("calculate-volume")?.addEventListener("click", () => {
+        if (currentInput !== "") {
+            const radius = parseFloat(currentInput);
+            const volume = (4/3) * Math.PI * Math.pow(radius, 3);
+            currentInput = volume.toString();
+            display.value = currentInput;        
+        }
+    });
     // Existing code for other buttons
 });
