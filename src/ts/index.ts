@@ -53,4 +53,13 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.E.toString();
         display.value = currentInput;
     });
+
+    document.getElementById("parentheses")?.addEventListener("click", () => {
+        if (currentInput.includes("(")){
+          currentInput += ")";
+        } else {
+            currentInput += "(";
+        }
+        display.value = currentInput;
+    });
 });
