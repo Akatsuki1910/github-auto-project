@@ -30,57 +30,15 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = lastAnswer.toString();
         display.value = currentInput;
     });
-    document.getElementById("open-parenthesis")?.addEventListener("click", () => {
-        currentInput += "(";
-        display.value = currentInput;
+    // ... (rest of existing event listeners)
+
+    document.getElementById("toggle-sign")?.addEventListener("click", () => {
+        if (currentInput !== "") {
+            currentInput = (parseFloat(currentInput) * -1).toString();
+            display.value = currentInput;
+        } else {
+            isNegative = !isNegative;
+            display.value = isNegative ? "-" : "";
+        }
     });
-    document.getElementById("close-parenthesis")?.addEventListener("click", () => {
-        currentInput += ")";
-        display.value = currentInput;
-    });
-    document.getElementById("mod")?.addEventListener("click", () => {
-        currentInput += "%";
-        display.value = currentInput;
-    });
-    document.getElementById("clear-history")?.addEventListener("click",()=>{
-        historyArr.length = 0;
-        historyDiv.innerHTML="";
-    });
-     document.getElementById("sin")?.addEventListener("click", () => {
-        currentInput += "sin(";
-        display.value = currentInput;
-    });
-    document.getElementById("cos")?.addEventListener("click", () => {
-        currentInput += "cos(";
-        display.value = currentInput;
-    });
-    document.getElementById("tan")?.addEventListener("click", () => {
-        currentInput += "tan(";
-        display.value = currentInput;
-    });
-    document.getElementById("round")?.addEventListener("click", () => {
-        currentInput = Math.round(parseFloat(currentInput)).toString();
-        display.value = currentInput;
-    });
-    document.getElementById("rand")?.addEventListener("click", () => {
-        currentInput = Math.random().toString();
-        display.value = currentInput;
-    });
-    document.getElementById("duplicate")?.addEventListener("click", () => {
-        currentInput += currentInput;
-        display.value = currentInput;    
-    });
-    document.getElementById("exp10")?.addEventListener("click", () => {
-        currentInput = Math.pow(10,parseFloat(currentInput)).toString();
-        display.value = currentInput;
-    });
-    document.getElementById("ceil")?.addEventListener("click", () => {
-        currentInput = Math.ceil(parseFloat(currentInput)).toString();
-        display.value = currentInput;
-    });
-    document.getElementById("floor")?.addEventListener("click", () => {
-        currentInput = Math.floor(parseFloat(currentInput)).toString();
-        display.value = currentInput;
-    });
-    //Rest of the code
 });
