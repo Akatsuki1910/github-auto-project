@@ -54,6 +54,14 @@ window.addEventListener("DOMContentLoaded", () => {
             currentInput = surfaceArea.toString();
             display.value = currentInput;
         }
-    });    
+    });
+    document.getElementById("calculate-cube-surface-area")?.addEventListener("click", () => {
+        if (currentInput !== "") {
+            const side = parseFloat(currentInput);
+            const surfaceArea = 6 * Math.pow(side, 2);
+            currentInput = surfaceArea.toString();
+            display.value = currentInput;
+        }
+    });
     // Existing code for other buttons
 });
