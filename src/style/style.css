@@ -33,3 +33,11 @@ body.dark-theme {
     border: none;
     border-radius: 5px;
 }
+#history {
+    display: none;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    overflow-y: auto;
+    max-height: 200px;
+}

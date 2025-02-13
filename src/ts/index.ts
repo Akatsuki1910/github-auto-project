@@ -38,4 +38,8 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("toggle-calculator-visibility")?.addEventListener("click", () => {
         calculatorDiv.style.display = calculatorDiv.style.display === "none" ? "grid" : "none";
     });
+
+    document.getElementById("toggle-history-visibility")?.addEventListener("click", () => {
+        historyDiv.style.display = historyDiv.style.display === "none" ? "block" : "none";
+    });
 });
