@@ -48,4 +48,11 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = "0";
         isNegative = false;
     });
+
+    document.getElementById("double")?.addEventListener("click", () => {
+        if (currentInput !== "") {
+            currentInput = (parseFloat(currentInput) * 2).toString();
+            display.value = currentInput;
+        }
+    });
 });
