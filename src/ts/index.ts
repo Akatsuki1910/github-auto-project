@@ -54,5 +54,9 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += "cos(";
         display.value = currentInput;
     });
+    document.getElementById("tan")?.addEventListener("click", () => {
+        currentInput += "tan(";
+        display.value = currentInput;
+    });
     //Rest of the code
 });
