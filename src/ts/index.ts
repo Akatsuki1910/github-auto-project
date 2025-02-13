@@ -19,14 +19,14 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ... (rest of existing event listeners)
 
-document.getElementById("nth-root")?.addEventListener("click", () => {
-    if (currentInput !== "") {
-        currentExpression = `Math.pow(${currentInput}, 1/y)`
-        currentInput = "";
-        display.value = currentInput;
-        currentExpressionDisplay.textContent = currentExpression;
-    }
-});
+    document.getElementById("nth-root")?.addEventListener("click", () => {
+        if (currentInput !== "") {
+            currentExpression = `Math.pow(${currentInput}, 1/y)`
+            currentInput = "";
+            display.value = currentInput;
+            currentExpressionDisplay.textContent = currentExpression;
+        }
+    });
 
     document.getElementById("sum")?.addEventListener("click", () => {
         const numbers = currentInput.split(",").map(Number);
@@ -47,6 +47,13 @@ document.getElementById("nth-root")?.addEventListener("click", () => {
         const numbers = currentInput.split(",").map(Number);
         const min = Math.min(...numbers);
         currentInput = min.toString();
+        display.value = currentInput;
+    });
+
+    document.getElementById("max")?.addEventListener("click", () => {
+        const numbers = currentInput.split(",").map(Number);
+        const max = Math.max(...numbers);
+        currentInput = max.toString();
         display.value = currentInput;
     });
 });
