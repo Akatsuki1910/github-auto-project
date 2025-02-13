@@ -78,4 +78,12 @@ document.getElementById("copy")?.addEventListener("click", () => {
     currentInput = currentInput.slice(0, -1);
     display.value = currentInput;  
 });
+
+document.getElementById("log2")?.addEventListener("click", () => {
+    if(currentInput !== ""){
+        const num = parseFloat(currentInput);
+        currentInput = Math.log2(num).toString();
+        display.value = currentInput;
+    }
+});
 });
