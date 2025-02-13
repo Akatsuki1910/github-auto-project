@@ -20,61 +20,15 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ... (rest of existing event listeners)
 
-    document.getElementById("nth-root")?.addEventListener("click", () => {
-        if (currentInput !== "") {
-            currentExpression = `Math.pow(${currentInput}, 1/y)`
-            currentInput = "";
-            display.value = currentInput;
-            currentExpressionDisplay.textContent = currentExpression;
-        }
-    });
-
     // ... (rest of existing code)
-    document.getElementById("toggle-display-color")?.addEventListener("click", () => {
-        displayColor = displayColor === "black" ? "red" : "black";
-        display.style.color = displayColor;
-    });
-
-    const calculatorDiv = document.getElementById("calculator") as HTMLDivElement;
-    document.getElementById("toggle-calculator-visibility")?.addEventListener("click", () => {
-        calculatorDiv.style.display = calculatorDiv.style.display === "none" ? "grid" : "none";
-    });
-
-    document.getElementById("toggle-history-visibility")?.addEventListener("click", () => {
-        historyDiv.style.display = historyDiv.style.display === "none" ? "block" : "none";
-    });
-
-    document.getElementById("clear-entry")?.addEventListener("click", () => {
-        currentInput = "";
-        display.value = "0";
-        isNegative = false;
-    });
-
-    document.getElementById("double")?.addEventListener("click", () => {
+    document.getElementById("calculate-perimeter")?.addEventListener("click", () => {
         if (currentInput !== "") {
-            currentInput = (parseFloat(currentInput) * 2).toString();
+            const radius = parseFloat(currentInput);
+            const perimeter = 2 * Math.PI * radius;
+            currentInput = perimeter.toString();
             display.value = currentInput;
         }
     });
 
-    document.getElementById("triple")?.addEventListener("click", () => {
-        if (currentInput !== "") {
-            currentInput = (parseFloat(currentInput) * 3).toString();
-            display.value = currentInput;
-        }
-    });
-
-    document.getElementById("toggle-fontsize")?.addEventListener("click", () => {
-      fontSize = fontSize === "1.5em" ? "2em" : "1.5em";
-      display.style.fontSize = fontSize;
-    });
-
-document.getElementById("calculate-area")?.addEventListener("click", () => {
-    if (currentInput !== "") {
-    const radius = parseFloat(currentInput);
-    const area = Math.PI * radius * radius;
-    currentInput = area.toString();
-        display.value = currentInput;
-}
-});
+    // Existing code for other buttons
 });
