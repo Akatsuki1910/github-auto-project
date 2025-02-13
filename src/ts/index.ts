@@ -27,4 +27,11 @@ document.getElementById("nth-root")?.addEventListener("click", () => {
         currentExpressionDisplay.textContent = currentExpression;
     }
 });
+
+    document.getElementById("sum")?.addEventListener("click", () => {
+        const numbers = currentInput.split(",").map(Number);
+        const sum = numbers.reduce((acc, num) => acc + num, 0);
+        currentInput = sum.toString();
+        display.value = currentInput;
+    });
 });
