@@ -68,4 +68,13 @@ window.addEventListener("DOMContentLoaded", () => {
       fontSize = fontSize === "1.5em" ? "2em" : "1.5em";
       display.style.fontSize = fontSize;
     });
+
+document.getElementById("calculate-area")?.addEventListener("click", () => {
+    if (currentInput !== "") {
+    const radius = parseFloat(currentInput);
+    const area = Math.PI * radius * radius;
+    currentInput = area.toString();
+        display.value = currentInput;
+}
+});
 });
