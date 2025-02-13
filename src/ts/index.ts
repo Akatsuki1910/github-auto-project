@@ -52,4 +52,15 @@ document.getElementById("calculate-sphere-volume")?.addEventListener("click", ()
             display.value = currentInput;
         }
     });
+
+//Cuboid Volume
+document.getElementById("calculate-cuboid-volume")?.addEventListener("click", () => {
+        const length = parseFloat(prompt("Enter length:") || "0");
+        const width = parseFloat(prompt("Enter width:") || "0");
+        const height = parseFloat(prompt("Enter height:") || "0");
+        const volume = length * width * height;
+        currentInput = volume.toString();
+        display.value = currentInput;
+    });
+
 });
