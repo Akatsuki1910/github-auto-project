@@ -42,4 +42,10 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("toggle-history-visibility")?.addEventListener("click", () => {
         historyDiv.style.display = historyDiv.style.display === "none" ? "block" : "none";
     });
+
+    document.getElementById("clear-entry")?.addEventListener("click", () => {
+        currentInput = "";
+        display.value = "0";
+        isNegative = false;
+    });
 });
