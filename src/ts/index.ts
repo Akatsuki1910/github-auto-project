@@ -42,5 +42,9 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += "%";
         display.value = currentInput;
     });
+    document.getElementById("clear-history")?.addEventListener("click",()=>{
+        historyArr.length = 0;
+        historyDiv.innerHTML="";
+    });
     //Rest of the code
 });
