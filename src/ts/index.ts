@@ -48,4 +48,9 @@ window.addEventListener("DOMContentLoaded", () => {
             display.value = currentInput;
         }
     });
+
+    document.getElementById("euler")?.addEventListener("click", () => {
+        currentInput = Math.E.toString();
+        display.value = currentInput;
+    });
 });
