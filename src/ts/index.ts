@@ -73,4 +73,9 @@ document.getElementById("copy")?.addEventListener("click", () => {
       console.log("Copied to clipboard");
     });
   });
+
+  document.getElementById("delete")?.addEventListener("click", () => {
+    currentInput = currentInput.slice(0, -1);
+    display.value = currentInput;  
+});
 });
