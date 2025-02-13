@@ -58,5 +58,9 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput += "tan(";
         display.value = currentInput;
     });
+    document.getElementById("round")?.addEventListener("click", () => {
+        currentInput = Math.round(parseFloat(currentInput)).toString();
+        display.value = currentInput;
+    });
     //Rest of the code
 });
