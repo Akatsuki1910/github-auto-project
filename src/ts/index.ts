@@ -28,32 +28,9 @@ window.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    document.getElementById("sum")?.addEventListener("click", () => {
-        const numbers = currentInput.split(",").map(Number);
-        const sum = numbers.reduce((acc, num) => acc + num, 0);
-        currentInput = sum.toString();
-        display.value = currentInput;
-    });
-
-    document.getElementById("average")?.addEventListener("click", () => {
-        const numbers = currentInput.split(",").map(Number);
-        const sum = numbers.reduce((acc, num) => acc + num, 0);
-        const avg = sum / numbers.length;
-        currentInput = avg.toString();
-        display.value = currentInput;
-    });
-
-    document.getElementById("min")?.addEventListener("click", () => {
-        const numbers = currentInput.split(",").map(Number);
-        const min = Math.min(...numbers);
-        currentInput = min.toString();
-        display.value = currentInput;
-    });
-
-    document.getElementById("max")?.addEventListener("click", () => {
-        const numbers = currentInput.split(",").map(Number);
-        const max = Math.max(...numbers);
-        currentInput = max.toString();
-        display.value = currentInput;
+    // ... (rest of existing code)
+    document.getElementById("toggle-display-color")?.addEventListener("click", () => {
+        displayColor = displayColor === "black" ? "red" : "black";
+        display.style.color = displayColor;
     });
 });
