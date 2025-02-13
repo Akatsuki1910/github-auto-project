@@ -33,4 +33,9 @@ window.addEventListener("DOMContentLoaded", () => {
         displayColor = displayColor === "black" ? "red" : "black";
         display.style.color = displayColor;
     });
+
+    const calculatorDiv = document.getElementById("calculator") as HTMLDivElement;
+    document.getElementById("toggle-calculator-visibility")?.addEventListener("click", () => {
+        calculatorDiv.style.display = calculatorDiv.style.display === "none" ? "grid" : "none";
+    });
 });
