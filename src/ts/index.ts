@@ -66,4 +66,11 @@ window.addEventListener("DOMContentLoaded", () => {
 document.getElementById("exit")?.addEventListener("click",()=>{
     window.close();
 });
+
+document.getElementById("copy")?.addEventListener("click", () => {
+    navigator.clipboard.writeText(display.value).then(() => {
+      // Optional: Provide feedback to the user
+      console.log("Copied to clipboard");
+    });
+  });
 });
