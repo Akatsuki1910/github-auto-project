@@ -34,4 +34,12 @@ document.getElementById("nth-root")?.addEventListener("click", () => {
         currentInput = sum.toString();
         display.value = currentInput;
     });
+
+    document.getElementById("average")?.addEventListener("click", () => {
+        const numbers = currentInput.split(",").map(Number);
+        const sum = numbers.reduce((acc, num) => acc + num, 0);
+        const avg = sum / numbers.length;
+        currentInput = avg.toString();
+        display.value = currentInput;
+    });
 });
