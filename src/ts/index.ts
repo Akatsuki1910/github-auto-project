@@ -21,47 +21,16 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (rest of existing event listeners)
 
     // ... (rest of existing code)
-    document.getElementById("calculate-perimeter")?.addEventListener("click", () => {
-        if (currentInput !== "") {
-            const radius = parseFloat(currentInput);
-            const perimeter = 2 * Math.PI * radius;
-            currentInput = perimeter.toString();
-            display.value = currentInput;
-        }
-    });
+    //Existing Code for other buttons
 
-    document.getElementById("calculate-volume")?.addEventListener("click", () => {
+    document.getElementById("calculate-cylinder-volume")?.addEventListener("click", () => {
         if (currentInput !== "") {
             const radius = parseFloat(currentInput);
-            const volume = (4/3) * Math.PI * Math.pow(radius, 3);
+            // Assuming height is fixed for now.  Could be improved by taking height as another input
+            const height = 5;
+            const volume = Math.PI * Math.pow(radius, 2) * height;
             currentInput = volume.toString();
-            display.value = currentInput;        
-        }
-    });
-     document.getElementById("calculate-circumference")?.addEventListener("click", () => {
-        if (currentInput !== "") {
-            const radius = parseFloat(currentInput);
-            const circumference = 2 * Math.PI * radius;
-            currentInput = circumference.toString();
             display.value = currentInput;
         }
     });
-
-    document.getElementById("calculate-sphere-surface-area")?.addEventListener("click", () => {
-        if (currentInput !== "") {
-            const radius = parseFloat(currentInput);
-            const surfaceArea = 4 * Math.PI * Math.pow(radius, 2);
-            currentInput = surfaceArea.toString();
-            display.value = currentInput;
-        }
-    });
-    document.getElementById("calculate-cube-surface-area")?.addEventListener("click", () => {
-        if (currentInput !== "") {
-            const side = parseFloat(currentInput);
-            const surfaceArea = 6 * Math.pow(side, 2);
-            currentInput = surfaceArea.toString();
-            display.value = currentInput;
-        }
-    });
-    // Existing code for other buttons
 });
