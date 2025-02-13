@@ -78,5 +78,9 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = Math.ceil(parseFloat(currentInput)).toString();
         display.value = currentInput;
     });
+    document.getElementById("floor")?.addEventListener("click", () => {
+        currentInput = Math.floor(parseFloat(currentInput)).toString();
+        display.value = currentInput;
+    });
     //Rest of the code
 });
