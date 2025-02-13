@@ -65,6 +65,10 @@ window.addEventListener("DOMContentLoaded", () => {
     document.getElementById("rand")?.addEventListener("click", () => {
         currentInput = Math.random().toString();
         display.value = currentInput;
-    });    
+    });
+    document.getElementById("duplicate")?.addEventListener("click", () => {
+        currentInput += currentInput;
+        display.value = currentInput;    
+    });
     //Rest of the code
 });
