@@ -42,4 +42,11 @@ document.getElementById("nth-root")?.addEventListener("click", () => {
         currentInput = avg.toString();
         display.value = currentInput;
     });
+
+    document.getElementById("min")?.addEventListener("click", () => {
+        const numbers = currentInput.split(",").map(Number);
+        const min = Math.min(...numbers);
+        currentInput = min.toString();
+        display.value = currentInput;
+    });
 });
