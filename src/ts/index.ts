@@ -16,4 +16,9 @@ document.getElementById('percentage')?.addEventListener('click', () => {
     currentInput = (parseFloat(currentInput) / 100).toString();
     display.value = currentInput;
 });
+//Pi function
+document.getElementById('pi')?.addEventListener('click', () => {
+    currentInput = Math.PI.toString();
+    display.value = currentInput;
+});
 // ... (Rest of the code)
