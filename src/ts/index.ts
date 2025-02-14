@@ -54,7 +54,7 @@ document.getElementById("calculate-sphere-volume")?.addEventListener("click", ()
     });
 
 //Cuboid Volume
-document.getElementById("calculate-cuboid-volume")?.addEventListener("click", () => {
+    document.getElementById("calculate-cuboid-volume")?.addEventListener("click", () => {
         const length = parseFloat(prompt("Enter length:") || "0");
         const width = parseFloat(prompt("Enter width:") || "0");
         const height = parseFloat(prompt("Enter height:") || "0");
@@ -63,13 +63,23 @@ document.getElementById("calculate-cuboid-volume")?.addEventListener("click", ()
         display.value = currentInput;
     });
 //Square Root Function
-document.getElementById("calculate-square-root")?.addEventListener("click", () => {
+    document.getElementById("calculate-square-root")?.addEventListener("click", () => {
+        if(currentInput !== ""){
+            const num = parseFloat(currentInput);
+            const sqrt = Math.sqrt(num);
+            currentInput = sqrt.toString();
+            display.value = currentInput;
+        }
+    });
+
+//Cube Root Function
+    document.getElementById("calculate-cube-root")?.addEventListener("click", () => {
     if(currentInput !== ""){
         const num = parseFloat(currentInput);
-        const sqrt = Math.sqrt(num);
-        currentInput = sqrt.toString();
+        const cbrt = Math.cbrt(num);
+        currentInput = cbrt.toString();
         display.value = currentInput;
-    }
-});
+        }
+    });
 
 });
