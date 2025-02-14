@@ -32,4 +32,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = result.toString();
         display.value = currentInput;
     });
+
+    document.getElementById("calculate-2-to-the-power-x")?.addEventListener("click", () => {
+        const num = parseFloat(prompt("Enter a number:") || "0");
+        const result = 2 ** num;
+        currentInput = result.toString();
+        display.value = currentInput;
+    });
 });
