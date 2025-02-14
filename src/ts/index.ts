@@ -75,4 +75,10 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = result.toString();
         display.value = currentInput;
     });
+
+    document.getElementById("calculate-random")?.addEventListener("click", () => {
+        const result = Math.random();
+        currentInput = result.toString();
+        display.value = currentInput;
+    });
 });
