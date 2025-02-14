@@ -11,21 +11,17 @@ let displayColor = "black";
 let isNegative = false;
 let fontSize = "1.5em";
 let borderRadius = "5px";
+let calculatorLayout = "grid"; // Added layout variable
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
-
     // ... other existing event listeners
     // ... other existing event listeners
     // ... other functions (square, cube, factorial, inverse, sign)
-
     // ... (rest of existing event listeners)
-
     // ... (rest of existing code)
     //Existing Code for other buttons
-
     // ... existing button event listeners
-
     document.getElementById("calculate-hypotenuse")?.addEventListener("click", () => {
         const sideA = parseFloat(prompt("Enter length of side A:") || "0");
         const sideB = parseFloat(prompt("Enter length of side B:") || "0");
@@ -38,7 +34,7 @@ window.addEventListener("DOMContentLoaded", () => {
         const num = parseFloat(prompt("Enter a number:") || "0");
         const result = Math.log10(num);
         currentInput = result.toString();
-        display.value = currentInput;        
+        display.value = currentInput;
     });
 
     document.getElementById("calculate-natural-log")?.addEventListener("click", () => {
@@ -56,5 +52,18 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         calculator.style.borderRadius = borderRadius;
     });
-
+    // Add toggle layout functionality
+    document.getElementById("toggle-calculator-layout")?.addEventListener("click", () => {
+        const calculator = document.getElementById("calculator") as HTMLDivElement;
+        if (calculatorLayout === "grid") {
+            calculatorLayout = "flex";
+            calculator.style.display = "flex";
+            calculator.style.flexDirection = "column";
+        } else {
+            calculatorLayout = "grid";
+            calculator.style.display = "grid";
+            calculator.style.gridTemplateColumns = "repeat(4, 1fr)";
+            calculator.style.flexDirection = "";
+        }
+    });
 });
