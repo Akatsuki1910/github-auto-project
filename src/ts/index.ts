@@ -35,4 +35,16 @@ document.getElementById('factorial')?.addEventListener('click', () => {
     }
     display.value = currentInput;
 });
+//Parenthesis function
+let parenthesisOpen = false;
+document.getElementById('parenthesis')?.addEventListener('click', () => {
+  if (!parenthesisOpen) {
+    currentInput += '(';
+    parenthesisOpen = true;
+  } else {
+    currentInput += ')';
+    parenthesisOpen = false;
+  }
+  display.value = currentInput;
+});
 // ... (Rest of the code)
