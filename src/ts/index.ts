@@ -22,54 +22,11 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (rest of existing code)
     //Existing Code for other buttons
     // ... existing button event listeners
-    document.getElementById("calculate-hypotenuse")?.addEventListener("click", () => {
-        const sideA = parseFloat(prompt("Enter length of side A:") || "0");
-        const sideB = parseFloat(prompt("Enter length of side B:") || "0");
-        const hypotenuse = Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
-        currentInput = hypotenuse.toString();
-        display.value = currentInput;
-    });
+    // ... (rest of existing functions)
 
-    document.getElementById("calculate-base10-log")?.addEventListener("click", () => {
+    document.getElementById("calculate-inverse-cosine")?.addEventListener("click", () => {
         const num = parseFloat(prompt("Enter a number:") || "0");
-        const result = Math.log10(num);
-        currentInput = result.toString();
-        display.value = currentInput;
-    });
-
-    document.getElementById("calculate-natural-log")?.addEventListener("click", () => {
-        const num = parseFloat(prompt("Enter a number:") || "0");
-        const result = Math.log(num);
-        currentInput = result.toString();
-        display.value = currentInput;
-    });
-    document.getElementById("toggle-border-radius")?.addEventListener("click", () => {
-        const calculator = document.getElementById("calculator") as HTMLDivElement;
-        if (borderRadius === "5px") {
-            borderRadius = "20px";
-        } else {
-            borderRadius = "5px";
-        }
-        calculator.style.borderRadius = borderRadius;
-    });
-    // Add toggle layout functionality
-    document.getElementById("toggle-calculator-layout")?.addEventListener("click", () => {
-        const calculator = document.getElementById("calculator") as HTMLDivElement;
-        if (calculatorLayout === "grid") {
-            calculatorLayout = "flex";
-            calculator.style.display = "flex";
-            calculator.style.flexDirection = "column";
-        } else {
-            calculatorLayout = "grid";
-            calculator.style.display = "grid";
-            calculator.style.gridTemplateColumns = "repeat(4, 1fr)";
-            calculator.style.flexDirection = "";
-        }
-    });
-
-    document.getElementById("calculate-inverse-sine")?.addEventListener("click", () => {
-        const num = parseFloat(prompt("Enter a number:") || "0");
-        const result = Math.asin(num);
+        const result = Math.acos(num);
         currentInput = result.toString();
         display.value = currentInput;
     });
