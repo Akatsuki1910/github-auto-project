@@ -81,4 +81,13 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = (num * num).toString();
         display.value = currentInput;
     });
+
+    // x^n function
+    document.getElementById("calculate-x-to-the-power-n")?.addEventListener("click", () => {
+        const x = parseFloat(prompt("Enter x:") || "0");
+        const n = parseFloat(prompt("Enter n:") || "0");
+        const result = x ** n;
+        currentInput = result.toString();
+        display.value = currentInput;
+    });
 });
