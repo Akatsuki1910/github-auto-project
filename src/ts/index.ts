@@ -39,4 +39,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = result.toString();
         display.value = currentInput;
     });
+
+    document.getElementById("calculate-e-to-the-power-x")?.addEventListener("click", () => {
+        const num = parseFloat(prompt("Enter a number:") || "0");
+        const result = Math.E ** num;
+        currentInput = result.toString();
+        display.value = currentInput;
+    });
 });
