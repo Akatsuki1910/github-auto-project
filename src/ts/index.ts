@@ -101,4 +101,11 @@ window.addEventListener("DOMContentLoaded", () => {
         }
         display.value = currentInput;
     });
+
+    //Double Function
+    document.getElementById("calculate-double")?.addEventListener("click", () => {
+        const num = parseFloat(currentInput);
+        currentInput = (num * 2).toString();
+        display.value = currentInput;
+    });
 });
