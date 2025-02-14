@@ -11,4 +11,9 @@ document.getElementById("sqrt")?.addEventListener("click", () => {
     currentInput = Math.sqrt(parseFloat(currentInput)).toString();
     display.value = currentInput;
 });
+//Percentage function
+document.getElementById('percentage')?.addEventListener('click', () => {
+    currentInput = (parseFloat(currentInput) / 100).toString();
+    display.value = currentInput;
+});
 // ... (Rest of the code)
