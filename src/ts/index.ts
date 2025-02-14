@@ -1,13 +1,8 @@
 // ... (Existing code)
-//Inverse function
-document.getElementById('inverse')?.addEventListener('click', () => {
+//Sign function (正負反転)
+document.getElementById('sign')?.addEventListener('click', () => {
     const num = parseFloat(currentInput);
-    if (num === 0) {
-        currentInput = "Error: Division by zero";
-    }
-    else {
-        currentInput = (1 / num).toString();
-    }
+    currentInput = (-num).toString();
     display.value = currentInput;
 });
 // ... (Rest of the code)
