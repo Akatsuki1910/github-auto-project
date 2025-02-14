@@ -36,6 +36,22 @@ window.addEventListener("DOMContentLoaded", () => {
     });
 
         // ... existing functions
+    // ... other existing functions
+     //Fibonacci
+    document.getElementById("calculate-fibonacci")?.addEventListener("click", () => {
+      const n = parseInt(prompt("Enter the number of terms for the Fibonacci sequence:") || "0");
+      let result = "";
+      let a = 0, b = 1;
+      for (let i = 0; i < n; i++) {
+        result += a + " ";
+        const temp = a;
+        a = b;
+        b += temp;
+      }
+      currentInput = result;
+      display.value = currentInput;
+    });
+
     document.getElementById("calculate-10-to-the-power-x")?.addEventListener("click", () => {
         const num = parseFloat(prompt("Enter a number:") || "0");
         const result = 10 ** num;
