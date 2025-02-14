@@ -10,6 +10,7 @@ let memoryValue = 0;
 let displayColor = "black";
 let isNegative = false;
 let fontSize = "1.5em";
+let borderRadius = "5px";
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
@@ -45,6 +46,15 @@ window.addEventListener("DOMContentLoaded", () => {
         const result = Math.log(num);
         currentInput = result.toString();
         display.value = currentInput;
+    });
+    document.getElementById("toggle-border-radius")?.addEventListener("click", () => {
+        const calculator = document.getElementById("calculator") as HTMLDivElement;
+        if (borderRadius === "5px") {
+            borderRadius = "20px";
+        } else {
+            borderRadius = "5px";
+        }
+        calculator.style.borderRadius = borderRadius;
     });
 
 });
