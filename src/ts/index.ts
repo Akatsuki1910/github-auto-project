@@ -6,4 +6,9 @@ document.getElementById("calculate-x-to-the-power-n")?.addEventListener("click",
     currentInput = Math.pow(base, exponent).toString();
     display.value = currentInput;
 });
+//Square Root Function
+document.getElementById("sqrt")?.addEventListener("click", () => {
+    currentInput = Math.sqrt(parseFloat(currentInput)).toString();
+    display.value = currentInput;
+});
 // ... (Rest of the code)
