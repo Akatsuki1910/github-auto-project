@@ -1,8 +1,8 @@
 // ... (Existing code)
-//Triple Function
-document.getElementById("calculate-triple")?.addEventListener("click", () => {
+//Half Function
+document.getElementById("calculate-half")?.addEventListener("click", () => {
     const num = parseFloat(currentInput);
-    currentInput = (num * 3).toString();
+    currentInput = (num / 2).toString();
     display.value = currentInput;
 });
 // ... (Rest of the code)
