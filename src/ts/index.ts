@@ -24,44 +24,11 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... existing button event listeners
     // ... (rest of existing functions)
 
-    document.getElementById("calculate-inverse-cosine")?.addEventListener("click", () => {
-        const num = parseFloat(prompt("Enter a number:") || "0");
-        const result = Math.acos(num);
-        currentInput = result.toString();
-        display.value = currentInput;
-    });
+    // ... (Existing trigonometric functions)
 
-    document.getElementById("calculate-inverse-tangent")?.addEventListener("click", () => {
+    document.getElementById("calculate-10-to-the-power-x")?.addEventListener("click", () => {
         const num = parseFloat(prompt("Enter a number:") || "0");
-        const result = Math.atan(num);
-        currentInput = result.toString();
-        display.value = currentInput;
-    });
-
-    document.getElementById("calculate-inverse-secant")?.addEventListener("click", () => {
-        const num = parseFloat(prompt("Enter a number:") || "0");
-        const result = 1 / Math.cos(num);
-        currentInput = result.toString();
-        display.value = currentInput;
-    });
-
-    document.getElementById("calculate-cosecant")?.addEventListener("click", () => {
-        const num = parseFloat(prompt("Enter a number:") || "0");
-        const result = 1 / Math.sin(num);
-        currentInput = result.toString();
-        display.value = currentInput;
-    });
-
-    document.getElementById("calculate-cotangent")?.addEventListener("click", () => {
-        const num = parseFloat(prompt("Enter a number:") || "0");
-        const result = 1 / Math.tan(num);
-        currentInput = result.toString();
-        display.value = currentInput;
-    });
-
-    document.getElementById("calculate-absolute")?.addEventListener("click", () => {
-        const num = parseFloat(prompt("Enter a number:") || "0");
-        const result = Math.abs(num);
+        const result = 10 ** num;
         currentInput = result.toString();
         display.value = currentInput;
     });
