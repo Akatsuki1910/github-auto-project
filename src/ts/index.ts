@@ -57,4 +57,12 @@ window.addEventListener("DOMContentLoaded", () => {
         lastAnswer = 0;
         memoryValue = 0;
     });
+
+    document.getElementById("calculate-n-root")?.addEventListener("click", () => {
+        const n = parseFloat(prompt("Enter the root (n):") || "2");
+        const x = parseFloat(prompt("Enter the number (x):") || "0");
+        const result = x ** (1/n);
+        currentInput = result.toString();
+        display.value = currentInput;
+    });
 });
