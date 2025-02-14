@@ -37,4 +37,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = result.toString();
         display.value = currentInput;
     });
+
+    document.getElementById("calculate-inverse-secant")?.addEventListener("click", () => {
+        const num = parseFloat(prompt("Enter a number:") || "0");
+        const result = 1 / Math.cos(num);
+        currentInput = result.toString();
+        display.value = currentInput;
+    });
 });
