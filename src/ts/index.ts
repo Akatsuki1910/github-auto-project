@@ -30,4 +30,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = result.toString();
         display.value = currentInput;
     });
+
+    document.getElementById("calculate-inverse-tangent")?.addEventListener("click", () => {
+        const num = parseFloat(prompt("Enter a number:") || "0");
+        const result = Math.atan(num);
+        currentInput = result.toString();
+        display.value = currentInput;
+    });
 });
