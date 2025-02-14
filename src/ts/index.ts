@@ -44,4 +44,11 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = result.toString();
         display.value = currentInput;
     });
+
+    document.getElementById("calculate-cosecant")?.addEventListener("click", () => {
+        const num = parseFloat(prompt("Enter a number:") || "0");
+        const result = 1 / Math.sin(num);
+        currentInput = result.toString();
+        display.value = currentInput;
+    });
 });
