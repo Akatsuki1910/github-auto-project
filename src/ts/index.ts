@@ -62,5 +62,14 @@ document.getElementById("calculate-cuboid-volume")?.addEventListener("click", ()
         currentInput = volume.toString();
         display.value = currentInput;
     });
+//Square Root Function
+document.getElementById("calculate-square-root")?.addEventListener("click", () => {
+    if(currentInput !== ""){
+        const num = parseFloat(currentInput);
+        const sqrt = Math.sqrt(num);
+        currentInput = sqrt.toString();
+        display.value = currentInput;
+    }
+});
 
 });
