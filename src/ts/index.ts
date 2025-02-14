@@ -11,4 +11,10 @@ document.getElementById('abs')?.addEventListener('click', () => {
     currentInput = Math.abs(num).toString();
     display.value = currentInput;
 });
+//Exponential function
+document.getElementById('exp')?.addEventListener('click', () => {
+  const num = parseFloat(currentInput);
+  currentInput = Math.exp(num).toString();
+  display.value = currentInput;
+});
 // ... (Rest of the code)
