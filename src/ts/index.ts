@@ -21,4 +21,18 @@ document.getElementById('pi')?.addEventListener('click', () => {
     currentInput = Math.PI.toString();
     display.value = currentInput;
 });
+//Factorial function
+document.getElementById('factorial')?.addEventListener('click', () => {
+    const num = parseInt(currentInput);
+    if (isNaN(num)) {
+        currentInput = "Error";
+    } else {
+        let result = 1;
+        for (let i = 2; i <= num; i++) {
+            result *= i;
+        }
+        currentInput = result.toString();
+    }
+    display.value = currentInput;
+});
 // ... (Rest of the code)
