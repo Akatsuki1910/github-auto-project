@@ -1,8 +1,8 @@
 // ... (Existing code)
-//Eighth Function
-document.getElementById("calculate-eighth")?.addEventListener("click", () => {
+//Sixteenth Function
+document.getElementById("calculate-sixteenth")?.addEventListener("click", () => {
     const num = parseFloat(currentInput);
-    currentInput = (num / 8).toString();
+    currentInput = (num / 16).toString();
     display.value = currentInput;
 });
 // ... (Rest of the code)
