@@ -90,4 +90,15 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = result.toString();
         display.value = currentInput;
     });
+
+    // Calculate Inverse
+    document.getElementById("calculate-inverse")?.addEventListener("click", () => {
+        const num = parseFloat(currentInput);
+        if (num === 0) {
+            currentInput = "Error: Division by zero";
+        } else {
+            currentInput = (1 / num).toString();
+        }
+        display.value = currentInput;
+    });
 });
