@@ -26,7 +26,8 @@ document.getElementById('factorial')?.addEventListener('click', () => {
     const num = parseInt(currentInput);
     if (isNaN(num)) {
         currentInput = "Error";
-    } else {
+    }
+    else {
         let result = 1;
         for (let i = 2; i <= num; i++) {
             result *= i;
@@ -38,13 +39,19 @@ document.getElementById('factorial')?.addEventListener('click', () => {
 //Parenthesis function
 let parenthesisOpen = false;
 document.getElementById('parenthesis')?.addEventListener('click', () => {
-  if (!parenthesisOpen) {
-    currentInput += '(';
-    parenthesisOpen = true;
-  } else {
-    currentInput += ')';
-    parenthesisOpen = false;
-  }
-  display.value = currentInput;
+    if (!parenthesisOpen) {
+        currentInput += '(';
+        parenthesisOpen = true;
+    }
+    else {
+        currentInput += ')';
+        parenthesisOpen = false;
+    }
+    display.value = currentInput;
+});
+//Squared function
+document.getElementById('squared')?.addEventListener('click', () => {
+    currentInput = Math.pow(parseFloat(currentInput), 2).toString();
+    display.value = currentInput;
 });
 // ... (Rest of the code)
