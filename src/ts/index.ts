@@ -5,4 +5,10 @@ document.getElementById('sign')?.addEventListener('click', () => {
     currentInput = (-num).toString();
     display.value = currentInput;
 });
+// Absolute function
+document.getElementById('abs')?.addEventListener('click', () => {
+    const num = parseFloat(currentInput);
+    currentInput = Math.abs(num).toString();
+    display.value = currentInput;
+});
 // ... (Rest of the code)
