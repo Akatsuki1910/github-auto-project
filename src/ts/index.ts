@@ -52,6 +52,15 @@ window.addEventListener("DOMContentLoaded", () => {
       display.value = currentInput;
     });
 
+    //Exponent Function
+     document.getElementById("calculate-exponent")?.addEventListener("click", () => {
+        const base = parseFloat(prompt("Enter Base:") || "0");
+        const exponent = parseFloat(prompt("Enter Exponent:") || "0");
+        const result = base ** exponent;
+        currentInput = result.toString();
+        display.value = currentInput;
+     });
+
     document.getElementById("calculate-10-to-the-power-x")?.addEventListener("click", () => {
         const num = parseFloat(prompt("Enter a number:") || "0");
         const result = 10 ** num;
