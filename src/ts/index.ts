@@ -33,4 +33,11 @@ window.addEventListener("DOMContentLoaded", () => {
         display.value = currentInput;
     });
 
+    document.getElementById("calculate-base10-log")?.addEventListener("click", () => {
+        const num = parseFloat(prompt("Enter a number:") || "0");
+        const result = Math.log10(num);
+        currentInput = result.toString();
+        display.value = currentInput;        
+    });
+
 });
