@@ -26,6 +26,16 @@ window.addEventListener("DOMContentLoaded", () => {
 
     // ... (Existing trigonometric functions)
 
+    // Calculate Percentage
+    document.getElementById("calculate-percentage")?.addEventListener("click", () => {
+        const num = parseFloat(prompt("Enter a number:") || "0");
+        const percentage = parseFloat(prompt("Enter percentage:") || "0");
+        const result = (num * percentage) / 100;
+        currentInput = result.toString();
+        display.value = currentInput;
+    });
+
+        // ... existing functions
     document.getElementById("calculate-10-to-the-power-x")?.addEventListener("click", () => {
         const num = parseFloat(prompt("Enter a number:") || "0");
         const result = 10 ** num;
