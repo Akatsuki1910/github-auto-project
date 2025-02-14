@@ -75,4 +75,10 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = result.toString();
         display.value = currentInput;
     });
+    //Square function
+    document.getElementById("calculate-square")?.addEventListener("click", () => {
+        const num = parseFloat(currentInput);
+        currentInput = (num * num).toString();
+        display.value = currentInput;
+    });
 });
