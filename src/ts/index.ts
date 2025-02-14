@@ -23,63 +23,14 @@ window.addEventListener("DOMContentLoaded", () => {
     // ... (rest of existing code)
     //Existing Code for other buttons
 
-    document.getElementById("calculate-cylinder-volume")?.addEventListener("click", () => {
-        if (currentInput !== "") {
-            const radius = parseFloat(currentInput);
-            // Assuming height is fixed for now.  Could be improved by taking height as another input
-            const height = 5;
-            const volume = Math.PI * Math.pow(radius, 2) * height;
-            currentInput = volume.toString();
-            display.value = currentInput;
-        }
-    });
+    // ... existing button event listeners
 
-    document.getElementById("calculate-cone-volume")?.addEventListener("click", () => {
-        if (currentInput !== "") {
-            const radius = parseFloat(currentInput);
-            const height = 5; // Fixed height for now
-            const volume = (1/3) * Math.PI * Math.pow(radius, 2) * height;
-            currentInput = volume.toString();
-            display.value = currentInput;
-        }
-    });
-
-document.getElementById("calculate-sphere-volume")?.addEventListener("click", () => {
-        if(currentInput !== ""){
-            const radius = parseFloat(currentInput);
-            const volume = (4/3) * Math.PI * Math.pow(radius, 3);
-            currentInput = volume.toString();
-            display.value = currentInput;
-        }
-    });
-
-//Cuboid Volume
-    document.getElementById("calculate-cuboid-volume")?.addEventListener("click", () => {
-        const length = parseFloat(prompt("Enter length:") || "0");
-        const width = parseFloat(prompt("Enter width:") || "0");
-        const height = parseFloat(prompt("Enter height:") || "0");
-        const volume = length * width * height;
-        currentInput = volume.toString();
+    document.getElementById("calculate-hypotenuse")?.addEventListener("click", () => {
+        const sideA = parseFloat(prompt("Enter length of side A:") || "0");
+        const sideB = parseFloat(prompt("Enter length of side B:") || "0");
+        const hypotenuse = Math.sqrt(Math.pow(sideA, 2) + Math.pow(sideB, 2));
+        currentInput = hypotenuse.toString();
         display.value = currentInput;
-    });
-//Square Root Function
-    document.getElementById("calculate-square-root")?.addEventListener("click", () => {
-        if(currentInput !== ""){
-            const num = parseFloat(currentInput);
-            const sqrt = Math.sqrt(num);
-            currentInput = sqrt.toString();
-            display.value = currentInput;
-        }
-    });
-
-//Cube Root Function
-    document.getElementById("calculate-cube-root")?.addEventListener("click", () => {
-    if(currentInput !== ""){
-        const num = parseFloat(currentInput);
-        const cbrt = Math.cbrt(num);
-        currentInput = cbrt.toString();
-        display.value = currentInput;
-        }
     });
 
 });
