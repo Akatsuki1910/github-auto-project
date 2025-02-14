@@ -54,4 +54,9 @@ document.getElementById('squared')?.addEventListener('click', () => {
     currentInput = Math.pow(parseFloat(currentInput), 2).toString();
     display.value = currentInput;
 });
+//Cubed function
+document.getElementById('cubed')?.addEventListener('click', () => {
+    currentInput = Math.pow(parseFloat(currentInput), 3).toString();
+    display.value = currentInput;
+});
 // ... (Rest of the code)
