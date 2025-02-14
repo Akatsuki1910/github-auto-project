@@ -1,8 +1,9 @@
 // ... (Existing code)
-//Sixteenth Function
-document.getElementById("calculate-sixteenth")?.addEventListener("click", () => {
-    const num = parseFloat(currentInput);
-    currentInput = (num / 16).toString();
+//x^n Function
+document.getElementById("calculate-x-to-the-power-n")?.addEventListener("click", () => {
+    const base = parseFloat(currentInput);
+    const exponent = parseFloat(prompt("Enter the exponent:", "2") || "2");
+    currentInput = Math.pow(base, exponent).toString();
     display.value = currentInput;
 });
 // ... (Rest of the code)
