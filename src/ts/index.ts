@@ -46,4 +46,15 @@ window.addEventListener("DOMContentLoaded", () => {
         currentInput = result.toString();
         display.value = currentInput;
     });
+
+    document.getElementById("reset")?.addEventListener("click", () => {
+        currentInput = "";
+        currentExpression = "";
+        display.value = "";
+        currentExpressionDisplay.textContent = "";
+        historyArr.length = 0;
+        historyDiv.innerHTML = "";
+        lastAnswer = 0;
+        memoryValue = 0;
+    });
 });
