@@ -11,7 +11,7 @@ let displayColor = "black";
 let isNegative = false;
 let fontSize = "1.5em";
 let borderRadius = "5px";
-let calculatorLayout = "grid"; // Added layout variable
+let calculatorLayout = "grid";
 
 window.addEventListener("DOMContentLoaded", () => {
     // ... existing code
@@ -65,5 +65,12 @@ window.addEventListener("DOMContentLoaded", () => {
             calculator.style.gridTemplateColumns = "repeat(4, 1fr)";
             calculator.style.flexDirection = "";
         }
+    });
+
+    document.getElementById("calculate-inverse-sine")?.addEventListener("click", () => {
+        const num = parseFloat(prompt("Enter a number:") || "0");
+        const result = Math.asin(num);
+        currentInput = result.toString();
+        display.value = currentInput;
     });
 });
