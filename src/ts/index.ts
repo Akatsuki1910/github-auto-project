@@ -1,8 +1,8 @@
 // ... (Existing code)
-//Half Function
-document.getElementById("calculate-half")?.addEventListener("click", () => {
+//Quarter Function
+document.getElementById("calculate-quarter")?.addEventListener("click", () => {
     const num = parseFloat(currentInput);
-    currentInput = (num / 2).toString();
+    currentInput = (num / 4).toString();
     display.value = currentInput;
 });
 // ... (Rest of the code)
