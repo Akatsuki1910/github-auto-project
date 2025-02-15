@@ -9,4 +9,9 @@ document.getElementById('floor')?.addEventListener('click', () => {
     currentInput = Math.floor(parseFloat(currentInput)).toString();
     display.value = currentInput;
 });
+//Random Number Generator
+document.getElementById('rand')?.addEventListener('click', () => {
+    currentInput = Math.random().toString();
+    display.value = currentInput;
+});
 // ... (Rest of the code)
