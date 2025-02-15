@@ -18,6 +18,12 @@ document.getElementById('rand')?.addEventListener('click', () => {
 document.getElementById('max')?.addEventListener('click', () => {
     const numbers = currentInput.split(',').map(Number);
     currentInput = Math.max(...numbers).toString();
-    display.value = currentInput;    
+    display.value = currentInput;
+});
+//Min function
+document.getElementById('min')?.addEventListener('click', () => {
+    const numbers = currentInput.split(',').map(Number);
+    currentInput = Math.min(...numbers).toString();
+    display.value = currentInput;
 });
 // ... (Rest of the code)
