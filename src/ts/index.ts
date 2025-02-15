@@ -1,4 +1,12 @@
 // ... (Existing code)
+//1/2
+document.getElementById('half')?.addEventListener('click', () => {
+    const num = parseFloat(currentInput);
+    if (!isNaN(num)) {
+        currentInput = (num * 0.5).toString();
+        display.value = currentInput;
+    }
+});
 //10 times
 document.getElementById('ten-times')?.addEventListener('click', () => {
     const num = parseFloat(currentInput);
