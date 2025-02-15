@@ -1,9 +1,9 @@
 // ... (Existing code)
-//4乗
-document.getElementById('powerOfFour')?.addEventListener('click', () => {
+//5乗
+document.getElementById('powerOfFive')?.addEventListener('click', () => {
     const num = parseFloat(currentInput);
     if (!isNaN(num)) {
-        currentInput = Math.pow(num, 4).toString();
+        currentInput = Math.pow(num, 5).toString();
         display.value = currentInput;
     }
 });
