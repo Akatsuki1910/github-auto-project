@@ -1,7 +1,7 @@
 // ... (Existing code)
-//Tangent function
-document.getElementById('tan')?.addEventListener('click', () => {
-    currentInput = Math.tan(parseFloat(currentInput)).toString();
+//Inverse Sine function
+document.getElementById('asin')?.addEventListener('click', () => {
+    currentInput = Math.asin(parseFloat(currentInput)).toString();
     display.value = currentInput;
 });
 
