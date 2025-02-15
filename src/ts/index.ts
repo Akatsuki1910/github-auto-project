@@ -1,4 +1,12 @@
 // ... (Existing code)
+//100%にする計算
+document.getElementById('calculate-100-percent')?.addEventListener('click', () => {
+    const num = parseFloat(currentInput);
+    if (!isNaN(num)) {
+        currentInput = (num*100).toString();
+        display.value = currentInput;
+    }
+});
 //2のx乗
 document.getElementById('two-to-the-x')?.addEventListener('click', () => {
     const num = parseFloat(currentInput);
