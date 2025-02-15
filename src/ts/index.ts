@@ -15,3 +15,16 @@ document.getElementById('cube-root')?.addEventListener('click', () => {
         display.value = currentInput;
     }
 });
+// x mod y
+document.getElementById('calculate-x-mod-y')?.addEventListener('click', () => {
+    const num = parseFloat(currentInput);
+    if (!isNaN(num)) {
+        operator = 'mod';
+        firstOperand = num;
+        currentInput = '';
+        display.value = currentInput; // Clear the display after operation is clicked.
+    }
+});
+if (operator === 'mod') {
+    result = firstOperand % num;
+}
