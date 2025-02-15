@@ -14,4 +14,10 @@ document.getElementById('rand')?.addEventListener('click', () => {
     currentInput = Math.random().toString();
     display.value = currentInput;
 });
+//Max function
+document.getElementById('max')?.addEventListener('click', () => {
+    const numbers = currentInput.split(',').map(Number);
+    currentInput = Math.max(...numbers).toString();
+    display.value = currentInput;    
+});
 // ... (Rest of the code)
