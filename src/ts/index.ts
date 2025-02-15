@@ -1,9 +1,9 @@
 // ... (Existing code)
-//7乗
-document.getElementById('powerOfSeven')?.addEventListener('click', () => {
+//8乗
+document.getElementById('powerOfEight')?.addEventListener('click', () => {
     const num = parseFloat(currentInput);
     if (!isNaN(num)) {
-        currentInput = Math.pow(num, 7).toString();
+        currentInput = Math.pow(num, 8).toString();
         display.value = currentInput;
     }
 });
