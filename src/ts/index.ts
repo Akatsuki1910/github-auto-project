@@ -25,3 +25,11 @@ document.getElementById('mod')?.addEventListener('click', () => {
         currentInput = '';
     }
 });
+// 切り捨て
+document.getElementById('trunc')?.addEventListener('click', () => {
+    const num = parseFloat(currentInput);
+    if (!isNaN(num)) {
+        currentInput = Math.trunc(num).toString();
+        display.value = currentInput;
+    }
+});
