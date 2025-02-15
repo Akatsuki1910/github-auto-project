@@ -19,4 +19,9 @@ document.getElementById('log10')?.addEventListener('click', () => {
     currentInput = Math.log10(num).toString();
     display.value = currentInput;
 });
+//Euler's number
+document.getElementById('e')?.addEventListener('click', () => {
+    currentInput += Math.E.toString();
+    display.value = currentInput;
+});
 // ... (Rest of the code)
