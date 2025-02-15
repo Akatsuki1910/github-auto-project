@@ -41,6 +41,11 @@ document.getElementById('powerOfTwo')?.addEventListener('click', () => {
     currentInput = (num * num).toString();
     display.value = currentInput;
 });
+//Sine function
+document.getElementById('sin')?.addEventListener('click', () => {
+    currentInput = Math.sin(parseFloat(currentInput)).toString();
+    display.value = currentInput;
+});
 // ... (Rest of the code)
 document.getElementById('equals')?.addEventListener('click', () => {
     try {
