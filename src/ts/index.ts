@@ -7,3 +7,10 @@ document.getElementById('sign-change')?.addEventListener('click', () => {
         display.value = currentInput;
     }
 });
+//DEL機能追加
+let display = document.getElementById('display') as HTMLInputElement;
+let currentInput = '';
+document.getElementById('delete')?.addEventListener('click',()=>{
+  currentInput = currentInput.slice(0,-1);
+  display.value = currentInput;
+});
