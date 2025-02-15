@@ -35,6 +35,12 @@ document.getElementById('round')?.addEventListener('click', () => {
     currentInput = Math.round(parseFloat(currentInput)).toString();
     display.value = currentInput;
 });
+//Power of Two button
+document.getElementById('powerOfTwo')?.addEventListener('click', () => {
+    const num = parseFloat(currentInput);
+    currentInput = (num * num).toString();
+    display.value = currentInput;
+});
 // ... (Rest of the code)
 document.getElementById('equals')?.addEventListener('click', () => {
     try {
