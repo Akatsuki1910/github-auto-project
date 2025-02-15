@@ -1,4 +1,12 @@
 // ... (Existing code)
+//1/x
+document.getElementById('reciprocal')?.addEventListener('click', () => {
+    const num = parseFloat(currentInput);
+    if (!isNaN(num) && num !== 0) {
+        currentInput = (1 / num).toString();
+        display.value = currentInput;
+    }
+});
 //1/2
 document.getElementById('half')?.addEventListener('click', () => {
     const num = parseFloat(currentInput);
