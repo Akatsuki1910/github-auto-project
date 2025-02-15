@@ -46,6 +46,11 @@ document.getElementById('sin')?.addEventListener('click', () => {
     currentInput = Math.sin(parseFloat(currentInput)).toString();
     display.value = currentInput;
 });
+//Cosine function
+document.getElementById('cos')?.addEventListener('click', () => {
+    currentInput = Math.cos(parseFloat(currentInput)).toString();
+    display.value = currentInput;
+});
 // ... (Rest of the code)
 document.getElementById('equals')?.addEventListener('click', () => {
     try {
