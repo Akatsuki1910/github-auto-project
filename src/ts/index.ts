@@ -1,7 +1,7 @@
 // ... (Existing code)
-//Inverse Sine function
-document.getElementById('asin')?.addEventListener('click', () => {
-    currentInput = Math.asin(parseFloat(currentInput)).toString();
+//Inverse Cosine function
+document.getElementById('acos')?.addEventListener('click', () => {
+    currentInput = Math.acos(parseFloat(currentInput)).toString();
     display.value = currentInput;
 });
 
