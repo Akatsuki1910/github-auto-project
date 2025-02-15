@@ -1,7 +1,7 @@
 // ... (Existing code)
-//Inverse Tangent function
-document.getElementById('atan')?.addEventListener('click', () => {
-    currentInput = Math.atan(parseFloat(currentInput)).toString();
+//Ceiling function
+document.getElementById('ceil')?.addEventListener('click', () => {
+    currentInput = Math.ceil(parseFloat(currentInput)).toString();
     display.value = currentInput;
 });
 
