@@ -27,3 +27,11 @@ document.getElementById('exp-minus-one')?.addEventListener('click', () => {
         display.value = currentInput;
     }
 });
+//10のx乗
+document.getElementById('ten-to-the-x')?.addEventListener('click', () => {
+    const num = parseFloat(currentInput);
+    if (!isNaN(num)) {
+        currentInput = Math.pow(10, num).toString();
+        display.value = currentInput;
+    }
+});
