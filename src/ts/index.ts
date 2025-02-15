@@ -19,3 +19,11 @@ document.getElementById('reset')?.addEventListener('click', () => {
     currentInput = '';
     display.value = currentInput;
 });
+//e^x-1
+document.getElementById('exp-minus-one')?.addEventListener('click', () => {
+    const num = parseFloat(currentInput);
+    if (!isNaN(num)) {
+        currentInput = (Math.exp(num) - 1).toString();
+        display.value = currentInput;
+    }
+});
