@@ -1,7 +1,7 @@
 // ... (Existing code)
-//Inverse Cosine function
-document.getElementById('acos')?.addEventListener('click', () => {
-    currentInput = Math.acos(parseFloat(currentInput)).toString();
+//Inverse Tangent function
+document.getElementById('atan')?.addEventListener('click', () => {
+    currentInput = Math.atan(parseFloat(currentInput)).toString();
     display.value = currentInput;
 });
 
