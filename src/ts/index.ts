@@ -1,5 +1,6 @@
 // ... (Existing code)
 let memoryValue = 0;
+let ans = 0;
 //Memory Store
 document.getElementById('memory-store')?.addEventListener('click', () => {
     memoryValue = parseFloat(currentInput);
@@ -24,4 +25,20 @@ document.getElementById('e')?.addEventListener('click', () => {
     currentInput += Math.E.toString();
     display.value = currentInput;
 });
+//Ans button
+document.getElementById('ans')?.addEventListener('click', () => {
+    currentInput += ans.toString();
+    display.value = currentInput;
+});
 // ... (Rest of the code)
+document.getElementById('equals')?.addEventListener('click', () => {
+    try {
+        ans = eval(currentInput);
+        display.value = ans.toString();
+        currentInput = ans.toString();
+    }
+    catch (e) {
+        display.value = 'Error';
+        currentInput = '';
+    }
+});
