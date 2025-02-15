@@ -1,14 +1,10 @@
 // ... (Existing code)
-//Sum all digits
-document.getElementById('sum')?.addEventListener('click', () => {
-    let sum = 0;
-    for (let i = 0; i < currentInput.length; i++) {
-        const digit = parseInt(currentInput[i]);
-        if (!isNaN(digit)) {
-            sum += digit;
-        }
+// 10のべき乗
+document.getElementById('powerOfTen')?.addEventListener('click', () => {
+    const num = parseFloat(currentInput);
+    if (!isNaN(num)) {
+        currentInput = Math.pow(10, num).toString();
+        display.value = currentInput;
     }
-    currentInput += sum.toString();
-    display.value = currentInput;
 });
 // ... (Rest of the code)
