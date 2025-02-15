@@ -14,3 +14,8 @@ document.getElementById('delete')?.addEventListener('click',()=>{
   currentInput = currentInput.slice(0,-1);
   display.value = currentInput;
 });
+//リセット機能追加
+document.getElementById('reset')?.addEventListener('click', () => {
+    currentInput = '';
+    display.value = currentInput;
+});
