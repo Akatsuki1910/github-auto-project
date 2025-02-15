@@ -7,4 +7,12 @@ document.getElementById('powerOfTen')?.addEventListener('click', () => {
         display.value = currentInput;
     }
 });
-// ... (Rest of the code)
+// 剰余演算
+document.getElementById('mod')?.addEventListener('click', () => {
+    const num = parseFloat(currentInput);
+    if (!isNaN(num)) {
+        pendingOperator = '%';
+        firstOperand = num;
+        currentInput = '';
+    }
+});
