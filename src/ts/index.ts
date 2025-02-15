@@ -3,7 +3,7 @@
 document.getElementById('calculate-100-percent')?.addEventListener('click', () => {
     const num = parseFloat(currentInput);
     if (!isNaN(num)) {
-        currentInput = (num*100).toString();
+        currentInput = (num * 100).toString();
         display.value = currentInput;
     }
 });
@@ -36,3 +36,11 @@ document.getElementById('calculate-x-mod-y')?.addEventListener('click', () => {
 if (operator === 'mod') {
     result = firstOperand % num;
 }
+//2倍にする
+document.getElementById('double')?.addEventListener('click', () => {
+    const num = parseFloat(currentInput);
+    if (!isNaN(num)) {
+        currentInput = (num * 2).toString();
+        display.value = currentInput;
+    }
+});
