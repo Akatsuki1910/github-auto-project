@@ -33,3 +33,17 @@ document.getElementById('clear-history')?.addEventListener('click', () => {
         historyDiv.innerHTML = '';
     }
 });
+// 逆数機能
+document.getElementById('inverse')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        alert('Invalid input');
+        return;
+    }
+    if (num === 0) {
+        alert('Cannot divide by zero');
+        return;
+    }
+    display.value = (1 / num).toString();
+});
