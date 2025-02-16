@@ -23,3 +23,11 @@ document.getElementById('toggle-visibility')?.addEventListener('click', () => {
         calculator.style.display = calculator.style.display === 'none' ? 'block' : 'none';
     }
 });
+//200%の計算機能追加
+document.getElementById('calculate-200-percent')?.addEventListener('click', () => {
+    const num = parseFloat(currentInput);
+    if (!isNaN(num)) {
+        currentInput = (num * 2).toString();
+        display.value = currentInput;
+    }
+});
