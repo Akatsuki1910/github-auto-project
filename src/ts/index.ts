@@ -1,4 +1,14 @@
 // ... (Existing code)
+// 符号関数機能
+document.getElementById('sign')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        alert('Invalid input');
+        return;
+    }
+    display.value = Math.sign(num).toString();
+});
 // 新規ウィンドウを開く機能
 document.getElementById('open-new-window')?.addEventListener('click', () => {
     window.open('https://www.example.com', '_blank');
@@ -22,52 +32,4 @@ document.getElementById('clear-history')?.addEventListener('click', () => {
     if (historyDiv) {
         historyDiv.innerHTML = '';
     }
-});
-// 階乗機能
-document.getElementById('factorial')?.addEventListener('click', () => {
-    // ... (Existing factorial code)
-});
-// 円周率πの入力機能
-// ... (Existing pi code)
-// sin関数機能
-// ... (Existing sin code)
-// cos関数機能
-// ... (Existing cos code)
-// tan関数機能
-// ... (Existing tan code)
-// log関数機能
-// ... (Existing log code)
-// 指数関数機能
-// ... (Existing exp code)
-// 絶対値機能
-// ... (Existing abs code)
-// 二乗機能
-document.getElementById('square')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-        alert('Invalid input');
-        return;
-    }
-    display.value = (num * num).toString();
-});
-// 三乗機能
-document.getElementById('cube')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-        alert('Invalid input');
-        return;
-    }
-    display.value = (num * num * num).toString();
-});
-// 四捨五入機能
-document.getElementById('round')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-        alert('Invalid input');
-        return;
-    }
-    display.value = Math.round(num).toString();
 });
