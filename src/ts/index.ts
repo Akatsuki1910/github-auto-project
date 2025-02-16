@@ -71,3 +71,7 @@ document.getElementById('calculate-25-percent')?.addEventListener('click', () =>
         display.value = currentInput;
     }
 });
+//追加機能：ウィンドウを閉じる
+document.getElementById('exit')?.addEventListener('click', () => {
+    window.close();
+});
