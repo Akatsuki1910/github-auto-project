@@ -61,3 +61,13 @@ document.getElementById('cube')?.addEventListener('click', () => {
     }
     display.value = (num * num * num).toString();
 });
+// 四捨五入機能
+document.getElementById('round')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        alert('Invalid input');
+        return;
+    }
+    display.value = Math.round(num).toString();
+});
