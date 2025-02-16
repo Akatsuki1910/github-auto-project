@@ -51,3 +51,8 @@ document.getElementById('sin')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = Math.sin(parseFloat(display.value)).toString();
 });
+// cos関数機能
+document.getElementById('cos')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = Math.cos(parseFloat(display.value)).toString();
+});
