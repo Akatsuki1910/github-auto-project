@@ -46,3 +46,8 @@ document.getElementById('pi')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value += Math.PI.toString();
 });
+// sin関数機能
+document.getElementById('sin')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = Math.sin(parseFloat(display.value)).toString();
+});
