@@ -55,3 +55,11 @@ document.getElementById('calculate-1-percent')?.addEventListener('click', () => 
         display.value = currentInput;
     }
 });
+//5%の計算機能追加
+document.getElementById('calculate-5-percent')?.addEventListener('click', () => {
+    const num = parseFloat(currentInput);
+    if (!isNaN(num)) {
+        currentInput = (num * 0.05).toString();
+        display.value = currentInput;
+    }
+});
