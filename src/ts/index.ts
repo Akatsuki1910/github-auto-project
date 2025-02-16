@@ -75,3 +75,11 @@ document.getElementById('calculate-25-percent')?.addEventListener('click', () =>
 document.getElementById('exit')?.addEventListener('click', () => {
     window.close();
 });
+// 表示値をクリップボードにコピーする機能
+document.getElementById('copy')?.addEventListener('click', () => {
+    navigator.clipboard.writeText(display.value).then(() => {
+        console.log('Copied to clipboard');
+    }, (err) => {
+        console.error('Failed to copy: ', err);
+    });
+});
