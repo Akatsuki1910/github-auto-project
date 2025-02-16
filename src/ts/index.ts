@@ -1,4 +1,15 @@
 // ... (Existing code)
+// メモリ機能
+let memory: number = 0;
+document.getElementById('memory-store')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        alert('Invalid input');
+        return;
+    }
+    memory = num;
+});
 // 符号関数機能
 document.getElementById('sign')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
