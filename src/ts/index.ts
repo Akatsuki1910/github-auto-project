@@ -41,3 +41,8 @@ document.getElementById('factorial')?.addEventListener('click', () => {
     }
     display.value = result.toString();
 });
+// 円周率πの入力機能
+document.getElementById('pi')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value += Math.PI.toString();
+});
