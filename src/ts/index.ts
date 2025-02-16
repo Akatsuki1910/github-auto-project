@@ -71,3 +71,8 @@ document.getElementById('exp')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = Math.exp(parseFloat(display.value)).toString();
 });
+// 絶対値機能
+document.getElementById('abs')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = Math.abs(parseFloat(display.value)).toString();
+});
