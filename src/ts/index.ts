@@ -56,3 +56,8 @@ document.getElementById('cos')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = Math.cos(parseFloat(display.value)).toString();
 });
+// tan関数機能
+document.getElementById('tan')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = Math.tan(parseFloat(display.value)).toString();
+});
