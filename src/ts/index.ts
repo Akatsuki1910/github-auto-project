@@ -40,3 +40,8 @@ document.getElementById('ln')?.addEventListener('click', () => {
     }
     display.value = Math.log(num).toString();
 });
+// ネイピア数機能
+document.getElementById('e')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = Math.E.toString();
+});
