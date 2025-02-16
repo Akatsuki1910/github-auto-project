@@ -10,3 +10,9 @@ document.getElementById('current-time')?.addEventListener('click', () => {
     const timeString = now.toLocaleTimeString();
     alert(`Current Time: ${timeString}`);
 });
+// 現在日付を表示する機能
+document.getElementById('current-date')?.addEventListener('click', () => {
+    const now = new Date();
+    const dateString = now.toLocaleDateString();
+    alert(`Current Date: ${dateString}`);
+});
