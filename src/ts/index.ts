@@ -39,3 +39,11 @@ document.getElementById('calculate-50-percent')?.addEventListener('click', () =>
         display.value = currentInput;
     }
 });
+//10%の計算機能追加
+document.getElementById('calculate-10-percent')?.addEventListener('click', () => {
+    const num = parseFloat(currentInput);
+    if (!isNaN(num)) {
+        currentInput = (num * 0.1).toString();
+        display.value = currentInput;
+    }
+});
