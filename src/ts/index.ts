@@ -14,3 +14,14 @@ document.getElementById('nth-root')?.addEventListener('click', () => {
     }
     display.value = Math.pow(num, 1 / n).toString();
 });
+// 2倍にする機能
+document.getElementById('double')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Error";
+    }
+    else {
+        display.value = (num * 2).toString();
+    }
+});
