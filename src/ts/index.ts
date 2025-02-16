@@ -10,6 +10,11 @@ document.getElementById('memory-store')?.addEventListener('click', () => {
     }
     memory = num;
 });
+// メモリ呼び出し機能
+document.getElementById('memory-recall')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = memory.toString();
+});
 // 符号関数機能
 document.getElementById('sign')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
