@@ -47,3 +47,11 @@ document.getElementById('calculate-10-percent')?.addEventListener('click', () =>
         display.value = currentInput;
     }
 });
+//1%の計算機能追加
+document.getElementById('calculate-1-percent')?.addEventListener('click', () => {
+    const num = parseFloat(currentInput);
+    if (!isNaN(num)) {
+        currentInput = (num * 0.01).toString();
+        display.value = currentInput;
+    }
+});
