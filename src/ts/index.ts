@@ -9,3 +9,14 @@ document.getElementById('power-of-two')?.addEventListener('click', () => {
     }
     display.value = (num * num).toString();
 });
+// 剰余機能
+document.getElementById('mod')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    if (isNaN(currentValue)) {
+        display.value = '0';
+        return;
+    }
+    // 剰余を求めるには2つ目の値が必要なので、仮に2で割る
+    display.value = (currentValue % 2).toString();
+});
