@@ -1,9 +1,9 @@
 // ... (Existing code)
-//9乗
-document.getElementById('powerOfNine')?.addEventListener('click', () => {
+//10乗
+document.getElementById('powerOfTen')?.addEventListener('click', () => {
     const num = parseFloat(currentInput);
     if (!isNaN(num)) {
-        currentInput = Math.pow(num, 9).toString();
+        currentInput = Math.pow(num, 10).toString();
         display.value = currentInput;
     }
 });
