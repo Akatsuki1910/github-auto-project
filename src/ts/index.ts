@@ -47,3 +47,8 @@ document.getElementById('inverse')?.addEventListener('click', () => {
     }
     display.value = (1 / num).toString();
 });
+// 乱数機能
+document.getElementById('rand')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = Math.random().toString();
+});
