@@ -51,3 +51,13 @@ document.getElementById('square')?.addEventListener('click', () => {
     }
     display.value = (num * num).toString();
 });
+// 三乗機能
+document.getElementById('cube')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        alert('Invalid input');
+        return;
+    }
+    display.value = (num * num * num).toString();
+});
