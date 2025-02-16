@@ -23,3 +23,21 @@ document.getElementById('clear-history')?.addEventListener('click', () => {
         historyDiv.innerHTML = '';
     }
 });
+// 階乗機能
+document.getElementById('factorial')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    let num = parseInt(display.value);
+    if (isNaN(num)) {
+        alert('Invalid input');
+        return;
+    }
+    if (num < 0) {
+        alert('Factorial is not defined for negative numbers');
+        return;
+    }
+    let result = 1;
+    for (let i = 2; i <= num; i++) {
+        result *= i;
+    }
+    display.value = result.toString();
+});
