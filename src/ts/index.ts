@@ -16,3 +16,10 @@ document.getElementById('current-date')?.addEventListener('click', () => {
     const dateString = now.toLocaleDateString();
     alert(`Current Date: ${dateString}`);
 });
+// 履歴クリア機能
+document.getElementById('clear-history')?.addEventListener('click', () => {
+    const historyDiv = document.getElementById('history');
+    if (historyDiv) {
+        historyDiv.innerHTML = '';
+    }
+});
