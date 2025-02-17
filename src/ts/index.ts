@@ -1,4 +1,15 @@
 // ... (Existing code)
+// 最小値を求める
+document.getElementById('min')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const nums = display.value.split(',').map(Number);
+    if (nums.some(isNaN)) {
+        display.value = "Error";
+    }
+    else {
+        display.value = Math.min(...nums).toString();
+    }
+});
 // 合計値を求める
 document.getElementById('sum')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
