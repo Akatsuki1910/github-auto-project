@@ -1,12 +1,12 @@
 // ... (Existing code)
-// 3倍にする機能
-document.getElementById('triple')?.addEventListener('click', () => {
+// 1/2にする機能
+document.getElementById('half')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const num = parseFloat(display.value);
     if (isNaN(num)) {
         display.value = "Error";
     }
     else {
-        display.value = (num * 3).toString();
+        display.value = (num * 0.5).toString();
     }
 });
