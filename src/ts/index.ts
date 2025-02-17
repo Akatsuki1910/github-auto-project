@@ -31,11 +31,29 @@ display.value = currentValue;
 addDisplayUpdateAnimation();
 
 // Theme toggle
-document.getElementById('toggle-theme')?.addEventListener('click', () => {
+document.getElementById('toggle-theme')?.addEventListener('click', (e) => {
+    const button = e.currentTarget as HTMLElement;
+    addButtonAnimation(button);
     document.body.setAttribute('data-theme', 
         document.body.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
     );
 });
+
+// Add button animations to all calculator buttons
+const addAnimationToButtons = () => {
+    const buttons = document.querySelectorAll('#calculator button');
+    buttons.forEach(button => {
+        if (!button.hasAttribute('data-has-animation')) {
+            button.addEventListener('click', () => {
+                addButtonAnimation(button);
+            });
+            button.setAttribute('data-has-animation', 'true');
+        }
+    });
+};
+
+// Initialize button animations
+addAnimationToButtons();
 
 // Utility functions
 const updateDisplay = (value: string, isError: boolean = false) => {
@@ -118,7 +136,9 @@ document.getElementById('equals')?.addEventListener('click', () => {
 });
 
 // Clear handlers
-document.getElementById('clear')?.addEventListener('click', () => {
+document.getElementById('clear')?.addEventListener('click', (e) => {
+    const button = e.currentTarget as HTMLElement;
+    addButtonAnimation(button);
     currentValue = '0';
     currentExpression = '';
     lastOperation = null;
@@ -126,11 +146,15 @@ document.getElementById('clear')?.addEventListener('click', () => {
     updateDisplay(currentValue);
 });
 
-document.getElementById('clear-history')?.addEventListener('click', () => {
+document.getElementById('clear-history')?.addEventListener('click', (e) => {
+    const button = e.currentTarget as HTMLElement;
+    addButtonAnimation(button);
     historyDiv.innerHTML = '';
 });
 
-document.getElementById('backspace')?.addEventListener('click', () => {
+document.getElementById('backspace')?.addEventListener('click', (e) => {
+    const button = e.currentTarget as HTMLElement;
+    addButtonAnimation(button);
     if (currentValue.length > 1) {
         currentValue = currentValue.slice(0, -1);
     } else {

@@ -97,6 +97,19 @@ body {
     border-radius: 5px;
 }
 
+/* Calculator Layout */
+#calculator {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Display Section */
+.display-section {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
 /* Button Sections */
 .memory-section,
 .scientific-section,
@@ -105,7 +118,7 @@ body {
 .utility-section {
     display: grid;
     gap: 10px;
-    margin-bottom: 15px;
+    width: 100%;
 }
 
 .memory-section {
@@ -118,6 +131,32 @@ body {
 
 .main-pad {
     grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+.additional-functions {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.utility-section {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Adjust button sizes */
+.main-pad button {
+    width: 100%;
+    height: 60px;
+    margin: 0 auto;
+}
+
+.scientific-section button,
+.memory-section button,
+.additional-functions button,
+.utility-section button {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 16px;
 }
 
 /* Button Styles */

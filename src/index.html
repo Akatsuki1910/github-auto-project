@@ -12,9 +12,11 @@
     
     <div id="calculator">
         <!-- Display Section -->
-        <input type="text" id="display" readonly>
-        <div id="currentExpressionDisplay"></div>
-        <div id="history"></div>
+        <div class="display-section">
+            <input type="text" id="display" readonly>
+            <div id="currentExpressionDisplay"></div>
+            <div id="history"></div>
+        </div>
 
         <!-- Memory Section -->
         <div class="memory-section">
@@ -35,10 +37,10 @@
             <button id="sqrt" class="function-btn">√</button>
             <button id="power-of-two" class="function-btn">x²</button>
             <button id="power-of-three" class="function-btn">x³</button>
-            <button id="power-of-n" class="function-btn">xⁿ</button>
             <button id="e" class="function-btn">e</button>
             <button id="pi" class="function-btn">π</button>
             <button id="factorial" class="function-btn">n!</button>
+            <button id="abs" class="function-btn">|x|</button>
         </div>
 
         <!-- Main Calculator Pad -->
@@ -75,13 +77,10 @@
         <div class="additional-functions">
             <button id="percentage" class="function-btn">%</button>
             <button id="inverse" class="function-btn">1/x</button>
-            <button id="abs" class="function-btn">|x|</button>
             <button id="exp" class="function-btn">exp</button>
             <button id="mod" class="function-btn">mod</button>
             <button id="round" class="function-btn">round</button>
             <button id="floor" class="function-btn">floor</button>
-            <button id="ceil" class="function-btn">ceil</button>
-            <button id="rand" class="function-btn">rand</button>
         </div>
 
         <!-- Utility Functions -->
