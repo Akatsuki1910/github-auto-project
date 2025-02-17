@@ -19,4 +19,14 @@ document.getElementById('sqrt')?.addEventListener('click', () => {
     }
 });
 
+document.getElementById('square')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            display.value = Math.pow(currentValue, 2).toString();
+        }
+    }
+});
+
 // ... (Rest of the code)
