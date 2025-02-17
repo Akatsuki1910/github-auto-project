@@ -73,10 +73,10 @@ document.getElementById('power')?.addEventListener('click', () => {
     if (display) {
         const base = parseFloat(display.value);
         display.value = ''; // Clear the display to enter the exponent
-        const exponentInput = prompt('Enter the exponent:')
-        if(exponentInput){
+        const exponentInput = prompt('Enter the exponent:');
+        if (exponentInput) {
             const exponent = parseFloat(exponentInput);
-            if(!isNaN(exponent)){
+            if (!isNaN(exponent)) {
                 display.value = Math.pow(base, exponent).toString();
             }
         }
@@ -109,6 +109,16 @@ document.getElementById('tan')?.addEventListener('click', () => {
         const num = parseFloat(display.value);
         if (!isNaN(num)) {
             display.value = Math.tan(num).toString();
+        }
+    }
+});
+
+document.getElementById('abs')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            display.value = Math.abs(num).toString();
         }
     }
 });
