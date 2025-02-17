@@ -9,4 +9,14 @@ document.getElementById('backspace')?.addEventListener('click', () => {
     }
 });
 
+document.getElementById('sqrt')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            display.value = Math.sqrt(currentValue).toString();
+        }
+    }
+});
+
 // ... (Rest of the code)
