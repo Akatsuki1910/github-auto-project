@@ -53,3 +53,7 @@ document.getElementById('exp')?.addEventListener('click', () => {
         }
     }
 });
+
+document.getElementById('clear')?.addEventListener('click', () => {
+    (document.getElementById('display') as HTMLInputElement).value = '';
+});
