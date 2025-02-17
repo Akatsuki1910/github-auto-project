@@ -25,3 +25,10 @@ document.getElementById('ceil')?.addEventListener('click', () => {
         }
     }
 });
+
+document.getElementById('rand')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        display.value = Math.random().toString();
+    }
+});
