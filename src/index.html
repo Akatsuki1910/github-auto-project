@@ -9,16 +9,12 @@
 <body>
     <button id="toggle-theme">Toggle Theme</button>
     <h1>Scientific Calculator</h1>
-    
     <div id="calculator">
-        <!-- Display Section -->
         <div class="display-section">
             <input type="text" id="display" readonly>
             <div id="currentExpressionDisplay"></div>
             <div id="history"></div>
         </div>
-
-        <!-- Memory Section -->
         <div class="memory-section">
             <button id="memory-clear" class="memory-btn">MC</button>
             <button id="memory-recall" class="memory-btn">MR</button>
@@ -26,8 +22,6 @@
             <button id="memory-subtract" class="memory-btn">M-</button>
             <button id="memory-store" class="memory-btn">MS</button>
         </div>
-
-        <!-- Scientific Functions -->
         <div class="scientific-section">
             <button id="sin" class="function-btn">sin</button>
             <button id="cos" class="function-btn">cos</button>
@@ -41,39 +35,30 @@
             <button id="pi" class="function-btn">π</button>
             <button id="factorial" class="function-btn">n!</button>
             <button id="abs" class="function-btn">|x|</button>
+            <button id="sign-change" class="function-btn">+/-</button>
         </div>
-
-        <!-- Main Calculator Pad -->
         <div class="main-pad">
-            <!-- Clear and Delete -->
             <button id="clear" class="control-btn">C</button>
             <button id="clear-entry" class="control-btn">CE</button>
             <button id="backspace" class="control-btn">⌫</button>
             <button id="clear-history" class="control-btn">CH</button>
-
-            <!-- Numbers and Basic Operations -->
             <button id="7" class="number-btn">7</button>
             <button id="8" class="number-btn">8</button>
             <button id="9" class="number-btn">9</button>
             <button id="divide" class="operator-btn">/</button>
-
             <button id="4" class="number-btn">4</button>
             <button id="5" class="number-btn">5</button>
             <button id="6" class="number-btn">6</button>
             <button id="multiply" class="operator-btn">×</button>
-
             <button id="1" class="number-btn">1</button>
             <button id="2" class="number-btn">2</button>
             <button id="3" class="number-btn">3</button>
             <button id="minus" class="operator-btn">-</button>
-
             <button id="0" class="number-btn">0</button>
             <button id="decimal" class="number-btn">.</button>
             <button id="equals" class="equals-btn">=</button>
             <button id="plus" class="operator-btn">+</button>
         </div>
-
-        <!-- Additional Functions -->
         <div class="additional-functions">
             <button id="percentage" class="function-btn">%</button>
             <button id="inverse" class="function-btn">1/x</button>
@@ -82,15 +67,12 @@
             <button id="round" class="function-btn">round</button>
             <button id="floor" class="function-btn">floor</button>
         </div>
-
-        <!-- Utility Functions -->
         <div class="utility-section">
             <button id="copy" class="utility-btn">Copy</button>
             <button id="current-time" class="utility-btn">Time</button>
             <button id="current-date" class="utility-btn">Date</button>
         </div>
     </div>
-
     <script src="./ts/index.ts" type="module"></script>
 </body>
 </html>
