@@ -35,4 +35,8 @@ clearDisplayBtn?.addEventListener('click', () => {
     display.value = '';
 });
 
+// Open documentation link
+document.getElementById('open-docs')?.addEventListener('click', () => {
+  window.open('https://www.example.com/calculator-docs', '_blank');
+});
 // ... (Rest of the code)
