@@ -33,3 +33,13 @@ function factorial(n: number): number {
         return result;
     }
 }
+
+document.getElementById('log')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            display.value = Math.log10(num).toString();
+        }
+    }
+});
