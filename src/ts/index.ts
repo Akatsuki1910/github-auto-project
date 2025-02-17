@@ -67,3 +67,18 @@ document.getElementById('round')?.addEventListener('click', () => {
         }
     }
 });
+
+document.getElementById('power')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const base = parseFloat(display.value);
+        display.value = ''; // Clear the display to enter the exponent
+        const exponentInput = prompt('Enter the exponent:')
+        if(exponentInput){
+            const exponent = parseFloat(exponentInput);
+            if(!isNaN(exponent)){
+                display.value = Math.pow(base, exponent).toString();
+            }
+        }
+    }
+});
