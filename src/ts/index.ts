@@ -17,6 +17,10 @@ const keyboardInputToggleBtn = document.getElementById('keyboard-input-toggle') 
 keyboardInputToggleBtn.addEventListener('click', () => {
     keyboardInputEnabled = !keyboardInputEnabled;
     keyboardInputToggleBtn.textContent = `Keyboard Input: ${keyboardInputEnabled ? 'ON' : 'OFF'}`;
+    // Added functionality: Focus on the display when keyboard input is enabled
+    if (keyboardInputEnabled) {
+        (document.getElementById('display') as HTMLInputElement)?.focus();
+    }
 });
 
 // ... (Rest of the code)
