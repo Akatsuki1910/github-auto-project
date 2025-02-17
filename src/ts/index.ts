@@ -16,4 +16,9 @@ document.getElementById('clear-history')?.addEventListener('click', () => {
     }
 });
 
+// Add feature: Open a new window
+document.getElementById('open-new-window')?.addEventListener('click', () => {
+    window.open('https://www.example.com', '_blank');
+});
+
 // ... (Rest of the code)
