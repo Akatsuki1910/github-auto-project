@@ -28,4 +28,11 @@ const helpButton = document.getElementById('help');
 helpButton?.addEventListener('click', () => {
   alert('This is a scientific calculator. Use the buttons to perform calculations.');
 });
+//Clear Display Button
+const clearDisplayBtn = document.getElementById('clear-display') as HTMLButtonElement;
+const display = document.getElementById('display') as HTMLInputElement;
+clearDisplayBtn?.addEventListener('click', () => {
+    display.value = '';
+});
+
 // ... (Rest of the code)
