@@ -102,7 +102,7 @@ const createText = async (key: string, prompt: string) => {
   		- webページで見たり触れたりできるようにしてください。
 			- スタイルについても留意して出力してください
 		- 既存コードから何か1つ機能を追加してください
-		- 出力コードは省略しないでください
+		- 出力するコードは省略しないでください
 		- 可読性は落としても構いません、できる限り短くしてください
 		`;
     const text = (await createText(key ?? "", prompt))
