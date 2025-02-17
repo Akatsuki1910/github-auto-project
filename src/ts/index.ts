@@ -17,32 +17,41 @@ const keyboardInputToggleBtn = document.getElementById('keyboard-input-toggle') 
 keyboardInputToggleBtn.addEventListener('click', () => {
     keyboardInputEnabled = !keyboardInputEnabled;
     keyboardInputToggleBtn.textContent = `Keyboard Input: ${keyboardInputEnabled ? 'ON' : 'OFF'}`;
-    // Added functionality: Focus on the display when keyboard input is enabled
     if (keyboardInputEnabled) {
         (document.getElementById('display') as HTMLInputElement)?.focus();
     }
 });
 
-//Help button functionality
 const helpButton = document.getElementById('help');
 helpButton?.addEventListener('click', () => {
   alert('This is a scientific calculator. Use the buttons to perform calculations.');
 });
-//Clear Display Button
 const clearDisplayBtn = document.getElementById('clear-display') as HTMLButtonElement;
 const display = document.getElementById('display') as HTMLInputElement;
 clearDisplayBtn?.addEventListener('click', () => {
     display.value = '';
 });
 
-// Open documentation link
 document.getElementById('open-docs')?.addEventListener('click', () => {
   window.open('https://www.example.com/calculator-docs', '_blank');
 });
 
-// Display current year
 document.getElementById('current-year')?.addEventListener('click', () => {
     const currentYear = new Date().getFullYear();
     alert(`Current Year: ${currentYear}`);
+});
+
+//Duplicate Button functionality
+document.getElementById('duplicate')?.addEventListener('click', () => {
+    const displayValue = display.value;
+    if (displayValue) {
+        navigator.clipboard.writeText(displayValue)
+            .then(() => {
+                alert('Display value duplicated to clipboard!');
+            })
+            .catch(err => {
+                console.error("Failed to copy: ", err);
+            });
+    }
 });
 // ... (Rest of the code)
