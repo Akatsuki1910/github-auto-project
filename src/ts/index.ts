@@ -30,4 +30,12 @@ document.getElementById('toggle-fullscreen')?.addEventListener('click', () => {
   }
 });
 
+// Add feature: Toggle Calculator Visibility
+document.getElementById('toggle-calculator')?.addEventListener('click', () => {
+    const calculatorDiv = document.getElementById('calculator');
+    if (calculatorDiv) {
+        calculatorDiv.style.display = calculatorDiv.style.display === 'none' ? 'block' : 'none';
+    }
+});
+
 // ... (Rest of the code)
