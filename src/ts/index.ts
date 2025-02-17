@@ -39,4 +39,10 @@ clearDisplayBtn?.addEventListener('click', () => {
 document.getElementById('open-docs')?.addEventListener('click', () => {
   window.open('https://www.example.com/calculator-docs', '_blank');
 });
+
+// Display current year
+document.getElementById('current-year')?.addEventListener('click', () => {
+    const currentYear = new Date().getFullYear();
+    alert(`Current Year: ${currentYear}`);
+});
 // ... (Rest of the code)
