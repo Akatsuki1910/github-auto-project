@@ -10,8 +10,25 @@ const display = document.getElementById('display') as HTMLInputElement;
 const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
 const historyDiv = document.getElementById('history') as HTMLDivElement;
 
-// Initialize display
+// Animation functions
+const addButtonAnimation = (button: HTMLElement) => {
+    button.classList.add('button-press-animation');
+    setTimeout(() => button.classList.remove('button-press-animation'), 150);
+};
+
+const addDisplayUpdateAnimation = () => {
+    display.classList.add('display-update-animation');
+    setTimeout(() => display.classList.remove('display-update-animation'), 200);
+};
+
+const addErrorAnimation = () => {
+    display.classList.add('error-animation');
+    setTimeout(() => display.classList.remove('error-animation'), 300);
+};
+
+// Initialize display with animation
 display.value = currentValue;
+addDisplayUpdateAnimation();
 
 // Theme toggle
 document.getElementById('toggle-theme')?.addEventListener('click', () => {
@@ -21,9 +38,14 @@ document.getElementById('toggle-theme')?.addEventListener('click', () => {
 });
 
 // Utility functions
-const updateDisplay = (value: string) => {
+const updateDisplay = (value: string, isError: boolean = false) => {
     display.value = value;
     currentValue = value;
+    if (isError) {
+        addErrorAnimation();
+    } else {
+        addDisplayUpdateAnimation();
+    }
 };
 
 const addToHistory = (expression: string, result: string) => {
@@ -35,7 +57,9 @@ const addToHistory = (expression: string, result: string) => {
 // Number input handlers
 const numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.'];
 numbers.forEach(num => {
-    document.getElementById(num)?.addEventListener('click', () => {
+    document.getElementById(num)?.addEventListener('click', (e) => {
+        const button = e.currentTarget as HTMLElement;
+        addButtonAnimation(button);
         if (clearOnNextInput) {
             currentValue = '';
             clearOnNextInput = false;
@@ -57,7 +81,9 @@ operations.forEach(op => {
                  op === '/' ? 'divide' : 
                  op === '+' ? 'plus' : 'minus';
     
-    document.getElementById(opId)?.addEventListener('click', () => {
+    document.getElementById(opId)?.addEventListener('click', (e) => {
+        const button = e.currentTarget as HTMLElement;
+        addButtonAnimation(button);
         if (lastOperation) {
             currentExpression = `${currentExpression} ${currentValue} ${op}`;
         } else {
@@ -84,7 +110,7 @@ document.getElementById('equals')?.addEventListener('click', () => {
         lastOperation = null;
         clearOnNextInput = true;
     } catch (e) {
-        updateDisplay('Error');
+        updateDisplay('Error', true);
         currentExpression = '';
         currentExpressionDisplay.textContent = '';
         lastOperation = null;
