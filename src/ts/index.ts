@@ -23,4 +23,9 @@ keyboardInputToggleBtn.addEventListener('click', () => {
     }
 });
 
+//Help button functionality
+const helpButton = document.getElementById('help');
+helpButton?.addEventListener('click', () => {
+  alert('This is a scientific calculator. Use the buttons to perform calculations.');
+});
 // ... (Rest of the code)
