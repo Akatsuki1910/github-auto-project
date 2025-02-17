@@ -39,4 +39,14 @@ document.getElementById('cube')?.addEventListener('click', () => {
     }
 });
 
+document.getElementById('percent')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            display.value = (currentValue / 100).toString();
+        }
+    }
+});
+
 // ... (Rest of the code)
