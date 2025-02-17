@@ -10,3 +10,8 @@ document.getElementById('half')?.addEventListener('click', () => {
         display.value = (num * 0.5).toString();
     }
 });
+//リセット機能
+document.getElementById('reset')?.addEventListener('click', () => {
+    (document.getElementById('display') as HTMLInputElement).value = '';
+    (document.getElementById('currentExpressionDisplay') as HTMLInputElement).innerText = '';
+});
