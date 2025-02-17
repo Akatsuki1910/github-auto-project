@@ -29,4 +29,14 @@ document.getElementById('square')?.addEventListener('click', () => {
     }
 });
 
+document.getElementById('cube')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            display.value = Math.pow(currentValue, 3).toString();
+        }
+    }
+});
+
 // ... (Rest of the code)
