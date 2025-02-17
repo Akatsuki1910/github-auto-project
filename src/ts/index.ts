@@ -1,4 +1,15 @@
 // ... (Existing code)
+// 合計値を求める
+document.getElementById('sum')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const nums = display.value.split('+').map(Number);
+    if (nums.some(isNaN)) {
+        display.value = "Error";
+    }
+    else {
+        display.value = nums.reduce((a, b) => a + b).toString();
+    }
+});
 // 1/2にする機能
 document.getElementById('half')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
