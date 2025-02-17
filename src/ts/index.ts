@@ -49,4 +49,14 @@ document.getElementById('percent')?.addEventListener('click', () => {
     }
 });
 
+document.getElementById('sign')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            display.value = (-currentValue).toString();
+        }
+    }
+});
+
 // ... (Rest of the code)
