@@ -122,3 +122,15 @@ document.getElementById('abs')?.addEventListener('click', () => {
         }
     }
 });
+
+document.getElementById('inverse')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const num = parseFloat(display.value);
+        if (!isNaN(num) && num !== 0) {
+            display.value = (1 / num).toString();
+        } else if (num === 0) {
+            display.value = "Cannot divide by zero";
+        }
+    }
+});
