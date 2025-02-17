@@ -21,4 +21,13 @@ document.getElementById('open-new-window')?.addEventListener('click', () => {
     window.open('https://www.example.com', '_blank');
 });
 
+// Add feature: Toggle Fullscreen
+document.getElementById('toggle-fullscreen')?.addEventListener('click', () => {
+  if (document.fullscreenElement) {
+    document.exitFullscreen();
+  } else {
+    document.documentElement.requestFullscreen();
+  }
+});
+
 // ... (Rest of the code)
