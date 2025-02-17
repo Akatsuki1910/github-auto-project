@@ -1,27 +1,12 @@
 // ... (Existing code)
-// n乗根機能
-document.getElementById('nth-root')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
-        alert('Invalid input');
-        return;
-    }
-    const n = parseFloat(prompt('Enter the root (n):', '2'));
-    if (isNaN(n)) {
-        alert('Invalid root');
-        return;
-    }
-    display.value = Math.pow(num, 1 / n).toString();
-});
-// 2倍にする機能
-document.getElementById('double')?.addEventListener('click', () => {
+// 3倍にする機能
+document.getElementById('triple')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const num = parseFloat(display.value);
     if (isNaN(num)) {
         display.value = "Error";
     }
     else {
-        display.value = (num * 2).toString();
+        display.value = (num * 3).toString();
     }
 });
