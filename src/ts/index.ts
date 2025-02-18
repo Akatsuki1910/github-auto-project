@@ -19,75 +19,15 @@ document.getElementById('factorial')?.addEventListener('click', () => {
     }
 });
 
-//Square Root function
-document.getElementById('square-root')?.addEventListener('click', () => {
-    // ... existing code
-});
+// ... other functions
 
-// Power function
-document.getElementById('power')?.addEventListener('click', () => {
-    // ... existing code
-});
-
-// Percentage function
-document.getElementById('percentage')?.addEventListener('click', () => {
-    // ... existing code
-});
-
-// Negate function
-document.getElementById('negate')?.addEventListener('click', () => {
-    // ... existing code
-});
-
-//Pi function
-document.getElementById('pi')?.addEventListener('click', () => {
-  // ... existing code
-});
-
-//Euler's number function
-document.getElementById('euler')?.addEventListener('click', () => {
-    // ... existing code
-});
-
-document.getElementById('log')?.addEventListener('click', () => {
-    // ... existing code
-});
-
-document.getElementById('ln')?.addEventListener('click', () => {
-    // ... existing code
-});
-
-// Inverse function
-document.getElementById('inverse')?.addEventListener('click', () => {
- // ... existing code
-});
-
-// Clear button functionality
-document.getElementById('clear')?.addEventListener('click', () => {
-    (document.getElementById('display') as HTMLInputElement).value = '';
-});
-
-// ... (Rest of the functions)
-
-// Clear Display button functionality
-document.getElementById('clear-display')?.addEventListener('click', () => {
-    // ... existing code
-});
-
-document.getElementById('sin')?.addEventListener('click', () => {
-// ... existing code
-});
-
-document.getElementById('cos')?.addEventListener('click', () => {
-// ... existing code
-});
-
-document.getElementById('tan')?.addEventListener('click', () => {
+document.getElementById('sign-change')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display) {
-        const num = parseFloat(display.value);
-        if (!isNaN(num)) {
-            display.value = Math.tan(num).toString();
+        let currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)){
+            currentValue *= -1;
+            display.value = currentValue.toString();
         }
     }
 });
