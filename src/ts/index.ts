@@ -52,3 +52,13 @@ document.getElementById('square')?.addEventListener('click', () => {
         }
     }
 });
+
+document.getElementById('cube')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            display.value = (num * num * num).toString();
+        }
+    }
+});
