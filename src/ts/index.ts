@@ -30,13 +30,19 @@ document.getElementById('square-root')?.addEventListener('click', () => {
     }
 });
 
-//Floor function
-document.getElementById('floor')?.addEventListener('click', () => {
+// Power function
+document.getElementById('power')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display) {
-        const num = parseFloat(display.value);
-        if (!isNaN(num)) {
-            display.value = Math.floor(num).toString();
+        const base = parseFloat(display.value);
+        display.value = ''; // Clear for next input
+        document.addEventListener('input', powerInputListener);
+        function powerInputListener() {
+            const exponent = parseFloat(display.value);
+            if (!isNaN(exponent)) {
+                display.value = Math.pow(base, exponent).toString();
+                document.removeEventListener('input', powerInputListener);
+            }
         }
     }
 });
