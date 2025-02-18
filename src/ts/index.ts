@@ -92,3 +92,10 @@ document.getElementById('ten-power')?.addEventListener('click', () => {
         }
     }
 });
+
+document.getElementById('random')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        display.value = Math.random().toString();
+    }
+});
