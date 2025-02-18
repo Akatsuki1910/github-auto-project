@@ -69,3 +69,13 @@ document.getElementById('fibonacci')?.addEventListener('click', () => {
         }
     }
 });
+
+document.getElementById('base-10-log')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            display.value = Math.log10(num).toString();
+        }
+    }
+});
