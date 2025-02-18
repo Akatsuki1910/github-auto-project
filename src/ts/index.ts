@@ -126,3 +126,13 @@ document.getElementById('ceil')?.addEventListener('click', () => {
         }
     }
 });
+
+document.getElementById('sign')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            display.value = Math.sign(num).toString();
+        }
+    }
+});
