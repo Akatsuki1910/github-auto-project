@@ -80,6 +80,11 @@ document.getElementById('inverse')?.addEventListener('click', () => {
     }
 });
 
+// Clear button functionality
+document.getElementById('clear')?.addEventListener('click', () => {
+    (document.getElementById('display') as HTMLInputElement).value = '';
+});
+
 // ... (Rest of the functions)
 
 // Clear Display button functionality
