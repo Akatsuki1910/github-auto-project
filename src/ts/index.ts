@@ -19,6 +19,17 @@ document.getElementById('factorial')?.addEventListener('click', () => {
     }
 });
 
+//Square Root function
+document.getElementById('square-root')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            display.value = Math.sqrt(num).toString();
+        }
+    }
+});
+
 //Floor function
 document.getElementById('floor')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
