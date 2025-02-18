@@ -21,6 +21,13 @@ document.getElementById('factorial')?.addEventListener('click', () => {
 
 // ... other functions
 
+document.getElementById('backspace')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        display.value = display.value.slice(0, -1);
+    }
+});
+
 document.getElementById('sign-change')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display) {
