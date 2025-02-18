@@ -58,6 +58,17 @@ document.getElementById('percentage')?.addEventListener('click', () => {
     }
 });
 
+// Negate function
+document.getElementById('negate')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            display.value = (-num).toString();
+        }
+    }
+});
+
 // ... (Rest of the functions)
 
 // Clear Display button functionality
