@@ -59,6 +59,16 @@ document.getElementById('log')?.addEventListener('click', () => {
     }
 });
 
+document.getElementById('ln')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            display.value = Math.log(num).toString();
+        }
+    }
+});
+
 // ... (Rest of the functions)
 
 // Clear Display button functionality
