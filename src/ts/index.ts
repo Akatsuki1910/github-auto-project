@@ -91,3 +91,14 @@ document.getElementById('tan')?.addEventListener('click', () => {
         }
     }
 });
+
+// Absolute value function
+document.getElementById('abs')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            display.value = Math.abs(num).toString();
+        }
+    }
+});
