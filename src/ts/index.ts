@@ -89,3 +89,11 @@ document.getElementById('natural-log')?.addEventListener('click', () => {
         }
     }
 });
+
+// Clear Display button functionality
+document.getElementById('clear-display')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        display.value = ''; // Clear the display
+    }
+});
