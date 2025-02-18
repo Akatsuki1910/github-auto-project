@@ -77,6 +77,14 @@ document.getElementById('pi')?.addEventListener('click', () => {
   }
 });
 
+//Euler's number function
+document.getElementById('euler')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+      display.value = Math.E.toString();
+    }
+  });
+
 
 // ... (Rest of the functions)
 
