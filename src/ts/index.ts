@@ -42,3 +42,13 @@ document.getElementById('abs')?.addEventListener('click', () => {
         }
     }
 });
+
+document.getElementById('square')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            display.value = (num * num).toString();
+        }
+    }
+});
