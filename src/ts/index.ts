@@ -50,34 +50,16 @@ document.getElementById('euler')?.addEventListener('click', () => {
 });
 
 document.getElementById('log')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        const num = parseFloat(display.value);
-        if (!isNaN(num)) {
-            display.value = Math.log10(num).toString();
-        }
-    }
+    // ... existing code
 });
 
 document.getElementById('ln')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        const num = parseFloat(display.value);
-        if (!isNaN(num)) {
-            display.value = Math.log(num).toString();
-        }
-    }
+    // ... existing code
 });
 
 // Inverse function
 document.getElementById('inverse')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        const num = parseFloat(display.value);
-        if (!isNaN(num) && num !== 0) {
-            display.value = (1 / num).toString();
-        }
-    }
+ // ... existing code
 });
 
 // Clear button functionality
@@ -93,21 +75,19 @@ document.getElementById('clear-display')?.addEventListener('click', () => {
 });
 
 document.getElementById('sin')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        const num = parseFloat(display.value);
-        if (!isNaN(num)) {
-            display.value = Math.sin(num).toString();
-        }
-    }
+// ... existing code
 });
 
 document.getElementById('cos')?.addEventListener('click', () => {
+// ... existing code
+});
+
+document.getElementById('tan')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display) {
         const num = parseFloat(display.value);
         if (!isNaN(num)) {
-            display.value = Math.cos(num).toString();
+            display.value = Math.tan(num).toString();
         }
     }
 });
