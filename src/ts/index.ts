@@ -69,6 +69,15 @@ document.getElementById('negate')?.addEventListener('click', () => {
     }
 });
 
+//Pi function
+document.getElementById('pi')?.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  if (display) {
+    display.value = Math.PI.toString();
+  }
+});
+
+
 // ... (Rest of the functions)
 
 // Clear Display button functionality
