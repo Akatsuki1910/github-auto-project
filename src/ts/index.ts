@@ -47,6 +47,17 @@ document.getElementById('power')?.addEventListener('click', () => {
     }
 });
 
+// Percentage function
+document.getElementById('percentage')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            display.value = (num / 100).toString();
+        }
+    }
+});
+
 // ... (Rest of the functions)
 
 // Clear Display button functionality
