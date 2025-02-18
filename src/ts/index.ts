@@ -69,6 +69,17 @@ document.getElementById('ln')?.addEventListener('click', () => {
     }
 });
 
+// Inverse function
+document.getElementById('inverse')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const num = parseFloat(display.value);
+        if (!isNaN(num) && num !== 0) {
+            display.value = (1 / num).toString();
+        }
+    }
+});
+
 // ... (Rest of the functions)
 
 // Clear Display button functionality
