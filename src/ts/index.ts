@@ -82,3 +82,13 @@ document.getElementById('exp')?.addEventListener('click', () => {
         }
     }
 });
+
+document.getElementById('ten-power')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            display.value = Math.pow(10, num).toString();
+        }
+    }
+});
