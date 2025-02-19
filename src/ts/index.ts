@@ -66,3 +66,14 @@ document.getElementById('ceil')?.addEventListener('click', () => {
         }
     }
 });
+// Absolute function
+document.getElementById('abs')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        try {
+            display.value = Math.abs(parseFloat(display.value)).toString();
+        } catch (error) {
+            display.value = "Error";
+        }
+    }
+});
