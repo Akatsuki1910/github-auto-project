@@ -74,3 +74,10 @@ document.getElementById('clear-history')?.addEventListener('click', () => {
         historyDiv.innerHTML = '';
     }
 });
+// Clear Display button
+document.getElementById('clear-display')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        display.value = '';
+    }
+});
