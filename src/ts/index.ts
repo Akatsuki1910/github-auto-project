@@ -29,57 +29,15 @@ document.getElementById('backspace')?.addEventListener('click', () => {
 // Square function
 // ... (Existing functions)
 // Sign function
-document.getElementById('sign')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        try {
-            const currentValue = parseFloat(display.value);
-            display.value = (-currentValue).toString();
-        } catch (error) {
-            display.value = "Error";
-        }
-    }
-});
 //Log base 10 function
-document.getElementById('log')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        try {
-            display.value = Math.log10(parseFloat(display.value)).toString();
-        } catch (error) {
-            display.value = "Error";
-        }
-    }
-});
 // Inverse function
-document.getElementById('inverse')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        try {
-            const currentValue = parseFloat(display.value);
-            display.value = (1/currentValue).toString();
-        } catch (error) {
-            display.value = "Error";
-        }
-    }
-});
 // Round function
-document.getElementById('round')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        try {
-            display.value = Math.round(parseFloat(display.value)).toString();
-        } catch (error) {
-            display.value = "Error";
-        }
-    }
-});
 // Sine function
-document.getElementById('sin')?.addEventListener('click', () => {
+document.getElementById('cos')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display) {
         try {
-            display.value = Math.sin(parseFloat(display.value)).toString();
+            display.value = Math.cos(parseFloat(display.value)).toString();
         } catch (error) {
             display.value = "Error";
         }
