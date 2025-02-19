@@ -1,1 +1,68 @@
-/* ... (Existing CSS) */
+body {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+#calculator {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.display-section {
+    margin-bottom: 10px;
+}
+
+#display {
+    width: 100%;
+    padding: 10px;
+    font-size: 18px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #eee;
+}
+
+button:hover {
+    background-color: #ddd;
+}
+
+.main-pad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 5px;
+}
+
+.scientific-section {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px; 
+    margin-bottom: 10px;
+}
+
+.additional-functions {
+    display: flex;    
+    margin-top: 10px;
+    gap:5px;
+}
+
+.memory-section {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 10px;
+}
