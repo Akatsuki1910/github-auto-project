@@ -1,104 +1,14 @@
 // ... (Existing code)
 //Fibonacci
-document.getElementById('fibonacci')?.addEventListener('click', () => {
+// ... (Existing code)
+document.getElementById('ten-power')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display) {
         try {
-            const n = parseInt(display.value);
-            if (isNaN(n) || n < 0) {
-                display.value = "Error";
-            } else {
-                function fibonacci(num: number): number {
-                    if (num <= 1) return num;
-                    return fibonacci(num - 1) + fibonacci(num - 2);
-                }
-                display.value = fibonacci(n).toString();
-            }
+            const num = parseFloat(display.value);
+            display.value = Math.pow(10, num).toString();
         } catch (error) {
             display.value = "Error";
         }
-    }
-});
-
-document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
-    button.addEventListener('click', () => {
-        const display = document.getElementById('display') as HTMLInputElement;
-        if (display) {
-            display.value += button.textContent;
-        }
-    });
-});
-document.querySelector('.equals')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        try {
-            display.value = eval(display.value).toString();
-        } catch (error) {
-            display.value = "Error";
-        }
-    }
-});
-//Exponetial function
-//...(Existing functions)
-// Backspace function
-document.getElementById('backspace')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        display.value = display.value.slice(0, -1);
-    }
-});
-// Square function
-// ... (Existing functions)
-// Sign function
-//Log base 10 function
-// Inverse function
-// Round function
-// Sine function
-// Cosine function
-// Tangent function
-//Ceil function
-// Absolute function
-document.getElementById('floor')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        try {
-            display.value = Math.floor(parseFloat(display.value)).toString();
-        } catch (error) {
-            display.value = "Error";
-        }
-    }
-});
-//Euler's number
-document.getElementById('e')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        display.value += Math.E.toString();
-    }
-});
-//Parenthesis
-let parenthesisCount = 0;
-document.getElementById('parenthesis')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        if (parenthesisCount % 2 === 0) {
-            display.value += '(';
-        } else {
-            display.value += ')';
-        }
-        parenthesisCount++;
-    }
-});
-// Clear History button
-document.getElementById('clear-history')?.addEventListener('click', () => {
-    const historyDiv = document.getElementById('history');
-    if (historyDiv) {
-        historyDiv.innerHTML = '';
-    }
-});
-// Clear Display button
-document.getElementById('clear-display')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        display.value = '';
     }
 });
