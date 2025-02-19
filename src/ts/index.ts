@@ -29,3 +29,16 @@ document.getElementById('backspace')?.addEventListener('click', () => {
         display.value = display.value.slice(0, -1);
     }
 });
+
+// Square function
+document.getElementById('square')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        try {
+            const currentValue = parseFloat(display.value);
+            display.value = (currentValue * currentValue).toString();
+        } catch (error) {
+            display.value = "Error";
+        }
+    }
+});
