@@ -1,4 +1,25 @@
 // ... (Existing code)
+//Fibonacci
+document.getElementById('fibonacci')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        try {
+            const n = parseInt(display.value);
+            if (isNaN(n) || n < 0) {
+                display.value = "Error";
+            } else {
+                function fibonacci(num: number): number {
+                    if (num <= 1) return num;
+                    return fibonacci(num - 1) + fibonacci(num - 2);
+                }
+                display.value = fibonacci(n).toString();
+            }
+        } catch (error) {
+            display.value = "Error";
+        }
+    }
+});
+
 document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
     button.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
