@@ -74,3 +74,11 @@ document.getElementById('plus-minus')?.addEventListener('click', () => {
         }
       }
 });
+
+//Pi function
+document.getElementById('pi')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        display.value += Math.PI.toString();
+    }
+});
