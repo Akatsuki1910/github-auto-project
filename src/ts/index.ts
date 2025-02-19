@@ -57,3 +57,16 @@ document.getElementById('log')?.addEventListener('click', () => {
         }
     }
 });
+
+// Inverse function
+document.getElementById('inverse')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        try {
+            const currentValue = parseFloat(display.value);
+            display.value = (1/currentValue).toString();
+        } catch (error) {
+            display.value = "Error";
+        }
+    }
+});
