@@ -82,3 +82,20 @@ document.getElementById('pi')?.addEventListener('click', () => {
         display.value += Math.PI.toString();
     }
 });
+
+//Factorial function
+document.getElementById('factorial')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const num = parseInt(display.value);
+        if (!isNaN(num) && num >= 0) {
+            let result = 1;
+            for (let i = 1; i <= num; i++) {
+                result *= i;
+            }
+            display.value = result.toString();
+        } else {
+          display.value = "Invalid Input for factorial";
+        }
+    }
+});
