@@ -54,3 +54,11 @@ document.getElementById('percentage')?.addEventListener('click', () => {
         }
     }
 });
+
+//Clear function
+document.getElementById('clear')?.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  if (display) {
+    display.value = '';
+  }
+});
