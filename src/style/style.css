@@ -50,7 +50,7 @@ button:hover {
 
 .scientific-section {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-gap: 5px; 
     margin-bottom: 10px;
 }

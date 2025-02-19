@@ -62,3 +62,15 @@ document.getElementById('clear')?.addEventListener('click', () => {
     display.value = '';
   }
 });
+
+// Plus/Minus function
+document.getElementById('plus-minus')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        let currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+          currentValue *= -1;
+          display.value = currentValue.toString();
+        }
+      }
+});
