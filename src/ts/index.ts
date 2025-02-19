@@ -43,3 +43,14 @@ document.getElementById('sqrt')?.addEventListener('click', () => {
         }
     }
 });
+
+// Percentage function
+document.getElementById('percentage')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            display.value = (num / 100).toString();
+        }
+    }
+});
