@@ -93,3 +93,14 @@ document.getElementById('duplicate')?.addEventListener('click', () => {
         display.value += display.value;
     }
 });
+
+// Swap function
+document.getElementById('swap')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+      if (display.value.length >= 2) {
+        let value = display.value;
+        display.value = value.slice(-1) + value.slice(0, -1);
+      }
+    }
+});
