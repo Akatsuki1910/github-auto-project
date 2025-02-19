@@ -55,3 +55,16 @@ document.getElementById('cube')?.addEventListener('click', () => {
         }
     }
 });
+
+// Natural Logarithm function
+document.getElementById('ln')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        try {
+            const currentValue = parseFloat(display.value);
+            display.value = Math.log(currentValue).toString();
+        } catch (error) {
+            display.value = "Error";
+        }
+    }
+});
