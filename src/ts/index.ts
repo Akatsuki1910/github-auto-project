@@ -43,3 +43,14 @@ document.getElementById('cos')?.addEventListener('click', () => {
         }
     }
 });
+// Tangent function
+document.getElementById('tan')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        try {
+            display.value = Math.tan(parseFloat(display.value)).toString();
+        } catch (error) {
+            display.value = "Error";
+        }
+    }
+});
