@@ -1,5 +1,4 @@
 // ... (Existing code)
-
 document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
     button.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
@@ -8,7 +7,6 @@ document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
         }
     });
 });
-
 document.querySelector('.equals')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display) {
@@ -21,7 +19,6 @@ document.querySelector('.equals')?.addEventListener('click', () => {
 });
 //Exponetial function
 //...(Existing functions)
-
 // Backspace function
 document.getElementById('backspace')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
@@ -29,10 +26,8 @@ document.getElementById('backspace')?.addEventListener('click', () => {
         display.value = display.value.slice(0, -1);
     }
 });
-
 // Square function
 // ... (Existing functions)
-
 // Sign function
 document.getElementById('sign')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
@@ -45,7 +40,6 @@ document.getElementById('sign')?.addEventListener('click', () => {
         }
     }
 });
-
 //Log base 10 function
 document.getElementById('log')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
@@ -57,7 +51,6 @@ document.getElementById('log')?.addEventListener('click', () => {
         }
     }
 });
-
 // Inverse function
 document.getElementById('inverse')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
@@ -70,13 +63,23 @@ document.getElementById('inverse')?.addEventListener('click', () => {
         }
     }
 });
-
 // Round function
 document.getElementById('round')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display) {
         try {
             display.value = Math.round(parseFloat(display.value)).toString();
+        } catch (error) {
+            display.value = "Error";
+        }
+    }
+});
+// Sine function
+document.getElementById('sin')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        try {
+            display.value = Math.sin(parseFloat(display.value)).toString();
         } catch (error) {
             display.value = "Error";
         }
