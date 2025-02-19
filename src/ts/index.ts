@@ -68,3 +68,17 @@ document.getElementById('ln')?.addEventListener('click', () => {
         }
     }
 });
+
+// Power function
+document.getElementById('power')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        try {
+            const base = parseFloat(display.value.split('^')[0]);
+            const exponent = parseFloat(display.value.split('^')[1]);
+            display.value = Math.pow(base, exponent).toString();
+        } catch (error) {
+            display.value = "Error";
+        }
+    }
+});
