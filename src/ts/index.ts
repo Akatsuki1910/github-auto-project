@@ -120,3 +120,17 @@ document.getElementById('clear-all')?.addEventListener('click', () => {
         display.value = '';
     }
 });
+
+// Summation function
+document.getElementById('sum')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+      try {
+        const numbers = display.value.split('+').map(Number);
+        const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+        display.value = sum.toString();
+      } catch (error) {
+        display.value = "Error";
+      }
+    }
+});
