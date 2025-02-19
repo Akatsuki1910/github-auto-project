@@ -112,3 +112,11 @@ document.getElementById('clear-history')?.addEventListener('click', () => {
         historyDiv.innerHTML = '';
     }
 });
+
+// Clear All function
+document.getElementById('clear-all')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        display.value = '';
+    }
+});
