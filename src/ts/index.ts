@@ -54,3 +54,16 @@ document.getElementById('e')?.addEventListener('click', () => {
         display.value += Math.E.toString();
     }
 });
+//Parenthesis
+let parenthesisCount = 0;
+document.getElementById('parenthesis')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        if (parenthesisCount % 2 === 0) {
+            display.value += '(';
+        } else {
+            display.value += ')';
+        }
+        parenthesisCount++;
+    }
+});
