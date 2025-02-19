@@ -54,3 +54,15 @@ document.getElementById('tan')?.addEventListener('click', () => {
         }
     }
 });
+//Ceil function
+document.getElementById('ceil')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        try {
+            display.value = Math.ceil(parseFloat(display.value)).toString();
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    }
+});
