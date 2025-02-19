@@ -1,136 +1,33 @@
 // ... (Existing code)
 
-// ... (Existing Event Listeners)
+// Add event listeners for digits, operators, decimal, and equals
+document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
+    button.addEventListener('click', () => {
+        const display = document.getElementById('display') as HTMLInputElement;
+        if (display) {
+            display.value += button.textContent;
+        }
+    });
+});
 
-// ... (Rest of the code)
-
-//Factorial function
-document.getElementById('factorial')?.addEventListener('click', () => {
+document.querySelector('.equals')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display) {
-        const num = parseInt(display.value);
-        if (!isNaN(num)) {
-            let result = 1;
-            for (let i = 2; i <= num; i++) {
-                result *= i;
-            }
-            display.value = result.toString();
+        try {
+            display.value = eval(display.value).toString();
+        } catch (error) {
+            display.value = "Error";
         }
     }
 });
 
-// ... other functions
-
-// Power of two function
-document.getElementById('power-of-two')?.addEventListener('click', () => {
+//Exponetial function
+document.getElementById('exp')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display) {
         const num = parseFloat(display.value);
         if (!isNaN(num)) {
-            display.value = Math.pow(num, 2).toString();
+            display.value = Math.exp(num).toString();
         }
-    }
-});
-
-document.getElementById('backspace')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        display.value = display.value.slice(0, -1);
-    }
-});
-
-document.getElementById('sign-change')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        let currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)){
-            currentValue *= -1;
-            display.value = currentValue.toString();
-        }
-    }
-});
-
-// ... (rest of the functions)
-
-// Square root function
-document.getElementById('sqrt')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        const num = parseFloat(display.value);
-        if (!isNaN(num)) {
-            display.value = Math.sqrt(num).toString();
-        }
-    }
-});
-
-// Cube root function
-document.getElementById('cuberoot')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        const num = parseFloat(display.value);
-        if (!isNaN(num)) {
-            display.value = Math.cbrt(num).toString();
-        }
-    }
-});
-
-// Modulo operator function
-document.getElementById('mod')?.addEventListener('click', () => {
-  const display = document.getElementById('display') as HTMLInputElement;
-  if (display) {
-    try {
-      display.value = eval(display.value + '%').toString();
-    } catch (error) {
-      display.value = "Error";
-    }
-  }
-});
-
-// Duplicate function
-document.getElementById('duplicate')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        display.value += display.value;
-    }
-});
-
-// Swap function
-document.getElementById('swap')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-      if (display.value.length >= 2) {
-        let value = display.value;
-        display.value = value.slice(-1) + value.slice(0, -1);
-      }
-    }
-});
-
-// Clear history function
-document.getElementById('clear-history')?.addEventListener('click', () => {
-    const historyDiv = document.getElementById('history');
-    if (historyDiv) {
-        historyDiv.innerHTML = '';
-    }
-});
-
-// Clear All function
-document.getElementById('clear-all')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        display.value = '';
-    }
-});
-
-// Summation function
-document.getElementById('sum')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-      try {
-        const numbers = display.value.split('+').map(Number);
-        const sum = numbers.reduce((acc, curr) => acc + curr, 0);
-        display.value = sum.toString();
-      } catch (error) {
-        display.value = "Error";
-      }
     }
 });
