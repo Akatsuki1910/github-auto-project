@@ -47,3 +47,10 @@ document.getElementById('floor')?.addEventListener('click', () => {
         }
     }
 });
+//Euler's number
+document.getElementById('e')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        display.value += Math.E.toString();
+    }
+});
