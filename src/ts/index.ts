@@ -78,17 +78,18 @@ document.getElementById('cuberoot')?.addEventListener('click', () => {
 document.getElementById('mod')?.addEventListener('click', () => {
   const display = document.getElementById('display') as HTMLInputElement;
   if (display) {
-    // Implement modulo logic. This will depend on how you are managing the calculator's state.
-    //  For example, if you have a 'currentExpression' variable:
-    // currentExpression += '%';
-    // display.value = currentExpression;
-
-    // Or if you are evaluating the expression immediately:
     try {
       display.value = eval(display.value + '%').toString();
-      // Consider using a safer evaluation method than 'eval' in a production environment.
     } catch (error) {
       display.value = "Error";
     }
   }
+});
+
+// Duplicate function
+document.getElementById('duplicate')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        display.value += display.value;
+    }
 });
