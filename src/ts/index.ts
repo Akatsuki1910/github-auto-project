@@ -70,3 +70,15 @@ document.getElementById('inverse')?.addEventListener('click', () => {
         }
     }
 });
+
+// Round function
+document.getElementById('round')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        try {
+            display.value = Math.round(parseFloat(display.value)).toString();
+        } catch (error) {
+            display.value = "Error";
+        }
+    }
+});
