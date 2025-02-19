@@ -11,3 +11,16 @@ document.getElementById('two-power')?.addEventListener('click', () => {
         }
     }
 });
+//Cube Root
+document.getElementById('cuberoot')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        try {
+            const num = parseFloat(display.value);
+            display.value = Math.cbrt(num).toString();
+        }
+        catch (error) {
+            display.value = "Error";
+        }
+    }
+});
