@@ -67,3 +67,10 @@ document.getElementById('parenthesis')?.addEventListener('click', () => {
         parenthesisCount++;
     }
 });
+// Clear History button
+document.getElementById('clear-history')?.addEventListener('click', () => {
+    const historyDiv = document.getElementById('history');
+    if (historyDiv) {
+        historyDiv.innerHTML = '';
+    }
+});
