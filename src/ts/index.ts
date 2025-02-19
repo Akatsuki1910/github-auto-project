@@ -42,3 +42,16 @@ document.getElementById('square')?.addEventListener('click', () => {
         }
     }
 });
+
+// Cube function
+document.getElementById('cube')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        try {
+            const currentValue = parseFloat(display.value);
+            display.value = (currentValue * currentValue * currentValue).toString();
+        } catch (error) {
+            display.value = "Error";
+        }
+    }
+});
