@@ -104,3 +104,11 @@ document.getElementById('swap')?.addEventListener('click', () => {
       }
     }
 });
+
+// Clear history function
+document.getElementById('clear-history')?.addEventListener('click', () => {
+    const historyDiv = document.getElementById('history');
+    if (historyDiv) {
+        historyDiv.innerHTML = '';
+    }
+});
