@@ -45,3 +45,15 @@ document.getElementById('sign')?.addEventListener('click', () => {
         }
     }
 });
+
+//Log base 10 function
+document.getElementById('log')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        try {
+            display.value = Math.log10(parseFloat(display.value)).toString();
+        } catch (error) {
+            display.value = "Error";
+        }
+    }
+});
