@@ -34,3 +34,25 @@ document.getElementById('trunc')?.addEventListener('click', () => {
         historyDisplay.innerText += `trunc(${currentValue}) = ${result}\n`;
     }
 });
+
+document.getElementById('max')?.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  const currentValue = parseFloat(display.value);
+  display.value = "Enter second number for max";
+
+    let secondNumber: number;
+    const secondNumberInput = prompt("Enter second number:");
+        if (secondNumberInput !== null) {
+            secondNumber = parseFloat(secondNumberInput);
+            if (!isNaN(secondNumber)){
+                const result = Math.max(currentValue, secondNumber);
+                display.value = result.toString();
+                const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+                if (historyDisplay) {
+                    historyDisplay.innerText += `max(${currentValue}, ${secondNumber}) = ${result}\n`;
+                }
+            } else{
+                display.value = "Invalid input";
+            }
+        }
+});
