@@ -31,3 +31,12 @@ document.getElementById('abs')?.addEventListener('click', () => {
         historyDisplay.innerText += `abs(${n}) = ${result}\n`;
     }
 });
+
+document.getElementById('round')?.addEventListener('click', () => {
+    const n = parseFloat(prompt('Enter a number:') || '0');
+    const result = Math.round(n);
+    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+    if (historyDisplay) {
+        historyDisplay.innerText += `round(${n}) = ${result}\n`;
+    }
+});
