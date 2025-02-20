@@ -38,3 +38,12 @@ document.getElementById('ten-power')?.addEventListener('click', () => {
         historyDisplay.innerText += `10^${n} = ${result}\n`;
     }
 });
+
+document.getElementById('log')?.addEventListener('click', () => {
+    const n = parseFloat(prompt('Enter a number for log10:') || '0');
+    const result = Math.log10(n);
+    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+    if (historyDisplay) {
+        historyDisplay.innerText += `log(${n}) = ${result}\n`;
+    }
+});
