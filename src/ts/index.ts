@@ -39,3 +39,14 @@ document.getElementById('e')?.addEventListener('click', () => {
   const display = document.getElementById('display') as HTMLInputElement;
   display.value = Math.E.toString();
 });
+
+document.getElementById('inverse')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    const result = 1 / currentValue;
+    display.value = result.toString();
+    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+    if (historyDisplay) {
+        historyDisplay.innerText += `1/${currentValue} = ${result}\n`;
+    }
+});
