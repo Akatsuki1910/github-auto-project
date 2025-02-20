@@ -14,38 +14,13 @@ const factorial = (n: number): number => {
 
 // ... (Existing code for square, cube, ten-power, log)
 
-document.getElementById('sign')?.addEventListener('click', () => {
-    const n = parseFloat(prompt('Enter a number:') || '0');
-    const result = Math.sign(n);
-    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
-    if (historyDisplay) {
-        historyDisplay.innerText += `sign(${n}) = ${result}\n`;
-    }
-});
+// ... (Existing code for sign, abs, round, cbrt)
 
-document.getElementById('abs')?.addEventListener('click', () => {
+document.getElementById('floor')?.addEventListener('click', () => {
     const n = parseFloat(prompt('Enter a number:') || '0');
-    const result = Math.abs(n);
+    const result = Math.floor(n);
     const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
     if (historyDisplay) {
-        historyDisplay.innerText += `abs(${n}) = ${result}\n`;
-    }
-});
-
-document.getElementById('round')?.addEventListener('click', () => {
-    const n = parseFloat(prompt('Enter a number:') || '0');
-    const result = Math.round(n);
-    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
-    if (historyDisplay) {
-        historyDisplay.innerText += `round(${n}) = ${result}\n`;
-    }
-});
-
-document.getElementById('cbrt')?.addEventListener('click', () => {
-    const n = parseFloat(prompt('Enter a number:') || '0');
-    const result = Math.cbrt(n);
-    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
-    if (historyDisplay) {
-        historyDisplay.innerText += `cbrt(${n}) = ${result}\n`;
+        historyDisplay.innerText += `floor(${n}) = ${result}\n`;
     }
 });
