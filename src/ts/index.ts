@@ -34,3 +34,8 @@ document.getElementById('ln')?.addEventListener('click', () => {
         historyDisplay.innerText += `ln(${currentValue}) = ${result}\n`;
     }
 });
+
+document.getElementById('e')?.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  display.value = Math.E.toString();
+});
