@@ -51,3 +51,8 @@ document.getElementById('right-parenthesis')?.addEventListener('click', () => {
         display.value += ')';
     }
 });
+
+//All Clear functionality
+document.getElementById('clear-all')?.addEventListener('click', () => {
+    (document.getElementById('display') as HTMLInputElement).value = '';
+});
