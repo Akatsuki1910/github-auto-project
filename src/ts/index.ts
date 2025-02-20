@@ -40,3 +40,12 @@ document.getElementById('round')?.addEventListener('click', () => {
         historyDisplay.innerText += `round(${n}) = ${result}\n`;
     }
 });
+
+document.getElementById('cbrt')?.addEventListener('click', () => {
+    const n = parseFloat(prompt('Enter a number:') || '0');
+    const result = Math.cbrt(n);
+    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+    if (historyDisplay) {
+        historyDisplay.innerText += `cbrt(${n}) = ${result}\n`;
+    }
+});
