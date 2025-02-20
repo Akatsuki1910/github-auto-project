@@ -1,4 +1,13 @@
 // ... (Existing code)
+let ans = 0;
+
+document.getElementById('ans')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        display.value = ans.toString();
+    }
+});
+
 //Modulus
 document.getElementById('mod')?.addEventListener('click', () => {
     performOperation('%');
@@ -21,6 +30,7 @@ function performOperation(operator: string): void {
             if(currentExpression) {
                 const result = eval(currentExpression + operator + currentExpression); //Simple eval, needs refinement for complex ops
                 display.value = result.toString();
+                ans = result;
             }
         } catch (error) {
             display.value = "Error";
