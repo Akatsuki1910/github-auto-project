@@ -1,5 +1,17 @@
 // ... (Existing code)
 
+document.getElementById('cube-root')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        try {
+            const currentValue = parseFloat(display.value);
+            display.value = Math.cbrt(currentValue).toString();
+        } catch (e) {
+            display.value = "Error";
+        }
+    }
+});
+
 //Drop functionality (removes the last entered character)
 document.getElementById('drop')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
