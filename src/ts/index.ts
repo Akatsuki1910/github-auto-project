@@ -31,3 +31,15 @@ document.getElementById('random')?.addEventListener('click', () => {
         display.value = Math.random().toString();
     }
 });
+//Truncate
+document.getElementById('truncate')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        try {
+            const num = parseFloat(display.value);
+            display.value = Math.trunc(num).toString();
+        } catch (error) {
+            display.value = "Error";
+        }
+    }
+});
