@@ -23,3 +23,14 @@ document.getElementById('mod')?.addEventListener('click', () => {
     // Placeholder for now.
     display.value = "modulus needs 2nd operand";
 });
+
+document.getElementById('trunc')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    const result = Math.trunc(currentValue);
+    display.value = result.toString();
+    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+    if (historyDisplay) {
+        historyDisplay.innerText += `trunc(${currentValue}) = ${result}\n`;
+    }
+});
