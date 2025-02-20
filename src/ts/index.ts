@@ -37,3 +37,17 @@ function performOperation(operator: string): void {
         }
     }
 }
+
+document.getElementById('left-parenthesis')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        display.value += '(';
+    }
+});
+
+document.getElementById('right-parenthesis')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        display.value += ')';
+    }
+});
