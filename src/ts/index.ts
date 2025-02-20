@@ -7,4 +7,13 @@ document.getElementById('toggle-visibility')?.addEventListener('click', () => {
     }
 });
 
+document.getElementById('copy-history')?.addEventListener('click', () => {
+    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+    if (historyDisplay) {
+      navigator.clipboard.writeText(historyDisplay.innerText).then(() => {
+        alert('History copied to clipboard!');
+      });
+    }
+});
+
 // ... (rest of the existing code)
