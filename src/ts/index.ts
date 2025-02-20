@@ -1,5 +1,13 @@
 // ... (Existing code)
 
+//Drop functionality (removes the last entered character)
+document.getElementById('drop')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display && display.value.length > 0) {
+        display.value = display.value.slice(0, -1);
+    }
+});
+
 //Duplicate functionality
 document.getElementById('duplicate')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
