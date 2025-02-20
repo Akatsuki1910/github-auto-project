@@ -20,3 +20,12 @@ document.getElementById('square')?.addEventListener('click', () => {
         historyDisplay.innerText += `${n}² = ${result}\n`;
     }
 });
+
+document.getElementById('cube')?.addEventListener('click', () => {
+    const n = parseFloat(prompt('Enter a number to cube:') || '0');
+    const result = n * n * n;
+    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+    if (historyDisplay) {
+        historyDisplay.innerText += `${n}³ = ${result}\n`;
+    }
+});
