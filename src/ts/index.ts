@@ -24,3 +24,10 @@ document.getElementById('cuberoot')?.addEventListener('click', () => {
         }
     }
 });
+//Random Number
+document.getElementById('random')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        display.value = Math.random().toString();
+    }
+});
