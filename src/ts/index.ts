@@ -1,4 +1,13 @@
 // ... (Existing code)
+
+//Duplicate functionality
+document.getElementById('duplicate')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        display.value += display.value;
+    }
+});
+
 let ans = 0;
 
 document.getElementById('ans')?.addEventListener('click', () => {
