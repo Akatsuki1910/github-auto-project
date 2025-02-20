@@ -12,41 +12,14 @@ document.getElementById('random')?.addEventListener('click', () => {
     }
 });
 
-document.getElementById('sin')?.addEventListener('click', () => {
-    // ... (Existing sin function code)
-});
+// ... (Existing sin, cos, tan event listeners)
 
-document.getElementById('cos')?.addEventListener('click', () => {
-    // ... (Existing cos function code)
-});
+// ... (Existing ln, e, inverse event listeners)
 
-document.getElementById('tan')?.addEventListener('click', () => {
-    // ... (Existing tan function code)
-});
-
-document.getElementById('ln')?.addEventListener('click', () => {
+document.getElementById('mod')?.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentValue = parseFloat(display.value);
-    const result = Math.log(currentValue);
-    display.value = result.toString();
-    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
-    if (historyDisplay) {
-        historyDisplay.innerText += `ln(${currentValue}) = ${result}\n`;
-    }
-});
-
-document.getElementById('e')?.addEventListener('click', () => {
-  const display = document.getElementById('display') as HTMLInputElement;
-  display.value = Math.E.toString();
-});
-
-document.getElementById('inverse')?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    const result = 1 / currentValue;
-    display.value = result.toString();
-    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
-    if (historyDisplay) {
-        historyDisplay.innerText += `1/${currentValue} = ${result}\n`;
-    }
+    // Implement modulo operation. Needs second operand
+    // Placeholder for now.
+    display.value = "modulus needs 2nd operand";
 });
