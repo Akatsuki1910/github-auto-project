@@ -30,3 +30,12 @@ body {
     grid-template-columns: repeat(5,1fr);
     grid-gap: 5px;
 }
+
+#history-display{
+    display:none;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+    overflow-y: auto;
+    max-height: 200px;
+}
