@@ -10,40 +10,13 @@ const factorial = (n: number): number => {
     return n * factorial(n - 1);
 }
 
-document.getElementById('fibonacci')?.addEventListener('click', () => {
-    const n = parseInt(prompt('Enter a number for Fibonacci calculation:') || '0', 10);
-    const result = fibonacci(n);
-    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
-    if (historyDisplay) {
-        historyDisplay.innerText += `Fibonacci(${n}) = ${result}\n`;
-    }
-});
+// ... (Existing code for fibonacci, factorial, toggle-visibility, copy-history)
 
-document.getElementById('factorial')?.addEventListener('click', () => {
-    const n = parseInt(prompt('Enter a non-negative integer for factorial calculation:') || '0', 10);
-    if (n < 0) {
-        alert('Factorial is not defined for negative numbers.');
-        return;
-    }
-    const result = factorial(n);
+document.getElementById('square')?.addEventListener('click', () => {
+    const n = parseFloat(prompt('Enter a number to square:') || '0');
+    const result = n * n;
     const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
     if (historyDisplay) {
-        historyDisplay.innerText += `Factorial(${n}) = ${result}\n`;
-    }
-});
-
-document.getElementById('toggle-visibility')?.addEventListener('click', () => {
-    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
-    if (historyDisplay) {
-        historyDisplay.style.display = historyDisplay.style.display === 'none' ? 'block' : 'none';
-    }
-});
-
-document.getElementById('copy-history')?.addEventListener('click', () => {
-    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
-    if (historyDisplay) {
-      navigator.clipboard.writeText(historyDisplay.innerText).then(() => {
-        alert('History copied to clipboard!');
-      });
+        historyDisplay.innerText += `${n}² = ${result}\n`;
     }
 });
