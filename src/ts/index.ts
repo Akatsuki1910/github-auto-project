@@ -43,3 +43,15 @@ document.getElementById('truncate')?.addEventListener('click', () => {
         }
     }
 });
+//Double
+document.getElementById('double')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        try {
+            const num = parseFloat(display.value);
+            display.value = (num * 2).toString();
+        } catch (error) {
+            display.value = "Error";
+        }
+    }
+});
