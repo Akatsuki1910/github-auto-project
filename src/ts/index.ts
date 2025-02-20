@@ -22,3 +22,12 @@ document.getElementById('sign')?.addEventListener('click', () => {
         historyDisplay.innerText += `sign(${n}) = ${result}\n`;
     }
 });
+
+document.getElementById('abs')?.addEventListener('click', () => {
+    const n = parseFloat(prompt('Enter a number:') || '0');
+    const result = Math.abs(n);
+    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+    if (historyDisplay) {
+        historyDisplay.innerText += `abs(${n}) = ${result}\n`;
+    }
+});
