@@ -29,3 +29,12 @@ document.getElementById('cube')?.addEventListener('click', () => {
         historyDisplay.innerText += `${n}³ = ${result}\n`;
     }
 });
+
+document.getElementById('ten-power')?.addEventListener('click', () => {
+    const n = parseFloat(prompt('Enter a number for 10 to the power of:') || '0');
+    const result = Math.pow(10, n);
+    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+    if (historyDisplay) {
+        historyDisplay.innerText += `10^${n} = ${result}\n`;
+    }
+});
