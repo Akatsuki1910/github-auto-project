@@ -56,3 +56,16 @@ document.getElementById('right-parenthesis')?.addEventListener('click', () => {
 document.getElementById('clear-all')?.addEventListener('click', () => {
     (document.getElementById('display') as HTMLInputElement).value = '';
 });
+
+// Calculate expression button functionality
+document.getElementById('calculate-expression')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+      try {
+        ans = eval(display.value);
+        display.value = ans.toString();
+      } catch (e) {
+        display.value = "Error";
+      }
+    }
+  });
