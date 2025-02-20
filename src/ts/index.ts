@@ -24,3 +24,12 @@ document.getElementById('floor')?.addEventListener('click', () => {
         historyDisplay.innerText += `floor(${n}) = ${result}\n`;
     }
 });
+
+document.getElementById('ceil')?.addEventListener('click', () => {
+    const n = parseFloat(prompt('Enter a number:') || '0');
+    const result = Math.ceil(n);
+    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+    if (historyDisplay) {
+        historyDisplay.innerText += `ceil(${n}) = ${result}\n`;
+    }
+});
