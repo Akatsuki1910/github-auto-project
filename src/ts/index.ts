@@ -86,3 +86,16 @@ document.getElementById('swap')?.addEventListener('click', () => {
     display.value = display.value.slice(0, -2) + display.value.slice(-1) + display.value.slice(-2, -1);
   }
 });
+
+//Invert current value
+document.getElementById('invert')?.addEventListener('click', () =>{
+    const display = document.getElementById('display') as HTMLInputElement;
+    if(display){
+        try{
+            const currentValue = parseFloat(display.value);
+            display.value = (1/currentValue).toString();
+        }catch(e){
+            display.value = "Error";
+        }
+    }
+});
