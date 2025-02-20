@@ -33,3 +33,13 @@ document.getElementById('ceil')?.addEventListener('click', () => {
         historyDisplay.innerText += `ceil(${n}) = ${result}\n`;
     }
 });
+
+document.getElementById('power')?.addEventListener('click', () => {
+    const base = parseFloat(prompt('Enter the base:') || '0');
+    const exponent = parseFloat(prompt('Enter the exponent:') || '0');
+    const result = Math.pow(base, exponent);
+    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+    if (historyDisplay) {
+        historyDisplay.innerText += `${base}^${exponent} = ${result}\n`;
+    }
+});
