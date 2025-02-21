@@ -186,3 +186,12 @@ document.getElementById('ten-to-the-power-of-x')?.addEventListener('click', () =
       }
     }
   });
+//Sign functionality
+document.getElementById('sign')?.addEventListener('click', () => {
+    if (display) {
+        const currentValue = parseFloat(display.value);
+        if(!isNaN(currentValue)) {
+            display.value = (-1 * currentValue).toString();
+        }
+    }
+});
