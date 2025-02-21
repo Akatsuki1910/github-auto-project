@@ -142,3 +142,10 @@ document.getElementById('floor')?.addEventListener('click', () => {
       }
     }
   });
+
+// Power functionality
+document.getElementById('power')?.addEventListener('click', () => {
+    if (display) {
+        display.value += '**';
+    }
+});
