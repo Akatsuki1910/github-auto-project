@@ -88,3 +88,13 @@ document.getElementById('inverse')?.addEventListener('click', () => {
         }
     }
 });
+
+document.getElementById('x-squared')?.addEventListener('click', () => {
+    if (display) {
+      const currentValue = parseFloat(display.value);
+      if (!isNaN(currentValue)) {
+        display.value = (currentValue * currentValue).toString();
+        addToHistory(`${currentValue}² = ${display.value}`);
+      }
+    }
+  });
