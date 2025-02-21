@@ -131,3 +131,14 @@ document.getElementById('abs')?.addEventListener('click', () => {
         }
     }
 });
+
+//Floor functionality
+document.getElementById('floor')?.addEventListener('click', () => {
+    if (display) {
+      const currentValue = parseFloat(display.value);
+      if (!isNaN(currentValue)) {
+        display.value = Math.floor(currentValue).toString();
+        addToHistory(`⌊${currentValue}⌋ = ${display.value}`);
+      }
+    }
+  });
