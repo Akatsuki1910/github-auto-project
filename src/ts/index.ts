@@ -125,3 +125,13 @@ document.getElementById('abs')?.addEventListener('click', () => {
         }
     }
 });
+
+document.getElementById('power-of-two')?.addEventListener('click', () => {
+  if (display) {
+    try {
+      display.value = Math.pow(parseFloat(display.value), 2).toString();
+    } catch (e) {
+      display.value = 'Error';
+    }
+  }
+});
