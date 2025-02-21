@@ -107,3 +107,14 @@ document.getElementById('factorial')?.addEventListener('click', () => {
         }
     }
 });
+
+//Added log functionality
+document.getElementById('log')?.addEventListener('click', () => {
+    if (display) {
+        try {
+            display.value = Math.log10(parseFloat(display.value)).toString();
+        } catch (e) {
+            display.value = 'Error';
+        }
+    }
+});
