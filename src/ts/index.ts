@@ -71,3 +71,19 @@ document.getElementById('avg')?.addEventListener('click', () => {
         }
     }
 });
+
+document.getElementById('median')?.addEventListener('click', () => {
+    const numbersString = prompt("Enter numbers separated by commas:");
+    if (numbersString) {
+        const numbers = numbersString.split(',').map(Number).sort((a, b) => a - b);
+        const mid = Math.floor(numbers.length / 2);
+        const median = numbers.length % 2 !== 0 ? numbers[mid] : (numbers[mid - 1] + numbers[mid]) / 2;
+        const display = document.getElementById('display') as HTMLInputElement;
+        display.value = median.toString();
+        const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+        if (historyDisplay) {
+            historyDisplay.innerText += `median(${numbersString}) = ${median}
+`;
+        }
+    }
+});
