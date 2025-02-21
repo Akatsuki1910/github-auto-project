@@ -78,31 +78,13 @@ document.getElementById('clear-entry')?.addEventListener('click', () => {
   }
 });
 
-document.getElementById('square')?.addEventListener('click', () => {
-  if (display) {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (currentValue * currentValue).toString();
-        addToHistory(`sqr(${currentValue}) = ${display.value}`);
+//Inverse functionality
+document.getElementById('inverse')?.addEventListener('click', () => {
+    if(display){
+        const currentValue = parseFloat(display.value);
+        if(!isNaN(currentValue)){
+            display.value = (1/currentValue).toString();
+            addToHistory(`1/(${currentValue}) = ${display.value}`);
+        }
     }
-  }
 });
-
-document.getElementById('cube')?.addEventListener('click', () => {
-  if (display) {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-      display.value = (currentValue * currentValue * currentValue).toString();
-      addToHistory(`cube(${currentValue}) = ${display.value}`);
-    }
-  }
-});
-
-document.getElementById('sign')?.addEventListener('click', () => {
-    if (display) {
-      const currentValue = parseFloat(display.value);
-      if (!isNaN(currentValue)) {
-        display.value = (currentValue * -1).toString();
-      }
-    }
-  });
