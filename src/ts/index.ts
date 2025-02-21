@@ -87,3 +87,13 @@ document.getElementById('square')?.addEventListener('click', () => {
     }
   }
 });
+
+document.getElementById('cube')?.addEventListener('click', () => {
+  if (display) {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+      display.value = (currentValue * currentValue * currentValue).toString();
+      addToHistory(`cube(${currentValue}) = ${display.value}`);
+    }
+  }
+});
