@@ -64,104 +64,10 @@ document.querySelector('.equals')?.addEventListener('click', () => {
 
 // ... (Existing PI, sqrt, exponent, factorial, log functionality)
 
-// Added Natural Logarithm (ln) functionality
-document.getElementById('ln')?.addEventListener('click', () => {
+// ... existing functions
+
+document.getElementById('e')?.addEventListener('click', () => {
     if (display) {
-        try {
-            display.value = Math.log(parseFloat(display.value)).toString();
-        } catch (e) {
-            display.value = 'Error';
-        }
+        display.value += Math.E.toString();
     }
-});
-
-document.getElementById('exp')?.addEventListener('click', () => {
-    if (display) {
-        try {
-            display.value = Math.exp(parseFloat(display.value)).toString();
-        } catch (e) {
-            display.value = 'Error';
-        }
-    }
-});
-
-document.getElementById('sin')?.addEventListener('click', () => {
-    if (display) {
-        try {
-            display.value = Math.sin(parseFloat(display.value)).toString();
-        } catch (e) {
-            display.value = 'Error';
-        }
-    }
-});
-
-document.getElementById('cos')?.addEventListener('click', () => {
-    if (display) {
-        try {
-            display.value = Math.cos(parseFloat(display.value)).toString();
-        } catch (e) {
-            display.value = 'Error';
-        }
-    }
-});
-
-document.getElementById('tan')?.addEventListener('click', () => {
-    if (display) {
-        try {
-            display.value = Math.tan(parseFloat(display.value)).toString();
-        } catch (e) {
-            display.value = 'Error';
-        }
-    }
-});
-
-//Added Absolute Value (abs) functionality
-document.getElementById('abs')?.addEventListener('click', () => {
-    if (display) {
-        try {
-            display.value = Math.abs(parseFloat(display.value)).toString();
-        } catch (e) {
-            display.value = 'Error';
-        }
-    }
-});
-
-document.getElementById('power-of-two')?.addEventListener('click', () => {
-  if (display) {
-    try {
-      display.value = Math.pow(parseFloat(display.value), 2).toString();
-    } catch (e) {
-      display.value = 'Error';
-    }
-  }
-});
-
-document.getElementById('cbrt')?.addEventListener('click', () => {
-  if (display) {
-    try {
-      display.value = Math.cbrt(parseFloat(display.value)).toString();
-    } catch (e) {
-      display.value = 'Error';
-    }
-  }
-});
-
-document.getElementById('round')?.addEventListener('click', () => {
-  if (display) {
-    try {
-      display.value = Math.round(parseFloat(display.value)).toString();
-    } catch (e) {
-      display.value = 'Error';
-    }
-  }
-});
-
-document.getElementById('ten-to-the-power-of-x')?.addEventListener('click', () => {
-  if (display) {
-    try {
-      display.value = Math.pow(10, parseFloat(display.value)).toString();
-    } catch (e) {
-      display.value = 'Error';
-    }
-  }
 });
