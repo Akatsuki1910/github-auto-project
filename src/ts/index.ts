@@ -104,3 +104,13 @@ document.getElementById('cos')?.addEventListener('click', () => {
         }
     }
 });
+
+document.getElementById('tan')?.addEventListener('click', () => {
+    if (display) {
+        try {
+            display.value = Math.tan(parseFloat(display.value)).toString();
+        } catch (e) {
+            display.value = 'Error';
+        }
+    }
+});
