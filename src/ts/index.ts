@@ -87,3 +87,23 @@ document.getElementById('exponent')?.addEventListener('click', () => {
         display.value += '**';
     }
 });
+
+//Added factorial functionality
+document.getElementById('factorial')?.addEventListener('click', () => {
+    if (display) {
+        try {
+            const num = parseFloat(display.value);
+            if (Number.isInteger(num) && num >= 0) {
+                let result = 1;
+                for (let i = 2; i <= num; i++) {
+                    result *= i;
+                }
+                display.value = result.toString();
+            } else {
+                display.value = 'Error';
+            }
+        } catch (e) {
+            display.value = 'Error';
+        }
+    }
+});
