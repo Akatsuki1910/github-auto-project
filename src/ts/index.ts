@@ -145,3 +145,13 @@ document.getElementById('cbrt')?.addEventListener('click', () => {
     }
   }
 });
+
+document.getElementById('round')?.addEventListener('click', () => {
+  if (display) {
+    try {
+      display.value = Math.round(parseFloat(display.value)).toString();
+    } catch (e) {
+      display.value = 'Error';
+    }
+  }
+});
