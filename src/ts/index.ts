@@ -175,3 +175,14 @@ document.getElementById('factorial')?.addEventListener('click', () =>{
         }
     }
 });
+
+// 10 to the power of x functionality
+document.getElementById('ten-to-the-power-of-x')?.addEventListener('click', () => {
+    if (display) {
+      const currentValue = parseFloat(display.value);
+      if (!isNaN(currentValue)) {
+        display.value = (10 ** currentValue).toString();
+        addToHistory(`10^(${currentValue}) = ${display.value}`);
+      }
+    }
+  });
