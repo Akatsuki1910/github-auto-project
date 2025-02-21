@@ -40,7 +40,7 @@ document.getElementById('copy-history')?.addEventListener('click', () => {
   });
 
 const display = document.getElementById('display') as HTMLInputElement;
-document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
+document.querySelectorAll('.digit, .operator, .decimal, #parenthesis-open, #parenthesis-close').forEach(button => {
     button.addEventListener('click', () => {
         if(display){
             display.value += button.textContent;
