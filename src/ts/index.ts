@@ -74,3 +74,13 @@ document.getElementById('ln')?.addEventListener('click', () => {
         }
     }
 });
+
+document.getElementById('exp')?.addEventListener('click', () => {
+    if (display) {
+        try {
+            display.value = Math.exp(parseFloat(display.value)).toString();
+        } catch (e) {
+            display.value = 'Error';
+        }
+    }
+});
