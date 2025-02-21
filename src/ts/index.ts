@@ -94,3 +94,13 @@ document.getElementById('sin')?.addEventListener('click', () => {
         }
     }
 });
+
+document.getElementById('cos')?.addEventListener('click', () => {
+    if (display) {
+        try {
+            display.value = Math.cos(parseFloat(display.value)).toString();
+        } catch (e) {
+            display.value = 'Error';
+        }
+    }
+});
