@@ -62,7 +62,7 @@ document.querySelector('.equals')?.addEventListener('click', () => {
     }
 });
 
-// ... (Existing PI, sqrt, exponent, factorial, log functionality)
+// ... (Existing PI, sqrt, exponent, log functionality)
 
 // ... existing functions
 
@@ -160,3 +160,18 @@ document.getElementById('round')?.addEventListener('click', () => {
       }
     }
   });
+
+//Factorial Function
+document.getElementById('factorial')?.addEventListener('click', () =>{
+    if(display) {
+        const currentValue = parseFloat(display.value);
+        if(!isNaN(currentValue)){
+            let result = 1;
+            for(let i = 2; i <= currentValue; i++){
+                result *= i;
+            }
+            display.value = result.toString();
+            addToHistory(`${currentValue}! = ${display.value}`);
+        }
+    }
+});
