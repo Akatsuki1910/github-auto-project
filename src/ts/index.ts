@@ -135,3 +135,13 @@ document.getElementById('power-of-two')?.addEventListener('click', () => {
     }
   }
 });
+
+document.getElementById('cbrt')?.addEventListener('click', () => {
+  if (display) {
+    try {
+      display.value = Math.cbrt(parseFloat(display.value)).toString();
+    } catch (e) {
+      display.value = 'Error';
+    }
+  }
+});
