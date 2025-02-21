@@ -77,3 +77,13 @@ document.getElementById('clear-entry')?.addEventListener('click', () => {
     display.value = '';
   }
 });
+
+document.getElementById('square')?.addEventListener('click', () => {
+  if (display) {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (currentValue * currentValue).toString();
+        addToHistory(`sqr(${currentValue}) = ${display.value}`);
+    }
+  }
+});
