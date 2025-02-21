@@ -114,3 +114,14 @@ document.getElementById('tan')?.addEventListener('click', () => {
         }
     }
 });
+
+//Added Absolute Value (abs) functionality
+document.getElementById('abs')?.addEventListener('click', () => {
+    if (display) {
+        try {
+            display.value = Math.abs(parseFloat(display.value)).toString();
+        } catch (e) {
+            display.value = 'Error';
+        }
+    }
+});
