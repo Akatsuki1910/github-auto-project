@@ -155,3 +155,13 @@ document.getElementById('round')?.addEventListener('click', () => {
     }
   }
 });
+
+document.getElementById('ten-to-the-power-of-x')?.addEventListener('click', () => {
+  if (display) {
+    try {
+      display.value = Math.pow(10, parseFloat(display.value)).toString();
+    } catch (e) {
+      display.value = 'Error';
+    }
+  }
+});
