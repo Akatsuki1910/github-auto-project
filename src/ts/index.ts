@@ -61,6 +61,21 @@ document.getElementById('calculate-circumference')?.addEventListener('click', ()
     }
 });
 
+//Calculate Volume of Sphere
+document.getElementById('calculate-volume')?.addEventListener('click', () => {
+    const radius = parseFloat(prompt('Enter the radius of the sphere:') || '0');
+    if (isNaN(radius)) {
+        alert('Invalid input. Please enter a number for the radius.');
+        return;
+    }
+    const volume = (4/3) * Math.PI * Math.pow(radius, 3);
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        display.value = volume.toString();
+        addToHistory(`Volume of sphere with radius ${radius}: ${volume}`);
+    }
+});
+
 function addToHistory(message: string) {
     const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
     if (historyDisplay) {
