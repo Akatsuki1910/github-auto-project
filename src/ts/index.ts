@@ -32,65 +32,6 @@ document.getElementById('toggle-history')?.addEventListener('click', () => {
   }
 });
 
-//Calculate Area of Circle
-document.getElementById('calculate-area')?.addEventListener('click', () => {
-    const radius = parseFloat(prompt('Enter the radius of the circle:') || '0');
-    if (isNaN(radius)){
-        alert('Invalid input. Please enter a number for the radius.');
-    }
-    const area = Math.PI * radius * radius;
-        const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        display.value = area.toString();
-        addToHistory(`Area of circle with radius ${radius}: ${area}`);
-    }
-});
-
-//Calculate Circumference of Circle
-document.getElementById('calculate-circumference')?.addEventListener('click', () => {
-    const radius = parseFloat(prompt('Enter the radius of the circle:') || '0');
-    if(isNaN(radius)){
-        alert('Invalid input. Please enter a number for the radius');
-        return;
-    }
-    const circumference = 2 * Math.PI * radius;
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        display.value = circumference.toString();
-        addToHistory(`Circumference of circle with radius ${radius}: ${circumference}`);
-    }
-});
-
-//Calculate Volume of Sphere
-document.getElementById('calculate-volume')?.addEventListener('click', () => {
-    const radius = parseFloat(prompt('Enter the radius of the sphere:') || '0');
-    if (isNaN(radius)) {
-        alert('Invalid input. Please enter a number for the radius.');
-        return;
-    }
-    const volume = (4/3) * Math.PI * Math.pow(radius, 3);
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        display.value = volume.toString();
-        addToHistory(`Volume of sphere with radius ${radius}: ${volume}`);
-    }
-});
-
-// Calculate Cube Root
-document.getElementById('calculate-cube-root')?.addEventListener('click', () => {
-    const num = parseFloat(prompt('Enter a number:') || '0');
-    if (isNaN(num)) {
-        alert('Invalid input. Please enter a number.');
-        return;
-    }
-    const cubeRoot = Math.cbrt(num);
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display) {
-        display.value = cubeRoot.toString();
-        addToHistory(`Cube root of ${num}: ${cubeRoot}`);
-    }
-});
-
 function addToHistory(message: string) {
     const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
     if (historyDisplay) {
@@ -113,3 +54,27 @@ document.getElementById('copy-history')?.addEventListener('click', () => {
         });
     }
   });
+
+// New Feature: Calculate Square
+const display = document.getElementById('display') as HTMLInputElement;
+document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
+    button.addEventListener('click', () => {
+        if(display){
+            display.value += button.textContent;
+        }
+    });
+})
+
+document.querySelector('.equals')?.addEventListener('click', () => {
+    try{
+        if(display){
+            display.value = eval(display.value);
+            addToHistory(`${display.value}`);
+        }
+    }
+    catch (e) {
+        if(display){
+            display.value = 'Error';
+        }
+    }
+});
