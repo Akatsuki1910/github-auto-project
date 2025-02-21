@@ -109,3 +109,14 @@ document.getElementById('cubed')?.addEventListener('click', () => {
         }
     }
 });
+
+//Log functionality
+document.getElementById('log')?.addEventListener('click', () => {
+    if(display) {
+        const currentValue = parseFloat(display.value);
+        if(!isNaN(currentValue)) {
+            display.value = Math.log10(currentValue).toString();
+            addToHistory(`log(${currentValue}) = ${display.value}`);
+        }
+    }
+});
