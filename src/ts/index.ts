@@ -34,56 +34,19 @@ document.getElementById('hypot')?.addEventListener('click', () => {
 });
 
 document.getElementById('sum')?.addEventListener('click', () => {
-    const numbersString = prompt("Enter numbers separated by commas:");
-    if (numbersString) {
-      const numbers = numbersString.split(',').map(Number);
-      const sum = numbers.reduce((acc, num) => acc + num, 0);
-      const display = document.getElementById('display') as HTMLInputElement;
-      display.value = sum.toString();
-      const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
-        if (historyDisplay) {
-            historyDisplay.innerText += `sum(${numbersString}) = ${sum}
-`;
-        }
-    }
+    // ... existing code ...
 });
 
 document.getElementById('avg')?.addEventListener('click', () => {
-    const numbersString = prompt("Enter numbers separated by commas:");
-    if (numbersString) {
-        const numbers = numbersString
-            .split(',')
-            .map(Number)
-            .filter(num => !isNaN(num));
-        if (numbers.length > 0) {
-            const sum = numbers.reduce((acc, num) => acc + num, 0);
-            const avg = sum / numbers.length;
-            const display = document.getElementById('display') as HTMLInputElement;
-            display.value = avg.toString();
-            const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
-            if (historyDisplay) {
-                historyDisplay.innerText += `avg(${numbersString}) = ${avg}
-`;
-            }
-        } else {
-          const display = document.getElementById('display') as HTMLInputElement;
-          display.value = "Invalid input";
-        }
-    }
+    // ... existing code ...
 });
 
 document.getElementById('median')?.addEventListener('click', () => {
-    const numbersString = prompt("Enter numbers separated by commas:");
-    if (numbersString) {
-        const numbers = numbersString.split(',').map(Number).sort((a, b) => a - b);
-        const mid = Math.floor(numbers.length / 2);
-        const median = numbers.length % 2 !== 0 ? numbers[mid] : (numbers[mid - 1] + numbers[mid]) / 2;
-        const display = document.getElementById('display') as HTMLInputElement;
-        display.value = median.toString();
-        const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
-        if (historyDisplay) {
-            historyDisplay.innerText += `median(${numbersString}) = ${median}
-`;
-        }
-    }
+   // ... existing code ...
+});
+
+document.getElementById('duplicate')?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = display.value;
+    display.value = currentValue + currentValue; 
 });
