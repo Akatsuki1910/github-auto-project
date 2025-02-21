@@ -71,3 +71,9 @@ document.getElementById('e')?.addEventListener('click', () => {
         display.value += Math.E.toString();
     }
 });
+
+document.getElementById('clear-entry')?.addEventListener('click', () => {
+  if (display) {
+    display.value = '';
+  }
+});
