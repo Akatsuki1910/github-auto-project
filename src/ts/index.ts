@@ -84,3 +84,13 @@ document.getElementById('exp')?.addEventListener('click', () => {
         }
     }
 });
+
+document.getElementById('sin')?.addEventListener('click', () => {
+    if (display) {
+        try {
+            display.value = Math.sin(parseFloat(display.value)).toString();
+        } catch (e) {
+            display.value = 'Error';
+        }
+    }
+});
