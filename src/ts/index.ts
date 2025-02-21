@@ -32,3 +32,18 @@ document.getElementById('hypot')?.addEventListener('click', () => {
             }
         }
 });
+
+document.getElementById('sum')?.addEventListener('click', () => {
+    const numbersString = prompt("Enter numbers separated by commas:");
+    if (numbersString) {
+      const numbers = numbersString.split(',').map(Number);
+      const sum = numbers.reduce((acc, num) => acc + num, 0);
+      const display = document.getElementById('display') as HTMLInputElement;
+      display.value = sum.toString();
+      const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+        if (historyDisplay) {
+            historyDisplay.innerText += `sum(${numbersString}) = ${sum}
+`;
+        }
+    }
+});
