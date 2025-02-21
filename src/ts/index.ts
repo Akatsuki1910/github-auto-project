@@ -120,3 +120,14 @@ document.getElementById('log')?.addEventListener('click', () => {
         }
     }
 });
+
+// Absolute value functionality
+document.getElementById('abs')?.addEventListener('click', () => {
+    if (display) {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            display.value = Math.abs(currentValue).toString();
+            addToHistory(`|${currentValue}| = ${display.value}`);
+        }
+    }
+});
