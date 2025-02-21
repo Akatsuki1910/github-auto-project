@@ -1,22 +1,6 @@
 // ... (Existing code)
 
-// ... (Existing functions: fibonacci, factorial, etc.)
-
-// ... (Existing event listeners for floor, ceil, power, etc.)
-
-// ... (Existing random, sin, cos, tan event listeners)
-
-// ... (Existing ln, e, inverse event listeners)
-
-// ... (Existing mod, trunc event listeners)
-
-// ... (Existing max, min event listeners)
-
-document.getElementById('hypot')?.addEventListener('click', () => {
-  // ... existing hypot code ...
-});
-
-// ... existing sum, avg, median, duplicate event listeners
+// ... (Existing functions)
 
 document.getElementById('clear-history')?.addEventListener('click', () => {
     const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
@@ -55,7 +39,6 @@ document.getElementById('copy-history')?.addEventListener('click', () => {
     }
   });
 
-// New Feature: Calculate Square
 const display = document.getElementById('display') as HTMLInputElement;
 document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
     button.addEventListener('click', () => {
@@ -78,3 +61,11 @@ document.querySelector('.equals')?.addEventListener('click', () => {
         }
     }
 });
+
+// Added PI functionality
+const piButton = document.getElementById('pi');
+if (piButton && display) {
+    piButton.addEventListener('click', () => {
+        display.value += Math.PI;
+    });
+}
