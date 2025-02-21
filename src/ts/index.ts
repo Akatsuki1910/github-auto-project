@@ -80,3 +80,10 @@ document.getElementById('sqrt')?.addEventListener('click', () => {
         }
     }
 });
+
+// Added exponent functionality
+document.getElementById('exponent')?.addEventListener('click', () => {
+    if (display) {
+        display.value += '**';
+    }
+});
