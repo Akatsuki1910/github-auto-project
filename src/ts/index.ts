@@ -46,6 +46,21 @@ document.getElementById('calculate-area')?.addEventListener('click', () => {
     }
 });
 
+//Calculate Circumference of Circle
+document.getElementById('calculate-circumference')?.addEventListener('click', () => {
+    const radius = parseFloat(prompt('Enter the radius of the circle:') || '0');
+    if(isNaN(radius)){
+        alert('Invalid input. Please enter a number for the radius');
+        return;
+    }
+    const circumference = 2 * Math.PI * radius;
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        display.value = circumference.toString();
+        addToHistory(`Circumference of circle with radius ${radius}: ${circumference}`);
+    }
+});
+
 function addToHistory(message: string) {
     const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
     if (historyDisplay) {
