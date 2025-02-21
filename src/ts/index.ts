@@ -47,3 +47,27 @@ document.getElementById('sum')?.addEventListener('click', () => {
         }
     }
 });
+
+document.getElementById('avg')?.addEventListener('click', () => {
+    const numbersString = prompt("Enter numbers separated by commas:");
+    if (numbersString) {
+        const numbers = numbersString
+            .split(',')
+            .map(Number)
+            .filter(num => !isNaN(num));
+        if (numbers.length > 0) {
+            const sum = numbers.reduce((acc, num) => acc + num, 0);
+            const avg = sum / numbers.length;
+            const display = document.getElementById('display') as HTMLInputElement;
+            display.value = avg.toString();
+            const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+            if (historyDisplay) {
+                historyDisplay.innerText += `avg(${numbersString}) = ${avg}
+`;
+            }
+        } else {
+          const display = document.getElementById('display') as HTMLInputElement;
+          display.value = "Invalid input";
+        }
+    }
+});
