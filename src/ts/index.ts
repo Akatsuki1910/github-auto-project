@@ -195,3 +195,14 @@ document.getElementById('sign')?.addEventListener('click', () => {
         }
     }
 });
+
+//Cube root functionality
+document.getElementById('cube-root')?.addEventListener('click', () => {
+    if (display) {
+      const currentValue = parseFloat(display.value);
+      if (!isNaN(currentValue)) {
+        display.value = Math.cbrt(currentValue).toString();
+        addToHistory(`∛(${currentValue}) = ${display.value}`);
+      }
+    }
+  });
