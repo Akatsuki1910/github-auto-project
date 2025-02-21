@@ -69,3 +69,14 @@ if (piButton && display) {
         display.value += Math.PI;
     });
 }
+
+//Added square root functionality
+document.getElementById('sqrt')?.addEventListener('click', () => {
+    if (display) {
+        try {
+            display.value = Math.sqrt(parseFloat(display.value)).toString();
+        } catch (e) {
+            display.value = 'Error';
+        }
+    }
+});
