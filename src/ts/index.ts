@@ -149,3 +149,14 @@ document.getElementById('power')?.addEventListener('click', () => {
         display.value += '**';
     }
 });
+
+// Round functionality
+document.getElementById('round')?.addEventListener('click', () => {
+    if (display) {
+      const currentValue = parseFloat(display.value);
+      if (!isNaN(currentValue)) {
+        display.value = Math.round(currentValue).toString();
+        addToHistory(`round(${currentValue}) = ${display.value}`);
+      }
+    }
+  });
