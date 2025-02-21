@@ -76,6 +76,21 @@ document.getElementById('calculate-volume')?.addEventListener('click', () => {
     }
 });
 
+// Calculate Cube Root
+document.getElementById('calculate-cube-root')?.addEventListener('click', () => {
+    const num = parseFloat(prompt('Enter a number:') || '0');
+    if (isNaN(num)) {
+        alert('Invalid input. Please enter a number.');
+        return;
+    }
+    const cubeRoot = Math.cbrt(num);
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display) {
+        display.value = cubeRoot.toString();
+        addToHistory(`Cube root of ${num}: ${cubeRoot}`);
+    }
+});
+
 function addToHistory(message: string) {
     const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
     if (historyDisplay) {
