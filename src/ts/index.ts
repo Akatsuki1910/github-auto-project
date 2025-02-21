@@ -98,3 +98,14 @@ document.getElementById('x-squared')?.addEventListener('click', () => {
       }
     }
   });
+
+//Cubed functionality
+document.getElementById('cubed')?.addEventListener('click', () => {
+    if(display){
+        const currentValue = parseFloat(display.value);
+        if(!isNaN(currentValue)){
+            display.value = (currentValue * currentValue * currentValue).toString();
+            addToHistory(`${currentValue}³ = ${display.value}`);
+        }
+    }
+});
