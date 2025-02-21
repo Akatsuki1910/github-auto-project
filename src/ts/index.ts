@@ -97,3 +97,12 @@ document.getElementById('cube')?.addEventListener('click', () => {
     }
   }
 });
+
+document.getElementById('sign')?.addEventListener('click', () => {
+    if (display) {
+      const currentValue = parseFloat(display.value);
+      if (!isNaN(currentValue)) {
+        display.value = (currentValue * -1).toString();
+      }
+    }
+  });
