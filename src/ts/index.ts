@@ -172,5 +172,16 @@ document.getElementById('trunc')?.addEventListener('click', () => {
         }
     }
 });
+
+//Ceil Function
+document.getElementById('ceil')?.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        const num = parseFloat(currentValue);
+        if (!isNaN(num)) {
+            display.value = Math.ceil(num).toString();
+        }
+    }
+});
 // ... (Other existing functions)
 const display = document.getElementById('display') as HTMLInputElement;
