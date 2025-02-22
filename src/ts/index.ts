@@ -47,6 +47,7 @@ const powerBtn = document.getElementById('power');
 const logBtn = document.getElementById('log');
 const roundBtn = document.getElementById('round');
 const absBtn = document.getElementById('abs'); // Add absolute value button
+const cbrtBtn = document.getElementById('cbrt'); //Cube root button
 
 function factorial(n: number): number {
     if (n === 0) {
@@ -123,6 +124,24 @@ absBtn?.addEventListener('click', () => { // Add absolute value functionality
             display.value = result.toString();
             ans = result;
             history.push(`abs(${num}) = ${result}`);
+            updateHistoryDisplay();
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
+// Add cube root functionality
+cbrtBtn?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Error";
+        } else {
+            const result = Math.cbrt(num);
+            display.value = result.toString();
+            ans = result;
+            history.push(`cbrt(${num}) = ${result}`);
             updateHistoryDisplay();
         }
     } catch (error) {
