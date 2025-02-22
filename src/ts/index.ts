@@ -10,6 +10,7 @@ let isDegreeMode = true;
 let ans = 0; // Store the last answer
 let isDarkMode = false; // Flag for dark mode
 let history: string[] = []; // History array to store calculations
+const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
 
 document.getElementById('deg-rad')?.addEventListener('click', () => {
     isDegreeMode = !isDegreeMode;
@@ -48,6 +49,7 @@ document.getElementById('ln')?.addEventListener('click', () => {
         display.value = result.toString();
         ans = result; // Store the result in ans
         history.push(`ln(${currentValue}) = ${result}`); // Add to history
+        updateHistoryDisplay();
     } catch (error) {
         display.value = "Error";
     }
@@ -67,6 +69,7 @@ document.getElementById('log2')?.addEventListener('click', () => {
         display.value = result.toString();
         ans = result;
           history.push(`log2(${currentValue}) = ${result}`); // Add to history
+          updateHistoryDisplay();
     }
     catch (error) {
         display.value = "Error";
@@ -81,6 +84,7 @@ document.getElementById('expm1')?.addEventListener('click', () => {
         display.value = result.toString();
         ans = result;
           history.push(`expm1(${currentValue}) = ${result}`); // Add to history
+          updateHistoryDisplay();
     } catch (error) {
         display.value = "Error";
     }
@@ -94,9 +98,39 @@ document.getElementById('cbrt')?.addEventListener('click', () => {
         display.value = result.toString();
         ans = result;
           history.push(`cbrt(${currentValue}) = ${result}`); // Add to history
+          updateHistoryDisplay();
     } catch (error) {
         display.value = "Error";
     }
+});
+
+// Add copy history functionality
+document.getElementById('copy-history')?.addEventListener('click', () => {
+    navigator.clipboard.writeText(history.join('\n')).then(() => {
+        alert('History copied to clipboard!');
+    }).catch(err => {
+        console.error('Failed to copy history: ', err);
+    });
+});
+
+// Add clear history functionality
+document.getElementById('clear-history')?.addEventListener('click', () => {
+    history = [];
+    updateHistoryDisplay();
+});
+
+function updateHistoryDisplay() {
+    historyDisplay.innerHTML = history.map(item => `<p>${item}</p>`).join('');
+}
+
+document.getElementById('toggle-history')?.addEventListener('click', () => {
+    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+    if (historyDisplay.style.display === 'none' || historyDisplay.style.display === '') {
+        historyDisplay.style.display = 'block';
+    } else {
+        historyDisplay.style.display = 'none';
+    }
+    updateHistoryDisplay();
 });
 // ... (rest of the code) 
 // In the equals button event listener, store the result in ans
@@ -107,6 +141,7 @@ document.getElementById('cbrt')?.addEventListener('click', () => {
 //     display.value = result.toString();
 //     ans = result;
 //      history.push(`${display.value} = ${result}`); // Add calculation to history
+//      updateHistoryDisplay();
 // } catch (error) {
 //     display.value = "Error";
 // }
