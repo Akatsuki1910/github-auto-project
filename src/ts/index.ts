@@ -183,5 +183,28 @@ document.getElementById('ceil')?.addEventListener('click', () => {
         }
     }
 });
+
+//isPrime function
+document.getElementById('isPrime')?.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        const num = parseInt(currentValue);
+        if (!isNaN(num)) {
+            display.value = isPrime(num).toString();
+        }
+    }
+});
+
+function isPrime(num: number): boolean {
+    if (num <= 1) return false;
+    if (num <= 3) return true;
+    if (num % 2 === 0 || num % 3 === 0) return false;
+    for (let i = 5; i * i <= num; i += 6) {
+        if (num % i === 0 || num % (i + 2) === 0)
+            return false;
+    }
+    return true;
+}
+
 // ... (Other existing functions)
 const display = document.getElementById('display') as HTMLInputElement;
