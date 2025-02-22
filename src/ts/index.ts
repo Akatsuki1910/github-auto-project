@@ -132,7 +132,6 @@ document.getElementById('toggle-history')?.addEventListener('click', () => {
     }
     updateHistoryDisplay();
 });
-
 // Add log1p functionality
 document.getElementById('log1p')?.addEventListener('click', () => {
     try {
