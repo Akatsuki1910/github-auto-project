@@ -150,5 +150,16 @@ document.getElementById('square-root')?.addEventListener('click', () => {
         }
     }
 });
+
+// x^n
+document.getElementById('x-to-the-power-of-n')?.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        const [base, exponent] = currentValue.split(',').map(Number);
+        if (!isNaN(base) && !isNaN(exponent)) {
+            display.value = Math.pow(base, exponent).toString();
+        }
+    }
+});
 // ... (Other existing functions)
 const display = document.getElementById('display') as HTMLInputElement;
