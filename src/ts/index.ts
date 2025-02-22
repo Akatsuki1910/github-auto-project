@@ -146,6 +146,20 @@ document.getElementById('log1p')?.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+
+//Add log10 functionality
+document.getElementById('log10')?.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const result = Math.log10(currentValue);
+        display.value = result.toString();
+        ans = result;
+        history.push(`log10(${currentValue}) = ${result}`);
+        updateHistoryDisplay();
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 // ... (rest of the code) 
 // In the equals button event listener, store the result in ans
 // Example:
