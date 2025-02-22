@@ -129,5 +129,15 @@ document.getElementById('binary-conversion')?.addEventListener('click', () => {
     }
 });
 
+//Octal Conversion
+document.getElementById('octal-conversion')?.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+      const num = parseInt(currentValue);
+      if (!isNaN(num)) {
+        display.value = num.toString(8);
+      }
+    }
+});
 // ... (Other existing functions)
 const display = document.getElementById('display') as HTMLInputElement;
