@@ -139,5 +139,16 @@ document.getElementById('octal-conversion')?.addEventListener('click', () => {
       }
     }
 });
+
+//Square Root Function
+document.getElementById('square-root')?.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        const num = parseFloat(currentValue);
+        if (!isNaN(num)) {
+            display.value = Math.sqrt(num).toString();
+        }
+    }
+});
 // ... (Other existing functions)
 const display = document.getElementById('display') as HTMLInputElement;
