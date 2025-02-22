@@ -118,5 +118,16 @@ document.getElementById('base-10-log')?.addEventListener('click', () => {
     }
   });
 
+// Binary Conversion
+document.getElementById('binary-conversion')?.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        const num = parseInt(currentValue);
+        if (!isNaN(num)) {
+            display.value = num.toString(2);
+        }
+    }
+});
+
 // ... (Other existing functions)
 const display = document.getElementById('display') as HTMLInputElement;
