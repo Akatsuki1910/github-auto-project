@@ -166,6 +166,7 @@ const decimal = document.querySelector('.decimal');
 const clear = document.querySelector('#clear');
 const backspace = document.querySelector('#backspace');
 const squared = document.querySelector('#squared');
+const cube = document.querySelector('#cube'); //x^4 button
 
 digits.forEach(digit => {
     digit.addEventListener('click', () => {
@@ -201,10 +202,23 @@ equals.addEventListener('click', () => {
 squared.addEventListener('click', () => {
     try {
         const currentValue = parseFloat(display.value);
-        const result = Math.pow(currentValue,3);
+        const result = Math.pow(currentValue, 3);
         display.value = result.toString();
         ans = result;
         history.push(`${currentValue}^3 = ${result}`);
+        updateHistoryDisplay();
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
+cube.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const result = Math.pow(currentValue, 4);
+        display.value = result.toString();
+        ans = result;
+        history.push(`${currentValue}^4 = ${result}`);
         updateHistoryDisplay();
     } catch (error) {
         display.value = "Error";
