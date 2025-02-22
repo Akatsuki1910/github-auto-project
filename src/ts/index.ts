@@ -38,6 +38,18 @@ document.getElementById('exit')?.addEventListener('click', () => {
   window.close(); // Close the window
 });
 
+// Add ln (natural logarithm) functionality
+document.getElementById('ln')?.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const result = Math.log(currentValue);
+        display.value = result.toString();
+        ans = result; // Store the result in ans
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
 // ... (rest of the code) 
 // In the equals button event listener, store the result in ans
 // Example:
