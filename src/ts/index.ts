@@ -46,6 +46,7 @@ const factorialBtn = document.getElementById('factorial');
 const powerBtn = document.getElementById('power');
 const logBtn = document.getElementById('log');
 const roundBtn = document.getElementById('round');
+const absBtn = document.getElementById('abs'); // Add absolute value button
 
 function factorial(n: number): number {
     if (n === 0) {
@@ -105,6 +106,23 @@ roundBtn?.addEventListener('click', () => {
             display.value = result.toString();
             ans = result;
             history.push(`round(${num}) = ${result}`);
+            updateHistoryDisplay();
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
+absBtn?.addEventListener('click', () => { // Add absolute value functionality
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Error";
+        } else {
+            const result = Math.abs(num);
+            display.value = result.toString();
+            ans = result;
+            history.push(`abs(${num}) = ${result}`);
             updateHistoryDisplay();
         }
     } catch (error) {
