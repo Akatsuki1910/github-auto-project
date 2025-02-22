@@ -33,6 +33,11 @@ document.getElementById('ans')?.addEventListener('click', () => {
   display.value += ans.toString();
 });
 
+// Add exit button functionality
+document.getElementById('exit')?.addEventListener('click', () => {
+  window.close(); // Close the window
+});
+
 // ... (rest of the code) 
 // In the equals button event listener, store the result in ans
 // Example:
