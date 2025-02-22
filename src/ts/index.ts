@@ -74,4 +74,16 @@ document.getElementById('base-conversion')?.addEventListener('click', () => {
     }
   }
 });
+
+//Calculate Sum
+document.getElementById('calculate-sum')?.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        const numbers = currentValue.split(',').map(Number);
+        const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+        display.value = sum.toString();
+    }
+});
+
 // ... (Other existing functions)
+const display = document.getElementById('display') as HTMLInputElement;
