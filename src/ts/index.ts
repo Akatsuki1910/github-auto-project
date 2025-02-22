@@ -60,4 +60,18 @@ function lcm(a: number, b: number): number {
     return (a * b) / gcd(a, b);
 }
 
+//Base Conversion
+document.getElementById('base-conversion')?.addEventListener('click', () => {
+  const currentValue = display.value;
+  if (currentValue) {
+    const [number, base] = currentValue.split(',').map(s => s.trim());
+    const parsedNumber = parseInt(number);
+    const parsedBase = parseInt(base);
+    if (!isNaN(parsedNumber) && !isNaN(parsedBase) && parsedBase >= 2 && parsedBase <= 36) {
+      display.value = parsedNumber.toString(parsedBase);
+    } else {
+      display.value = 'Invalid input';
+    }
+  }
+});
 // ... (Other existing functions)
