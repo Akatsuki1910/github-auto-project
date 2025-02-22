@@ -8,6 +8,7 @@
 const display = document.getElementById('display') as HTMLInputElement;
 let isDegreeMode = true;
 let ans = 0; // Store the last answer
+let isDarkMode = false; // Flag for dark mode
 
 document.getElementById('deg-rad')?.addEventListener('click', () => {
     isDegreeMode = !isDegreeMode;
@@ -50,6 +51,11 @@ document.getElementById('ln')?.addEventListener('click', () => {
     }
 });
 
+// Add dark mode toggle functionality
+document.getElementById('toggle-dark-mode')?.addEventListener('click', () => {
+    isDarkMode = !isDarkMode;
+    document.body.classList.toggle('dark-mode', isDarkMode);
+});
 // ... (rest of the code) 
 // In the equals button event listener, store the result in ans
 // Example:
