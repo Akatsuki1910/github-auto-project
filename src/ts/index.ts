@@ -9,6 +9,7 @@ const display = document.getElementById('display') as HTMLInputElement;
 let isDegreeMode = true;
 let ans = 0; // Store the last answer
 let isDarkMode = false; // Flag for dark mode
+let history: string[] = []; // History array to store calculations
 
 document.getElementById('deg-rad')?.addEventListener('click', () => {
     isDegreeMode = !isDegreeMode;
@@ -46,6 +47,7 @@ document.getElementById('ln')?.addEventListener('click', () => {
         const result = Math.log(currentValue);
         display.value = result.toString();
         ans = result; // Store the result in ans
+        history.push(`ln(${currentValue}) = ${result}`); // Add to history
     } catch (error) {
         display.value = "Error";
     }
@@ -64,6 +66,7 @@ document.getElementById('log2')?.addEventListener('click', () => {
         const result = Math.log2(currentValue);
         display.value = result.toString();
         ans = result;
+          history.push(`log2(${currentValue}) = ${result}`); // Add to history
     }
     catch (error) {
         display.value = "Error";
@@ -77,6 +80,7 @@ document.getElementById('expm1')?.addEventListener('click', () => {
         const result = Math.expm1(currentValue);
         display.value = result.toString();
         ans = result;
+          history.push(`expm1(${currentValue}) = ${result}`); // Add to history
     } catch (error) {
         display.value = "Error";
     }
@@ -89,6 +93,7 @@ document.getElementById('cbrt')?.addEventListener('click', () => {
         const result = Math.cbrt(currentValue);
         display.value = result.toString();
         ans = result;
+          history.push(`cbrt(${currentValue}) = ${result}`); // Add to history
     } catch (error) {
         display.value = "Error";
     }
@@ -101,6 +106,7 @@ document.getElementById('cbrt')?.addEventListener('click', () => {
 //     const result = eval(display.value); 
 //     display.value = result.toString();
 //     ans = result;
+//      history.push(`${display.value} = ${result}`); // Add calculation to history
 // } catch (error) {
 //     display.value = "Error";
 // }
