@@ -81,6 +81,18 @@ document.getElementById('expm1')?.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+
+// Add cbrt functionality
+document.getElementById('cbrt')?.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const result = Math.cbrt(currentValue);
+        display.value = result.toString();
+        ans = result;
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 // ... (rest of the code) 
 // In the equals button event listener, store the result in ans
 // Example:
