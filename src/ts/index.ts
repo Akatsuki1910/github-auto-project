@@ -165,6 +165,7 @@ const equals = document.querySelector('.equals');
 const decimal = document.querySelector('.decimal');
 const clear = document.querySelector('#clear');
 const backspace = document.querySelector('#backspace');
+const squared = document.querySelector('#squared');
 
 digits.forEach(digit => {
     digit.addEventListener('click', () => {
@@ -191,6 +192,19 @@ equals.addEventListener('click', () => {
         display.value = result.toString();
         ans = result;
         history.push(`${display.value} = ${result}`);
+        updateHistoryDisplay();
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
+squared.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const result = Math.pow(currentValue,3);
+        display.value = result.toString();
+        ans = result;
+        history.push(`${currentValue}^3 = ${result}`);
         updateHistoryDisplay();
     } catch (error) {
         display.value = "Error";
