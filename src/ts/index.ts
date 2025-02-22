@@ -49,6 +49,7 @@ const roundBtn = document.getElementById('round');
 const absBtn = document.getElementById('abs'); // Add absolute value button
 const cbrtBtn = document.getElementById('cbrt'); //Cube root button
 const tenPowerBtn = document.getElementById('ten-power'); // 10 to the power of x
+const signBtn = document.getElementById('sign'); //Added sign button
 
 function factorial(n: number): number {
     if (n === 0) {
@@ -162,6 +163,22 @@ tenPowerBtn?.addEventListener('click', () => {
             ans = result;
             history.push(`10^(${num}) = ${result}`);
             updateHistoryDisplay();
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
+//Added Sign functionality
+signBtn?.addEventListener('click', () => {
+    try{
+        const num = parseFloat(display.value);
+        if (isNaN(num)){
+            display.value = "Error";
+        } else{
+            const result = -num;
+            display.value = result.toString();
+            ans = result;
         }
     } catch (error) {
         display.value = "Error";
