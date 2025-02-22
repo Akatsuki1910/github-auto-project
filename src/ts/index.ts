@@ -107,5 +107,16 @@ function nCr(n: number, r: number): number {
     return factorial(n) / (factorial(r) * factorial(n - r));
 }
 
+//Base-10 Logarithm
+document.getElementById('base-10-log')?.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+      const num = parseFloat(currentValue);
+      if (!isNaN(num)) {
+        display.value = Math.log10(num).toString();
+      }
+    }
+  });
+
 // ... (Other existing functions)
 const display = document.getElementById('display') as HTMLInputElement;
