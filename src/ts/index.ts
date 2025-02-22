@@ -86,3 +86,12 @@ document.getElementById('mod')?.addEventListener('click', () => {
         display.value += '%';
     }
 });
+
+//Double functionality
+document.getElementById('double')?.addEventListener('click', () => {
+    if(display){
+        if(display.value !== ''){
+            display.value = (parseFloat(display.value) * 2).toString();
+        }
+    }
+});
