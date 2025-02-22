@@ -206,3 +206,12 @@ document.getElementById('cube-root')?.addEventListener('click', () => {
       }
     }
   });
+
+//Random number generation
+document.getElementById('random')?.addEventListener('click', () => {
+  if (display) {
+    const randomNumber = Math.random();
+    display.value = randomNumber.toString();
+    addToHistory(`rand() = ${display.value}`);
+  }
+});
