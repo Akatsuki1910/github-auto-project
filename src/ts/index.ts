@@ -43,6 +43,7 @@ const decimal = document.querySelector('.decimal');
 const clear = document.querySelector('#clear');
 const backspace = document.querySelector('#backspace');
 const factorialBtn = document.getElementById('factorial');
+const powerBtn = document.getElementById('power');
 
 function factorial(n: number): number {
     if (n === 0) {
@@ -67,6 +68,11 @@ factorialBtn?.addEventListener('click', () => {
     catch (error) {
         display.value = "Error";
     }
+});
+
+// Add power functionality
+powerBtn?.addEventListener('click', () => {
+    display.value += '**';
 });
 
 digits.forEach(digit => {
