@@ -161,5 +161,16 @@ document.getElementById('x-to-the-power-of-n')?.addEventListener('click', () => 
         }
     }
 });
+
+//Truncate Function
+document.getElementById('trunc')?.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        const num = parseFloat(currentValue);
+        if (!isNaN(num)) {
+            display.value = Math.trunc(num).toString();
+        }
+    }
+});
 // ... (Other existing functions)
 const display = document.getElementById('display') as HTMLInputElement;
