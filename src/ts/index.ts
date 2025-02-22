@@ -8,7 +8,6 @@
 const display = document.getElementById('display') as HTMLInputElement;
 let isDegreeMode = true;
 let ans = 0; // Store the last answer
-let isDarkMode = false; // Flag for dark mode
 let history: string[] = []; // History array to store calculations
 const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
 
@@ -36,13 +35,6 @@ document.getElementById('ans')?.addEventListener('click', () => {
   display.value += ans.toString();
 });
 
-// Add exit button functionality
-document.getElementById('exit')?.addEventListener('click', () => {
-  window.close(); // Close the window
-});
-
-// ... (rest of the code)
-
 //Added functionality for digits and operators
 const digits = document.querySelectorAll('.digit');
 const operators = document.querySelectorAll('.operator');
@@ -50,9 +42,6 @@ const equals = document.querySelector('.equals');
 const decimal = document.querySelector('.decimal');
 const clear = document.querySelector('#clear');
 const backspace = document.querySelector('#backspace');
-const squared = document.querySelector('#squared');
-const cube = document.querySelector('#cube'); //x^4 button
-const signChange = document.querySelector('#sign-change');
 
 digits.forEach(digit => {
     digit.addEventListener('click', () => {
@@ -85,16 +74,23 @@ equals.addEventListener('click', () => {
     }
 });
 
-// ... other event listeners
+function updateHistoryDisplay() {
+  historyDisplay.innerHTML = history.map(item => `<p>${item}</p>`).join('');
+}
 
-signChange.addEventListener('click', () => {
-    try {
-        const currentValue = parseFloat(display.value);
-        const changedValue = -currentValue;
-        display.value = changedValue.toString();
-    } catch (error) {
-        display.value = "Error";
-    }
+document.getElementById('toggle-history')?.addEventListener('click', () => {
+  if (historyDisplay.style.display === 'none') {
+    historyDisplay.style.display = 'block';
+  } else {
+    historyDisplay.style.display = 'none';
+  }
 });
-
-// ... rest of the code
+document.getElementById('copy-history')?.addEventListener('click', () => {
+  navigator.clipboard.writeText(history.join('\n')).then(() => {
+    alert('History copied to clipboard!');
+  });
+});
+document.getElementById('clear-history')?.addEventListener('click', () => {
+  history = [];
+  updateHistoryDisplay();
+});
