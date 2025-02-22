@@ -42,6 +42,32 @@ const equals = document.querySelector('.equals');
 const decimal = document.querySelector('.decimal');
 const clear = document.querySelector('#clear');
 const backspace = document.querySelector('#backspace');
+const factorialBtn = document.getElementById('factorial');
+
+function factorial(n: number): number {
+    if (n === 0) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+factorialBtn?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Error";
+        } else {
+            const result = factorial(num);
+            display.value = result.toString();
+            ans = result;
+            history.push(`${num}! = ${result}`);
+            updateHistoryDisplay();
+        }
+    }
+    catch (error) {
+        display.value = "Error";
+    }
+});
 
 digits.forEach(digit => {
     digit.addEventListener('click', () => {
