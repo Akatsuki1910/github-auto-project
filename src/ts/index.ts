@@ -132,6 +132,20 @@ document.getElementById('toggle-history')?.addEventListener('click', () => {
     }
     updateHistoryDisplay();
 });
+
+// Add log1p functionality
+document.getElementById('log1p')?.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const result = Math.log1p(currentValue);
+        display.value = result.toString();
+        ans = result;
+        history.push(`log1p(${currentValue}) = ${result}`);
+        updateHistoryDisplay();
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 // ... (rest of the code) 
 // In the equals button event listener, store the result in ans
 // Example:
