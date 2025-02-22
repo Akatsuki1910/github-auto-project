@@ -7,6 +7,7 @@
 // ... (Other existing functions)
 const display = document.getElementById('display') as HTMLInputElement;
 let isDegreeMode = true;
+let ans = 0; // Store the last answer
 
 document.getElementById('deg-rad')?.addEventListener('click', () => {
     isDegreeMode = !isDegreeMode;
@@ -27,4 +28,20 @@ function tan(x: number): number {
     return isDegreeMode ? Math.tan(x * Math.PI / 180) : Math.tan(x);
 }
 
-// ... (rest of the code)
+// Add event listener for Ans button
+document.getElementById('ans')?.addEventListener('click', () => {
+  display.value += ans.toString();
+});
+
+// ... (rest of the code) 
+// In the equals button event listener, store the result in ans
+// Example:
+// ... inside equals button click handler
+// try {
+//     const result = eval(display.value); 
+//     display.value = result.toString();
+//     ans = result;
+// } catch (error) {
+//     display.value = "Error";
+// }
+// ...
