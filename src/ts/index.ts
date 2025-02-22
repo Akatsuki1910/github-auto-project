@@ -45,6 +45,7 @@ const backspace = document.querySelector('#backspace');
 const factorialBtn = document.getElementById('factorial');
 const powerBtn = document.getElementById('power');
 const logBtn = document.getElementById('log');
+const roundBtn = document.getElementById('round');
 
 function factorial(n: number): number {
     if (n === 0) {
@@ -87,6 +88,23 @@ logBtn?.addEventListener('click', () => {
             display.value = result.toString();
             ans = result;
             history.push(`log(${num}) = ${result}`);
+            updateHistoryDisplay();
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
+roundBtn?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Error";
+        } else {
+            const result = Math.round(num);
+            display.value = result.toString();
+            ans = result;
+            history.push(`round(${num}) = ${result}`);
             updateHistoryDisplay();
         }
     } catch (error) {
