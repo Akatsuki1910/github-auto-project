@@ -56,6 +56,19 @@ document.getElementById('toggle-dark-mode')?.addEventListener('click', () => {
     isDarkMode = !isDarkMode;
     document.body.classList.toggle('dark-mode', isDarkMode);
 });
+
+//Add log2 functionality
+document.getElementById('log2')?.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const result = Math.log2(currentValue);
+        display.value = result.toString();
+        ans = result;
+    }
+    catch (error) {
+        display.value = "Error";
+    }
+});
 // ... (rest of the code) 
 // In the equals button event listener, store the result in ans
 // Example:
