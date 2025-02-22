@@ -69,6 +69,18 @@ document.getElementById('log2')?.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+
+// Add expm1 functionality
+document.getElementById('expm1')?.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const result = Math.expm1(currentValue);
+        display.value = result.toString();
+        ans = result;
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 // ... (rest of the code) 
 // In the equals button event listener, store the result in ans
 // Example:
