@@ -4,6 +4,7 @@
 
 // ... existing functions
 
+//Fibonacci
 document.getElementById('fibonacci')?.addEventListener('click', () => {
     if (display) {
         const n = parseInt(display.value);
@@ -40,6 +41,23 @@ function gcd(a: number, b: number): number {
         a = temp;
     }
     return a;
+}
+
+// Least Common Multiple
+document.getElementById('lcm')?.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        const numbers = currentValue.split(',').map(Number);
+        if (numbers.length === 2 && !isNaN(numbers[0]) && !isNaN(numbers[1])) {
+            display.value = lcm(numbers[0], numbers[1]).toString();
+        } else {
+            display.value = "Invalid Input";
+        }
+    }
+});
+
+function lcm(a: number, b: number): number {
+    return (a * b) / gcd(a, b);
 }
 
 // ... (Other existing functions)
