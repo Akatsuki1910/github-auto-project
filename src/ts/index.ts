@@ -85,5 +85,27 @@ document.getElementById('calculate-sum')?.addEventListener('click', () => {
     }
 });
 
+//nCr
+document.getElementById('nCr')?.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        const [n, r] = currentValue.split(',').map(Number);
+        if (!isNaN(n) && !isNaN(r)) {
+            display.value = nCr(n, r).toString();
+        }
+    }
+});
+
+function factorial(n: number): number {
+    if (n === 0) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+
+function nCr(n: number, r: number): number {
+    return factorial(n) / (factorial(r) * factorial(n - r));
+}
+
 // ... (Other existing functions)
 const display = document.getElementById('display') as HTMLInputElement;
