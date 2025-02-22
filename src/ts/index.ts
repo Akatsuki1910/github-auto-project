@@ -44,6 +44,7 @@ const clear = document.querySelector('#clear');
 const backspace = document.querySelector('#backspace');
 const factorialBtn = document.getElementById('factorial');
 const powerBtn = document.getElementById('power');
+const logBtn = document.getElementById('log');
 
 function factorial(n: number): number {
     if (n === 0) {
@@ -73,6 +74,24 @@ factorialBtn?.addEventListener('click', () => {
 // Add power functionality
 powerBtn?.addEventListener('click', () => {
     display.value += '**';
+});
+
+// Add log functionality
+logBtn?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Error";
+        } else {
+            const result = Math.log10(num);
+            display.value = result.toString();
+            ans = result;
+            history.push(`log(${num}) = ${result}`);
+            updateHistoryDisplay();
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
 });
 
 digits.forEach(digit => {
