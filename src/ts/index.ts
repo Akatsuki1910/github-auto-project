@@ -113,4 +113,14 @@ document.getElementById('ten-to-the-power')?.addEventListener('click', () => {
         currentExpression = result.toString();
     }
 });
+
+//Exp function
+document.getElementById('exp')?.addEventListener('click', () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    const result = Math.exp(currentValue);
+    display.value = result.toString();
+    currentExpression = result.toString();
+  }
+});
 // ... rest of the code
