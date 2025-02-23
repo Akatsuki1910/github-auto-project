@@ -56,4 +56,15 @@ document.getElementById('sin')?.addEventListener('click', () => {
     }
 });
 
+// Add cos function
+document.getElementById('cos')?.addEventListener('click', () => {
+    const value = parseFloat(display.value);
+    if (!isNaN(value)) {
+        const result = isDegreeMode ? Math.cos(value * Math.PI / 180) : Math.cos(value);
+        display.value = result.toString();
+        currentExpression += `cos(${value})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
+
 // ... (Rest of the existing code)
