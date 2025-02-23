@@ -10,6 +10,7 @@ let isDegreeMode = true;
 let ans = 0; // Store the last answer
 let history: string[] = []; // History array to store calculations
 const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+const additionalFunctions = document.querySelector('.additional-functions') as HTMLDivElement;
 
 document.getElementById('deg-rad')?.addEventListener('click', () => {
     isDegreeMode = !isDegreeMode;
@@ -89,4 +90,12 @@ document.getElementById('sum')?.addEventListener('click', () => {
     ans = sum;
     history.push(numbers.join('+') + '=' + sum);
     updateHistoryDisplay();
+});
+
+// Toggle Scientific Functions
+let isScientificMode = false;
+document.getElementById('toggle-scientific')?.addEventListener('click', () => {
+    isScientificMode = !isScientificMode;
+    additionalFunctions.style.display = isScientificMode ? 'grid' : 'none';
+
 });
