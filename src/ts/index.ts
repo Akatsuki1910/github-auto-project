@@ -85,4 +85,10 @@ document.getElementById('cbrt')?.addEventListener('click', () => {
         currentExpression = display.value;
     }
 });
+
+//Modulo function
+document.getElementById('mod')?.addEventListener('click', () => {
+  currentExpression += '%';
+  currentExpressionDisplay.textContent = currentExpression;
+});
 // ... rest of the code
