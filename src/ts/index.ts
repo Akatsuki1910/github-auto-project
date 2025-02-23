@@ -73,3 +73,10 @@ document.getElementById('trunc')?.addEventListener('click', () => {
 document.getElementById('duplicate')?.addEventListener('click', () => {
     display.value += display.value;
 });
+
+// Add sign change functionality
+document.getElementById('sign-change')?.addEventListener('click', () => {
+    if (display.value) {
+        display.value = (-parseFloat(display.value)).toString();
+    }
+});
