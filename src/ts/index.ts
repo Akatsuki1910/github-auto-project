@@ -71,4 +71,17 @@ document.getElementById('abs')?.addEventListener('click', () => {
     }
 });
 
+//Inverse function
+document.getElementById('inverse')?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue !== 0) {
+        const inverseValue = 1 / currentValue;
+        display.value = inverseValue.toString();
+        currentExpression = inverseValue.toString();
+    } else if (currentValue === 0) {
+        display.value = "Cannot divide by zero";
+        currentExpression = ""; // Clear the current expression to avoid further calculations
+    }
+});
+
 // ... rest of the code
