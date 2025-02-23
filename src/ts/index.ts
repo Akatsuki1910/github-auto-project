@@ -14,6 +14,8 @@ const additionalFunctions = document.querySelector('.additional-functions') as H
 const mainPad = document.querySelector('.main-pad') as HTMLDivElement;
 const scientificSection = document.querySelector('.scientific-section') as HTMLDivElement;
 const memorySection = document.querySelector('.memory-section') as HTMLDivElement;
+const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
+let currentExpression = '';
 
 document.getElementById('deg-rad')?.addEventListener('click', () => {
     isDegreeMode = !isDegreeMode;
@@ -114,4 +116,19 @@ document.getElementById('toggle-basic')?.addEventListener('click', () => {
     memorySection.style.display = 'none';
     mainPad.style.display = 'grid';
 
+});
+
+// Add calculate expression functionality
+document.getElementById('calculate-expression')?.addEventListener('click', () => {
+    try {
+        const result = eval(currentExpression);
+        display.value = result.toString();
+        ans = result;
+        history.push(`${currentExpression} = ${result}`);
+        updateHistoryDisplay();
+        currentExpression = ''; // Clear current expression after calculation
+        currentExpressionDisplay.textContent = currentExpression;        
+    } catch (error) {
+        display.value = "Error";
+    }
 });
