@@ -67,4 +67,15 @@ document.getElementById('cos')?.addEventListener('click', () => {
     }
 });
 
+// Add tan function
+document.getElementById('tan')?.addEventListener('click', () => {
+    const value = parseFloat(display.value);
+    if (!isNaN(value)) {
+        const result = isDegreeMode ? Math.tan(value * Math.PI / 180) : Math.tan(value);
+        display.value = result.toString();
+        currentExpression += `tan(${value})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
+
 // ... (Rest of the existing code)
