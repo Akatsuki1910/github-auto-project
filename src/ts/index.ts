@@ -100,4 +100,14 @@ document.getElementById('power-of-two')?.addEventListener('click', () => {
         currentExpression = display.value;
     }
 });
+
+//Parentheses
+document.getElementById('open-paren')?.addEventListener('click', () => {
+    currentExpression += '(';
+    currentExpressionDisplay.textContent = currentExpression;
+});
+document.getElementById('close-paren')?.addEventListener('click', () => {
+    currentExpression += ')';
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... rest of the code
