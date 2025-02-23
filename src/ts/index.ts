@@ -88,4 +88,11 @@ document.getElementById('pi')?.addEventListener('click', () => {
     currentExpressionDisplay.textContent = currentExpression; 
 });
 
+//Euler's number functionality
+document.getElementById('e')?.addEventListener('click', () => {
+    display.value += Math.E.toString();
+    currentExpression += Math.E;
+    currentExpressionDisplay.textContent = currentExpression;
+});
+
 // ... (Rest of the existing code)
