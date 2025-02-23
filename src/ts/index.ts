@@ -93,4 +93,14 @@ document.getElementById('square')?.addEventListener('click', () => {
       currentExpression = squaredValue.toString();
     }
   });
+
+//Cube root function
+document.getElementById('cuberoot')?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const cubeRootValue = Math.cbrt(currentValue);
+        display.value = cubeRootValue.toString();
+        currentExpression = cubeRootValue.toString();
+    }
+});
 // ... rest of the code
