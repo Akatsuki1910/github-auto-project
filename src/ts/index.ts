@@ -81,4 +81,11 @@ document.getElementById('factorial')?.addEventListener('click', () => {
       currentExpressionDisplay.textContent = currentExpression;    }
 });
 
+//Pi Functionality
+document.getElementById('pi')?.addEventListener('click', () => {
+  display.value += Math.PI.toString();
+  currentExpression += Math.PI;
+    currentExpressionDisplay.textContent = currentExpression; 
+});
+
 // ... (Rest of the existing code)
