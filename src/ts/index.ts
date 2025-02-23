@@ -22,88 +22,28 @@ let isDarkMode = false; // Flag for dark mode
 
 // ... (Existing Event Listeners)
 
-document.getElementById('toggle-numpad')?.addEventListener('click', () => {
-    isNumpadEnabled = !isNumpadEnabled;
-    if (isNumpadEnabled) {
-        document.addEventListener('keydown', handleNumpadInput);
-    } else {
-        document.removeEventListener('keydown', handleNumpadInput);
-    }
-});
-
-function handleNumpadInput(event: KeyboardEvent) {
-    const key = event.key;
-    if (!isNaN(parseInt(key)) && event.location === KeyboardEvent.DOM_KEY_LOCATION_NUMPAD) {
-        display.value += key;
-    }
-}
-
-// Dark mode toggle
-document.getElementById('toggle-dark-mode')?.addEventListener('click', () => {
+document.getElementById('toggle-theme')?.addEventListener('click', () => {
     isDarkMode = !isDarkMode;
     document.body.classList.toggle('dark-mode', isDarkMode);
     document.getElementById('calculator')?.classList.toggle('dark-mode', isDarkMode);
 });
 
+// History toggle and clear functionality
+document.getElementById('toggle-history')?.addEventListener('click', () => {
+    historyDisplay.style.display = historyDisplay.style.display === 'block' ? 'none' : 'block';
+});
+document.getElementById('clear-history')?.addEventListener('click', () => {
+    history = [];
+    historyDisplay.innerHTML = '';
+});
+
 // Add sin, cos, tan functions (Existing code)
 
-// Add asin function
-document.getElementById('asin')?.addEventListener('click', () => {
-    const value = parseFloat(display.value);
-    if (!isNaN(value)) {
-        const result = isDegreeMode ? Math.asin(value) * 180 / Math.PI : Math.asin(value);
-        display.value = result.toString();
-        currentExpression += `asin(${value})`;
-        currentExpressionDisplay.textContent = currentExpression;
-    }
-});
-
-//Exponent Functionality
-document.getElementById('exponent')?.addEventListener('click', () => {
-  const base = parseFloat(display.value);
-  if (!isNaN(base)) {
-    display.value += '**'; // Use ** for exponent
-    currentExpression += `${base}**`;
-    currentExpressionDisplay.textContent = currentExpression;
-  }
-});
-
-//Factorial Functionality
-document.getElementById('factorial')?.addEventListener('click', () => {
-    const num = parseFloat(display.value);
-    if (!isNaN(num) && num >= 0 && Number.isInteger(num)) {
-      let result = 1;
-      for (let i = 2; i <= num; i++) {
-        result *= i;
-      }
-      display.value = result.toString();
-      currentExpression += `factorial(${num})`;
-      currentExpressionDisplay.textContent = currentExpression;    }
-});
-
-//Pi Functionality
-document.getElementById('pi')?.addEventListener('click', () => {
-  display.value += Math.PI.toString();
-  currentExpression += Math.PI;
-    currentExpressionDisplay.textContent = currentExpression; 
-});
-
-//Euler's number functionality
-document.getElementById('e')?.addEventListener('click', () => {
-    display.value += Math.E.toString();
-    currentExpression += Math.E;
-    currentExpressionDisplay.textContent = currentExpression;
-});
-
-//Logarithm Functionality (Base 10)
-document.getElementById('log')?.addEventListener('click', () => {
-    const value = parseFloat(display.value);
-    if (!isNaN(value) && value > 0) {  // Logarithm is defined for positive numbers
-        const result = Math.log10(value);
-        display.value = result.toString();
-        currentExpression += `log(${value})`;
-        currentExpressionDisplay.textContent = currentExpression;
-    }
-});
-
 // ... (Rest of the existing code)
+// Add calculations to history
+function addToHistory(expression: string, result: string) {
+    history.push(`${expression} = ${result}`);
+    historyDisplay.innerHTML = history.map(item => `<p>${item}</p>`).join('');
+}
+
+// ... rest of the code
