@@ -46,4 +46,9 @@ function addToHistory(expression: string, result: string) {
     historyDisplay.innerHTML = history.map(item => `<p>${item}</p>`).join('');
 }
 
+// Toggle Scientific Functions
+document.getElementById('toggle-sci')?.addEventListener('click', () => {
+    additionalFunctions.style.display = additionalFunctions.style.display === 'grid' ? 'none' : 'grid';
+});
+
 // ... rest of the code
