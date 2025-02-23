@@ -11,6 +11,9 @@ let ans = 0; // Store the last answer
 let history: string[] = []; // History array to store calculations
 const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
 const additionalFunctions = document.querySelector('.additional-functions') as HTMLDivElement;
+const mainPad = document.querySelector('.main-pad') as HTMLDivElement;
+const scientificSection = document.querySelector('.scientific-section') as HTMLDivElement;
+const memorySection = document.querySelector('.memory-section') as HTMLDivElement;
 
 document.getElementById('deg-rad')?.addEventListener('click', () => {
     isDegreeMode = !isDegreeMode;
@@ -95,7 +98,20 @@ document.getElementById('sum')?.addEventListener('click', () => {
 // Toggle Scientific Functions
 let isScientificMode = false;
 document.getElementById('toggle-scientific')?.addEventListener('click', () => {
-    isScientificMode = !isScientificMode;
-    additionalFunctions.style.display = isScientificMode ? 'grid' : 'none';
+    isScientificMode = true; // Always turn scientific mode on
+    additionalFunctions.style.display = 'grid';
+    mainPad.style.display = 'grid';
+    scientificSection.style.display = 'grid';
+    memorySection.style.display = 'grid';
+
+});
+
+// Toggle Basic functions
+document.getElementById('toggle-basic')?.addEventListener('click', () => {
+    isScientificMode = false;
+    additionalFunctions.style.display = 'none';
+    scientificSection.style.display = 'none';
+    memorySection.style.display = 'none';
+    mainPad.style.display = 'grid';
 
 });
