@@ -110,4 +110,17 @@ document.getElementById('close-paren')?.addEventListener('click', () => {
     currentExpression += ')';
     currentExpressionDisplay.textContent = currentExpression;
 });
+
+// Calculate Expression button
+document.getElementById('calculate-expression')?.addEventListener('click', () => {
+    try {
+        const result = eval(currentExpression);
+        display.value = result.toString();
+        addToHistory(currentExpression, result.toString());
+        currentExpression = '';
+        currentExpressionDisplay.textContent = '';
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
 // ... rest of the code
