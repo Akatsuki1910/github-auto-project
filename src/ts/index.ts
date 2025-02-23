@@ -84,4 +84,13 @@ document.getElementById('inverse')?.addEventListener('click', () => {
     }
 });
 
+// Square function
+document.getElementById('square')?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+      const squaredValue = currentValue * currentValue;
+      display.value = squaredValue.toString();
+      currentExpression = squaredValue.toString();
+    }
+  });
 // ... rest of the code
