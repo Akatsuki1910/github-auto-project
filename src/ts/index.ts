@@ -68,4 +68,17 @@ document.getElementById('exponent')?.addEventListener('click', () => {
   }
 });
 
+//Factorial Functionality
+document.getElementById('factorial')?.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (!isNaN(num) && num >= 0 && Number.isInteger(num)) {
+      let result = 1;
+      for (let i = 2; i <= num; i++) {
+        result *= i;
+      }
+      display.value = result.toString();
+      currentExpression += `factorial(${num})`;
+      currentExpressionDisplay.textContent = currentExpression;    }
+});
+
 // ... (Rest of the existing code)
