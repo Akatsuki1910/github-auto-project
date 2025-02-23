@@ -91,4 +91,13 @@ document.getElementById('mod')?.addEventListener('click', () => {
   currentExpression += '%';
   currentExpressionDisplay.textContent = currentExpression;
 });
+
+//Power of Two
+document.getElementById('power-of-two')?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (currentValue * currentValue).toString();
+        currentExpression = display.value;
+    }
+});
 // ... rest of the code
