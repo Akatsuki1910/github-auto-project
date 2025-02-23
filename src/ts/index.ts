@@ -43,109 +43,25 @@ function ln(x: number): number {
     return Math.log(x);
 }
 
-document.getElementById('ln')?.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        if (isNaN(num)) {
-            display.value = "Error";
-        } else if (num <= 0) {
-            display.value = "Error: Invalid input for ln"; // Handle invalid input
-        } else {
-            const result = ln(num);
-            display.value = result.toString();
-            ans = result;
-            history.push(`ln(${num}) = ${result}`);
-            updateHistoryDisplay();
-        }
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-
-// Add expm1 function
-function expm1(x: number): number {
-    return Math.expm1(x);
-}
-document.getElementById('expm1')?.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        if (isNaN(num)) {
-            display.value = "Error";
-        } else {
-            const result = expm1(num);
-            display.value = result.toString();
-            ans = result;
-            history.push(`expm1(${num}) = ${result}`);
-            updateHistoryDisplay();
-        }
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-
-
 // ... (Rest of the code)
 function updateHistoryDisplay(){
     historyDisplay.innerHTML = history.join('<br>');
 }
 // ... (Rest of the existing code)
 
-// Add random number generation
-document.getElementById('random')?.addEventListener('click', () => {
-    const randomNumber = Math.random();
-    display.value = randomNumber.toString();
-    ans = randomNumber;
-    history.push(`rnd = ${randomNumber}`);
-    updateHistoryDisplay();
-});
+// ... (Existing functions)
 
-// Add max function
-document.getElementById('max')?.addEventListener('click', () => {
-    try {
-        const numbers = display.value.split(',').map(Number);
-        if (numbers.some(isNaN)) {
-            display.value = "Error: Invalid input";
-        } else {
-            const maxNum = Math.max(...numbers);
-            display.value = maxNum.toString();
-            ans = maxNum;
-            history.push(`max(${numbers.join(',')}) = ${maxNum}`);
-            updateHistoryDisplay();
-        }
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-
-// Add min function
-document.getElementById('min')?.addEventListener('click', () => {
-    try {
-        const numbers = display.value.split(',').map(Number);
-        if (numbers.some(isNaN)) {
-            display.value = "Error: Invalid input";
-        } else {
-            const minNum = Math.min(...numbers);
-            display.value = minNum.toString();
-            ans = minNum;
-            history.push(`min(${numbers.join(',')}) = ${minNum}`);
-            updateHistoryDisplay();
-        }
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-
-// Add ceil function
-document.getElementById('ceil')?.addEventListener('click', () => {
+// Add trunc function
+document.getElementById('trunc')?.addEventListener('click', () => {
     try {
         const num = parseFloat(display.value);
         if (isNaN(num)) {
             display.value = "Error";
         } else {
-            const result = Math.ceil(num);
+            const result = Math.trunc(num);
             display.value = result.toString();
             ans = result;
-            history.push(`ceil(${num}) = ${result}`);
+            history.push(`trunc(${num}) = ${result}`);
             updateHistoryDisplay();
         }
     } catch (error) {
