@@ -45,4 +45,15 @@ document.getElementById('toggle-dark-mode')?.addEventListener('click', () => {
     document.getElementById('calculator')?.classList.toggle('dark-mode', isDarkMode);
 });
 
+// Add sin function
+document.getElementById('sin')?.addEventListener('click', () => {
+    const value = parseFloat(display.value);
+    if (!isNaN(value)) {
+        const result = isDegreeMode ? Math.sin(value * Math.PI / 180) : Math.sin(value);
+        display.value = result.toString();
+        currentExpression += `sin(${value})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
+
 // ... (Rest of the existing code)
