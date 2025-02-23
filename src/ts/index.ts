@@ -98,3 +98,21 @@ document.getElementById('random')?.addEventListener('click', () => {
     history.push(`rnd = ${randomNumber}`);
     updateHistoryDisplay();
 });
+
+// Add max function
+document.getElementById('max')?.addEventListener('click', () => {
+    try {
+        const numbers = display.value.split(',').map(Number);
+        if (numbers.some(isNaN)) {
+            display.value = "Error: Invalid input";
+        } else {
+            const maxNum = Math.max(...numbers);
+            display.value = maxNum.toString();
+            ans = maxNum;
+            history.push(`max(${numbers.join(',')}) = ${maxNum}`);
+            updateHistoryDisplay();
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
