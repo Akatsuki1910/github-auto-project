@@ -116,3 +116,21 @@ document.getElementById('max')?.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+
+// Add min function
+document.getElementById('min')?.addEventListener('click', () => {
+    try {
+        const numbers = display.value.split(',').map(Number);
+        if (numbers.some(isNaN)) {
+            display.value = "Error: Invalid input";
+        } else {
+            const minNum = Math.min(...numbers);
+            display.value = minNum.toString();
+            ans = minNum;
+            history.push(`min(${numbers.join(',')}) = ${minNum}`);
+            updateHistoryDisplay();
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
