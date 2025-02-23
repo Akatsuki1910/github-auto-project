@@ -76,4 +76,13 @@ document.getElementById('floor')?.addEventListener('click', () => {
       currentExpression = display.value;
     }
   });
+
+//Cube Root function
+document.getElementById('cbrt')?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.cbrt(currentValue).toString();
+        currentExpression = display.value;
+    }
+});
 // ... rest of the code
