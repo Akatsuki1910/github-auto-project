@@ -36,42 +36,25 @@ document.getElementById('ans')?.addEventListener('click', () => {
 });
 
 //Added functionality for digits and operators
-const digits = document.querySelectorAll('.digit');
-const operators = document.querySelectorAll('.operator');
-const equals = document.querySelector('.equals');
-const decimal = document.querySelector('.decimal');
-const clear = document.querySelector('#clear');
-const backspace = document.querySelector('#backspace');
-const factorialBtn = document.getElementById('factorial');
-const powerBtn = document.getElementById('power');
-const logBtn = document.getElementById('log');
-const roundBtn = document.getElementById('round');
-const absBtn = document.getElementById('abs'); // Add absolute value button
-const cbrtBtn = document.getElementById('cbrt'); //Cube root button
-const tenPowerBtn = document.getElementById('ten-power'); // 10 to the power of x
-const signBtn = document.getElementById('sign'); //Added sign button
-const squaredBtn = document.getElementById('squared');
-const cubeBtn = document.getElementById('cube'); // Add cube button
+// ... (rest of the code)
 
-function factorial(n: number): number {
-    if (n === 0) {
-        return 1;
-    }
-    return n * factorial(n - 1);
+// Add ln function
+function ln(x: number): number {
+    return Math.log(x);
 }
 
-// ... (Other existing functions)
-
-squaredBtn?.addEventListener('click', () => {
+document.getElementById('ln')?.addEventListener('click', () => {
     try {
         const num = parseFloat(display.value);
         if (isNaN(num)) {
             display.value = "Error";
+        } else if (num <= 0) {
+            display.value = "Error: Invalid input for ln"; // Handle invalid input
         } else {
-            const result = num * num;
+            const result = ln(num);
             display.value = result.toString();
             ans = result;
-            history.push(`${num}² = ${result}`);
+            history.push(`ln(${num}) = ${result}`);
             updateHistoryDisplay();
         }
     } catch (error) {
@@ -79,23 +62,7 @@ squaredBtn?.addEventListener('click', () => {
     }
 });
 
-cubeBtn?.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        if (isNaN(num)) {
-            display.value = "Error";
-        } else {
-            const result = num * num * num;
-            display.value = result.toString();
-            ans = result;
-            history.push(`${num}³ = ${result}`);
-            updateHistoryDisplay();        
-        }
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-
+// ... (Rest of the code)
 function updateHistoryDisplay(){
     historyDisplay.innerHTML = history.join('<br>');
 }
