@@ -95,4 +95,15 @@ document.getElementById('e')?.addEventListener('click', () => {
     currentExpressionDisplay.textContent = currentExpression;
 });
 
+//Logarithm Functionality (Base 10)
+document.getElementById('log')?.addEventListener('click', () => {
+    const value = parseFloat(display.value);
+    if (!isNaN(value) && value > 0) {  // Logarithm is defined for positive numbers
+        const result = Math.log10(value);
+        display.value = result.toString();
+        currentExpression += `log(${value})`;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
+
 // ... (Rest of the existing code)
