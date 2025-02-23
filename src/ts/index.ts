@@ -58,4 +58,14 @@ document.getElementById('asin')?.addEventListener('click', () => {
     }
 });
 
+//Exponent Functionality
+document.getElementById('exponent')?.addEventListener('click', () => {
+  const base = parseFloat(display.value);
+  if (!isNaN(base)) {
+    display.value += '**'; // Use ** for exponent
+    currentExpression += `${base}**`;
+    currentExpressionDisplay.textContent = currentExpression;
+  }
+});
+
 // ... (Rest of the existing code)
