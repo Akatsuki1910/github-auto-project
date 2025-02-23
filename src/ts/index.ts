@@ -60,4 +60,11 @@ document.getElementById('sign')?.addEventListener('click', () => {
         currentExpression = display.value;
     }
 });
+
+//Random Number Generation
+document.getElementById('rand')?.addEventListener('click', () => {
+    const randomNumber = Math.random();
+    display.value = randomNumber.toString();
+    currentExpression = display.value;
+});
 // ... rest of the code
