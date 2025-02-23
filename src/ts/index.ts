@@ -51,4 +51,14 @@ document.getElementById('toggle-sci')?.addEventListener('click', () => {
     additionalFunctions.style.display = additionalFunctions.style.display === 'grid' ? 'none' : 'grid';
 });
 
+//Round function
+document.getElementById('round')?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const roundedValue = Math.round(currentValue);
+        display.value = roundedValue.toString();
+        currentExpression = roundedValue.toString();
+    }
+});
+
 // ... rest of the code
