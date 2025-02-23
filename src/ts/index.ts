@@ -67,4 +67,13 @@ document.getElementById('rand')?.addEventListener('click', () => {
     display.value = randomNumber.toString();
     currentExpression = display.value;
 });
+
+//Floor function
+document.getElementById('floor')?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+      display.value = Math.floor(currentValue).toString();
+      currentExpression = display.value;
+    }
+  });
 // ... rest of the code
