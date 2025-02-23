@@ -89,3 +89,12 @@ function updateHistoryDisplay(){
     historyDisplay.innerHTML = history.join('<br>');
 }
 // ... (Rest of the existing code)
+
+// Add random number generation
+document.getElementById('random')?.addEventListener('click', () => {
+    const randomNumber = Math.random();
+    display.value = randomNumber.toString();
+    ans = randomNumber;
+    history.push(`rnd = ${randomNumber}`);
+    updateHistoryDisplay();
+});
