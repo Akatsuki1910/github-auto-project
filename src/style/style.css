@@ -58,3 +58,7 @@ body.dark-mode {
 #calculator.dark-mode {
     background-color: #444;
 }
+sup{
+  vertical-align: super;
+  font-size: smaller;
+}
