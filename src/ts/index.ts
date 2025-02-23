@@ -62,6 +62,28 @@ document.getElementById('ln')?.addEventListener('click', () => {
     }
 });
 
+// Add expm1 function
+function expm1(x: number): number {
+    return Math.expm1(x);
+}
+document.getElementById('expm1')?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Error";
+        } else {
+            const result = expm1(num);
+            display.value = result.toString();
+            ans = result;
+            history.push(`expm1(${num}) = ${result}`);
+            updateHistoryDisplay();
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
+
 // ... (Rest of the code)
 function updateHistoryDisplay(){
     historyDisplay.innerHTML = history.join('<br>');
