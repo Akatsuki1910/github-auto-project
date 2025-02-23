@@ -48,3 +48,13 @@ body {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 5px;
 }
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #333;
+    color: #eee;
+}
+
+#calculator.dark-mode {
+    background-color: #444;
+}
