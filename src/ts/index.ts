@@ -80,3 +80,13 @@ document.getElementById('sign-change')?.addEventListener('click', () => {
         display.value = (-parseFloat(display.value)).toString();
     }
 });
+
+//Add sum functionality
+document.getElementById('sum')?.addEventListener('click', () => {
+    const numbers = display.value.split('+').map(Number).filter(n => !isNaN(n));
+    const sum = numbers.reduce((a,b)=> a+b,0);
+    display.value = sum.toString();
+    ans = sum;
+    history.push(numbers.join('+') + '=' + sum);
+    updateHistoryDisplay();
+});
