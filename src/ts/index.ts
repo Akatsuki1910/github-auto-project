@@ -134,3 +134,21 @@ document.getElementById('min')?.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+
+// Add ceil function
+document.getElementById('ceil')?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Error";
+        } else {
+            const result = Math.ceil(num);
+            display.value = result.toString();
+            ans = result;
+            history.push(`ceil(${num}) = ${result}`);
+            updateHistoryDisplay();
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
