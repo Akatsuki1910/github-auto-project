@@ -68,3 +68,8 @@ document.getElementById('trunc')?.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+
+// Add duplicate functionality
+document.getElementById('duplicate')?.addEventListener('click', () => {
+    display.value += display.value;
+});
