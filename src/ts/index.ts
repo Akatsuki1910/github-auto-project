@@ -61,4 +61,14 @@ document.getElementById('round')?.addEventListener('click', () => {
     }
 });
 
+//Absolute Value function
+document.getElementById('abs')?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const absValue = Math.abs(currentValue);
+        display.value = absValue.toString();
+        currentExpression = absValue.toString();
+    }
+});
+
 // ... rest of the code
