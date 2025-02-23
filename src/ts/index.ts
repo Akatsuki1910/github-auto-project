@@ -16,6 +16,7 @@ const scientificSection = document.querySelector('.scientific-section') as HTMLD
 const memorySection = document.querySelector('.memory-section') as HTMLDivElement;
 const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
 let currentExpression = '';
+let isKeyboardEnabled = false;
 
 document.getElementById('deg-rad')?.addEventListener('click', () => {
     isDegreeMode = !isDegreeMode;
@@ -132,3 +133,20 @@ document.getElementById('calculate-expression')?.addEventListener('click', () =>
         display.value = "Error";
     }
 });
+
+//Keyboard Toggle function
+document.getElementById('toggle-keyboard')?.addEventListener('click', () => {
+    isKeyboardEnabled = !isKeyboardEnabled;
+    if (isKeyboardEnabled) {
+      document.addEventListener('keydown', handleKeyboardInput);
+    } else {
+      document.removeEventListener('keydown', handleKeyboardInput);
+    }
+  });
+  
+  function handleKeyboardInput(event: KeyboardEvent) {
+    const key = event.key;
+    if (!isNaN(parseInt(key))) {
+      display.value += key;
+    }
+  }
