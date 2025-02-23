@@ -52,75 +52,12 @@ document.getElementById('toggle-sci')?.addEventListener('click', () => {
 });
 
 //Round function
-document.getElementById('round')?.addEventListener('click', () => {
+// ... (Existing functions)
+document.getElementById('sign')?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        const roundedValue = Math.round(currentValue);
-        display.value = roundedValue.toString();
-        currentExpression = roundedValue.toString();
+        display.value = (currentValue * -1).toString();
+        currentExpression = display.value;
     }
-});
-
-//Absolute Value function
-document.getElementById('abs')?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        const absValue = Math.abs(currentValue);
-        display.value = absValue.toString();
-        currentExpression = absValue.toString();
-    }
-});
-
-//Inverse function
-document.getElementById('inverse')?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue !== 0) {
-        const inverseValue = 1 / currentValue;
-        display.value = inverseValue.toString();
-        currentExpression = inverseValue.toString();
-    } else if (currentValue === 0) {
-        display.value = "Cannot divide by zero";
-        currentExpression = ""; // Clear the current expression to avoid further calculations
-    }
-});
-
-// Square function
-document.getElementById('square')?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-      const squaredValue = currentValue * currentValue;
-      display.value = squaredValue.toString();
-      currentExpression = squaredValue.toString();
-    }
-  });
-
-//Cube root function
-document.getElementById('cuberoot')?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        const cubeRootValue = Math.cbrt(currentValue);
-        display.value = cubeRootValue.toString();
-        currentExpression = cubeRootValue.toString();
-    }
-});
-
-// 10 to the power of x function
-document.getElementById('ten-to-the-power')?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        const result = Math.pow(10, currentValue);
-        display.value = result.toString();
-        currentExpression = result.toString();
-    }
-});
-
-//Exp function
-document.getElementById('exp')?.addEventListener('click', () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    const result = Math.exp(currentValue);
-    display.value = result.toString();
-    currentExpression = result.toString();
-  }
 });
 // ... rest of the code
