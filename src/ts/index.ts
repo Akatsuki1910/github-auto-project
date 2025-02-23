@@ -103,4 +103,14 @@ document.getElementById('cuberoot')?.addEventListener('click', () => {
         currentExpression = cubeRootValue.toString();
     }
 });
+
+// 10 to the power of x function
+document.getElementById('ten-to-the-power')?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.pow(10, currentValue);
+        display.value = result.toString();
+        currentExpression = result.toString();
+    }
+});
 // ... rest of the code
