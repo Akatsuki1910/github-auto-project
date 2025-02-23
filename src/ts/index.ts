@@ -51,6 +51,7 @@ const cbrtBtn = document.getElementById('cbrt'); //Cube root button
 const tenPowerBtn = document.getElementById('ten-power'); // 10 to the power of x
 const signBtn = document.getElementById('sign'); //Added sign button
 const squaredBtn = document.getElementById('squared');
+const cubeBtn = document.getElementById('cube'); // Add cube button
 
 function factorial(n: number): number {
     if (n === 0) {
@@ -78,4 +79,24 @@ squaredBtn?.addEventListener('click', () => {
     }
 });
 
+cubeBtn?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Error";
+        } else {
+            const result = num * num * num;
+            display.value = result.toString();
+            ans = result;
+            history.push(`${num}³ = ${result}`);
+            updateHistoryDisplay();        
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
+function updateHistoryDisplay(){
+    historyDisplay.innerHTML = history.join('<br>');
+}
 // ... (Rest of the existing code)
