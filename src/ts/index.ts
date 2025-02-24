@@ -197,3 +197,9 @@ document.getElementById('floor')?.addEventListener('click', () => {
     currentExpression += 'Math.floor('; // Use Math.floor for floor
     currentExpressionDisplay.textContent = currentExpression;
 });
+// New Feature: Random Number Generation
+document.getElementById('random')?.addEventListener('click', () => {
+    const randomNumber = Math.random();
+    display.value = randomNumber.toString();
+    addToHistory('Rnd', randomNumber.toString());
+});
