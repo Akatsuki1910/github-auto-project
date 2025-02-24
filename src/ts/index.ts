@@ -138,3 +138,8 @@ document.getElementById('cube')?.addEventListener('click', () => {
     currentExpression += '**3';
     currentExpressionDisplay.textContent = currentExpression;
 });
+//New Feature: Absolute Value
+document.getElementById('abs')?.addEventListener('click', () => {
+    currentExpression += 'Math.abs('; // Use Math.abs for absolute value
+    currentExpressionDisplay.textContent = currentExpression;
+});
