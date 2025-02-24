@@ -111,3 +111,8 @@ document.getElementById('ceil')?.addEventListener('click', () => {
     currentExpression += 'Math.ceil('; // Use Math.ceil for ceiling
     currentExpressionDisplay.textContent = currentExpression;
 });
+//New Feature: Modulo operator
+document.getElementById('mod')?.addEventListener('click', () => {
+    currentExpression += '%';
+    currentExpressionDisplay.textContent = currentExpression;
+});
