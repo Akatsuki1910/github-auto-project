@@ -119,8 +119,15 @@ document.getElementById('calculate-expression')?.addEventListener('click', () =>
         addToHistory(currentExpression, result.toString());
         currentExpression = '';
         currentExpressionDisplay.textContent = '';
+        ans = result;
     } catch (error) {
         display.value = 'Error';
     }
+});
+
+// Ans button
+document.getElementById('ans').addEventListener('click', () => {
+    currentExpression += ans.toString();
+    currentExpressionDisplay.textContent = currentExpression; 
 });
 // ... rest of the code
