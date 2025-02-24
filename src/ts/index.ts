@@ -178,3 +178,8 @@ document.getElementById('cube-root')?.addEventListener('click', () => {
     display.value = result.toString();
     currentExpression = display.value;
 });
+//New Feature: Nth Root
+document.getElementById('nth-root')?.addEventListener('click', () => {
+    currentExpression += '**(1/';
+    currentExpressionDisplay.textContent = currentExpression;
+});
