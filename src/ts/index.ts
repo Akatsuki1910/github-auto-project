@@ -187,3 +187,8 @@ document.getElementById('square')?.addEventListener('click', () => {
     currentExpression += '**2';
     currentExpressionDisplay.textContent = currentExpression;
 });
+//New Feature: Cube Root
+document.getElementById('cbrt')?.addEventListener('click', () => {
+    currentExpression += '**(1/3)';
+    currentExpressionDisplay.textContent = currentExpression;
+});
