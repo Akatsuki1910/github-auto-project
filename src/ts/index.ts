@@ -101,3 +101,8 @@ document.getElementById('pi')?.addEventListener('click', () => {
     currentExpressionDisplay.textContent = currentExpression;
 });
 
+//New Feature: Power
+document.getElementById('power')?.addEventListener('click', () =>{
+    currentExpression += '**';
+    currentExpressionDisplay.textContent = currentExpression;
+});
