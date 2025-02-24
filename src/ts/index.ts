@@ -142,4 +142,16 @@ document.getElementById('duplicate')?.addEventListener('click', () => {
 document.getElementById('clear-entry')?.addEventListener('click', () => {
   display.value = ''; // Clear the current display value
 });
+
+//Copy to Clipboard
+document.getElementById('copy-to-clipboard')?.addEventListener('click', () => {
+    navigator.clipboard.writeText(display.value)
+    .then(() => {
+      // Optional: Provide feedback to the user that the copy was successful
+      console.log('Copied to clipboard!');
+    })
+    .catch(err => {
+      console.error('Failed to copy: ', err);
+    });
+});
 // ... rest of the code
