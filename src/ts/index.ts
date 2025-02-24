@@ -133,3 +133,8 @@ document.getElementById('ans')?.addEventListener('click', () => {
   currentExpression += ans.toString();
   currentExpressionDisplay.textContent = currentExpression;
 });
+//New Feature: Cube
+document.getElementById('cube')?.addEventListener('click', () => {
+    currentExpression += '**3';
+    currentExpressionDisplay.textContent = currentExpression;
+});
