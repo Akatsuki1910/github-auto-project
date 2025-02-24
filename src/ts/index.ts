@@ -167,3 +167,14 @@ document.getElementById('double-factorial')?.addEventListener('click', () => {
     display.value = result.toString();
     currentExpression = display.value;
   });
+//New Feature: Cube Root
+document.getElementById('cube-root')?.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid Input";
+        return;
+    }
+    const result = Math.cbrt(num);
+    display.value = result.toString();
+    currentExpression = display.value;
+});
