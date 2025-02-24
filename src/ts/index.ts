@@ -268,3 +268,20 @@ document.getElementById('combination')?.addEventListener('click', () => {
     display.value = result.toString();
     currentExpression = display.value;
 });
+//New Feature: Fibonacci
+document.getElementById('fib')?.addEventListener('click', () => {
+    const num = parseInt(display.value);
+    if(isNaN(num) || !Number.isInteger(num) || num < 0){
+        display.value = "Invalid Input";
+        return;
+    }
+    let a = 0;
+    let b = 1;
+    for(let i = 0; i < num; i++){
+        const temp = b;
+        b = a + b;
+        a = temp;
+    }
+    display.value = a.toString();
+    currentExpression = display.value;
+});
