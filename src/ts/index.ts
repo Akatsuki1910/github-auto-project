@@ -63,6 +63,26 @@ document.getElementById('sign')?.addEventListener('click',()=>{
     currentExpression = display.value;
 });
 
+//Feature: Factorial
+document.getElementById('factorial')?.addEventListener('click', () => {
+  const num = parseFloat(display.value);
+  if (isNaN(num)) {
+    display.value = "Invalid Input";
+    return;
+  }
+  if (num < 0) {
+    display.value = "Factorial not defined for negative numbers";
+    return;
+  }
+
+  let result = 1;
+  for (let i = 2; i <= num; i++) {
+    result *= i;
+  }
+  display.value = result.toString();
+  currentExpression = display.value;
+});
+
 document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
     button.addEventListener('click', () => {
         const buttonText = (button as HTMLButtonElement).textContent;
