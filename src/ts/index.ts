@@ -81,6 +81,15 @@ document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
         }
     });
 });
+// Brackets
+document.getElementById('bracket-left')?.addEventListener('click', () => {
+    currentExpression += '(';
+    currentExpressionDisplay.textContent = currentExpression;
+});
+document.getElementById('bracket-right')?.addEventListener('click', () => {
+    currentExpression += ')';
+    currentExpressionDisplay.textContent = currentExpression;
+});
 
 document.querySelector('.equals')?.addEventListener('click', () => {
     try {
