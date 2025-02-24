@@ -164,3 +164,21 @@ document.getElementById('ln')?.addEventListener('click', () => {
     currentExpression += 'Math.log('; // Use Math.log for natural logarithm
     currentExpressionDisplay.textContent = currentExpression;
 });
+//New Feature: Inverse
+document.getElementById('inverse')?.addEventListener('click', () => {
+    try{
+        const currentVal = parseFloat(display.value);
+        if(isNaN(currentVal)){
+            display.value = "Invalid Input";
+        }else{
+            const inverse = 1/currentVal;
+            display.value = inverse.toString();
+            addToHistory(`1/(${currentVal})`, inverse.toString());
+            currentExpression = '';
+            currentExpressionDisplay.textContent = '';
+        }
+    }catch(e){
+        display.value = 'Error';
+    }
+
+});
