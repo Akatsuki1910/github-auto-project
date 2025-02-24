@@ -105,7 +105,17 @@ document.querySelector('.equals')?.addEventListener('click', () => {
 });
 
 // ... (Existing function implementations for pi, power, log, exp, ans, etc.)
-
+//New Feature: expm1()
+document.getElementById('expm1')?.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid Input";
+        return;
+    }
+    const result = Math.expm1(num);
+    display.value = result.toString();
+    currentExpression = display.value;
+});
 //New Feature: Ceil
 document.getElementById('ceil')?.addEventListener('click', () => {
     currentExpression += 'Math.ceil('; // Use Math.ceil for ceiling
