@@ -245,3 +245,26 @@ document.getElementById('permutation')?.addEventListener('click', () => {
     display.value = result.toString();
     currentExpression = display.value;
 });
+//New Feature: Combination
+document.getElementById('combination')?.addEventListener('click', () => {
+    const nums = display.value.split(',');
+    if (nums.length !== 2 || isNaN(parseFloat(nums[0])) || isNaN(parseFloat(nums[1]))) {
+        display.value = "Invalid Input";
+        return;
+    }
+    const n = parseInt(nums[0]);
+    const r = parseInt(nums[1]);
+    if (!Number.isInteger(n) || !Number.isInteger(r) || n < 0 || r < 0 || r > n){
+        display.value = "Invalid Input";
+        return;
+    }
+    let result = 1;
+    for(let i = 0; i < r; i++){
+        result *= (n - i);
+    }
+    for (let i = 1; i <= r; i++){
+        result /= i;
+    }    
+    display.value = result.toString();
+    currentExpression = display.value;
+});
