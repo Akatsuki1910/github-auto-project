@@ -51,118 +51,46 @@ document.getElementById('toggle-sci')?.addEventListener('click', () => {
     additionalFunctions.style.display = additionalFunctions.style.display === 'grid' ? 'none' : 'grid';
 });
 
-//Round function
-// ... (Existing functions)
-document.getElementById('sign')?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (currentValue * -1).toString();
-        currentExpression = display.value;
-    }
-});
 
-//Random Number Generation
-document.getElementById('rand')?.addEventListener('click', () => {
-    const randomNumber = Math.random();
-    display.value = randomNumber.toString();
-    currentExpression = display.value;
-});
-
-//Floor function
-document.getElementById('floor')?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-      display.value = Math.floor(currentValue).toString();
-      currentExpression = display.value;
-    }
-  });
-
-//Cube Root function
-document.getElementById('cbrt')?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.cbrt(currentValue).toString();
-        currentExpression = display.value;
-    }
-});
-
-//Modulo function
-document.getElementById('mod')?.addEventListener('click', () => {
-  currentExpression += '%';
-  currentExpressionDisplay.textContent = currentExpression;
-});
-
-//Power of Two
-document.getElementById('power-of-two')?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (currentValue * currentValue).toString();
-        currentExpression = display.value;
-    }
-});
-
-//Parentheses
-document.getElementById('open-paren')?.addEventListener('click', () => {
-    currentExpression += '(';
-    currentExpressionDisplay.textContent = currentExpression;
-});
-document.getElementById('close-paren')?.addEventListener('click', () => {
-    currentExpression += ')';
-    currentExpressionDisplay.textContent = currentExpression;
-});
-
-// Calculate Expression button
-document.getElementById('calculate-expression')?.addEventListener('click', () => {
-    try {
-        const result = eval(currentExpression);
-        display.value = result.toString();
-        addToHistory(currentExpression, result.toString());
-        currentExpression = '';
-        currentExpressionDisplay.textContent = '';
-        ans = result;
-    } catch (error) {
-        display.value = 'Error';
-    }
-});
-
-// Ans button
-document.getElementById('ans')?.addEventListener('click', () => {
-    currentExpression += ans.toString();
-    currentExpressionDisplay.textContent = currentExpression; 
-});
-//Duplicate Button
-document.getElementById('duplicate')?.addEventListener('click', () => {
-  if (display.value) {
-    currentExpression += display.value;
-    currentExpressionDisplay.textContent = currentExpression;
+//New Feature: Factorial
+document.getElementById('factorial')?.addEventListener('click', () => {
+  const num = parseFloat(display.value);
+  if (isNaN(num)) {
+    display.value = "Invalid Input";
+    return;
   }
+  if (!Number.isInteger(num) || num < 0) {
+    display.value = "Invalid Input";
+    return;
+  }
+
+  let result = 1;
+  for (let i = 2; i <= num; i++) {
+    result *= i;
+  }
+  display.value = result.toString();
+  currentExpression = display.value;
 });
 
-//Clear Entry button
-document.getElementById('clear-entry')?.addEventListener('click', () => {
-  display.value = ''; // Clear the current display value
-});
-
-//Copy to Clipboard
-document.getElementById('copy-to-clipboard')?.addEventListener('click', () => {
-    navigator.clipboard.writeText(display.value)
-    .then(() => {
-      // Optional: Provide feedback to the user that the copy was successful
-      console.log('Copied to clipboard!');
-    })
-    .catch(err => {
-      console.error('Failed to copy: ', err);
+document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
+    button.addEventListener('click', () => {
+        const buttonText = (button as HTMLButtonElement).textContent;
+        if (buttonText) {
+            currentExpression += buttonText;
+            currentExpressionDisplay.textContent = currentExpression;
+        }
     });
 });
 
-//Natural Logarithm
-document.getElementById('ln')?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue > 0) {
-        display.value = Math.log(currentValue).toString();
-        currentExpression = display.value;
-    } else {
-        display.value = 'Error'; // Handle cases where ln is undefined
-    }
+document.querySelector('.equals')?.addEventListener('click', () => {
+    try {
+      const result = eval(currentExpression);
+      display.value = result.toString();
+      addToHistory(currentExpression, result.toString()); // Add to history
+      ans = result;
+      currentExpression = ''; // Clear current expression
+      currentExpressionDisplay.textContent = '';
+  } catch (e) {
+      display.value = 'Error';
+  }
 });
-// ... rest of the code
