@@ -285,3 +285,8 @@ document.getElementById('fib')?.addEventListener('click', () => {
     display.value = a.toString();
     currentExpression = display.value;
 });
+//New Feature: Trunc
+document.getElementById('trunc')?.addEventListener('click', () => {
+    currentExpression += 'Math.trunc('; // Use Math.trunc
+    currentExpressionDisplay.textContent = currentExpression;
+});
