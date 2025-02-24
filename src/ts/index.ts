@@ -112,3 +112,9 @@ document.getElementById('log')?.addEventListener('click', () => {
     currentExpression += 'Math.log10('; // Use log base 10
     currentExpressionDisplay.textContent = currentExpression;
 });
+
+//New Feature: Exponential
+document.getElementById('exp')?.addEventListener('click', () => {
+  currentExpression += 'Math.exp('; // Use Math.exp for exponential
+  currentExpressionDisplay.textContent = currentExpression;
+});
