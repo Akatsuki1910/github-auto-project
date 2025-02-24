@@ -154,3 +154,8 @@ document.getElementById('round')?.addEventListener('click', () => {
   currentExpression += 'Math.round('; // Use Math.round for rounding
   currentExpressionDisplay.textContent = currentExpression;
 });
+//New Feature: Sign
+document.getElementById('sign')?.addEventListener('click', () => {
+    currentExpression += 'Math.sign('; // Use Math.sign for sign
+    currentExpressionDisplay.textContent = currentExpression;
+});
