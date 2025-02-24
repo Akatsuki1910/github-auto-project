@@ -143,3 +143,9 @@ document.getElementById('abs')?.addEventListener('click', () => {
     currentExpression += 'Math.abs('; // Use Math.abs for absolute value
     currentExpressionDisplay.textContent = currentExpression;
 });
+
+//New Feature: 10 to the power of x
+document.getElementById('ten-power')?.addEventListener('click', () => {
+    currentExpression += '10**';
+    currentExpressionDisplay.textContent = currentExpression;
+});
