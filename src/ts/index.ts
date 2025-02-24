@@ -126,8 +126,15 @@ document.getElementById('calculate-expression')?.addEventListener('click', () =>
 });
 
 // Ans button
-document.getElementById('ans').addEventListener('click', () => {
+document.getElementById('ans')?.addEventListener('click', () => {
     currentExpression += ans.toString();
     currentExpressionDisplay.textContent = currentExpression; 
+});
+//Duplicate Button
+document.getElementById('duplicate')?.addEventListener('click', () => {
+  if (display.value) {
+    currentExpression += display.value;
+    currentExpressionDisplay.textContent = currentExpression;
+  }
 });
 // ... rest of the code
