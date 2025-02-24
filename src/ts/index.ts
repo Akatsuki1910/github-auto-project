@@ -140,3 +140,30 @@ document.getElementById('calculate-expression')?.addEventListener('click', () =>
         display.value = 'Error';
     }
 });
+
+//New Feature: Double Factorial
+document.getElementById('double-factorial')?.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+      display.value = "Invalid Input";
+      return;
+    }
+    if (!Number.isInteger(num) || num < -1) {
+      display.value = "Invalid Input";
+      return;
+    }
+  
+    let result = 1;
+    if (num % 2 === 0) {
+        for (let i = 2; i <= num; i += 2) {
+            result *= i;
+          }
+    } else {
+        for (let i = 1; i <= num; i += 2) {
+            result *= i;
+          }
+    }
+  
+    display.value = result.toString();
+    currentExpression = display.value;
+  });
