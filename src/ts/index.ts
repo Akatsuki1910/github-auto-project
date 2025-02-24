@@ -106,3 +106,9 @@ document.getElementById('power')?.addEventListener('click', () =>{
     currentExpression += '**';
     currentExpressionDisplay.textContent = currentExpression;
 });
+
+//New Feature: Logarithm
+document.getElementById('log')?.addEventListener('click', () => {
+    currentExpression += 'Math.log10('; // Use log base 10
+    currentExpressionDisplay.textContent = currentExpression;
+});
