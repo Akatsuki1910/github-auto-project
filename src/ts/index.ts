@@ -210,3 +210,8 @@ document.getElementById('base-conversion')?.addEventListener('click', () => {
         display.value = "Invalid Input";
     }
 });
+//New Feature: Max
+document.getElementById('max')?.addEventListener('click', () => {
+    currentExpression += 'Math.max('; // Use Math.max 
+    currentExpressionDisplay.textContent = currentExpression;
+});
