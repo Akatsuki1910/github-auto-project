@@ -94,3 +94,10 @@ document.querySelector('.equals')?.addEventListener('click', () => {
       display.value = 'Error';
   }
 });
+
+// New Feature: Pi button
+document.getElementById('pi')?.addEventListener('click', () => {
+    currentExpression += Math.PI.toString();
+    currentExpressionDisplay.textContent = currentExpression;
+});
+
