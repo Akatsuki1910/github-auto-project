@@ -127,3 +127,16 @@ document.getElementById('clear-entry')?.addEventListener('click', () => {
     currentExpressionDisplay.textContent = '';
     display.value = '';
 });
+
+//New Feature: Calculate expression button
+document.getElementById('calculate-expression')?.addEventListener('click', () => {
+    try {
+        const result = eval(currentExpression);
+        display.value = result.toString();
+        addToHistory(currentExpression, result.toString());
+        currentExpression = result.toString(); // Keep the result for further calculations
+        currentExpressionDisplay.textContent = currentExpression;       
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
