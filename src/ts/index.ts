@@ -116,3 +116,8 @@ document.getElementById('mod')?.addEventListener('click', () => {
     currentExpression += '%';
     currentExpressionDisplay.textContent = currentExpression;
 });
+//New Feature: Deg/Rad toggle
+document.getElementById('deg-rad')?.addEventListener('click', () => {
+  isDegreeMode = !isDegreeMode;
+  (document.getElementById('deg-rad') as HTMLButtonElement).textContent = isDegreeMode ? 'Deg' : 'Rad';
+});
