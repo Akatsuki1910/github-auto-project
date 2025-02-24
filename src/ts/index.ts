@@ -149,3 +149,8 @@ document.getElementById('ten-power')?.addEventListener('click', () => {
     currentExpression += '10**';
     currentExpressionDisplay.textContent = currentExpression;
 });
+//New Feature: Round
+document.getElementById('round')?.addEventListener('click', () => {
+  currentExpression += 'Math.round('; // Use Math.round for rounding
+  currentExpressionDisplay.textContent = currentExpression;
+});
