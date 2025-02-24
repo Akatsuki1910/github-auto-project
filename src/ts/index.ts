@@ -215,3 +215,8 @@ document.getElementById('max')?.addEventListener('click', () => {
     currentExpression += 'Math.max('; // Use Math.max 
     currentExpressionDisplay.textContent = currentExpression;
 });
+//New Feature: Min
+document.getElementById('min')?.addEventListener('click', () => {
+    currentExpression += 'Math.min('; // Use Math.min
+    currentExpressionDisplay.textContent = currentExpression;
+});
