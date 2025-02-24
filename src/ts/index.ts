@@ -118,3 +118,9 @@ document.getElementById('exp')?.addEventListener('click', () => {
   currentExpression += 'Math.exp('; // Use Math.exp for exponential
   currentExpressionDisplay.textContent = currentExpression;
 });
+
+// New Feature: Ans button
+document.getElementById('ans')?.addEventListener('click', () => {
+  currentExpression += ans.toString();
+  currentExpressionDisplay.textContent = currentExpression;
+});
