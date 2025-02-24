@@ -220,3 +220,8 @@ document.getElementById('min')?.addEventListener('click', () => {
     currentExpression += 'Math.min('; // Use Math.min
     currentExpressionDisplay.textContent = currentExpression;
 });
+//New Feature: Absolute Value
+document.getElementById('abs')?.addEventListener('click', () => {
+    currentExpression += 'Math.abs('; // Use Math.abs for absolute value
+    currentExpressionDisplay.textContent = currentExpression;
+});
