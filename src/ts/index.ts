@@ -121,3 +121,9 @@ document.getElementById('deg-rad')?.addEventListener('click', () => {
   isDegreeMode = !isDegreeMode;
   (document.getElementById('deg-rad') as HTMLButtonElement).textContent = isDegreeMode ? 'Deg' : 'Rad';
 });
+//New Feature: Clear Entry
+document.getElementById('clear-entry')?.addEventListener('click', () => {
+    currentExpression = '';
+    currentExpressionDisplay.textContent = '';
+    display.value = '';
+});
