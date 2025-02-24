@@ -159,3 +159,8 @@ document.getElementById('sign')?.addEventListener('click', () => {
     currentExpression += 'Math.sign('; // Use Math.sign for sign
     currentExpressionDisplay.textContent = currentExpression;
 });
+//New Feature: Natural Logarithm
+document.getElementById('ln')?.addEventListener('click', () => {
+    currentExpression += 'Math.log('; // Use Math.log for natural logarithm
+    currentExpressionDisplay.textContent = currentExpression;
+});
