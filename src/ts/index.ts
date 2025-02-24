@@ -193,3 +193,20 @@ document.getElementById('nth-root')?.addEventListener('click', () => {
     currentExpression += '**(1/';
     currentExpressionDisplay.textContent = currentExpression;
 });
+//New Feature: Base Conversion
+document.getElementById('base-conversion')?.addEventListener('click', () => {
+    const num = display.value;
+    const base = prompt("Enter the base (2-36):", "10");
+
+    if (base === null || isNaN(parseInt(base)) || parseInt(base) < 2 || parseInt(base) > 36) {
+        display.value = "Invalid Base";
+        return;
+    }
+
+    try {
+        const convertedNum = parseInt(num).toString(parseInt(base));
+        display.value = convertedNum;
+    } catch (error) {
+        display.value = "Invalid Input";
+    }
+});
