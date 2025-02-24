@@ -192,3 +192,8 @@ document.getElementById('cbrt')?.addEventListener('click', () => {
     currentExpression += '**(1/3)';
     currentExpressionDisplay.textContent = currentExpression;
 });
+//New Feature: Floor
+document.getElementById('floor')?.addEventListener('click', () => {
+    currentExpression += 'Math.floor('; // Use Math.floor for floor
+    currentExpressionDisplay.textContent = currentExpression;
+});
