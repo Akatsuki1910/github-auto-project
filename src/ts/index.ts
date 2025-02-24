@@ -137,4 +137,9 @@ document.getElementById('duplicate')?.addEventListener('click', () => {
     currentExpressionDisplay.textContent = currentExpression;
   }
 });
+
+//Clear Entry button
+document.getElementById('clear-entry')?.addEventListener('click', () => {
+  display.value = ''; // Clear the current display value
+});
 // ... rest of the code
