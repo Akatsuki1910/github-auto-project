@@ -203,3 +203,8 @@ document.getElementById('random')?.addEventListener('click', () => {
     display.value = randomNumber.toString();
     addToHistory('Rnd', randomNumber.toString());
 });
+// New Feature: Euler's number
+document.getElementById('e')?.addEventListener('click', () => {
+    currentExpression += Math.E.toString();
+    currentExpressionDisplay.textContent = currentExpression;
+});
