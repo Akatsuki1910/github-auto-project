@@ -154,4 +154,15 @@ document.getElementById('copy-to-clipboard')?.addEventListener('click', () => {
       console.error('Failed to copy: ', err);
     });
 });
+
+//Natural Logarithm
+document.getElementById('ln')?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue > 0) {
+        display.value = Math.log(currentValue).toString();
+        currentExpression = display.value;
+    } else {
+        display.value = 'Error'; // Handle cases where ln is undefined
+    }
+});
 // ... rest of the code
