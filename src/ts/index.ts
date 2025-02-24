@@ -182,3 +182,8 @@ document.getElementById('inverse')?.addEventListener('click', () => {
     }
 
 });
+//New Feature: Square
+document.getElementById('square')?.addEventListener('click', () => {
+    currentExpression += '**2';
+    currentExpressionDisplay.textContent = currentExpression;
+});
