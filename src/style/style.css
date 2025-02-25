@@ -48,7 +48,12 @@ body {
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 5px;
 }
-
+.memory-section{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-gap:5px;
+    margin-bottom: 10px;
+}
 /* Dark mode styles */
 body.dark-mode {
     background-color: #333;

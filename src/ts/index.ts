@@ -318,7 +318,38 @@ document.getElementById('calculate-expression')?.addEventListener('click', () =>
     display.value = 'Error';
   }
 });
+//Memory Clear
+document.getElementById('memory-clear')?.addEventListener('click', () =>{
+    memory = 0;
+});
 
+//Memory Recall
+document.getElementById('memory-recall')?.addEventListener('click', () => {
+    display.value = memory.toString();
+    currentExpression = memory.toString();
+});
+
+// Memory Add
+document.getElementById('memory-add')?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if(!isNaN(currentValue)){
+        memory += currentValue;
+    }
+});
+//Memory Subtract
+document.getElementById('memory-subtract')?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if(!isNaN(currentValue)){
+        memory -= currentValue;
+    }
+});
+// Memory Store
+document.getElementById('memory-store')?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        memory = currentValue;
+    }
+});
 //Memory Sum Feature
 document.getElementById('memory-sum')?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
