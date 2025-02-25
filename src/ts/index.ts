@@ -301,3 +301,9 @@ document.getElementById('nthRoot')?.addEventListener('click', () => {
     currentExpression += '**(1/';
     currentExpressionDisplay.textContent = currentExpression;
 });
+
+//DEG/RAD toggle
+document.getElementById('deg-rad').addEventListener('click', () => {
+    isDegreeMode = !isDegreeMode;
+    (document.getElementById('deg-rad') as HTMLButtonElement).textContent = isDegreeMode ? 'DEG' : 'RAD';
+});
