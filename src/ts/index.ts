@@ -105,3 +105,9 @@ document.querySelector('.equals')?.addEventListener('click', () => {
       display.value = 'Error';
   }
 });
+
+// Add Pi functionality
+document.getElementById('pi')?.addEventListener('click', () => {
+    currentExpression += Math.PI;
+    currentExpressionDisplay.textContent = currentExpression;
+});
