@@ -204,3 +204,9 @@ document.getElementById('cbrt')?.addEventListener('click', () => {
     display.value = Math.cbrt(num).toString();
     currentExpression = display.value;
 });
+
+//Ans Button Functionality
+document.getElementById('ans')?.addEventListener('click', () =>{
+  currentExpression += ans;
+  currentExpressionDisplay.textContent = currentExpression;
+});
