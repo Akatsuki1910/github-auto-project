@@ -118,3 +118,14 @@ document.getElementById('close-parenthesis')?.addEventListener('click', () => {
     currentExpression += ')';
     currentExpressionDisplay.textContent = currentExpression;
 });
+
+// Absolute value function
+document.getElementById('abs')?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        display.value = Math.abs(num).toString();
+        currentExpression = display.value;
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
