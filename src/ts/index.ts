@@ -172,3 +172,14 @@ document.getElementById('inverse')?.addEventListener('click', () => {
     display.value = (1/num).toString();
     currentExpression = display.value;
 });
+
+//Round function
+document.getElementById('round')?.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+      display.value = "Invalid Input";
+      return;
+    }
+    display.value = Math.round(num).toString();
+    currentExpression = display.value;
+});
