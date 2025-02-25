@@ -147,3 +147,14 @@ document.getElementById('cube')?.addEventListener('click', () => {
     display.value = (num*num*num).toString();
     currentExpression = display.value;
 });
+
+// Absolute value function
+document.getElementById('abs')?.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid Input";
+        return;
+    }
+    display.value = Math.abs(num).toString();
+    currentExpression = display.value;
+});
