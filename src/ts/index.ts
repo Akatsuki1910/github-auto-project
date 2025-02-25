@@ -373,3 +373,14 @@ document.getElementById('memory-average')?.addEventListener('click', () =>{
         currentExpression = (memorySum/memoryCount).toString();
     }
 });
+//Max function
+document.getElementById('max')?.addEventListener('click', () => {
+    try{
+        const numbers = currentExpression.split(',').map(Number);
+        display.value = Math.max(...numbers).toString();
+        currentExpression = display.value;
+    } catch (error) {
+        display.value = 'Error';
+    }
+
+});
