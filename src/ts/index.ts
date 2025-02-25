@@ -270,3 +270,13 @@ document.getElementById('parentheses')?.addEventListener('click', () => {
     }
     currentExpressionDisplay.textContent = currentExpression;
 });
+// Ceil function
+document.getElementById('ceil')?.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid Input";
+        return;
+    }
+    display.value = Math.ceil(num).toString();
+    currentExpression = display.value;
+});
