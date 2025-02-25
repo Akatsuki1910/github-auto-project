@@ -130,3 +130,9 @@ document.getElementById('log')?.addEventListener('click', () => {
   display.value = Math.log10(num).toString();
   currentExpression = display.value;
 });
+
+// Exponential function
+document.getElementById('exp')?.addEventListener('click', () => {
+    currentExpression += 'Math.exp('; // Use Math.exp() for exponential calculation
+    currentExpressionDisplay.textContent = currentExpression; 
+});
