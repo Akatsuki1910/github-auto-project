@@ -238,3 +238,8 @@ document.getElementById('random')?.addEventListener('click', () => {
     display.value = randomNumber.toString();
     currentExpression = randomNumber.toString();
 });
+//Euler's number
+document.getElementById('e')?.addEventListener('click', () => {
+    currentExpression += Math.E;
+    currentExpressionDisplay.textContent = currentExpression;
+});
