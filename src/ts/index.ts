@@ -77,3 +77,23 @@ document.getElementById('copy')?.addEventListener('click', () => {
       console.error('Failed to copy: ', err);
     });
   });
+
+//Factorial Function
+document.getElementById('factorial')?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Invalid Input"
+        }
+        const result = factorial(num);
+        display.value = result.toString();
+        currentExpression = display.value; 
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+function factorial(n:number):number{
+    if(n < 0) return -1; //Error
+    if(n===0) return 1; //Base case
+    return n * factorial(n-1);
+}

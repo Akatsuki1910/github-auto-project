@@ -22,7 +22,7 @@ body {
 
 .scientific-section{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(6, 1fr); /* Added a column */
     grid-gap:5px;
     margin-bottom: 10px;
 }
