@@ -243,3 +243,17 @@ document.getElementById('e')?.addEventListener('click', () => {
     currentExpression += Math.E;
     currentExpressionDisplay.textContent = currentExpression;
 });
+//Natural Logarithm
+document.getElementById('ln')?.addEventListener('click', () =>{
+    const num = parseFloat(display.value);
+    if(isNaN(num)){
+        display.value = "Invalid Input";
+        return;
+    }
+    if(num <= 0){
+        display.value = "Invalid input for ln";
+        return;
+    }
+    display.value = Math.log(num).toString();
+    currentExpression = display.value;
+});
