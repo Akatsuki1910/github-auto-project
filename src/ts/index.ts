@@ -210,3 +210,13 @@ document.getElementById('ans')?.addEventListener('click', () =>{
   currentExpression += ans;
   currentExpressionDisplay.textContent = currentExpression;
 });
+// 10 to the power of x function
+document.getElementById('ten-power')?.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+      display.value = "Invalid Input";
+      return;
+    }
+    display.value = (10**num).toString();
+    currentExpression = display.value;
+});
