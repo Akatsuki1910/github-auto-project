@@ -129,3 +129,14 @@ document.getElementById('abs')?.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+
+// Round function
+document.getElementById('round')?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        display.value = Math.round(num).toString();
+        currentExpression = display.value;
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
