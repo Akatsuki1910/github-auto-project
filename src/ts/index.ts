@@ -296,3 +296,8 @@ document.getElementById('expm1')?.addEventListener('click', () => {
     display.value = Math.expm1(num).toString();
     currentExpression = display.value;
 });
+// Nth Root
+document.getElementById('nthRoot')?.addEventListener('click', () => {
+    currentExpression += '**(1/';
+    currentExpressionDisplay.textContent = currentExpression;
+});
