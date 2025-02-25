@@ -307,3 +307,12 @@ document.getElementById('deg-rad').addEventListener('click', () => {
     isDegreeMode = !isDegreeMode;
     (document.getElementById('deg-rad') as HTMLButtonElement).textContent = isDegreeMode ? 'DEG' : 'RAD';
 });
+// Calculate expression button event listener
+document.getElementById('calculate-expression')?.addEventListener('click', () => {
+  try {
+    display.value = eval(currentExpression).toString();
+    currentExpression = display.value;
+  } catch (error) {
+    display.value = 'Error';
+  }
+});
