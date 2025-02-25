@@ -183,3 +183,13 @@ document.getElementById('round')?.addEventListener('click', () => {
     display.value = Math.round(num).toString();
     currentExpression = display.value;
 });
+//Floor Function
+document.getElementById('floor')?.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if(isNaN(num)) {
+        display.value = "Invalid Input";
+        return;
+    }
+    display.value = Math.floor(num).toString();
+    currentExpression = display.value;
+});
