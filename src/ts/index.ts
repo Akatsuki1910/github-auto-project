@@ -20,6 +20,8 @@ let isKeyboardEnabled = false;
 let isNumpadEnabled = false; // Add flag for numpad
 let isDarkMode = false; // Flag for dark mode
 let openParenthesesCount = 0;
+let memory = 0;
+let memorySum = 0; 
 
 // ... (Existing Event Listeners)
 
@@ -315,4 +317,12 @@ document.getElementById('calculate-expression')?.addEventListener('click', () =>
   } catch (error) {
     display.value = 'Error';
   }
+});
+
+//Memory Sum Feature
+document.getElementById('memory-sum')?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        memorySum += currentValue;
+    }
 });
