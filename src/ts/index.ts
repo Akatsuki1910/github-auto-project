@@ -280,3 +280,9 @@ document.getElementById('ceil')?.addEventListener('click', () => {
     display.value = Math.ceil(num).toString();
     currentExpression = display.value;
 });
+
+//Modulo operator
+document.getElementById('mod')?.addEventListener('click', () => {
+    currentExpression += '%';
+    currentExpressionDisplay.textContent = currentExpression;
+});
