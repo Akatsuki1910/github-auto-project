@@ -97,3 +97,14 @@ function factorial(n:number):number{
     if(n===0) return 1; //Base case
     return n * factorial(n-1);
 }
+
+// Exponential function
+document.getElementById('exp')?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        display.value = Math.exp(num).toString();
+        currentExpression = display.value; 
+    } catch (error) {
+        display.value = "Error";
+    }
+});
