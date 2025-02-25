@@ -136,3 +136,14 @@ document.getElementById('exp')?.addEventListener('click', () => {
     currentExpression += 'Math.exp('; // Use Math.exp() for exponential calculation
     currentExpressionDisplay.textContent = currentExpression; 
 });
+
+//Cube functionality
+document.getElementById('cube')?.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+      display.value = "Invalid Input";
+      return;
+    }
+    display.value = (num*num*num).toString();
+    currentExpression = display.value;
+});
