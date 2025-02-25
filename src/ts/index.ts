@@ -193,3 +193,14 @@ document.getElementById('floor')?.addEventListener('click', () => {
     display.value = Math.floor(num).toString();
     currentExpression = display.value;
 });
+
+//Cube root function
+document.getElementById('cbrt')?.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if(isNaN(num)){
+        display.value = "Invalid Input";
+        return;
+    }
+    display.value = Math.cbrt(num).toString();
+    currentExpression = display.value;
+});
