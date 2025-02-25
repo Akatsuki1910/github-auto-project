@@ -220,3 +220,14 @@ document.getElementById('ten-power')?.addEventListener('click', () => {
     display.value = (10**num).toString();
     currentExpression = display.value;
 });
+
+//Square Functionality
+document.getElementById('square')?.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if(isNaN(num)){
+        display.value = "Invalid Input";
+        return;
+    }
+    display.value = (num*num).toString();
+    currentExpression = display.value;
+});
