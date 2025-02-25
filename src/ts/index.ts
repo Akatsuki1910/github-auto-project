@@ -108,3 +108,13 @@ document.getElementById('exp')?.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+//Parentheses
+document.getElementById('open-parenthesis')?.addEventListener('click', () => {
+    currentExpression += '(';
+    currentExpressionDisplay.textContent = currentExpression;
+});
+
+document.getElementById('close-parenthesis')?.addEventListener('click', () => {
+    currentExpression += ')';
+    currentExpressionDisplay.textContent = currentExpression;
+});
