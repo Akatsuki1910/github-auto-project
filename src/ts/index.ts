@@ -67,3 +67,13 @@ document.getElementById('min')?.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+
+// Copy to clipboard functionality
+document.getElementById('copy')?.addEventListener('click', () => {
+    navigator.clipboard.writeText(display.value).then(() => {
+      // Optional: Display a message or change button style to indicate success
+      console.log('Copied to clipboard');
+    }, (err) => {
+      console.error('Failed to copy: ', err);
+    });
+  });
