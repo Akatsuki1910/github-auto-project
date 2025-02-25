@@ -22,6 +22,7 @@ let isDarkMode = false; // Flag for dark mode
 let openParenthesesCount = 0;
 let memory = 0;
 let memorySum = 0; 
+let memoryCount = 0;
 
 // ... (Existing Event Listeners)
 
@@ -321,6 +322,8 @@ document.getElementById('calculate-expression')?.addEventListener('click', () =>
 //Memory Clear
 document.getElementById('memory-clear')?.addEventListener('click', () =>{
     memory = 0;
+    memoryCount = 0;
+    memorySum = 0;
 });
 
 //Memory Recall
@@ -334,6 +337,8 @@ document.getElementById('memory-add')?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if(!isNaN(currentValue)){
         memory += currentValue;
+        memorySum += currentValue;
+        memoryCount++;
     }
 });
 //Memory Subtract
@@ -341,6 +346,8 @@ document.getElementById('memory-subtract')?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if(!isNaN(currentValue)){
         memory -= currentValue;
+        memorySum -= currentValue;
+        memoryCount++;
     }
 });
 // Memory Store
@@ -348,12 +355,21 @@ document.getElementById('memory-store')?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
         memory = currentValue;
+        memorySum += currentValue;
+        memoryCount++;
     }
 });
 //Memory Sum Feature
 document.getElementById('memory-sum')?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        memorySum += currentValue;
+    display.value = memorySum.toString();
+    currentExpression = memorySum.toString();
+});
+//Memory Average Feature
+document.getElementById('memory-average')?.addEventListener('click', () =>{
+    if(memoryCount === 0){
+        display.value = "No values stored in Memory";
+    } else {
+        display.value = (memorySum/memoryCount).toString();
+        currentExpression = (memorySum/memoryCount).toString();
     }
 });
