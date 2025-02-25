@@ -117,3 +117,16 @@ document.getElementById('power')?.addEventListener('click', () => {
     currentExpression += '**';
     currentExpressionDisplay.textContent = currentExpression;
 });
+//Logarithm Base 10
+document.getElementById('log')?.addEventListener('click', () => {
+  const num = parseFloat(display.value);
+  if (isNaN(num)) {
+    display.value = "Invalid Input";
+    return;
+  }
+  if(num <= 0){
+    display.value = "Invalid Input for log";
+  }
+  display.value = Math.log10(num).toString();
+  currentExpression = display.value;
+});
