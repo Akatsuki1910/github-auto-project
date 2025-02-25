@@ -286,3 +286,13 @@ document.getElementById('mod')?.addEventListener('click', () => {
     currentExpression += '%';
     currentExpressionDisplay.textContent = currentExpression;
 });
+// expm1 function
+document.getElementById('expm1')?.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = "Invalid Input";
+        return;
+    }
+    display.value = Math.expm1(num).toString();
+    currentExpression = display.value;
+});
