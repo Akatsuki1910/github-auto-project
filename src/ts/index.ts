@@ -19,6 +19,7 @@ let currentExpression = '';
 let isKeyboardEnabled = false;
 let isNumpadEnabled = false; // Add flag for numpad
 let isDarkMode = false; // Flag for dark mode
+let openParenthesesCount = 0;
 
 // ... (Existing Event Listeners)
 
@@ -256,4 +257,16 @@ document.getElementById('ln')?.addEventListener('click', () =>{
     }
     display.value = Math.log(num).toString();
     currentExpression = display.value;
+});
+
+//Parentheses functionality
+document.getElementById('parentheses')?.addEventListener('click', () => {
+    if (openParenthesesCount > 0) {
+        currentExpression += ')';
+        openParenthesesCount--;
+    } else {
+        currentExpression += '(';
+        openParenthesesCount++;
+    }
+    currentExpressionDisplay.textContent = currentExpression;
 });
