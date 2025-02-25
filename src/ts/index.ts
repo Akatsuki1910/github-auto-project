@@ -140,3 +140,14 @@ document.getElementById('round')?.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+
+//Sign function: Added
+document.getElementById('sign')?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        display.value = Math.sign(num).toString();
+        currentExpression = display.value;
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
