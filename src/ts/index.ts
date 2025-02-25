@@ -111,3 +111,9 @@ document.getElementById('pi')?.addEventListener('click', () => {
     currentExpression += Math.PI;
     currentExpressionDisplay.textContent = currentExpression;
 });
+
+// Power functionality
+document.getElementById('power')?.addEventListener('click', () => {
+    currentExpression += '**';
+    currentExpressionDisplay.textContent = currentExpression;
+});
