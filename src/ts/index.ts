@@ -158,3 +158,17 @@ document.getElementById('abs')?.addEventListener('click', () => {
     display.value = Math.abs(num).toString();
     currentExpression = display.value;
 });
+//Inverse Function 1/x
+document.getElementById('inverse')?.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if(isNaN(num)){
+        display.value = "Invalid Input";
+        return;
+    }
+    if(num === 0){
+        display.value = "Cannot divide by zero";
+        return;
+    }
+    display.value = (1/num).toString();
+    currentExpression = display.value;
+});
