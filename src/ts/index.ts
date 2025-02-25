@@ -231,3 +231,10 @@ document.getElementById('square')?.addEventListener('click', () => {
     display.value = (num*num).toString();
     currentExpression = display.value;
 });
+
+// Random Number Generation
+document.getElementById('random')?.addEventListener('click', () => {
+    const randomNumber = Math.random();
+    display.value = randomNumber.toString();
+    currentExpression = randomNumber.toString();
+});
