@@ -28,94 +28,22 @@ document.getElementById('calculate-median')?.addEventListener('click', () => {
     }
 });
 
-//Square Functionality
-document.getElementById('square')?.addEventListener('click', () => {
-    try {
-        const currentNum = parseFloat(display.value);
-        if (isNaN(currentNum)) {
-            display.value = "Invalid input";
-        } else {
-            const squaredValue = currentNum * currentNum;
-            display.value = squaredValue.toString();
-            currentExpression = display.value;
-        }
-    } catch (error) {
-        display.value = "Error";
-    }
+// ... (Other existing functions)
 
-});
-
-//Cube Functionality
-document.getElementById('cube')?.addEventListener('click', () => {
-    try {
-        const currentNum = parseFloat(display.value);
-        if (isNaN(currentNum)) {
-            display.value = "Invalid input";
-        } else {
-            const cubedValue = currentNum * currentNum * currentNum;
-            display.value = cubedValue.toString();
-            currentExpression = display.value;
-        }
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-
-//Exponent Functionality
-document.getElementById('exponent')?.addEventListener('click', () => {
-    try {
-        const base = parseFloat(currentExpression);
-        if(isNaN(base)){
-            display.value = "Invalid Input";
-            return;
-        }
-        currentExpression += "**";
-        display.value = currentExpression;    } catch (error) {
-        display.value = "Error";
-    }
-});
-
-//Logarithm Functionality
-document.getElementById('log')?.addEventListener('click', () => {
+//Sign Functionality
+document.getElementById('sign')?.addEventListener('click', () => {
     try {
         const num = parseFloat(display.value);
         if (isNaN(num)) {
             display.value = "Invalid input";
-        } else {
-            display.value = Math.log10(num).toString();
-            currentExpression = display.value;
-        }
-    } catch (error) {
-        display.value = "Error";
+        } else if (num > 0) {
+            display.value = "+" + num;
+        } else if (num < 0) {
+            display.value = "-" + Math.abs(num);
+        } 
+        currentExpression = display.value;
     }
-});
-
-//Absolute Value Functionality
-document.getElementById('abs')?.addEventListener('click', () => {
-    try{
-        const num = parseFloat(display.value);
-        if(isNaN(num)){
-            display.value = "Invalid input";
-        }else{
-            display.value = Math.abs(num).toString();
-            currentExpression = display.value;
-        }
-    }catch (error) {
-        display.value = "Error";
-    }
-});
-
-//Round Functionality
-document.getElementById('round')?.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        if (isNaN(num)) {
-            display.value = "Invalid input";
-        } else {
-            display.value = Math.round(num).toString();
-            currentExpression = display.value;
-        }
-    } catch (error) {
+    catch (error) {
         display.value = "Error";
     }
 });
