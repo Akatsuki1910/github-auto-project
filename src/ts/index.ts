@@ -28,16 +28,33 @@ document.getElementById('calculate-median')?.addEventListener('click', () => {
     }
 });
 
+//Square Functionality
+document.getElementById('square')?.addEventListener('click', () => {
+    try {
+        const currentNum = parseFloat(display.value);
+        if (isNaN(currentNum)) {
+            display.value = "Invalid input";
+        } else {
+            const squaredValue = currentNum * currentNum;
+            display.value = squaredValue.toString();
+            currentExpression = display.value;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+
+});
+
 // ... (Rest of the existing code)
 
 //Function for handling key presses
-function handleKeyPress(event: KeyboardEvent) :void {
+function handleKeyPress(event: KeyboardEvent): void {
     // ... (rest of your existing handleKeyPress logic)
 }
 
 const piButton = document.getElementById('pi') as HTMLButtonElement;
 piButton.addEventListener('click', () => {
-  // Insert the value of pi into the display
-  display.value += Math.PI.toString();
-  currentExpression += Math.PI.toString();
+    // Insert the value of pi into the display
+    display.value += Math.PI.toString();
+    currentExpression += Math.PI.toString();
 });
