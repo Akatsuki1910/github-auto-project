@@ -140,87 +140,18 @@ document.getElementById('deg-rad')?.addEventListener('click', () => {
     (document.getElementById('deg-rad') as HTMLButtonElement).textContent = isDegreeMode ? 'Deg' : 'Rad';
 });
 
-// Calculate Area of a Circle 
-document.getElementById('calculate-area')?.addEventListener('click', () => {
-  try {
-    const radius = parseFloat(display.value);
-    if (isNaN(radius)) {
-      display.value = "Invalid Input";
-    } else if (radius < 0) {
-      display.value = "Radius cannot be negative";
-    } else {
-      const area = Math.PI * radius * radius;
-      display.value = area.toString();
-      currentExpression = display.value;
-    }
-  } catch (error) {
-    display.value = "Error";
-  }
-});
+// ... (Existing geometry functions)
 
-// Calculate Volume of a Sphere (Existing Feature)
-document.getElementById('calculate-volume')?.addEventListener('click', () => {
-  try {
-    const radius = parseFloat(display.value);
-    if (isNaN(radius)) {
-      display.value = "Invalid Input";
-    } else if (radius < 0) {
-      display.value = "Radius cannot be negative";
-    } else {
-      const volume = (4/3) * Math.PI * Math.pow(radius, 3);
-      display.value = volume.toString();
-      currentExpression = display.value;
-    }
-  } catch (error) {
-    display.value = "Error";
-  }
-});
-//Calculate Perimeter of a Circle
-document.getElementById('calculate-perimeter')?.addEventListener('click', () => {
+// Calculate Surface Area of a Cube (New Feature)
+document.getElementById('calculate-cube-surface-area')?.addEventListener('click', () => {
     try {
-      const radius = parseFloat(display.value);
-      if (isNaN(radius)) {
-        display.value = "Invalid Input";
-      } else if (radius < 0) {
-        display.value = "Radius cannot be negative";
-      } else {
-        const perimeter = 2 * Math.PI * radius;
-        display.value = perimeter.toString();
-        currentExpression = display.value;
-      }
-    } catch (error) {
-      display.value = "Error";
-    }
-  });
-
-// Calculate Circumference of a Circle (New Feature)
-document.getElementById('calculate-circumference')?.addEventListener('click', () => {
-    try {
-        const radius = parseFloat(display.value);
-        if (isNaN(radius)) {
+        const side = parseFloat(display.value);
+        if (isNaN(side)) {
             display.value = "Invalid Input";
-        } else if (radius < 0) {
-            display.value = "Radius cannot be negative";
+        } else if (side < 0) {
+            display.value = "Side cannot be negative";
         } else {
-            const circumference = 2 * Math.PI * radius;
-            display.value = circumference.toString();
-            currentExpression = display.value;
-        }
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-
-// Calculate Surface Area of a Sphere (New Feature)
-document.getElementById('calculate-sphere-surface-area')?.addEventListener('click', () => {
-    try {
-        const radius = parseFloat(display.value);
-        if (isNaN(radius)) {
-            display.value = "Invalid Input";
-        } else if (radius < 0) {
-            display.value = "Radius cannot be negative";
-        } else {
-            const surfaceArea = 4 * Math.PI * radius * radius; // Surface area formula
+            const surfaceArea = 6 * side * side; // Surface area of a cube formula
             display.value = surfaceArea.toString();
             currentExpression = display.value;
         }
