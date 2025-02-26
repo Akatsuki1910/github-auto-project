@@ -222,3 +222,8 @@ document.getElementById('ans')?.addEventListener('click', () => {
     currentExpression += ans.toString();
     display.value = currentExpression;
 });
+//e button
+document.getElementById('e')?.addEventListener('click', () => {
+    currentExpression += Math.E.toString();
+    display.value = currentExpression;
+});
