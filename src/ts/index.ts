@@ -216,3 +216,9 @@ document.getElementById('nth-root')?.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+
+//Ans Button
+document.getElementById('ans')?.addEventListener('click', () => {
+    currentExpression += ans.toString();
+    display.value = currentExpression;
+});
