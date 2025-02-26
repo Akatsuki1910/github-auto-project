@@ -98,136 +98,14 @@ function factorial(n:number):number{
     return n * factorial(n-1);
 }
 
-// Exponential function
-document.getElementById('exp')?.addEventListener('click', () => {
+// ... (Other existing functions)
+
+//Cube Function
+document.getElementById('cube')?.addEventListener('click', () => {
     try {
         const num = parseFloat(display.value);
-        display.value = Math.exp(num).toString();
-        currentExpression = display.value; 
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-//Parentheses
-document.getElementById('open-parenthesis')?.addEventListener('click', () => {
-    currentExpression += '(';
-    currentExpressionDisplay.textContent = currentExpression;
-});
-
-document.getElementById('close-parenthesis')?.addEventListener('click', () => {
-    currentExpression += ')';
-    currentExpressionDisplay.textContent = currentExpression;
-});
-
-// Absolute value function
-document.getElementById('abs')?.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        display.value = Math.abs(num).toString();
+        display.value = (num*num*num).toString();
         currentExpression = display.value;
-    } catch (error) {
-        display.value = 'Error';
-    }
-});
-
-// Round function
-document.getElementById('round')?.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        display.value = Math.round(num).toString();
-        currentExpression = display.value;
-    } catch (error) {
-        display.value = 'Error';
-    }
-});
-
-//Sign function: Added
-document.getElementById('sign')?.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        display.value = Math.sign(num).toString();
-        currentExpression = display.value;
-    } catch (error) {
-        display.value = 'Error';
-    }
-});
-
-// Cube root function
-document.getElementById('cbrt')?.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        display.value = Math.cbrt(num).toString();
-        currentExpression = display.value;
-    } catch (error) {
-        display.value = 'Error';
-    }
-});
-//Memory All Clear functionality
-document.getElementById('memory-all-clear')?.addEventListener('click', () => {
-    memory = 0;
-    memorySum = 0;
-    memoryCount = 0;
-});
-
-//Inverse functionality
-document.getElementById('inverse')?.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        if(num === 0) {
-            display.value = "Error: Division by zero";
-        }else{
-            display.value = (1/num).toString();
-            currentExpression = display.value; 
-        }
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-
-// Ceil function
-document.getElementById('ceil')?.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        display.value = Math.ceil(num).toString();
-        currentExpression = display.value;
-    } catch (error) {
-        display.value = 'Error';
-    }
-});
-
-//Random Number Generator
-document.getElementById('random')?.addEventListener('click', () =>{
-    const randomNumber = Math.random();
-    display.value = randomNumber.toString();
-    currentExpression = display.value; 
-});
-
-// Floor function
-document.getElementById('floor')?.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        display.value = Math.floor(num).toString();
-        currentExpression = display.value;
-    } catch (error) {
-        display.value = 'Error';
-    }
-});
-//10 to the power of x function
-document.getElementById('ten-to-the-power')?.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        display.value = Math.pow(10, num).toString();
-        currentExpression = display.value;
-    } catch (error) {
-        display.value = 'Error';
-    }
-});
-//Squared Function
-document.getElementById('squared')?.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        display.value = (num*num).toString();
-        currentExpression = display.value; 
     } catch (error) {
         display.value = "Error";
     }
