@@ -175,7 +175,7 @@ document.getElementById('calculate-volume')?.addEventListener('click', () => {
     display.value = "Error";
   }
 });
-//Calculate Perimeter of a Circle(New Feature)
+//Calculate Perimeter of a Circle
 document.getElementById('calculate-perimeter')?.addEventListener('click', () => {
     try {
       const radius = parseFloat(display.value);
@@ -192,3 +192,21 @@ document.getElementById('calculate-perimeter')?.addEventListener('click', () => 
       display.value = "Error";
     }
   });
+
+// Calculate Circumference of a Circle (New Feature)
+document.getElementById('calculate-circumference')?.addEventListener('click', () => {
+    try {
+        const radius = parseFloat(display.value);
+        if (isNaN(radius)) {
+            display.value = "Invalid Input";
+        } else if (radius < 0) {
+            display.value = "Radius cannot be negative";
+        } else {
+            const circumference = 2 * Math.PI * radius;
+            display.value = circumference.toString();
+            currentExpression = display.value;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
