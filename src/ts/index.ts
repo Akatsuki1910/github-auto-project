@@ -48,6 +48,24 @@ document.getElementById('sign')?.addEventListener('click', () => {
     }
 });
 
+//Inverse Functionality
+document.getElementById('inverse')?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Invalid input";
+        } else if (num === 0) {
+            display.value = "Cannot divide by zero";
+        } else {
+            display.value = (1/num).toString();
+            currentExpression = display.value;
+        }
+    }
+    catch(error) {
+        display.value = "Error";
+    }
+});
+
 // ... (Rest of the existing code)
 
 //Function for handling key presses
