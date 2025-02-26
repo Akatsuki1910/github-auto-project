@@ -127,3 +127,9 @@ document.getElementById('ln')?.addEventListener('click', () =>{
         display.value = "Error";
     }
 });
+
+// Duplicate functionality
+document.getElementById('duplicate')?.addEventListener('click', () => {
+    display.value += display.value;
+    currentExpression = display.value;
+});
