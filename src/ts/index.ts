@@ -183,3 +183,14 @@ document.getElementById('inverse')?.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+
+// Ceil function
+document.getElementById('ceil')?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        display.value = Math.ceil(num).toString();
+        currentExpression = display.value;
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
