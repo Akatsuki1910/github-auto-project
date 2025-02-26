@@ -222,3 +222,13 @@ document.getElementById('ten-to-the-power')?.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+//Squared Function
+document.getElementById('squared')?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        display.value = (num*num).toString();
+        currentExpression = display.value; 
+    } catch (error) {
+        display.value = "Error";
+    }
+});
