@@ -79,3 +79,19 @@ piButton.addEventListener('click', () => {
     display.value += Math.PI.toString();
     currentExpression += Math.PI.toString();
 });
+
+// Add exp functionality
+const expButton = document.getElementById('exp') as HTMLButtonElement;
+expButton?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Invalid input";
+        } else {
+            display.value = Math.exp(num).toString();
+            currentExpression = display.value;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
