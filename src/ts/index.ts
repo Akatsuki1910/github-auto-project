@@ -95,3 +95,19 @@ expButton?.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+
+// Add floor functionality
+const floorButton = document.getElementById('floor') as HTMLButtonElement;
+floorButton?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Invalid input";
+        } else {
+            display.value = Math.floor(num).toString();
+            currentExpression = display.value;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
