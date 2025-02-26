@@ -276,3 +276,23 @@ document.getElementById('calculate-average')?.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+
+// Toggle Numpad
+document.getElementById('toggle-numpad')?.addEventListener('click', () => {
+    const numpad = document.getElementById('numpad') as HTMLDivElement;
+    numpad.style.display = numpad.style.display === 'grid' ? 'none' : 'grid';
+  });
+
+  // Numpad event listeners
+  document.querySelectorAll('.numpad-key').forEach(key => {
+    key.addEventListener('click', () => {
+      const keyValue = (key as HTMLButtonElement).dataset.key;
+      if (keyValue) {
+        handleKeyPress({ key: keyValue });
+      }
+    });
+  });
+  //Function for handling key presses
+  function handleKeyPress(event: KeyboardEvent) :void {
+    // ... (rest of your existing handleKeyPress logic)
+}

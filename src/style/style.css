@@ -67,3 +67,8 @@ sup{
   vertical-align: super;
   font-size: smaller;
 }
+#numpad{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap:5px;
+}
