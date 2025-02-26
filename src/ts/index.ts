@@ -110,3 +110,9 @@ document.getElementById('cube')?.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+
+// Modulo operator
+document.getElementById('mod')?.addEventListener('click', () => {
+    currentExpression += '%';
+    display.value = currentExpression; 
+});
