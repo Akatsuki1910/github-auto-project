@@ -158,7 +158,7 @@ document.getElementById('calculate-area')?.addEventListener('click', () => {
   }
 });
 
-// Calculate Volume of a Sphere (New Feature)
+// Calculate Volume of a Sphere (Existing Feature)
 document.getElementById('calculate-volume')?.addEventListener('click', () => {
   try {
     const radius = parseFloat(display.value);
@@ -175,3 +175,20 @@ document.getElementById('calculate-volume')?.addEventListener('click', () => {
     display.value = "Error";
   }
 });
+//Calculate Perimeter of a Circle(New Feature)
+document.getElementById('calculate-perimeter')?.addEventListener('click', () => {
+    try {
+      const radius = parseFloat(display.value);
+      if (isNaN(radius)) {
+        display.value = "Invalid Input";
+      } else if (radius < 0) {
+        display.value = "Radius cannot be negative";
+      } else {
+        const perimeter = 2 * Math.PI * radius;
+        display.value = perimeter.toString();
+        currentExpression = display.value;
+      }
+    } catch (error) {
+      display.value = "Error";
+    }
+  });
