@@ -172,3 +172,14 @@ document.getElementById('memory-standard-deviation')?.addEventListener('click', 
     }
 
 });
+
+//Memory Variance
+document.getElementById('memory-variance')?.addEventListener('click', () => {
+    if (memoryCount === 0) {
+        display.value = "No values in memory";
+    } else {
+        const variance = (memorySquaredSum / memoryCount) - Math.pow(memorySum / memoryCount, 2);
+        display.value = variance.toString();
+        currentExpression = display.value;
+    }
+});
