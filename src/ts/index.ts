@@ -140,7 +140,7 @@ document.getElementById('deg-rad')?.addEventListener('click', () => {
     (document.getElementById('deg-rad') as HTMLButtonElement).textContent = isDegreeMode ? 'Deg' : 'Rad';
 });
 
-// Calculate Area of a Circle (New Feature)
+// Calculate Area of a Circle 
 document.getElementById('calculate-area')?.addEventListener('click', () => {
   try {
     const radius = parseFloat(display.value);
@@ -151,6 +151,24 @@ document.getElementById('calculate-area')?.addEventListener('click', () => {
     } else {
       const area = Math.PI * radius * radius;
       display.value = area.toString();
+      currentExpression = display.value;
+    }
+  } catch (error) {
+    display.value = "Error";
+  }
+});
+
+// Calculate Volume of a Sphere (New Feature)
+document.getElementById('calculate-volume')?.addEventListener('click', () => {
+  try {
+    const radius = parseFloat(display.value);
+    if (isNaN(radius)) {
+      display.value = "Invalid Input";
+    } else if (radius < 0) {
+      display.value = "Radius cannot be negative";
+    } else {
+      const volume = (4/3) * Math.PI * Math.pow(radius, 3);
+      display.value = volume.toString();
       currentExpression = display.value;
     }
   } catch (error) {
