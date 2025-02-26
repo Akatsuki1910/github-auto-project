@@ -183,3 +183,21 @@ document.getElementById('memory-variance')?.addEventListener('click', () => {
         currentExpression = display.value;
     }
 });
+
+// Calculate Hypotenuse
+document.getElementById('calculate-hypotenuse')?.addEventListener('click', () => {
+    try {
+        const sides = currentExpression.split(',').map(Number);
+        if (sides.length !== 2 || sides.some(isNaN)) {
+            display.value = "Invalid input. Enter two comma-separated values.";
+        } else if (sides.some(side => side < 0)) {
+            display.value = "Sides cannot be negative.";
+        } else {
+            const hypotenuse = Math.sqrt(sides[0]**2 + sides[1]**2);
+            display.value = hypotenuse.toString();
+            currentExpression = display.value;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
