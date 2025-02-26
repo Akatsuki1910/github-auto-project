@@ -151,3 +151,14 @@ document.getElementById('sign')?.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+
+// Cube root function
+document.getElementById('cbrt')?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        display.value = Math.cbrt(num).toString();
+        currentExpression = display.value;
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
