@@ -116,3 +116,14 @@ document.getElementById('mod')?.addEventListener('click', () => {
     currentExpression += '%';
     display.value = currentExpression; 
 });
+
+//Natural Logarithm
+document.getElementById('ln')?.addEventListener('click', () =>{
+    try{
+        const num = parseFloat(display.value);
+        display.value = Math.log(num).toString();
+        currentExpression = display.value;
+    } catch (error) {
+        display.value = "Error";
+    }
+});
