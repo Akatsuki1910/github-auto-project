@@ -248,3 +248,14 @@ document.getElementById('squared2')?.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+
+// Sign change functionality
+document.getElementById('sign-change')?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        display.value = (-num).toString();
+        currentExpression = display.value;
+    } catch (error) {
+        display.value = "Error";
+    }
+});
