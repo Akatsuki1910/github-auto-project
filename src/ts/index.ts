@@ -201,3 +201,18 @@ document.getElementById('calculate-hypotenuse')?.addEventListener('click', () =>
         display.value = "Error";
     }
 });
+
+// Nth Root functionality
+document.getElementById('nth-root')?.addEventListener('click', () => {
+    try {
+        const [x, y] = currentExpression.split(',').map(Number);
+        if ([x,y].some(isNaN)){
+            display.value = "Enter x,y";
+        } else {
+            display.value = Math.pow(y, 1/x).toString();
+            currentExpression = display.value;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
