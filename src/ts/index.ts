@@ -259,3 +259,20 @@ document.getElementById('sign-change')?.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+
+// Calculate Average
+document.getElementById('calculate-average')?.addEventListener('click', () => {
+    try {
+        const numbers = currentExpression.split(',').map(Number);
+        if (numbers.some(isNaN)) {
+            display.value = "Invalid input. Enter comma-separated values.";
+        } else {
+            const sum = numbers.reduce((total, num) => total + num, 0);
+            const average = sum / numbers.length;
+            display.value = average.toString();
+            currentExpression = display.value;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
