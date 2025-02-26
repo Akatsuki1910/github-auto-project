@@ -227,3 +227,13 @@ document.getElementById('e')?.addEventListener('click', () => {
     currentExpression += Math.E.toString();
     display.value = currentExpression;
 });
+// expm1 function
+document.getElementById('expm1')?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        display.value = Math.expm1(num).toString();
+        currentExpression = display.value;
+    } catch (error) {
+        display.value = "Error";
+    }
+});
