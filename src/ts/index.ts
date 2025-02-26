@@ -111,3 +111,19 @@ floorButton?.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+
+//Add 10 to the power of x functionality
+const tenToThePowerOfXButton = document.getElementById('ten-to-the-power-of-x') as HTMLButtonElement;
+tenToThePowerOfXButton?.addEventListener('click', () => {
+  try {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+      display.value = "Invalid input";
+    } else {
+      display.value = Math.pow(10, num).toString();
+      currentExpression = display.value;
+    }
+  } catch (error) {
+    display.value = "Error";
+  }
+});
