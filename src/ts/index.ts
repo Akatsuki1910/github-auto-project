@@ -194,3 +194,10 @@ document.getElementById('ceil')?.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+
+//Random Number Generator
+document.getElementById('random')?.addEventListener('click', () =>{
+    const randomNumber = Math.random();
+    display.value = randomNumber.toString();
+    currentExpression = display.value; 
+});
