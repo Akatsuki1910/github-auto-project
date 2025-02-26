@@ -34,3 +34,10 @@ document.getElementById('calculate-median')?.addEventListener('click', () => {
 function handleKeyPress(event: KeyboardEvent) :void {
     // ... (rest of your existing handleKeyPress logic)
 }
+
+const piButton = document.getElementById('pi') as HTMLButtonElement;
+piButton.addEventListener('click', () => {
+  // Insert the value of pi into the display
+  display.value += Math.PI.toString();
+  currentExpression += Math.PI.toString();
+});
