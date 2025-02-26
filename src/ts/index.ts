@@ -162,3 +162,9 @@ document.getElementById('cbrt')?.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+//Memory All Clear functionality
+document.getElementById('memory-all-clear')?.addEventListener('click', () => {
+    memory = 0;
+    memorySum = 0;
+    memoryCount = 0;
+});
