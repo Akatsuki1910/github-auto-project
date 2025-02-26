@@ -45,6 +45,22 @@ document.getElementById('square')?.addEventListener('click', () => {
 
 });
 
+//Cube Functionality
+document.getElementById('cube')?.addEventListener('click', () => {
+    try {
+        const currentNum = parseFloat(display.value);
+        if (isNaN(currentNum)) {
+            display.value = "Invalid input";
+        } else {
+            const cubedValue = currentNum * currentNum * currentNum;
+            display.value = cubedValue.toString();
+            currentExpression = display.value;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
 // ... (Rest of the existing code)
 
 //Function for handling key presses
