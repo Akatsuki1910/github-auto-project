@@ -237,3 +237,14 @@ document.getElementById('expm1')?.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+
+// x^4 function
+document.getElementById('squared2')?.addEventListener('click', () => {
+    try{
+        const num = parseFloat(display.value);
+        display.value = (num*num*num*num).toString();
+        currentExpression = display.value;
+    } catch (error){
+        display.value = "Error";
+    }
+});
