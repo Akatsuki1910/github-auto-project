@@ -105,6 +105,21 @@ document.getElementById('abs')?.addEventListener('click', () => {
     }
 });
 
+//Round Functionality
+document.getElementById('round')?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Invalid input";
+        } else {
+            display.value = Math.round(num).toString();
+            currentExpression = display.value;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
 // ... (Rest of the existing code)
 
 //Function for handling key presses
