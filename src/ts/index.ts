@@ -139,3 +139,21 @@ document.getElementById('deg-rad')?.addEventListener('click', () => {
     isDegreeMode = !isDegreeMode;
     (document.getElementById('deg-rad') as HTMLButtonElement).textContent = isDegreeMode ? 'Deg' : 'Rad';
 });
+
+// Calculate Area of a Circle (New Feature)
+document.getElementById('calculate-area')?.addEventListener('click', () => {
+  try {
+    const radius = parseFloat(display.value);
+    if (isNaN(radius)) {
+      display.value = "Invalid Input";
+    } else if (radius < 0) {
+      display.value = "Radius cannot be negative";
+    } else {
+      const area = Math.PI * radius * radius;
+      display.value = area.toString();
+      currentExpression = display.value;
+    }
+  } catch (error) {
+    display.value = "Error";
+  }
+});
