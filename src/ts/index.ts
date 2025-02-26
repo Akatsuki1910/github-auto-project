@@ -212,3 +212,13 @@ document.getElementById('floor')?.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+//10 to the power of x function
+document.getElementById('ten-to-the-power')?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        display.value = Math.pow(10, num).toString();
+        currentExpression = display.value;
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
