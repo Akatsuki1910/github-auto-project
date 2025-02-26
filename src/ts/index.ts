@@ -133,3 +133,9 @@ document.getElementById('duplicate')?.addEventListener('click', () => {
     display.value += display.value;
     currentExpression = display.value;
 });
+
+// Degree/Radian toggle
+document.getElementById('deg-rad')?.addEventListener('click', () => {
+    isDegreeMode = !isDegreeMode;
+    (document.getElementById('deg-rad') as HTMLButtonElement).textContent = isDegreeMode ? 'Deg' : 'Rad';
+});
