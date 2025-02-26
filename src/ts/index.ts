@@ -201,3 +201,14 @@ document.getElementById('random')?.addEventListener('click', () =>{
     display.value = randomNumber.toString();
     currentExpression = display.value; 
 });
+
+// Floor function
+document.getElementById('floor')?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        display.value = Math.floor(num).toString();
+        currentExpression = display.value;
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
