@@ -210,3 +210,21 @@ document.getElementById('calculate-circumference')?.addEventListener('click', ()
         display.value = "Error";
     }
 });
+
+// Calculate Surface Area of a Sphere (New Feature)
+document.getElementById('calculate-sphere-surface-area')?.addEventListener('click', () => {
+    try {
+        const radius = parseFloat(display.value);
+        if (isNaN(radius)) {
+            display.value = "Invalid Input";
+        } else if (radius < 0) {
+            display.value = "Radius cannot be negative";
+        } else {
+            const surfaceArea = 4 * Math.PI * radius * radius; // Surface area formula
+            display.value = surfaceArea.toString();
+            currentExpression = display.value;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
