@@ -168,3 +168,18 @@ document.getElementById('memory-all-clear')?.addEventListener('click', () => {
     memorySum = 0;
     memoryCount = 0;
 });
+
+//Inverse functionality
+document.getElementById('inverse')?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if(num === 0) {
+            display.value = "Error: Division by zero";
+        }else{
+            display.value = (1/num).toString();
+            currentExpression = display.value; 
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
