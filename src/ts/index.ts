@@ -61,6 +61,20 @@ document.getElementById('cube')?.addEventListener('click', () => {
     }
 });
 
+//Exponent Functionality
+document.getElementById('exponent')?.addEventListener('click', () => {
+    try {
+        const base = parseFloat(currentExpression);
+        if(isNaN(base)){
+            display.value = "Invalid Input";
+            return;
+        }
+        currentExpression += "**";
+        display.value = currentExpression;    } catch (error) {
+        display.value = "Error";
+    }
+});
+
 // ... (Rest of the existing code)
 
 //Function for handling key presses
