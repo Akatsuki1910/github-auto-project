@@ -24,6 +24,7 @@ let openParenthesesCount = 0;
 let memory = 0;
 let memorySum = 0; 
 let memoryCount = 0;
+let memorySquaredSum = 0;
 
 // ... (Existing Event Listeners)
 
@@ -142,7 +143,7 @@ document.getElementById('deg-rad')?.addEventListener('click', () => {
 
 // ... (Existing geometry functions)
 
-// Calculate Surface Area of a Cube (New Feature)
+// Calculate Surface Area of a Cube (Existing Feature)
 document.getElementById('calculate-cube-surface-area')?.addEventListener('click', () => {
     try {
         const side = parseFloat(display.value);
@@ -158,4 +159,16 @@ document.getElementById('calculate-cube-surface-area')?.addEventListener('click'
     } catch (error) {
         display.value = "Error";
     }
+});
+
+//Memory Standard Deviation 
+document.getElementById('memory-standard-deviation')?.addEventListener('click', () => {
+    if (memoryCount === 0) {
+        display.value = "No values in memory";
+    } else {
+        const standardDeviation = Math.sqrt((memorySquaredSum / memoryCount) - Math.pow(memorySum / memoryCount, 2));
+        display.value = standardDeviation.toString();
+        currentExpression = display.value;
+    }
+
 });
