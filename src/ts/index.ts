@@ -90,6 +90,21 @@ document.getElementById('log')?.addEventListener('click', () => {
     }
 });
 
+//Absolute Value Functionality
+document.getElementById('abs')?.addEventListener('click', () => {
+    try{
+        const num = parseFloat(display.value);
+        if(isNaN(num)){
+            display.value = "Invalid input";
+        }else{
+            display.value = Math.abs(num).toString();
+            currentExpression = display.value;
+        }
+    }catch (error) {
+        display.value = "Error";
+    }
+});
+
 // ... (Rest of the existing code)
 
 //Function for handling key presses
