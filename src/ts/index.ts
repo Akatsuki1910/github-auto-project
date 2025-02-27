@@ -57,4 +57,23 @@ atanButton?.addEventListener('click', () => {
     }
 });
 
+//Add log10 functionality
+const log10Button = document.getElementById('log10') as HTMLButtonElement;
+log10Button?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Invalid input";
+        } else if (num <= 0) {
+            display.value = "Invalid input for log10";
+        }
+        else{
+            display.value = Math.log10(num).toString();
+            currentExpression = display.value;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
 // ... (Rest of the existing code)
