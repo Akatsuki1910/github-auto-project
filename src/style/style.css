@@ -72,3 +72,7 @@ sup{
   grid-template-columns: repeat(4, 1fr);
   grid-gap:5px;
 }
+sub{
+  vertical-align: sub;
+  font-size: smaller;
+}
