@@ -66,4 +66,13 @@ calculateSumButton?.addEventListener('click', () => {
 
 });
 
+//Add Product functionality
+const calculateProductButton = document.getElementById('calculate-product') as HTMLButtonElement;
+calculateProductButton?.addEventListener('click', () => {
+    const numbers = display.value.split('*').map(Number);
+    const product = numbers.reduce((acc, num) => acc * num, 1);
+    display.value = product.toString();
+    currentExpression = display.value;
+});
+
 // ... (Rest of the existing code)
