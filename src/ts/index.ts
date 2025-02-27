@@ -117,4 +117,14 @@ calculatePowerButton?.addEventListener('click', () => {
         currentExpression = display.value;
     }
 });
+
+//Add log2 functionality
+const calculateLog2Button = document.getElementById('calculate-log2') as HTMLButtonElement;
+calculateLog2Button?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue > 0) {
+        display.value = Math.log2(currentValue).toString();
+        currentExpression = display.value;
+    }
+});
 // ... (Rest of the existing code)
