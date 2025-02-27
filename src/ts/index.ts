@@ -58,66 +58,14 @@ const log10Button = document.getElementById('log10') as HTMLButtonElement;
 const absButton = document.getElementById('abs') as HTMLButtonElement;
 const floorButton = document.getElementById('floor') as HTMLButtonElement;
 const roundButton = document.getElementById('round') as HTMLButtonElement;
+const signButton = document.getElementById('sign') as HTMLButtonElement;
 
-powerOfTwoButton.addEventListener('click', () => {
+// ... (Existing Event Listeners)
+
+signButton.addEventListener('click', () => {
   const display = document.getElementById('display') as HTMLInputElement;
   const currentValue = parseFloat(display.value);
-  const result = Math.pow(currentValue, 2);
-  display.value = result.toString();
-});
-
-cubeRootButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    const result = Math.cbrt(currentValue);
-    display.value = result.toString();
-});
-
-tenPowerButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    const result = Math.pow(10, currentValue);
-    display.value = result.toString();
-});
-
-expButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = Math.E.toString();
-});
-
-lnButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    const result = Math.log(currentValue);
-    display.value = result.toString();
-});
-
-log10Button.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    const result = Math.log10(currentValue);
-    display.value = result.toString();
-});
-
-absButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    const result = Math.abs(currentValue);
-    display.value = result.toString();
-});
-
-floorButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    const result = Math.floor(currentValue);
-    display.value = result.toString();
-});
-
-roundButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    const result = Math.round(currentValue);
-    display.value = result.toString();
+  display.value = Math.sign(currentValue).toString();
 });
 
 numpadToggle.addEventListener('click', () => {
