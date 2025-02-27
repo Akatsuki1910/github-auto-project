@@ -51,6 +51,7 @@ const numpad = document.getElementById('numpad') as HTMLDivElement;
 
 const powerOfTwoButton = document.getElementById('power-of-two') as HTMLButtonElement;
 const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
+const tenPowerButton = document.getElementById('ten-power') as HTMLButtonElement;
 
 powerOfTwoButton.addEventListener('click', () => {
   const display = document.getElementById('display') as HTMLInputElement;
@@ -63,6 +64,13 @@ cubeRootButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentValue = parseFloat(display.value);
     const result = Math.cbrt(currentValue);
+    display.value = result.toString();
+});
+
+tenPowerButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    const result = Math.pow(10, currentValue);
     display.value = result.toString();
 });
 
