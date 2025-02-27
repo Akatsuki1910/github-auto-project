@@ -127,4 +127,14 @@ calculateLog2Button?.addEventListener('click', () => {
         currentExpression = display.value;
     }
 });
+
+// Add log1p functionality
+const calculateLog1pButton = document.getElementById('calculate-log1p') as HTMLButtonElement;
+calculateLog1pButton?.addEventListener('click', () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue) && currentValue > -1) {
+    display.value = Math.log1p(currentValue).toString();
+    currentExpression = display.value;
+  }
+});
 // ... (Rest of the existing code)
