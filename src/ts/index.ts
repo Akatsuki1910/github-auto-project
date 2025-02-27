@@ -166,3 +166,10 @@ ceilButton?.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+
+//Duplicate functinality
+const dupButton = document.getElementById('duplicate') as HTMLButtonElement;
+dupButton?.addEventListener('click', () => {
+    display.value += display.value;
+    currentExpression = display.value; 
+});
