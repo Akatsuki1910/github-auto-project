@@ -57,6 +57,7 @@ const lnButton = document.getElementById('ln') as HTMLButtonElement;
 const log10Button = document.getElementById('log10') as HTMLButtonElement;
 const absButton = document.getElementById('abs') as HTMLButtonElement;
 const floorButton = document.getElementById('floor') as HTMLButtonElement;
+const roundButton = document.getElementById('round') as HTMLButtonElement;
 
 powerOfTwoButton.addEventListener('click', () => {
   const display = document.getElementById('display') as HTMLInputElement;
@@ -109,6 +110,13 @@ floorButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentValue = parseFloat(display.value);
     const result = Math.floor(currentValue);
+    display.value = result.toString();
+});
+
+roundButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    const result = Math.round(currentValue);
     display.value = result.toString();
 });
 
