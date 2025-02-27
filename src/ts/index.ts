@@ -46,4 +46,14 @@ expm1Button?.addEventListener('click', () => {
     }
 });
 
+//Add sign change functionality
+const signChangeButton = document.getElementById('sign-change') as HTMLButtonElement;
+signChangeButton?.addEventListener('click', () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = (-currentValue).toString();
+    currentExpression = display.value;
+  }
+});
+
 // ... (Rest of the existing code)
