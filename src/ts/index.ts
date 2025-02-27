@@ -173,3 +173,21 @@ dupButton?.addEventListener('click', () => {
     display.value += display.value;
     currentExpression = display.value; 
 });
+
+//Truncate functionality
+const truncButton = document.getElementById('trunc') as HTMLButtonElement;
+truncButton?.addEventListener('click', () => {
+    try{
+        const num = parseFloat(display.value);
+        if(isNaN(num)){
+            display.value = "Invalid Input";
+        }
+        else{
+            display.value = Math.trunc(num).toString();
+            currentExpression = display.value;
+        }
+    }
+    catch(error){
+        display.value = "Error";
+    }
+});
