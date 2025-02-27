@@ -62,6 +62,7 @@ const signButton = document.getElementById('sign') as HTMLButtonElement;
 const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
 const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
 const randomButton = document.getElementById('random') as HTMLButtonElement;
+const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 
@@ -86,6 +87,12 @@ inverseButton.addEventListener('click', () => {
 randomButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = Math.random().toString();
+});
+
+ceilButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = Math.ceil(currentValue).toString();
 });
 
 numpadToggle.addEventListener('click', () => {
