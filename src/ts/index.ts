@@ -96,4 +96,14 @@ calculateSquareRootButton?.addEventListener('click', () => {
       currentExpression = display.value;
     }
 });
+
+// Add Cube Root functionality
+const calculateCubeRootButton = document.getElementById('calculate-cube-root') as HTMLButtonElement;
+calculateCubeRootButton?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.cbrt(currentValue).toString();
+        currentExpression = display.value;
+    }
+});
 // ... (Rest of the existing code)
