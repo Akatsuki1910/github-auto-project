@@ -32,4 +32,20 @@ powerOfTwoButton?.addEventListener('click', () => {
     }
 });
 
+// Add sin functionality
+const sinButton = document.getElementById('sin') as HTMLButtonElement;
+sinButton?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Invalid input";
+        } else {
+            display.value = Math.sin(num).toString();
+            currentExpression = display.value;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
 // ... (Rest of the existing code)
