@@ -36,4 +36,14 @@ modButton?.addEventListener('click', () => {
     display.value = currentExpression;
 });
 
+// Add expm1 functionality
+const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
+expm1Button?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.expm1(currentValue).toString();
+        currentExpression = display.value;
+    }
+});
+
 // ... (Rest of the existing code)
