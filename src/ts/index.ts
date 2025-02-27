@@ -29,4 +29,11 @@ eButton?.addEventListener('click', () => {
     currentExpression = display.value;
 });
 
+//Add Mod functionality
+const modButton = document.getElementById('mod') as HTMLButtonElement;
+modButton?.addEventListener('click', () => {
+    currentExpression += '%';
+    display.value = currentExpression;
+});
+
 // ... (Rest of the existing code)
