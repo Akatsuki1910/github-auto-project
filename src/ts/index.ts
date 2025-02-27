@@ -54,4 +54,22 @@ asinButton?.addEventListener('click', () => {
     }
 });
 
+// Add acos functionality
+const acosButton = document.getElementById('acos') as HTMLButtonElement;
+acosButton?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Invalid input";
+        } else if (num < -1 || num > 1) {
+            display.value = "Out of range";
+        } else {
+            display.value = Math.acos(num).toString();
+            currentExpression = display.value;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
 // ... (Rest of the existing code)
