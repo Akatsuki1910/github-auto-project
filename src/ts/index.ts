@@ -55,6 +55,7 @@ const tenPowerButton = document.getElementById('ten-power') as HTMLButtonElement
 const expButton = document.getElementById('exp') as HTMLButtonElement;
 const lnButton = document.getElementById('ln') as HTMLButtonElement;
 const log10Button = document.getElementById('log10') as HTMLButtonElement;
+const absButton = document.getElementById('abs') as HTMLButtonElement;
 
 powerOfTwoButton.addEventListener('click', () => {
   const display = document.getElementById('display') as HTMLInputElement;
@@ -93,6 +94,13 @@ log10Button.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentValue = parseFloat(display.value);
     const result = Math.log10(currentValue);
+    display.value = result.toString();
+});
+
+absButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    const result = Math.abs(currentValue);
     display.value = result.toString();
 });
 
