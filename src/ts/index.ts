@@ -59,6 +59,7 @@ const absButton = document.getElementById('abs') as HTMLButtonElement;
 const floorButton = document.getElementById('floor') as HTMLButtonElement;
 const roundButton = document.getElementById('round') as HTMLButtonElement;
 const signButton = document.getElementById('sign') as HTMLButtonElement;
+const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 
@@ -66,6 +67,12 @@ signButton.addEventListener('click', () => {
   const display = document.getElementById('display') as HTMLInputElement;
   const currentValue = parseFloat(display.value);
   display.value = Math.sign(currentValue).toString();
+});
+
+cbrtButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = Math.cbrt(currentValue).toString();
 });
 
 numpadToggle.addEventListener('click', () => {
