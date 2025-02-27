@@ -87,4 +87,13 @@ calculateAverageButton?.addEventListener('click', () => {
     }
 });
 
+// Add Square Root functionality
+const calculateSquareRootButton = document.getElementById('calculate-square-root') as HTMLButtonElement;
+calculateSquareRootButton?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue >= 0) {
+      display.value = Math.sqrt(currentValue).toString();
+      currentExpression = display.value;
+    }
+});
 // ... (Rest of the existing code)
