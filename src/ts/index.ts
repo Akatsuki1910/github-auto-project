@@ -50,17 +50,20 @@ const numpadToggle = document.getElementById('numpad-toggle') as HTMLButtonEleme
 const numpad = document.getElementById('numpad') as HTMLDivElement;
 
 const powerOfTwoButton = document.getElementById('power-of-two') as HTMLButtonElement;
+const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
 
 powerOfTwoButton.addEventListener('click', () => {
-    // Get the current display value
   const display = document.getElementById('display') as HTMLInputElement;
   const currentValue = parseFloat(display.value);
-
-  //Calculate Power of Two
   const result = Math.pow(currentValue, 2);
-
-  //Update Display
   display.value = result.toString();
+});
+
+cubeRootButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    const result = Math.cbrt(currentValue);
+    display.value = result.toString();
 });
 
 numpadToggle.addEventListener('click', () => {
