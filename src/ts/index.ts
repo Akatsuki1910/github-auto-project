@@ -191,3 +191,20 @@ truncButton?.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+
+//Squared Sum Functionality
+const squaredSumButton = document.getElementById('squared-sum') as HTMLButtonElement;
+squaredSumButton?.addEventListener('click', () => {
+    try {
+        const numbers = currentExpression.split(',').map(Number);
+        if (numbers.some(isNaN)) {
+            display.value = "Invalid input. Enter comma-separated values.";
+        } else {
+            const sumOfSquares = numbers.reduce((sum, num) => sum + (num * num), 0);
+            display.value = sumOfSquares.toString();
+            currentExpression = display.value;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
