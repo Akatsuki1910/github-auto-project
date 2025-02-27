@@ -106,4 +106,15 @@ calculateCubeRootButton?.addEventListener('click', () => {
         currentExpression = display.value;
     }
 });
+
+// Add x^y functionality
+const calculatePowerButton = document.getElementById('calculate-power') as HTMLButtonElement;
+calculatePowerButton?.addEventListener('click', () => {
+    const base = parseFloat(currentExpression.split('^')[0]);
+    const exponent = parseFloat(currentExpression.split('^')[1]);
+    if (!isNaN(base) && !isNaN(exponent)) {
+        display.value = Math.pow(base, exponent).toString();
+        currentExpression = display.value;
+    }
+});
 // ... (Rest of the existing code)
