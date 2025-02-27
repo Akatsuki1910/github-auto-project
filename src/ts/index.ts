@@ -49,6 +49,20 @@
 const numpadToggle = document.getElementById('numpad-toggle') as HTMLButtonElement;
 const numpad = document.getElementById('numpad') as HTMLDivElement;
 
+const powerOfTwoButton = document.getElementById('power-of-two') as HTMLButtonElement;
+
+powerOfTwoButton.addEventListener('click', () => {
+    // Get the current display value
+  const display = document.getElementById('display') as HTMLInputElement;
+  const currentValue = parseFloat(display.value);
+
+  //Calculate Power of Two
+  const result = Math.pow(currentValue, 2);
+
+  //Update Display
+  display.value = result.toString();
+});
+
 numpadToggle.addEventListener('click', () => {
   if (numpad.style.display === 'none') {
     numpad.style.display = 'grid';
