@@ -64,4 +64,20 @@ cosButton?.addEventListener('click', () => {
     }
 });
 
+// Add tan functionality
+const tanButton = document.getElementById('tan') as HTMLButtonElement;
+tanButton?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Invalid input";
+        } else {
+            display.value = Math.tan(num).toString();
+            currentExpression = display.value;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
 // ... (Rest of the existing code)
