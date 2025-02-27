@@ -76,4 +76,22 @@ log10Button?.addEventListener('click', () => {
     }
 });
 
+//Add ln functionality
+const lnButton = document.getElementById('ln') as HTMLButtonElement;
+lnButton?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Invalid input";
+        } else if (num <= 0) {
+            display.value = "Invalid input for ln";
+        } else {
+            display.value = Math.log(num).toString();
+            currentExpression = display.value;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
+
 // ... (Rest of the existing code)
