@@ -36,35 +36,20 @@ powerOfTwoButton?.addEventListener('click', () => {
 // ... (Existing sin, cos, tan functions)
 
 // Add asin functionality
-const asinButton = document.getElementById('asin') as HTMLButtonElement;
-asinButton?.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        if (isNaN(num)) {
-            display.value = "Invalid input";
-        } else if (num < -1 || num > 1) {
-          display.value = "Out of range";
-        }
-         else {
-            display.value = Math.asin(num).toString();
-            currentExpression = display.value;
-        }
-    } catch (error) {
-        display.value = "Error";
-    }
-});
+// ... (Existing asin function)
 
 // Add acos functionality
-const acosButton = document.getElementById('acos') as HTMLButtonElement;
-acosButton?.addEventListener('click', () => {
+// ... (Existing acos function)
+
+// Add atan functionality
+const atanButton = document.getElementById('atan') as HTMLButtonElement;
+atanButton?.addEventListener('click', () => {
     try {
         const num = parseFloat(display.value);
         if (isNaN(num)) {
             display.value = "Invalid input";
-        } else if (num < -1 || num > 1) {
-            display.value = "Out of range";
         } else {
-            display.value = Math.acos(num).toString();
+            display.value = Math.atan(num).toString();
             currentExpression = display.value;
         }
     } catch (error) {
