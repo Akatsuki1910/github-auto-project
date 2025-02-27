@@ -127,3 +127,19 @@ tenToThePowerOfXButton?.addEventListener('click', () => {
     display.value = "Error";
   }
 });
+
+// Add cbrt functionality
+const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
+cbrtButton?.addEventListener('click', () => {
+  try {
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+      display.value = "Invalid input";
+    } else {
+      display.value = Math.cbrt(num).toString();
+      currentExpression = display.value;
+    }
+  } catch (error) {
+    display.value = "Error";
+  }
+});
