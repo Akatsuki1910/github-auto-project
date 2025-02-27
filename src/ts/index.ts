@@ -53,6 +53,7 @@ const powerOfTwoButton = document.getElementById('power-of-two') as HTMLButtonEl
 const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
 const tenPowerButton = document.getElementById('ten-power') as HTMLButtonElement;
 const expButton = document.getElementById('exp') as HTMLButtonElement;
+const lnButton = document.getElementById('ln') as HTMLButtonElement;
 
 powerOfTwoButton.addEventListener('click', () => {
   const display = document.getElementById('display') as HTMLInputElement;
@@ -78,6 +79,13 @@ tenPowerButton.addEventListener('click', () => {
 expButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = Math.E.toString();
+});
+
+lnButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    const result = Math.log(currentValue);
+    display.value = result.toString();
 });
 
 numpadToggle.addEventListener('click', () => {
