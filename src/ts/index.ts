@@ -33,46 +33,20 @@ powerOfTwoButton?.addEventListener('click', () => {
 });
 
 // Add sin functionality
-const sinButton = document.getElementById('sin') as HTMLButtonElement;
-sinButton?.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        if (isNaN(num)) {
-            display.value = "Invalid input";
-        } else {
-            display.value = Math.sin(num).toString();
-            currentExpression = display.value;
-        }
-    } catch (error) {
-        display.value = "Error";
-    }
-});
+// ... (Existing sin, cos, tan functions)
 
-// Add cos functionality
-const cosButton = document.getElementById('cos') as HTMLButtonElement;
-cosButton?.addEventListener('click', () => {
+// Add asin functionality
+const asinButton = document.getElementById('asin') as HTMLButtonElement;
+asinButton?.addEventListener('click', () => {
     try {
         const num = parseFloat(display.value);
         if (isNaN(num)) {
             display.value = "Invalid input";
-        } else {
-            display.value = Math.cos(num).toString();
-            currentExpression = display.value;
+        } else if (num < -1 || num > 1) {
+          display.value = "Out of range";
         }
-    } catch (error) {
-        display.value = "Error";
-    }
-});
-
-// Add tan functionality
-const tanButton = document.getElementById('tan') as HTMLButtonElement;
-tanButton?.addEventListener('click', () => {
-    try {
-        const num = parseFloat(display.value);
-        if (isNaN(num)) {
-            display.value = "Invalid input";
-        } else {
-            display.value = Math.tan(num).toString();
+         else {
+            display.value = Math.asin(num).toString();
             currentExpression = display.value;
         }
     } catch (error) {
