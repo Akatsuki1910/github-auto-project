@@ -143,3 +143,10 @@ cbrtButton?.addEventListener('click', () => {
     display.value = "Error";
   }
 });
+
+// Add random number generation
+const randomButton = document.getElementById('random') as HTMLButtonElement;
+randomButton?.addEventListener('click', () => {
+    display.value = Math.random().toString();
+    currentExpression = display.value; 
+});
