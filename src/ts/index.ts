@@ -54,6 +54,7 @@ const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement
 const tenPowerButton = document.getElementById('ten-power') as HTMLButtonElement;
 const expButton = document.getElementById('exp') as HTMLButtonElement;
 const lnButton = document.getElementById('ln') as HTMLButtonElement;
+const log10Button = document.getElementById('log10') as HTMLButtonElement;
 
 powerOfTwoButton.addEventListener('click', () => {
   const display = document.getElementById('display') as HTMLInputElement;
@@ -85,6 +86,13 @@ lnButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentValue = parseFloat(display.value);
     const result = Math.log(currentValue);
+    display.value = result.toString();
+});
+
+log10Button.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    const result = Math.log10(currentValue);
     display.value = result.toString();
 });
 
