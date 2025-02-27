@@ -150,3 +150,19 @@ randomButton?.addEventListener('click', () => {
     display.value = Math.random().toString();
     currentExpression = display.value; 
 });
+
+// Add ceil functionality
+const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
+ceilButton?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (isNaN(num)) {
+            display.value = "Invalid input";
+        } else {
+            display.value = Math.ceil(num).toString();
+            currentExpression = display.value;
+        }
+    } catch (error) {
+        display.value = "Error";
+    }
+});
