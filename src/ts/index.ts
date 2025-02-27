@@ -56,4 +56,14 @@ signChangeButton?.addEventListener('click', () => {
   }
 });
 
+//Add Sum functionality
+const calculateSumButton = document.getElementById('calculate-sum') as HTMLButtonElement;
+calculateSumButton?.addEventListener('click', () => {
+    const numbers = display.value.split('+').map(Number);
+    const sum = numbers.reduce((acc, num) => acc + num, 0);
+  display.value = sum.toString();
+  currentExpression = display.value;
+
+});
+
 // ... (Rest of the existing code)
