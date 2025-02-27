@@ -75,4 +75,16 @@ calculateProductButton?.addEventListener('click', () => {
     currentExpression = display.value;
 });
 
+// Add Average functionality
+const calculateAverageButton = document.getElementById('calculate-average') as HTMLButtonElement;
+calculateAverageButton?.addEventListener('click', () => {
+    const numbers = display.value.split('+').map(Number); // Assumes numbers are separated by '+'
+    if (numbers.length > 0) {
+      const sum = numbers.reduce((acc, num) => acc + num, 0);
+      const average = sum / numbers.length;
+      display.value = average.toString();
+      currentExpression = display.value;
+    }
+});
+
 // ... (Rest of the existing code)
