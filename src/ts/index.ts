@@ -60,6 +60,7 @@ const modButton = document.getElementById('mod') as HTMLButtonElement;
 const exp2Button = document.getElementById('exp2') as HTMLButtonElement;
 const calculateSumButton = document.getElementById('calculate-sum') as HTMLButtonElement;
 const calculateProductButton = document.getElementById('calculate-product') as HTMLButtonElement;
+const calculateAverageButton = document.getElementById('calculate-average') as HTMLButtonElement;
 
 
 // ... (Existing Event Listeners)
@@ -125,5 +126,13 @@ calculateProductButton.addEventListener('click', () => {
   const numbers = display.value.split('*').map(Number);
   const product = numbers.reduce((acc, num) => acc * num, 1);
   display.value = product.toString();
+});
+
+calculateAverageButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const numbers = display.value.split(',').map(Number);  // Split by comma
+    const sum = numbers.reduce((acc, num) => acc + num, 0);
+    const average = sum / numbers.length;
+    display.value = average.toString();
 });
 // ... (Rest of the existing code)
