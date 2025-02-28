@@ -71,6 +71,7 @@ let lastAnswer = 0;
 const lastAnswerButton = document.getElementById('last-answer') as HTMLButtonElement;
 const dateButton = document.getElementById('date') as HTMLButtonElement;
 const currentTimeButton = document.getElementById('current-time') as HTMLButtonElement;
+const fibonacciButton = document.getElementById('fibonacci') as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 
@@ -197,5 +198,21 @@ dateButton.addEventListener('click', () => {
 currentTimeButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = new Date().toLocaleTimeString();
+});
+
+fibonacciButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const n = parseInt(display.value);
+    if (isNaN(n) || n < 0) {
+        display.value = "Invalid input";
+    } else {
+        let a = 0, b = 1, temp;
+        for (let i = 0; i < n; i++) {
+            temp = b;
+            b = a + b;
+            a = temp;
+        }
+        display.value = a.toString();
+    }
 });
 // ... (Rest of the existing code)
