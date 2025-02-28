@@ -93,4 +93,23 @@ piButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = Math.PI.toString();
 });
+
+const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
+factorialButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseInt(display.value);
+    if (isNaN(currentValue)){
+        display.value = "Invalid Input";
+    }else{
+        if(currentValue < 0) {
+            display.value = "Invalid Input";
+        }else{
+            let result = 1;
+            for (let i = 1; i <= currentValue; i++) {
+                result *= i;
+            }
+            display.value = result.toString();
+        }
+    }
+});
 // ... (Rest of the existing code)
