@@ -75,6 +75,8 @@ const fibonacciButton = document.getElementById('fibonacci') as HTMLButtonElemen
 let memoryValue = 0;
 const memoryPlusButton = document.getElementById('memory-plus') as HTMLButtonElement;
 const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
+const calculateVarianceButton = document.getElementById('calculate-variance') as HTMLButtonElement;
+
 
 // ... (Existing Event Listeners)
 
@@ -226,5 +228,14 @@ memoryPlusButton.addEventListener('click', () => {
 memoryRecallButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value += memoryValue.toString();
+});
+
+calculateVarianceButton.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  const numbers = display.value.split(',').map(Number);
+  const n = numbers.length;
+  const mean = numbers.reduce((sum, num) => sum + num, 0) / n;
+  const variance = numbers.reduce((sum, num) => sum + Math.pow(num - mean, 2), 0) / n;
+  display.value = variance.toString();
 });
 // ... (Rest of the existing code)
