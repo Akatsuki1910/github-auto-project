@@ -66,8 +66,15 @@ const randomButton = document.getElementById('random') as HTMLButtonElement;
 const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
 const truncButton = document.getElementById('trunc') as HTMLButtonElement;
 const squaredSumButton = document.getElementById('squared-sum') as HTMLButtonElement;
+const sinButton = document.getElementById('sin') as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
+
+sinButton.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  const currentValue = parseFloat(display.value);
+  display.value = Math.sin(currentValue).toString();
+});
 
 signButton.addEventListener('click', () => {
   const display = document.getElementById('display') as HTMLInputElement;
