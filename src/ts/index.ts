@@ -63,7 +63,8 @@ const calculateProductButton = document.getElementById('calculate-product') as H
 const calculateAverageButton = document.getElementById('calculate-average') as HTMLButtonElement;
 const calculateMedianButton = document.getElementById('calculate-median') as HTMLButtonElement;
 const clearEntryButton = document.getElementById('clear-entry') as HTMLButtonElement;
-
+const decimalSeparatorButton = document.getElementById('decimal-separator') as HTMLButtonElement;
+let currentDecimalSeparator = '.';
 
 // ... (Existing Event Listeners)
 
@@ -155,4 +156,16 @@ numpadToggle.addEventListener('click', () => {
 clearEntryButton.addEventListener('click', () => {
   (document.getElementById('display') as HTMLInputElement).value = '';
 });
+decimalSeparatorButton.addEventListener('click', () => {
+  if (currentDecimalSeparator === '.') {
+    currentDecimalSeparator = ',';
+    decimalSeparatorButton.textContent = ',';
+    decimalSeparatorButton.dataset.separator = ',';
+  } else {
+    currentDecimalSeparator = '.';
+    decimalSeparatorButton.textContent = '.';
+    decimalSeparatorButton.dataset.separator = '.';
+  }
+});
+
 // ... (Rest of the existing code)
