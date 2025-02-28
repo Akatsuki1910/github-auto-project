@@ -58,6 +58,8 @@ const squareButton = document.getElementById('square') as HTMLButtonElement;
 const resetButton = document.getElementById('reset') as HTMLButtonElement;
 const modButton = document.getElementById('mod') as HTMLButtonElement;
 const exp2Button = document.getElementById('exp2') as HTMLButtonElement;
+const calculateSumButton = document.getElementById('calculate-sum') as HTMLButtonElement;
+
 
 // ... (Existing Event Listeners)
 
@@ -111,4 +113,10 @@ modButton.addEventListener('click', () => {
     display.value += '%';
 });
 
+calculateSumButton.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  const numbers = display.value.split('+').map(Number);
+  const sum = numbers.reduce((acc, num) => acc + num, 0);
+  display.value = sum.toString();
+});
 // ... (Rest of the existing code)
