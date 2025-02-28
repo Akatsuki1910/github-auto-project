@@ -57,12 +57,21 @@ const duplicateButton = document.getElementById('duplicate') as HTMLButtonElemen
 const squareButton = document.getElementById('square') as HTMLButtonElement;
 const resetButton = document.getElementById('reset') as HTMLButtonElement;
 const modButton = document.getElementById('mod') as HTMLButtonElement;
+const exp2Button = document.getElementById('exp2') as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 
 // ... existing event listeners
 
 // ... (Existing event listeners)
+
+
+exp2Button.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = Math.pow(2, currentValue).toString();
+});
+
 
 cubedButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
