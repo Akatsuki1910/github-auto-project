@@ -65,4 +65,11 @@ calculatePercentageButton.addEventListener('click', () => {
   const currentValue = parseFloat(display.value);
   display.value = (currentValue / 100).toString();
 });
+
+const squareButton = document.getElementById('square') as HTMLButtonElement;
+squareButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = (currentValue * currentValue).toString();
+});
 // ... (Rest of the existing code)
