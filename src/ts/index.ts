@@ -67,6 +67,8 @@ const decimalSeparatorButton = document.getElementById('decimal-separator') as H
 const exponentButton = document.getElementById('exponent') as HTMLButtonElement;
 const percentChangeButton = document.getElementById('percent-change') as HTMLButtonElement;
 let currentDecimalSeparator = '.';
+let lastAnswer = 0;
+const lastAnswerButton = document.getElementById('last-answer') as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 
@@ -182,5 +184,8 @@ percentChangeButton.addEventListener('click', () => {
   //  This is a placeholder, requiring further implementation details
   //  For example, store a previous value and calculate the percentage change based on it
   display.value = "(Percent Change Calculation Here)";
+});
+lastAnswerButton.addEventListener('click', () => {
+    (document.getElementById('display') as HTMLInputElement).value += lastAnswer.toString();
 });
 // ... (Rest of the existing code)
