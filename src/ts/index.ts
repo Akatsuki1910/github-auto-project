@@ -43,4 +43,16 @@ clearButton.addEventListener('click', () => {
   (document.getElementById('display') as HTMLInputElement).value = '';
 });
 
+//Added feature: Keyboard support for digits and operators
+document.addEventListener('keydown', (event) => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (/^[0-9]$/.test(event.key)) {
+        display.value += event.key;
+    } else if (['+', '-', '*', '/', '.'].includes(event.key)) {
+        display.value += event.key;
+    } else if (event.key === 'Enter' || event.key === '=') {
+       // Placeholder for evaluation logic 
+    }
+});
+
 // ... (Rest of the existing code)
