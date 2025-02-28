@@ -50,54 +50,19 @@
 const numpadToggle = document.getElementById('numpad-toggle') as HTMLButtonElement;
 const numpad = document.getElementById('numpad') as HTMLDivElement;
 
-const powerOfTwoButton = document.getElementById('power-of-two') as HTMLButtonElement;
-const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
-const tenPowerButton = document.getElementById('ten-power') as HTMLButtonElement;
-const expButton = document.getElementById('exp') as HTMLButtonElement;
-const lnButton = document.getElementById('ln') as HTMLButtonElement;
-const log10Button = document.getElementById('log10') as HTMLButtonElement;
-const absButton = document.getElementById('abs') as HTMLButtonElement;
-const floorButton = document.getElementById('floor') as HTMLButtonElement;
-const roundButton = document.getElementById('round') as HTMLButtonElement;
-const signButton = document.getElementById('sign') as HTMLButtonElement;
-const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
-const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
-const randomButton = document.getElementById('random') as HTMLButtonElement;
-const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
-const truncButton = document.getElementById('trunc') as HTMLButtonElement;
-const squaredSumButton = document.getElementById('squared-sum') as HTMLButtonElement;
-const sinButton = document.getElementById('sin') as HTMLButtonElement;
-const cosButton = document.getElementById('cos') as HTMLButtonElement;
-const tanButton = document.getElementById('tan') as HTMLButtonElement;
-const powerButton = document.getElementById('power') as HTMLButtonElement;
-const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
-const squaredButton = document.getElementById('squared') as HTMLButtonElement;
+// ... (Existing variable declarations)
+const cubedButton = document.getElementById('cubed') as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 
 // ... existing event listeners
-powerButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    display.value = Math.pow(currentValue, 2).toString();
-});
-expm1Button.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    display.value = Math.expm1(currentValue).toString();
-});
 
-numpadToggle.addEventListener('click', () => {
-  if (numpad.style.display === 'none') {
-    numpad.style.display = 'grid';
-  } else {
-    numpad.style.display = 'none';
-  }
-});
-squaredButton.addEventListener('click', () => {
+// ... (Existing event listeners)
+
+cubedButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentValue = parseFloat(display.value);
-    display.value = Math.pow(currentValue, 2).toString();
+    display.value = Math.pow(currentValue, 3).toString();
 });
 
 // ... (Rest of the existing code)
