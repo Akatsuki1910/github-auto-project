@@ -52,6 +52,7 @@ const numpad = document.getElementById('numpad') as HTMLDivElement;
 
 // ... (Existing variable declarations)
 const cubedButton = document.getElementById('cubed') as HTMLButtonElement;
+const nthRootButton = document.getElementById('nth-root') as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 
@@ -63,6 +64,19 @@ cubedButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentValue = parseFloat(display.value);
     display.value = Math.pow(currentValue, 3).toString();
+});
+
+nthRootButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentDisplay = display.value;
+    if (currentDisplay.includes('√')) {
+      const parts = currentDisplay.split('√');
+      const x = parseFloat(parts[0]);
+      const y = parseFloat(parts[1]);
+      display.value = Math.pow(y, 1/x).toString();
+    } else {
+      display.value += '√';
+    }
 });
 
 // ... (Rest of the existing code)
