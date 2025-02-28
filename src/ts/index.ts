@@ -53,6 +53,7 @@ const numpad = document.getElementById('numpad') as HTMLDivElement;
 // ... (Existing variable declarations)
 const cubedButton = document.getElementById('cubed') as HTMLButtonElement;
 const nthRootButton = document.getElementById('nth-root') as HTMLButtonElement;
+const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 
@@ -77,6 +78,10 @@ nthRootButton.addEventListener('click', () => {
     } else {
       display.value += '√';
     }
+});
+duplicateButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value += display.value;
 });
 
 // ... (Rest of the existing code)
