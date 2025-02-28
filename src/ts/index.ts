@@ -59,4 +59,15 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
+// Added parentheses buttons
+const openParenthesisButton = document.getElementById('open-parenthesis') as HTMLButtonElement;
+openParenthesisButton.addEventListener('click', () => {
+    (document.getElementById('display') as HTMLInputElement).value += '(';
+});
+
+const closeParenthesisButton = document.getElementById('close-parenthesis') as HTMLButtonElement;
+closeParenthesisButton.addEventListener('click', () => {
+    (document.getElementById('display') as HTMLInputElement).value += ')';
+});
+
 // ... (Rest of the existing code)
