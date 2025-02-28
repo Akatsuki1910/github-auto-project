@@ -1,78 +1,14 @@
 body {
-    font-family: sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    margin: 0;
-    background-color: #f0f0f0;
-    transition: background-color 0.3s ease; /* Add transition for smooth change */
-}
-
-#calculator {
-    background-color: #fff;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transition: background-color 0.3s ease; /* Add transition for smooth change */
+    /* ... existing styles */
 }
 
 /* ... (Existing styles) */
 
 .scientific-section{
     display: grid;
-    grid-template-columns: repeat(8, 1fr); /* Added a column */
+    grid-template-columns: repeat(8, 1fr);
     grid-gap:5px;
     margin-bottom: 10px;
 }
 
-.additional-functions {
-    display: grid;
-    grid-template-columns: repeat(8,1fr);
-    grid-gap: 5px;
-    
-}
-
-#history-display{
-    display:none;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-top: 10px;
-    overflow-y: auto;
-    max-height: 200px;
-}
-
-.main-pad {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5px;
-}
-.memory-section{
-    display: grid;
-    grid-template-columns: repeat(8, 1fr); /* Added a column */
-    grid-gap:5px;
-    margin-bottom: 10px;
-}
-/* Dark mode styles */
-body.dark-mode {
-    background-color: #333;
-    color: #eee;
-}
-
-#calculator.dark-mode {
-    background-color: #444;
-}
-sup{
-  vertical-align: super;
-  font-size: smaller;
-}
-#numpad{
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-gap:5px;
-}
-sub{
-  vertical-align: sub;
-  font-size: smaller;
-}
+/* ... other styles */
