@@ -76,6 +76,7 @@ let memoryValue = 0;
 const memoryPlusButton = document.getElementById('memory-plus') as HTMLButtonElement;
 const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
 const calculateVarianceButton = document.getElementById('calculate-variance') as HTMLButtonElement;
+const currentDateTimeButton = document.getElementById('current-date-time') as HTMLButtonElement;
 
 
 // ... (Existing Event Listeners)
@@ -237,5 +238,13 @@ calculateVarianceButton.addEventListener('click', () => {
   const mean = numbers.reduce((sum, num) => sum + num, 0) / n;
   const variance = numbers.reduce((sum, num) => sum + Math.pow(num - mean, 2), 0) / n;
   display.value = variance.toString();
+});
+
+currentDateTimeButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const now = new Date();
+    const date = now.toDateString();
+    const time = now.toLocaleTimeString();
+    display.value = `${date} ${time}`;
 });
 // ... (Rest of the existing code)
