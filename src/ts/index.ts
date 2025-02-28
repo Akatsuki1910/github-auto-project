@@ -112,4 +112,11 @@ factorialButton.addEventListener('click', () => {
         }
     }
 });
+
+const lnButton = document.getElementById('ln') as HTMLButtonElement;
+lnButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = Math.log(currentValue).toString();
+});
 // ... (Rest of the existing code)
