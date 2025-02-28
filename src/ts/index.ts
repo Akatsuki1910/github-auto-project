@@ -87,4 +87,10 @@ nthRootButton.addEventListener('click', () => {
     const root = parseFloat(prompt("Enter the root value:", "2") || "2"); // Default to square root if no input
     display.value = Math.pow(currentValue, 1/root).toString();
 });
+
+const piButton = document.getElementById('pi') as HTMLButtonElement;
+piButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = Math.PI.toString();
+});
 // ... (Rest of the existing code)
