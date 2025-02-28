@@ -38,4 +38,9 @@ backspaceButton.addEventListener('click', () => {
     display.value = display.value.slice(0, -1);
 });
 
+const clearButton = document.getElementById('clear') as HTMLButtonElement;
+clearButton.addEventListener('click', () => {
+  (document.getElementById('display') as HTMLInputElement).value = '';
+});
+
 // ... (Rest of the existing code)
