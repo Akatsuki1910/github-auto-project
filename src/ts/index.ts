@@ -79,4 +79,12 @@ cubeButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     display.value = (currentValue * currentValue * currentValue).toString();
 });
+
+const nthRootButton = document.getElementById('nth-root') as HTMLButtonElement;
+nthRootButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    const root = parseFloat(prompt("Enter the root value:", "2") || "2"); // Default to square root if no input
+    display.value = Math.pow(currentValue, 1/root).toString();
+});
 // ... (Rest of the existing code)
