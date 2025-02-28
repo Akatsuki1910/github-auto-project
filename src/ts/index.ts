@@ -72,6 +72,9 @@ const lastAnswerButton = document.getElementById('last-answer') as HTMLButtonEle
 const dateButton = document.getElementById('date') as HTMLButtonElement;
 const currentTimeButton = document.getElementById('current-time') as HTMLButtonElement;
 const fibonacciButton = document.getElementById('fibonacci') as HTMLButtonElement;
+let memoryValue = 0;
+const memoryPlusButton = document.getElementById('memory-plus') as HTMLButtonElement;
+const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 
@@ -214,5 +217,14 @@ fibonacciButton.addEventListener('click', () => {
         }
         display.value = a.toString();
     }
+});
+memoryPlusButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    memoryValue += parseFloat(display.value);
+});
+
+memoryRecallButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value += memoryValue.toString();
 });
 // ... (Rest of the existing code)
