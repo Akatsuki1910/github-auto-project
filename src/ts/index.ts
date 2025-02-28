@@ -64,6 +64,7 @@ const calculateAverageButton = document.getElementById('calculate-average') as H
 const calculateMedianButton = document.getElementById('calculate-median') as HTMLButtonElement;
 const clearEntryButton = document.getElementById('clear-entry') as HTMLButtonElement;
 const decimalSeparatorButton = document.getElementById('decimal-separator') as HTMLButtonElement;
+const exponentButton = document.getElementById('exponent') as HTMLButtonElement;
 let currentDecimalSeparator = '.';
 
 // ... (Existing Event Listeners)
@@ -166,6 +167,11 @@ decimalSeparatorButton.addEventListener('click', () => {
     decimalSeparatorButton.textContent = '.';
     decimalSeparatorButton.dataset.separator = '.';
   }
+});
+
+exponentButton.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  display.value = Math.exp(parseFloat(display.value)).toString();
 });
 
 // ... (Rest of the existing code)
