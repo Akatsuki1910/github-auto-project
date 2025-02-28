@@ -69,6 +69,7 @@ const percentChangeButton = document.getElementById('percent-change') as HTMLBut
 let currentDecimalSeparator = '.';
 let lastAnswer = 0;
 const lastAnswerButton = document.getElementById('last-answer') as HTMLButtonElement;
+const dateButton = document.getElementById('date') as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 
@@ -187,5 +188,9 @@ percentChangeButton.addEventListener('click', () => {
 });
 lastAnswerButton.addEventListener('click', () => {
     (document.getElementById('display') as HTMLInputElement).value += lastAnswer.toString();
+});
+dateButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = new Date().toDateString();
 });
 // ... (Rest of the existing code)
