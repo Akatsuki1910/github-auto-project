@@ -6,7 +6,7 @@ body {
 
 .scientific-section{
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(9, 1fr); /* Added a column for backspace */
     grid-gap:5px;
     margin-bottom: 10px;
 }
