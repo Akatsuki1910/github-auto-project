@@ -68,6 +68,7 @@ const truncButton = document.getElementById('trunc') as HTMLButtonElement;
 const squaredSumButton = document.getElementById('squared-sum') as HTMLButtonElement;
 const sinButton = document.getElementById('sin') as HTMLButtonElement;
 const cosButton = document.getElementById('cos') as HTMLButtonElement;
+const tanButton = document.getElementById('tan') as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 
@@ -81,6 +82,12 @@ cosButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentValue = parseFloat(display.value);
     display.value = Math.cos(currentValue).toString();
+});
+
+tanButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = Math.tan(currentValue).toString();
 });
 
 signButton.addEventListener('click', () => {
