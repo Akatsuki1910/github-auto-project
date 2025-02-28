@@ -70,6 +70,7 @@ let currentDecimalSeparator = '.';
 let lastAnswer = 0;
 const lastAnswerButton = document.getElementById('last-answer') as HTMLButtonElement;
 const dateButton = document.getElementById('date') as HTMLButtonElement;
+const currentTimeButton = document.getElementById('current-time') as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 
@@ -192,5 +193,9 @@ lastAnswerButton.addEventListener('click', () => {
 dateButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = new Date().toDateString();
+});
+currentTimeButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = new Date().toLocaleTimeString();
 });
 // ... (Rest of the existing code)
