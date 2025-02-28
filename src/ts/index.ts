@@ -56,6 +56,7 @@ const nthRootButton = document.getElementById('nth-root') as HTMLButtonElement;
 const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
 const squareButton = document.getElementById('square') as HTMLButtonElement;
 const resetButton = document.getElementById('reset') as HTMLButtonElement;
+const modButton = document.getElementById('mod') as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 
@@ -94,6 +95,11 @@ squareButton.addEventListener('click', () => {
 
 resetButton.addEventListener('click', () => {
   (document.getElementById('display') as HTMLInputElement).value = '';
+});
+
+modButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value += '%';
 });
 
 // ... (Rest of the existing code)
