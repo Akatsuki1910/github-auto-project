@@ -51,7 +51,11 @@ document.addEventListener('keydown', (event) => {
     } else if (['+', '-', '*', '/', '.'].includes(event.key)) {
         display.value += event.key;
     } else if (event.key === 'Enter' || event.key === '=') {
-       // Placeholder for evaluation logic 
+       try{
+        display.value = eval(display.value);
+       }catch(e){
+        display.value = "Error";
+       }
     }
 });
 
