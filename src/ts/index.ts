@@ -65,6 +65,7 @@ const calculateMedianButton = document.getElementById('calculate-median') as HTM
 const clearEntryButton = document.getElementById('clear-entry') as HTMLButtonElement;
 const decimalSeparatorButton = document.getElementById('decimal-separator') as HTMLButtonElement;
 const exponentButton = document.getElementById('exponent') as HTMLButtonElement;
+const percentChangeButton = document.getElementById('percent-change') as HTMLButtonElement;
 let currentDecimalSeparator = '.';
 
 // ... (Existing Event Listeners)
@@ -174,4 +175,12 @@ exponentButton.addEventListener('click', () => {
   display.value = Math.exp(parseFloat(display.value)).toString();
 });
 
+percentChangeButton.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  const currentValue = parseFloat(display.value);
+  // Logic for percent change calculation (e.g., relative to a previous value)
+  //  This is a placeholder, requiring further implementation details
+  //  For example, store a previous value and calculate the percentage change based on it
+  display.value = "(Percent Change Calculation Here)";
+});
 // ... (Rest of the existing code)
