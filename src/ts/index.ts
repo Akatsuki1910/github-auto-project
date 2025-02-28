@@ -54,6 +54,7 @@ const numpad = document.getElementById('numpad') as HTMLDivElement;
 const cubedButton = document.getElementById('cubed') as HTMLButtonElement;
 const nthRootButton = document.getElementById('nth-root') as HTMLButtonElement;
 const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
+const squareButton = document.getElementById('square') as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 
@@ -82,6 +83,12 @@ nthRootButton.addEventListener('click', () => {
 duplicateButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value += display.value;
+});
+
+squareButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = Math.pow(currentValue, 2).toString();
 });
 
 // ... (Rest of the existing code)
