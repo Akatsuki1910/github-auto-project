@@ -62,6 +62,7 @@ const calculateSumButton = document.getElementById('calculate-sum') as HTMLButto
 const calculateProductButton = document.getElementById('calculate-product') as HTMLButtonElement;
 const calculateAverageButton = document.getElementById('calculate-average') as HTMLButtonElement;
 const calculateMedianButton = document.getElementById('calculate-median') as HTMLButtonElement;
+const clearEntryButton = document.getElementById('clear-entry') as HTMLButtonElement;
 
 
 // ... (Existing Event Listeners)
@@ -149,5 +150,9 @@ numpadToggle.addEventListener('click', () => {
   } else {
     numpad.style.display = 'none';
   }
+});
+
+clearEntryButton.addEventListener('click', () => {
+  (document.getElementById('display') as HTMLInputElement).value = '';
 });
 // ... (Rest of the existing code)
