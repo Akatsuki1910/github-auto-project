@@ -61,6 +61,7 @@ const exp2Button = document.getElementById('exp2') as HTMLButtonElement;
 const calculateSumButton = document.getElementById('calculate-sum') as HTMLButtonElement;
 const calculateProductButton = document.getElementById('calculate-product') as HTMLButtonElement;
 const calculateAverageButton = document.getElementById('calculate-average') as HTMLButtonElement;
+const calculateMedianButton = document.getElementById('calculate-median') as HTMLButtonElement;
 
 
 // ... (Existing Event Listeners)
@@ -134,5 +135,19 @@ calculateAverageButton.addEventListener('click', () => {
     const sum = numbers.reduce((acc, num) => acc + num, 0);
     const average = sum / numbers.length;
     display.value = average.toString();
+});
+
+calculateMedianButton.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  const numbers = display.value.split(',').map(Number).sort((a, b) => a - b);
+  const mid = Math.floor(numbers.length / 2);
+  display.value = numbers.length % 2 !== 0 ? numbers[mid].toString() : ((numbers[mid - 1] + numbers[mid]) / 2).toString();
+});
+numpadToggle.addEventListener('click', () => {
+  if (numpad.style.display === 'none') {
+    numpad.style.display = 'grid';
+  } else {
+    numpad.style.display = 'none';
+  }
 });
 // ... (Rest of the existing code)
