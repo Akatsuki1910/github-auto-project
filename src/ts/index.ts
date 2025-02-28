@@ -71,6 +71,7 @@ const cosButton = document.getElementById('cos') as HTMLButtonElement;
 const tanButton = document.getElementById('tan') as HTMLButtonElement;
 const powerButton = document.getElementById('power') as HTMLButtonElement;
 const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
+const squaredButton = document.getElementById('squared') as HTMLButtonElement;
 
 // ... (Existing Event Listeners)
 
@@ -92,6 +93,11 @@ numpadToggle.addEventListener('click', () => {
   } else {
     numpad.style.display = 'none';
   }
+});
+squaredButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = Math.pow(currentValue, 2).toString();
 });
 
 // ... (Rest of the existing code)
