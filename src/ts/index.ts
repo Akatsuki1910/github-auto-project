@@ -36,3 +36,9 @@ const exitButton = document.getElementById('exit') as HTMLButtonElement;
 exitButton.addEventListener('click', () => {
   window.close();
 });
+
+//Added reset functionality
+const resetButton = document.getElementById('reset') as HTMLButtonElement;
+resetButton.addEventListener('click', () => {
+    location.reload();
+});
