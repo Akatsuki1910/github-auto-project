@@ -78,3 +78,13 @@ eButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value += 'Math.E';
 });
+
+//Added dms button
+const dmsButton = document.getElementById('dms') as HTMLButtonElement;
+dmsButton.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  let degrees = parseFloat(display.value);
+  let minutes = (degrees - Math.floor(degrees)) * 60;
+  let seconds = (minutes - Math.floor(minutes)) * 60;
+  display.value = `${Math.floor(degrees)}°${Math.floor(minutes)}'${seconds.toFixed(2)}"`;
+});
