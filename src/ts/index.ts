@@ -64,3 +64,10 @@ cosButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value += 'Math.cos('; // Added cos functionality
 });
+
+//Added tan button
+const tanButton = document.getElementById('tan') as HTMLButtonElement;
+tanButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value += 'Math.tan('; // Added tan functionality
+});
