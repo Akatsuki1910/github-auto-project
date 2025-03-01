@@ -78,3 +78,12 @@ buttons.forEach(button => {
     button.addEventListener('click', playClickSound);
     button.addEventListener('click', vibrateDevice); // Existing vibration function call
 });
+
+// Added feature: Clear All History
+const clearAllHistoryButton = document.getElementById('clear-all-history') as HTMLButtonElement;
+const historySection = document.getElementById('history-section') as HTMLDivElement;
+
+clearAllHistoryButton.addEventListener('click', () => {
+  historySection.innerHTML = '';
+  // Optionally clear history data from local storage or wherever it's stored
+});
