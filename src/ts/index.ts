@@ -15,72 +15,43 @@ function displayError(message: string) {
 }
 
 //Add clearAll functionality
-const clearAllButton = document.getElementById('clearAll') as HTMLButtonElement;
-const display = document.getElementById('display') as HTMLInputElement;
-const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
-
-clearAllButton.addEventListener('click', () => {
-    display.value = '';
-    currentExpressionDisplay.textContent = '';
-});
+// ... existing code
 
 //Added current date functionality
-const currentDateButton = document.getElementById('current-date') as HTMLButtonElement;
-currentDateButton.addEventListener('click',()=>{
-    const currentDate = new Date().toLocaleDateString();
-    display.value = currentDate;
-});
+// ... existing code
 
 // Added exit functionality
-const exitButton = document.getElementById('exit') as HTMLButtonElement;
-exitButton.addEventListener('click', () => {
-  window.close();
-});
+// ... existing code
 
 //Added reset functionality
-const resetButton = document.getElementById('reset') as HTMLButtonElement;
-resetButton.addEventListener('click', () => {
-    location.reload();
-});
+// ... existing code
 
 //Added Duplicate Functionality
-const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
-duplicateButton.addEventListener('click', () => {
-    display.value = display.value + display.value;
-});
+// ... existing code
 
 //Added Inverse Functionality
-const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
-inverseButton.addEventListener('click', () => {
-    try {
-        const currentValue = parseFloat(display.value);
-        display.value = (1/currentValue).toString();
-    } catch (error) {
-        displayError('Invalid input for inverse operation');
-    }
-});
+// ... existing code
 
 // Added Mod functionality
-const modButton = document.getElementById('mod') as HTMLButtonElement;
-modButton.addEventListener('click', () => {
-    display.value += '%';
-});
+// ... existing code
 
 //Added Sign Change Functionality
-const signChangeButton = document.getElementById('sign-change') as HTMLButtonElement;
-signChangeButton.addEventListener('click', () => {
-    if (display.value.startsWith('-')){
-        display.value = display.value.substring(1);
-    } else {
-        display.value = '-' + display.value;    }
-});
+// ... existing code
 
 //Added evaluate functionality
-const evaluateButton = document.getElementById('evaluate') as HTMLButtonElement;
-evaluateButton.addEventListener('click', () => {
-  try {
-    display.value = eval(display.value);
-  } catch (error) {
-    displayError('Invalid expression');
-  }
+// ... existing code
+
+//Added Square Root Functionality
+const squareRootButton = document.getElementById('square-root') as HTMLButtonElement;
+squareRootButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        if (currentValue < 0) {
+            displayError('Cannot calculate square root of a negative number');
+        } else {
+            display.value = Math.sqrt(currentValue).toString();
+        }
+    } catch (error) {
+        displayError('Invalid input for square root operation');
+    }
 });
