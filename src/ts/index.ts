@@ -35,3 +35,10 @@ powerButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value += '**';
 });
+
+//Added round button
+const roundButton = document.getElementById('round') as HTMLButtonElement;
+roundButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = Math.round(eval(display.value)).toString();
+});
