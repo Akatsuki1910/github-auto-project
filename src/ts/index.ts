@@ -59,3 +59,9 @@ inverseButton.addEventListener('click', () => {
         displayError('Invalid input for inverse operation');
     }
 });
+
+// Added Mod functionality
+const modButton = document.getElementById('mod') as HTMLButtonElement;
+modButton.addEventListener('click', () => {
+    display.value += '%';
+});
