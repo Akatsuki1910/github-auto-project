@@ -59,3 +59,18 @@ function updateHistory(expression: string, result: string) {
 
 // ... (Existing equals button event listener) - Add this line inside the listener
 updateHistory(currentExpression, display.value);
+
+//Added Clear Expression (CE) button
+const clearExpressionButton = document.getElementById('clear-expression') as HTMLButtonElement;
+const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
+let currentExpression = '';
+
+clearExpressionButton.addEventListener('click', () => {
+  currentExpression = '';
+  currentExpressionDisplay.textContent = '';
+});
+
+display.addEventListener('input', () => {
+    currentExpression = display.value;
+    currentExpressionDisplay.textContent = currentExpression; 
+});
