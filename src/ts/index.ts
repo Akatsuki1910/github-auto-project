@@ -23,3 +23,10 @@ clearAllButton.addEventListener('click', () => {
     display.value = '';
     currentExpressionDisplay.textContent = '';
 });
+
+//Added current date functionality
+const currentDateButton = document.getElementById('current-date') as HTMLButtonElement;
+currentDateButton.addEventListener('click',()=>{
+    const currentDate = new Date().toLocaleDateString();
+    display.value = currentDate;
+});
