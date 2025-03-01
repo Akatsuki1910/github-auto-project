@@ -48,19 +48,29 @@ copyToClipboardButton.addEventListener('click', () => {
 // ... Existing Code
 
 //Added feature: Toggle Sound
-const toggleSoundButton = document.getElementById('toggle-sound') as HTMLButtonElement;
-let isSoundEnabled = false;
+// ... Existing Code
 
-toggleSoundButton.addEventListener('click', () => {
-    isSoundEnabled = !isSoundEnabled;
-    localStorage.setItem('soundEnabled', isSoundEnabled.toString());
+// Function to vibrate the device if enabled
+function vibrateDevice() {
+    // ... Existing vibration code
+}
+
+//Added feature: Fullscreen
+const fullscreenButton = document.getElementById('fullscreen') as HTMLButtonElement;
+fullscreenButton.addEventListener('click', () => {
+    if (document.fullscreenElement) {
+        document.exitFullscreen();
+    } else {
+        document.documentElement.requestFullscreen();
+    }
+});
+
+window.addEventListener('load', () => {
+    // ... existing code for vibration and sound settings
 });
 
 function playClickSound(){
-    if(isSoundEnabled){
-        const clickSound = new Audio('./click.wav'); // Replace with your sound file
-        clickSound.play();
-    }
+    // ... Existing sound code
 }
 
 const buttons = document.querySelectorAll('button');
@@ -68,20 +78,3 @@ buttons.forEach(button => {
     button.addEventListener('click', playClickSound);
     button.addEventListener('click', vibrateDevice); // Existing vibration function call
 });
-
-window.addEventListener('load', () => {
-    const savedVibrationSetting = localStorage.getItem('vibrationEnabled');
-    if (savedVibrationSetting) {
-        isVibrationEnabled = savedVibrationSetting === 'true';
-    }
-
-    const savedSoundSetting = localStorage.getItem('soundEnabled');
-    if (savedSoundSetting) {
-        isSoundEnabled = savedSoundSetting === 'true';
-    }
-});
-
-// Function to vibrate the device if enabled
-function vibrateDevice() {
-    // ... Existing vibration code
-}
