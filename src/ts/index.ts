@@ -53,3 +53,16 @@ copyButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     navigator.clipboard.writeText(display.value);
 });
+
+//Added toggle basic button to toggle scientific section display
+const toggleBasicButton = document.getElementById('toggle-basic') as HTMLButtonElement;
+const scientificSection = document.querySelector('.scientific-section') as HTMLDivElement;
+toggleBasicButton.addEventListener('click', () => {
+    if (scientificSection.style.display === 'none') {
+        scientificSection.style.display = 'grid';
+        toggleBasicButton.textContent = 'Basic';
+    } else {
+        scientificSection.style.display = 'none';
+        toggleBasicButton.textContent = 'Scientific';
+    }
+});
