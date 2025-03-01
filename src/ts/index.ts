@@ -55,3 +55,14 @@ squareRootButton.addEventListener('click', () => {
         displayError('Invalid input for square root operation');
     }
 });
+
+//Added Cube Root Functionality
+const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
+cubeRootButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = Math.cbrt(currentValue).toString();
+    } catch (error) {
+        displayError('Invalid input for cube root operation');
+    }
+});
