@@ -30,3 +30,9 @@ currentDateButton.addEventListener('click',()=>{
     const currentDate = new Date().toLocaleDateString();
     display.value = currentDate;
 });
+
+// Added exit functionality
+const exitButton = document.getElementById('exit') as HTMLButtonElement;
+exitButton.addEventListener('click', () => {
+  window.close();
+});
