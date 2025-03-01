@@ -65,3 +65,12 @@ const modButton = document.getElementById('mod') as HTMLButtonElement;
 modButton.addEventListener('click', () => {
     display.value += '%';
 });
+
+//Added Sign Change Functionality
+const signChangeButton = document.getElementById('sign-change') as HTMLButtonElement;
+signChangeButton.addEventListener('click', () => {
+    if (display.value.startsWith('-')){
+        display.value = display.value.substring(1);
+    } else {
+        display.value = '-' + display.value;    }
+});
