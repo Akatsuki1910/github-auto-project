@@ -14,4 +14,12 @@ function displayError(message: string) {
     }
 }
 
-// ... existing code
+//Add clearAll functionality
+const clearAllButton = document.getElementById('clearAll') as HTMLButtonElement;
+const display = document.getElementById('display') as HTMLInputElement;
+const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
+
+clearAllButton.addEventListener('click', () => {
+    display.value = '';
+    currentExpressionDisplay.textContent = '';
+});
