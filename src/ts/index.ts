@@ -69,5 +69,19 @@ const closeParenthesisButton = document.getElementById('close-parenthesis') as H
 closeParenthesisButton.addEventListener('click', () => {
     (document.getElementById('display') as HTMLInputElement).value += ')';
 });
-
+let ans = 0;
+const equalsButton = document.querySelector('.equals') as HTMLButtonElement;
+equalsButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    try {
+        ans = eval(display.value);
+        display.value = ans.toString();
+    } catch (e) {
+        display.value = "Error";
+    }
+});
+const ansButton = document.getElementById('ans') as HTMLButtonElement;
+ansButton.addEventListener('click',()=>{
+    (document.getElementById('display') as HTMLInputElement).value += ans;
+})
 // ... (Rest of the existing code)
