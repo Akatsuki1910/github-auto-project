@@ -39,11 +39,14 @@ copyToClipboardButton.addEventListener('click', () => {
 });
 
 // Added feature: Toggle Keyboard
-const toggleKeyboardButton = document.getElementById('toggle-keyboard') as HTMLButtonElement;
-let isKeyboardEnabled = false;
+// ... Existing code
 
-toggleKeyboardButton.addEventListener('click', () => {
-  isKeyboardEnabled = !isKeyboardEnabled;
-  // Implement keyboard logic here based on isKeyboardEnabled
-  console.log(`Keyboard enabled: ${isKeyboardEnabled}`); 
+// Added feature: Toggle Display Size
+const toggleDisplaySizeButton = document.getElementById('toggle-display-size') as HTMLButtonElement;
+let isLargeDisplay = false;
+
+toggleDisplaySizeButton.addEventListener('click', () => {
+  isLargeDisplay = !isLargeDisplay;
+  const display = document.getElementById('display') as HTMLInputElement;
+  display.style.fontSize = isLargeDisplay ? '2em' : '1em';
 });
