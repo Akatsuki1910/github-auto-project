@@ -24,3 +24,16 @@ switchLayoutButton.addEventListener('click', () => {
 // ... (Existing equals button event listener) - Add this line inside the listener
 updateHistory(currentExpression, display.value);
 // ... (Existing code)
+
+//Added feature: Copy to Clipboard
+const copyToClipboardButton = document.getElementById('copy-to-clipboard') as HTMLButtonElement;
+const display = document.getElementById('display') as HTMLInputElement;
+
+copyToClipboardButton.addEventListener('click', () => {
+  navigator.clipboard.writeText(display.value).then(() => {
+    // Optional: Provide feedback to the user that the copy was successful
+    console.log('Copied to clipboard!');
+  }, (err) => {
+    console.error('Could not copy text: ', err);
+  });
+});
