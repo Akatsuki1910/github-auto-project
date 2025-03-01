@@ -42,3 +42,9 @@ const resetButton = document.getElementById('reset') as HTMLButtonElement;
 resetButton.addEventListener('click', () => {
     location.reload();
 });
+
+//Added Duplicate Functionality
+const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
+duplicateButton.addEventListener('click', () => {
+    display.value = display.value + display.value;
+});
