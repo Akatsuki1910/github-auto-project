@@ -56,3 +56,10 @@ floorButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = Math.floor(eval(display.value)).toString();
 });
+
+//Added ceil button
+const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
+ceilButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = Math.ceil(eval(display.value)).toString();
+});
