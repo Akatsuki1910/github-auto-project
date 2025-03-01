@@ -1,5 +1,13 @@
 // ... (Existing code)
 
+//Added feature: Double click to clear display
+const display = document.getElementById('display') as HTMLInputElement;
+display.addEventListener('dblclick', () => {
+    display.value = '';
+    currentExpression = '';
+    currentExpressionDisplay.textContent = '';
+});
+
 // ... (Existing variable declarations)
 
 // ... (Existing Event Listeners)
