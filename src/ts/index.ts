@@ -49,3 +49,10 @@ absButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = Math.abs(eval(display.value)).toString();
 });
+
+//Added floor button
+const floorButton = document.getElementById('floor') as HTMLButtonElement;
+floorButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = Math.floor(eval(display.value)).toString();
+});
