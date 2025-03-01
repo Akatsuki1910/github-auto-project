@@ -10,6 +10,7 @@ function displayError(message: string) {
     if (showErrorMessages) {
         // Existing error display logic
         console.error(message); // Example: Log to console
+        alert(message); //Added alert for error message
     }
 }
 
