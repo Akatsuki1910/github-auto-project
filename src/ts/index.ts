@@ -42,42 +42,46 @@ copyToClipboardButton.addEventListener('click', () => {
 // ... Existing code
 
 // Added feature: Toggle Display Size
-const toggleDisplaySizeButton = document.getElementById('toggle-display-size') as HTMLButtonElement;
-let isLargeDisplay = false;
-
-toggleDisplaySizeButton.addEventListener('click', () => {
-  isLargeDisplay = !isLargeDisplay;
-  const display = document.getElementById('display') as HTMLInputElement;
-  display.style.fontSize = isLargeDisplay ? '2em' : '1em';
-});
+// ... Existing code
 
 // Added feature: Toggle Vibration
-const toggleVibrationButton = document.getElementById('toggle-vibration') as HTMLButtonElement;
-let isVibrationEnabled = false;
+// ... Existing Code
 
-toggleVibrationButton.addEventListener('click', () => {
-    isVibrationEnabled = !isVibrationEnabled;
-    // Store the vibration setting in local storage
-    localStorage.setItem('vibrationEnabled', isVibrationEnabled.toString());
+//Added feature: Toggle Sound
+const toggleSoundButton = document.getElementById('toggle-sound') as HTMLButtonElement;
+let isSoundEnabled = false;
+
+toggleSoundButton.addEventListener('click', () => {
+    isSoundEnabled = !isSoundEnabled;
+    localStorage.setItem('soundEnabled', isSoundEnabled.toString());
 });
 
-// Function to vibrate the device if enabled
-function vibrateDevice() {
-    if (isVibrationEnabled && navigator.vibrate) {
-        navigator.vibrate(50); // Vibrate for 50ms
+function playClickSound(){
+    if(isSoundEnabled){
+        const clickSound = new Audio('./click.wav'); // Replace with your sound file
+        clickSound.play();
     }
 }
 
-// Add event listeners to buttons to trigger vibration
 const buttons = document.querySelectorAll('button');
 buttons.forEach(button => {
-    button.addEventListener('click', vibrateDevice);
+    button.addEventListener('click', playClickSound);
+    button.addEventListener('click', vibrateDevice); // Existing vibration function call
 });
 
-// Retrieve vibration setting from local storage on page load
 window.addEventListener('load', () => {
     const savedVibrationSetting = localStorage.getItem('vibrationEnabled');
     if (savedVibrationSetting) {
         isVibrationEnabled = savedVibrationSetting === 'true';
     }
+
+    const savedSoundSetting = localStorage.getItem('soundEnabled');
+    if (savedSoundSetting) {
+        isSoundEnabled = savedSoundSetting === 'true';
+    }
 });
+
+// Function to vibrate the device if enabled
+function vibrateDevice() {
+    // ... Existing vibration code
+}
