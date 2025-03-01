@@ -70,3 +70,10 @@ randomButton.addEventListener('click', () => {
   const display = document.getElementById('display') as HTMLInputElement;
   display.value = Math.random().toString();
 });
+
+//Added sin button
+const sinButton = document.getElementById('sin') as HTMLButtonElement;
+sinButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value += 'Math.sin('; // Added sin functionality
+});
