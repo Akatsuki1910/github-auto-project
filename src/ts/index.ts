@@ -74,3 +74,13 @@ signChangeButton.addEventListener('click', () => {
     } else {
         display.value = '-' + display.value;    }
 });
+
+//Added evaluate functionality
+const evaluateButton = document.getElementById('evaluate') as HTMLButtonElement;
+evaluateButton.addEventListener('click', () => {
+  try {
+    display.value = eval(display.value);
+  } catch (error) {
+    displayError('Invalid expression');
+  }
+});
