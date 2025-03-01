@@ -23,46 +23,39 @@ let ans = 0;
 // ... existing other functions
 
 //Added deg button
-const degButton = document.getElementById('deg') as HTMLButtonElement;
-degButton.addEventListener('click', () => {
-  const display = document.getElementById('display') as HTMLInputElement;
-  let radians = parseFloat(display.value);
-  let degrees = radians * (180 / Math.PI);
-  display.value = degrees.toString();
-});
+// ... Existing deg button event listener
 
 //Added rad button
-const radButton = document.getElementById('rad') as HTMLButtonElement;
-radButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    let degrees = parseFloat(display.value);
-    let radians = degrees * (Math.PI / 180);
-    display.value = radians.toString();
-});
+// ... Existing rad button event listener
 
 //Added negate button
-const negateButton = document.getElementById('negate') as HTMLButtonElement;
-negateButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = (-parseFloat(display.value)).toString();
-});
+// ... Existing negate button event listener
 
 //Added copy button
-const copyButton = document.getElementById('copy') as HTMLButtonElement;
-copyButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    navigator.clipboard.writeText(display.value);
-});
+// ... Existing copy button event listener
 
 //Added toggle basic button to toggle scientific section display
-const toggleBasicButton = document.getElementById('toggle-basic') as HTMLButtonElement;
-const scientificSection = document.querySelector('.scientific-section') as HTMLDivElement;
-toggleBasicButton.addEventListener('click', () => {
-    if (scientificSection.style.display === 'none') {
-        scientificSection.style.display = 'grid';
-        toggleBasicButton.textContent = 'Basic';
-    } else {
-        scientificSection.style.display = 'none';
-        toggleBasicButton.textContent = 'Scientific';
-    }
+// ... Existing toggle basic button event listener
+
+// History Feature
+const historySection = document.getElementById('history-section') as HTMLDivElement;
+let history: string[] = [];
+
+const toggleHistoryButton = document.getElementById('toggle-history') as HTMLButtonElement;
+toggleHistoryButton.addEventListener('click', () => {
+    historySection.style.display = historySection.style.display === 'none' ? 'block' : 'none';
 });
+
+const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
+clearHistoryButton.addEventListener('click', () => {
+    history = [];
+    historySection.innerHTML = '';
+});
+
+function updateHistory(expression: string, result: string) {
+    history.push(`${expression} = ${result}`);
+    historySection.innerHTML = history.map(item => `<div>${item}</div>`).join('');
+}
+
+// ... (Existing equals button event listener) - Add this line inside the listener
+updateHistory(currentExpression, display.value);
