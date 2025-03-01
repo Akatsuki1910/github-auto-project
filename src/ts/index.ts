@@ -74,3 +74,11 @@ display.addEventListener('input', () => {
     currentExpression = display.value;
     currentExpressionDisplay.textContent = currentExpression; 
 });
+
+// Added toggle memory section
+const memorySection = document.querySelector('.memory-section') as HTMLDivElement;
+const toggleMemoryButton = document.getElementById('toggle-memory') as HTMLButtonElement;
+
+toggleMemoryButton.addEventListener('click', () => {
+  memorySection.style.display = memorySection.style.display === 'none' ? 'grid' : 'none';
+});

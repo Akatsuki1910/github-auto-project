@@ -21,3 +21,10 @@ body {
     overflow-y: auto;
     max-height: 200px;
 }
+
+.memory-section {
+    display: none;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
+    margin-bottom: 10px;
+}
