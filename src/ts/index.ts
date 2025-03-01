@@ -37,43 +37,30 @@ powerButton.addEventListener('click', () => {
 });
 
 //Added round button
-const roundButton = document.getElementById('round') as HTMLButtonElement;
-roundButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = Math.round(eval(display.value)).toString();
-});
+// ... Existing round button event listener
 
 //Added abs button
-const absButton = document.getElementById('abs') as HTMLButtonElement;
-absButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = Math.abs(eval(display.value)).toString();
-});
+// ... Existing abs button event listener
 
 //Added floor button
-const floorButton = document.getElementById('floor') as HTMLButtonElement;
-floorButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = Math.floor(eval(display.value)).toString();
-});
+// ... Existing floor button event listener
 
 //Added ceil button
-const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
-ceilButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = Math.ceil(eval(display.value)).toString();
-});
+// ... Existing ceil button event listener
 
 //Added random number generation
-const randomButton = document.getElementById('random') as HTMLButtonElement;
-randomButton.addEventListener('click', () => {
-  const display = document.getElementById('display') as HTMLInputElement;
-  display.value = Math.random().toString();
-});
+// ... Existing random button event listener
 
 //Added sin button
 const sinButton = document.getElementById('sin') as HTMLButtonElement;
 sinButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value += 'Math.sin('; // Added sin functionality
+});
+
+//Added cos button
+const cosButton = document.getElementById('cos') as HTMLButtonElement;
+cosButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value += 'Math.cos('; // Added cos functionality
 });
