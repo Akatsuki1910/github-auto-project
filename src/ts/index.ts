@@ -39,3 +39,10 @@ radButton.addEventListener('click', () => {
     let radians = degrees * (Math.PI / 180);
     display.value = radians.toString();
 });
+
+//Added negate button
+const negateButton = document.getElementById('negate') as HTMLButtonElement;
+negateButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = (-parseFloat(display.value)).toString();
+});
