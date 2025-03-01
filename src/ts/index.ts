@@ -37,3 +37,13 @@ copyToClipboardButton.addEventListener('click', () => {
     console.error('Could not copy text: ', err);
   });
 });
+
+// Added feature: Toggle Keyboard
+const toggleKeyboardButton = document.getElementById('toggle-keyboard') as HTMLButtonElement;
+let isKeyboardEnabled = false;
+
+toggleKeyboardButton.addEventListener('click', () => {
+  isKeyboardEnabled = !isKeyboardEnabled;
+  // Implement keyboard logic here based on isKeyboardEnabled
+  console.log(`Keyboard enabled: ${isKeyboardEnabled}`); 
+});
