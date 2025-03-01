@@ -46,3 +46,10 @@ negateButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = (-parseFloat(display.value)).toString();
 });
+
+//Added copy button
+const copyButton = document.getElementById('copy') as HTMLButtonElement;
+copyButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    navigator.clipboard.writeText(display.value);
+});
