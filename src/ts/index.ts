@@ -30,3 +30,12 @@ degButton.addEventListener('click', () => {
   let degrees = radians * (180 / Math.PI);
   display.value = degrees.toString();
 });
+
+//Added rad button
+const radButton = document.getElementById('rad') as HTMLButtonElement;
+radButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    let degrees = parseFloat(display.value);
+    let radians = degrees * (Math.PI / 180);
+    display.value = radians.toString();
+});
