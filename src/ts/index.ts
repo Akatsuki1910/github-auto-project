@@ -28,3 +28,10 @@ logButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value += 'Math.log10('; // Added log10 functionality
 });
+
+//Added power button
+const powerButton = document.getElementById('power') as HTMLButtonElement;
+powerButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value += '**';
+});
