@@ -42,3 +42,10 @@ roundButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = Math.round(eval(display.value)).toString();
 });
+
+//Added abs button
+const absButton = document.getElementById('abs') as HTMLButtonElement;
+absButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = Math.abs(eval(display.value)).toString();
+});
