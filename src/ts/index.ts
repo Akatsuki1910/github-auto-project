@@ -63,3 +63,10 @@ ceilButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = Math.ceil(eval(display.value)).toString();
 });
+
+//Added random number generation
+const randomButton = document.getElementById('random') as HTMLButtonElement;
+randomButton.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  display.value = Math.random().toString();
+});
