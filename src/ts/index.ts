@@ -84,4 +84,10 @@ const ansButton = document.getElementById('ans') as HTMLButtonElement;
 ansButton.addEventListener('click',()=>{
     (document.getElementById('display') as HTMLInputElement).value += ans;
 })
+
+//Added exp button
+const expButton = document.getElementById('exp') as HTMLButtonElement;
+expButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value += 'Math.exp(';})
 // ... (Rest of the existing code)
