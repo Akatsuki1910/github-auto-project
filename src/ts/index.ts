@@ -45,6 +45,8 @@ toggleBasicAdvancedButton.addEventListener('click', () => {
                     display.value = Math.PI.toString(); // Added pi functionality
                 } else if (id === 'square'){
                     display.value = Math.pow(parseFloat(display.value), 2).toString();
+                } else if (id === 'backspace') { // Added backspace functionality
+                    display.value = display.value.slice(0, -1);
                 }
             });
             scientificSection.appendChild(button);
