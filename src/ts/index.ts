@@ -16,19 +16,6 @@ const display = document.getElementById('display') as HTMLInputElement;
 let ans = 0;
 let bracketsEnabled = true;
 let keyboardEnabled = true;
-
-// ... other code
-
-//Added Fixed Decimal Toggle
-// ... existing code
-
-//Added Input History Toggle
-// ... existing code
-
-// ... other button event listeners
-
-// ... existing functions
-
 const toggleBasicAdvancedButton = document.getElementById('toggle-basic-advanced') as HTMLButtonElement;
 const scientificSection = document.querySelector('.scientific-section') as HTMLDivElement;
 let isAdvancedMode = false;
@@ -36,11 +23,26 @@ toggleBasicAdvancedButton.addEventListener('click', () => {
     isAdvancedMode = !isAdvancedMode;
     scientificSection.style.display = isAdvancedMode ? 'grid' : 'none';
     toggleBasicAdvancedButton.textContent = isAdvancedMode ? 'Advanced' : 'Basic';
+    //Added feature: dynamically add scientific buttons
+    if (isAdvancedMode) {
+        const scientificButtons = [
+            'sqrt', 'square', 'cube', 'nth-root', 'pi', 'factorial', 'ln', 'sign', 'reciprocal',
+            'backspace', 'clear','copy-to-clipboard','negate','exp','log','abs','power',
+            'round', 'floor', 'ceil', 'sin', 'cos', 'tan', 'e', 'random', 'duplicate',
+            'inverse', 'sign-change', 'euler', 'exit', 'square-root', 'cube-root', 'percent'
+        ];
+        scientificButtons.forEach(id => {
+            const button = document.createElement('button');
+            button.id = id;
+            button.textContent = id;
+            scientificSection.appendChild(button);
+        });
+    } else{
+      scientificSection.innerHTML = '';
+    }
 });
-
 document.addEventListener('keydown', (event) => {
     if (keyboardEnabled) {
-        // ... existing code
         if (event.key === 'Enter' || event.key === '=') {
             try {
                 ans = eval(display.value);
@@ -51,5 +53,3 @@ document.addEventListener('keydown', (event) => {
         }
     }
 });
-
-// ... other event listeners
