@@ -42,69 +42,43 @@ function displayError(message: string) {
 // ... existing code
 
 //Added Square Root Functionality
-const squareRootButton = document.getElementById('square-root') as HTMLButtonElement;
-squareRootButton.addEventListener('click', () => {
-    try {
-        const currentValue = parseFloat(display.value);
-        if (currentValue < 0) {
-            displayError('Cannot calculate square root of a negative number');
-        } else {
-            display.value = Math.sqrt(currentValue).toString();
-        }
-    } catch (error) {
-        displayError('Invalid input for square root operation');
-    }
-});
+// ... existing code
 
 //Added Cube Root Functionality
-const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
-cubeRootButton.addEventListener('click', () => {
-    try {
-        const currentValue = parseFloat(display.value);
-        display.value = Math.cbrt(currentValue).toString();
-    } catch (error) {
-        displayError('Invalid input for cube root operation');
-    }
-});
+// ... existing code
 
 // Add night mode toggle
-const toggleNightModeButton = document.getElementById('toggle-night-mode') as HTMLButtonElement;
-toggleNightModeButton.addEventListener('click', () => {
-    document.body.classList.toggle('night-mode');
-});
+// ... existing code
 
 // Add high contrast toggle
-const toggleHighContrastButton = document.getElementById('toggle-high-contrast') as HTMLButtonElement;
-toggleHighContrastButton.addEventListener('click', () => {
-    document.body.classList.toggle('high-contrast');
-});
+// ... existing code
 
 //Added Font Size Toggle
-const toggleFontSizeButton = document.getElementById('toggle-fontsize') as HTMLButtonElement;
-let currentFontSize = 16;
-toggleFontSizeButton.addEventListener('click', () => {
-  currentFontSize += 2;
-  document.body.style.fontSize = currentFontSize + 'px';
-});
+// ... existing code
 
 // Add screen brightness toggle
-const toggleScreenBrightnessButton = document.getElementById('toggle-screen-brightness') as HTMLButtonElement;
-let screenBrightness = 1.0;
-toggleScreenBrightnessButton.addEventListener('click', () => {
-    screenBrightness -= 0.1; 
-    if(screenBrightness < 0) screenBrightness = 1.0;
-    document.body.style.filter = `brightness(${screenBrightness})`;
-});
+// ... existing code
 
 //Added color scheme toggle
-const toggleColorSchemeButton = document.getElementById('toggle-color-scheme') as HTMLButtonElement;
-let colorScheme = 'light';
-toggleColorSchemeButton.addEventListener('click', () => {
-  colorScheme = colorScheme === 'light' ? 'dark' : 'light';
-  document.body.classList.toggle('dark-scheme', colorScheme === 'dark');
-  document.body.classList.toggle('light-scheme', colorScheme === 'light');
-});
+// ... existing code
 
 const display = document.getElementById('display') as HTMLInputElement;
 
 // ... other code
+
+//Added Scientific Notation Toggle
+let scientificNotation = false;
+const toggleScientificNotationButton = document.getElementById('toggle-scientific-notation') as HTMLButtonElement;
+toggleScientificNotationButton.addEventListener('click', () => {
+    scientificNotation = !scientificNotation;
+    if(scientificNotation){
+        if (display.value) {
+          display.value = Number(display.value).toExponential();
+        }
+    }
+    else{
+        if (display.value) {
+          display.value = Number(display.value).toString();
+        }
+    }
+});
