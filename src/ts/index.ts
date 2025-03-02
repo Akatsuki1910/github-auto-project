@@ -122,3 +122,13 @@ const exitButton = document.getElementById('exit') as HTMLButtonElement;
 exitButton.addEventListener('click',()=>{
     display.value = '';
 });
+
+const squareRootButton = document.getElementById('square-root') as HTMLButtonElement;
+squareRootButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = Math.sqrt(currentValue).toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
