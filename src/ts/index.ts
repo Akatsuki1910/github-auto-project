@@ -84,57 +84,9 @@ negateButton.addEventListener('click', () => {
     display.value = (-parseFloat(display.value)).toString(); 
 });
 
-const expButton = document.getElementById('exp') as HTMLButtonElement;
-expButton.addEventListener('click', () => {
-    display.value += 'Math.exp('; // Added exp functionality
-});
+// ... other button event listeners
 
-const logButton = document.getElementById('log') as HTMLButtonElement;
-logButton.addEventListener('click', () => {
-  display.value += 'Math.log10('; // Added log10 functionality
-});
-
-const absButton = document.getElementById('abs') as HTMLButtonElement;
-absButton.addEventListener('click', () => {
-    display.value = Math.abs(parseFloat(display.value)).toString();
-});
-
-const powerButton = document.getElementById('power') as HTMLButtonElement;
-powerButton.addEventListener('click', () => {
-    display.value += '**'; // Added x^y functionality using ** operator
-});
-
-const roundButton = document.getElementById('round') as HTMLButtonElement;
-roundButton.addEventListener('click', () => {
-    display.value = Math.round(parseFloat(display.value)).toString();
-});
-
-const floorButton = document.getElementById('floor') as HTMLButtonElement;
-floorButton.addEventListener('click', () => {
-    display.value = Math.floor(parseFloat(display.value)).toString();
-});
-
-const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
-ceilButton.addEventListener('click', () => {
-    display.value = Math.ceil(parseFloat(display.value)).toString();
-});
-
-const sinButton = document.getElementById('sin') as HTMLButtonElement;
-sinButton.addEventListener('click', () => {
-    display.value += 'Math.sin('; // Added sin functionality
-});
-
-const cosButton = document.getElementById('cos') as HTMLButtonElement;
-cosButton.addEventListener('click', () => {
-    display.value += 'Math.cos('; // Added cos functionality
-});
-
-const tanButton = document.getElementById('tan') as HTMLButtonElement;
-tanButton.addEventListener('click', () => {
-    display.value += 'Math.tan('; // Added tan functionality
-});
-
-const eButton = document.getElementById('e') as HTMLButtonElement;
-eButton.addEventListener('click', () => {
-  display.value += Math.E;
+const randomButton = document.getElementById('random') as HTMLButtonElement;
+randomButton.addEventListener('click', () => {
+  display.value += Math.random();
 });
