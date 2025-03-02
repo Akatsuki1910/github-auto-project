@@ -44,10 +44,7 @@ document.addEventListener('keydown', (event) => {
 let keyboardEnabled = true;
 
 // Add Ans feature
-const toggleAnsButton = document.getElementById('toggle-ans') as HTMLButtonElement;
-toggleAnsButton.addEventListener('click', () => {
-    display.value += ans.toString();
-});
+// ... existing code
 
 const toggleBracketsButton = document.getElementById('toggle-brackets') as HTMLButtonElement;
 toggleBracketsButton.addEventListener('click', () => {
@@ -141,4 +138,19 @@ cubeRootButton.addEventListener('click', () => {
     } catch (error) {
         display.value = 'Error';
     }
+});
+
+const percentButton = document.getElementById('percent') as HTMLButtonElement;
+percentButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = (currentValue / 100).toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
+
+const toggleAnsButton = document.getElementById('toggle-ans') as HTMLButtonElement;
+toggleAnsButton.addEventListener('click', () => {
+    display.value += ans.toString();
 });
