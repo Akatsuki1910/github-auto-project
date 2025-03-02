@@ -45,3 +45,13 @@ body.high-contrast {
     color: white;
     font-weight: bold;
 }
+
+body.dark-scheme {
+  background-color: #333;
+  color: #eee;
+}
+
+body.light-scheme{
+  background-color: white;
+  color: black;
+}

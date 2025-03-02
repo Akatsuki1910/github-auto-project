@@ -95,3 +95,16 @@ toggleScreenBrightnessButton.addEventListener('click', () => {
     if(screenBrightness < 0) screenBrightness = 1.0;
     document.body.style.filter = `brightness(${screenBrightness})`;
 });
+
+//Added color scheme toggle
+const toggleColorSchemeButton = document.getElementById('toggle-color-scheme') as HTMLButtonElement;
+let colorScheme = 'light';
+toggleColorSchemeButton.addEventListener('click', () => {
+  colorScheme = colorScheme === 'light' ? 'dark' : 'light';
+  document.body.classList.toggle('dark-scheme', colorScheme === 'dark');
+  document.body.classList.toggle('light-scheme', colorScheme === 'light');
+});
+
+const display = document.getElementById('display') as HTMLInputElement;
+
+// ... other code
