@@ -103,3 +103,8 @@ const powerButton = document.getElementById('power') as HTMLButtonElement;
 powerButton.addEventListener('click', () => {
     display.value += '**'; // Added x^y functionality using ** operator
 });
+
+const roundButton = document.getElementById('round') as HTMLButtonElement;
+roundButton.addEventListener('click', () => {
+    display.value = Math.round(parseFloat(display.value)).toString();
+});
