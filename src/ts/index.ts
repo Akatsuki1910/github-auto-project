@@ -82,3 +82,8 @@ const negateButton = document.getElementById('negate') as HTMLButtonElement;
 negateButton.addEventListener('click', () => {
     display.value = (-parseFloat(display.value)).toString(); 
 });
+
+const expButton = document.getElementById('exp') as HTMLButtonElement;
+expButton.addEventListener('click', () => {
+    display.value += 'Math.exp('; // Added exp functionality
+});
