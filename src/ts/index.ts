@@ -64,3 +64,14 @@ clearHistoryButton.addEventListener('click', () => {
     inputHistory.length = 0; // Clear the history array
     inputHistoryIndex = -1; // Reset the history index
 });
+
+//Added copy to clipboard functionality
+const copyToClipboardButton = document.getElementById('copy-to-clipboard') as HTMLButtonElement;
+copyToClipboardButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(display.value).then(() => {
+        // Optional: Provide feedback to the user
+        console.log('Copied to clipboard!');
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+});
