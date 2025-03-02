@@ -57,3 +57,10 @@ currentDateButton.addEventListener('click', () => {
   const dateString = today.toLocaleDateString();
   display.value = dateString; 
 });
+
+// Added clear history functionality
+const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
+clearHistoryButton.addEventListener('click', () => {
+    inputHistory.length = 0; // Clear the history array
+    inputHistoryIndex = -1; // Reset the history index
+});
