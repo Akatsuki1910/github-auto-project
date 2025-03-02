@@ -133,3 +133,8 @@ const tanButton = document.getElementById('tan') as HTMLButtonElement;
 tanButton.addEventListener('click', () => {
     display.value += 'Math.tan('; // Added tan functionality
 });
+
+const eButton = document.getElementById('e') as HTMLButtonElement;
+eButton.addEventListener('click', () => {
+  display.value += Math.E;
+});
