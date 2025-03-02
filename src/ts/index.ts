@@ -41,6 +41,7 @@ document.addEventListener('keydown', (event) => {
 
 //Added keyboard input toggle
 // ... existing code
+let keyboardEnabled = true;
 
 // Add Ans feature
 const toggleAnsButton = document.getElementById('toggle-ans') as HTMLButtonElement;
@@ -86,4 +87,9 @@ negateButton.addEventListener('click', () => {
 const expButton = document.getElementById('exp') as HTMLButtonElement;
 expButton.addEventListener('click', () => {
     display.value += 'Math.exp('; // Added exp functionality
+});
+
+const logButton = document.getElementById('log') as HTMLButtonElement;
+logButton.addEventListener('click', () => {
+  display.value += 'Math.log10('; // Added log10 functionality
 });
