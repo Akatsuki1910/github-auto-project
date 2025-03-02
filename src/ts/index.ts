@@ -78,3 +78,11 @@ const toggleHighContrastButton = document.getElementById('toggle-high-contrast')
 toggleHighContrastButton.addEventListener('click', () => {
     document.body.classList.toggle('high-contrast');
 });
+
+//Added Font Size Toggle
+const toggleFontSizeButton = document.getElementById('toggle-fontsize') as HTMLButtonElement;
+let currentFontSize = 16;
+toggleFontSizeButton.addEventListener('click', () => {
+  currentFontSize += 2;
+  document.body.style.fontSize = currentFontSize + 'px';
+});
