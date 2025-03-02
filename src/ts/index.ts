@@ -113,3 +113,8 @@ const floorButton = document.getElementById('floor') as HTMLButtonElement;
 floorButton.addEventListener('click', () => {
     display.value = Math.floor(parseFloat(display.value)).toString();
 });
+
+const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
+ceilButton.addEventListener('click', () => {
+    display.value = Math.ceil(parseFloat(display.value)).toString();
+});
