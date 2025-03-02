@@ -14,6 +14,7 @@
 
 const display = document.getElementById('display') as HTMLInputElement;
 let ans = 0;
+let bracketsEnabled = true;
 
 // ... other code
 
@@ -47,6 +48,12 @@ toggleAnsButton.addEventListener('click', () => {
     display.value += ans.toString();
 });
 
+const toggleBracketsButton = document.getElementById('toggle-brackets') as HTMLButtonElement;
+toggleBracketsButton.addEventListener('click', () => {
+    bracketsEnabled = !bracketsEnabled;
+    toggleBracketsButton.textContent = bracketsEnabled ? "Brackets On" : "Brackets Off";
+});
+
 document.addEventListener('keydown', (event) => {
     if (keyboardEnabled) {
         // ... existing code
@@ -59,4 +66,14 @@ document.addEventListener('keydown', (event) => {
             }
         }
     }
+});
+const openParen = document.getElementById('open-parenthesis') as HTMLButtonElement;
+const closeParen = document.getElementById('close-parenthesis') as HTMLButtonElement;
+
+openParen.addEventListener('click', () => {
+    if(bracketsEnabled) display.value += '(';
+});
+
+closeParen.addEventListener('click', () => {
+    if(bracketsEnabled) display.value += ')';
 });
