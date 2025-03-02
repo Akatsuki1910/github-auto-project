@@ -34,7 +34,13 @@ toggleBasicAdvancedButton.addEventListener('click', () => {
         scientificButtons.forEach(id => {
             const button = document.createElement('button');
             button.id = id;
-            button.textContent = id;
+            button.textContent = id; //Added feature: set textContent
+            button.addEventListener('click', () => {
+                // Basic implementation (replace with actual logic)
+                if(id === 'clear'){
+                  display.value = '';
+                }
+            });
             scientificSection.appendChild(button);
         });
     } else{
