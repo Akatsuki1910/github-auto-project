@@ -13,85 +13,50 @@
 // ... existing code
 
 const display = document.getElementById('display') as HTMLInputElement;
+let ans = 0;
 
 // ... other code
 
 //Added Fixed Decimal Toggle
-let fixedDecimal = false;
-let decimalPlaces = 2; // Default decimal places
-const toggleFixedDecimalButton = document.getElementById('toggle-fixed-decimal') as HTMLButtonElement;
-toggleFixedDecimalButton.addEventListener('click', () => {
-    fixedDecimal = !fixedDecimal;
-    if (fixedDecimal) {
-        if (display.value) {
-            display.value = Number(display.value).toFixed(decimalPlaces);
-        }
-    } else {
-        if (display.value) {
-            display.value = Number(display.value).toString();
-        }
-    }
-});
+// ... existing code
 
 //Added Input History Toggle
-const inputHistory: string[] = [];
-let inputHistoryIndex = -1;
-const toggleInputHistoryButton = document.getElementById('toggle-input-history') as HTMLButtonElement;
-toggleInputHistoryButton.addEventListener('click', () => {
-    inputHistoryIndex = (inputHistoryIndex + 1) % inputHistory.length;
-    if (inputHistory.length > 0) {
-        display.value = inputHistory[inputHistoryIndex];
-    }
-});
+// ... existing code
+
 document.addEventListener('keydown', (event) => {
     if (event.key === 'Enter') {
-        inputHistory.push(display.value);
-        inputHistoryIndex = -1;
+        // ... existing code
     }
 });
 
 // Added current date functionality
-const currentDateButton = document.getElementById('current-date') as HTMLButtonElement;
-currentDateButton.addEventListener('click', () => {
-  const today = new Date();
-  const dateString = today.toLocaleDateString();
-  display.value = dateString; 
-});
+// ... existing code
 
 // Added clear history functionality
-const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
-clearHistoryButton.addEventListener('click', () => {
-    inputHistory.length = 0; // Clear the history array
-    inputHistoryIndex = -1; // Reset the history index
-});
+// ... existing code
 
 //Added copy to clipboard functionality
-const copyToClipboardButton = document.getElementById('copy-to-clipboard') as HTMLButtonElement;
-copyToClipboardButton.addEventListener('click', () => {
-    navigator.clipboard.writeText(display.value).then(() => {
-        // Optional: Provide feedback to the user
-        console.log('Copied to clipboard!');
-    }).catch(err => {
-        console.error('Failed to copy: ', err);
-    });
-});
+// ... existing code
 
 //Added keyboard input toggle
-let keyboardEnabled = true;
-const toggleKeyboardButton = document.getElementById('toggle-keyboard') as HTMLButtonElement;
-toggleKeyboardButton.addEventListener('click', () => {
-    keyboardEnabled = !keyboardEnabled;
+// ... existing code
+
+// Add Ans feature
+const toggleAnsButton = document.getElementById('toggle-ans') as HTMLButtonElement;
+toggleAnsButton.addEventListener('click', () => {
+    display.value += ans.toString();
 });
 
 document.addEventListener('keydown', (event) => {
     if (keyboardEnabled) {
-    if (!isNaN(parseInt(event.key)) || event.key === '.' || event.key === '+' || event.key === '-' || event.key === '*' || event.key === '/') {
-        display.value += event.key;
-    } else if (event.key === 'Enter' || event.key === '=') {
-        // Evaluate expression
-    } else if (event.key === 'Backspace') {
-        display.value = display.value.slice(0, -1);
+        // ... existing code
+        if (event.key === 'Enter' || event.key === '=') {
+            try {
+                ans = eval(display.value);
+                display.value = ans.toString();
+            } catch (error) {
+                display.value = 'Error';
+            }
+        }
     }
-}
 });
-
