@@ -118,3 +118,8 @@ const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
 ceilButton.addEventListener('click', () => {
     display.value = Math.ceil(parseFloat(display.value)).toString();
 });
+
+const sinButton = document.getElementById('sin') as HTMLButtonElement;
+sinButton.addEventListener('click', () => {
+    display.value += 'Math.sin('; // Added sin functionality
+});
