@@ -95,3 +95,13 @@ const duplicateButton = document.getElementById('duplicate') as HTMLButtonElemen
 duplicateButton.addEventListener('click', () => {
     display.value += display.value;
 });
+
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
+inverseButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = (1/currentValue).toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
