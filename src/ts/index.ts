@@ -66,3 +66,9 @@ cubeRootButton.addEventListener('click', () => {
         displayError('Invalid input for cube root operation');
     }
 });
+
+// Add night mode toggle
+const toggleNightModeButton = document.getElementById('toggle-night-mode') as HTMLButtonElement;
+toggleNightModeButton.addEventListener('click', () => {
+    document.body.classList.toggle('night-mode');
+});
