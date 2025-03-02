@@ -39,6 +39,8 @@ toggleBasicAdvancedButton.addEventListener('click', () => {
                 // Basic implementation (replace with actual logic)
                 if(id === 'clear'){
                   display.value = '';
+                } else if (id === 'sqrt') {
+                    display.value = Math.sqrt(parseFloat(display.value)).toString(); // Added sqrt functionality
                 }
             });
             scientificSection.appendChild(button);
