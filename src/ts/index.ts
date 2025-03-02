@@ -32,3 +32,20 @@ toggleFixedDecimalButton.addEventListener('click', () => {
         }
     }
 });
+
+//Added Input History Toggle
+const inputHistory: string[] = [];
+let inputHistoryIndex = -1;
+const toggleInputHistoryButton = document.getElementById('toggle-input-history') as HTMLButtonElement;
+toggleInputHistoryButton.addEventListener('click', () => {
+    inputHistoryIndex = (inputHistoryIndex + 1) % inputHistory.length;
+    if (inputHistory.length > 0) {
+        display.value = inputHistory[inputHistoryIndex];
+    }
+});
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        inputHistory.push(display.value);
+        inputHistoryIndex = -1;
+    }
+});
