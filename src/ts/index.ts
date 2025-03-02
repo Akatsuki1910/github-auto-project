@@ -86,3 +86,12 @@ toggleFontSizeButton.addEventListener('click', () => {
   currentFontSize += 2;
   document.body.style.fontSize = currentFontSize + 'px';
 });
+
+// Add screen brightness toggle
+const toggleScreenBrightnessButton = document.getElementById('toggle-screen-brightness') as HTMLButtonElement;
+let screenBrightness = 1.0;
+toggleScreenBrightnessButton.addEventListener('click', () => {
+    screenBrightness -= 0.1; 
+    if(screenBrightness < 0) screenBrightness = 1.0;
+    document.body.style.filter = `brightness(${screenBrightness})`;
+});
