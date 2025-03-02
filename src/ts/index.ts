@@ -112,3 +112,8 @@ signChangeButton.addEventListener('click', () => {
         display.value = (parseFloat(display.value) * -1).toString();
     }
 });
+
+const eulerButton = document.getElementById('euler') as HTMLButtonElement;
+eulerButton.addEventListener('click', () => {
+    display.value += Math.E;
+});
