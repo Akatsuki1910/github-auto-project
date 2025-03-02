@@ -98,3 +98,8 @@ const absButton = document.getElementById('abs') as HTMLButtonElement;
 absButton.addEventListener('click', () => {
     display.value = Math.abs(parseFloat(display.value)).toString();
 });
+
+const powerButton = document.getElementById('power') as HTMLButtonElement;
+powerButton.addEventListener('click', () => {
+    display.value += '**'; // Added x^y functionality using ** operator
+});
