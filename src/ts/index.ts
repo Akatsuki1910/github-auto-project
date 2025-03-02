@@ -128,3 +128,8 @@ const cosButton = document.getElementById('cos') as HTMLButtonElement;
 cosButton.addEventListener('click', () => {
     display.value += 'Math.cos('; // Added cos functionality
 });
+
+const tanButton = document.getElementById('tan') as HTMLButtonElement;
+tanButton.addEventListener('click', () => {
+    display.value += 'Math.tan('; // Added tan functionality
+});
