@@ -117,3 +117,8 @@ const eulerButton = document.getElementById('euler') as HTMLButtonElement;
 eulerButton.addEventListener('click', () => {
     display.value += Math.E;
 });
+
+const exitButton = document.getElementById('exit') as HTMLButtonElement;
+exitButton.addEventListener('click',()=>{
+    display.value = '';
+});
