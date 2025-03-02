@@ -75,3 +75,23 @@ copyToClipboardButton.addEventListener('click', () => {
         console.error('Failed to copy: ', err);
     });
 });
+
+//Added keyboard input toggle
+let keyboardEnabled = true;
+const toggleKeyboardButton = document.getElementById('toggle-keyboard') as HTMLButtonElement;
+toggleKeyboardButton.addEventListener('click', () => {
+    keyboardEnabled = !keyboardEnabled;
+});
+
+document.addEventListener('keydown', (event) => {
+    if (keyboardEnabled) {
+    if (!isNaN(parseInt(event.key)) || event.key === '.' || event.key === '+' || event.key === '-' || event.key === '*' || event.key === '/') {
+        display.value += event.key;
+    } else if (event.key === 'Enter' || event.key === '=') {
+        // Evaluate expression
+    } else if (event.key === 'Backspace') {
+        display.value = display.value.slice(0, -1);
+    }
+}
+});
+
