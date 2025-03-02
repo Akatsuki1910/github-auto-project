@@ -82,3 +82,11 @@ toggleScientificNotationButton.addEventListener('click', () => {
         }
     }
 });
+
+// Added Deg/Rad toggle functionality
+let isDeg = true;
+const toggleDegRad = document.getElementById('toggle-deg-rad') as HTMLButtonElement;
+toggleDegRad.addEventListener('click', () => {
+    isDeg = !isDeg;
+    toggleDegRad.textContent = isDeg ? 'Deg' : 'Rad';
+});
