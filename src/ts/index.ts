@@ -15,6 +15,7 @@
 const display = document.getElementById('display') as HTMLInputElement;
 let ans = 0;
 let bracketsEnabled = true;
+let keyboardEnabled = true;
 
 // ... other code
 
@@ -24,32 +25,17 @@ let bracketsEnabled = true;
 //Added Input History Toggle
 // ... existing code
 
-document.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-        // ... existing code
-    }
-});
+// ... other button event listeners
 
-// Added current date functionality
-// ... existing code
+// ... existing functions
 
-// Added clear history functionality
-// ... existing code
-
-//Added copy to clipboard functionality
-// ... existing code
-
-//Added keyboard input toggle
-// ... existing code
-let keyboardEnabled = true;
-
-// Add Ans feature
-// ... existing code
-
-const toggleBracketsButton = document.getElementById('toggle-brackets') as HTMLButtonElement;
-toggleBracketsButton.addEventListener('click', () => {
-    bracketsEnabled = !bracketsEnabled;
-    toggleBracketsButton.textContent = bracketsEnabled ? "Brackets On" : "Brackets Off";
+const toggleBasicAdvancedButton = document.getElementById('toggle-basic-advanced') as HTMLButtonElement;
+const scientificSection = document.querySelector('.scientific-section') as HTMLDivElement;
+let isAdvancedMode = false;
+toggleBasicAdvancedButton.addEventListener('click', () => {
+    isAdvancedMode = !isAdvancedMode;
+    scientificSection.style.display = isAdvancedMode ? 'grid' : 'none';
+    toggleBasicAdvancedButton.textContent = isAdvancedMode ? 'Advanced' : 'Basic';
 });
 
 document.addEventListener('keydown', (event) => {
@@ -65,92 +51,5 @@ document.addEventListener('keydown', (event) => {
         }
     }
 });
-const openParen = document.getElementById('open-parenthesis') as HTMLButtonElement;
-const closeParen = document.getElementById('close-parenthesis') as HTMLButtonElement;
 
-openParen.addEventListener('click', () => {
-    if(bracketsEnabled) display.value += '(';
-});
-
-closeParen.addEventListener('click', () => {
-    if(bracketsEnabled) display.value += ')';
-});
-
-const negateButton = document.getElementById('negate') as HTMLButtonElement;
-negateButton.addEventListener('click', () => {
-    display.value = (-parseFloat(display.value)).toString(); 
-});
-
-// ... other button event listeners
-
-const randomButton = document.getElementById('random') as HTMLButtonElement;
-randomButton.addEventListener('click', () => {
-  display.value += Math.random();
-});
-
-const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
-duplicateButton.addEventListener('click', () => {
-    display.value += display.value;
-});
-
-const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
-inverseButton.addEventListener('click', () => {
-    try {
-        const currentValue = parseFloat(display.value);
-        display.value = (1/currentValue).toString();
-    } catch (error) {
-        display.value = 'Error';
-    }
-});
-
-const signChangeButton = document.getElementById('sign-change') as HTMLButtonElement;
-signChangeButton.addEventListener('click', () => {
-    if (display.value) {
-        display.value = (parseFloat(display.value) * -1).toString();
-    }
-});
-
-const eulerButton = document.getElementById('euler') as HTMLButtonElement;
-eulerButton.addEventListener('click', () => {
-    display.value += Math.E;
-});
-
-const exitButton = document.getElementById('exit') as HTMLButtonElement;
-exitButton.addEventListener('click',()=>{
-    display.value = '';
-});
-
-const squareRootButton = document.getElementById('square-root') as HTMLButtonElement;
-squareRootButton.addEventListener('click', () => {
-    try {
-        const currentValue = parseFloat(display.value);
-        display.value = Math.sqrt(currentValue).toString();
-    } catch (error) {
-        display.value = 'Error';
-    }
-});
-
-const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
-cubeRootButton.addEventListener('click', () => {
-    try {
-        const currentValue = parseFloat(display.value);
-        display.value = Math.cbrt(currentValue).toString();
-    } catch (error) {
-        display.value = 'Error';
-    }
-});
-
-const percentButton = document.getElementById('percent') as HTMLButtonElement;
-percentButton.addEventListener('click', () => {
-    try {
-        const currentValue = parseFloat(display.value);
-        display.value = (currentValue / 100).toString();
-    } catch (error) {
-        display.value = 'Error';
-    }
-});
-
-const toggleAnsButton = document.getElementById('toggle-ans') as HTMLButtonElement;
-toggleAnsButton.addEventListener('click', () => {
-    display.value += ans.toString();
-});
+// ... other event listeners
