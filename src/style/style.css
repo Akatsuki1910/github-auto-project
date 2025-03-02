@@ -1,57 +1,15 @@
-body {
-    /* ... existing styles */
-}
-
 /* ... (Existing styles) */
 
 .scientific-section{
-    display: grid;
-    grid-template-columns: repeat(10, 1fr); /* Added a column for clear button */
-    grid-gap:5px;
-    margin-bottom: 10px;
+    /* ... existing styles */
 }
 
 /* ... other styles */
 
-#history-section {
-    display: none;
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-top: 10px;
-    overflow-y: auto;
-    max-height: 200px;
-}
-
-.memory-section {
-    display: none;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 5px;
-    margin-bottom: 10px;
-}
-
-.main-pad {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap: 5px;
-}
-
-body.night-mode {
-    background-color: #333;
-    color: #eee;
-}
-
-body.high-contrast {
-    background-color: black;
-    color: white;
-    font-weight: bold;
-}
-
 body.dark-scheme {
-  background-color: #333;
-  color: #eee;
+  /* ... existing styles */
 }
 
 body.light-scheme{
-  background-color: white;
-  color: black;
+  /* ... existing styles */
 }
