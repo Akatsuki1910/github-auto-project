@@ -123,3 +123,8 @@ const sinButton = document.getElementById('sin') as HTMLButtonElement;
 sinButton.addEventListener('click', () => {
     display.value += 'Math.sin('; // Added sin functionality
 });
+
+const cosButton = document.getElementById('cos') as HTMLButtonElement;
+cosButton.addEventListener('click', () => {
+    display.value += 'Math.cos('; // Added cos functionality
+});
