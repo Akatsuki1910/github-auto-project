@@ -105,3 +105,10 @@ inverseButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+
+const signChangeButton = document.getElementById('sign-change') as HTMLButtonElement;
+signChangeButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = (parseFloat(display.value) * -1).toString();
+    }
+});
