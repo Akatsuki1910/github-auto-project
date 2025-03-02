@@ -27,7 +27,7 @@ toggleBasicAdvancedButton.addEventListener('click', () => {
     if (isAdvancedMode) {
         const scientificButtons = [
             'sqrt', 'square', 'cube', 'nth-root', 'pi', 'factorial', 'ln', 'sign', 'reciprocal',
-            'backspace', 'clear','copy-to-clipboard','negate','exp','log','abs','power',
+            'backspace', 'clear', 'copy-to-clipboard', 'negate', 'exp', 'log', 'abs', 'power',
             'round', 'floor', 'ceil', 'sin', 'cos', 'tan', 'e', 'random', 'duplicate',
             'inverse', 'sign-change', 'euler', 'exit', 'square-root', 'cube-root', 'percent'
         ];
@@ -37,18 +37,20 @@ toggleBasicAdvancedButton.addEventListener('click', () => {
             button.textContent = id; //Added feature: set textContent
             button.addEventListener('click', () => {
                 // Basic implementation (replace with actual logic)
-                if(id === 'clear'){
-                  display.value = '';
+                if (id === 'clear') {
+                    display.value = '';
                 } else if (id === 'sqrt') {
                     display.value = Math.sqrt(parseFloat(display.value)).toString(); // Added sqrt functionality
                 } else if (id === 'pi') {
                     display.value = Math.PI.toString(); // Added pi functionality
+                } else if (id === 'square'){
+                    display.value = Math.pow(parseFloat(display.value), 2).toString();
                 }
             });
             scientificSection.appendChild(button);
         });
-    } else{
-      scientificSection.innerHTML = '';
+    } else {
+        scientificSection.innerHTML = '';
     }
 });
 document.addEventListener('keydown', (event) => {
