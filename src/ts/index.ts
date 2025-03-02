@@ -77,3 +77,8 @@ openParen.addEventListener('click', () => {
 closeParen.addEventListener('click', () => {
     if(bracketsEnabled) display.value += ')';
 });
+
+const negateButton = document.getElementById('negate') as HTMLButtonElement;
+negateButton.addEventListener('click', () => {
+    display.value = (-parseFloat(display.value)).toString(); 
+});
