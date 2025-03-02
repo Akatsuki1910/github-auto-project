@@ -93,3 +93,8 @@ const logButton = document.getElementById('log') as HTMLButtonElement;
 logButton.addEventListener('click', () => {
   display.value += 'Math.log10('; // Added log10 functionality
 });
+
+const absButton = document.getElementById('abs') as HTMLButtonElement;
+absButton.addEventListener('click', () => {
+    display.value = Math.abs(parseFloat(display.value)).toString();
+});
