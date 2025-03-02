@@ -49,3 +49,11 @@ document.addEventListener('keydown', (event) => {
         inputHistoryIndex = -1;
     }
 });
+
+// Added current date functionality
+const currentDateButton = document.getElementById('current-date') as HTMLButtonElement;
+currentDateButton.addEventListener('click', () => {
+  const today = new Date();
+  const dateString = today.toLocaleDateString();
+  display.value = dateString; 
+});
