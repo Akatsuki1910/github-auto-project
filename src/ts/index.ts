@@ -41,6 +41,8 @@ toggleBasicAdvancedButton.addEventListener('click', () => {
                   display.value = '';
                 } else if (id === 'sqrt') {
                     display.value = Math.sqrt(parseFloat(display.value)).toString(); // Added sqrt functionality
+                } else if (id === 'pi') {
+                    display.value = Math.PI.toString(); // Added pi functionality
                 }
             });
             scientificSection.appendChild(button);
