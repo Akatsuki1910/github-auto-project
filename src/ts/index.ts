@@ -72,3 +72,9 @@ const toggleNightModeButton = document.getElementById('toggle-night-mode') as HT
 toggleNightModeButton.addEventListener('click', () => {
     document.body.classList.toggle('night-mode');
 });
+
+// Add high contrast toggle
+const toggleHighContrastButton = document.getElementById('toggle-high-contrast') as HTMLButtonElement;
+toggleHighContrastButton.addEventListener('click', () => {
+    document.body.classList.toggle('high-contrast');
+});
