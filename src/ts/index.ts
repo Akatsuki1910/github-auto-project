@@ -132,3 +132,13 @@ squareRootButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+
+const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
+cubeRootButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = Math.cbrt(currentValue).toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
