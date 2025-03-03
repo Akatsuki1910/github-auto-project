@@ -23,7 +23,6 @@ toggleBasicAdvancedButton.addEventListener('click', () => {
     isAdvancedMode = !isAdvancedMode;
     scientificSection.style.display = isAdvancedMode ? 'grid' : 'none';
     toggleBasicAdvancedButton.textContent = isAdvancedMode ? 'Advanced' : 'Basic';
-    //Added feature: dynamically add scientific buttons
     if (isAdvancedMode) {
         const scientificButtons = [
             'sqrt', 'square', 'cube', 'nth-root', 'pi', 'factorial', 'ln', 'sign', 'reciprocal',
@@ -34,19 +33,20 @@ toggleBasicAdvancedButton.addEventListener('click', () => {
         scientificButtons.forEach(id => {
             const button = document.createElement('button');
             button.id = id;
-            button.textContent = id; //Added feature: set textContent
+            button.textContent = id;
             button.addEventListener('click', () => {
-                // Basic implementation (replace with actual logic)
                 if (id === 'clear') {
                     display.value = '';
                 } else if (id === 'sqrt') {
-                    display.value = Math.sqrt(parseFloat(display.value)).toString(); // Added sqrt functionality
+                    display.value = Math.sqrt(parseFloat(display.value)).toString();
                 } else if (id === 'pi') {
-                    display.value = Math.PI.toString(); // Added pi functionality
+                    display.value = Math.PI.toString();
                 } else if (id === 'square'){
                     display.value = Math.pow(parseFloat(display.value), 2).toString();
-                } else if (id === 'backspace') { // Added backspace functionality
+                } else if (id === 'backspace') {
                     display.value = display.value.slice(0, -1);
+                } else if (id === 'copy-to-clipboard') { // Added copy-to-clipboard functionality
+                    navigator.clipboard.writeText(display.value);
                 }
             });
             scientificSection.appendChild(button);
