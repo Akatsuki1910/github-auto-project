@@ -83,3 +83,12 @@ percentageButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+const sqrtButton = document.getElementById('sqrt') as HTMLButtonElement;
+sqrtButton?.addEventListener('click', () => {
+    try {
+        display.value = Math.sqrt(parseFloat(display.value)).toString();
+    }
+    catch (e) {
+        display.value = "Error";
+    }
+});
