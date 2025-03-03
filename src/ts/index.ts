@@ -97,4 +97,8 @@ const mcButton = document.getElementById('mc') as HTMLButtonElement;
 mcButton.addEventListener('click', () => {
     memory = 0;
 });
+const mrButton = document.getElementById('mr') as HTMLButtonElement;
+mrButton.addEventListener('click', () => {
+    display.value = memory.toString();
+});
 // ... existing code
