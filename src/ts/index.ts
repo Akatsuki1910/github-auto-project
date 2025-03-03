@@ -26,7 +26,7 @@ toggleBasicAdvancedButton.addEventListener('click', () => {
     if (isAdvancedMode) {
         const scientificButtons = [
             'sqrt', 'square', 'cube', 'nth-root', 'pi', 'factorial', 'ln', 'sign', 'reciprocal',
-            'backspace', 'clear', 'copy-to-clipboard', 'negate', 'exp', 'log', 'abs', 'power',
+            'backspace', 'copy-to-clipboard', 'negate', 'exp', 'log', 'abs', 'power',
             'round', 'floor', 'ceil', 'sin', 'cos', 'tan', 'e', 'random', 'duplicate',
             'inverse', 'sign-change', 'euler', 'exit', 'square-root', 'cube-root', 'percent', 'ans'
         ];
@@ -35,11 +35,8 @@ toggleBasicAdvancedButton.addEventListener('click', () => {
             button.id = id;
             button.textContent = id;
             button.addEventListener('click', () => {
-                if (id === 'clear') {
-                    display.value = '';
-                }
                 // ... other button functionalities
-                else if (id === 'ans') {
+                if (id === 'ans') {
                     display.value += ans.toString();
                 }
             });
@@ -60,4 +57,12 @@ document.addEventListener('keydown', (event) => {
             }
         }
     }
+});
+const deleteButton = document.getElementById('delete');
+deleteButton.addEventListener('click', () => {
+  display.value = display.value.slice(0, -1);
+});
+const clearButton = document.getElementById('clear');
+clearButton.addEventListener('click', () => {
+  display.value = '';
 });
