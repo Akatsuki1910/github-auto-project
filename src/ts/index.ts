@@ -101,3 +101,12 @@ powerOfTwoButton?.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+const plusMinusButton = document.getElementById('plus-minus') as HTMLButtonElement;
+plusMinusButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = (-currentValue).toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
