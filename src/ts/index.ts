@@ -88,4 +88,8 @@ const copyButton = document.getElementById('copy') as HTMLButtonElement;
 copyButton.addEventListener('click', () => {
   navigator.clipboard.writeText(display.value);
 });
+const absButton = document.getElementById('abs') as HTMLButtonElement;
+absButton.addEventListener('click', () => {
+    display.value = Math.abs(parseFloat(display.value)).toString();
+});
 // ... existing code
