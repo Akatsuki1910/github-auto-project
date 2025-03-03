@@ -44,5 +44,9 @@ sinButton.addEventListener('click', () => {
 });
 const cosButton = document.getElementById('cos') as HTMLButtonElement;
 cosButton.addEventListener('click', () => {
-  display.value += 'cos('; //Append "cos(" to the display
+    display.value += 'cos('; //Append "cos(" to the display
+});
+const tanButton = document.getElementById('tan') as HTMLButtonElement;
+tanButton.addEventListener('click', () => {
+    display.value += 'tan('; //Append "tan(" to the display
 });
