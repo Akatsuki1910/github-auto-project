@@ -110,3 +110,18 @@ plusMinusButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
+function factorial(n) {
+    if (n === 0) {
+      return 1;
+    }
+    return n * factorial(n - 1);
+  }
+factorialButton.addEventListener('click', () => {
+  try {
+    const currentValue = parseFloat(display.value);
+    display.value = factorial(currentValue).toString();
+  } catch (error) {
+    display.value = 'Error';
+  }
+});
