@@ -109,4 +109,8 @@ const roundButton = document.getElementById('round') as HTMLButtonElement;
 roundButton.addEventListener('click', () => {
     display.value = Math.round(parseFloat(display.value)).toString();
 });
+const floorButton = document.getElementById('floor') as HTMLButtonElement;
+floorButton.addEventListener('click', () => {
+    display.value = Math.floor(parseFloat(display.value)).toString();
+});
 // ... existing code
