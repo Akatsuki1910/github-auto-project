@@ -84,4 +84,8 @@ resetButton.addEventListener('click', () => {
   ans = 0;
 //  Here you can reset any other variables or states related to your calculator
 });
+const copyButton = document.getElementById('copy') as HTMLButtonElement;
+copyButton.addEventListener('click', () => {
+  navigator.clipboard.writeText(display.value);
+});
 // ... existing code
