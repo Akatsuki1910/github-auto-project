@@ -49,6 +49,8 @@ toggleBasicAdvancedButton.addEventListener('click', () => {
                     navigator.clipboard.writeText(display.value);
                 } else if (id === 'e') {
                     display.value = Math.E.toString();
+                } else if (id === 'percent') {
+                    display.value = (parseFloat(display.value) / 100).toString();
                 }
             });
             scientificSection.appendChild(button);
