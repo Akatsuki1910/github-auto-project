@@ -53,6 +53,12 @@ toggleBasicAdvancedButton.addEventListener('click', () => {
                     display.value = (parseFloat(display.value) / 100).toString();
                 } else if (id === 'cube') {
                     display.value = Math.pow(parseFloat(display.value), 3).toString();
+                } else if (id === 'nth-root') {
+                    // Added nth-root functionality
+                    const root = prompt("Enter the root value:");
+                    if (root) {
+                        display.value = Math.pow(parseFloat(display.value), 1/parseFloat(root)).toString();
+                    }
                 }
             });
             scientificSection.appendChild(button);
