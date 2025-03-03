@@ -36,9 +36,13 @@ document.addEventListener('keydown', (event) => {
 // ... existing code
 const powerButton = document.getElementById('power') as HTMLButtonElement;
 powerButton.addEventListener('click', () => {
-display.value += '**';
+    display.value += '**';
 });
 const sinButton = document.getElementById('sin') as HTMLButtonElement;
 sinButton.addEventListener('click', () => {
     display.value += 'sin('; // Append "sin(" to the display
+});
+const cosButton = document.getElementById('cos') as HTMLButtonElement;
+cosButton.addEventListener('click', () => {
+  display.value += 'cos('; //Append "cos(" to the display
 });
