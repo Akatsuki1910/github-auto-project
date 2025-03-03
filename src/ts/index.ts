@@ -37,5 +37,14 @@ const eulerButton = document.getElementById('euler') as HTMLButtonElement;
 eulerButton.addEventListener('click', () => {
     display.value += Math.E.toString();
 });
+const logButton = document.getElementById('log') as HTMLButtonElement;
+logButton.addEventListener('click', () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue) && currentValue > 0) {
+    display.value = Math.log10(currentValue).toString();
+  } else {
+    display.value = "Error"; 
+  }
+});
 
 // ... existing code
