@@ -10,7 +10,12 @@
 // ... existing code
 
 // Added Deg/Rad toggle functionality
-// ... existing code
+let isDegrees = true;
+const degRadButton = document.getElementById('deg-rad') as HTMLButtonElement;
+degRadButton.addEventListener('click', () => {
+    isDegrees = !isDegrees;
+    degRadButton.textContent = isDegrees ? 'Deg' : 'Rad';
+});
 
 const display = document.getElementById('display') as HTMLInputElement;
 let ans = 0;
