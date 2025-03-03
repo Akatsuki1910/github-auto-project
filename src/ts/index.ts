@@ -129,3 +129,11 @@ const piButton = document.getElementById('pi') as HTMLButtonElement;
 piButton.addEventListener('click', () => {
     display.value += Math.PI.toString();
 });
+const expButton = document.getElementById('exp') as HTMLButtonElement;
+expButton.addEventListener('click', () => {
+    try {
+        display.value = Math.exp(parseFloat(display.value)).toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
