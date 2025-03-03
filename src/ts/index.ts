@@ -74,3 +74,12 @@ openParenthesisButton.addEventListener('click', () => {
 closeParenthesisButton.addEventListener('click', () => {
     display.value += ')';
 });
+const percentageButton = document.getElementById('percentage') as HTMLButtonElement;
+percentageButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = (currentValue / 100).toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
