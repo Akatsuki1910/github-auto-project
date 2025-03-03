@@ -137,3 +137,11 @@ expButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+const lnButton = document.getElementById('ln') as HTMLButtonElement;
+lnButton.addEventListener('click', () => {
+    try {
+        display.value = Math.log(parseFloat(display.value)).toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
