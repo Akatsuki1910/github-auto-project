@@ -77,3 +77,13 @@ const clearEntryButton = document.getElementById('clear-entry') as HTMLButtonEle
 clearEntryButton.addEventListener('click', () => {
     display.value = '';
 });
+
+// Added calculate expression button
+const calculateExpressionButton = document.getElementById('calculate-expression') as HTMLButtonElement;
+calculateExpressionButton.addEventListener('click', () => {
+  try {
+    display.value = eval(display.value);
+  } catch (error) {
+    display.value = 'Error';
+  }
+});
