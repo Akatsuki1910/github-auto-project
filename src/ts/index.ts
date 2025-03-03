@@ -53,11 +53,21 @@ toggleBasicAdvancedButton.addEventListener('click', () => {
                     display.value = (parseFloat(display.value) / 100).toString();
                 } else if (id === 'cube') {
                     display.value = Math.pow(parseFloat(display.value), 3).toString();
-                } else if (id === 'nth-root') {
+                 } else if (id === 'nth-root') {
                     // Added nth-root functionality
                     const root = prompt("Enter the root value:");
                     if (root) {
                         display.value = Math.pow(parseFloat(display.value), 1/parseFloat(root)).toString();
+                    }
+                } else if (id === 'factorial') {
+                    // Added factorial functionality
+                    const num = parseInt(display.value);
+                    if (!isNaN(num)) {
+                        let result = 1;
+                        for (let i = 2; i <= num; i++) {
+                            result *= i;
+                        }
+                        display.value = result.toString();
                     }
                 }
             });
