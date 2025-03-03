@@ -28,7 +28,7 @@ toggleBasicAdvancedButton.addEventListener('click', () => {
             'sqrt', 'square', 'cube', 'nth-root', 'pi', 'factorial', 'ln', 'sign', 'reciprocal',
             'backspace', 'clear', 'copy-to-clipboard', 'negate', 'exp', 'log', 'abs', 'power',
             'round', 'floor', 'ceil', 'sin', 'cos', 'tan', 'e', 'random', 'duplicate',
-            'inverse', 'sign-change', 'euler', 'exit', 'square-root', 'cube-root', 'percent'
+            'inverse', 'sign-change', 'euler', 'exit', 'square-root', 'cube-root', 'percent', 'ans'
         ];
         scientificButtons.forEach(id => {
             const button = document.createElement('button');
@@ -37,38 +37,10 @@ toggleBasicAdvancedButton.addEventListener('click', () => {
             button.addEventListener('click', () => {
                 if (id === 'clear') {
                     display.value = '';
-                } else if (id === 'sqrt') {
-                    display.value = Math.sqrt(parseFloat(display.value)).toString();
-                } else if (id === 'pi') {
-                    display.value = Math.PI.toString();
-                } else if (id === 'square'){
-                    display.value = Math.pow(parseFloat(display.value), 2).toString();
-                } else if (id === 'backspace') {
-                    display.value = display.value.slice(0, -1);
-                } else if (id === 'copy-to-clipboard') { // Added copy-to-clipboard functionality
-                    navigator.clipboard.writeText(display.value);
-                } else if (id === 'e') {
-                    display.value = Math.E.toString();
-                } else if (id === 'percent') {
-                    display.value = (parseFloat(display.value) / 100).toString();
-                } else if (id === 'cube') {
-                    display.value = Math.pow(parseFloat(display.value), 3).toString();
-                 } else if (id === 'nth-root') {
-                    // Added nth-root functionality
-                    const root = prompt("Enter the root value:");
-                    if (root) {
-                        display.value = Math.pow(parseFloat(display.value), 1/parseFloat(root)).toString();
-                    }
-                } else if (id === 'factorial') {
-                    // Added factorial functionality
-                    const num = parseInt(display.value);
-                    if (!isNaN(num)) {
-                        let result = 1;
-                        for (let i = 2; i <= num; i++) {
-                            result *= i;
-                        }
-                        display.value = result.toString();
-                    }
+                }
+                // ... other button functionalities
+                else if (id === 'ans') {
+                    display.value += ans.toString();
                 }
             });
             scientificSection.appendChild(button);
