@@ -46,5 +46,8 @@ logButton.addEventListener('click', () => {
     display.value = "Error"; 
   }
 });
-
+const backspaceButton = document.getElementById('backspace') as HTMLButtonElement;
+backspaceButton.addEventListener('click', () => {
+    display.value = display.value.slice(0, -1);
+});
 // ... existing code
