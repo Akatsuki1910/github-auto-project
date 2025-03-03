@@ -92,4 +92,9 @@ const absButton = document.getElementById('abs') as HTMLButtonElement;
 absButton.addEventListener('click', () => {
     display.value = Math.abs(parseFloat(display.value)).toString();
 });
+let memory = 0;
+const mcButton = document.getElementById('mc') as HTMLButtonElement;
+mcButton.addEventListener('click', () => {
+    memory = 0;
+});
 // ... existing code
