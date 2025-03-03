@@ -50,3 +50,7 @@ const tanButton = document.getElementById('tan') as HTMLButtonElement;
 tanButton.addEventListener('click', () => {
     display.value += 'tan('; //Append "tan(" to the display
 });
+const asinButton = document.getElementById('asin') as HTMLButtonElement;
+asinButton.addEventListener('click', () => {
+    display.value += 'asin('; // Append "asin(" to the display
+});
