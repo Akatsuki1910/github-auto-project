@@ -51,6 +51,8 @@ toggleBasicAdvancedButton.addEventListener('click', () => {
                     display.value = Math.E.toString();
                 } else if (id === 'percent') {
                     display.value = (parseFloat(display.value) / 100).toString();
+                } else if (id === 'cube') {
+                    display.value = Math.pow(parseFloat(display.value), 3).toString();
                 }
             });
             scientificSection.appendChild(button);
