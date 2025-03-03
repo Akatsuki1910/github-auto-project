@@ -66,3 +66,11 @@ const clearButton = document.getElementById('clear');
 clearButton.addEventListener('click', () => {
   display.value = '';
 });
+const openParenthesisButton = document.getElementById('open-parenthesis') as HTMLButtonElement;
+const closeParenthesisButton = document.getElementById('close-parenthesis') as HTMLButtonElement;
+openParenthesisButton.addEventListener('click', () => {
+    display.value += '(';
+});
+closeParenthesisButton.addEventListener('click', () => {
+    display.value += ')';
+});
