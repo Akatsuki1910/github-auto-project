@@ -58,3 +58,7 @@ const acosButton = document.getElementById('acos') as HTMLButtonElement;
 acosButton.addEventListener('click', () => {
     display.value += 'acos('; // Append "acos(" to the display
 });
+const atanButton = document.getElementById('atan') as HTMLButtonElement;
+atanButton.addEventListener('click', () => {
+    display.value += 'atan('; // Append "atan(" to the display
+});
