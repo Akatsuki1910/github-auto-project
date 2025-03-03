@@ -62,3 +62,7 @@ const atanButton = document.getElementById('atan') as HTMLButtonElement;
 atanButton.addEventListener('click', () => {
     display.value += 'atan('; // Append "atan(" to the display
 });
+const expNotationButton = document.getElementById('exp-notation') as HTMLButtonElement;
+expNotationButton.addEventListener('click', () => {
+    display.value += 'e';
+});
