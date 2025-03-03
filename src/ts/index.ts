@@ -47,6 +47,8 @@ toggleBasicAdvancedButton.addEventListener('click', () => {
                     display.value = display.value.slice(0, -1);
                 } else if (id === 'copy-to-clipboard') { // Added copy-to-clipboard functionality
                     navigator.clipboard.writeText(display.value);
+                } else if (id === 'e') {
+                    display.value = Math.E.toString();
                 }
             });
             scientificSection.appendChild(button);
