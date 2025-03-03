@@ -78,4 +78,10 @@ cubeRootButton.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+const resetButton = document.getElementById('reset') as HTMLButtonElement;
+resetButton.addEventListener('click', () => {
+  display.value = '0';
+  ans = 0;
+//  Here you can reset any other variables or states related to your calculator
+});
 // ... existing code
