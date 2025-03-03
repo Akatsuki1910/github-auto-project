@@ -125,3 +125,7 @@ factorialButton.addEventListener('click', () => {
     display.value = 'Error';
   }
 });
+const piButton = document.getElementById('pi') as HTMLButtonElement;
+piButton.addEventListener('click', () => {
+    display.value += Math.PI.toString();
+});
