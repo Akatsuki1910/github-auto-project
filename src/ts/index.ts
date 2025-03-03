@@ -92,3 +92,12 @@ sqrtButton?.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+const powerOfTwoButton = document.getElementById('power-of-two') as HTMLButtonElement;
+powerOfTwoButton?.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = (currentValue * currentValue).toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
