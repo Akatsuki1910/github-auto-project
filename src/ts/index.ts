@@ -101,4 +101,8 @@ const mrButton = document.getElementById('mr') as HTMLButtonElement;
 mrButton.addEventListener('click', () => {
     display.value = memory.toString();
 });
+const msButton = document.getElementById('ms') as HTMLButtonElement;
+msButton.addEventListener('click', () => {
+    memory = parseFloat(display.value);
+});
 // ... existing code
