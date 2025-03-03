@@ -71,3 +71,9 @@ const expNotationButton = document.getElementById('exp-notation') as HTMLButtonE
 expNotationButton.addEventListener('click', () => {
     display.value += 'e';
 });
+
+//Added Clear Entry (CE) button functionality
+const clearEntryButton = document.getElementById('clear-entry') as HTMLButtonElement;
+clearEntryButton.addEventListener('click', () => {
+    display.value = '';
+});
