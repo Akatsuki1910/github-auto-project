@@ -54,3 +54,7 @@ const asinButton = document.getElementById('asin') as HTMLButtonElement;
 asinButton.addEventListener('click', () => {
     display.value += 'asin('; // Append "asin(" to the display
 });
+const acosButton = document.getElementById('acos') as HTMLButtonElement;
+acosButton.addEventListener('click', () => {
+    display.value += 'acos('; // Append "acos(" to the display
+});
