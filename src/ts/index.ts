@@ -105,4 +105,8 @@ const msButton = document.getElementById('ms') as HTMLButtonElement;
 msButton.addEventListener('click', () => {
     memory = parseFloat(display.value);
 });
+const roundButton = document.getElementById('round') as HTMLButtonElement;
+roundButton.addEventListener('click', () => {
+    display.value = Math.round(parseFloat(display.value)).toString();
+});
 // ... existing code
