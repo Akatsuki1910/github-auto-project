@@ -84,3 +84,11 @@ inverseButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+const signButton = document.getElementById('sign') as HTMLButtonElement;
+signButton.addEventListener('click', () => {
+    if (display.value.startsWith('-')){
+        display.value = display.value.substring(1);
+    } else {
+        display.value = '-' + display.value;
+    }
+});
