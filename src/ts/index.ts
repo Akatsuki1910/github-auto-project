@@ -77,3 +77,8 @@ const tanhButton = document.getElementById('tanh') as HTMLButtonElement;
 tanhButton.addEventListener('click', () => {
   display.value = String(Math.tanh(Number(display.value)));
 });
+//Added expm1 functionality
+const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
+expm1Button.addEventListener('click', () => {
+    display.value = String(Math.expm1(Number(display.value)));
+});
