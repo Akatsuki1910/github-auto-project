@@ -56,3 +56,9 @@ const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
 cbrtButton.addEventListener('click', () => {
     display.value = String(Math.cbrt(Number(display.value)));
 });
+
+//Added 2^x functionality
+const exp2Button = document.getElementById('exp2') as HTMLButtonElement;
+exp2Button.addEventListener('click', () => {
+    display.value = String(2**(Number(display.value)));
+});
