@@ -124,3 +124,9 @@ const memoryPlusButton = document.getElementById('memory-plus') as HTMLButtonEle
 memoryPlusButton.addEventListener('click', () => {
     memory += parseFloat(display.value);
 });
+
+// Added 10 to the power of x functionality
+const exp10Button = document.getElementById('exp-10') as HTMLButtonElement;
+exp10Button.addEventListener('click', () => {
+  display.value = Math.pow(10, parseFloat(display.value)).toString();
+});
