@@ -103,3 +103,9 @@ const negateButton = document.getElementById('negate') as HTMLButtonElement;
 negateButton.addEventListener('click', () => {
     display.value = String(-Number(display.value));
 });
+
+// Added exit functionality
+const exitButton = document.getElementById('exit') as HTMLButtonElement;
+exitButton.addEventListener('click', () => {
+  display.value = ''; // Clear the display
+});
