@@ -114,3 +114,9 @@ const toBinaryButton = document.getElementById('to-binary') as HTMLButtonElement
 toBinaryButton.addEventListener('click', () => {
     display.value = (Number(display.value) >>> 0).toString(2);
 });
+
+//Added to-octal functionality
+const toOctalButton = document.getElementById('octal') as HTMLButtonElement;
+toOctalButton.addEventListener('click', () => {
+    display.value = (Number(display.value) >>> 0).toString(8);
+});
