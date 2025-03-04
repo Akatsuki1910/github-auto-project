@@ -5,7 +5,7 @@
     "build": "bun build ./src/index.html --outdir=dist"
   },
   "dependencies": {
-    "@google/generative-ai": "^0.22.0",
+    "@google/generative-ai": "^0.23.0",
     "octokit": "^4.0.2",
     "simple-git": "^3.27.0",
     "typescript": "^5.7.2"
