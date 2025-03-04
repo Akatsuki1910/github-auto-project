@@ -50,3 +50,9 @@ const log10Button = document.getElementById('log10') as HTMLButtonElement;
 log10Button.addEventListener('click', () => {
     display.value = String(Math.log10(Number(display.value)));
 });
+
+//Added cbrt functionality
+const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
+cbrtButton.addEventListener('click', () => {
+    display.value = String(Math.cbrt(Number(display.value)));
+});
