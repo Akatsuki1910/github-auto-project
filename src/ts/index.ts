@@ -151,3 +151,8 @@ const memoryStoreButton = document.getElementById('memory-store') as HTMLButtonE
 memoryStoreButton.addEventListener('click', () => {
   memory += Number(display.value);
 });
+// Added Memory Recall (MR) functionality
+const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
+memoryRecallButton.addEventListener('click', () => {
+    display.value = String(memory);
+});
