@@ -71,3 +71,7 @@ const backspaceButton = document.getElementById('backspace') as HTMLButtonElemen
 backspaceButton.addEventListener('click', () => {
     display.value = display.value.slice(0, -1);
 });
+const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
+cubeRootButton.addEventListener('click', () => {
+    display.value += '**(1/3)';
+});
