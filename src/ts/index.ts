@@ -92,3 +92,8 @@ const acoshButton = document.getElementById('acosh') as HTMLButtonElement;
 acoshButton.addEventListener('click', () => {
     display.value = String(Math.acosh(Number(display.value)));
 });
+//Added atanh functionality
+const atanhButton = document.getElementById('atanh') as HTMLButtonElement;
+atanhButton.addEventListener('click', () => {
+    display.value = String(Math.atanh(Number(display.value)));
+});
