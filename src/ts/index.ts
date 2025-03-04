@@ -109,3 +109,8 @@ const exitButton = document.getElementById('exit') as HTMLButtonElement;
 exitButton.addEventListener('click', () => {
   display.value = ''; // Clear the display
 });
+//Added to-binary functionality
+const toBinaryButton = document.getElementById('to-binary') as HTMLButtonElement;
+toBinaryButton.addEventListener('click', () => {
+    display.value = (Number(display.value) >>> 0).toString(2);
+});
