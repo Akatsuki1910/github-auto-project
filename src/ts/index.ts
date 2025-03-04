@@ -101,3 +101,7 @@ const absButton = document.getElementById('abs') as HTMLButtonElement;
 absButton.addEventListener('click', () => {
     display.value = Math.abs(parseFloat(display.value)).toString();
 });
+const roundButton = document.getElementById('round') as HTMLButtonElement;
+roundButton.addEventListener('click', () => {
+    display.value = Math.round(parseFloat(display.value)).toString();
+});
