@@ -97,3 +97,9 @@ const atanhButton = document.getElementById('atanh') as HTMLButtonElement;
 atanhButton.addEventListener('click', () => {
     display.value = String(Math.atanh(Number(display.value)));
 });
+
+//Added negate functionality
+const negateButton = document.getElementById('negate') as HTMLButtonElement;
+negateButton.addEventListener('click', () => {
+    display.value = String(-Number(display.value));
+});
