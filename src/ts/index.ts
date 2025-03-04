@@ -144,3 +144,10 @@ const nthRootButton = document.getElementById('nth-root') as HTMLButtonElement;
 nthRootButton.addEventListener('click', () => {
     display.value += '**(1/';
 });
+
+// Added Memory Store (M+) functionality
+let memory = 0;
+const memoryStoreButton = document.getElementById('memory-store') as HTMLButtonElement;
+memoryStoreButton.addEventListener('click', () => {
+  memory += Number(display.value);
+});
