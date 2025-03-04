@@ -82,3 +82,8 @@ const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
 expm1Button.addEventListener('click', () => {
     display.value = String(Math.expm1(Number(display.value)));
 });
+//Added asinh functionality
+const asinhButton = document.getElementById('asinh') as HTMLButtonElement;
+asinhButton.addEventListener('click', () => {
+    display.value = String(Math.asinh(Number(display.value)));
+});
