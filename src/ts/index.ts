@@ -45,102 +45,12 @@ powerButton.addEventListener('click', () => {
 });
 // ... existing code for other buttons
 
-//Added log10 functionality
-const log10Button = document.getElementById('log10') as HTMLButtonElement;
-log10Button.addEventListener('click', () => {
-    display.value = String(Math.log10(Number(display.value)));
-});
+// ... existing functionalities
 
-//Added cbrt functionality
-const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
-cbrtButton.addEventListener('click', () => {
-    display.value = String(Math.cbrt(Number(display.value)));
-});
-
-//Added 2^x functionality
-const exp2Button = document.getElementById('exp2') as HTMLButtonElement;
-exp2Button.addEventListener('click', () => {
-    display.value = String(2**(Number(display.value)));
-});
-//Added sinh functionality
-const sinhButton = document.getElementById('sinh') as HTMLButtonElement;
-sinhButton.addEventListener('click', () => {
-  display.value = String(Math.sinh(Number(display.value)));
-});
-//Added cosh functionality
-const coshButton = document.getElementById('cosh') as HTMLButtonElement;
-coshButton.addEventListener('click', () => {
-  display.value = String(Math.cosh(Number(display.value)));
-});
-//Added tanh functionality
-const tanhButton = document.getElementById('tanh') as HTMLButtonElement;
-tanhButton.addEventListener('click', () => {
-  display.value = String(Math.tanh(Number(display.value)));
-});
-//Added expm1 functionality
-const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
-expm1Button.addEventListener('click', () => {
-    display.value = String(Math.expm1(Number(display.value)));
-});
-//Added asinh functionality
-const asinhButton = document.getElementById('asinh') as HTMLButtonElement;
-asinhButton.addEventListener('click', () => {
-    display.value = String(Math.asinh(Number(display.value)));
-});
-//Added acosh functionality
-const acoshButton = document.getElementById('acosh') as HTMLButtonElement;
-acoshButton.addEventListener('click', () => {
-    display.value = String(Math.acosh(Number(display.value)));
-});
-//Added atanh functionality
-const atanhButton = document.getElementById('atanh') as HTMLButtonElement;
-atanhButton.addEventListener('click', () => {
-    display.value = String(Math.atanh(Number(display.value)));
-});
-
-//Added negate functionality
-const negateButton = document.getElementById('negate') as HTMLButtonElement;
-negateButton.addEventListener('click', () => {
-    display.value = String(-Number(display.value));
-});
-
-// Added exit functionality
-const exitButton = document.getElementById('exit') as HTMLButtonElement;
-exitButton.addEventListener('click', () => {
-  display.value = ''; // Clear the display
-});
-//Added to-binary functionality
-const toBinaryButton = document.getElementById('to-binary') as HTMLButtonElement;
-toBinaryButton.addEventListener('click', () => {
-    display.value = (Number(display.value) >>> 0).toString(2);
-});
-
-//Added to-octal functionality
-const toOctalButton = document.getElementById('octal') as HTMLButtonElement;
-toOctalButton.addEventListener('click', () => {
-    display.value = (Number(display.value) >>> 0).toString(8);
-});
-
-//Added to-hexadecimal functionality
-const toHexadecimalButton = document.getElementById('hexadecimal') as HTMLButtonElement;
-toHexadecimalButton.addEventListener('click', () => {
-    display.value = (Number(display.value) >>> 0).toString(16);
-});
-const percentCalculationButton = document.getElementById('percent-calculation') as HTMLButtonElement;
-percentCalculationButton.addEventListener('click', () => {
-    try {
-        const currentValue = parseFloat(display.value);
-        display.value = String(currentValue / 100);
-    } catch (error) {
-        console.error("Invalid input for percentage calculation:", error);
-        display.value = "Error";
-    }
-});
-
-//Added Inverse Sine functionality
-const inverseSineButton = document.getElementById('inverse-sine') as HTMLButtonElement;
-inverseSineButton.addEventListener('click', () => {
-    display.value = String(Math.asin(Number(display.value)));
+// Added gravitational acceleration constant
+const gButton = document.getElementById('gravitational-acceleration') as HTMLButtonElement;
+gButton.addEventListener('click', () => {
+    display.value += '9.80665';
 });
 let lastAnswer = 0;
 const equalsButton = document.getElementById('=') as HTMLButtonElement;
