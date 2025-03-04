@@ -129,3 +129,8 @@ const modButton = document.getElementById('mod') as HTMLButtonElement;
 modButton.addEventListener('click', () => {
   display.value += '%';
 });
+//Added Trunc functionality
+const truncButton = document.getElementById('trunc') as HTMLButtonElement;
+truncButton.addEventListener('click', () => {
+    display.value = String(Math.trunc(Number(display.value)));
+});
