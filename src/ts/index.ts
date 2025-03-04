@@ -87,3 +87,8 @@ const asinhButton = document.getElementById('asinh') as HTMLButtonElement;
 asinhButton.addEventListener('click', () => {
     display.value = String(Math.asinh(Number(display.value)));
 });
+//Added acosh functionality
+const acoshButton = document.getElementById('acosh') as HTMLButtonElement;
+acoshButton.addEventListener('click', () => {
+    display.value = String(Math.acosh(Number(display.value)));
+});
