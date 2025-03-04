@@ -93,3 +93,9 @@ const doubleButton = document.getElementById('double') as HTMLButtonElement;
 doubleButton.addEventListener('click', () => {
     display.value = String(Number(display.value) * 2);
 });
+
+//Added Triple functionality
+const tripleButton = document.getElementById('triple') as HTMLButtonElement;
+tripleButton.addEventListener('click', () => {
+    display.value = String(Number(display.value) * 3);
+});
