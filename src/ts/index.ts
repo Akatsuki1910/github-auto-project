@@ -62,3 +62,8 @@ const exp2Button = document.getElementById('exp2') as HTMLButtonElement;
 exp2Button.addEventListener('click', () => {
     display.value = String(2**(Number(display.value)));
 });
+//Added sinh functionality
+const sinhButton = document.getElementById('sinh') as HTMLButtonElement;
+sinhButton.addEventListener('click', () => {
+  display.value = String(Math.sinh(Number(display.value)));
+});
