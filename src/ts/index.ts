@@ -53,7 +53,7 @@ gButton.addEventListener('click', () => {
     display.value += '9.80665';
 });
 let lastAnswer = 0;
-const equalsButton = document.getElementById('=') as HTMLButtonElement;
+const equalsButton = document.getElementById('=') as HTMLButtonElement; // Get the equals button
 equalsButton.addEventListener('click', () => {
     try {
         lastAnswer = eval(display.value);
@@ -104,4 +104,23 @@ absButton.addEventListener('click', () => {
 const roundButton = document.getElementById('round') as HTMLButtonElement;
 roundButton.addEventListener('click', () => {
     display.value = Math.round(parseFloat(display.value)).toString();
+});
+
+//Added memory functionalities
+let memory = 0;
+const memoryStoreButton = document.getElementById('memory-store') as HTMLButtonElement;
+memoryStoreButton.addEventListener('click', () => {
+  memory = parseFloat(display.value);
+});
+const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
+memoryRecallButton.addEventListener('click', () => {
+  display.value += memory.toString();
+});
+const memoryClearButton = document.getElementById('memory-clear') as HTMLButtonElement;
+memoryClearButton.addEventListener('click', () => {
+    memory = 0;
+});
+const memoryPlusButton = document.getElementById('memory-plus') as HTMLButtonElement;
+memoryPlusButton.addEventListener('click', () => {
+    memory += parseFloat(display.value);
 });
