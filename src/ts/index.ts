@@ -105,3 +105,9 @@ squareButton.addEventListener('click', () => {
     const currentValue = Number(display.value);
     display.value = String(Math.pow(currentValue,2));
 });
+//Added Cube functionality
+const cubeButton = document.getElementById('cube') as HTMLButtonElement;
+cubeButton.addEventListener('click', () => {
+    const currentValue = Number(display.value);
+    display.value = String(Math.pow(currentValue,3));
+});
