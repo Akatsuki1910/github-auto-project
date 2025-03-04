@@ -134,3 +134,8 @@ const truncButton = document.getElementById('trunc') as HTMLButtonElement;
 truncButton.addEventListener('click', () => {
     display.value = String(Math.trunc(Number(display.value)));
 });
+//Added Sign functionality
+const signButton = document.getElementById('sign') as HTMLButtonElement;
+signButton.addEventListener('click', () => {
+  display.value = Math.sign(Number(display.value)).toString();
+});
