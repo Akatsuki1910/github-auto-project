@@ -120,3 +120,9 @@ const toOctalButton = document.getElementById('octal') as HTMLButtonElement;
 toOctalButton.addEventListener('click', () => {
     display.value = (Number(display.value) >>> 0).toString(8);
 });
+
+//Added to-hexadecimal functionality
+const toHexadecimalButton = document.getElementById('hexadecimal') as HTMLButtonElement;
+toHexadecimalButton.addEventListener('click', () => {
+    display.value = (Number(display.value) >>> 0).toString(16);
+});
