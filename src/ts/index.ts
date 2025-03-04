@@ -142,3 +142,18 @@ const inverseSineButton = document.getElementById('inverse-sine') as HTMLButtonE
 inverseSineButton.addEventListener('click', () => {
     display.value = String(Math.asin(Number(display.value)));
 });
+let lastAnswer = 0;
+const equalsButton = document.getElementById('=') as HTMLButtonElement;
+equalsButton.addEventListener('click', () => {
+    try {
+        lastAnswer = eval(display.value);
+        display.value = String(lastAnswer);
+        ans = lastAnswer; 
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
+const lastAnswerButton = document.getElementById('last-answer') as HTMLButtonElement;
+lastAnswerButton.addEventListener('click', () => {
+    display.value += String(lastAnswer);
+});
