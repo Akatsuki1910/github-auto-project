@@ -139,3 +139,8 @@ const signButton = document.getElementById('sign') as HTMLButtonElement;
 signButton.addEventListener('click', () => {
   display.value = Math.sign(Number(display.value)).toString();
 });
+//Added Nth Root functionality
+const nthRootButton = document.getElementById('nth-root') as HTMLButtonElement;
+nthRootButton.addEventListener('click', () => {
+    display.value += '**(1/';
+});
