@@ -123,3 +123,9 @@ const tenToThePowerButton = document.getElementById('ten-to-the-power') as HTMLB
 tenToThePowerButton.addEventListener('click', () => {
   display.value = String(10**Number(display.value));
 });
+
+//Added Modulo functionality
+const modButton = document.getElementById('mod') as HTMLButtonElement;
+modButton.addEventListener('click', () => {
+  display.value += '%';
+});
