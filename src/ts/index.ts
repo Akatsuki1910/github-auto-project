@@ -99,3 +99,9 @@ const tripleButton = document.getElementById('triple') as HTMLButtonElement;
 tripleButton.addEventListener('click', () => {
     display.value = String(Number(display.value) * 3);
 });
+//Added Square functionality
+const squareButton = document.getElementById('square') as HTMLButtonElement;
+squareButton.addEventListener('click', () => {
+    const currentValue = Number(display.value);
+    display.value = String(Math.pow(currentValue,2));
+});
