@@ -67,3 +67,7 @@ const lastAnswerButton = document.getElementById('last-answer') as HTMLButtonEle
 lastAnswerButton.addEventListener('click', () => {
     display.value += String(lastAnswer);
 });
+const backspaceButton = document.getElementById('backspace') as HTMLButtonElement;
+backspaceButton.addEventListener('click', () => {
+    display.value = display.value.slice(0, -1);
+});
