@@ -83,6 +83,7 @@ const calculateExpressionButton = document.getElementById('calculate-expression'
 calculateExpressionButton.addEventListener('click', () => {
   try {
     display.value = eval(display.value);
+    ans = parseFloat(display.value); // Store the result in 'ans'
   } catch (error) {
     display.value = 'Error';
   }
@@ -155,4 +156,10 @@ memoryStoreButton.addEventListener('click', () => {
 const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
 memoryRecallButton.addEventListener('click', () => {
     display.value = String(memory);
+});
+
+// Added Ans functionality
+const ansButton = document.getElementById('ans') as HTMLButtonElement;
+ansButton.addEventListener('click', () => {
+    display.value += ans.toString();
 });
