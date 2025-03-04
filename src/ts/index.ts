@@ -72,3 +72,8 @@ const coshButton = document.getElementById('cosh') as HTMLButtonElement;
 coshButton.addEventListener('click', () => {
   display.value = String(Math.cosh(Number(display.value)));
 });
+//Added tanh functionality
+const tanhButton = document.getElementById('tanh') as HTMLButtonElement;
+tanhButton.addEventListener('click', () => {
+  display.value = String(Math.tanh(Number(display.value)));
+});
