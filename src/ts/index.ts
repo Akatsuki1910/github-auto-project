@@ -130,3 +130,9 @@ const exp10Button = document.getElementById('exp-10') as HTMLButtonElement;
 exp10Button.addEventListener('click', () => {
   display.value = Math.pow(10, parseFloat(display.value)).toString();
 });
+
+//Added floor functionality
+const floorButton = document.getElementById('floor') as HTMLButtonElement;
+floorButton.addEventListener('click', () => {
+    display.value = Math.floor(parseFloat(display.value)).toString();
+});
