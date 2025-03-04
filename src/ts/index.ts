@@ -97,3 +97,7 @@ resetButton.addEventListener('click',()=>{
   display.value = '';
   ans=0;
 });
+const absButton = document.getElementById('abs') as HTMLButtonElement;
+absButton.addEventListener('click', () => {
+    display.value = Math.abs(parseFloat(display.value)).toString();
+});
