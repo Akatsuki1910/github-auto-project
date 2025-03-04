@@ -126,3 +126,13 @@ const toHexadecimalButton = document.getElementById('hexadecimal') as HTMLButton
 toHexadecimalButton.addEventListener('click', () => {
     display.value = (Number(display.value) >>> 0).toString(16);
 });
+const percentCalculationButton = document.getElementById('percent-calculation') as HTMLButtonElement;
+percentCalculationButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = String(currentValue / 100);
+    } catch (error) {
+        console.error("Invalid input for percentage calculation:", error);
+        display.value = "Error";
+    }
+});
