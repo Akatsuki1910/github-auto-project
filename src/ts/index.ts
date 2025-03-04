@@ -87,3 +87,9 @@ calculateExpressionButton.addEventListener('click', () => {
     display.value = 'Error';
   }
 });
+
+//Added Double functionality
+const doubleButton = document.getElementById('double') as HTMLButtonElement;
+doubleButton.addEventListener('click', () => {
+    display.value = String(Number(display.value) * 2);
+});
