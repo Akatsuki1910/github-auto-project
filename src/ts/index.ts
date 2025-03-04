@@ -67,3 +67,8 @@ const sinhButton = document.getElementById('sinh') as HTMLButtonElement;
 sinhButton.addEventListener('click', () => {
   display.value = String(Math.sinh(Number(display.value)));
 });
+//Added cosh functionality
+const coshButton = document.getElementById('cosh') as HTMLButtonElement;
+coshButton.addEventListener('click', () => {
+  display.value = String(Math.cosh(Number(display.value)));
+});
