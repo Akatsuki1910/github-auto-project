@@ -117,3 +117,9 @@ const signChangeButton = document.getElementById('sign-change') as HTMLButtonEle
 signChangeButton.addEventListener('click', () => {
     display.value = String(Number(display.value) * -1);
 });
+
+//Added 10 to the power of x functionality
+const tenToThePowerButton = document.getElementById('ten-to-the-power') as HTMLButtonElement;
+tenToThePowerButton.addEventListener('click', () => {
+  display.value = String(10**Number(display.value));
+});
