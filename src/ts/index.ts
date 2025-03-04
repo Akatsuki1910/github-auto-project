@@ -136,3 +136,9 @@ percentCalculationButton.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+
+//Added Inverse Sine functionality
+const inverseSineButton = document.getElementById('inverse-sine') as HTMLButtonElement;
+inverseSineButton.addEventListener('click', () => {
+    display.value = String(Math.asin(Number(display.value)));
+});
