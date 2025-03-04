@@ -111,3 +111,9 @@ cubeButton.addEventListener('click', () => {
     const currentValue = Number(display.value);
     display.value = String(Math.pow(currentValue,3));
 });
+
+//Added Sign Change functionality
+const signChangeButton = document.getElementById('sign-change') as HTMLButtonElement;
+signChangeButton.addEventListener('click', () => {
+    display.value = String(Number(display.value) * -1);
+});
