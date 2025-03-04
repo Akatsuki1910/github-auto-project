@@ -92,3 +92,8 @@ signButton.addEventListener('click', () => {
         display.value = '-' + display.value;
     }
 });
+const resetButton = document.getElementById('reset') as HTMLButtonElement;
+resetButton.addEventListener('click',()=>{
+  display.value = '';
+  ans=0;
+});
