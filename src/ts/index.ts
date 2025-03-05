@@ -22,4 +22,14 @@ equalsButton.addEventListener('click', () => {
         // ... existing error handling
     }
 });
+const squareRootButton = document.getElementById('square-root') as HTMLButtonElement;
+squareRootButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = Math.sqrt(parseFloat(display.value)).toString();
+});
+const piButton = document.getElementById('pi') as HTMLButtonElement;
+piButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value += Math.PI.toString();
+});
 // ... rest of the existing code
