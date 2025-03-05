@@ -37,4 +37,9 @@ percentageButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = (parseFloat(display.value) / 100).toString();
 });
+const negateButton = document.getElementById('negate') as HTMLButtonElement;
+negateButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = (-parseFloat(display.value)).toString();
+});
 // ... rest of the existing code
