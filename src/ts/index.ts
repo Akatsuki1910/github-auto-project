@@ -86,3 +86,9 @@ powerOfTenButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     display.value = (10 ** currentValue).toString();
 });
+const floorButton = document.getElementById('floor') as HTMLButtonElement;
+floorButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = Math.floor(currentValue).toString();
+});
