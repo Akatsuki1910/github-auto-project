@@ -89,3 +89,7 @@ toggleSecondDisplayButton.addEventListener('click', () => {
     const isSecondDisplayVisible = secondDisplay.style.display === 'block';
     secondDisplay.style.display = isSecondDisplayVisible ? 'none' : 'block';
 });
+const clearDisplayButton = document.getElementById('clear-display') as HTMLButtonElement;
+clearDisplayButton.addEventListener('click', () => {
+    display.value = '';
+});
