@@ -59,3 +59,9 @@ sinButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     display.value = Math.sin(currentValue).toString();
 });
+const cosButton = document.getElementById('cos') as HTMLButtonElement;
+cosButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = Math.cos(currentValue).toString();
+});
