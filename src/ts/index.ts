@@ -37,3 +37,9 @@ duplicateButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = display.value + display.value;
 });
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
+inverseButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = (1 / currentValue).toString();
+});
