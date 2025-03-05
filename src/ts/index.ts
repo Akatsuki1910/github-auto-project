@@ -4,6 +4,7 @@
 // Add other functionalities
 // ... existing code
 //Added Scientific Notation Toggle
+let isScientificNotation = false;
 // ... existing code
 // Added Deg/Rad toggle functionality
 let isDegrees = true;
@@ -55,7 +56,12 @@ equalsButton.addEventListener('click', () => {
             expression = expression.replace(/sin/g, 'Math.sin').replace(/cos/g, 'Math.cos').replace(/tan/g, 'Math.tan');
         }
         lastAnswer = eval(expression);
-        display.value = String(lastAnswer);
+        if (isScientificNotation) {
+            display.value = lastAnswer.toExponential();
+        }
+        else {
+            display.value = String(lastAnswer);
+        }
         ans = lastAnswer;
     }
     catch (error) {
@@ -67,4 +73,13 @@ equalsButton.addEventListener('click', () => {
 const copyButton = document.getElementById('copy') as HTMLButtonElement;
 copyButton.addEventListener('click', () => {
     navigator.clipboard.writeText(display.value);
+});
+const switchNotationButton = document.getElementById('switch-notation') as HTMLButtonElement;
+switchNotationButton.addEventListener('click', () => {
+    isScientificNotation = !isScientificNotation;
+    switchNotationButton.textContent = isScientificNotation ? 'Scientific' : 'Standard';
+    if (display.value) {
+        const currentValue = parseFloat(display.value);
+        display.value = isScientificNotation ? currentValue.toExponential() : String(currentValue);
+    }
 });
