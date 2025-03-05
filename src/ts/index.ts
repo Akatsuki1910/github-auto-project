@@ -25,70 +25,10 @@ equalsButton.addEventListener('click', () => {
     }
 });
 //Existing code ...
-const exponentButton = document.getElementById('exponent') as HTMLButtonElement;
-exponentButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value += '**';
-});
-const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
-function factorial(n) {
-    if (n === 0) {
-        return 1;
-    }
-    return n * factorial(n - 1);
-}
-factorialButton.addEventListener('click', () => {
+// ... existing functions
+const roundButton = document.getElementById('round') as HTMLButtonElement;
+roundButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        const result = factorial(currentValue);
-        display.value = result.toString();
-    }
-});
-const absButton = document.getElementById('abs') as HTMLButtonElement;
-absButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = Math.abs(parseFloat(display.value)).toString();
-});
-const signButton = document.getElementById('sign') as HTMLButtonElement;
-signButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    display.value = (currentValue * -1).toString();
-});
-const squareButton = document.getElementById('square') as HTMLButtonElement;
-squareButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    display.value = (currentValue * currentValue).toString();
-});
-const cubeButton = document.getElementById('cube') as HTMLButtonElement;
-cubeButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    display.value = (currentValue * currentValue * currentValue).toString();
-});
-const lnButton = document.getElementById('ln') as HTMLButtonElement;
-lnButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    display.value = Math.log(currentValue).toString();
-});
-const expButton = document.getElementById('exp') as HTMLButtonElement;
-expButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    display.value = Math.exp(currentValue).toString();
-});
-const powerOfTenButton = document.getElementById('power_of_ten') as HTMLButtonElement;
-powerOfTenButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    display.value = (10 ** currentValue).toString();
-});
-const floorButton = document.getElementById('floor') as HTMLButtonElement;
-floorButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    display.value = Math.floor(currentValue).toString();
+    display.value = Math.round(currentValue).toString();
 });
