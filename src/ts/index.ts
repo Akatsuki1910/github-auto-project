@@ -42,4 +42,9 @@ negateButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = (-parseFloat(display.value)).toString();
 });
+const backspaceButton = document.getElementById('backspace') as HTMLButtonElement;
+backspaceButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = display.value.slice(0, -1);
+});
 // ... rest of the existing code
