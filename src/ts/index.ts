@@ -83,3 +83,9 @@ switchNotationButton.addEventListener('click', () => {
         display.value = isScientificNotation ? currentValue.toExponential() : String(currentValue);
     }
 });
+const secondDisplay = document.getElementById('second-display') as HTMLInputElement;
+const toggleSecondDisplayButton = document.getElementById('toggle-second-display') as HTMLButtonElement;
+toggleSecondDisplayButton.addEventListener('click', () => {
+    const isSecondDisplayVisible = secondDisplay.style.display === 'block';
+    secondDisplay.style.display = isSecondDisplayVisible ? 'none' : 'block';
+});
