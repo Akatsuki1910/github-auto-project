@@ -28,3 +28,18 @@ exponentButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value += '**';
 });
+const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
+function factorial(n: number): number {
+    if (n === 0) {
+      return 1;
+    }
+    return n * factorial(n - 1);
+  }
+factorialButton.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    const result = factorial(currentValue);
+    display.value = result.toString();
+  }
+});
