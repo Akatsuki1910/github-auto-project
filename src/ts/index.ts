@@ -158,3 +158,8 @@ const sinButton = document.getElementById('sin') as HTMLButtonElement;
 sinButton.addEventListener('click', () => {
   display.value = Math.sin(parseFloat(display.value)).toString();
 });
+//Added cos functionality
+const cosButton = document.getElementById('cos') as HTMLButtonElement;
+cosButton.addEventListener('click', () => {
+  display.value = Math.cos(parseFloat(display.value)).toString();
+});
