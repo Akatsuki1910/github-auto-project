@@ -48,3 +48,8 @@ eulerButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = Math.E.toString();
 });
+const clearEntryButton = document.getElementById('clear-entry') as HTMLButtonElement;
+clearEntryButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = '';
+});
