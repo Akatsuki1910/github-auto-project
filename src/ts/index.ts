@@ -22,29 +22,9 @@ equalsButton.addEventListener('click', () => {
         // ... existing error handling
     }
 });
-const squareRootButton = document.getElementById('square-root') as HTMLButtonElement;
-squareRootButton.addEventListener('click', () => {
+//Existing code ...
+const exponentButton = document.getElementById('exponent') as HTMLButtonElement;
+exponentButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    display.value = Math.sqrt(parseFloat(display.value)).toString();
+    display.value += '**';
 });
-const piButton = document.getElementById('pi') as HTMLButtonElement;
-piButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value += Math.PI.toString();
-});
-const percentageButton = document.getElementById('percentage') as HTMLButtonElement;
-percentageButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = (parseFloat(display.value) / 100).toString();
-});
-const negateButton = document.getElementById('negate') as HTMLButtonElement;
-negateButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = (-parseFloat(display.value)).toString();
-});
-const backspaceButton = document.getElementById('backspace') as HTMLButtonElement;
-backspaceButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = display.value.slice(0, -1);
-});
-// ... rest of the existing code
