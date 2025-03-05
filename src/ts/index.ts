@@ -80,3 +80,9 @@ expButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     display.value = Math.exp(currentValue).toString();
 });
+const powerOfTenButton = document.getElementById('power_of_ten') as HTMLButtonElement;
+powerOfTenButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = (10 ** currentValue).toString();
+});
