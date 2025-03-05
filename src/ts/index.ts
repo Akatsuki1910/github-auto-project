@@ -1,14 +1,10 @@
 // ... (Existing code)
-
 //Added feature: Toggle Error Messages
 // ... existing code
-
 // Add other functionalities
 // ... existing code
-
 //Added Scientific Notation Toggle
 // ... existing code
-
 // Added Deg/Rad toggle functionality
 let isDegrees = true;
 const degRadButton = document.getElementById('deg-rad') as HTMLButtonElement;
@@ -16,7 +12,6 @@ degRadButton.addEventListener('click', () => {
     isDegrees = !isDegrees;
     degRadButton.textContent = isDegrees ? 'Deg' : 'Rad';
 });
-
 const display = document.getElementById('display') as HTMLInputElement;
 let ans = 0;
 let bracketsEnabled = true;
@@ -30,7 +25,8 @@ toggleBasicAdvancedButton.addEventListener('click', () => {
     toggleBasicAdvancedButton.textContent = isAdvancedMode ? 'Advanced' : 'Basic';
     if (isAdvancedMode) {
         // ... existing advanced mode button creation
-    } else {
+    }
+    else {
         scientificSection.innerHTML = '';
     }
 });
@@ -44,9 +40,7 @@ powerButton.addEventListener('click', () => {
     display.value += '**';
 });
 // ... existing code for other buttons
-
 // ... existing functionalities
-
 // Added gravitational acceleration constant
 const gButton = document.getElementById('gravitational-acceleration') as HTMLButtonElement;
 gButton.addEventListener('click', () => {
@@ -58,8 +52,9 @@ equalsButton.addEventListener('click', () => {
     try {
         lastAnswer = eval(display.value);
         display.value = String(lastAnswer);
-        ans = lastAnswer; 
-    } catch (error) {
+        ans = lastAnswer;
+    }
+    catch (error) {
         display.value = 'Error';
     }
 });
@@ -79,23 +74,25 @@ const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
 inverseButton.addEventListener('click', () => {
     try {
         const currentValue = parseFloat(display.value);
-        display.value = (1/currentValue).toString();
-    } catch (error) {
+        display.value = (1 / currentValue).toString();
+    }
+    catch (error) {
         display.value = 'Error';
     }
 });
 const signButton = document.getElementById('sign') as HTMLButtonElement;
 signButton.addEventListener('click', () => {
-    if (display.value.startsWith('-')){
+    if (display.value.startsWith('-')) {
         display.value = display.value.substring(1);
-    } else {
+    }
+    else {
         display.value = '-' + display.value;
     }
 });
 const resetButton = document.getElementById('reset') as HTMLButtonElement;
-resetButton.addEventListener('click',()=>{
-  display.value = '';
-  ans=0;
+resetButton.addEventListener('click', () => {
+    display.value = '';
+    ans = 0;
 });
 const absButton = document.getElementById('abs') as HTMLButtonElement;
 absButton.addEventListener('click', () => {
@@ -105,16 +102,15 @@ const roundButton = document.getElementById('round') as HTMLButtonElement;
 roundButton.addEventListener('click', () => {
     display.value = Math.round(parseFloat(display.value)).toString();
 });
-
 //Added memory functionalities
 let memory = 0;
 const memoryStoreButton = document.getElementById('memory-store') as HTMLButtonElement;
 memoryStoreButton.addEventListener('click', () => {
-  memory = parseFloat(display.value);
+    memory = parseFloat(display.value);
 });
 const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
 memoryRecallButton.addEventListener('click', () => {
-  display.value += memory.toString();
+    display.value += memory.toString();
 });
 const memoryClearButton = document.getElementById('memory-clear') as HTMLButtonElement;
 memoryClearButton.addEventListener('click', () => {
@@ -124,25 +120,21 @@ const memoryPlusButton = document.getElementById('memory-plus') as HTMLButtonEle
 memoryPlusButton.addEventListener('click', () => {
     memory += parseFloat(display.value);
 });
-
 // Added 10 to the power of x functionality
 const exp10Button = document.getElementById('exp-10') as HTMLButtonElement;
 exp10Button.addEventListener('click', () => {
-  display.value = Math.pow(10, parseFloat(display.value)).toString();
+    display.value = Math.pow(10, parseFloat(display.value)).toString();
 });
-
 //Added floor functionality
 const floorButton = document.getElementById('floor') as HTMLButtonElement;
 floorButton.addEventListener('click', () => {
     display.value = Math.floor(parseFloat(display.value)).toString();
 });
-
 //Added ceil functionality
 const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
 ceilButton.addEventListener('click', () => {
     display.value = Math.ceil(parseFloat(display.value)).toString();
 });
-
 //Added random number generation functionality
 const randomButton = document.getElementById('random') as HTMLButtonElement;
 randomButton.addEventListener('click', () => {
@@ -156,21 +148,25 @@ duplicateButton.addEventListener('click', () => {
 //Added sin functionality
 const sinButton = document.getElementById('sin') as HTMLButtonElement;
 sinButton.addEventListener('click', () => {
-  display.value = Math.sin(parseFloat(display.value)).toString();
+    display.value = Math.sin(parseFloat(display.value)).toString();
 });
 //Added cos functionality
 const cosButton = document.getElementById('cos') as HTMLButtonElement;
 cosButton.addEventListener('click', () => {
-  display.value = Math.cos(parseFloat(display.value)).toString();
+    display.value = Math.cos(parseFloat(display.value)).toString();
 });
 //Added tan functionality
 const tanButton = document.getElementById('tan') as HTMLButtonElement;
 tanButton.addEventListener('click', () => {
-  display.value = Math.tan(parseFloat(display.value)).toString();
+    display.value = Math.tan(parseFloat(display.value)).toString();
 });
-
 //Added Clear Entry functionality
 const clearEntryButton = document.getElementById('clear-entry') as HTMLButtonElement;
 clearEntryButton.addEventListener('click', () => {
     display.value = '';
+});
+//Added expm1 functionality
+const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
+expm1Button.addEventListener('click', () => {
+    display.value = Math.expm1(parseFloat(display.value)).toString();
 });
