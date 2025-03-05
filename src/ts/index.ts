@@ -93,3 +93,8 @@ const clearDisplayButton = document.getElementById('clear-display') as HTMLButto
 clearDisplayButton.addEventListener('click', () => {
     display.value = '';
 });
+//Added nth-root functionality
+const nthRootButton = document.getElementById('nth-root') as HTMLButtonElement;
+nthRootButton.addEventListener('click', () => {
+    display.value += 'nthroot('; // Placeholder for nth root function
+});
