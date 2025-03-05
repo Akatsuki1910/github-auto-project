@@ -53,3 +53,9 @@ clearEntryButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = '';
 });
+const sinButton = document.getElementById('sin') as HTMLButtonElement;
+sinButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = Math.sin(currentValue).toString();
+});
