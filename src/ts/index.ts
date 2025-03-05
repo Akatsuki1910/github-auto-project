@@ -142,3 +142,9 @@ const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
 ceilButton.addEventListener('click', () => {
     display.value = Math.ceil(parseFloat(display.value)).toString();
 });
+
+//Added random number generation functionality
+const randomButton = document.getElementById('random') as HTMLButtonElement;
+randomButton.addEventListener('click', () => {
+    display.value = Math.random().toString();
+});
