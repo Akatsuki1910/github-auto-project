@@ -15,3 +15,9 @@ body.dark-scheme {
 body.light-scheme{
   /* ... existing styles */
 }
+#history-display{
+    border: 1px solid #ccc;
+    padding: 10px;
+    overflow-y: auto;
+    max-height: 200px;
+}
