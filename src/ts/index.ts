@@ -168,3 +168,9 @@ const tanButton = document.getElementById('tan') as HTMLButtonElement;
 tanButton.addEventListener('click', () => {
   display.value = Math.tan(parseFloat(display.value)).toString();
 });
+
+//Added Clear Entry functionality
+const clearEntryButton = document.getElementById('clear-entry') as HTMLButtonElement;
+clearEntryButton.addEventListener('click', () => {
+    display.value = '';
+});
