@@ -27,6 +27,14 @@ equalsButton.addEventListener('click', () => {
 //Existing code ...
 // ... existing functions
 // ... (Existing functions)
+//Cube Root Function
+const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
+cubeRootButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = Math.cbrt(currentValue).toString();
+});
+//Existing functions ...
 const sqrtButton = document.getElementById('sqrt') as HTMLButtonElement;
 sqrtButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
