@@ -26,6 +26,13 @@ equalsButton.addEventListener('click', () => {
 });
 //Existing code ...
 // ... existing functions
+// ... (Existing functions)
+const sqrtButton = document.getElementById('sqrt') as HTMLButtonElement;
+sqrtButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = Math.sqrt(currentValue).toString();
+});
 const roundButton = document.getElementById('round') as HTMLButtonElement;
 roundButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
