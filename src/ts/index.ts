@@ -43,3 +43,8 @@ inverseButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     display.value = (1 / currentValue).toString();
 });
+const eulerButton = document.getElementById('euler') as HTMLButtonElement;
+eulerButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = Math.E.toString();
+});
