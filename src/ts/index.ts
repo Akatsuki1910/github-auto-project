@@ -148,3 +148,8 @@ const randomButton = document.getElementById('random') as HTMLButtonElement;
 randomButton.addEventListener('click', () => {
     display.value = Math.random().toString();
 });
+//Added Duplicate functionality
+const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
+duplicateButton.addEventListener('click', () => {
+    display.value += display.value;
+});
