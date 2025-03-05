@@ -56,3 +56,9 @@ signButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     display.value = (currentValue * -1).toString();
 });
+const squareButton = document.getElementById('square') as HTMLButtonElement;
+squareButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = (currentValue * currentValue).toString();
+});
