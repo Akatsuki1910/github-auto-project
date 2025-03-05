@@ -98,3 +98,8 @@ const nthRootButton = document.getElementById('nth-root') as HTMLButtonElement;
 nthRootButton.addEventListener('click', () => {
     display.value += 'nthroot('; // Placeholder for nth root function
 });
+//Added modulo operator functionality
+const modButton = document.getElementById('mod') as HTMLButtonElement;
+modButton.addEventListener('click', () => {
+    display.value += '%';
+});
