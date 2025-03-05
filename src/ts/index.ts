@@ -7,7 +7,7 @@
 // ... existing code
 // Added Deg/Rad toggle functionality
 let isDegrees = true;
-const degRadButton = document.getElementById('deg-rad') as HTMLButtonElement;
+const degRadButton = document.getElementById('toggle-deg-rad') as HTMLButtonElement;
 degRadButton.addEventListener('click', () => {
     isDegrees = !isDegrees;
     degRadButton.textContent = isDegrees ? 'Deg' : 'Rad';
@@ -50,7 +50,11 @@ let lastAnswer = 0;
 const equalsButton = document.getElementById('=') as HTMLButtonElement; // Get the equals button
 equalsButton.addEventListener('click', () => {
     try {
-        lastAnswer = eval(display.value);
+        let expression = display.value;
+        if (!isDegrees && expression.includes('sin') || expression.includes('cos') || expression.includes('tan')) {
+            expression = expression.replace(/sin/g, 'Math.sin').replace(/cos/g, 'Math.cos').replace(/tan/g, 'Math.tan');
+        }
+        lastAnswer = eval(expression);
         display.value = String(lastAnswer);
         ans = lastAnswer;
     }
