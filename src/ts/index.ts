@@ -153,3 +153,8 @@ const duplicateButton = document.getElementById('duplicate') as HTMLButtonElemen
 duplicateButton.addEventListener('click', () => {
     display.value += display.value;
 });
+//Added sin functionality
+const sinButton = document.getElementById('sin') as HTMLButtonElement;
+sinButton.addEventListener('click', () => {
+  display.value = Math.sin(parseFloat(display.value)).toString();
+});
