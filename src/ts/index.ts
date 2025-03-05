@@ -103,3 +103,9 @@ randomButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = Math.random().toString();
 });
+const percentButton = document.getElementById('percent') as HTMLButtonElement;
+percentButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = (currentValue / 100).toString();
+});
