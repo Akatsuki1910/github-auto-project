@@ -65,3 +65,9 @@ cosButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     display.value = Math.cos(currentValue).toString();
 });
+const tanButton = document.getElementById('tan') as HTMLButtonElement;
+tanButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = Math.tan(currentValue).toString();
+});
