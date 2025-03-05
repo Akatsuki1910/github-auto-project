@@ -71,3 +71,9 @@ tanButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     display.value = Math.tan(currentValue).toString();
 });
+const logButton = document.getElementById('log') as HTMLButtonElement;
+logButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = Math.log10(currentValue).toString();
+});
