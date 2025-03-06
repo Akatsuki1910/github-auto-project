@@ -135,3 +135,8 @@ currentTimeButton.addEventListener('click', () => {
   const timeString = now.toLocaleTimeString();
   display.value = timeString;
 });
+const modButton = document.getElementById('mod') as HTMLButtonElement;
+modButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value += '%';
+});
