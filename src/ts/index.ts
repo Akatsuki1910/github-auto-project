@@ -128,3 +128,10 @@ memoryRecallButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = memoryValue.toString();
 });
+const currentTimeButton = document.getElementById('current-time') as HTMLButtonElement;
+currentTimeButton.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  const now = new Date();
+  const timeString = now.toLocaleTimeString();
+  display.value = timeString;
+});
