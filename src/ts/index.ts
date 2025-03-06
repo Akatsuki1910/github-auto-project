@@ -47,7 +47,6 @@ const display = document.getElementById('display') as HTMLInputElement;
 const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
 const memorySection = document.querySelector('.memory-section') as HTMLDivElement;
 let memoryValue = 0;
-
 //Added current expression display
 document.querySelectorAll('.digit, .operator, .decimal, .equals').forEach(button => {
     button.addEventListener('click', () => {
@@ -127,3 +126,12 @@ memoryButtons.forEach(({ id, action }) => {
     memorySection.appendChild(button);
 });
 
+//Added percentage functionality
+const percentButton = document.getElementById('percent') as HTMLButtonElement;
+percentButton.addEventListener('click', () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = (currentValue / 100).toString();
+    currentExpressionDisplay.textContent = display.value;
+  }
+});
