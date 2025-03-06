@@ -27,6 +27,7 @@ equalsButton.addEventListener('click', () => {
         ans = eval(display.value);
         display.value = ans.toString();
         history.push(display.value);
+        currentExpressionDisplay.textContent = ''; //Added to clear current expression
     }
     catch (error) {
         // ... existing error handling
@@ -52,9 +53,6 @@ document.querySelectorAll('.digit, .operator, .decimal, .equals').forEach(button
     });
 });
 
-equalsButton.addEventListener('click', () => {
-  currentExpressionDisplay.textContent = '';
-});
 
 clearHistoryButton.addEventListener('click', () => {
   currentExpressionDisplay.textContent = '';
