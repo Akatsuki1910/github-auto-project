@@ -40,71 +40,31 @@ ansButton.addEventListener('click', () => {
 
 // ... other existing code
 
+// ... (Other existing functions)
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
+inverseButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue !== 0) {
+        display.value = (1 / currentValue).toString();
+    } else {
+        display.value = "Cannot divide by zero";
+    }
+});
+
 const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
 factorialButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const inputValue = parseInt(display.value);
-    if (isNaN(inputValue)){
+    if (isNaN(inputValue)) {
         display.value = "Invalid input for factorial";
-    }else{
+    } else {
         let result = 1;
-        for(let i = 2; i <= inputValue; i++){
+        for (let i = 2; i <= inputValue; i++) {
             result *= i;
         }
         display.value = result.toString();
     }
 });
 
-const piButton = document.getElementById('pi') as HTMLButtonElement;
-piButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value += Math.PI;
-});
-
-const powerButton = document.getElementById('power') as HTMLButtonElement;
-powerButton.addEventListener('click', () => {
-  const display = document.getElementById('display') as HTMLInputElement;
-  display.value += '**';
-});
-
-const logButton = document.getElementById('log') as HTMLButtonElement;
-logButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = Math.log10(parseFloat(display.value)).toString();
-});
-
-const expButton = document.getElementById('exp') as HTMLButtonElement;
-expButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = Math.exp(parseFloat(display.value)).toString();
-});
-
-const roundButton = document.getElementById('round') as HTMLButtonElement;
-roundButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = Math.round(parseFloat(display.value)).toString();
-});
-
-const sinButton = document.getElementById('sin') as HTMLButtonElement;
-sinButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = Math.sin(parseFloat(display.value)).toString();
-});
-
-const cosButton = document.getElementById('cos') as HTMLButtonElement;
-cosButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = Math.cos(parseFloat(display.value)).toString();
-});
-
-const tanButton = document.getElementById('tan') as HTMLButtonElement;
-tanButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = Math.tan(parseFloat(display.value)).toString();
-});
-
-const absButton = document.getElementById('abs') as HTMLButtonElement;
-absButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = Math.abs(parseFloat(display.value)).toString();
-});
+// ... (Rest of the existing code)
