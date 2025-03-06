@@ -59,3 +59,10 @@ equalsButton.addEventListener('click', () => {
 clearHistoryButton.addEventListener('click', () => {
   currentExpressionDisplay.textContent = '';
 })
+
+//Added backspace functionality
+const deleteButton = document.getElementById('delete') as HTMLButtonElement;
+deleteButton.addEventListener('click', () => {
+    display.value = display.value.slice(0, -1);
+    currentExpressionDisplay.textContent = currentExpressionDisplay.textContent?.slice(0, -1);
+});
