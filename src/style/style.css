@@ -31,3 +31,10 @@ body.light-scheme{
 #currentExpressionDisplay{
     min-height: 20px; /* Ensure the div takes up space */
 }
+.memory-section{
+    display: flex;
+    gap: 5px;
+}
+.memory-section button{
+    flex:1;
+}
