@@ -3,6 +3,7 @@ const historyDisplay = document.getElementById('history-display') as HTMLDivElem
 const openHistoryButton = document.getElementById('open-history') as HTMLButtonElement;
 const clearHistoryButton = document.getElementById('clear-history-button') as HTMLButtonElement;
 let history: string[] = [];
+let ans = 0;
 
 openHistoryButton.addEventListener('click', () => {
     if (historyDisplay.style.display === 'none') {
@@ -24,13 +25,18 @@ equalsButton.addEventListener('click', () => {
     try {
         const display = document.getElementById('display') as HTMLInputElement;
         // ... existing calculation logic (replace with actual calculation)
-        const lastAnswer = eval(display.value); // Example calculation. Replace with your actual logic
-        display.value = lastAnswer.toString();
+        ans = eval(display.value); // Example calculation. Replace with your actual logic
+        display.value = ans.toString();
         history.push(display.value); // Add to history
     }
     catch (error) {
         // ... existing error handling
     }
+});
+const ansButton = document.getElementById('ans') as HTMLButtonElement;
+ansButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value += ans;
 });
 //Existing code ...
 // ... existing functions
@@ -130,10 +136,10 @@ memoryRecallButton.addEventListener('click', () => {
 });
 const currentTimeButton = document.getElementById('current-time') as HTMLButtonElement;
 currentTimeButton.addEventListener('click', () => {
-  const display = document.getElementById('display') as HTMLInputElement;
-  const now = new Date();
-  const timeString = now.toLocaleTimeString();
-  display.value = timeString;
+    const display = document.getElementById('display') as HTMLInputElement;
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
+    display.value = timeString;
 });
 const modButton = document.getElementById('mod') as HTMLButtonElement;
 modButton.addEventListener('click', () => {
@@ -142,6 +148,6 @@ modButton.addEventListener('click', () => {
 });
 const resetButton = document.getElementById('reset') as HTMLButtonElement;
 resetButton.addEventListener('click', () => {
-  const display = document.getElementById('display') as HTMLInputElement;
-  display.value = '0';//reset to 0
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = '0'; //reset to 0
 });
