@@ -84,3 +84,9 @@ roundButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = Math.round(parseFloat(display.value)).toString();
 });
+
+const sinButton = document.getElementById('sin') as HTMLButtonElement;
+sinButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = Math.sin(parseFloat(display.value)).toString();
+});
