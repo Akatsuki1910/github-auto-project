@@ -66,3 +66,12 @@ deleteButton.addEventListener('click', () => {
     display.value = display.value.slice(0, -1);
     currentExpressionDisplay.textContent = currentExpressionDisplay.textContent?.slice(0, -1);
 });
+
+// Added theme toggle functionality
+const toggleThemeButton = document.getElementById('toggle-theme') as HTMLButtonElement;
+let isDarkTheme = false;
+toggleThemeButton.addEventListener('click', () => {
+  isDarkTheme = !isDarkTheme;
+  document.body.classList.toggle('dark-scheme', isDarkTheme);
+  document.body.classList.toggle('light-scheme', !isDarkTheme);
+});

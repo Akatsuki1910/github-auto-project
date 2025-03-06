@@ -10,10 +10,14 @@
 
 body.dark-scheme {
   /* ... existing styles */
+  background-color: #333;
+  color: #eee;
 }
 
 body.light-scheme{
   /* ... existing styles */
+  background-color: #eee;
+  color: #333;
 }
 #history-display{
     border: 1px solid #ccc;
