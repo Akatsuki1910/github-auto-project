@@ -92,3 +92,10 @@ currentDateButton.addEventListener('click',()=>{
     display.value += currentDate;
     currentExpressionDisplay.textContent = display.value;
 });
+
+//Added clear functionality
+const clearButton = document.getElementById('clear') as HTMLButtonElement;
+clearButton.addEventListener('click', () => {
+    display.value = '';
+    currentExpressionDisplay.textContent = '';
+});
