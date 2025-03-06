@@ -45,6 +45,8 @@ ansButton.addEventListener('click', () => {
 // ... (Rest of the existing code)
 const display = document.getElementById('display') as HTMLInputElement;
 const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
+const memorySection = document.querySelector('.memory-section') as HTMLDivElement;
+let memoryValue = 0;
 
 //Added current expression display
 document.querySelectorAll('.digit, .operator, .decimal, .equals').forEach(button => {
@@ -110,3 +112,18 @@ sqrtButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = display.value;
     }
 });
+//Added memory functionality
+const memoryButtons = [
+    { id: 'm+', action: () => { memoryValue += parseFloat(display.value); memorySection.textContent = `M: ${memoryValue}`; } },
+    { id: 'm-', action: () => { memoryValue -= parseFloat(display.value); memorySection.textContent = `M: ${memoryValue}`; } },
+    { id: 'mc', action: () => { memoryValue = 0; memorySection.textContent = ''; } },
+    { id: 'mr', action: () => { display.value += memoryValue; currentExpressionDisplay.textContent = display.value; } },
+];
+memoryButtons.forEach(({ id, action }) => {
+    const button = document.createElement('button');
+    button.id = id;
+    button.textContent = id.toUpperCase();
+    button.addEventListener('click', action);
+    memorySection.appendChild(button);
+});
+
