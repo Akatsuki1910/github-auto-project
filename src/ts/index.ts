@@ -38,49 +38,21 @@ ansButton.addEventListener('click', () => {
     display.value += ans;
 });
 
-const squareButton = document.querySelector('#square') as HTMLButtonElement;
-squareButton?.addEventListener('click', () => {
-  const display = document.getElementById('display') as HTMLInputElement;
-  const inputValue = parseFloat(display.value);
-  const result = inputValue * inputValue;
-  display.value = result.toString();
-});
+// ... other existing code
 
-const sqrtButton = document.querySelector('#sqrt') as HTMLButtonElement;
-sqrtButton?.addEventListener('click', () => {
+const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
+factorialButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const inputValue = parseFloat(display.value);
-    const result = Math.sqrt(inputValue);
-    display.value = result.toString();
-});
-
-const percentButton = document.querySelector('#percent') as HTMLButtonElement;
-percentButton?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const inputValue = parseFloat(display.value);
-    const result = inputValue / 100;
-    display.value = result.toString();
-});
-// Sign Change
-const signButton = document.querySelector('#sign') as HTMLButtonElement;
-signButton?.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = (-parseFloat(display.value)).toString();
-});
-
-//Digits
-const digits = document.querySelectorAll('.digit');
-digits.forEach(digit => {
-    digit.addEventListener('click', () => {
-        (document.getElementById('display') as HTMLInputElement).value += digit.textContent;
-    });
-});
-//Operators
-const operators = document.querySelectorAll('.operator');
-operators.forEach(op => {
-    op.addEventListener('click', () => {
-        (document.getElementById('display') as HTMLInputElement).value += op.textContent;
-    });
+    const inputValue = parseInt(display.value);
+    if (isNaN(inputValue)){
+        display.value = "Invalid input for factorial";
+    }else{
+        let result = 1;
+        for(let i = 2; i <= inputValue; i++){
+            result *= i;
+        }
+        display.value = result.toString();
+    }
 });
 
 const piButton = document.getElementById('pi') as HTMLButtonElement;
