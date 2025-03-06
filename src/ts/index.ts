@@ -151,3 +151,13 @@ resetButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = '0'; //reset to 0
 });
+const calculateExpressionButton = document.getElementById('calculate-expression') as HTMLButtonElement;
+calculateExpressionButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    try {
+        const result = eval(display.value);
+        display.value = result.toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
