@@ -40,18 +40,14 @@ ansButton.addEventListener('click', () => {
 });
 //Existing code ...
 // ... existing functions
-// ... (Existing functions)
-//Cube Root Function
-const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
-cubeRootButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    display.value = Math.cbrt(currentValue).toString();
+
+//Added Square function
+const squareButton = document.querySelector('#square') as HTMLButtonElement;
+squareButton?.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  const inputValue = parseFloat(display.value);
+  const result = inputValue * inputValue;
+  display.value = result.toString();
 });
-//Existing functions ...
+
 // ... (rest of the code)
-const copyToClipboardButton = document.getElementById('copy-to-clipboard') as HTMLButtonElement;
-copyToClipboardButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    navigator.clipboard.writeText(display.value);
-});
