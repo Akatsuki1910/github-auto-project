@@ -54,6 +54,14 @@ sqrtButton?.addEventListener('click', () => {
     display.value = result.toString();
 });
 
+const percentButton = document.querySelector('#percent') as HTMLButtonElement;
+percentButton?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const inputValue = parseFloat(display.value);
+    const result = inputValue / 100;
+    display.value = result.toString();
+});
+
 //Digits
 const digits = document.querySelectorAll('.digit');
 digits.forEach(digit => {
