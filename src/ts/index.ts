@@ -150,3 +150,10 @@ factorialButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = display.value;
     }
 });
+
+//Added Modulo functionality
+const modButton = document.getElementById('mod') as HTMLButtonElement;
+modButton.addEventListener('click', () => {
+    display.value += '%';
+    currentExpressionDisplay.textContent = display.value;
+});
