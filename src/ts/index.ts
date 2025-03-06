@@ -140,3 +140,8 @@ modButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value += '%';
 });
+const resetButton = document.getElementById('reset') as HTMLButtonElement;
+resetButton.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  display.value = '0';//reset to 0
+});
