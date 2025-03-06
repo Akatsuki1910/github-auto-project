@@ -109,3 +109,14 @@ percentButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     display.value = (currentValue / 100).toString();
 });
+let memoryValue = 0;
+const memoryStoreButton = document.getElementById('memory-store') as HTMLButtonElement;
+memoryStoreButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    memoryValue = parseFloat(display.value);
+});
+const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
+memoryRecallButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = memoryValue.toString();
+});
