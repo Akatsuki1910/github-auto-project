@@ -82,3 +82,9 @@ operators.forEach(op => {
         (document.getElementById('display') as HTMLInputElement).value += op.textContent;
     });
 });
+
+const piButton = document.getElementById('pi') as HTMLButtonElement;
+piButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value += Math.PI;
+});
