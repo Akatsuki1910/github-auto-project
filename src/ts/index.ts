@@ -76,4 +76,13 @@ cubeButton.addEventListener('click', () => {
     }
 });
 
+const tenPowerButton = document.getElementById('ten-power') as HTMLButtonElement;
+tenPowerButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (10 ** currentValue).toString();
+    }
+});
+
 // ... (Rest of the existing code)
