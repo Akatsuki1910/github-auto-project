@@ -53,7 +53,6 @@ document.querySelectorAll('.digit, .operator, .decimal, .equals').forEach(button
     });
 });
 
-
 clearHistoryButton.addEventListener('click', () => {
   currentExpressionDisplay.textContent = '';
 })
@@ -84,4 +83,12 @@ document.addEventListener('keydown', (event) => {
       display.value += key;
       currentExpressionDisplay.textContent = display.value; // Update current expression display
     }
+});
+
+//Added current date functionality to current-date button
+const currentDateButton = document.getElementById('current-date') as HTMLButtonElement;
+currentDateButton.addEventListener('click',()=>{
+    const currentDate = new Date().toLocaleDateString();
+    display.value += currentDate;
+    currentExpressionDisplay.textContent = display.value;
 });
