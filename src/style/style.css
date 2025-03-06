@@ -24,3 +24,6 @@ body.light-scheme{
 #history-display p {
     margin: 5px 0; /* Add some spacing between history items */
 }
+#currentExpressionDisplay{
+    min-height: 20px; /* Ensure the div takes up space */
+}
