@@ -96,4 +96,10 @@ lnButton.addEventListener('click', () => {
     }
 });
 
+const eulerButton = document.getElementById('euler') as HTMLButtonElement;
+eulerButton.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  display.value += Math.E;
+});
+
 // ... (Rest of the existing code)
