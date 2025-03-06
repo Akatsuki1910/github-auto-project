@@ -75,3 +75,15 @@ toggleThemeButton.addEventListener('click', () => {
   document.body.classList.toggle('dark-scheme', isDarkTheme);
   document.body.classList.toggle('light-scheme', !isDarkTheme);
 });
+
+//Added keyboard support
+document.addEventListener('keydown', (event) => {
+    const key = event.key;
+    if (/^[0-9]$/.test(key)) {
+      display.value += key;
+      currentExpressionDisplay.textContent = display.value;  // Update current expression display
+    } else if (key === '+' || key === '-' || key === '*' || key === '/') {
+      display.value += key;
+      currentExpressionDisplay.textContent = display.value; // Update current expression display
+    }
+});
