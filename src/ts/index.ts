@@ -99,3 +99,14 @@ clearButton.addEventListener('click', () => {
     display.value = '';
     currentExpressionDisplay.textContent = '';
 });
+
+//Added Square Root functionality
+const sqrtButton = document.getElementById('sqrt') as HTMLButtonElement;
+sqrtButton.addEventListener('click', () => {
+    const displayValue = parseFloat(display.value);
+    if (!isNaN(displayValue)){
+        const result = Math.sqrt(displayValue);
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = display.value;
+    }
+});
