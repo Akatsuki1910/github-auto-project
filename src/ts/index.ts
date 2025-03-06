@@ -1,14 +1,14 @@
 // ... (Existing code)
 const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
 const openHistoryButton = document.getElementById('open-history') as HTMLButtonElement;
-const clearHistoryButton = document.getElementById('clear-history-button') as HTMLButtonElement;
+const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
 let history: string[] = [];
 let ans = 0;
 
 openHistoryButton.addEventListener('click', () => {
     if (historyDisplay.style.display === 'none') {
         historyDisplay.style.display = 'block';
-        historyDisplay.innerHTML = history.map(item => `<p>${item}</p>`).join(''); // Display history items with <p> tags for better formatting
+        historyDisplay.innerHTML = history.map(item => `<p>${item}</p>`).join('');
     }
     else {
         historyDisplay.style.display = 'none';
@@ -24,24 +24,20 @@ const equalsButton = document.getElementById('=') as HTMLButtonElement;
 equalsButton.addEventListener('click', () => {
     try {
         const display = document.getElementById('display') as HTMLInputElement;
-        // ... existing calculation logic (replace with actual calculation)
-        ans = eval(display.value); // Example calculation. Replace with your actual logic
+        ans = eval(display.value);
         display.value = ans.toString();
-        history.push(display.value); // Add to history
+        history.push(display.value);
     }
     catch (error) {
         // ... existing error handling
     }
 });
-const ansButton = document.getElementById('ans') as HTMLButtonElement;
+const ansButton = document.getElementById('toggle-ans') as HTMLButtonElement;
 ansButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value += ans;
 });
-//Existing code ...
-// ... existing functions
 
-//Added Square function
 const squareButton = document.querySelector('#square') as HTMLButtonElement;
 squareButton?.addEventListener('click', () => {
   const display = document.getElementById('display') as HTMLInputElement;
@@ -50,4 +46,17 @@ squareButton?.addEventListener('click', () => {
   display.value = result.toString();
 });
 
-// ... (rest of the code)
+//Digits
+const digits = document.querySelectorAll('.digit');
+digits.forEach(digit => {
+    digit.addEventListener('click', () => {
+        (document.getElementById('display') as HTMLInputElement).value += digit.textContent;
+    });
+});
+//Operators
+const operators = document.querySelectorAll('.operator');
+operators.forEach(op => {
+    op.addEventListener('click', () => {
+        (document.getElementById('display') as HTMLInputElement).value += op.textContent;
+    });
+});
