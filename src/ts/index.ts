@@ -46,6 +46,14 @@ squareButton?.addEventListener('click', () => {
   display.value = result.toString();
 });
 
+const sqrtButton = document.querySelector('#sqrt') as HTMLButtonElement;
+sqrtButton?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const inputValue = parseFloat(display.value);
+    const result = Math.sqrt(inputValue);
+    display.value = result.toString();
+});
+
 //Digits
 const digits = document.querySelectorAll('.digit');
 digits.forEach(digit => {
