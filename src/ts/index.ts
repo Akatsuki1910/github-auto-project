@@ -66,3 +66,9 @@ powerButton.addEventListener('click', () => {
   const display = document.getElementById('display') as HTMLInputElement;
   display.value += '**';
 });
+
+const logButton = document.getElementById('log') as HTMLButtonElement;
+logButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = Math.log10(parseFloat(display.value)).toString();
+});
