@@ -61,6 +61,12 @@ percentButton?.addEventListener('click', () => {
     const result = inputValue / 100;
     display.value = result.toString();
 });
+// Sign Change
+const signButton = document.querySelector('#sign') as HTMLButtonElement;
+signButton?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = (-parseFloat(display.value)).toString();
+});
 
 //Digits
 const digits = document.querySelectorAll('.digit');
