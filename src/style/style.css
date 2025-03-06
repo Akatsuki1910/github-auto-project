@@ -2,7 +2,7 @@
 
 .scientific-section{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(5, 1fr); /* Added one more column for the new MOD button */
     grid-gap: 5px;
 }
 
