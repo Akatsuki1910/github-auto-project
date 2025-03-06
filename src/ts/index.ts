@@ -1,7 +1,9 @@
 // ... (Existing code)
 const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
 const openHistoryButton = document.getElementById('open-history') as HTMLButtonElement;
+const clearHistoryButton = document.getElementById('clear-history-button') as HTMLButtonElement;
 let history: string[] = [];
+
 openHistoryButton.addEventListener('click', () => {
     if (historyDisplay.style.display === 'none') {
         historyDisplay.style.display = 'block';
@@ -11,6 +13,12 @@ openHistoryButton.addEventListener('click', () => {
         historyDisplay.style.display = 'none';
     }
 });
+
+clearHistoryButton.addEventListener('click', () => {
+    history = [];
+    historyDisplay.innerHTML = '';
+});
+
 const equalsButton = document.getElementById('=') as HTMLButtonElement;
 equalsButton.addEventListener('click', () => {
     try {
