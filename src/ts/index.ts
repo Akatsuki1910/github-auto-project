@@ -3,53 +3,15 @@ const display = document.getElementById('display') as HTMLInputElement;
 const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
 // ... other functions
 // Inverse
-const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
-inverseButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue !== 0) {
-        const result = 1 / currentValue;
-        display.value = result.toString();
-        currentExpressionDisplay.textContent = `1/${currentValue} = ${result}`;
-    }
-});
-//Cube
-const cubeButton = document.getElementById('cube') as HTMLButtonElement;
-cubeButton.addEventListener('click', () => {
+// ... (Other functions)
+// Absolute Value
+const absButton = document.getElementById('abs') as HTMLButtonElement;
+absButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        const result = currentValue * currentValue * currentValue;
+        const result = Math.abs(currentValue);
         display.value = result.toString();
-        currentExpressionDisplay.textContent = `${currentValue}³ = ${result}`;
-    }
-});
-//exp
-const expButton = document.getElementById('exp') as HTMLButtonElement;
-expButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        const result = Math.exp(currentValue);
-        display.value = result.toString();
-        currentExpressionDisplay.textContent = `exp(${currentValue}) = ${result}`;
-    }
-});
-//10^x
-const tenPowerButton = document.getElementById('tenPower') as HTMLButtonElement;
-tenPowerButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        const result = Math.pow(10, currentValue);
-        display.value = result.toString();
-        currentExpressionDisplay.textContent = `10^${currentValue} = ${result}`;
-    }
-});
-//Round
-const roundButton = document.getElementById('round') as HTMLButtonElement;
-roundButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        const result = Math.round(currentValue);
-        display.value = result.toString();
-        currentExpressionDisplay.textContent = `round(${currentValue}) = ${result}`;
+        currentExpressionDisplay.textContent = `|${currentValue}| = ${result}`;
     }
 });
 // Basic Calculator Functions
