@@ -51,6 +51,14 @@ percentButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = `${currentValue}% = ${result}`;
     }
 });
+// Sign Change
+const signButton = document.getElementById('sign') as HTMLButtonElement;
+signButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (-currentValue).toString();
+    }
+});
 // Basic Calculator Functions
 const digits = document.querySelectorAll('.digit');
 const operators = document.querySelectorAll('.operator');
