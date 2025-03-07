@@ -29,4 +29,11 @@ cbrtButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = display.value;
     }
 });
+//Added random number functionality
+const randomButton = document.getElementById('random') as HTMLButtonElement;
+randomButton.addEventListener('click', () => {
+    const result = Math.random();
+    display.value = result.toString();
+    currentExpressionDisplay.textContent = display.value;
+});
 // ... (Rest of the existing code)
