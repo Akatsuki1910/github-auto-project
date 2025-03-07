@@ -11,6 +11,16 @@ calculateExponentButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = `e^${currentValue} = ${result}`; // Show the expression
     }
 });
+//Logarithm
+const logButton = document.getElementById('log') as HTMLButtonElement;
+logButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.log10(currentValue);
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = `log(${currentValue}) = ${result}`;
+    }
+});
 // Basic Calculator Functions
 const digits = document.querySelectorAll('.digit');
 const operators = document.querySelectorAll('.operator');
