@@ -80,7 +80,6 @@ squareButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = `${currentValue}² = ${result}`;
     }
 });
-
 //Added Feature: Sine function
 const sinButton = document.getElementById('sin') as HTMLButtonElement;
 sinButton.addEventListener('click', () => {
@@ -89,5 +88,15 @@ sinButton.addEventListener('click', () => {
     const result = Math.sin(currentValue);
     display.value = result.toString();
     currentExpressionDisplay.textContent = `sin(${currentValue}) = ${result}`;
+  }
+});
+//Added Feature: Cosine function
+const cosButton = document.getElementById('cos') as HTMLButtonElement;
+cosButton.addEventListener('click', () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    const result = Math.cos(currentValue);
+    display.value = result.toString();
+    currentExpressionDisplay.textContent = `cos(${currentValue}) = ${result}`;
   }
 });
