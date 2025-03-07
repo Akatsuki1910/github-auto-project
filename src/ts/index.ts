@@ -21,6 +21,10 @@ logButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = `log(${currentValue}) = ${result}`;
     }
 });
+const piButton = document.getElementById('pi') as HTMLButtonElement;
+piButton.addEventListener('click', () => {
+    display.value += Math.PI.toString();
+});
 // Basic Calculator Functions
 const digits = document.querySelectorAll('.digit');
 const operators = document.querySelectorAll('.operator');
