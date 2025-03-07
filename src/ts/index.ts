@@ -42,5 +42,15 @@ tenPowerButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = `10^${currentValue} = ${result}`;
     }
 });
+//Round
+const roundButton = document.getElementById('round') as HTMLButtonElement;
+roundButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.round(currentValue);
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = `round(${currentValue}) = ${result}`;
+    }
+});
 // Basic Calculator Functions
 // ... (rest of the code)
