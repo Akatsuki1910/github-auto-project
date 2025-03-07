@@ -54,3 +54,14 @@ backspaceButton.addEventListener('click', () => {
 });
 // Basic Calculator Functions
 // ... (rest of the code)
+const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+const historyButton = document.getElementById('history') as HTMLButtonElement;
+let history: string[] = [];
+historyButton.addEventListener('click', () => {
+    if (historyDisplay.style.display === 'block') {
+        historyDisplay.style.display = 'none';
+    } else {
+        historyDisplay.style.display = 'block';
+        historyDisplay.innerHTML = history.map(item => `<p>${item}</p>`).join('');
+    }
+});
