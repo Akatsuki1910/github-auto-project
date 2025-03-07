@@ -1,4 +1,6 @@
 // ... (Existing code)
+const display = document.getElementById('display') as HTMLInputElement;
+const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
 // Calculate Exponent (x^e)
 const calculateExponentButton = document.getElementById('calculateExponent') as HTMLButtonElement;
 calculateExponentButton.addEventListener('click', () => {
@@ -6,8 +8,48 @@ calculateExponentButton.addEventListener('click', () => {
     if (!isNaN(currentValue)) {
         const result = Math.exp(currentValue);
         display.value = result.toString();
-        currentExpressionDisplay.textContent = display.value;
+        currentExpressionDisplay.textContent = `e^${currentValue} = ${result}`; // Show the expression
     }
 });
-
-// ... (Rest of the existing code)
+// Basic Calculator Functions
+const digits = document.querySelectorAll('.digit');
+const operators = document.querySelectorAll('.operator');
+const decimal = document.getElementById('decimal');
+const equals = document.getElementById('equals');
+const clear = document.getElementById('clear');
+const deleteButton = document.getElementById('delete');
+digits.forEach(digit => {
+    digit.addEventListener('click', () => {
+        display.value += digit.textContent;
+    });
+});
+operators.forEach(operator => {
+    operator.addEventListener('click', () => {
+        display.value += operator.textContent;
+    });
+});
+decimal.addEventListener('click', () => {
+    if (!display.value.includes('.')) {
+        display.value += '.';
+    }
+});
+equals.addEventListener('click', () => {
+    try {
+        display.value = eval(display.value);
+    }
+    catch (error) {
+        display.value = 'Error';
+    }
+});
+clear.addEventListener('click', () => {
+    display.value = '';
+});
+deleteButton.addEventListener('click', () => {
+    display.value = display.value.slice(0, -1);
+});
+// Toggle Theme
+const toggleThemeButton = document.getElementById('toggle-theme');
+toggleThemeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-scheme');
+    document.body.classList.toggle('light-scheme');
+});
