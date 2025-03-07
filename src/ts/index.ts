@@ -1,9 +1,26 @@
 // ... (Existing code)
 const display = document.getElementById('display') as HTMLInputElement;
 const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
+let memoryValue = 0;
+// Memory Store
+const memoryStoreButton = document.getElementById('memory-store') as HTMLButtonElement;
+memoryStoreButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        memoryValue = currentValue;
+    }
+});
+// Memory Recall
+const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
+memoryRecallButton.addEventListener('click', () => {
+    display.value = memoryValue.toString();
+});
+// Memory Clear
+const memoryClearButton = document.getElementById('memory-clear') as HTMLButtonElement;
+memoryClearButton.addEventListener('click', () => {
+    memoryValue = 0;
+});
 // ... other functions
-// Floor
-// ... (Other functions)
 // Cube Root
 const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
 cbrtButton.addEventListener('click', () => {
