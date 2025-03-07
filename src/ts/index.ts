@@ -3,51 +3,15 @@ const display = document.getElementById('display') as HTMLInputElement;
 const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
 // ... other functions
 // Floor
-const floorButton = document.getElementById('floor') as HTMLButtonElement;
-floorButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        const result = Math.floor(currentValue);
-        display.value = result.toString();
-        currentExpressionDisplay.textContent = `floor(${currentValue}) = ${result}`;
-    }
-});
 // ... (Other functions)
-// Absolute Value
-const absButton = document.getElementById('abs') as HTMLButtonElement;
-absButton.addEventListener('click', () => {
+// Cube Root
+const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
+cbrtButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        const result = Math.abs(currentValue);
+        const result = Math.cbrt(currentValue);
         display.value = result.toString();
-        currentExpressionDisplay.textContent = `|${currentValue}| = ${result}`;
-    }
-});
-//random number generation
-const randButton = document.getElementById('rand') as HTMLButtonElement;
-randButton.addEventListener('click', () => {
-    const result = Math.random();
-    display.value = result.toString();
-    currentExpressionDisplay.textContent = `rand() = ${result}`;
-});
-//Truncate function
-const truncateButton = document.getElementById('truncate') as HTMLButtonElement;
-truncateButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        const result = Math.trunc(currentValue);
-        display.value = result.toString();
-        currentExpressionDisplay.textContent = `trunc(${currentValue}) = ${result}`;
-    }
-});
-//2^x
-const powerOfTwoButton = document.getElementById('powerOfTwo') as HTMLButtonElement;
-powerOfTwoButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        const result = Math.pow(2, currentValue);
-        display.value = result.toString();
-        currentExpressionDisplay.textContent = `2^(${currentValue}) = ${result}`;
+        currentExpressionDisplay.textContent = `cbrt(${currentValue}) = ${result}`;
     }
 });
 // Basic Calculator Functions
