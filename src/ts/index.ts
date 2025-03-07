@@ -22,15 +22,21 @@ clearEntryButton.addEventListener('click', () => {
 //Ln
 const lnButton = document.getElementById('ln') as HTMLButtonElement;
 lnButton.addEventListener('click', () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue) && currentValue > 0) {  // Check for valid input
-    const result = Math.log(currentValue);
-    display.value = result.toString();
-    currentExpressionDisplay.textContent = `ln(${currentValue}) = ${result}`;
-  } else {
-    display.value = "Error"; // Or handle the error as needed
-    currentExpressionDisplay.textContent = "Invalid input for ln";
-  }
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue > 0) {
+        const result = Math.log(currentValue);
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = `ln(${currentValue}) = ${result}`;
+    }
+    else {
+        display.value = "Error";
+        currentExpressionDisplay.textContent = "Invalid input for ln";
+    }
+});
+//Euler's number
+const eButton = document.getElementById('e') as HTMLButtonElement;
+eButton.addEventListener('click', () => {
+    display.value = Math.E.toString();
 });
 // Basic Calculator Functions
 // ... (rest of the code)
