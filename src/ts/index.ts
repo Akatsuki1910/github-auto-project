@@ -14,5 +14,10 @@ cbrtButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = `cbrt(${currentValue}) = ${result}`;
     }
 });
+//Clear Entry
+const clearEntryButton = document.getElementById('clear-entry') as HTMLButtonElement;
+clearEntryButton.addEventListener('click', () => {
+    display.value = '';
+});
 // Basic Calculator Functions
 // ... (rest of the code)
