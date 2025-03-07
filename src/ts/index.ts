@@ -46,4 +46,14 @@ signButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = display.value;
     }
 });
+//Added truncate functionality
+const truncateButton = document.getElementById('truncate') as HTMLButtonElement;
+truncateButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.trunc(currentValue);
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = display.value;
+    }
+});
 // ... (Rest of the existing code)
