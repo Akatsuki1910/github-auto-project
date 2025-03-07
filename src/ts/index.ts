@@ -30,7 +30,7 @@ clearEntryButton.addEventListener('click', () => {
 //Euler's number
 const eButton = document.getElementById('e') as HTMLButtonElement;
 eButton.addEventListener('click', () => {
-    display.value = Math.E.toString();
+    display.value += Math.E.toString(); // append E to display
 });
 const doubleButton = document.getElementById('double') as HTMLButtonElement;
 doubleButton.addEventListener('click', () => {
@@ -43,10 +43,7 @@ doubleButton.addEventListener('click', () => {
 });
 const modButton = document.getElementById('mod') as HTMLButtonElement;
 modButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value += '%';
-    }
+    display.value += '%'; // Simply append % to the display
 });
 const backspaceButton = document.getElementById('backspace') as HTMLButtonElement;
 backspaceButton.addEventListener('click', () => {
