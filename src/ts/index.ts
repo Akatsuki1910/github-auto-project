@@ -22,3 +22,13 @@ asinButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = `asin(${currentValue}) = ${result}`;
     }
 });
+// Added Feature: Arctangent function
+const atanButton = document.getElementById('atan') as HTMLButtonElement;
+atanButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.atan(currentValue);
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = `atan(${currentValue}) = ${result}`;
+    }
+});
