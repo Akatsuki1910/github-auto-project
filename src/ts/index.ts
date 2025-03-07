@@ -22,5 +22,15 @@ cubeButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = `${currentValue}³ = ${result}`;
     }
 });
+//exp
+const expButton = document.getElementById('exp') as HTMLButtonElement;
+expButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.exp(currentValue);
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = `exp(${currentValue}) = ${result}`;
+    }
+});
 // Basic Calculator Functions
 // ... (rest of the code)
