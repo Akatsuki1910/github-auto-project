@@ -24,6 +24,7 @@ body.light-scheme{
     padding: 10px;
     overflow-y: auto;
     max-height: 200px;
+    display:none;
 }
 #history-display p {
     margin: 5px 0; /* Add some spacing between history items */
