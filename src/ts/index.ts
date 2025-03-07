@@ -41,6 +41,16 @@ factorialButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = `${currentValue}! = ${result}`;
     }
 });
+// Percentage
+const percentButton = document.getElementById('percent') as HTMLButtonElement;
+percentButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = currentValue / 100;
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = `${currentValue}% = ${result}`;
+    }
+});
 // Basic Calculator Functions
 const digits = document.querySelectorAll('.digit');
 const operators = document.querySelectorAll('.operator');
