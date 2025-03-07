@@ -1,11 +1,11 @@
 // ... (Existing code)
-//Added Feature: Hyperbolic Sine function
-const sinhButton = document.getElementById('sinh') as HTMLButtonElement;
-sinhButton.addEventListener('click', () => {
+//Added Feature: Hyperbolic Cosine function
+const coshButton = document.getElementById('cosh') as HTMLButtonElement;
+coshButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        const result = Math.sinh(currentValue);
+        const result = Math.cosh(currentValue);
         display.value = result.toString();
-        currentExpressionDisplay.textContent = `sinh(${currentValue}) = ${result}`;
+        currentExpressionDisplay.textContent = `cosh(${currentValue}) = ${result}`;
     }
 });
