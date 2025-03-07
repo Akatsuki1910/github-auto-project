@@ -36,4 +36,14 @@ randomButton.addEventListener('click', () => {
     display.value = result.toString();
     currentExpressionDisplay.textContent = display.value;
 });
+//Added sign functionality
+const signButton = document.getElementById('sign') as HTMLButtonElement;
+signButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.sign(currentValue);
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = display.value;
+    }
+});
 // ... (Rest of the existing code)
