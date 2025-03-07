@@ -23,5 +23,12 @@ absButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = `|${currentValue}| = ${result}`;
     }
 });
+//random number generation
+const randButton = document.getElementById('rand') as HTMLButtonElement;
+randButton.addEventListener('click', () => {
+    const result = Math.random();
+    display.value = result.toString();
+    currentExpressionDisplay.textContent = `rand() = ${result}`;
+});
 // Basic Calculator Functions
 // ... (rest of the code)
