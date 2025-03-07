@@ -25,6 +25,22 @@ const piButton = document.getElementById('pi') as HTMLButtonElement;
 piButton.addEventListener('click', () => {
     display.value += Math.PI.toString();
 });
+// Factorial
+const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
+function factorial(n) {
+    if (n === 0) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+factorialButton.addEventListener('click', () => {
+    const currentValue = parseInt(display.value);
+    if (!isNaN(currentValue)) {
+        const result = factorial(currentValue);
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = `${currentValue}! = ${result}`;
+    }
+});
 // Basic Calculator Functions
 const digits = document.querySelectorAll('.digit');
 const operators = document.querySelectorAll('.operator');
