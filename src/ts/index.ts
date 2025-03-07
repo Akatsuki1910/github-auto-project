@@ -40,5 +40,15 @@ truncateButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = `trunc(${currentValue}) = ${result}`;
     }
 });
+//2^x
+const powerOfTwoButton = document.getElementById('powerOfTwo') as HTMLButtonElement;
+powerOfTwoButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.pow(2, currentValue);
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = `2^(${currentValue}) = ${result}`;
+    }
+});
 // Basic Calculator Functions
 // ... (rest of the code)
