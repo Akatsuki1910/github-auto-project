@@ -30,5 +30,15 @@ randButton.addEventListener('click', () => {
     display.value = result.toString();
     currentExpressionDisplay.textContent = `rand() = ${result}`;
 });
+//Truncate function
+const truncateButton = document.getElementById('truncate') as HTMLButtonElement;
+truncateButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.trunc(currentValue);
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = `trunc(${currentValue}) = ${result}`;
+    }
+});
 // Basic Calculator Functions
 // ... (rest of the code)
