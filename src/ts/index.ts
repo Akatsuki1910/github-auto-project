@@ -12,3 +12,13 @@ tanButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = `tan(${currentValue}) = ${result}`;
     }
 });
+// Added Feature: Arcsine function
+const asinButton = document.getElementById('asin') as HTMLButtonElement;
+asinButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.asin(currentValue);
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = `asin(${currentValue}) = ${result}`;
+    }
+});
