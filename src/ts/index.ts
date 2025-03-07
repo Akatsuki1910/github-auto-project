@@ -55,5 +55,14 @@ const eButton = document.getElementById('e') as HTMLButtonElement;
 eButton.addEventListener('click', () => {
     display.value = Math.E.toString();
 });
+const doubleButton = document.getElementById('double') as HTMLButtonElement;
+doubleButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = currentValue * 2;
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = `${currentValue} * 2 = ${result}`;
+    }
+});
 // Basic Calculator Functions
 // ... (rest of the code)
