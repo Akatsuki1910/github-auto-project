@@ -64,5 +64,12 @@ doubleButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = `${currentValue} * 2 = ${result}`;
     }
 });
+const modButton = document.getElementById('mod') as HTMLButtonElement;
+modButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value += '%';
+    }
+});
 // Basic Calculator Functions
 // ... (rest of the code)
