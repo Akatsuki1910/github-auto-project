@@ -12,5 +12,15 @@ inverseButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = `1/${currentValue} = ${result}`;
     }
 });
+//Cube
+const cubeButton = document.getElementById('cube') as HTMLButtonElement;
+cubeButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = currentValue * currentValue * currentValue;
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = `${currentValue}³ = ${result}`;
+    }
+});
 // Basic Calculator Functions
 // ... (rest of the code)
