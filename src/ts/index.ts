@@ -69,3 +69,14 @@ toggleThemeButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-scheme');
     document.body.classList.toggle('light-scheme');
 });
+
+//Added Feature: calculate square of a number
+const squareButton = document.getElementById('square') as HTMLButtonElement;
+squareButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if(!isNaN(currentValue)){
+        const result = currentValue * currentValue;
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = `${currentValue}² = ${result}`;
+    }
+});
