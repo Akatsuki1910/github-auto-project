@@ -80,3 +80,14 @@ squareButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = `${currentValue}² = ${result}`;
     }
 });
+
+//Added Feature: Sine function
+const sinButton = document.getElementById('sin') as HTMLButtonElement;
+sinButton.addEventListener('click', () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    const result = Math.sin(currentValue);
+    display.value = result.toString();
+    currentExpressionDisplay.textContent = `sin(${currentValue}) = ${result}`;
+  }
+});
