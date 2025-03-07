@@ -19,4 +19,14 @@ floorButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = display.value;
     }
 });
+//Added cbrt functionality
+const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
+cbrtButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.cbrt(currentValue);
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = display.value;
+    }
+});
 // ... (Rest of the existing code)
