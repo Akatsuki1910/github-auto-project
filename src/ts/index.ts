@@ -32,3 +32,16 @@ atanButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = `atan(${currentValue}) = ${result}`;
     }
 });
+// Added Feature: Hyperbolic Arccosine function
+const acoshButton = document.getElementById('acosh') as HTMLButtonElement;
+acoshButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue >= 1) {
+        const result = Math.acosh(currentValue);
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = `acosh(${currentValue}) = ${result}`;
+    } else {
+      display.value = "Error: Input must be >= 1";
+      currentExpressionDisplay.textContent = "";
+    }
+});
