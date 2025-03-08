@@ -16,17 +16,33 @@ calculateFactorialButton.addEventListener('click', () => {
         display.value = result.toString();
         currentExpressionDisplay.textContent = `${currentValue}! = ${result}`;
         historyArr.push(`${currentValue}! = ${result}`);
+        updateHistory();
     }
 });
 function factorial(n) {
     if (n === 0) {
         return 1;
     }
-    else if (n < 0 || !Number.isInteger(n)){
+    else if (n < 0 || !Number.isInteger(n)) {
         return "undefined";
     }
     else {
         return n * factorial(n - 1);
     }
 }
+//Added Feature: Clear History Button
+const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
+clearHistoryButton.addEventListener('click', () => {
+    historyArr = [];
+    updateHistory();
+});
+const updateHistory = () => {
+    const historyDisplay = document.getElementById('history-display');
+    historyDisplay.innerHTML = ''; // Clear existing history
+    historyArr.forEach(item => {
+        const p = document.createElement('p');
+        p.textContent = item;
+        historyDisplay.appendChild(p);
+    });
+};
 // ... rest of the code
