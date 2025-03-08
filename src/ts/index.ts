@@ -1,7 +1,7 @@
 // ... (Existing code)
 const keyboardToggleButton = document.getElementById('keyboard-toggle') as HTMLButtonElement;
 const virtualKeyboard = document.getElementById('virtual-keyboard') as HTMLDivElement;
-const display = document.getElementById('display') as HTMLInputElement;
+display = document.getElementById('display') as HTMLInputElement;
 const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
 let history: string[] = [];
 
@@ -64,5 +64,12 @@ sqrtButton.addEventListener('click', () => {
         } else {
             display.value = "Invalid Input";
         }
+    }
+});
+
+const percentageButton = document.getElementById('percentage') as HTMLButtonElement;
+percentageButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = (parseFloat(display.value) / 100).toString();
     }
 });
