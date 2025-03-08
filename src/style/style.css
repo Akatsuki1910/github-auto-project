@@ -39,3 +39,8 @@ body.light-scheme{
 .memory-section button{
     flex:1;
 }
+#virtual-keyboard {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 5px;
+}
