@@ -6,6 +6,7 @@ const historyDisplay = document.getElementById('history-display') as HTMLDivElem
 let history: string[] = [];
 const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
 let currentExpression: string = '';
+let memory: string = '';
 
 keyboardToggleButton.addEventListener('click', () => {
     // ... (Existing keyboard toggle logic)
@@ -70,4 +71,22 @@ document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
       display.value += key;
     }
   });
+});
+
+const memoryStoreButton = document.getElementById('memory-store') as HTMLButtonElement;
+const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
+const memoryClearButton = document.getElementById('memory-clear') as HTMLButtonElement;
+
+memoryStoreButton.addEventListener('click', () => {
+    memory = display.value;
+});
+
+memoryRecallButton.addEventListener('click', () => {
+    display.value += memory; 
+    currentExpression += memory; 
+    currentExpressionDisplay.textContent = currentExpression;   
+});
+
+memoryClearButton.addEventListener('click', () => {
+    memory = '';
 });
