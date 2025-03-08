@@ -18,6 +18,7 @@ keyboardToggleButton.addEventListener('click', () => {
 function updateHistory(expression: string, result: string) {
     history.push(`${expression} = ${result}`);
     renderHistory();
+    localStorage.setItem('calculatorHistory', JSON.stringify(history)); // Store history in local storage
 }
 
 function renderHistory() {
@@ -33,6 +34,16 @@ const clearHistoryButton = document.getElementById('clear-history') as HTMLButto
 clearHistoryButton.addEventListener('click', () => {
   history = [];
   renderHistory();
+  localStorage.removeItem('calculatorHistory'); //Clear history from local storage
+});
+
+//Retrieve history from local storage on load
+window.addEventListener('load', () => {
+    const storedHistory = localStorage.getItem('calculatorHistory');
+    if (storedHistory) {
+        history = JSON.parse(storedHistory);
+        renderHistory();
+    }
 });
 
 // Example usage within the virtual keyboard click listener or other relevant areas:
