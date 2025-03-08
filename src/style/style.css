@@ -41,7 +41,7 @@ body.light-scheme{
 }
 #virtual-keyboard {
     display: none;
-    grid-template-columns: repeat(4, 1fr); /* Adjusted for better layout */
+    grid-template-columns: repeat(5, 1fr); /* Adjusted for better layout */
     gap: 5px;
 }
 #virtual-keyboard button {
