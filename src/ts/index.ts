@@ -74,3 +74,13 @@ parenthesesButton.addEventListener('click', () => {
     }
     parenthesesCount++;
 });
+//Added Feature: Keyboard Support for Digits and Operators
+document.addEventListener('keydown', (event) => {
+    const key = event.key;
+    if (/^[0-9]$/.test(key) || key === '.' || key === '+' || key === '-' || key === '*' || key === '/') {
+        display.value += key;
+    }
+    else if (key === 'Enter' || key === '=') {
+        // Handle calculation logic here (calculate and update display)
+    }
+});
