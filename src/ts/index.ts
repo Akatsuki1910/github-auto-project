@@ -83,6 +83,15 @@ toggleThemeButton.addEventListener('click', () => {
 //New Feature: Reset Button
 const resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', () => {
-  display.value = '';
-  currentExpressionDisplay.textContent = '';
+    display.value = '';
+    currentExpressionDisplay.textContent = '';
+});
+// New Feature: Parentheses
+const openParenthesisButton = document.getElementById('open-parenthesis');
+const closeParenthesisButton = document.getElementById('close-parenthesis');
+openParenthesisButton.addEventListener('click', () => {
+    display.value += '(';
+});
+closeParenthesisButton.addEventListener('click', () => {
+    display.value += ')';
 });
