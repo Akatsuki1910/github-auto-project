@@ -4,6 +4,8 @@ const virtualKeyboard = document.getElementById('virtual-keyboard') as HTMLDivEl
 const display = document.getElementById('display') as HTMLInputElement;
 const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
 let history: string[] = [];
+const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
+let currentExpression: string = '';
 
 keyboardToggleButton.addEventListener('click', () => {
     // ... (Existing keyboard toggle logic)
@@ -38,7 +40,9 @@ else if (key === '=') {
     try {
         const result = eval(display.value);
         display.value = result.toString();
-        updateHistory(display.value, result.toString()); //Update History Feature added
+        updateHistory(currentExpression, result.toString()); //Update History Feature added
+        currentExpression = ''; // Clear current expression after evaluation
+        currentExpressionDisplay.textContent = ''; // Clear the display
     }
     // ... rest of the code
 }
@@ -46,65 +50,24 @@ else if (key === '=') {
 const backspaceButton = document.getElementById('backspace') as HTMLButtonElement;
 backspaceButton.addEventListener('click', () => {
     display.value = display.value.slice(0, -1);
+    currentExpression = currentExpression.slice(0, -1); // Update current expression
+    currentExpressionDisplay.textContent = currentExpression;
 });
 
-const negateButton = document.getElementById('negate') as HTMLButtonElement;
-negateButton.addEventListener('click', () => {
-    if (display.value) {
-        display.value = (-parseFloat(display.value)).toString();
+// ... (rest of the code)
+
+const currentExpressionButton = document.getElementById('current-expression') as HTMLButtonElement;
+currentExpressionButton.addEventListener('click', () => {
+    display.value = currentExpression;
+});
+
+document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
+  button.addEventListener('click', () => {
+    const key = (button as HTMLButtonElement).textContent;
+    if (key) {
+      currentExpression += key;
+      currentExpressionDisplay.textContent = currentExpression; //Added Feature: Displaying Current Expression
+      display.value += key;
     }
-});
-
-const sqrtButton = document.getElementById('sqrt') as HTMLButtonElement;
-sqrtButton.addEventListener('click', () => {
-    if (display.value) {
-        const num = parseFloat(display.value);
-        if (num >= 0) {
-            display.value = Math.sqrt(num).toString();
-        } else {
-            display.value = "Invalid Input";
-        }
-    }
-});
-
-const percentageButton = document.getElementById('percentage') as HTMLButtonElement;
-percentageButton.addEventListener('click', () => {
-    if (display.value) {
-        display.value = (parseFloat(display.value) / 100).toString();
-    }
-});
-
-const piButton = document.getElementById('pi') as HTMLButtonElement;
-piButton.addEventListener('click', () => {
-  display.value += Math.PI.toString();
-});
-
-const powerButton = document.getElementById('power') as HTMLButtonElement;
-powerButton.addEventListener('click', () => {
-    display.value += '**';
-});
-
-const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
-factorialButton.addEventListener('click', () => {
-    const num = parseFloat(display.value);
-    if (Number.isInteger(num) && num >= 0) {
-        let result = 1;
-        for (let i = 1; i <= num; i++) {
-            result *= i;
-        }
-        display.value = result.toString();
-    } else {
-        display.value = "Invalid Input";
-    }
-});
-
-const copyToClipboardButton = document.getElementById('copy-to-clipboard') as HTMLButtonElement;
-copyToClipboardButton.addEventListener('click', () => {
-  navigator.clipboard.writeText(display.value)
-    .then(() => {
-      alert('Copied to clipboard!');
-    })
-    .catch(err => {
-      console.error('Failed to copy: ', err);
-    });
+  });
 });
