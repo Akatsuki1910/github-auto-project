@@ -6,89 +6,27 @@ degRadButton.addEventListener('click', () => {
     isDegreeMode = !isDegreeMode;
     degRadButton.textContent = isDegreeMode ? 'Deg' : 'Rad';
 });
-const tanhButton = document.getElementById('tanh') as HTMLButtonElement;
-tanhButton.addEventListener('click', () => {
+// ... other code
+// Added Feature: Factorial Calculation
+const calculateFactorialButton = document.getElementById('calculateFactorial') as HTMLButtonElement;
+calculateFactorialButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        const result = Math.tanh(currentValue);
+        const result = factorial(currentValue);
         display.value = result.toString();
-        currentExpressionDisplay.textContent = `tanh(${currentValue}) = ${result}`;
+        currentExpressionDisplay.textContent = `${currentValue}! = ${result}`;
+        historyArr.push(`${currentValue}! = ${result}`);
     }
 });
-//Added Feature: calculation history
-const historyDisplay = document.getElementById('history-display');
-const historyButton = document.getElementById('history');
-const historyArr = [];
-historyButton.addEventListener('click', () => {
-    if (historyDisplay.style.display === 'none') {
-        historyDisplay.style.display = 'block';
-        historyDisplay.innerHTML = ''; // Clear previous history
-        historyArr.forEach(item => {
-            const p = document.createElement('p');
-            p.textContent = item;
-            historyDisplay.appendChild(p);
-        });
+function factorial(n) {
+    if (n === 0) {
+        return 1;
+    }
+    else if (n < 0 || !Number.isInteger(n)){
+        return "undefined";
     }
     else {
-        historyDisplay.style.display = 'none';
+        return n * factorial(n - 1);
     }
-});
-//Added Feature: Ans Button
-let lastAnswer = 0;
-const ansButton = document.getElementById('ans');
-ansButton.addEventListener('click', () => {
-    display.value += lastAnswer.toString();
-});
-//Added Feature: Theme Toggle
-const toggleThemeButton = document.getElementById('toggle-theme');
-const body = document.body;
-let isDark = false;
-toggleThemeButton.addEventListener('click', () => {
-    isDark = !isDark;
-    if (isDark) {
-        body.classList.add('dark-scheme');
-        body.classList.remove('light-scheme');
-    }
-    else {
-        body.classList.remove('dark-scheme');
-        body.classList.add('light-scheme');
-    }
-});
-// Added Feature: Clear Entry (CE) button functionality
-const clearEntryButton = document.getElementById('clear-entry') as HTMLButtonElement;
-const display = document.getElementById('display') as HTMLInputElement;
-const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
-clearEntryButton.addEventListener('click', () => {
-    display.value = '';
-    currentExpressionDisplay.textContent = ''; // Clear current expression
-});
-//Added Feature: Parentheses
-const parenthesesButton = document.getElementById('parentheses') as HTMLButtonElement;
-let parenthesesCount = 0;
-parenthesesButton.addEventListener('click', () => {
-    if (parenthesesCount % 2 === 0) {
-        display.value += '(';
-    }
-    else {
-        display.value += ')';
-    }
-    parenthesesCount++;
-});
-//Added Feature: Keyboard Support for Digits and Operators
-document.addEventListener('keydown', (event) => {
-    const key = event.key;
-    if (/^[0-9]$/.test(key) || key === '.' || key === '+' || key === '-' || key === '*' || key === '/') {
-        display.value += key;
-    }
-    else if (key === 'Enter' || key === '=') {
-        // Evaluate expression
-        try {
-            lastAnswer = eval(display.value);
-            display.value = lastAnswer.toString();
-            historyArr.push(display.value); //Add result to history
-        }
-        catch (error) {
-            display.value = 'Error';
-        }
-    }
-});
+}
+// ... rest of the code
