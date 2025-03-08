@@ -95,3 +95,13 @@ openParenthesisButton.addEventListener('click', () => {
 closeParenthesisButton.addEventListener('click', () => {
     display.value += ')';
 });
+// New Feature: Percentage Button
+const percentageButton = document.getElementById('percentage');
+percentageButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = currentValue / 100;
+        display.value = result.toString();
+        currentExpressionDisplay.textContent = `${currentValue}% = ${result}`;
+    }
+});
