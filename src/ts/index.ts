@@ -97,3 +97,14 @@ factorialButton.addEventListener('click', () => {
         display.value = "Invalid Input";
     }
 });
+
+const copyToClipboardButton = document.getElementById('copy-to-clipboard') as HTMLButtonElement;
+copyToClipboardButton.addEventListener('click', () => {
+  navigator.clipboard.writeText(display.value)
+    .then(() => {
+      alert('Copied to clipboard!');
+    })
+    .catch(err => {
+      console.error('Failed to copy: ', err);
+    });
+});
