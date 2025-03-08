@@ -73,3 +73,8 @@ percentageButton.addEventListener('click', () => {
         display.value = (parseFloat(display.value) / 100).toString();
     }
 });
+
+const piButton = document.getElementById('pi') as HTMLButtonElement;
+piButton.addEventListener('click', () => {
+  display.value += Math.PI.toString();
+});
