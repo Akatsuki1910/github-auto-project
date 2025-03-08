@@ -1,7 +1,7 @@
 // ... (Existing code)
 const keyboardToggleButton = document.getElementById('keyboard-toggle') as HTMLButtonElement;
 const virtualKeyboard = document.getElementById('virtual-keyboard') as HTMLDivElement;
-display = document.getElementById('display') as HTMLInputElement;
+const display = document.getElementById('display') as HTMLInputElement;
 const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
 let history: string[] = [];
 
@@ -82,4 +82,18 @@ piButton.addEventListener('click', () => {
 const powerButton = document.getElementById('power') as HTMLButtonElement;
 powerButton.addEventListener('click', () => {
     display.value += '**';
+});
+
+const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
+factorialButton.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (Number.isInteger(num) && num >= 0) {
+        let result = 1;
+        for (let i = 1; i <= num; i++) {
+            result *= i;
+        }
+        display.value = result.toString();
+    } else {
+        display.value = "Invalid Input";
+    }
 });
