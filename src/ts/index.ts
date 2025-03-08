@@ -81,6 +81,14 @@ document.addEventListener('keydown', (event) => {
         display.value += key;
     }
     else if (key === 'Enter' || key === '=') {
-        // Handle calculation logic here (calculate and update display)
+        // Evaluate expression
+        try {
+            lastAnswer = eval(display.value);
+            display.value = lastAnswer.toString();
+            historyArr.push(display.value); //Add result to history
+        }
+        catch (error) {
+            display.value = 'Error';
+        }
     }
 });
