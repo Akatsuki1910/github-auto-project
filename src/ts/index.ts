@@ -7,6 +7,7 @@ let history: string[] = [];
 const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
 let currentExpression: string = '';
 let memory: string = '';
+let lastResult: string = '';
 
 keyboardToggleButton.addEventListener('click', () => {
     // ... (Existing keyboard toggle logic)
@@ -55,6 +56,7 @@ else if (key === '=') {
         updateHistory(currentExpression, result.toString()); //Update History Feature added
         currentExpression = ''; // Clear current expression after evaluation
         currentExpressionDisplay.textContent = ''; // Clear the display
+        lastResult = result.toString();
     }
     // ... rest of the code
 }
@@ -100,4 +102,10 @@ memoryRecallButton.addEventListener('click', () => {
 
 memoryClearButton.addEventListener('click', () => {
     memory = '';
+});
+const ansButton = document.getElementById('ans') as HTMLButtonElement;
+ansButton.addEventListener('click', () => {
+    display.value += lastResult;
+    currentExpression += lastResult;
+    currentExpressionDisplay.textContent = currentExpression;
 });
