@@ -48,7 +48,7 @@ const updateHistory = () => {
 //Added Feature: Show/Hide Scientific Buttons
 const scientificSection = document.querySelector('.scientific-section');
 const openCloseScientificButton = document.getElementById('open-close-scientific') as HTMLButtonElement;
-let isScientificOpen = true; // Initially open
+let isScientificOpen = false; // Initially closed
 openCloseScientificButton.addEventListener('click', () => {
     isScientificOpen = !isScientificOpen;
     if (isScientificOpen) {
@@ -63,6 +63,8 @@ openCloseScientificButton.addEventListener('click', () => {
 //Added Feature: Copy to Clipboard
 const copyToClipboardButton = document.getElementById('copy-to-clipboard') as HTMLButtonElement;
 const display = document.getElementById('display') as HTMLInputElement;
+const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
+let historyArr = [];
 copyToClipboardButton.addEventListener('click', () => {
     navigator.clipboard.writeText(display.value)
         .then(() => {
@@ -72,4 +74,9 @@ copyToClipboardButton.addEventListener('click', () => {
         console.error('Failed to copy: ', err);
     });
 });
-// ... rest of the code
+//New Feature: Theme Toggle
+const toggleThemeButton = document.getElementById('toggle-theme');
+toggleThemeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-scheme');
+    document.body.classList.toggle('light-scheme');
+});
