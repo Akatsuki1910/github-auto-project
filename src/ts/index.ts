@@ -75,13 +75,18 @@ currentExpressionButton.addEventListener('click', () => {
     display.value = currentExpression;
 });
 
-document.querySelectorAll('.digit, .operator, .decimal, #parenthesis-open, #parenthesis-close').forEach(button => {
+document.querySelectorAll('.digit, .operator, .decimal, #parenthesis-open, #parenthesis-close, #sin, #cos, #tan').forEach(button => {
   button.addEventListener('click', () => {
     const key = (button as HTMLButtonElement).textContent;
     if (key) {
       currentExpression += key;
       currentExpressionDisplay.textContent = currentExpression; //Added Feature: Displaying Current Expression
-      display.value += key;
+
+      if (key === 'sin' || key === 'cos' || key === 'tan'){
+        display.value += `Math.${key}(`;
+      } else{
+        display.value += key;
+      }
     }
   });
 });
