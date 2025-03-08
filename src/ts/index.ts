@@ -44,12 +44,21 @@ const toggleThemeButton = document.getElementById('toggle-theme');
 const body = document.body;
 let isDark = false;
 toggleThemeButton.addEventListener('click', () => {
-  isDark = !isDark;
-  if (isDark) {
-    body.classList.add('dark-scheme');
-    body.classList.remove('light-scheme');
-  } else {
-    body.classList.remove('dark-scheme');
-    body.classList.add('light-scheme');
-  }
+    isDark = !isDark;
+    if (isDark) {
+        body.classList.add('dark-scheme');
+        body.classList.remove('light-scheme');
+    }
+    else {
+        body.classList.remove('dark-scheme');
+        body.classList.add('light-scheme');
+    }
+});
+// Added Feature: Clear Entry (CE) button functionality
+const clearEntryButton = document.getElementById('clear-entry') as HTMLButtonElement;
+const display = document.getElementById('display') as HTMLInputElement;
+const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
+clearEntryButton.addEventListener('click', () => {
+    display.value = '';
+    currentExpressionDisplay.textContent = ''; // Clear current expression
 });
