@@ -80,3 +80,9 @@ toggleThemeButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-scheme');
     document.body.classList.toggle('light-scheme');
 });
+//New Feature: Reset Button
+const resetButton = document.getElementById('reset');
+resetButton.addEventListener('click', () => {
+  display.value = '';
+  currentExpressionDisplay.textContent = '';
+});
