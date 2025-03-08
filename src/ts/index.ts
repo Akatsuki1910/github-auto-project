@@ -21,5 +21,12 @@ absButton.addEventListener('click', () => {
     currentExpression += 'abs('; // Displaying abs on current expression
     currentExpressionDisplay.textContent = currentExpression;
 });
+//Added Feature: Round
+const roundButton = document.getElementById('round') as HTMLButtonElement;
+roundButton.addEventListener('click', () => {
+    display.value += 'Math.round('; // Rounding function
+    currentExpression += 'round('; // Displaying round on current expression
+    currentExpressionDisplay.textContent = currentExpression;
+});
 
 // ... (Rest of the existing code)
