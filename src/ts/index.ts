@@ -54,3 +54,15 @@ negateButton.addEventListener('click', () => {
         display.value = (-parseFloat(display.value)).toString();
     }
 });
+
+const sqrtButton = document.getElementById('sqrt') as HTMLButtonElement;
+sqrtButton.addEventListener('click', () => {
+    if (display.value) {
+        const num = parseFloat(display.value);
+        if (num >= 0) {
+            display.value = Math.sqrt(num).toString();
+        } else {
+            display.value = "Invalid Input";
+        }
+    }
+});
