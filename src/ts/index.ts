@@ -39,3 +39,17 @@ const ansButton = document.getElementById('ans');
 ansButton.addEventListener('click', () => {
     display.value += lastAnswer.toString();
 });
+//Added Feature: Theme Toggle
+const toggleThemeButton = document.getElementById('toggle-theme');
+const body = document.body;
+let isDark = false;
+toggleThemeButton.addEventListener('click', () => {
+  isDark = !isDark;
+  if (isDark) {
+    body.classList.add('dark-scheme');
+    body.classList.remove('light-scheme');
+  } else {
+    body.classList.remove('dark-scheme');
+    body.classList.add('light-scheme');
+  }
+});
