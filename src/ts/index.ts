@@ -33,3 +33,9 @@ historyButton.addEventListener('click', () => {
         historyDisplay.style.display = 'none';
     }
 });
+//Added Feature: Ans Button
+let lastAnswer = 0;
+const ansButton = document.getElementById('ans');
+ansButton.addEventListener('click', () => {
+    display.value += lastAnswer.toString();
+});
