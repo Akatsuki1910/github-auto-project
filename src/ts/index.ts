@@ -73,7 +73,7 @@ currentExpressionButton.addEventListener('click', () => {
     display.value = currentExpression;
 });
 
-document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
+document.querySelectorAll('.digit, .operator, .decimal, #parenthesis-open, #parenthesis-close').forEach(button => {
   button.addEventListener('click', () => {
     const key = (button as HTMLButtonElement).textContent;
     if (key) {
