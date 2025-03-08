@@ -15,3 +15,21 @@ tanhButton.addEventListener('click', () => {
         currentExpressionDisplay.textContent = `tanh(${currentValue}) = ${result}`;
     }
 });
+//Added Feature: calculation history
+const historyDisplay = document.getElementById('history-display');
+const historyButton = document.getElementById('history');
+const historyArr = [];
+historyButton.addEventListener('click', () => {
+    if (historyDisplay.style.display === 'none') {
+        historyDisplay.style.display = 'block';
+        historyDisplay.innerHTML = ''; // Clear previous history
+        historyArr.forEach(item => {
+            const p = document.createElement('p');
+            p.textContent = item;
+            historyDisplay.appendChild(p);
+        });
+    }
+    else {
+        historyDisplay.style.display = 'none';
+    }
+});
