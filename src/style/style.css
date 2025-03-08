@@ -41,6 +41,12 @@ body.light-scheme{
 }
 #virtual-keyboard {
     display: grid;
-    grid-template-columns: repeat(10, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* Adjusted for better layout */
     gap: 5px;
+}
+#virtual-keyboard button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
 }
