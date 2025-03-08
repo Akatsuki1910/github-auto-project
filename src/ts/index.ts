@@ -1,4 +1,14 @@
 // ... (Existing code)
+//Added Feature: Toggle History Display
+const toggleHistoryButton = document.getElementById('toggleHistory') as HTMLButtonElement;
+const historyDisplay = document.getElementById('history-display');
+toggleHistoryButton.addEventListener('click', () => {
+    if (historyDisplay.style.display === 'none' || historyDisplay.style.display === '') {
+        historyDisplay.style.display = 'block';
+    } else {
+        historyDisplay.style.display = 'none';
+    }
+});
 //Added Feature: Degree/Radian Toggle
 let isDegreeMode = true;
 const degRadButton = document.getElementById('deg-rad') as HTMLButtonElement;
@@ -37,7 +47,6 @@ clearHistoryButton.addEventListener('click', () => {
     updateHistory();
 });
 const updateHistory = () => {
-    const historyDisplay = document.getElementById('history-display');
     historyDisplay.innerHTML = ''; // Clear existing history
     historyArr.forEach(item => {
         const p = document.createElement('p');
