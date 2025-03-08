@@ -14,5 +14,12 @@ expButton.addEventListener('click', () => {
     currentExpression += 'exp('; // Displaying 'exp' on current expression
     currentExpressionDisplay.textContent = currentExpression;
 });
+//Added Feature: Absolute Value
+const absButton = document.getElementById('abs') as HTMLButtonElement;
+absButton.addEventListener('click', () => {
+    display.value += 'Math.abs('; // Absolute value function
+    currentExpression += 'abs('; // Displaying abs on current expression
+    currentExpressionDisplay.textContent = currentExpression;
+});
 
 // ... (Rest of the existing code)
