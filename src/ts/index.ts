@@ -28,5 +28,12 @@ roundButton.addEventListener('click', () => {
     currentExpression += 'round('; // Displaying round on current expression
     currentExpressionDisplay.textContent = currentExpression;
 });
+//Added Feature: Sign
+const signButton = document.getElementById('sign') as HTMLButtonElement;
+signButton.addEventListener('click', () => {
+    display.value += 'Math.sign('; // Sign function
+    currentExpression += 'sign('; // Displaying sign on current expression
+    currentExpressionDisplay.textContent = currentExpression;
+});
 
 // ... (Rest of the existing code)
