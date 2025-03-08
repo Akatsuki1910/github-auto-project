@@ -1,11 +1,11 @@
 // ... (Existing code)
-//Added Feature: Hyperbolic Cosine function
-const coshButton = document.getElementById('cosh') as HTMLButtonElement;
-coshButton.addEventListener('click', () => {
+//Added Feature: Hyperbolic Tangent function
+const tanhButton = document.getElementById('tanh') as HTMLButtonElement;
+tanhButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        const result = Math.cosh(currentValue);
+        const result = Math.tanh(currentValue);
         display.value = result.toString();
-        currentExpressionDisplay.textContent = `cosh(${currentValue}) = ${result}`;
+        currentExpressionDisplay.textContent = `tanh(${currentValue}) = ${result}`;
     }
 });
