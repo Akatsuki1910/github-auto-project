@@ -41,3 +41,9 @@ else if (key === '=') {
         updateHistory(display.value, result.toString()); //Update History Feature added
     }
     // ... rest of the code
+}
+
+const backspaceButton = document.getElementById('backspace') as HTMLButtonElement;
+backspaceButton.addEventListener('click', () => {
+    display.value = display.value.slice(0, -1);
+});
