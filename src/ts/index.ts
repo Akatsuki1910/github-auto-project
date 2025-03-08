@@ -35,5 +35,12 @@ signButton.addEventListener('click', () => {
     currentExpression += 'sign('; // Displaying sign on current expression
     currentExpressionDisplay.textContent = currentExpression;
 });
+//Added Feature: Cube Root
+const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
+cbrtButton.addEventListener('click', () => {
+    display.value += 'Math.cbrt('; //Cube root function
+    currentExpression += 'cbrt('; // Displaying cbrt on current expression
+    currentExpressionDisplay.textContent = currentExpression;
+});
 
 // ... (Rest of the existing code)
