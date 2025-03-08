@@ -47,3 +47,10 @@ const backspaceButton = document.getElementById('backspace') as HTMLButtonElemen
 backspaceButton.addEventListener('click', () => {
     display.value = display.value.slice(0, -1);
 });
+
+const negateButton = document.getElementById('negate') as HTMLButtonElement;
+negateButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = (-parseFloat(display.value)).toString();
+    }
+});
