@@ -60,4 +60,16 @@ openCloseScientificButton.addEventListener('click', () => {
         openCloseScientificButton.textContent = 'Open Scientific';
     }
 });
+//Added Feature: Copy to Clipboard
+const copyToClipboardButton = document.getElementById('copy-to-clipboard') as HTMLButtonElement;
+const display = document.getElementById('display') as HTMLInputElement;
+copyToClipboardButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(display.value)
+        .then(() => {
+        alert('Copied to clipboard!');
+    })
+        .catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+});
 // ... rest of the code
