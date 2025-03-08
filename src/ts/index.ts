@@ -78,3 +78,8 @@ const piButton = document.getElementById('pi') as HTMLButtonElement;
 piButton.addEventListener('click', () => {
   display.value += Math.PI.toString();
 });
+
+const powerButton = document.getElementById('power') as HTMLButtonElement;
+powerButton.addEventListener('click', () => {
+    display.value += '**';
+});
