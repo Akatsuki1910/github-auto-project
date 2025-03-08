@@ -40,7 +40,7 @@ body.light-scheme{
     flex:1;
 }
 #virtual-keyboard {
-    display: grid;
+    display: none;
     grid-template-columns: repeat(4, 1fr); /* Adjusted for better layout */
     gap: 5px;
 }
