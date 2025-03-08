@@ -62,3 +62,15 @@ clearEntryButton.addEventListener('click', () => {
     display.value = '';
     currentExpressionDisplay.textContent = ''; // Clear current expression
 });
+//Added Feature: Parentheses
+const parenthesesButton = document.getElementById('parentheses') as HTMLButtonElement;
+let parenthesesCount = 0;
+parenthesesButton.addEventListener('click', () => {
+    if (parenthesesCount % 2 === 0) {
+        display.value += '(';
+    }
+    else {
+        display.value += ')';
+    }
+    parenthesesCount++;
+});
