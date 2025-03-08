@@ -31,6 +31,8 @@ body.light-scheme{
 }
 #currentExpressionDisplay{
     min-height: 20px; /* Ensure the div takes up space */
+    border: 1px solid #ccc; /* Add a border */
+    padding: 5px; /* Add some padding */
 }
 .memory-section{
     display: flex;
