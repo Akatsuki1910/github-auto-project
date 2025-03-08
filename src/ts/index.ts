@@ -45,4 +45,19 @@ const updateHistory = () => {
         historyDisplay.appendChild(p);
     });
 };
+//Added Feature: Show/Hide Scientific Buttons
+const scientificSection = document.querySelector('.scientific-section');
+const openCloseScientificButton = document.getElementById('open-close-scientific') as HTMLButtonElement;
+let isScientificOpen = true; // Initially open
+openCloseScientificButton.addEventListener('click', () => {
+    isScientificOpen = !isScientificOpen;
+    if (isScientificOpen) {
+        scientificSection.style.display = 'grid';
+        openCloseScientificButton.textContent = 'Close Scientific';
+    }
+    else {
+        scientificSection.style.display = 'none';
+        openCloseScientificButton.textContent = 'Open Scientific';
+    }
+});
 // ... rest of the code
