@@ -65,6 +65,7 @@ const copyToClipboardButton = document.getElementById('copy-to-clipboard') as HT
 const display = document.getElementById('display') as HTMLInputElement;
 const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
 let historyArr = [];
+let lastAnswer = 0; // Initialize the storage for previous answers
 copyToClipboardButton.addEventListener('click', () => {
     navigator.clipboard.writeText(display.value)
         .then(() => {
@@ -104,4 +105,20 @@ percentageButton.addEventListener('click', () => {
         display.value = result.toString();
         currentExpressionDisplay.textContent = `${currentValue}% = ${result}`;
     }
+});
+// Added Feature: Store last answer
+const equalsButton = document.querySelector('.equals');
+equalsButton.addEventListener('click', () => {
+    try {
+        lastAnswer = eval(display.value); // Store the answer
+        display.value = lastAnswer.toString();
+    }
+    catch (error) {
+        display.value = 'Error';
+    }
+});
+//Added Feature: Recall last answer
+const lastAnswerButton = document.getElementById('last-answer');
+lastAnswerButton.addEventListener('click', () => {
+    display.value += lastAnswer;
 });
