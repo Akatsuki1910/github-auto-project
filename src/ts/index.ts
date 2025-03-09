@@ -78,4 +78,11 @@ eButton.addEventListener('click', () => {
     currentExpression += 'e';
     currentExpressionDisplay.textContent = currentExpression;
 });
+//Added Natural Logarithm
+const lnButton = document.getElementById('ln') as HTMLButtonElement;
+lnButton.addEventListener('click', () => {
+    display.value += 'Math.log('; //Natural log
+    currentExpression += 'ln('; //Displaying ln on current expression
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... (Rest of the existing code)
