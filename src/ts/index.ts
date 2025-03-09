@@ -53,4 +53,13 @@ const clearEntryButton = document.getElementById('clear-entry') as HTMLButtonEle
 clearEntryButton.addEventListener('click', () => {
     (document.getElementById('display') as HTMLInputElement).value = '';
 });
+//Added Feature: Squared
+const squaredButton = document.getElementById('squared') as HTMLButtonElement;
+squaredButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (currentValue * currentValue).toString();
+    }
+});
 // ... (Rest of the existing code)
