@@ -17,4 +17,13 @@ switchNotationButton.addEventListener('click', () => {
     // ... (Implementation for converting and displaying)
 });
 
+//Added Feature: Expand/Collapse Calculator
+const expandCollapseButton = document.getElementById('expand-collapse') as HTMLButtonElement;
+const calculatorContainer = document.getElementById('calculator') as HTMLDivElement;
+let isExpanded = true;
+expandCollapseButton.addEventListener('click', () => {
+    isExpanded = !isExpanded;
+    calculatorContainer.style.maxHeight = isExpanded ? '100%' : '100px'; // Adjust the collapsed height as needed
+    expandCollapseButton.textContent = isExpanded ? 'Expand/Collapse' : 'Expand/Collapse';
+});
 // ... (Rest of the existing code)
