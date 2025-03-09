@@ -35,5 +35,10 @@ importHistoryButton.addEventListener('click', () => {
     });
     input.click();
 });
-
+//Added Feature: Save State
+const saveStateButton = document.getElementById('save-state') as HTMLButtonElement;
+saveStateButton.addEventListener('click', () => {
+    const displayValue = (document.getElementById('display') as HTMLInputElement).value;
+    localStorage.setItem('calculatorState', displayValue);
+});
 // ... (Rest of the existing code)
