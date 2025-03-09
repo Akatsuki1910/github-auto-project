@@ -40,4 +40,17 @@ toggleScientificButtons.addEventListener('click', () => {
         toggleScientificButtons.textContent = 'Scientific Buttons';
     }
 });
+
+//Added Feature: History Toggle
+const historyToggleButton = document.getElementById('history-toggle') as HTMLButtonElement;
+const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+historyToggleButton.addEventListener('click', () => {
+  if (historyDisplay.style.display === 'none') {
+    historyDisplay.style.display = 'block';
+    historyToggleButton.textContent = 'Hide History';
+  } else {
+    historyDisplay.style.display = 'none';
+    historyToggleButton.textContent = 'Show History';
+  }
+});
 // ... (Rest of the existing code)
