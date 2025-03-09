@@ -1,6 +1,5 @@
 /* ... (Existing styles) */
-.scientific-section{
-display:none;grid-template-columns:repeat(5,1fr);grid-gap:5px;}
+.scientific-section{display:none;grid-template-columns:repeat(5,1fr);grid-gap:5px;}
 body.dark-scheme{background-color:#333;color:#eee;}
 body.light-scheme{background-color:#eee;color:#333;}
 #history-display{border:1px solid #ccc;padding:10px;overflow-y:auto;max-height:200px;display:block;}
