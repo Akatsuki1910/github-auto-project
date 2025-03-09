@@ -77,4 +77,10 @@ toggleVirtualKeyboardButton.addEventListener('click', () => {
     }
 });
 
+//Added Feature: Clear Entry
+const clearEntryButton = document.getElementById('clear-entry') as HTMLButtonElement;
+clearEntryButton.addEventListener('click', () => {
+    display.value = '';
+});
+
 // ... (Rest of the existing code)
