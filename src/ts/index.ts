@@ -71,4 +71,19 @@ cubeButton.addEventListener('click', () => {
         display.value = (currentValue * currentValue * currentValue).toString();
     }
 });
+//Added Feature: Factorial
+const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
+function factorial(n) {
+    if (n === 0) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+factorialButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && Number.isInteger(currentValue) && currentValue >= 0) {
+        display.value = factorial(currentValue).toString();
+    }
+});
 // ... (Rest of the existing code)
