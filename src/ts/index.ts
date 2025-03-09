@@ -63,4 +63,18 @@ fullscreenButton.addEventListener('click', () => {
         document.documentElement.requestFullscreen();
     }
 });
+
+//Added Feature: Toggle Virtual Keyboard
+const toggleVirtualKeyboardButton = document.getElementById('toggle-virtual-keyboard') as HTMLButtonElement;
+const virtualKeyboard = document.getElementById('virtual-keyboard') as HTMLDivElement;
+toggleVirtualKeyboardButton.addEventListener('click', () => {
+    if (virtualKeyboard.style.display === 'none') {
+        virtualKeyboard.style.display = 'grid';
+        toggleVirtualKeyboardButton.textContent = 'Hide Virtual Keyboard';
+    } else {
+        virtualKeyboard.style.display = 'none';
+        toggleVirtualKeyboardButton.textContent = 'Show Virtual Keyboard';
+    }
+});
+
 // ... (Rest of the existing code)
