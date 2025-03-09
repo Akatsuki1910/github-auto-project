@@ -1,4 +1,21 @@
 // ... (Existing code)
+//Added Feature: Inverse
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
+inverseButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        if (currentValue === 0) {
+            display.value = "Error: Division by zero";
+        } else {
+            display.value = (1 / currentValue).toString();
+        }
+        currentExpression = display.value; // Update the current expression
+        currentExpressionDisplay.textContent = currentExpression;
+    } catch (error) {
+        display.value = "Invalid input";
+    }
+});
+
 //Added Feature: Logarithm
 const logButton = document.getElementById('log') as HTMLButtonElement;
 logButton.addEventListener('click', () => {
