@@ -1,7 +1,8 @@
 // ... (Existing code)
-//Added Feature: Round function
-const roundButton = document.getElementById('round') as HTMLButtonElement;
-roundButton.addEventListener('click', () => {
+//Added Feature: Sign function
+const signButton = document.getElementById('sign') as HTMLButtonElement;
+signButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    display.value = Math.round(parseFloat(display.value)).toString();
+    const num = parseFloat(display.value);
+    display.value = Math.sign(num).toString();
 });
