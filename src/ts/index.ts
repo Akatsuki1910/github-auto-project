@@ -86,4 +86,13 @@ factorialButton.addEventListener('click', () => {
         display.value = factorial(currentValue).toString();
     }
 });
+//Added Feature: Inverse
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
+inverseButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue !== 0) {
+        display.value = (1 / currentValue).toString();
+    }
+});
 // ... (Rest of the existing code)
