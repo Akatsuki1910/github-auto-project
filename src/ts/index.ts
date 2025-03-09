@@ -42,5 +42,12 @@ cbrtButton.addEventListener('click', () => {
     currentExpression += 'cbrt('; // Displaying cbrt on current expression
     currentExpressionDisplay.textContent = currentExpression;
 });
+//Added Feature: Floor
+const floorButton = document.getElementById('floor') as HTMLButtonElement;
+floorButton.addEventListener('click', () => {
+    display.value += 'Math.floor('; // Floor function
+    currentExpression += 'floor('; // Displaying floor on current expression
+    currentExpressionDisplay.textContent = currentExpression;
+});
 
 // ... (Rest of the existing code)
