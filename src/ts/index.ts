@@ -7,4 +7,13 @@ ceilButton.addEventListener('click', () => {
     currentExpressionDisplay.textContent = currentExpression;
 });
 
+//Added Feature: Random Number
+const randomButton = document.getElementById('random') as HTMLButtonElement;
+randomButton.addEventListener('click', () => {
+    const randomNumber = Math.random();
+    display.value += randomNumber;
+    currentExpression += randomNumber;
+    currentExpressionDisplay.textContent = currentExpression;
+});
+
 // ... (Rest of the existing code)
