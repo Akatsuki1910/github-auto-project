@@ -1,7 +1,7 @@
 // ... (Existing code)
-//Added Feature: Absolute Value function
-const absButton = document.getElementById('abs') as HTMLButtonElement;
-absButton.addEventListener('click', () => {
+//Added Feature: Round function
+const roundButton = document.getElementById('round') as HTMLButtonElement;
+roundButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    display.value = Math.abs(parseFloat(display.value)).toString();
+    display.value = Math.round(parseFloat(display.value)).toString();
 });
