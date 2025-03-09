@@ -53,4 +53,14 @@ historyToggleButton.addEventListener('click', () => {
     historyToggleButton.textContent = 'Show History';
   }
 });
+
+// Added Feature: Fullscreen
+const fullscreenButton = document.getElementById('fullscreen') as HTMLButtonElement;
+fullscreenButton.addEventListener('click', () => {
+    if (document.fullscreenElement) {
+        document.exitFullscreen();
+    } else {
+        document.documentElement.requestFullscreen();
+    }
+});
 // ... (Rest of the existing code)
