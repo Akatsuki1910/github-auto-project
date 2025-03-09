@@ -92,4 +92,11 @@ modButton.addEventListener('click', () => {
     currentExpression += '%'; // Displaying '%' on current expression for modulo
     currentExpressionDisplay.textContent = currentExpression;
 });
+//Added Truncate Function
+const truncButton = document.getElementById('trunc') as HTMLButtonElement;
+truncButton.addEventListener('click', () => {
+    display.value += 'Math.trunc('; // Truncates to integer
+    currentExpression += 'trunc('; // Displaying 'trunc' on current expression
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... (Rest of the existing code)
