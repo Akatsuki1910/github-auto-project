@@ -49,5 +49,12 @@ floorButton.addEventListener('click', () => {
     currentExpression += 'floor('; // Displaying floor on current expression
     currentExpressionDisplay.textContent = currentExpression;
 });
+//Added Feature: Max
+const maxButton = document.getElementById('max') as HTMLButtonElement;
+maxButton.addEventListener('click', () => {
+    display.value += 'Math.max('; // Max function
+    currentExpression += 'max('; // Displaying max on current expression
+    currentExpressionDisplay.textContent = currentExpression;
+});
 
 // ... (Rest of the existing code)
