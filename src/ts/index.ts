@@ -1,10 +1,10 @@
 // ... (Existing code)
-//Added Feature: Cubed
-const cubedButton = document.getElementById('cubed') as HTMLButtonElement;
-cubedButton.addEventListener('click', () => {
-    display.value += '**3';
-    currentExpression += '**3';
-    currentExpressionDisplay.textContent = currentExpression;
+//Added Feature: Reset Button
+const resetButton = document.getElementById('reset') as HTMLButtonElement;
+resetButton.addEventListener('click', () => {
+    display.value = '';
+    currentExpression = '';
+    currentExpressionDisplay.textContent = '';
 });
 
 // ... (Rest of the existing code)
