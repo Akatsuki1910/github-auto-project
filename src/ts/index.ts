@@ -85,4 +85,11 @@ lnButton.addEventListener('click', () => {
     currentExpression += 'ln('; //Displaying ln on current expression
     currentExpressionDisplay.textContent = currentExpression;
 });
+//Added Modulo operator
+const modButton = document.getElementById('mod') as HTMLButtonElement;
+modButton.addEventListener('click', () => {
+    display.value += '%';
+    currentExpression += '%'; // Displaying '%' on current expression for modulo
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... (Rest of the existing code)
