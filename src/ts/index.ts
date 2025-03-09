@@ -62,4 +62,13 @@ squaredButton.addEventListener('click', () => {
         display.value = (currentValue * currentValue).toString();
     }
 });
+//Added Feature: Cubed
+const cubeButton = document.getElementById('cube') as HTMLButtonElement;
+cubeButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (currentValue * currentValue * currentValue).toString();
+    }
+});
 // ... (Rest of the existing code)
