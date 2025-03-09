@@ -83,4 +83,11 @@ clearEntryButton.addEventListener('click', () => {
     display.value = '';
 });
 
+//Added Feature: Last Answer
+let lastAnswer = '';
+const lastAnswerButton = document.getElementById('last-answer') as HTMLButtonElement;
+lastAnswerButton.addEventListener('click', () => {
+    display.value += lastAnswer;
+});
+
 // ... (Rest of the existing code)
