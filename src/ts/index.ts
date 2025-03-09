@@ -64,4 +64,11 @@ minButton.addEventListener('click', () => {
     currentExpressionDisplay.textContent = currentExpression;
 });
 
+//Added Feature: 10 to the power of x
+const pow10Button = document.getElementById('pow10') as HTMLButtonElement;
+pow10Button.addEventListener('click', () => {
+  display.value += '10**';
+  currentExpression += '10^';
+  currentExpressionDisplay.textContent = currentExpression;
+});
 // ... (Rest of the existing code)
