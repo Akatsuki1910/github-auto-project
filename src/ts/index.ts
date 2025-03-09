@@ -1,8 +1,8 @@
 // ... (Existing code)
-//Added Feature: Exponential function
-const expButton = document.getElementById('exp') as HTMLButtonElement;
-expButton.addEventListener('click', () => {
+//Added Feature: Floor function
+const floorButton = document.getElementById('floor') as HTMLButtonElement;
+floorButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const num = parseFloat(display.value);
-    display.value = Math.exp(num).toString();
+    display.value = Math.floor(num).toString();
 });
