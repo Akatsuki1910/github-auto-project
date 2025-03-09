@@ -1,4 +1,12 @@
 // ... (Existing code)
+//Added Feature: Squared
+const squaredButton = document.getElementById('squared') as HTMLButtonElement;
+squaredButton.addEventListener('click', () => {
+    display.value += '**2';
+    currentExpression += '**2';
+    currentExpressionDisplay.textContent = currentExpression;
+});
+
 //Added Feature: Ceil
 const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
 ceilButton.addEventListener('click', () => {
