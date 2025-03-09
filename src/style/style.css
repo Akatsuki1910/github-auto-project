@@ -1,54 +1,12 @@
 /* ... (Existing styles) */
-
 .scientific-section{
-    display: none; /* Initially hidden */
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 5px;
-}
-
-/* ... other styles */
-
-body.dark-scheme {
-  /* ... existing styles */
-  background-color: #333;
-  color: #eee;
-}
-
-body.light-scheme{
-  /* ... existing styles */
-  background-color: #eee;
-  color: #333;
-}
-#history-display{
-    border: 1px solid #ccc;
-    padding: 10px;
-    overflow-y: auto;
-    max-height: 200px;
-    display:block; /* Ensure history is always shown */
-}
-#history-display p {
-    margin: 5px 0; /* Add some spacing between history items */
-}
-#currentExpressionDisplay{
-    min-height: 20px; /* Ensure the div takes up space */
-    border: 1px solid #ccc; /* Add a border */
-    padding: 5px; /* Add some padding */
-}
-.memory-section{
-    display: flex;
-    gap: 5px;
-}
-.memory-section button{
-    flex:1;
-}
-#virtual-keyboard {
-    display: none;
-    grid-template-columns: repeat(5, 1fr); /* Adjusted for better layout */
-    gap: 5px;
-}
-#virtual-keyboard button {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
-}
+display:none;grid-template-columns:repeat(5,1fr);grid-gap:5px;}
+body.dark-scheme{background-color:#333;color:#eee;}
+body.light-scheme{background-color:#eee;color:#333;}
+#history-display{border:1px solid #ccc;padding:10px;overflow-y:auto;max-height:200px;display:block;}
+#history-display p{margin:5px 0;}
+#currentExpressionDisplay{min-height:20px;border:1px solid #ccc;padding:5px;}
+.memory-section{display:flex;gap:5px;}
+.memory-section button{flex:1;}
+#virtual-keyboard{display:none;grid-template-columns:repeat(5,1fr);gap:5px;}
+#virtual-keyboard button{padding:10px;border:1px solid #ccc;border-radius:5px;cursor:pointer;}
