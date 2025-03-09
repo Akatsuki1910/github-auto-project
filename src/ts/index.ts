@@ -16,4 +16,14 @@ randomButton.addEventListener('click', () => {
     currentExpressionDisplay.textContent = currentExpression;
 });
 
+//Added Feature: Duplicate
+const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
+duplicateButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value += display.value;
+        currentExpression += currentExpression;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
+
 // ... (Rest of the existing code)
