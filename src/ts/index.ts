@@ -71,4 +71,11 @@ pow10Button.addEventListener('click', () => {
   currentExpression += '10^';
   currentExpressionDisplay.textContent = currentExpression;
 });
+//Added Euler's number
+const eButton = document.getElementById('e') as HTMLButtonElement;
+eButton.addEventListener('click', () => {
+    display.value += Math.E;
+    currentExpression += 'e';
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... (Rest of the existing code)
