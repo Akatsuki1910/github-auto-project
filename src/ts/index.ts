@@ -26,4 +26,18 @@ expandCollapseButton.addEventListener('click', () => {
     calculatorContainer.style.maxHeight = isExpanded ? '100%' : '100px'; // Adjust the collapsed height as needed
     expandCollapseButton.textContent = isExpanded ? 'Expand/Collapse' : 'Expand/Collapse';
 });
+
+//Added Feature: Toggle Scientific Buttons
+const toggleScientificButtons = document.getElementById('toggle-scientific-buttons') as HTMLButtonElement;
+const scientificSection = document.querySelector('.scientific-section') as HTMLDivElement;
+scientificSection.style.display = 'none';
+toggleScientificButtons.addEventListener('click', () => {
+    if (scientificSection.style.display === 'none') {
+        scientificSection.style.display = 'grid';
+        toggleScientificButtons.textContent = 'Hide Scientific Buttons';
+    } else {
+        scientificSection.style.display = 'none';
+        toggleScientificButtons.textContent = 'Scientific Buttons';
+    }
+});
 // ... (Rest of the existing code)
