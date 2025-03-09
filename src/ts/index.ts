@@ -49,4 +49,8 @@ restoreStateButton.addEventListener('click', () => {
         (document.getElementById('display') as HTMLInputElement).value = savedState;
     }
 });
+const clearEntryButton = document.getElementById('clear-entry') as HTMLButtonElement;
+clearEntryButton.addEventListener('click', () => {
+    (document.getElementById('display') as HTMLInputElement).value = '';
+});
 // ... (Rest of the existing code)
