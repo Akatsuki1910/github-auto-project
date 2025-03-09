@@ -41,4 +41,12 @@ saveStateButton.addEventListener('click', () => {
     const displayValue = (document.getElementById('display') as HTMLInputElement).value;
     localStorage.setItem('calculatorState', displayValue);
 });
+// Added Feature: Restore State
+const restoreStateButton = document.getElementById('restore-state') as HTMLButtonElement;
+restoreStateButton.addEventListener('click', () => {
+    const savedState = localStorage.getItem('calculatorState');
+    if (savedState) {
+        (document.getElementById('display') as HTMLInputElement).value = savedState;
+    }
+});
 // ... (Rest of the existing code)
