@@ -39,6 +39,11 @@ equalsButton?.addEventListener('click', () =>{
     try{
       lastAnswer = eval(currentExpression);
       display.value = lastAnswer.toString();
+      // 計算履歴の表示機能を追加
+      const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+      const newHistoryEntry = document.createElement('p');
+      newHistoryEntry.textContent = currentExpression + ' = ' + display.value;
+      historyDisplay.prepend(newHistoryEntry);
     }catch(e){
       display.value = 'Error';
     }
