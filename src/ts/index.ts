@@ -33,3 +33,9 @@ equalsButton.addEventListener('click', () => {
   history.push(display.value);
   historyDisplay.innerHTML = history.map(item => `<p>${item}</p>`).join('');
 });
+//Added Feature: Theme Toggle
+const toggleThemeButton = document.getElementById('toggle-theme') as HTMLButtonElement;
+toggleThemeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-scheme');
+    document.body.classList.toggle('light-scheme');
+});
