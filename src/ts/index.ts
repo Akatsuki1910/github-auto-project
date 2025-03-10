@@ -47,3 +47,9 @@ document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
         currentExpressionDisplay.textContent += button.textContent;
     });
 });
+//Added Feature: Backspace
+const backspaceButton = document.getElementById('backspace') as HTMLButtonElement;
+backspaceButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = display.value.slice(0, -1);
+});
