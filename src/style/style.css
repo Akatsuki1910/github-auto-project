@@ -9,3 +9,5 @@ body.light-scheme{background-color:#eee;color:#333;}
 .memory-section button{flex:1;}
 #virtual-keyboard{display:none;grid-template-columns:repeat(5,1fr);gap:5px;}
 #virtual-keyboard button{padding:10px;border:1px solid #ccc;border-radius:5px;cursor:pointer;}
+#calculator{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;}
+#calculator.scientific-layout{grid-template-columns:repeat(8,1fr);}
