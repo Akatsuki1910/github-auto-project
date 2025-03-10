@@ -9,3 +9,8 @@ lastAnswerButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value += lastAnswer;
 });
+const toggleThemeButton = document.getElementById('toggle-theme') as HTMLButtonElement;
+toggleThemeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-scheme');
+    document.body.classList.toggle('light-scheme');
+});
