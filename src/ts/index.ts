@@ -53,3 +53,10 @@ backspaceButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = display.value.slice(0, -1);
 });
+//Added Feature: Memory
+let memoryValue = 0;
+const memoryStoreButton = document.getElementById('memory-store') as HTMLButtonElement;
+memoryStoreButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    memoryValue = parseFloat(display.value);
+});
