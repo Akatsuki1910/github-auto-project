@@ -13,6 +13,8 @@ document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
 });
 equalsButton.addEventListener('click', () => {
     try {
+        // Calculate factorial if present
+        currentExpression = currentExpression.replace(/([0-9]+)!/g, (_, num) => factorial(parseInt(num)));
         const result = eval(currentExpression);
         display.value = result.toString();
         currentExpression = '';
@@ -28,31 +30,10 @@ equalsButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
-const switchLayoutButton = document.getElementById('switch-layout') as HTMLButtonElement;
-switchLayoutButton.addEventListener('click', () => {
-    const calculator = document.getElementById('calculator') as HTMLDivElement;
-    calculator.classList.toggle('scientific-layout');
-});
-const lastAnswerButton = document.getElementById('last-answer') as HTMLButtonElement;
-let lastAnswer = '';
-lastAnswerButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value += lastAnswer;
-});
-const toggleThemeButton = document.getElementById('toggle-theme') as HTMLButtonElement;
-toggleThemeButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-scheme');
-    document.body.classList.toggle('light-scheme');
-    localStorage.setItem('theme', document.body.classList.contains('dark-scheme') ? 'dark' : 'light');
-});
-window.addEventListener('load', () => {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'dark') {
-        document.body.classList.add('dark-scheme');
-        document.body.classList.remove('light-scheme');
+function factorial(n) {
+    if (n === 0) {
+        return 1;
     }
-    else {
-        document.body.classList.add('light-scheme');
-        document.body.classList.remove('dark-scheme');
-    }
-});
+    return n * factorial(n - 1);
+}
+// ... (rest of the code)
