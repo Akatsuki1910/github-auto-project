@@ -18,6 +18,11 @@ equalsButton.addEventListener('click', () => {
         currentExpression = '';
         currentExpressionDisplay.textContent = '';
         lastAnswer = result.toString();
+        // Add to history
+        const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+        const historyItem = document.createElement('p');
+        historyItem.textContent = `${currentExpression}=${result}`;
+        historyDisplay.prepend(historyItem); // Latest entry on top
     }
     catch (error) {
         display.value = 'Error';
