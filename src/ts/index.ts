@@ -60,3 +60,9 @@ memoryStoreButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     memoryValue = parseFloat(display.value);
 });
+//Added Feature: Negate
+const negateButton = document.getElementById('negate') as HTMLButtonElement;
+negateButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = (parseFloat(display.value) * -1).toString();
+});
