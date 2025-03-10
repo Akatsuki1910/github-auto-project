@@ -19,13 +19,11 @@ equalsButton.addEventListener('click', () => {
         const historyEntry = document.createElement('p');
         historyEntry.textContent = `${currentExpression} = ${lastAnswer}`;
         historyDisplay.appendChild(historyEntry);
-        // Clear current expression after calculation
         currentExpression = '';
         currentExpressionDisplay.textContent = '';
-        // Added feature: Copy result to clipboard and display message
+        // Copy result to clipboard
         navigator.clipboard.writeText(lastAnswer.toString()).then(() => {
             console.log('Result copied to clipboard');
-            // Display a temporary message
             const message = document.createElement('div');
             message.textContent = 'Copied!';
             message.style.position = 'absolute';
@@ -41,6 +39,11 @@ equalsButton.addEventListener('click', () => {
             }, 1000);
         }, (err) => {
             console.error('Failed to copy result: ', err);
+        });
+        //Added feature: Clear history button functionality
+        const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
+        clearHistoryButton.addEventListener('click', () => {
+            historyDisplay.innerHTML = ''; // Clear history display
         });
     }
     catch (error) {
