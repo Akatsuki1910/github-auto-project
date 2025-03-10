@@ -14,24 +14,24 @@ clearEntryButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = '';
 });
-
 //Added Feature: Calculate button
 const equalsButton = document.getElementById('equals') as HTMLButtonElement;
-equalsButton.addEventListener('click', () =>{
+equalsButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    try{
+    try {
         display.value = eval(display.value);
-    } catch (e) {
+    }
+    catch (e) {
         display.value = "Error";
     }
 });
 //Added Feature: History
 const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
-let history:string[] = [];
+let history = [];
 equalsButton.addEventListener('click', () => {
-  const display = document.getElementById('display') as HTMLInputElement;
-  history.push(display.value);
-  historyDisplay.innerHTML = history.map(item => `<p>${item}</p>`).join('');
+    const display = document.getElementById('display') as HTMLInputElement;
+    history.push(display.value);
+    historyDisplay.innerHTML = history.map(item => `<p>${item}</p>`).join('');
 });
 //Added Feature: Theme Toggle
 const toggleThemeButton = document.getElementById('toggle-theme') as HTMLButtonElement;
@@ -59,6 +59,11 @@ const memoryStoreButton = document.getElementById('memory-store') as HTMLButtonE
 memoryStoreButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     memoryValue = parseFloat(display.value);
+});
+const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement; // Added Feature: Memory Recall
+memoryRecallButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = memoryValue.toString();
 });
 //Added Feature: Negate
 const negateButton = document.getElementById('negate') as HTMLButtonElement;
