@@ -21,32 +21,28 @@ equalsButton.addEventListener('click', () => {
         historyDisplay.appendChild(historyEntry);
         currentExpression = '';
         currentExpressionDisplay.textContent = '';
-        // Copy result to clipboard
-        navigator.clipboard.writeText(lastAnswer.toString()).then(() => {
-            console.log('Result copied to clipboard');
-            const message = document.createElement('div');
-            message.textContent = 'Copied!';
-            message.style.position = 'absolute';
-            message.style.top = '10px';
-            message.style.right = '10px';
-            message.style.backgroundColor = 'green';
-            message.style.color = 'white';
-            message.style.padding = '5px 10px';
-            message.style.borderRadius = '5px';
-            document.body.appendChild(message);
-            setTimeout(() => {
-                document.body.removeChild(message);
-            }, 1000);
-        }, (err) => {
-            console.error('Failed to copy result: ', err);
-        });
-        //Added feature: Clear history button functionality
-        const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
-        clearHistoryButton.addEventListener('click', () => {
+        //Added feature: Clear All History button functionality
+        const clearAllHistoryButton = document.getElementById('clear-all-history') as HTMLButtonElement;
+        clearAllHistoryButton.addEventListener('click', () => {
+            localStorage.removeItem('calculatorHistory'); // Clear history from local storage
             historyDisplay.innerHTML = ''; // Clear history display
         });
+        // Store history in local storage
+        let history = JSON.parse(localStorage.getItem('calculatorHistory') || '[]');
+        history.push({ expression: currentExpression, result: lastAnswer });
+        localStorage.setItem('calculatorHistory', JSON.stringify(history));
     }
     catch (error) {
         display.value = 'Error';
     }
+});
+// Load history from local storage on page load
+window.addEventListener('load', () => {
+    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+    const history = JSON.parse(localStorage.getItem('calculatorHistory') || '[]');
+    history.forEach((entry) => {
+        const historyEntry = document.createElement('p');
+        historyEntry.textContent = `${entry.expression} = ${entry.result}`;
+        historyDisplay.appendChild(historyEntry);
+    });
 });
