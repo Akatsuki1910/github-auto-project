@@ -44,10 +44,18 @@ equalsButton?.addEventListener('click', () => {
         const newHistoryEntry = document.createElement('p');
         newHistoryEntry.textContent = currentExpression + ' = ' + display.value;
         historyDisplay.prepend(newHistoryEntry);
+
         // 履歴をlocalStorageに保存
         let history = JSON.parse(localStorage.getItem('calculatorHistory') || '[]');
         history.push(newHistoryEntry.textContent);
         localStorage.setItem('calculatorHistory', JSON.stringify(history));
+                // 履歴件数が10件を超えたら古いものから削除
+        if (history.length > 10) {
+            history.shift();  // 先頭の要素を削除
+            localStorage.setItem('calculatorHistory', JSON.stringify(history));
+            // historyDisplayの古い履歴も削除
+            historyDisplay.removeChild(historyDisplay.lastChild as Node);
+        }
     }
     catch (e) {
         display.value = 'Error';
