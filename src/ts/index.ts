@@ -1,4 +1,9 @@
 // ... (Existing code)
+const switchLayoutButton = document.getElementById('switch-layout') as HTMLButtonElement;
+switchLayoutButton.addEventListener('click', () => {
+    const calculator = document.getElementById('calculator') as HTMLDivElement;
+    calculator.classList.toggle('scientific-layout');
+});
 const lastAnswerButton = document.getElementById('last-answer') as HTMLButtonElement;
 let lastAnswer = '';
 equalsButton.addEventListener('click', () => {
