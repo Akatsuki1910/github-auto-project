@@ -32,4 +32,15 @@ clearEntryButton.addEventListener('click', () => {
     currentExpression = '';
     currentExpressionDisplay.textContent = '';
 });
+// 新機能：直前の計算結果をAns変数に格納
+let lastAnswer = 0;
+const equalsButton = document.getElementById('equals') as HTMLButtonElement;
+equalsButton?.addEventListener('click', () =>{
+    try{
+      lastAnswer = eval(currentExpression);
+      display.value = lastAnswer.toString();
+    }catch(e){
+      display.value = 'Error';
+    }
+});
 // ... (rest of the code)
