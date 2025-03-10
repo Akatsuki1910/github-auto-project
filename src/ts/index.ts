@@ -14,6 +14,11 @@ equalsButton.addEventListener('click', () => {
     try {
         lastAnswer = eval(currentExpression);
         display.value = lastAnswer.toString();
+        // Add history entry
+        const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+        const historyEntry = document.createElement('p');
+        historyEntry.textContent = `${currentExpression} = ${lastAnswer}`;
+        historyDisplay.appendChild(historyEntry);
         currentExpression = '';
         currentExpressionDisplay.textContent = '';
     }
