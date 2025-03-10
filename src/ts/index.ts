@@ -39,3 +39,11 @@ toggleThemeButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-scheme');
     document.body.classList.toggle('light-scheme');
 });
+//Added Feature: Current Expression Display
+const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
+const operators = ['+', '-', '*', '/', '√', '%', 'x²', 'x³', 'x!', '1/x', 'xʸ', 'log', 'sin', 'cos', 'tan', 'abs', 'round', 'sign', 'exp', 'floor', 'rand', 'e', '10ˣ', 'mod'];
+document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
+    button.addEventListener('click', () => {
+        currentExpressionDisplay.textContent += button.textContent;
+    });
+});
