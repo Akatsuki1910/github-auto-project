@@ -46,3 +46,14 @@ window.addEventListener('load', () => {
         historyDisplay.appendChild(historyEntry);
     });
 });
+// Add copy expression functionality
+const copyExpressionButton = document.getElementById('copy-expression') as HTMLButtonElement;
+copyExpressionButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(currentExpression)
+        .then(() => {
+        alert('Expression copied to clipboard!');
+    })
+        .catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+});
