@@ -1,4 +1,9 @@
 // ... (Existing code)
+const toggleThemeButton = document.getElementById('toggle-theme') as HTMLButtonElement;
+toggleThemeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-scheme');
+    document.body.classList.toggle('light-scheme');
+});
 const toggleScientificButton = document.getElementById('toggle-scientific') as HTMLButtonElement;
 const calculatorContainer = document.getElementById('calculator') as HTMLDivElement;
 toggleScientificButton.addEventListener('click', () => {
