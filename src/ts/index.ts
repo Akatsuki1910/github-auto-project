@@ -1,11 +1,11 @@
 // ... (Existing code)
-const modButton = document.getElementById('mod') as HTMLButtonElement;
-modButton.addEventListener('click', () => {
+const parenthesesOpenButton = document.getElementById('parentheses-open') as HTMLButtonElement;
+parenthesesOpenButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        currentOperator = '%';
-        firstOperand = currentValue;
-        display.value = '';
-    }
+    display.value += '(';
+});
+const parenthesesCloseButton = document.getElementById('parentheses-close') as HTMLButtonElement;
+parenthesesCloseButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value += ')';
 });
