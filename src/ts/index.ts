@@ -14,3 +14,14 @@ clearEntryButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = '';
 });
+
+//Added Feature: Calculate button
+const equalsButton = document.getElementById('equals') as HTMLButtonElement;
+equalsButton.addEventListener('click', () =>{
+    const display = document.getElementById('display') as HTMLInputElement;
+    try{
+        display.value = eval(display.value);
+    } catch (e) {
+        display.value = "Error";
+    }
+});
