@@ -4,6 +4,8 @@ let currentExpression = '';
 const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
 let lastAnswer = 0;
 let memoryValue = 0; 
+const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+let history: string[] = [];
 
 // ... (Other existing code)
 
@@ -31,4 +33,14 @@ document.getElementById('left-parenthesis').addEventListener('click', () => {
 document.getElementById('right-parenthesis').addEventListener('click', () => {
     currentExpression += ')';
     currentExpressionDisplay.textContent = currentExpression;
+});
+
+//Added history toggle button
+document.getElementById('history').addEventListener('click', () => {
+  if (historyDisplay.style.display === 'none' || historyDisplay.style.display === '') {
+    historyDisplay.style.display = 'block';
+    historyDisplay.innerHTML = history.join('<br>');
+  } else {
+    historyDisplay.style.display = 'none';
+}
 });
