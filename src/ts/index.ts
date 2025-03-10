@@ -23,4 +23,13 @@ copyToClipboardButton.addEventListener('click', () => {
         console.error('Could not copy text: ', err);
     });
 });
+const display = document.getElementById('display') as HTMLInputElement;
+let currentExpression = '';
+const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
+// 追加機能：現在の式をクリアするボタン
+const clearEntryButton = document.getElementById('clear-entry') as HTMLButtonElement;
+clearEntryButton.addEventListener('click', () => {
+    currentExpression = '';
+    currentExpressionDisplay.textContent = '';
+});
 // ... (rest of the code)
