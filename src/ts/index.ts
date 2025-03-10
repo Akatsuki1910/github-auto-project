@@ -19,8 +19,17 @@ equalsButton.addEventListener('click', () => {
         const historyEntry = document.createElement('p');
         historyEntry.textContent = `${currentExpression} = ${lastAnswer}`;
         historyDisplay.appendChild(historyEntry);
+
+        // Clear current expression after calculation
         currentExpression = '';
         currentExpressionDisplay.textContent = '';
+
+        // Added feature: Copy result to clipboard
+        navigator.clipboard.writeText(lastAnswer.toString()).then(() => {
+            console.log('Result copied to clipboard');
+        }, (err) => {
+            console.error('Failed to copy result: ', err);
+        });
     }
     catch (error) {
         display.value = 'Error';
