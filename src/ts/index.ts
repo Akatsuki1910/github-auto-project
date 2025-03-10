@@ -1,4 +1,16 @@
 // ... (Existing code)
+const lnButton = document.getElementById('ln') as HTMLButtonElement;
+lnButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const result = Math.log(currentValue);
+        display.value = result.toString();
+        currentExpression = result.toString();
+        currentExpressionDisplay.textContent = currentExpression;
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
 const toggleThemeButton = document.getElementById('toggle-theme') as HTMLButtonElement;
 toggleThemeButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-scheme');
@@ -16,7 +28,7 @@ duplicateButton.addEventListener('click', () => {
 });
 const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
 let currentExpression = '';
-const operators = ['+', '-', '*', '/', '%', '√', 'x²', 'x³', 'xʸ', 'log', 'sin', 'cos', 'tan', 'abs', 'round', 'sign', 'exp', 'floor', 'rand', 'e', '10^x', 'mod'];
+const operators = ['+', '-', '*', '/', '%', '√', 'x²', 'x³', 'xʸ', 'log', 'sin', 'cos', 'tan', 'abs', 'round', 'sign', 'exp', 'floor', 'rand', 'e', '10^x', 'mod', 'ln'];
 const digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
     button.addEventListener('click', () => {
