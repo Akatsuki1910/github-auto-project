@@ -35,17 +35,22 @@ clearEntryButton.addEventListener('click', () => {
 // 新機能：直前の計算結果をAns変数に格納
 let lastAnswer = 0;
 const equalsButton = document.getElementById('equals') as HTMLButtonElement;
-equalsButton?.addEventListener('click', () =>{
-    try{
-      lastAnswer = eval(currentExpression);
-      display.value = lastAnswer.toString();
-      // 計算履歴の表示機能を追加
-      const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
-      const newHistoryEntry = document.createElement('p');
-      newHistoryEntry.textContent = currentExpression + ' = ' + display.value;
-      historyDisplay.prepend(newHistoryEntry);
-    }catch(e){
-      display.value = 'Error';
+equalsButton?.addEventListener('click', () => {
+    try {
+        lastAnswer = eval(currentExpression);
+        display.value = lastAnswer.toString();
+        // 計算履歴の表示機能を追加
+        const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+        const newHistoryEntry = document.createElement('p');
+        newHistoryEntry.textContent = currentExpression + ' = ' + display.value;
+        historyDisplay.prepend(newHistoryEntry);
+        // 履歴をlocalStorageに保存
+        let history = JSON.parse(localStorage.getItem('calculatorHistory') || '[]');
+        history.push(newHistoryEntry.textContent);
+        localStorage.setItem('calculatorHistory', JSON.stringify(history));
+    }
+    catch (e) {
+        display.value = 'Error';
     }
 });
 // ... (rest of the code)
