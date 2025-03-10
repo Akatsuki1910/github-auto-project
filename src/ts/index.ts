@@ -1,4 +1,15 @@
 // ... (Existing code)
+const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
+duplicateButton.addEventListener('click', () => {
+    if (display.value) {
+        navigator.clipboard.writeText(display.value);
+        // Add visual feedback (e.g., change button color briefly)
+        duplicateButton.style.backgroundColor = 'lightblue';
+        setTimeout(() => {
+            duplicateButton.style.backgroundColor = '';
+        }, 200);
+    }
+});
 const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
 let currentExpression = '';
 const operators = ['+', '-', '*', '/', '%', '√', 'x²', 'x³', 'xʸ', 'log', 'sin', 'cos', 'tan', 'abs', 'round', 'sign', 'exp', 'floor', 'rand', 'e', '10^x', 'mod'];
