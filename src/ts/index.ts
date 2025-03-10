@@ -15,4 +15,12 @@ resetButton.addEventListener('click', () => {
     currentExpression = '';
     currentExpressionDisplay.textContent = '';
 });
+const copyToClipboardButton = document.getElementById('copy-to-clipboard') as HTMLButtonElement;
+copyToClipboardButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(display.value).then(() => {
+        alert('Copied to clipboard: ' + display.value);
+    }, (err) => {
+        console.error('Could not copy text: ', err);
+    });
+});
 // ... (rest of the code)
