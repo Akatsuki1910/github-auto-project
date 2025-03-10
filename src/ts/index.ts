@@ -3,6 +3,7 @@ const display = document.getElementById('display') as HTMLInputElement;
 let currentExpression = '';
 const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
 let lastAnswer = 0;
+let memoryValue = 0; // Added for MRC functionality
 // ... (Other existing code)
 const lastAnswerButton = document.getElementById('last-answer') as HTMLButtonElement;
 lastAnswerButton.addEventListener('click', () => {
@@ -56,4 +57,13 @@ copyExpressionButton.addEventListener('click', () => {
         .catch(err => {
         console.error('Failed to copy: ', err);
     });
+});
+// Added MRC (Memory Recall/Clear) functionality
+const mrcButton = document.getElementById('mrc') as HTMLButtonElement;
+mrcButton.addEventListener('click', () => {
+    if (memoryValue !== 0) {
+        currentExpression += memoryValue.toString();
+        currentExpressionDisplay.textContent = currentExpression;
+        memoryValue = 0; // Clear memory after recall
+    }
 });
