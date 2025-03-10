@@ -17,3 +17,8 @@ plusMinusButton.addEventListener('click', () => {
     }
     currentExpressionDisplay.textContent = currentExpression;
 });
+
+//Added copy expression functionality
+document.getElementById('copy-expression').addEventListener('click', () => {
+    navigator.clipboard.writeText(currentExpression);
+});
