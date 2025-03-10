@@ -22,3 +22,13 @@ plusMinusButton.addEventListener('click', () => {
 document.getElementById('copy-expression').addEventListener('click', () => {
     navigator.clipboard.writeText(currentExpression);
 });
+
+// Added left/right parenthesis buttons
+document.getElementById('left-parenthesis').addEventListener('click', () => {
+    currentExpression += '(';
+    currentExpressionDisplay.textContent = currentExpression;
+});
+document.getElementById('right-parenthesis').addEventListener('click', () => {
+    currentExpression += ')';
+    currentExpressionDisplay.textContent = currentExpression;
+});
