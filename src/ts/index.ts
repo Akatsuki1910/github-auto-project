@@ -25,3 +25,11 @@ equalsButton.addEventListener('click', () =>{
         display.value = "Error";
     }
 });
+//Added Feature: History
+const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+let history:string[] = [];
+equalsButton.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  history.push(display.value);
+  historyDisplay.innerHTML = history.map(item => `<p>${item}</p>`).join('');
+});
