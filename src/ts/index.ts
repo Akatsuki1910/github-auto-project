@@ -54,3 +54,8 @@ const currentTimeButton = document.getElementById('current-time') as HTMLButtonE
 currentTimeButton.addEventListener('click', () => {
     display.value = new Date().toLocaleTimeString();
 });
+//Show Year
+const currentYearButton = document.getElementById('current-year') as HTMLButtonElement;
+currentYearButton.addEventListener('click',() =>{
+    display.value = new Date().getFullYear().toString();
+});
