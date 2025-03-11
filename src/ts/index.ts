@@ -51,3 +51,10 @@ clearDisplayButton.addEventListener('click', () => {
   currentExpression = '';
   currentExpressionDisplay.textContent = '';
 });
+
+// Added current date button
+document.getElementById('current-date').addEventListener('click', () => {
+    const currentDate = new Date().toLocaleDateString();
+    currentExpression += currentDate;
+    currentExpressionDisplay.textContent = currentExpression;
+});
