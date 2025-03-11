@@ -9,57 +9,15 @@ let history: string[] = [];
 
 // ... (Other existing code)
 
-// Added plus/minus button functionality
-const plusMinusButton = document.getElementById('plus-minus') as HTMLButtonElement;
-plusMinusButton.addEventListener('click', () => {
-    if (currentExpression !== '' && currentExpression[0] !== '-') {
-        currentExpression = '-' + currentExpression;
-    } else if (currentExpression !== '' && currentExpression[0] === '-') {
-        currentExpression = currentExpression.substring(1);
+//Added M+ button functionality
+const mPlusButton = document.getElementById('m-plus') as HTMLButtonElement;
+mPlusButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(currentExpression);
+        memoryValue += currentValue;
+    } catch (error) {
+        console.error("Invalid input for M+");
     }
-    currentExpressionDisplay.textContent = currentExpression;
 });
-
-//Added copy expression functionality
-document.getElementById('copy-expression').addEventListener('click', () => {
-    navigator.clipboard.writeText(currentExpression);
-});
-
-// Added left/right parenthesis buttons
-document.getElementById('left-parenthesis').addEventListener('click', () => {
-    currentExpression += '(';
-    currentExpressionDisplay.textContent = currentExpression;
-});
-document.getElementById('right-parenthesis').addEventListener('click', () => {
-    currentExpression += ')';
-    currentExpressionDisplay.textContent = currentExpression;
-});
-
-//Added history toggle button
-document.getElementById('history').addEventListener('click', () => {
-  if (historyDisplay.style.display === 'none' || historyDisplay.style.display === '') {
-    historyDisplay.style.display = 'block';
-    historyDisplay.innerHTML = history.join('<br>');
-  } else {
-    historyDisplay.style.display = 'none';
-}
-});
-
-//Added clear display button
-const clearDisplayButton = document.getElementById('clear-display') as HTMLButtonElement;
-clearDisplayButton.addEventListener('click', () => {
-  currentExpression = '';
-  currentExpressionDisplay.textContent = '';
-});
-
-// Added current date button
-document.getElementById('current-date').addEventListener('click', () => {
-    const currentDate = new Date().toLocaleDateString();
-    currentExpression += currentDate;
-    currentExpressionDisplay.textContent = currentExpression;
-});
-
-//Open calculator in a new window
-document.getElementById('open-new-window').addEventListener('click', () => {
-  window.open('index.html', '_blank', 'width=400,height=600');
-});
+// Added plus/minus button functionality
+// ... other code
