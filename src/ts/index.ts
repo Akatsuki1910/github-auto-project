@@ -44,3 +44,10 @@ document.getElementById('history').addEventListener('click', () => {
     historyDisplay.style.display = 'none';
 }
 });
+
+//Added clear display button
+const clearDisplayButton = document.getElementById('clear-display') as HTMLButtonElement;
+clearDisplayButton.addEventListener('click', () => {
+  currentExpression = '';
+  currentExpressionDisplay.textContent = '';
+});
