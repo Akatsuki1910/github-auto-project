@@ -58,3 +58,8 @@ document.getElementById('current-date').addEventListener('click', () => {
     currentExpression += currentDate;
     currentExpressionDisplay.textContent = currentExpression;
 });
+
+//Open calculator in a new window
+document.getElementById('open-new-window').addEventListener('click', () => {
+  window.open('index.html', '_blank', 'width=400,height=600');
+});
