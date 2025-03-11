@@ -7,14 +7,8 @@ let memoryValue = 0;
 const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
 let history: string[] = [];
 const currentDateDisplay = document.getElementById('current-date-display') as HTMLDivElement;
-// ... (Other existing code)
-
-// ... existing functions
-
-// ... existing code for other buttons
-
+// ... (Other existing code and functions)
 // ... existing filters
-
 // Drop Shadow
 const dropShadowButton = document.getElementById('drop-shadow') as HTMLButtonElement;
 let dropShadowValue = 0;
@@ -22,19 +16,16 @@ dropShadowButton.addEventListener('click', () => {
     dropShadowValue += 5;
 document.body.style.filter = `drop-shadow(${dropShadowValue}px ${dropShadowValue}px 5px rgba(0,0,0,0.5))`;
 });
-
 // Remove Filter
 const removeFilterButton = document.getElementById('remove-filter') as HTMLButtonElement;
 removeFilterButton.addEventListener('click', () => {
   document.body.style.filter = 'none';
   dropShadowValue = 0; // Reset drop shadow value
 });
-
 //Show Date
 const currentDateButton = document.getElementById('current-date') as HTMLButtonElement;
 const toggleCurrentDateDisplayButton = document.getElementById('toggle-current-date-display') as HTMLButtonElement;
 let currentDateDisplayVisible = false;
-
 toggleCurrentDateDisplayButton.addEventListener('click', () => {
     currentDateDisplayVisible = !currentDateDisplayVisible;
     if (currentDateDisplayVisible) {
@@ -44,11 +35,9 @@ toggleCurrentDateDisplayButton.addEventListener('click', () => {
         currentDateDisplay.style.display = 'none';
     }
 });
-
 currentDateButton.addEventListener('click',()=>{
     display.value = new Date().toLocaleString();
 });
-
 //Show Time
 const currentTimeButton = document.getElementById('current-time') as HTMLButtonElement;
 currentTimeButton.addEventListener('click', () => {
@@ -86,4 +75,9 @@ currentSecondsButton.addEventListener('click', () => {
 const currentMillisecondsButton = document.getElementById('current-milliseconds') as HTMLButtonElement;
 currentMillisecondsButton.addEventListener('click', () => {
     display.value = new Date().getMilliseconds().toString();
+});
+//Show Minutes
+const currentMinutesButton = document.getElementById('current-minutes') as HTMLButtonElement;
+currentMinutesButton.addEventListener('click', () => {
+  display.value = new Date().getMinutes().toString();
 });

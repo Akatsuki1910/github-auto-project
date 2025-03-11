@@ -7,7 +7,6 @@
     max-height: 200px;
     overflow-y: auto;
   }
-
 #currentExpressionDisplay {
     display: none;
     border: 1px solid #ccc;
@@ -15,7 +14,6 @@
     margin-top: 5px;
     min-height: 20px; /* Ensure minimal height even when empty */
 }
-
 body.dark-scheme {
     background-color: #333;
     color: #eee;
