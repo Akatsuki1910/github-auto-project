@@ -30,3 +30,17 @@ toggleKeyboardButton.addEventListener('click', () => {
         toggleKeyboardButton.textContent = 'Enable Keyboard';
     }
 });
+
+// Toggle Display Always On
+const toggleDisplayAlwaysOnButton = document.getElementById('toggle-display-always-on') as HTMLButtonElement;
+let displayAlwaysOn = false;
+toggleDisplayAlwaysOnButton.addEventListener('click', () => {
+    displayAlwaysOn = !displayAlwaysOn;
+    if (displayAlwaysOn) {
+        display.style.backgroundColor = 'yellow'; // Highlight when always on
+        toggleDisplayAlwaysOnButton.textContent = 'Display Always Off';
+    } else {
+        display.style.backgroundColor = ''; // Reset background
+        toggleDisplayAlwaysOnButton.textContent = 'Display Always On';
+    }
+});
