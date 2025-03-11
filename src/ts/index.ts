@@ -13,51 +13,12 @@ let history: string[] = [];
 
 // ... existing code for other buttons
 
-// Toggle Hue Rotate
-const toggleHueRotateButton = document.getElementById('toggle-hue-rotate') as HTMLButtonElement;
-let hueRotation = 0;
-toggleHueRotateButton.addEventListener('click', () => {
-    hueRotation += 30;
-    document.body.style.filter = `hue-rotate(${hueRotation}deg)`;
-});
+// ... existing filters
 
-// Invert Colors
-const invertColorsButton = document.getElementById('invert-colors') as HTMLButtonElement;
-let isInverted = false;
-invertColorsButton.addEventListener('click', () => {
-    isInverted = !isInverted;
-    document.body.style.filter = isInverted ? 'invert(100%)' : '';
-});
-
-// Grayscale
-const grayscaleButton = document.getElementById('grayscale') as HTMLButtonElement;
-let isGrayscale = false;
-grayscaleButton.addEventListener('click', () => {
-    isGrayscale = !isGrayscale;
-    document.body.style.filter = isGrayscale ? 'grayscale(100%)' : '';
-});
-
-// Sepia
-const sepiaButton = document.getElementById('sepia') as HTMLButtonElement;
-let isSepia = false;
-sepiaButton.addEventListener('click', () => {
-    isSepia = !isSepia;
-    document.body.style.filter = isSepia ? 'sepia(100%)' : '';
-});
-
-// Blur
-const blurButton = document.getElementById('blur') as HTMLButtonElement;
-let blurValue = 0;
-blurButton.addEventListener('click', () => {
-  blurValue += 2;
-  document.body.style.filter = `blur(${blurValue}px)`;
-});
-
-// Contrast Filter
-const contrastFilterButton = document.getElementById('contrast-filter') as HTMLButtonElement;
-let contrastValue = 100;
-contrastFilterButton.addEventListener('click', () => {
-    contrastValue += 25; 
-    if (contrastValue > 200) { contrastValue = 100; }
-    document.body.style.filter = `contrast(${contrastValue}%)`;
+// Drop Shadow
+const dropShadowButton = document.getElementById('drop-shadow') as HTMLButtonElement;
+let dropShadowValue = 0;
+dropShadowButton.addEventListener('click', () => {
+    dropShadowValue += 5;
+document.body.style.filter = `drop-shadow(${dropShadowValue}px ${dropShadowValue}px 5px rgba(0,0,0,0.5))`;
 });
