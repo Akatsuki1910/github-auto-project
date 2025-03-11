@@ -24,3 +24,10 @@ body.light-scheme {
     background-color: #eee;
     color: #333;
 }
+#current-date-display{
+display:none;
+border: 1px solid #ccc;
+padding: 5px;
+margin-top: 5px;
+min-height: 20px;
+}
