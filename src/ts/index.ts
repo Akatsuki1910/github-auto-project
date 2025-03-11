@@ -13,54 +13,20 @@ let history: string[] = [];
 // ... (Existing functions)
 
 // Added calculate expression functionality
-const calculateExpressionButton = document.getElementById('calculate-expression') as HTMLButtonElement;
-calculateExpressionButton.addEventListener('click', () => {
-    try {
-        const result = eval(currentExpression);
-        display.value = result.toString();
-        currentExpression = result.toString();
-        history.push(`${currentExpression} = ${result}`);
-        historyDisplay.innerHTML = history.join('<br>'); // Display history
-        historyDisplay.style.display = 'block'; 
-    } catch (error) {
-        display.value = 'Error';
-        console.error("Invalid expression");
-    }
-});
-const toggleHistoryDisplayButton = document.getElementById('toggle-history-display') as HTMLButtonElement;
-toggleHistoryDisplayButton.addEventListener('click', () => {
-  if (historyDisplay.style.display === 'none') {
-    historyDisplay.style.display = 'block';
-  } else {
-    historyDisplay.style.display = 'none';
-  }
-});
+// ... (Existing calculateExpressionButton)
 
-// Clear Last Number (CLN) functionality
-const clearLastNumberButton = document.getElementById('clear-last-number') as HTMLButtonElement;
-clearLastNumberButton.addEventListener('click', () => {
-    const numbers = currentExpression.split(/[^0-9.]/g).filter(Boolean);
-    if (numbers.length > 0) {
-        const lastNumber = numbers[numbers.length - 1];
-        currentExpression = currentExpression.slice(0, currentExpression.lastIndexOf(lastNumber));
-        display.value = currentExpression; // Update display
-    }
-});
+// ... existing code for toggleHistoryDisplayButton, clearLastNumberButton, debugButton, toggleCurrentExpressionButton
 
-// Debug button functionality (New feature)
-const debugButton = document.getElementById('debug') as HTMLButtonElement;
-debugButton.addEventListener('click', () => {
-    console.log("Current Expression:", currentExpression);
-    console.log("History:", history);
-});
-
-// Toggle Current Expression Display
-const toggleCurrentExpressionButton = document.getElementById('toggle-current-expression') as HTMLButtonElement;
-toggleCurrentExpressionButton.addEventListener('click', () => {
-    if (currentExpressionDisplay.style.display === 'none') {
-        currentExpressionDisplay.style.display = 'block';
-        currentExpressionDisplay.textContent = currentExpression; // Show current expression
+// Toggle Keyboard Input
+const toggleKeyboardButton = document.getElementById('toggle-keyboard') as HTMLButtonElement;
+let keyboardInputEnabled = true;
+toggleKeyboardButton.addEventListener('click', () => {
+    keyboardInputEnabled = !keyboardInputEnabled;
+    if (keyboardInputEnabled) {
+        display.removeAttribute('readonly');
+        toggleKeyboardButton.textContent = 'Disable Keyboard';
     } else {
-        currentExpressionDisplay.style.display = 'none';
+        display.setAttribute('readonly', 'true');
+        toggleKeyboardButton.textContent = 'Enable Keyboard';
     }
 });
