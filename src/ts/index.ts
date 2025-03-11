@@ -31,4 +31,12 @@ plusMinusButton.addEventListener('click', () => {
         display.value = currentExpression;
     }
 });
+const toggleHistoryDisplayButton = document.getElementById('toggle-history-display') as HTMLButtonElement;
+toggleHistoryDisplayButton.addEventListener('click', () => {
+  if (historyDisplay.style.display === 'none' || historyDisplay.style.display === '') {
+    historyDisplay.style.display = 'block';
+  } else {
+    historyDisplay.style.display = 'none';
+  }
+});
 // ... other code
