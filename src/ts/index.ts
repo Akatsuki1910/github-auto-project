@@ -77,3 +77,8 @@ currentWeekButton.addEventListener('click', () => {
     const pastDaysOfYear = (today.getTime() - firstDayOfYear.getTime()) / 86400000;
     display.value = Math.ceil((pastDaysOfYear + firstDayOfYear.getDay() + 1) / 7).toString();
 });
+//Show Seconds
+const currentSecondsButton = document.getElementById('current-seconds') as HTMLButtonElement;
+currentSecondsButton.addEventListener('click', () => {
+    display.value = new Date().getSeconds().toString();
+});
