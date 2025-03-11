@@ -48,3 +48,9 @@ toggleCurrentDateDisplayButton.addEventListener('click', () => {
 currentDateButton.addEventListener('click',()=>{
     display.value = new Date().toLocaleString();
 });
+
+//Show Time
+const currentTimeButton = document.getElementById('current-time') as HTMLButtonElement;
+currentTimeButton.addEventListener('click', () => {
+    display.value = new Date().toLocaleTimeString();
+});
