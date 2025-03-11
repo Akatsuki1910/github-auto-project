@@ -64,3 +64,8 @@ const currentMonthButton = document.getElementById('current-month') as HTMLButto
 currentMonthButton.addEventListener('click', () => {
   display.value = (new Date().getMonth() + 1).toString(); // Month is 0-indexed
 });
+//Show Day
+const currentDayButton = document.getElementById('current-day') as HTMLButtonElement;
+currentDayButton.addEventListener('click', () => {
+    display.value = new Date().getDate().toString();
+});
