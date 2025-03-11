@@ -7,3 +7,11 @@
     max-height: 200px;
     overflow-y: auto;
   }
+
+#currentExpressionDisplay {
+    display: none;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin-top: 5px;
+    min-height: 20px; /* Ensure minimal height even when empty */
+}

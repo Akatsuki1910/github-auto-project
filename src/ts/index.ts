@@ -53,3 +53,14 @@ debugButton.addEventListener('click', () => {
     console.log("Current Expression:", currentExpression);
     console.log("History:", history);
 });
+
+// Toggle Current Expression Display
+const toggleCurrentExpressionButton = document.getElementById('toggle-current-expression') as HTMLButtonElement;
+toggleCurrentExpressionButton.addEventListener('click', () => {
+    if (currentExpressionDisplay.style.display === 'none') {
+        currentExpressionDisplay.style.display = 'block';
+        currentExpressionDisplay.textContent = currentExpression; // Show current expression
+    } else {
+        currentExpressionDisplay.style.display = 'none';
+    }
+});
