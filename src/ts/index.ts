@@ -20,26 +20,16 @@ toggleScreenBrightnessButton.addEventListener('click', () => {
     document.body.style.filter = `brightness(${brightness})`;
 });
 
-// ... existing code for toggleHistoryDisplayButton, clearLastNumberButton, debugButton, toggleCurrentExpressionButton, toggleKeyboardButton, toggleDisplayAlwaysOnButton
+// ... existing code for other buttons
 
-// Toggle Dark Mode
-const toggleDarkModeButton = document.getElementById('toggle-dark-mode') as HTMLButtonElement;
-let darkMode = false;
-toggleDarkModeButton.addEventListener('click', () => {
-    darkMode = !darkMode;
-    document.body.classList.toggle('dark-scheme', darkMode);
-    document.body.classList.toggle('light-scheme', !darkMode);
+// Toggle Contrast
+const toggleContrastButton = document.getElementById('toggle-contrast') as HTMLButtonElement;
+let contrast = 1;
+toggleContrastButton.addEventListener('click', () => {
+    contrast -= 0.1;
+    if (contrast < 0) contrast = 1;
+    document.body.style.filter = `contrast(${contrast})`;
 });
-
-// Toggle Calculator Visibility
-const toggleCalculatorVisibilityButton = document.getElementById('toggle-calculator-visibility') as HTMLButtonElement;
-const calculatorDiv = document.getElementById('calculator') as HTMLDivElement;
-toggleCalculatorVisibilityButton.addEventListener('click', () => {
-    calculatorDiv.style.display = calculatorDiv.style.display === 'none' ? 'block' : 'none';
-});
-
-// Toggle CapsLock
-// ... existing code
 
 // Toggle Font Size
 const toggleFontsizeButton = document.getElementById('toggle-fontsize') as HTMLButtonElement;
