@@ -35,6 +35,8 @@ const toggleHistoryDisplayButton = document.getElementById('toggle-history-displ
 toggleHistoryDisplayButton.addEventListener('click', () => {
   if (historyDisplay.style.display === 'none' || historyDisplay.style.display === '') {
     historyDisplay.style.display = 'block';
+    // Added displaying history items
+    historyDisplay.innerHTML = history.map(item => `<p>${item}</p>`).join('');
   } else {
     historyDisplay.style.display = 'none';
   }
