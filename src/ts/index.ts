@@ -31,3 +31,10 @@ toggleDarkModeButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-scheme', darkMode);
     document.body.classList.toggle('light-scheme', !darkMode);
 });
+
+// Toggle Calculator Visibility
+const toggleCalculatorVisibilityButton = document.getElementById('toggle-calculator-visibility') as HTMLButtonElement;
+const calculatorDiv = document.getElementById('calculator') as HTMLDivElement;
+toggleCalculatorVisibilityButton.addEventListener('click', () => {
+    calculatorDiv.style.display = calculatorDiv.style.display === 'none' ? 'block' : 'none';
+});
