@@ -59,3 +59,8 @@ const currentYearButton = document.getElementById('current-year') as HTMLButtonE
 currentYearButton.addEventListener('click',() =>{
     display.value = new Date().getFullYear().toString();
 });
+//Show Month
+const currentMonthButton = document.getElementById('current-month') as HTMLButtonElement;
+currentMonthButton.addEventListener('click', () => {
+  display.value = (new Date().getMonth() + 1).toString(); // Month is 0-indexed
+});
