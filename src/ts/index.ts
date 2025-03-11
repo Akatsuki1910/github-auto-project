@@ -44,3 +44,11 @@ sepiaButton.addEventListener('click', () => {
     isSepia = !isSepia;
     document.body.style.filter = isSepia ? 'sepia(100%)' : '';
 });
+
+// Blur
+const blurButton = document.getElementById('blur') as HTMLButtonElement;
+let blurValue = 0;
+blurButton.addEventListener('click', () => {
+  blurValue += 2;
+  document.body.style.filter = `blur(${blurValue}px)`;
+});
