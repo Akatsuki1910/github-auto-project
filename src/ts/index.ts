@@ -22,3 +22,10 @@ dropShadowButton.addEventListener('click', () => {
     dropShadowValue += 5;
 document.body.style.filter = `drop-shadow(${dropShadowValue}px ${dropShadowValue}px 5px rgba(0,0,0,0.5))`;
 });
+
+// Remove Filter
+const removeFilterButton = document.getElementById('remove-filter') as HTMLButtonElement;
+removeFilterButton.addEventListener('click', () => {
+  document.body.style.filter = 'none';
+  dropShadowValue = 0; // Reset drop shadow value
+});
