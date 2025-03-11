@@ -38,3 +38,11 @@ const calculatorDiv = document.getElementById('calculator') as HTMLDivElement;
 toggleCalculatorVisibilityButton.addEventListener('click', () => {
     calculatorDiv.style.display = calculatorDiv.style.display === 'none' ? 'block' : 'none';
 });
+
+// Toggle CapsLock
+const toggleCapslockButton = document.getElementById('toggle-capslock') as HTMLButtonElement;
+let capsLockEnabled = false;
+toggleCapslockButton.addEventListener('click', () => {
+    capsLockEnabled = !capsLockEnabled;
+    // Implement visual feedback for CapsLock status (e.g., change button color)
+});
