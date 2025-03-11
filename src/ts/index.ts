@@ -46,3 +46,10 @@ clearLastNumberButton.addEventListener('click', () => {
         display.value = currentExpression; // Update display
     }
 });
+
+// Debug button functionality (New feature)
+const debugButton = document.getElementById('debug') as HTMLButtonElement;
+debugButton.addEventListener('click', () => {
+    console.log("Current Expression:", currentExpression);
+    console.log("History:", history);
+});
