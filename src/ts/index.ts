@@ -36,3 +36,11 @@ grayscaleButton.addEventListener('click', () => {
     isGrayscale = !isGrayscale;
     document.body.style.filter = isGrayscale ? 'grayscale(100%)' : '';
 });
+
+// Sepia
+const sepiaButton = document.getElementById('sepia') as HTMLButtonElement;
+let isSepia = false;
+sepiaButton.addEventListener('click', () => {
+    isSepia = !isSepia;
+    document.body.style.filter = isSepia ? 'sepia(100%)' : '';
+});
