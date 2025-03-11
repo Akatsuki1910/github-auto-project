@@ -21,7 +21,6 @@ toggleHueRotateButton.addEventListener('click', () => {
     document.body.style.filter = `hue-rotate(${hueRotation}deg)`;
 });
 
-//Added screen brightness functionality
 // Invert Colors
 const invertColorsButton = document.getElementById('invert-colors') as HTMLButtonElement;
 let isInverted = false;
@@ -29,4 +28,11 @@ invertColorsButton.addEventListener('click', () => {
     isInverted = !isInverted;
     document.body.style.filter = isInverted ? 'invert(100%)' : '';
 });
-// ... other code
+
+// Grayscale
+const grayscaleButton = document.getElementById('grayscale') as HTMLButtonElement;
+let isGrayscale = false;
+grayscaleButton.addEventListener('click', () => {
+    isGrayscale = !isGrayscale;
+    document.body.style.filter = isGrayscale ? 'grayscale(100%)' : '';
+});
