@@ -52,3 +52,12 @@ blurButton.addEventListener('click', () => {
   blurValue += 2;
   document.body.style.filter = `blur(${blurValue}px)`;
 });
+
+// Contrast Filter
+const contrastFilterButton = document.getElementById('contrast-filter') as HTMLButtonElement;
+let contrastValue = 100;
+contrastFilterButton.addEventListener('click', () => {
+    contrastValue += 25; 
+    if (contrastValue > 200) { contrastValue = 100; }
+    document.body.style.filter = `contrast(${contrastValue}%)`;
+});
