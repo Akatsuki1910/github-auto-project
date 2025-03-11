@@ -54,3 +54,11 @@ const openHelpButton = document.getElementById('open-help') as HTMLButtonElement
 openHelpButton.addEventListener('click', () => {
   window.open('help.html', '_blank');
 });
+// Toggle Basic/Advanced mode
+const toggleBasicAdvancedButton = document.getElementById('toggle-basic-advanced') as HTMLButtonElement;
+const advancedButtons = document.querySelectorAll('.cos, .tan, #abs, #round, #sign, #exp, #floor, #random, #e, #ten-to-the-power-x, #mod, #duplicate, #ln, #reset, #clear-all-history, #copy-expression, #mrc, #left-parenthesis, #right-parenthesis, #clear-display, #open-new-window, #toggle-history-display') as NodeListOf<HTMLButtonElement>;
+toggleBasicAdvancedButton.addEventListener('click', () => {
+    advancedButtons.forEach(button => {
+        button.style.display = button.style.display === 'none' ? 'inline-block' : 'none';
+    });
+});
