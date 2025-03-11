@@ -35,3 +35,14 @@ toggleHistoryDisplayButton.addEventListener('click', () => {
     historyDisplay.style.display = 'none';
   }
 });
+
+// Clear Last Number (CLN) functionality
+const clearLastNumberButton = document.getElementById('clear-last-number') as HTMLButtonElement;
+clearLastNumberButton.addEventListener('click', () => {
+    const numbers = currentExpression.split(/[^0-9.]/g).filter(Boolean);
+    if (numbers.length > 0) {
+        const lastNumber = numbers[numbers.length - 1];
+        currentExpression = currentExpression.slice(0, currentExpression.lastIndexOf(lastNumber));
+        display.value = currentExpression; // Update display
+    }
+});
