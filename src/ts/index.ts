@@ -40,9 +40,12 @@ toggleCalculatorVisibilityButton.addEventListener('click', () => {
 });
 
 // Toggle CapsLock
-const toggleCapslockButton = document.getElementById('toggle-capslock') as HTMLButtonElement;
-let capsLockEnabled = false;
-toggleCapslockButton.addEventListener('click', () => {
-    capsLockEnabled = !capsLockEnabled;
-    // Implement visual feedback for CapsLock status (e.g., change button color)
+// ... existing code
+
+// Toggle Font Size
+const toggleFontsizeButton = document.getElementById('toggle-fontsize') as HTMLButtonElement;
+let fontSize = 16;
+toggleFontsizeButton.addEventListener('click', () => {
+  fontSize += 2;
+  display.style.fontSize = fontSize + 'px';
 });
