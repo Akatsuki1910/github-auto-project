@@ -49,3 +49,8 @@ currentDateButton.addEventListener('click',()=>{
     display.value = dateString;
     currentExpression = dateString;
 });
+//Added help button functionality
+const openHelpButton = document.getElementById('open-help') as HTMLButtonElement;
+openHelpButton.addEventListener('click', () => {
+  window.open('help.html', '_blank');
+});
