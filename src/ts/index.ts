@@ -9,19 +9,18 @@ let history: string[] = [];
 
 // ... (Other existing code)
 
-//Added M+ button functionality
-// ... (Existing functions)
+// ... existing functions
 
-// Added calculate expression functionality
-// ... (Existing calculateExpressionButton)
+//Added screen brightness functionality
+const toggleScreenBrightnessButton = document.getElementById('toggle-screen-brightness') as HTMLButtonElement;
+let brightness = 1;
+toggleScreenBrightnessButton.addEventListener('click', () => {
+    brightness -= 0.1;
+    if (brightness < 0) brightness = 1; // Reset to max brightness
+    document.body.style.filter = `brightness(${brightness})`;
+});
 
-// ... existing code for toggleHistoryDisplayButton, clearLastNumberButton, debugButton, toggleCurrentExpressionButton
-
-// Toggle Keyboard Input
-// ... (Existing toggleKeyboardButton code)
-
-// Toggle Display Always On
-// ... (Existing toggleDisplayAlwaysOnButton code)
+// ... existing code for toggleHistoryDisplayButton, clearLastNumberButton, debugButton, toggleCurrentExpressionButton, toggleKeyboardButton, toggleDisplayAlwaysOnButton
 
 // Toggle Dark Mode
 const toggleDarkModeButton = document.getElementById('toggle-dark-mode') as HTMLButtonElement;
