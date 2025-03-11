@@ -20,8 +20,18 @@ calculateExpressionButton.addEventListener('click', () => {
         display.value = result.toString();
         currentExpression = result.toString();
         history.push(`${currentExpression} = ${result}`);
+        historyDisplay.innerHTML = history.join('<br>'); // Display history
+        historyDisplay.style.display = 'block'; 
     } catch (error) {
         display.value = 'Error';
         console.error("Invalid expression");
     }
+});
+const toggleHistoryDisplayButton = document.getElementById('toggle-history-display') as HTMLButtonElement;
+toggleHistoryDisplayButton.addEventListener('click', () => {
+  if (historyDisplay.style.display === 'none') {
+    historyDisplay.style.display = 'block';
+  } else {
+    historyDisplay.style.display = 'none';
+  }
 });
