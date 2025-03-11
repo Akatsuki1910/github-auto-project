@@ -20,4 +20,15 @@ mPlusButton.addEventListener('click', () => {
     }
 });
 // Added plus/minus button functionality
+const plusMinusButton = document.getElementById('plus-minus') as HTMLButtonElement;
+plusMinusButton.addEventListener('click', () => {
+    if (currentExpression) {
+        if (currentExpression.startsWith('-')) {
+            currentExpression = currentExpression.slice(1);
+        } else {
+            currentExpression = '-' + currentExpression;
+        }
+        display.value = currentExpression;
+    }
+});
 // ... other code
