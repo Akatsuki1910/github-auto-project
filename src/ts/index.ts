@@ -38,3 +38,14 @@ toggleFontsizeButton.addEventListener('click', () => {
   fontSize += 2;
   display.style.fontSize = fontSize + 'px';
 });
+
+//Copy display value to clipboard
+const copyDisplayValueButton = document.getElementById('copy-display-value') as HTMLButtonElement;
+copyDisplayValueButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(display.value).then(() => {
+        alert('Copied display value to clipboard!');
+      })
+      .catch(err => {
+        console.error('Failed to copy: ', err);
+      });
+});
