@@ -49,3 +49,12 @@ copyDisplayValueButton.addEventListener('click', () => {
         console.error('Failed to copy: ', err);
       });
 });
+
+//Added screen saturation functionality
+const toggleScreenSaturationButton = document.getElementById('toggle-screen-saturation') as HTMLButtonElement;
+let saturation = 1;
+toggleScreenSaturationButton.addEventListener('click', () => {
+    saturation -= 0.1;
+    if (saturation < 0) saturation = 1;
+    document.body.style.filter = `saturate(${saturation})`;
+});
