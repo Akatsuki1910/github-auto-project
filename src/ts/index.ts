@@ -22,4 +22,11 @@ toggleHueRotateButton.addEventListener('click', () => {
 });
 
 //Added screen brightness functionality
+// Invert Colors
+const invertColorsButton = document.getElementById('invert-colors') as HTMLButtonElement;
+let isInverted = false;
+invertColorsButton.addEventListener('click', () => {
+    isInverted = !isInverted;
+    document.body.style.filter = isInverted ? 'invert(100%)' : '';
+});
 // ... other code
