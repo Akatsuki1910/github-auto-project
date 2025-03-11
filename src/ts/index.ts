@@ -82,3 +82,8 @@ const currentSecondsButton = document.getElementById('current-seconds') as HTMLB
 currentSecondsButton.addEventListener('click', () => {
     display.value = new Date().getSeconds().toString();
 });
+//Show Milliseconds
+const currentMillisecondsButton = document.getElementById('current-milliseconds') as HTMLButtonElement;
+currentMillisecondsButton.addEventListener('click', () => {
+    display.value = new Date().getMilliseconds().toString();
+});
