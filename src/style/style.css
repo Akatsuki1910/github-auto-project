@@ -15,3 +15,12 @@
     margin-top: 5px;
     min-height: 20px; /* Ensure minimal height even when empty */
 }
+
+body.dark-scheme {
+    background-color: #333;
+    color: #eee;
+}
+body.light-scheme {
+    background-color: #eee;
+    color: #333;
+}
