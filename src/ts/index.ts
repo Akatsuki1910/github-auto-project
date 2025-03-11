@@ -10,55 +10,18 @@ let history: string[] = [];
 // ... (Other existing code)
 
 //Added M+ button functionality
-const mPlusButton = document.getElementById('m-plus') as HTMLButtonElement;
-mPlusButton.addEventListener('click', () => {
+// ... (Existing functions)
+
+// Added calculate expression functionality
+const calculateExpressionButton = document.getElementById('calculate-expression') as HTMLButtonElement;
+calculateExpressionButton.addEventListener('click', () => {
     try {
-        const currentValue = parseFloat(currentExpression);
-        memoryValue += currentValue;
+        const result = eval(currentExpression);
+        display.value = result.toString();
+        currentExpression = result.toString();
+        history.push(`${currentExpression} = ${result}`);
     } catch (error) {
-        console.error("Invalid input for M+");
+        display.value = 'Error';
+        console.error("Invalid expression");
     }
-});
-// Added plus/minus button functionality
-const plusMinusButton = document.getElementById('plus-minus') as HTMLButtonElement;
-plusMinusButton.addEventListener('click', () => {
-    if (currentExpression) {
-        if (currentExpression.startsWith('-')) {
-            currentExpression = currentExpression.slice(1);
-        } else {
-            currentExpression = '-' + currentExpression;
-        }
-        display.value = currentExpression;
-    }
-});
-const toggleHistoryDisplayButton = document.getElementById('toggle-history-display') as HTMLButtonElement;
-toggleHistoryDisplayButton.addEventListener('click', () => {
-  if (historyDisplay.style.display === 'none' || historyDisplay.style.display === '') {
-    historyDisplay.style.display = 'block';
-    // Added displaying history items
-    historyDisplay.innerHTML = history.map(item => `<p>${item}</p>`).join('');
-  } else {
-    historyDisplay.style.display = 'none';
-  }
-});
-//Added current date functionality
-const currentDateButton = document.getElementById('current-date') as HTMLButtonElement;
-currentDateButton.addEventListener('click',()=>{
-    const today = new Date();
-    const dateString = today.toLocaleDateString();
-    display.value = dateString;
-    currentExpression = dateString;
-});
-//Added help button functionality
-const openHelpButton = document.getElementById('open-help') as HTMLButtonElement;
-openHelpButton.addEventListener('click', () => {
-  window.open('help.html', '_blank');
-});
-// Toggle Basic/Advanced mode
-const toggleBasicAdvancedButton = document.getElementById('toggle-basic-advanced') as HTMLButtonElement;
-const advancedButtons = document.querySelectorAll('.cos, .tan, #abs, #round, #sign, #exp, #floor, #random, #e, #ten-to-the-power-x, #mod, #duplicate, #ln, #reset, #clear-all-history, #copy-expression, #mrc, #left-parenthesis, #right-parenthesis, #clear-display, #open-new-window, #toggle-history-display') as NodeListOf<HTMLButtonElement>;
-toggleBasicAdvancedButton.addEventListener('click', () => {
-    advancedButtons.forEach(button => {
-        button.style.display = button.style.display === 'none' ? 'inline-block' : 'none';
-    });
 });
