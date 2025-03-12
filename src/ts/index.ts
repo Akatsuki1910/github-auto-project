@@ -102,3 +102,11 @@ currentMMYYButton.addEventListener('click', () => {
   const month = String(now.getMonth() + 1).padStart(2, '0');
   display.value = `${month}/${year}`;
 });
+//YYYY/MM
+const currentYYYYMMButton = document.getElementById('current-date-yyyy-mm') as HTMLButtonElement;
+currentYYYYMMButton.addEventListener('click', () => {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  display.value = `${year}/${month}`;
+});
