@@ -117,4 +117,9 @@ const currentLocalTimeButton = document.getElementById('current-local-time') as 
 currentLocalTimeButton.addEventListener('click', () => {
     display.value = new Date().toLocaleTimeString();
 });
+//Added Full Date
+const currentFullDateButton = document.getElementById('current-full-date') as HTMLButtonElement;
+currentFullDateButton.addEventListener('click', () => {
+  display.value = new Date().toString();
+});
 // ... (rest of the code)
