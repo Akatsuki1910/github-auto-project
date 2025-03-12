@@ -101,3 +101,9 @@ const currentTimestampButton = document.getElementById('current-timestamp') as H
 currentTimestampButton.addEventListener('click', () => {
     display.value = Date.now().toString();
 });
+//Show Day of Week
+const currentDayOfWeekButton = document.getElementById('current-day-of-week') as HTMLButtonElement;
+currentDayOfWeekButton.addEventListener('click', () => {
+    const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+    display.value = weekday[new Date().getDay()];
+});
