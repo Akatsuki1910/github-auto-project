@@ -112,4 +112,9 @@ const currentSecondsSinceEpochButton = document.getElementById('current-seconds-
 currentSecondsSinceEpochButton.addEventListener('click', () => {
     display.value = Math.floor(Date.now()/1000).toString();
 });
+//Added Local Time
+const currentLocalTimeButton = document.getElementById('current-local-time') as HTMLButtonElement;
+currentLocalTimeButton.addEventListener('click', () => {
+    display.value = new Date().toLocaleTimeString();
+});
 // ... (rest of the code)
