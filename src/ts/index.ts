@@ -144,3 +144,11 @@ const currentDateTimeISOButton = document.getElementById('current-date-and-time'
 currentDateTimeISOButton.addEventListener('click', () => {
   display.value = new Date().toISOString();
 });
+// YYYY/MM
+const currentYearMonth = document.getElementById('current-date-year-month') as HTMLButtonElement;
+currentYearMonth.addEventListener('click', () => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const month = String(now.getMonth()+1).padStart(2,'0');
+    display.value = `${year}/${month}`;
+})
