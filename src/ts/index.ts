@@ -86,3 +86,13 @@ const currentHourButton = document.getElementById('current-hour') as HTMLButtonE
 currentHourButton.addEventListener('click', () => {
     display.value = new Date().getHours().toString();
 });
+// Show Day of Year
+const currentDayOfYearButton = document.getElementById('current-day-of-year') as HTMLButtonElement;
+currentDayOfYearButton.addEventListener('click', () => {
+  const now = new Date();
+  const start = new Date(now.getFullYear(), 0, 0);
+  const diff = now.getTime() - start.getTime();
+  const oneDay = 1000 * 60 * 60 * 24;
+  const dayOfYear = Math.floor(diff / oneDay);
+  display.value = dayOfYear.toString();
+});
