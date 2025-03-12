@@ -56,4 +56,10 @@ const currentSecondsButton = document.getElementById('show-current-seconds') as 
 currentSecondsButton.addEventListener('click', () => {
     display.value = new Date().getSeconds().toString();
 });
+//Added Day Name
+const currentDayNameButton = document.getElementById('current-day-name') as HTMLButtonElement;
+currentDayNameButton.addEventListener('click', () => {
+  const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  display.value = dayNames[new Date().getDay()];
+});
 // ... (rest of the code)
