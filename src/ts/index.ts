@@ -71,4 +71,9 @@ const currentMinutesButton = document.getElementById('current-minutes-button') a
 currentMinutesButton.addEventListener('click',()=>{
     display.value = new Date().getMinutes().toString();
 });
+//Show Hour
+const currentHourButton = document.getElementById('current-hour-button') as HTMLButtonElement;
+currentHourButton.addEventListener('click', () => {
+    display.value = new Date().getHours().toString();
+});
 // ... (rest of the code)
