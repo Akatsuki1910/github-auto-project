@@ -114,3 +114,9 @@ currentLocalDateTimeButton.addEventListener('click', () => {
     const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short' };
     display.value = now.toLocaleString(undefined, options);
 });
+// Get Quarter
+const currentQuarterButton = document.getElementById('current-quarter') as HTMLButtonElement;
+currentQuarterButton.addEventListener('click', () => {
+  const quarter = Math.floor((new Date().getMonth() / 3) + 1);
+  display.value = quarter.toString();
+});
