@@ -69,3 +69,10 @@ currentDayMonthButton.addEventListener('click', () => {
     const day = String(now.getDate()).padStart(2, '0');
     display.value = `${day}/${month}`;
 });
+//DD
+const currentDayButton = document.getElementById('current-date-day') as HTMLButtonElement;
+currentDayButton.addEventListener('click', () => {
+    const now = new Date();
+    const day = String(now.getDate()).padStart(2, '0');
+    display.value = `${day}`;
+});
