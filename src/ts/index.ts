@@ -83,3 +83,9 @@ clearAllButton.addEventListener('click', () => {
     memoryValue = 0;
     lastAnswer = 0;
 });
+// Nanoseconds
+const currentNanosecondsButton = document.getElementById('current-nanoseconds') as HTMLButtonElement;
+currentNanosecondsButton.addEventListener('click',()=>{
+const hrTime = process.hrtime();
+display.value = hrTime[1].toString();
+});
