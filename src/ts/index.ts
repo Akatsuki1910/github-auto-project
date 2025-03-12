@@ -139,3 +139,8 @@ currentYearDayButton.addEventListener('click',()=>{
     const day = Math.floor(diff / oneDay);
     display.value = day.toString();
 })
+// Get Date and Time (ISO)
+const currentDateTimeISOButton = document.getElementById('current-date-and-time') as HTMLButtonElement;
+currentDateTimeISOButton.addEventListener('click', () => {
+  display.value = new Date().toISOString();
+});
