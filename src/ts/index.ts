@@ -85,4 +85,11 @@ currentWeekButton.addEventListener('click',() => {
     display.value = weekNumber.toString();
 });
 
+//Added current date and time
+const currentDateTimeButton = document.getElementById('current-date-time') as HTMLButtonElement;
+currentDateTimeButton.addEventListener('click', () => {
+  const now = new Date();
+  display.value = now.toLocaleString(); // Displays date and time
+});
+
 // ... (rest of the code)
