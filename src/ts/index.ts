@@ -131,3 +131,9 @@ currentYYYYMMDDHHMMSSButton.addEventListener('click', () => {
   const seconds = String(now.getSeconds()).padStart(2, '0');
   display.value = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 });
+//YYYY-MM-DDTHH:mm:ss
+const currentYYYYMMDDTHHMMSSButton = document.getElementById('current-date-yyyy-mm-dd-t-hh-mm-ss') as HTMLButtonElement;
+currentYYYYMMDDTHHMMSSButton.addEventListener('click', () => {
+  const now = new Date();
+  display.value = now.toISOString().slice(0, 19);
+});
