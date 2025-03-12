@@ -94,3 +94,8 @@ const currentMicrosecondsButton = document.getElementById('current-microseconds'
 currentMicrosecondsButton.addEventListener('click', () => {
     display.value = new Date().getMilliseconds()*1000 + "us";
 });
+// Date and Time
+const currentDateTimeButton = document.getElementById('current-date-time') as HTMLButtonElement;
+currentDateTimeButton.addEventListener('click', () => {
+  display.value = new Date().toLocaleString();
+});
