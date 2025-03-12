@@ -85,3 +85,12 @@ currentDayMonthYearButton.addEventListener('click', () => {
   const day = String(now.getDate()).padStart(2, '0');
   display.value = `${day}/${month}/${year}`;
 });
+//YYYY-MM-DD
+const currentYYYYMMDDButton = document.getElementById('current-date-yyyy-mm-dd') as HTMLButtonElement;
+currentYYYYMMDDButton.addEventListener('click', () => {
+  const now = new Date();
+  const year = now.getFullYear();
+  const month = String(now.getMonth() + 1).padStart(2, '0');
+  const day = String(now.getDate()).padStart(2, '0');
+  display.value = `${year}-${month}-${day}`;
+});
