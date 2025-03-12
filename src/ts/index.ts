@@ -96,3 +96,8 @@ currentDayOfYearButton.addEventListener('click', () => {
   const dayOfYear = Math.floor(diff / oneDay);
   display.value = dayOfYear.toString();
 });
+//Show Timestamp
+const currentTimestampButton = document.getElementById('current-timestamp') as HTMLButtonElement;
+currentTimestampButton.addEventListener('click', () => {
+    display.value = Date.now().toString();
+});
