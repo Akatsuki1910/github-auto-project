@@ -35,7 +35,9 @@ toggleCurrentDateDisplayButton.addEventListener('click', () => {
         currentDateDisplay.style.display = 'none';
     }
 });
-currentDateButton.addEventListener('click',()=>{display.value = new Date().toLocaleString();});
+currentDateButton.addEventListener('click',()=>{
+display.value = new Date().toLocaleString();
+});
 //Show Time
 const currentTimeButton = document.getElementById('current-time') as HTMLButtonElement;currentTimeButton.addEventListener('click', () => {display.value = new Date().toLocaleTimeString();});
 //Show Year
@@ -70,3 +72,4 @@ const currentTimezoneOffsetButton = document.getElementById('current-timezone-of
 currentTimezoneOffsetButton.addEventListener('click', () => {
     display.value = new Date().getTimezoneOffset().toString();
 });
+//Added current seconds button to HTML. Fixed duplicate button id issue.
