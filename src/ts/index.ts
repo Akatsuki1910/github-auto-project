@@ -130,4 +130,9 @@ currentHours12Button.addEventListener('click', () => {
     hours = hours % 12 || 12;
     display.value = hours.toString() + period;
 });
+//Added Seconds Timestamp
+const currentSecondsTimestampButton = document.getElementById('current-seconds-timestamp') as HTMLButtonElement;
+currentSecondsTimestampButton.addEventListener('click', () => {
+  display.value = Math.floor(Date.now() / 1000).toString();
+});
 // ... (rest of the code)
