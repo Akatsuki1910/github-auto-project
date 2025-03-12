@@ -72,4 +72,14 @@ const currentTimezoneOffsetButton = document.getElementById('current-timezone-of
 currentTimezoneOffsetButton.addEventListener('click', () => {
     display.value = new Date().getTimezoneOffset().toString();
 });
-//Added current seconds button to HTML. Fixed duplicate button id issue.
+// Clear All button functionality
+const clearAllButton = document.getElementById('clear-all') as HTMLButtonElement;
+clearAllButton.addEventListener('click', () => {
+    display.value = '';
+    currentExpression = '';
+    currentExpressionDisplay.textContent = '';
+    history = [];
+    historyDisplay.innerHTML = '';
+    memoryValue = 0;
+    lastAnswer = 0;
+});
