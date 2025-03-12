@@ -44,6 +44,14 @@ const currentTimeButton = document.getElementById('current-time') as HTMLButtonE
 const currentYearButton = document.getElementById('current-year') as HTMLButtonElement;currentYearButton.addEventListener('click',() =>{display.value = new Date().getFullYear().toString();});
 //Show Month
 const currentMonthButton = document.getElementById('current-month') as HTMLButtonElement;currentMonthButton.addEventListener('click', () => {display.value = (new Date().getMonth() + 1).toString();});
+//Added Month Name
+const currentMonthNameButton = document.getElementById('current-month-name') as HTMLButtonElement;
+currentMonthNameButton.addEventListener('click', () => {
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+    display.value = monthNames[new Date().getMonth()];
+});
 //Show Day
 const currentDayButton = document.getElementById('current-day') as HTMLButtonElement;currentDayButton.addEventListener('click', () => {display.value = new Date().getDate().toString();});
 //Show Week
