@@ -122,4 +122,12 @@ const currentFullDateButton = document.getElementById('current-full-date') as HT
 currentFullDateButton.addEventListener('click', () => {
   display.value = new Date().toString();
 });
+//12-Hour Format
+const currentHours12Button = document.getElementById('current-hours-12') as HTMLButtonElement;
+currentHours12Button.addEventListener('click', () => {
+    let hours = new Date().getHours();
+    let period = hours >= 12 ? 'PM' : 'AM';
+    hours = hours % 12 || 12;
+    display.value = hours.toString() + period;
+});
 // ... (rest of the code)
