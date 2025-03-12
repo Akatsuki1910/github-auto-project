@@ -76,4 +76,13 @@ const currentHourButton = document.getElementById('current-hour-button') as HTML
 currentHourButton.addEventListener('click', () => {
     display.value = new Date().getHours().toString();
 });
+//Added Week
+const currentWeekButton = document.getElementById('current-week') as HTMLButtonElement;
+currentWeekButton.addEventListener('click',() => {
+    const startDate = new Date(new Date().getFullYear(), 0, 1);
+    const diff = Math.abs(new Date().getTime() - startDate.getTime());
+    const weekNumber = Math.ceil(diff / (1000 * 60 * 60 * 24 * 7));
+    display.value = weekNumber.toString();
+});
+
 // ... (rest of the code)
