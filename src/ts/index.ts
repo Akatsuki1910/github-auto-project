@@ -91,5 +91,9 @@ currentDateTimeButton.addEventListener('click', () => {
   const now = new Date();
   display.value = now.toLocaleString(); // Displays date and time
 });
-
+//Added Seconds Button
+const currentSecondsRealButton = document.getElementById('current-seconds') as HTMLButtonElement;
+currentSecondsRealButton.addEventListener('click', () => {
+    display.value = new Date().getSeconds().toString();
+});
 // ... (rest of the code)
