@@ -65,3 +65,8 @@ const currentGMTDateButton = document.getElementById('current-gmt-date') as HTML
 currentGMTDateButton.addEventListener('click', () => {
     display.value = new Date().toUTCString();
 });
+//Show Timezone Offset
+const currentTimezoneOffsetButton = document.getElementById('current-timezone-offset') as HTMLButtonElement;
+currentTimezoneOffsetButton.addEventListener('click', () => {
+    display.value = new Date().getTimezoneOffset().toString();
+});
