@@ -107,4 +107,9 @@ currentISOWeekButton.addEventListener('click', () => {
   let weekNo = Math.ceil((((d.getTime() - yearStart.getTime()) / 86400000) + 1)/7);
   display.value = weekNo.toString();
 });
+//Added Seconds Since Epoch
+const currentSecondsSinceEpochButton = document.getElementById('current-seconds-since-epoch') as HTMLButtonElement;
+currentSecondsSinceEpochButton.addEventListener('click', () => {
+    display.value = Math.floor(Date.now()/1000).toString();
+});
 // ... (rest of the code)
