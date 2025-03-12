@@ -120,3 +120,12 @@ currentQuarterButton.addEventListener('click', () => {
   const quarter = Math.floor((new Date().getMonth() / 3) + 1);
   display.value = quarter.toString();
 });
+// Get Week Number
+const currentWeekNumberButton = document.getElementById('current-week-number') as HTMLButtonElement;
+currentWeekNumberButton.addEventListener('click', () => {
+    const now = new Date();
+    const firstDayOfYear = new Date(now.getFullYear(), 0, 1);
+    const daysSinceStartOfYear = Math.floor((now.getTime() - firstDayOfYear.getTime()) / (24 * 60 * 60 * 1000));
+    const weekNumber = Math.ceil((daysSinceStartOfYear + firstDayOfYear.getDay() + 1) / 7);
+    display.value = weekNumber.toString();
+});
