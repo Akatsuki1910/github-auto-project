@@ -99,3 +99,10 @@ const currentDateTimeButton = document.getElementById('current-date-time') as HT
 currentDateTimeButton.addEventListener('click', () => {
   display.value = new Date().toLocaleString();
 });
+//Local Date and Time
+const currentLocalDateTimeButton = document.getElementById('current-local-date-time') as HTMLButtonElement;
+currentLocalDateTimeButton.addEventListener('click', () => {
+    const now = new Date();
+    const options = { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short' };
+    display.value = now.toLocaleString(undefined, options);
+});
