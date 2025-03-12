@@ -36,7 +36,7 @@ toggleCurrentDateDisplayButton.addEventListener('click', () => {
     }
 });
 currentDateButton.addEventListener('click',()=>{
-display.value = new Date().toLocaleString();
+display.value = new Date().toLocaleDateString();
 });
 //Show Time
 const currentTimeButton = document.getElementById('current-time') as HTMLButtonElement;currentTimeButton.addEventListener('click', () => {display.value = new Date().toLocaleTimeString();});
@@ -55,6 +55,10 @@ currentMonthNameButton.addEventListener('click', () => {
 const currentSecondsButton = document.getElementById('show-current-seconds') as HTMLButtonElement;
 currentSecondsButton.addEventListener('click', () => {
     display.value = new Date().getSeconds().toString();
+});
+const currentDayButton = document.getElementById('current-day') as HTMLButtonElement;
+currentDayButton.addEventListener('click', () => {
+  display.value = new Date().getDate().toString();
 });
 //Added Day Name
 const currentDayNameButton = document.getElementById('current-day-name') as HTMLButtonElement;
