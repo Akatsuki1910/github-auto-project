@@ -50,4 +50,12 @@ pow2Button.addEventListener('click', () => {
         display.value = (currentValue * currentValue).toString();
     }
 });
+//Cube Root function
+const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
+cubeRootButton.addEventListener('click', () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = Math.cbrt(currentValue).toString();
+  }
+});
 // ... (Rest of the existing code)
