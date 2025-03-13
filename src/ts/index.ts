@@ -26,3 +26,7 @@ modButton.addEventListener('click', () => {
     currentExpression += '%';
     currentExpressionDisplay.textContent = currentExpression;
 });
+const memoryClearButton = document.getElementById('MC') as HTMLButtonElement;
+memoryClearButton.addEventListener('click', () => {
+    memoryValue = 0;
+});
