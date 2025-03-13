@@ -34,4 +34,12 @@ signButton.addEventListener('click', () => {
         display.value = Math.sign(currentValue).toString();
     }
 });
+//Round function
+const roundButton = document.getElementById('round') as HTMLButtonElement;
+roundButton.addEventListener('click', () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = Math.round(currentValue).toString();
+  }
+});
 // ... (Rest of the existing code)
