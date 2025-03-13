@@ -26,4 +26,12 @@ inverseButton.addEventListener('click', () => {
         display.value = "Error: Division by zero";
     }
 });
+//Sign function
+const signButton = document.getElementById('sign') as HTMLButtonElement;
+signButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.sign(currentValue).toString();
+    }
+});
 // ... (Rest of the existing code)
