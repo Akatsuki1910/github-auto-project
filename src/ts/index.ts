@@ -105,4 +105,9 @@ const currentISOStringButton = document.getElementById('current-iso-string') as 
 currentISOStringButton.addEventListener('click', () => {
   display.value = new Date().toISOString();
 });
+//Added Local Date
+const currentLocalDateButton = document.getElementById('current-local-date') as HTMLButtonElement;
+currentLocalDateButton.addEventListener('click', () => {
+    display.value = new Date().toLocaleDateString();
+});
 // ... (rest of the code)
