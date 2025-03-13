@@ -35,4 +35,11 @@ const duplicateButton = document.getElementById('duplicate') as HTMLButtonElemen
 duplicateButton.addEventListener('click', () => {
     display.value = display.value;
 });
+const signChangeButton = document.getElementById('sign-change') as HTMLButtonElement;
+signChangeButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (-currentValue).toString();
+    }
+});
 // ... (Rest of the existing code)
