@@ -26,4 +26,9 @@ ceilButton.addEventListener('click', () => {
       display.value = Math.ceil(currentValue).toString();
     }
   });
+//Random Number Generator
+const randomButton = document.getElementById('random') as HTMLButtonElement;
+randomButton.addEventListener('click', () => {
+    display.value = Math.random().toString();
+});
 // ... (Rest of the existing code)
