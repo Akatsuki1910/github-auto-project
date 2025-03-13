@@ -24,3 +24,7 @@ memoryPlusButton.addEventListener('click', () => {
         memoryValue += currentValue;
     }
 });
+const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
+memoryRecallButton.addEventListener('click', () => {
+    display.value = memoryValue.toString();
+});
