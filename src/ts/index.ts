@@ -58,3 +58,8 @@ resetButton.addEventListener('click', () => {
   currentExpression = '';
   currentExpressionDisplay.textContent = '';
 });
+const nthRootButton = document.getElementById('nth-root') as HTMLButtonElement;
+nthRootButton.addEventListener('click', () => {
+    // Placeholder for nth-root logic. This will require prompting the user for n.
+    display.value = "Nth Root (Implementation pending)";
+});
