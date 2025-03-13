@@ -52,3 +52,9 @@ rightParenthesisButton.addEventListener('click', () => {
     currentExpression += ')';
     currentExpressionDisplay.textContent = currentExpression;
 });
+const resetButton = document.getElementById('reset') as HTMLButtonElement;
+resetButton.addEventListener('click', () => {
+  display.value = '';
+  currentExpression = '';
+  currentExpressionDisplay.textContent = '';
+});
