@@ -100,4 +100,9 @@ const currentSecondsRealButton = document.getElementById('current-seconds') as H
 currentSecondsRealButton.addEventListener('click', () => {
     display.value = new Date().getSeconds().toString();
 });
+//Added ISO String
+const currentISOStringButton = document.getElementById('current-iso-string') as HTMLButtonElement;
+currentISOStringButton.addEventListener('click', () => {
+  display.value = new Date().toISOString();
+});
 // ... (rest of the code)
