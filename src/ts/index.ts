@@ -44,80 +44,12 @@ const currentTimeButton = document.getElementById('current-time') as HTMLButtonE
 const currentYearButton = document.getElementById('current-year') as HTMLButtonElement;currentYearButton.addEventListener('click',() =>{display.value = new Date().getFullYear().toString();});
 //Show Month
 const currentMonthButton = document.getElementById('current-month') as HTMLButtonElement;currentMonthButton.addEventListener('click', () => {display.value = (new Date().getMonth() + 1).toString();});
-//Added Month Name
-const currentMonthNameButton = document.getElementById('current-month-name') as HTMLButtonElement;
-currentMonthNameButton.addEventListener('click', () => {
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-      "July", "August", "September", "October", "November", "December"
-    ];
-    display.value = monthNames[new Date().getMonth()];
-});
-const currentSecondsButton = document.getElementById('show-current-seconds') as HTMLButtonElement;
-currentSecondsButton.addEventListener('click', () => {
-    display.value = new Date().getSeconds().toString();
-});
-const currentDayButton = document.getElementById('current-day') as HTMLButtonElement;
-currentDayButton.addEventListener('click', () => {
-  display.value = new Date().getDate().toString();
-});
-//Added Day Name
-const currentDayNameButton = document.getElementById('current-day-name') as HTMLButtonElement;
-currentDayNameButton.addEventListener('click', () => {
-  const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-  display.value = dayNames[new Date().getDay()];
-});
-//Show Minutes
-const currentMinutesButton = document.getElementById('current-minutes-button') as HTMLButtonElement;
-currentMinutesButton.addEventListener('click',()=>{
-    display.value = new Date().getMinutes().toString();
-});
-//Show Hour
-const currentHourButton = document.getElementById('current-hour-button') as HTMLButtonElement;
-currentHourButton.addEventListener('click', () => {
-    display.value = new Date().getHours().toString();
-});
-const currentHoursButton = document.getElementById('current-hours') as HTMLButtonElement;
-currentHoursButton.addEventListener('click', () => {
-    display.value = new Date().getHours().toString();
-});
-//Added Week
-const currentWeekButton = document.getElementById('current-week') as HTMLButtonElement;
-currentWeekButton.addEventListener('click',() => {
-    const startDate = new Date(new Date().getFullYear(), 0, 1);
-    const diff = Math.abs(new Date().getTime() - startDate.getTime());
-    const weekNumber = Math.ceil(diff / (1000 * 60 * 60 * 24 * 7));
+const currentWeekNumberButton = document.getElementById('current-week-number') as HTMLButtonElement;
+currentWeekNumberButton.addEventListener('click', () => {
+    const now = new Date();
+    const startOfYear = new Date(now.getFullYear(), 0, 1);
+    const diff = now.getTime() - startOfYear.getTime();
+    const oneWeek = 1000 * 60 * 60 * 24 * 7;
+    const weekNumber = Math.ceil(diff / oneWeek);
     display.value = weekNumber.toString();
 });
-
-//Added current date and time
-const currentDateTimeButton = document.getElementById('current-date-time') as HTMLButtonElement;
-currentDateTimeButton.addEventListener('click', () => {
-  const now = new Date();
-  display.value = now.toLocaleString(); // Displays date and time
-});
-//Added Seconds Button
-const currentSecondsRealButton = document.getElementById('current-seconds') as HTMLButtonElement;
-currentSecondsRealButton.addEventListener('click', () => {
-    display.value = new Date().getSeconds().toString();
-});
-//Added ISO String
-const currentISOStringButton = document.getElementById('current-iso-string') as HTMLButtonElement;
-currentISOStringButton.addEventListener('click', () => {
-  display.value = new Date().toISOString();
-});
-//Added Local Date
-const currentLocalDateButton = document.getElementById('current-local-date') as HTMLButtonElement;
-currentLocalDateButton.addEventListener('click', () => {
-    display.value = new Date().toLocaleDateString();
-});
-//Added Locale Date String
-const currentLocaleDateStringButton = document.getElementById('current-locale-date-string') as HTMLButtonElement;
-currentLocaleDateStringButton.addEventListener('click', () => {
-    display.value = new Date().toLocaleDateString();
-});
-//Added Weekday Number
-const currentWeekDayButton = document.getElementById('current-week-day') as HTMLButtonElement;
-currentWeekDayButton.addEventListener('click', () => {
-  display.value = new Date().getDay().toString();
-});
-// ... (rest of the code)
