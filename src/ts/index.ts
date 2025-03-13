@@ -49,7 +49,7 @@ piButton.addEventListener('click', () => {
   display.value = Math.PI.toString();
 });
 const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
-function factorial(n: number): number {
+function factorial(n) {
     if (n === 0) {
         return 1;
     }
@@ -110,4 +110,13 @@ tanButton.addEventListener('click', () => {
   } else {
     display.value = 'Error';
   }
+});
+const expButton = document.getElementById('exp') as HTMLButtonElement;
+expButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.exp(currentValue).toString();
+    } else {
+        display.value = 'Error';
+    }
 });
