@@ -75,3 +75,10 @@ currentTimeButton.addEventListener('click', () => {
   const timeString = today.toLocaleTimeString();
   display.value = timeString;
 });
+const squaredButton = document.getElementById('squared') as HTMLButtonElement;
+squaredButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (currentValue * currentValue).toString();
+    }
+});
