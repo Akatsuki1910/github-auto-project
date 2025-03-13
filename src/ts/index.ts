@@ -69,3 +69,9 @@ currentDateButton.addEventListener('click',()=>{
     const dateString = today.toLocaleDateString();
     display.value = dateString;
 });
+const currentTimeButton = document.getElementById('current-time') as HTMLButtonElement;
+currentTimeButton.addEventListener('click', () => {
+  const today = new Date();
+  const timeString = today.toLocaleTimeString();
+  display.value = timeString;
+});
