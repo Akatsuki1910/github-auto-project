@@ -110,4 +110,9 @@ const currentLocalDateButton = document.getElementById('current-local-date') as 
 currentLocalDateButton.addEventListener('click', () => {
     display.value = new Date().toLocaleDateString();
 });
+//Added Locale Date String
+const currentLocaleDateStringButton = document.getElementById('current-locale-date-string') as HTMLButtonElement;
+currentLocaleDateStringButton.addEventListener('click', () => {
+    display.value = new Date().toLocaleDateString();
+});
 // ... (rest of the code)
