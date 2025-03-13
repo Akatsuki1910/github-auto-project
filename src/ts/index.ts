@@ -76,6 +76,10 @@ const currentHourButton = document.getElementById('current-hour-button') as HTML
 currentHourButton.addEventListener('click', () => {
     display.value = new Date().getHours().toString();
 });
+const currentHoursButton = document.getElementById('current-hours') as HTMLButtonElement;
+currentHoursButton.addEventListener('click', () => {
+    display.value = new Date().getHours().toString();
+});
 //Added Week
 const currentWeekButton = document.getElementById('current-week') as HTMLButtonElement;
 currentWeekButton.addEventListener('click',() => {
@@ -95,44 +99,5 @@ currentDateTimeButton.addEventListener('click', () => {
 const currentSecondsRealButton = document.getElementById('current-seconds') as HTMLButtonElement;
 currentSecondsRealButton.addEventListener('click', () => {
     display.value = new Date().getSeconds().toString();
-});
-//Added ISO Week Number
-const currentISOWeekButton = document.getElementById('current-iso-week') as HTMLButtonElement;
-currentISOWeekButton.addEventListener('click', () => {
-  let date = new Date();
-  let d = new Date(Date.UTC(date.getFullYear(), date.getMonth(), date.getDate()));
-  let dayNum = d.getUTCDay() || 7;
-  d.setUTCDate(d.getUTCDate() + 4 - dayNum);
-  let yearStart = new Date(Date.UTC(d.getUTCFullYear(),0,1));
-  let weekNo = Math.ceil((((d.getTime() - yearStart.getTime()) / 86400000) + 1)/7);
-  display.value = weekNo.toString();
-});
-//Added Seconds Since Epoch
-const currentSecondsSinceEpochButton = document.getElementById('current-seconds-since-epoch') as HTMLButtonElement;
-currentSecondsSinceEpochButton.addEventListener('click', () => {
-    display.value = Math.floor(Date.now()/1000).toString();
-});
-//Added Local Time
-const currentLocalTimeButton = document.getElementById('current-local-time') as HTMLButtonElement;
-currentLocalTimeButton.addEventListener('click', () => {
-    display.value = new Date().toLocaleTimeString();
-});
-//Added Full Date
-const currentFullDateButton = document.getElementById('current-full-date') as HTMLButtonElement;
-currentFullDateButton.addEventListener('click', () => {
-  display.value = new Date().toString();
-});
-//12-Hour Format
-const currentHours12Button = document.getElementById('current-hours-12') as HTMLButtonElement;
-currentHours12Button.addEventListener('click', () => {
-    let hours = new Date().getHours();
-    let period = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12 || 12;
-    display.value = hours.toString() + period;
-});
-//Added Seconds Timestamp
-const currentSecondsTimestampButton = document.getElementById('current-seconds-timestamp') as HTMLButtonElement;
-currentSecondsTimestampButton.addEventListener('click', () => {
-  display.value = Math.floor(Date.now() / 1000).toString();
 });
 // ... (rest of the code)
