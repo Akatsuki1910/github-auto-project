@@ -11,39 +11,14 @@ let history: string[] = [];
 //Absolute Value
 // ... (Existing functions)
 //Floor function
-const floorButton = document.getElementById('floor') as HTMLButtonElement;
-floorButton.addEventListener('click', () => {
-  const currentValue = parseFloat(display.value);
-  if (!isNaN(currentValue)) {
-    display.value = Math.floor(currentValue).toString();
-  }
-});
-//Ceil function
-const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
-ceilButton.addEventListener('click', () => {
+// ... existing code
+const lnButton = document.getElementById('ln') as HTMLButtonElement;
+lnButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-      display.value = Math.ceil(currentValue).toString();
+    if (!isNaN(currentValue) && currentValue > 0) {
+        display.value = Math.log(currentValue).toString();
+    } else {
+        display.value = "Error";
     }
-  });
-//Random Number Generator
-const randomButton = document.getElementById('random') as HTMLButtonElement;
-randomButton.addEventListener('click', () => {
-    display.value = Math.random().toString();
-});
-const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
-duplicateButton.addEventListener('click', () => {
-    display.value = display.value;
-});
-const signChangeButton = document.getElementById('sign-change') as HTMLButtonElement;
-signChangeButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (-currentValue).toString();
-    }
-});
-const eButton = document.getElementById('e') as HTMLButtonElement;
-eButton.addEventListener('click', () => {
-    display.value = Math.E.toString();
 });
 // ... (Rest of the existing code)
