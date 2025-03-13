@@ -21,4 +21,8 @@ lnButton.addEventListener('click', () => {
         display.value = "Error";
     }
 });
-// ... (Rest of the existing code)
+const modButton = document.getElementById('mod') as HTMLButtonElement;
+modButton.addEventListener('click', () => {
+    currentExpression += '%';
+    currentExpressionDisplay.textContent = currentExpression;
+});
