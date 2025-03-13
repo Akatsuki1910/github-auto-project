@@ -115,4 +115,9 @@ const currentLocaleDateStringButton = document.getElementById('current-locale-da
 currentLocaleDateStringButton.addEventListener('click', () => {
     display.value = new Date().toLocaleDateString();
 });
+//Added Weekday Number
+const currentWeekDayButton = document.getElementById('current-week-day') as HTMLButtonElement;
+currentWeekDayButton.addEventListener('click', () => {
+  display.value = new Date().getDay().toString();
+});
 // ... (rest of the code)
