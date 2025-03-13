@@ -34,3 +34,11 @@ const lastAnswerButton = document.getElementById('last-answer') as HTMLButtonEle
 lastAnswerButton.addEventListener('click', () => {
     display.value = lastAnswer.toString();
 });
+const toggleDisplayButton = document.getElementById('toggle-display') as HTMLButtonElement;
+toggleDisplayButton.addEventListener('click', () => {
+    if (historyDisplay.style.display === 'none') {
+        historyDisplay.style.display = 'block';
+    } else {
+        historyDisplay.style.display = 'none';
+    }
+});
