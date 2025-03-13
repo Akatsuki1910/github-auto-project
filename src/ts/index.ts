@@ -30,3 +30,7 @@ const memoryClearButton = document.getElementById('MC') as HTMLButtonElement;
 memoryClearButton.addEventListener('click', () => {
     memoryValue = 0;
 });
+const lastAnswerButton = document.getElementById('last-answer') as HTMLButtonElement;
+lastAnswerButton.addEventListener('click', () => {
+    display.value = lastAnswer.toString();
+});
