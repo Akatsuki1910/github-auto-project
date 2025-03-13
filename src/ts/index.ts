@@ -84,3 +84,12 @@ logButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+const sinButton = document.getElementById('sin') as HTMLButtonElement;
+sinButton.addEventListener('click', () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = Math.sin(currentValue).toString();
+  } else {
+    display.value = 'Error';
+  }
+});
