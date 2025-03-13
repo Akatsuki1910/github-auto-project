@@ -42,3 +42,13 @@ toggleDisplayButton.addEventListener('click', () => {
         historyDisplay.style.display = 'none';
     }
 });
+const leftParenthesisButton = document.getElementById('left-parenthesis') as HTMLButtonElement;
+leftParenthesisButton.addEventListener('click', () => {
+    currentExpression += '(';
+    currentExpressionDisplay.textContent = currentExpression;
+});
+const rightParenthesisButton = document.getElementById('right-parenthesis') as HTMLButtonElement;
+rightParenthesisButton.addEventListener('click', () => {
+    currentExpression += ')';
+    currentExpressionDisplay.textContent = currentExpression;
+});
