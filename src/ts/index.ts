@@ -20,4 +20,11 @@ cubeButton.addEventListener('click', () => {
         display.value = (currentValue * currentValue * currentValue).toString();
     }
 });
+const tenToThePowerXButton = document.getElementById('ten-to-the-power-x') as HTMLButtonElement;
+tenToThePowerXButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (Math.pow(10, currentValue)).toString();
+    }
+});
 // ... (Rest of the existing code)
