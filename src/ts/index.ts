@@ -63,3 +63,9 @@ nthRootButton.addEventListener('click', () => {
     // Placeholder for nth-root logic. This will require prompting the user for n.
     display.value = "Nth Root (Implementation pending)";
 });
+const currentDateButton = document.getElementById('current-date') as HTMLButtonElement;
+currentDateButton.addEventListener('click',()=>{
+    const today = new Date();
+    const dateString = today.toLocaleDateString();
+    display.value = dateString;
+});
