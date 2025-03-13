@@ -28,3 +28,12 @@ const memoryRecallButton = document.getElementById('memory-recall') as HTMLButto
 memoryRecallButton.addEventListener('click', () => {
     display.value = memoryValue.toString();
 });
+const squareRootButton = document.getElementById('square-root') as HTMLButtonElement;
+squareRootButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue >= 0) {
+        display.value = Math.sqrt(currentValue).toString();
+    } else {
+        display.value = 'Error';
+    }
+});
