@@ -42,4 +42,12 @@ roundButton.addEventListener('click', () => {
     display.value = Math.round(currentValue).toString();
   }
 });
+// x² function
+const pow2Button = document.getElementById('pow2') as HTMLButtonElement;
+pow2Button.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (currentValue * currentValue).toString();
+    }
+});
 // ... (Rest of the existing code)
