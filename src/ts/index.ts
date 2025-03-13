@@ -70,3 +70,8 @@ plusMinusButton.addEventListener('click', () => {
         display.value = (-currentValue).toString();
     }
 });
+const exponentButton = document.getElementById('exponent') as HTMLButtonElement;
+exponentButton.addEventListener('click', () => {
+    currentExpression += '**';
+    currentExpressionDisplay.textContent = currentExpression;
+});
