@@ -56,4 +56,8 @@ currentDayOfYearButton.addEventListener('click', () => {
     const dayOfYear = Math.floor(diff / oneDay);
     display.value = String(dayOfYear);
 });
+const currentBrowserButton = document.getElementById('current-browser') as HTMLButtonElement;
+currentBrowserButton.addEventListener('click', () => {
+    display.value = navigator.userAgent;
+});
 // ... (Rest of the existing code)
