@@ -19,4 +19,13 @@ const toggleLargeDisplayButton = document.getElementById('toggle-large-display')
 toggleLargeDisplayButton.addEventListener('click', () => {
     display.classList.toggle('large-display');
 });
+const toggleCurrentDateTimeButton = document.getElementById('toggle-current-date-time') as HTMLButtonElement;
+let showingDateTime = false;
+toggleCurrentDateTimeButton.addEventListener('click', () => {
+    showingDateTime = !showingDateTime;
+    if (showingDateTime) {
+        const now = new Date();
+        display.value = now.toLocaleString();
+    }
+});
 // ... (Rest of the existing code)
