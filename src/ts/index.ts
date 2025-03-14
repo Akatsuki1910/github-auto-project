@@ -59,4 +59,11 @@ toggleHistoryDisplayButton.addEventListener('click', () => {
     const currentDisplay = historyDisplay.style.display;
     historyDisplay.style.display = currentDisplay === 'none' ? 'block' : 'none';
 });
+const toggleBasicButton = document.getElementById('toggle-basic') as HTMLButtonElement;
+const basicButtons = document.querySelectorAll('.digit, .decimal, .operator, .equals, #delete, #clear, #backspace') as NodeListOf<HTMLButtonElement>;
+toggleBasicButton.addEventListener('click', () => {
+    basicButtons.forEach(button => {
+        button.style.display = button.style.display === 'none' ? 'inline-block' : 'none';
+    });
+});
 // ... (Rest of the existing code)
