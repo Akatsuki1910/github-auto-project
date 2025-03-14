@@ -54,4 +54,9 @@ toggleDarkModeButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-scheme');
     document.body.classList.toggle('light-scheme');
 });
+const toggleHistoryDisplayButton = document.getElementById('toggle-history-display') as HTMLButtonElement;
+toggleHistoryDisplayButton.addEventListener('click', () => {
+    const currentDisplay = historyDisplay.style.display;
+    historyDisplay.style.display = currentDisplay === 'none' ? 'block' : 'none';
+});
 // ... (Rest of the existing code)
