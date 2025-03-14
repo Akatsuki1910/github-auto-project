@@ -68,4 +68,8 @@ const currentTimezoneButton = document.getElementById('current-timezone') as HTM
 currentTimezoneButton.addEventListener('click', () => {
   display.value = Intl.DateTimeFormat().resolvedOptions().timeZone;
 });
+const currentTimestampMillisecondsButton = document.getElementById('current-timestamp-milliseconds') as HTMLButtonElement;
+currentTimestampMillisecondsButton.addEventListener('click', () => {
+  display.value = Date.now().toString();
+});
 // ... (Rest of the existing code)
