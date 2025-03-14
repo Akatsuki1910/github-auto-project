@@ -67,4 +67,9 @@ toggleCurrentHourButton.addEventListener('click', () => {
   const now = new Date();
   display.value = now.getHours().toString();
 });
+const currentSecondButton = document.getElementById('current-second') as HTMLButtonElement;
+currentSecondButton.addEventListener('click', () => {
+    const now = new Date();
+    display.value = now.getSeconds().toString();
+});
 // ... (Rest of the existing code)
