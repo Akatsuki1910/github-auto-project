@@ -49,4 +49,9 @@ toggleMainPadButton.addEventListener('click', () => {
         button.style.display = button.style.display === 'none' ? 'inline-block' : 'none';
     });
 });
+const toggleDarkModeButton = document.getElementById('toggle-dark-mode') as HTMLButtonElement;
+toggleDarkModeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-scheme');
+    document.body.classList.toggle('light-scheme');
+});
 // ... (Rest of the existing code)
