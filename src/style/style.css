@@ -25,3 +25,6 @@ body.light-scheme {
 .large-display {
     font-size: 2em;
 }
+body.low-brightness {
+  filter: brightness(50%);
+}
