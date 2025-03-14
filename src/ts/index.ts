@@ -45,4 +45,13 @@ toggleCurrentWeekButton.addEventListener('click', () => {
   const weekNumber = Math.ceil((((now.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7);
   display.value = weekNumber.toString();
 });
+const currentYearDayButton = document.getElementById('current-year-day') as HTMLButtonElement;
+currentYearDayButton.addEventListener('click', () => {
+    const now = new Date();
+    const start = new Date(now.getFullYear(), 0, 0);
+    const diff = now.getTime() - start.getTime();
+    const oneDay = 1000 * 60 * 60 * 24;
+    const day = Math.floor(diff / oneDay);
+    display.value = day.toString();
+});
 // ... (Rest of the existing code)
