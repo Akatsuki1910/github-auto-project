@@ -72,4 +72,8 @@ const currentTimestampMillisecondsButton = document.getElementById('current-time
 currentTimestampMillisecondsButton.addEventListener('click', () => {
   display.value = Date.now().toString();
 });
+const currentISODateButton = document.getElementById('current-iso-date') as HTMLButtonElement;
+currentISODateButton.addEventListener('click', () => {
+  display.value = new Date().toISOString();
+});
 // ... (Rest of the existing code)
