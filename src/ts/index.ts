@@ -42,4 +42,9 @@ currentGMTTimeButton.addEventListener('click', () => {
     const now = new Date();
     display.value = now.toUTCString();
 });
+const currentLocalTimeButton = document.getElementById('current-local-time') as HTMLButtonElement;
+currentLocalTimeButton.addEventListener('click', () => {
+    const now = new Date();
+    display.value = now.toLocaleTimeString();
+});
 // ... (Rest of the existing code)
