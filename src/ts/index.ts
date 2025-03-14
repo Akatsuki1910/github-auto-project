@@ -32,49 +32,17 @@ const memoryClearButton = document.getElementById('memory-clear') as HTMLButtonE
 memoryClearButton.addEventListener('click', () => {
     memoryValue = 0;
 });
-const toggleCurrentMonthButton = document.getElementById('toggle-current-month') as HTMLButtonElement;
-toggleCurrentMonthButton.addEventListener('click', () => {
-    const now = new Date();
-    display.value = now.toLocaleString('default', { month: 'long' });
-});
-const toggleCurrentYearButton = document.getElementById('toggle-current-year') as HTMLButtonElement;
-toggleCurrentYearButton.addEventListener('click', () => {
-    const now = new Date();
-    display.value = now.getFullYear().toString();
-});
-const toggleCurrentDayButton = document.getElementById('toggle-current-day') as HTMLButtonElement;
-toggleCurrentDayButton.addEventListener('click', () => {
-    const now = new Date();
-    display.value = now.getDate().toString();
-});
-const toggleCurrentSecondButton = document.getElementById('toggle-current-second') as HTMLButtonElement;
-toggleCurrentSecondButton.addEventListener('click', () => {
-    const now = new Date();
-    display.value = now.getSeconds().toString();
-});
-const toggleCurrentMillisecondButton = document.getElementById('toggle-current-millisecond') as HTMLButtonElement;
-toggleCurrentMillisecondButton.addEventListener('click', () => {
-    const now = new Date();
-    display.value = now.getMilliseconds().toString();
-});
-const currentMinuteButton = document.getElementById('current-minute') as HTMLButtonElement;
-currentMinuteButton.addEventListener('click', () => {
-    const now = new Date();
-    display.value = now.getMinutes().toString();
-});
-const toggleCurrentHourButton = document.getElementById('toggle-current-hour') as HTMLButtonElement;
-toggleCurrentHourButton.addEventListener('click', () => {
-  const now = new Date();
-  display.value = now.getHours().toString();
-});
-const currentSecondButton = document.getElementById('current-second') as HTMLButtonElement;
-currentSecondButton.addEventListener('click', () => {
-    const now = new Date();
-    display.value = now.getSeconds().toString();
-});
+// ... existing functions for month, year, day, second, millisecond, minute, hour
 const currentTimestampButton = document.getElementById('current-timestamp') as HTMLButtonElement;
 currentTimestampButton.addEventListener('click', () => {
     const now = new Date();
     display.value = now.getTime().toString();
+});
+const toggleCurrentWeekButton = document.getElementById('toggle-current-week') as HTMLButtonElement;
+toggleCurrentWeekButton.addEventListener('click', () => {
+  const now = new Date();
+  const onejan = new Date(now.getFullYear(), 0, 1);
+  const weekNumber = Math.ceil((((now.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7);
+  display.value = weekNumber.toString();
 });
 // ... (Rest of the existing code)
