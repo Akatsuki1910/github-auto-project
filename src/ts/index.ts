@@ -30,4 +30,9 @@ toggleScientificButton.addEventListener('click', () => {
         button.style.display = button.style.display === 'none' ? 'inline-block' : 'none';
     });
 });
+const toggleCurrentExpressionButton = document.getElementById('toggle-current-expression') as HTMLButtonElement;
+toggleCurrentExpressionButton.addEventListener('click', () => {
+    const currentDisplay = currentExpressionDisplay.style.display;
+    currentExpressionDisplay.style.display = currentDisplay === 'none' ? 'block' : 'none';
+});
 // ... (Rest of the existing code)
