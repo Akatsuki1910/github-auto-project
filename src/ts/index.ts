@@ -27,4 +27,11 @@ tenToThePowerXButton.addEventListener('click', () => {
         display.value = (Math.pow(10, currentValue)).toString();
     }
 });
+const twoToThePowerXButton = document.getElementById('two-to-the-power-x') as HTMLButtonElement;
+twoToThePowerXButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (Math.pow(2, currentValue)).toString();
+    }
+});
 // ... (Rest of the existing code)
