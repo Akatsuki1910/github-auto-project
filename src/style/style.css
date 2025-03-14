@@ -22,3 +22,6 @@ body.light-scheme {
     background-color: #eee;
     color: #333;
 }
+.large-display {
+    font-size: 2em;
+}
