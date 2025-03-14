@@ -60,4 +60,8 @@ const currentBrowserButton = document.getElementById('current-browser') as HTMLB
 currentBrowserButton.addEventListener('click', () => {
     display.value = navigator.userAgent;
 });
+const currentOSButton = document.getElementById('current-os') as HTMLButtonElement;
+currentOSButton.addEventListener('click', () => {
+    display.value = navigator.platform; // Simplified OS information
+});
 // ... (Rest of the existing code)
