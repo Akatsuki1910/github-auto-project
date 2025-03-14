@@ -25,4 +25,10 @@ const toggleScreenBrightnessButton = document.getElementById('toggle-screen-brig
 toggleScreenBrightnessButton.addEventListener('click', () => {
 document.body.classList.toggle('low-brightness');
 });
+const currentQuarterButton = document.getElementById('current-quarter') as HTMLButtonElement;
+currentQuarterButton.addEventListener('click', () => {
+    const now = new Date();
+    const quarter = Math.floor((now.getMonth() + 3) / 3);
+    display.value = `Q${quarter}`;
+});
 // ... (Rest of the existing code)
