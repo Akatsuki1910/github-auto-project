@@ -42,4 +42,9 @@ toggleCurrentYearButton.addEventListener('click', () => {
     const now = new Date();
     display.value = now.getFullYear().toString();
 });
+const toggleCurrentDayButton = document.getElementById('toggle-current-day') as HTMLButtonElement;
+toggleCurrentDayButton.addEventListener('click', () => {
+    const now = new Date();
+    display.value = now.getDate().toString();
+});
 // ... (Rest of the existing code)
