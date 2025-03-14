@@ -76,4 +76,10 @@ const clearDisplayButton = document.getElementById('clear-display') as HTMLButto
 clearDisplayButton.addEventListener('click', () => {
   display.value = '';
 });
+const invertButton = document.getElementById('invert') as HTMLButtonElement;
+invertButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = (1 / parseFloat(display.value)).toString();
+    }
+});
 // ... (Rest of the existing code)
