@@ -42,4 +42,11 @@ toggleBasicOperatorsButton.addEventListener('click', () => {
     button.style.display = button.style.display === 'none' ? 'inline-block' : 'none';
   });
 });
+const toggleMainPadButton = document.getElementById('toggle-main-pad') as HTMLButtonElement;
+const mainPadButtons = document.querySelectorAll('.main-pad button') as NodeListOf<HTMLButtonElement>;
+toggleMainPadButton.addEventListener('click', () => {
+    mainPadButtons.forEach(button => {
+        button.style.display = button.style.display === 'none' ? 'inline-block' : 'none';
+    });
+});
 // ... (Rest of the existing code)
