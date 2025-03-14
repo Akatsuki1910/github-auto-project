@@ -37,4 +37,9 @@ currentWeekDayButton.addEventListener('click', () => {
     const weekday = now.toLocaleString('default', { weekday: 'long' });
     display.value = weekday;
 });
+const currentGMTTimeButton = document.getElementById('current-gmt-time') as HTMLButtonElement;
+currentGMTTimeButton.addEventListener('click', () => {
+    const now = new Date();
+    display.value = now.toUTCString();
+});
 // ... (Rest of the existing code)
