@@ -88,4 +88,8 @@ toggleCurrentMicrosecondButton.addEventListener('click', () => {
     display.value = now.getMilliseconds().toString();
 
 });
+const currentNanosecondsButton = document.getElementById('current-nanoseconds') as HTMLButtonElement;
+currentNanosecondsButton.addEventListener('click', () => {
+  display.value = process.hrtime.bigint().toString();
+});
 // ... (Rest of the existing code)
