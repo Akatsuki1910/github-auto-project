@@ -97,4 +97,9 @@ currentMicrosecondsButton.addEventListener('click', () => {
     const now = new Date();
     display.value = now.getMilliseconds() * 1000 +  Math.floor(Math.random() * 1000) ;
 });
+const currentMonthYearButton = document.getElementById('current-month-year') as HTMLButtonElement;
+currentMonthYearButton.addEventListener('click', () => {
+  const now = new Date();
+  display.value = now.toLocaleString('default', { month: 'long', year: 'numeric' });
+});
 // ... (Rest of the existing code)
