@@ -37,4 +37,9 @@ toggleCurrentMonthButton.addEventListener('click', () => {
     const now = new Date();
     display.value = now.toLocaleString('default', { month: 'long' });
 });
+const toggleCurrentYearButton = document.getElementById('toggle-current-year') as HTMLButtonElement;
+toggleCurrentYearButton.addEventListener('click', () => {
+    const now = new Date();
+    display.value = now.getFullYear().toString();
+});
 // ... (Rest of the existing code)
