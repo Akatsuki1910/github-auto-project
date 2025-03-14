@@ -13,38 +13,13 @@ let history: string[] = [];
 //Floor function
 // ... existing code
 // ... (Existing functions)
-const cubeButton = document.getElementById('cube') as HTMLButtonElement;
-cubeButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (currentValue * currentValue * currentValue).toString();
-    }
-});
-const tenToThePowerXButton = document.getElementById('ten-to-the-power-x') as HTMLButtonElement;
-tenToThePowerXButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (Math.pow(10, currentValue)).toString();
-    }
-});
-const twoToThePowerXButton = document.getElementById('two-to-the-power-x') as HTMLButtonElement;
-twoToThePowerXButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (Math.pow(2, currentValue)).toString();
-    }
-});
-const calculateExpressionButton = document.getElementById('calculate-expression') as HTMLButtonElement;
-calculateExpressionButton.addEventListener('click', () => {
-    try {
-        const result = eval(currentExpression);
-        display.value = result.toString();
-        currentExpression = '';
-        currentExpressionDisplay.textContent = '';
-        history.push(`${currentExpression} = ${result}`);
-        historyDisplay.innerHTML = history.map(item => `<p>${item}</p>`).join('');
-    } catch (error) {
-        display.value = 'Error';
-    }
+// ... existing buttons
+const copyToClipboardButton = document.getElementById('copy-to-clipboard') as HTMLButtonElement;
+copyToClipboardButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(display.value).then(() => {
+        alert('Copied to clipboard!');
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
 });
 // ... (Rest of the existing code)
