@@ -32,4 +32,9 @@ const memoryClearButton = document.getElementById('memory-clear') as HTMLButtonE
 memoryClearButton.addEventListener('click', () => {
     memoryValue = 0;
 });
+const toggleCurrentMonthButton = document.getElementById('toggle-current-month') as HTMLButtonElement;
+toggleCurrentMonthButton.addEventListener('click', () => {
+    const now = new Date();
+    display.value = now.toLocaleString('default', { month: 'long' });
+});
 // ... (Rest of the existing code)
