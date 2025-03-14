@@ -72,4 +72,9 @@ currentSecondButton.addEventListener('click', () => {
     const now = new Date();
     display.value = now.getSeconds().toString();
 });
+const currentTimestampButton = document.getElementById('current-timestamp') as HTMLButtonElement;
+currentTimestampButton.addEventListener('click', () => {
+    const now = new Date();
+    display.value = now.getTime().toString();
+});
 // ... (Rest of the existing code)
