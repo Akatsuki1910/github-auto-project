@@ -35,4 +35,11 @@ toggleCurrentExpressionButton.addEventListener('click', () => {
     const currentDisplay = currentExpressionDisplay.style.display;
     currentExpressionDisplay.style.display = currentDisplay === 'none' ? 'block' : 'none';
 });
+const toggleBasicOperatorsButton = document.getElementById('toggle-basic-operators') as HTMLButtonElement;
+const basicOperatorButtons = document.querySelectorAll('.operator') as NodeListOf<HTMLButtonElement>;
+toggleBasicOperatorsButton.addEventListener('click', () => {
+  basicOperatorButtons.forEach(button => {
+    button.style.display = button.style.display === 'none' ? 'inline-block' : 'none';
+  });
+});
 // ... (Rest of the existing code)
