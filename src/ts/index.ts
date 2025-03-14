@@ -57,9 +57,14 @@ toggleCurrentMillisecondButton.addEventListener('click', () => {
     const now = new Date();
     display.value = now.getMilliseconds().toString();
 });
-const toggleCurrentMinuteButton = document.getElementById('current-minute') as HTMLButtonElement;
-toggleCurrentMinuteButton.addEventListener('click', () => {
+const currentMinuteButton = document.getElementById('current-minute') as HTMLButtonElement;
+currentMinuteButton.addEventListener('click', () => {
     const now = new Date();
     display.value = now.getMinutes().toString();
+});
+const toggleCurrentHourButton = document.getElementById('toggle-current-hour') as HTMLButtonElement;
+toggleCurrentHourButton.addEventListener('click', () => {
+  const now = new Date();
+  display.value = now.getHours().toString();
 });
 // ... (Rest of the existing code)
