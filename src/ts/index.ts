@@ -64,4 +64,8 @@ const currentOSButton = document.getElementById('current-os') as HTMLButtonEleme
 currentOSButton.addEventListener('click', () => {
     display.value = navigator.platform; // Simplified OS information
 });
+const currentTimezoneButton = document.getElementById('current-timezone') as HTMLButtonElement;
+currentTimezoneButton.addEventListener('click', () => {
+  display.value = Intl.DateTimeFormat().resolvedOptions().timeZone;
+});
 // ... (Rest of the existing code)
