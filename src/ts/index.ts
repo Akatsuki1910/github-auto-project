@@ -34,4 +34,17 @@ twoToThePowerXButton.addEventListener('click', () => {
         display.value = (Math.pow(2, currentValue)).toString();
     }
 });
+const calculateExpressionButton = document.getElementById('calculate-expression') as HTMLButtonElement;
+calculateExpressionButton.addEventListener('click', () => {
+    try {
+        const result = eval(currentExpression);
+        display.value = result.toString();
+        currentExpression = '';
+        currentExpressionDisplay.textContent = '';
+        history.push(`${currentExpression} = ${result}`);
+        historyDisplay.innerHTML = history.map(item => `<p>${item}</p>`).join('');
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
 // ... (Rest of the existing code)
