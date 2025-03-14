@@ -72,4 +72,8 @@ currentDayOfWeekButton.addEventListener('click', () => {
     weekday[6] = "Saturday";
     display.value = weekday[now.getDay()];
 });
+const clearDisplayButton = document.getElementById('clear-display') as HTMLButtonElement;
+clearDisplayButton.addEventListener('click', () => {
+  display.value = '';
+});
 // ... (Rest of the existing code)
