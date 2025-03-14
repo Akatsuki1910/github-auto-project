@@ -31,4 +31,10 @@ currentQuarterButton.addEventListener('click', () => {
     const quarter = Math.floor((now.getMonth() + 3) / 3);
     display.value = `Q${quarter}`;
 });
+const currentWeekDayButton = document.getElementById('current-week-day') as HTMLButtonElement;
+currentWeekDayButton.addEventListener('click', () => {
+    const now = new Date();
+    const weekday = now.toLocaleString('default', { weekday: 'long' });
+    display.value = weekday;
+});
 // ... (Rest of the existing code)
