@@ -92,4 +92,9 @@ const currentNanosecondsButton = document.getElementById('current-nanoseconds') 
 currentNanosecondsButton.addEventListener('click', () => {
   display.value = process.hrtime.bigint().toString();
 });
+const currentMicrosecondsButton = document.getElementById('current-microseconds') as HTMLButtonElement;
+currentMicrosecondsButton.addEventListener('click', () => {
+    const now = new Date();
+    display.value = now.getMilliseconds() * 1000 +  Math.floor(Math.random() * 1000) ;
+});
 // ... (Rest of the existing code)
