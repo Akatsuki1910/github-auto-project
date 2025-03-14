@@ -54,4 +54,9 @@ currentYearDayButton.addEventListener('click', () => {
     const day = Math.floor(diff / oneDay);
     display.value = day.toString();
 });
+const currentMonthDayButton = document.getElementById('current-month-day') as HTMLButtonElement;
+currentMonthDayButton.addEventListener('click', () => {
+    const now = new Date();
+    display.value = now.getDate().toString();
+});
 // ... (Rest of the existing code)
