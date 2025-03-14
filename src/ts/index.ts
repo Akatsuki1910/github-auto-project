@@ -82,4 +82,10 @@ invertButton.addEventListener('click', () => {
         display.value = (1 / parseFloat(display.value)).toString();
     }
 });
+const toggleCurrentMicrosecondButton = document.getElementById('toggle-current-microsecond') as HTMLButtonElement;
+toggleCurrentMicrosecondButton.addEventListener('click', () => {
+    const now = new Date();
+    display.value = now.getMilliseconds().toString();
+
+});
 // ... (Rest of the existing code)
