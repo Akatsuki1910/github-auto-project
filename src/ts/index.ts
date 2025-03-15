@@ -78,4 +78,14 @@ currentMemoryAvailableButton.addEventListener('click', () => {
         display.value = 'Device memory information not available.';
     }
 });
+const currentBatteryLevelButton = document.getElementById('current-battery-level') as HTMLButtonElement;
+currentBatteryLevelButton.addEventListener('click', () => {
+if (navigator.getBattery) {
+    navigator.getBattery().then(battery => {
+        display.value = `Battery Level: ${battery.level * 100}%`;
+    });
+} else {
+    display.value = 'Battery status not supported.';
+}
+});
 // ... (Rest of the existing code)
