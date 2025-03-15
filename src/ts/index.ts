@@ -34,3 +34,7 @@ currentClipboardContentButton.addEventListener('click', async () => {
         console.error('Failed to read clipboard:', err);
     }
 });
+const currentDevicePixelRatioButton = document.getElementById('current-device-pixel-ratio') as HTMLButtonElement;
+currentDevicePixelRatioButton.addEventListener('click', () => {
+    display.value = window.devicePixelRatio.toString();
+});
