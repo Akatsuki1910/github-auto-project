@@ -81,4 +81,8 @@ currentTime12hButton.addEventListener('click', () => {
   const now = new Date();
   display.value = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true });
 });
+const currentUnixTimestampButton = document.getElementById('current-unix-timestamp') as HTMLButtonElement;
+currentUnixTimestampButton.addEventListener('click', () => {
+  display.value = Math.floor(Date.now() / 1000).toString();
+});
 // ... (Rest of the existing code)
