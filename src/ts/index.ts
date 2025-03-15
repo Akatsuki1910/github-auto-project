@@ -78,3 +78,8 @@ inverseButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     display.value = (1/currentValue).toString();
 });
+const logButton = document.getElementById('log') as HTMLButtonElement;
+logButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    display.value = Math.log10(currentValue).toString();
+});
