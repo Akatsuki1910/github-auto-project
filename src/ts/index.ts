@@ -25,4 +25,15 @@ const currentLanguageButton = document.getElementById('current-language') as HTM
 currentLanguageButton.addEventListener('click', () => {
     display.value = navigator.language;
 });
+const currentIPAddressButton = document.getElementById('current-ip-address') as HTMLButtonElement;
+currentIPAddressButton.addEventListener('click', async () => {
+    try {
+        const response = await fetch('https://api.ipify.org?format=json');
+        const data = await response.json();
+        display.value = data.ip;
+    } catch (error) {
+        display.value = 'Error fetching IP address';
+        console.error('Error fetching IP address:', error);
+    }
+});
 // ... (Rest of the existing code)
