@@ -41,4 +41,9 @@ cosButton.addEventListener('click', () => {
     currentExpression += 'Math.cos('; // Add cos function
     currentExpressionDisplay.textContent = currentExpression;
 });
+const tanButton = document.getElementById('tan') as HTMLButtonElement;
+tanButton.addEventListener('click', () => {
+    currentExpression += 'Math.tan('; // Add tan function
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... existing code
