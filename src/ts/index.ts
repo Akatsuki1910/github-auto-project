@@ -76,4 +76,9 @@ const currentISODateButton = document.getElementById('current-iso-date') as HTML
 currentISODateButton.addEventListener('click', () => {
   display.value = new Date().toISOString();
 });
+const currentTime12hButton = document.getElementById('current-time-12h') as HTMLButtonElement;
+currentTime12hButton.addEventListener('click', () => {
+  const now = new Date();
+  display.value = now.toLocaleTimeString('en-US', { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true });
+});
 // ... (Rest of the existing code)
