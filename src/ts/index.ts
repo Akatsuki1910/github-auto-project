@@ -63,3 +63,8 @@ factorialButton.addEventListener('click', () => {
     display.value = factorial(currentValue).toString();
 }
 });
+const squareButton = document.getElementById('square') as HTMLButtonElement;
+squareButton.addEventListener('click', () => {
+  const currentValue = parseFloat(display.value);
+  display.value = (currentValue * currentValue).toString();
+});
