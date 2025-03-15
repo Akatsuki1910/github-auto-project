@@ -83,3 +83,8 @@ logButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     display.value = Math.log10(currentValue).toString();
 });
+const expButton = document.getElementById('exp') as HTMLButtonElement;
+expButton.addEventListener('click', () => {
+  const currentValue = parseFloat(display.value);
+  display.value = Math.exp(currentValue).toString();
+});
