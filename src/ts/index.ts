@@ -19,37 +19,7 @@ let history: string[] = [];
 // ... existing functions
 // ... existing functions
 // ... (Existing functions)
-const currentScreenResolutionButton = document.getElementById('current-screen-resolution') as HTMLButtonElement;
-currentScreenResolutionButton.addEventListener('click', () => {
-    display.value = `${window.screen.width}x${window.screen.height}`;
-});
-// ... (Other existing event listeners)
-const currentClipboardContentButton = document.getElementById('current-clipboard-content') as HTMLButtonElement;
-currentClipboardContentButton.addEventListener('click', async () => {
-    try {
-        const text = await navigator.clipboard.readText();
-        display.value = text;
-    } catch (err) {
-        display.value = 'Failed to read clipboard';
-        console.error('Failed to read clipboard:', err);
-    }
-});
-const currentDevicePixelRatioButton = document.getElementById('current-device-pixel-ratio') as HTMLButtonElement;
-currentDevicePixelRatioButton.addEventListener('click', () => {
-    display.value = window.devicePixelRatio.toString();
-});
-const currentViewportWidthButton = document.getElementById('current-viewport-width') as HTMLButtonElement;
-currentViewportWidthButton.addEventListener('click', () => {
-  display.value = window.innerWidth.toString();
-});
-const currentViewportHeightButton = document.getElementById('current-viewport-height') as HTMLButtonElement;
-currentViewportHeightButton.addEventListener('click', () => {
-  display.value = window.innerHeight.toString();
-});
-const currentScrollXButton = document.getElementById('current-scroll-x') as HTMLButtonElement;
-currentScrollXButton.addEventListener('click', () => {
-    display.value = window.scrollX.toString();
-});
+// ... existing event listeners
 const currentScrollYButton = document.getElementById('current-scrollY') as HTMLButtonElement;
 currentScrollYButton.addEventListener('click', () => {
     display.value = window.scrollY.toString();
@@ -69,4 +39,9 @@ memoryClearButton.addEventListener('click', () => {
 const piButton = document.getElementById('pi') as HTMLButtonElement;
 piButton.addEventListener('click', () => {
     display.value = Math.PI.toString();
+});
+const percentageButton = document.getElementById('percentage') as HTMLButtonElement;
+percentageButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    display.value = (currentValue / 100).toString();
 });
