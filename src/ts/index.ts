@@ -36,4 +36,8 @@ currentIPAddressButton.addEventListener('click', async () => {
         console.error('Error fetching IP address:', error);
     }
 });
+const currentOnlineStatusButton = document.getElementById('current-online-status') as HTMLButtonElement;
+currentOnlineStatusButton.addEventListener('click', () => {
+  display.value = navigator.onLine ? 'Online' : 'Offline';
+});
 // ... (Rest of the existing code)
