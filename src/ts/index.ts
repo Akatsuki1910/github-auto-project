@@ -70,4 +70,12 @@ currentNetworkSpeedButton.addEventListener('click', () => {
         display.value = `Network Speed: ${speedInMbps.toFixed(2)} Mbps`;
     }
 });
+const currentMemoryAvailableButton = document.getElementById('current-memory-available') as HTMLButtonElement;
+currentMemoryAvailableButton.addEventListener('click', () => {
+    if ('deviceMemory' in navigator) {
+        display.value = `Available Memory: ${(navigator.deviceMemory as any).toFixed(2)} GB`;
+    } else {
+        display.value = 'Device memory information not available.';
+    }
+});
 // ... (Rest of the existing code)
