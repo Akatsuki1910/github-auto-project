@@ -88,3 +88,8 @@ expButton.addEventListener('click', () => {
   const currentValue = parseFloat(display.value);
   display.value = Math.exp(currentValue).toString();
 });
+const signButton = document.getElementById('sign') as HTMLButtonElement;
+signButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    display.value = Math.sign(currentValue).toString();
+});
