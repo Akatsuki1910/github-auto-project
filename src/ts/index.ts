@@ -61,4 +61,9 @@ closeParenButton.addEventListener('click', () => {
     currentExpression += ')';
     currentExpressionDisplay.textContent = currentExpression;
 });
+const eButton = document.getElementById('e') as HTMLButtonElement;
+eButton.addEventListener('click', () => {
+    currentExpression += 'Math.E';
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... existing code
