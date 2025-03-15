@@ -38,3 +38,7 @@ const currentDevicePixelRatioButton = document.getElementById('current-device-pi
 currentDevicePixelRatioButton.addEventListener('click', () => {
     display.value = window.devicePixelRatio.toString();
 });
+const currentViewportWidthButton = document.getElementById('current-viewport-width') as HTMLButtonElement;
+currentViewportWidthButton.addEventListener('click', () => {
+  display.value = window.innerWidth.toString();
+});
