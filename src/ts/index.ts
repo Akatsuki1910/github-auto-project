@@ -42,3 +42,7 @@ const currentViewportWidthButton = document.getElementById('current-viewport-wid
 currentViewportWidthButton.addEventListener('click', () => {
   display.value = window.innerWidth.toString();
 });
+const currentViewportHeightButton = document.getElementById('current-viewport-height') as HTMLButtonElement;
+currentViewportHeightButton.addEventListener('click', () => {
+  display.value = window.innerHeight.toString();
+});
