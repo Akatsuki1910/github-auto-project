@@ -46,4 +46,9 @@ tanButton.addEventListener('click', () => {
     currentExpression += 'Math.tan('; // Add tan function
     currentExpressionDisplay.textContent = currentExpression;
 });
+const absButton = document.getElementById('abs') as HTMLButtonElement;
+absButton.addEventListener('click', () => {
+    currentExpression += 'Math.abs('; // Add abs function
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... existing code
