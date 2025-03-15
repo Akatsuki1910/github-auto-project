@@ -98,4 +98,9 @@ currentTime24hButton.addEventListener('click', () => {
     const now = new Date();
     display.value = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
 });
+const currentDateTimeButton = document.getElementById('current-date-time') as HTMLButtonElement;
+currentDateTimeButton.addEventListener('click', () => {
+    const now = new Date();
+    display.value = now.toLocaleString();
+});
 // ... (Rest of the existing code)
