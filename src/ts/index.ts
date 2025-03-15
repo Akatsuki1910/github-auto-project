@@ -31,39 +31,10 @@ ansButton.addEventListener('click', () => {
     currentExpression += lastAnswer;
     currentExpressionDisplay.textContent = currentExpression;
 });
-const sinButton = document.getElementById('sin') as HTMLButtonElement;
-sinButton.addEventListener('click', () => {
-    currentExpression += 'Math.sin('; // Add sin function
-    currentExpressionDisplay.textContent = currentExpression;
-});
-const cosButton = document.getElementById('cos') as HTMLButtonElement;
-cosButton.addEventListener('click', () => {
-    currentExpression += 'Math.cos('; // Add cos function
-    currentExpressionDisplay.textContent = currentExpression;
-});
-const tanButton = document.getElementById('tan') as HTMLButtonElement;
-tanButton.addEventListener('click', () => {
-    currentExpression += 'Math.tan('; // Add tan function
-    currentExpressionDisplay.textContent = currentExpression;
-});
-const absButton = document.getElementById('abs') as HTMLButtonElement;
-absButton.addEventListener('click', () => {
-    currentExpression += 'Math.abs('; // Add abs function
-    currentExpressionDisplay.textContent = currentExpression;
-});
-const openParenButton = document.getElementById('open-paren') as HTMLButtonElement;
-openParenButton.addEventListener('click', () => {
-    currentExpression += '(';
-    currentExpressionDisplay.textContent = currentExpression;
-});
-const closeParenButton = document.getElementById('close-paren') as HTMLButtonElement;
-closeParenButton.addEventListener('click', () => {
-    currentExpression += ')';
-    currentExpressionDisplay.textContent = currentExpression;
-});
-const eButton = document.getElementById('e') as HTMLButtonElement;
-eButton.addEventListener('click', () => {
-    currentExpression += 'Math.E';
+// ... existing sin, cos, tan, abs, open-paren, close-paren, e button event listeners
+const lnButton = document.getElementById('ln') as HTMLButtonElement;
+lnButton.addEventListener('click', () => {
+    currentExpression += 'Math.log('; //Natural log
     currentExpressionDisplay.textContent = currentExpression;
 });
 // ... existing code
