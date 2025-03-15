@@ -21,4 +21,8 @@ const currentScreenResolutionButton = document.getElementById('current-screen-re
 currentScreenResolutionButton.addEventListener('click', () => {
     display.value = `${window.screen.width}x${window.screen.height}`;
 });
+const currentLanguageButton = document.getElementById('current-language') as HTMLButtonElement;
+currentLanguageButton.addEventListener('click', () => {
+    display.value = navigator.language;
+});
 // ... (Rest of the existing code)
