@@ -56,4 +56,18 @@ const currentUserAgentButton = document.getElementById('current-user-agent') as 
 currentUserAgentButton.addEventListener('click', () => {
     display.value = navigator.userAgent;
 });
+const currentNetworkSpeedButton = document.getElementById('current-network-speed') as HTMLButtonElement;
+currentNetworkSpeedButton.addEventListener('click', () => {
+    display.value = 'Estimating...';
+        const image = new Image();
+        const startTime = new Date().getTime();
+        image.src = 'https://upload.wikimedia.org/wikipedia/commons/2/2d/Snake_River_%285mb%29.jpg';
+        image.onload = () => {
+        const endTime = new Date().getTime();
+        const downloadTime = (endTime - startTime) / 1000;
+        const imageSize = 5245329;
+        const speedInMbps = (imageSize / downloadTime / 1000000) * 8;
+        display.value = `Network Speed: ${speedInMbps.toFixed(2)} Mbps`;
+    }
+});
 // ... (Rest of the existing code)
