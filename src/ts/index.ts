@@ -66,3 +66,7 @@ memoryRecallButton.addEventListener('click', () => {
 memoryClearButton.addEventListener('click', () => {
     memoryValue = 0;
 });
+const piButton = document.getElementById('pi') as HTMLButtonElement;
+piButton.addEventListener('click', () => {
+    display.value = Math.PI.toString();
+});
