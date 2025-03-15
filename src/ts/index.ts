@@ -73,3 +73,8 @@ cubeButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     display.value = (currentValue * currentValue * currentValue).toString();
 });
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
+inverseButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    display.value = (1/currentValue).toString();
+});
