@@ -51,4 +51,14 @@ absButton.addEventListener('click', () => {
     currentExpression += 'Math.abs('; // Add abs function
     currentExpressionDisplay.textContent = currentExpression;
 });
+const openParenButton = document.getElementById('open-paren') as HTMLButtonElement;
+openParenButton.addEventListener('click', () => {
+    currentExpression += '(';
+    currentExpressionDisplay.textContent = currentExpression;
+});
+const closeParenButton = document.getElementById('close-paren') as HTMLButtonElement;
+closeParenButton.addEventListener('click', () => {
+    currentExpression += ')';
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... existing code
