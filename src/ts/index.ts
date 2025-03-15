@@ -93,4 +93,9 @@ currentYearWeekButton.addEventListener('click', () => {
     const weekNumber = Math.ceil((((now.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7);
     display.value = `${year}-W${weekNumber}`;
 });
+const currentTime24hButton = document.getElementById('current-time-24h') as HTMLButtonElement;
+currentTime24hButton.addEventListener('click', () => {
+    const now = new Date();
+    display.value = now.toLocaleTimeString('en-GB', { hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false });
+});
 // ... (Rest of the existing code)
