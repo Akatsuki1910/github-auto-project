@@ -17,6 +17,7 @@ let history: string[] = [];
 // ... existing toggle functions
 // ... existing functions for month, year, day, second, millisecond, minute, hour, etc.
 // ... existing functions
+// ... existing functions
 const currentScreenResolutionButton = document.getElementById('current-screen-resolution') as HTMLButtonElement;
 currentScreenResolutionButton.addEventListener('click', () => {
     display.value = `${window.screen.width}x${window.screen.height}`;
@@ -87,5 +88,15 @@ if (navigator.getBattery) {
 } else {
     display.value = 'Battery status not supported.';
 }
+});
+const currentCPUUsageButton = document.getElementById('current-cpu-usage') as HTMLButtonElement;
+currentCPUUsageButton.addEventListener('click', () => {
+    display.value = 'Calculating...';
+    const startTime = performance.now();
+    let endTime = performance.now();
+    while (endTime - startTime < 1000) {
+        endTime = performance.now();
+    }  //Simulate some work
+    display.value = "CPU Usage estimation is not available in browser.";
 });
 // ... (Rest of the existing code)
