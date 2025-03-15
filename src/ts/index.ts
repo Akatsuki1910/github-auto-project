@@ -26,5 +26,9 @@ powerButton.addEventListener('click', () => {
     currentExpression += '**';
     currentExpressionDisplay.textContent = currentExpression;
 });
-
+const ansButton = document.getElementById('ans') as HTMLButtonElement;
+ansButton.addEventListener('click', () => {
+    currentExpression += lastAnswer;
+    currentExpressionDisplay.textContent = currentExpression;  
+});
 // ... existing code
