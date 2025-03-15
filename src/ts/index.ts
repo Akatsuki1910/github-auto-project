@@ -29,6 +29,11 @@ powerButton.addEventListener('click', () => {
 const ansButton = document.getElementById('ans') as HTMLButtonElement;
 ansButton.addEventListener('click', () => {
     currentExpression += lastAnswer;
-    currentExpressionDisplay.textContent = currentExpression;  
+    currentExpressionDisplay.textContent = currentExpression;
+});
+const sinButton = document.getElementById('sin') as HTMLButtonElement;
+sinButton.addEventListener('click', () => {
+    currentExpression += 'Math.sin('; // Add sin function
+    currentExpressionDisplay.textContent = currentExpression;
 });
 // ... existing code
