@@ -93,3 +93,8 @@ signButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     display.value = Math.sign(currentValue).toString();
 });
+const roundButton = document.getElementById('round') as HTMLButtonElement;
+roundButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    display.value = Math.round(currentValue).toString();
+});
