@@ -85,4 +85,12 @@ const currentUnixTimestampButton = document.getElementById('current-unix-timesta
 currentUnixTimestampButton.addEventListener('click', () => {
   display.value = Math.floor(Date.now() / 1000).toString();
 });
+const currentYearWeekButton = document.getElementById('current-year-week') as HTMLButtonElement;
+currentYearWeekButton.addEventListener('click', () => {
+    const now = new Date();
+    const year = now.getFullYear();
+    const onejan = new Date(year, 0, 1);
+    const weekNumber = Math.ceil((((now.getTime() - onejan.getTime()) / 86400000) + onejan.getDay() + 1) / 7);
+    display.value = `${year}-W${weekNumber}`;
+});
 // ... (Rest of the existing code)
