@@ -68,3 +68,8 @@ squareButton.addEventListener('click', () => {
   const currentValue = parseFloat(display.value);
   display.value = (currentValue * currentValue).toString();
 });
+const cubeButton = document.getElementById('cube') as HTMLButtonElement;
+cubeButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    display.value = (currentValue * currentValue * currentValue).toString();
+});
