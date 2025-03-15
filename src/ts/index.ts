@@ -52,4 +52,8 @@ currentGeolocationButton.addEventListener('click', () => {
         display.value = 'Geolocation is not supported by this browser.';
     }
 });
+const currentUserAgentButton = document.getElementById('current-user-agent') as HTMLButtonElement;
+currentUserAgentButton.addEventListener('click', () => {
+    display.value = navigator.userAgent;
+});
 // ... (Rest of the existing code)
