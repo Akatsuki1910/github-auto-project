@@ -103,4 +103,9 @@ currentDateTimeButton.addEventListener('click', () => {
     const now = new Date();
     display.value = now.toLocaleString();
 });
+const currentTimeSecondsButton = document.getElementById('current-time-seconds') as HTMLButtonElement;
+currentTimeSecondsButton.addEventListener('click', () => {
+    const now = new Date();
+    display.value = String(now.getSeconds());
+});
 // ... (Rest of the existing code)
