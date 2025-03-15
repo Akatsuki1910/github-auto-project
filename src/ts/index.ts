@@ -37,4 +37,9 @@ lnButton.addEventListener('click', () => {
     currentExpression += 'Math.log('; //Natural log
     currentExpressionDisplay.textContent = currentExpression;
 });
+const tenPowerButton = document.getElementById('ten-power') as HTMLButtonElement;
+tenPowerButton.addEventListener('click', () => {
+    currentExpression += '10**';
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... existing code
