@@ -50,3 +50,7 @@ const currentScrollXButton = document.getElementById('current-scroll-x') as HTML
 currentScrollXButton.addEventListener('click', () => {
     display.value = window.scrollX.toString();
 });
+const currentScrollYButton = document.getElementById('current-scrollY') as HTMLButtonElement;
+currentScrollYButton.addEventListener('click', () => {
+    display.value = window.scrollY.toString();
+});
