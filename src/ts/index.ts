@@ -40,4 +40,16 @@ const currentOnlineStatusButton = document.getElementById('current-online-status
 currentOnlineStatusButton.addEventListener('click', () => {
   display.value = navigator.onLine ? 'Online' : 'Offline';
 });
+const currentGeolocationButton = document.getElementById('current-geolocation') as HTMLButtonElement;
+currentGeolocationButton.addEventListener('click', () => {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+            display.value = `Latitude: ${position.coords.latitude}, Longitude: ${position.coords.longitude}`;
+        }, (error) => {
+            display.value = `Error getting geolocation: ${error.message}`;
+        });
+    } else {
+        display.value = 'Geolocation is not supported by this browser.';
+    }
+});
 // ... (Rest of the existing code)
