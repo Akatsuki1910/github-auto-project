@@ -46,3 +46,7 @@ const currentViewportHeightButton = document.getElementById('current-viewport-he
 currentViewportHeightButton.addEventListener('click', () => {
   display.value = window.innerHeight.toString();
 });
+const currentScrollXButton = document.getElementById('current-scroll-x') as HTMLButtonElement;
+currentScrollXButton.addEventListener('click', () => {
+    display.value = window.scrollX.toString();
+});
