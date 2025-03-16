@@ -28,6 +28,12 @@ maxButton.addEventListener('click', () => {
     currentExpression += 'Math.max('; //Max function
     currentExpressionDisplay.textContent = currentExpression;
 });
+//Min function
+const minButton = document.getElementById('min') as HTMLButtonElement;
+minButton.addEventListener('click', () => {
+    currentExpression += 'Math.min('; //Min function
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... existing code
 // ... (Existing functions)
 // ... existing buttons
