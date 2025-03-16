@@ -37,4 +37,9 @@ toggleScientificNotationButton.addEventListener('click', () => {
 // ... existing toggle functions
 // ... existing toggle functions
 // ... existing toggle functions
-
+// Toggle Main Pad Visibility
+const mainPad = document.querySelector('.main-pad') as HTMLDivElement;
+const toggleMainPadVisibilityButton = document.getElementById('toggle-main-pad-visibility') as HTMLButtonElement;
+toggleMainPadVisibilityButton.addEventListener('click', () => {
+    mainPad.style.display = mainPad.style.display === 'none' ? 'grid' : 'none';
+});
