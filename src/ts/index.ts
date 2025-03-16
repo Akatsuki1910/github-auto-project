@@ -55,3 +55,7 @@ const toggleHistoryVisibilityButton = document.getElementById('toggle-history-vi
 toggleHistoryVisibilityButton.addEventListener('click', () => {
     historyDisplay.style.display = historyDisplay.style.display === 'none' ? 'block' : 'none';
 });
+const toggleOpacityButton = document.getElementById('toggle-opacity') as HTMLButtonElement;
+toggleOpacityButton.addEventListener('click', () => {
+    document.body.classList.toggle('low-opacity');
+});
