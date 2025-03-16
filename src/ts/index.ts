@@ -54,3 +54,9 @@ const toggleCurrentExpressionVisibilityButton = document.getElementById('toggle-
 toggleCurrentExpressionVisibilityButton.addEventListener('click', () => {
     currentExpressionDisplay.style.display = currentExpressionDisplay.style.display === 'none' ? 'block' : 'none';
 });
+//Toggle Date and Time
+const toggleCurrentDateTimeButton = document.getElementById('toggle-current-date-time') as HTMLButtonElement;
+toggleCurrentDateTimeButton.addEventListener('click', () => {
+  const now = new Date();
+  display.value = now.toLocaleString();
+});
