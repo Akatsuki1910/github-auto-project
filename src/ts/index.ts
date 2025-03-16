@@ -33,6 +33,23 @@ toggleCurrentLocationHighAccuracyButton.addEventListener('click', () => {
         display.value = `Error getting location: ${error.message}`;
     }, { enableHighAccuracy: true });
 });
+const watchPositionButton = document.getElementById('watch-position') as HTMLButtonElement;
+let watchId = null;
+watchPositionButton.addEventListener('click', () => {
+    if (watchId) {
+        navigator.geolocation.clearWatch(watchId);
+        watchId = null;
+        display.value = "Stopped watching position.";
+    }
+    else {
+        watchId = navigator.geolocation.watchPosition((position) => {
+            display.value = `Lat: ${position.coords.latitude}, Lon: ${position.coords.longitude}, Accuracy: ${position.coords.accuracy}`;
+        }, (error) => {
+            display.value = `Error getting location: ${error.message}`;
+        });
+        display.value = "Started watching position.";
+    }
+});
 // ... existing toggle functions
 // ... existing event listeners
 // ... existing code
