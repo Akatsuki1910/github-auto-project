@@ -1,49 +1,16 @@
 // ... (Existing code)
-//Toggle Current Location
-const toggleCurrentLocationButton = document.getElementById('toggle-current-location') as HTMLButtonElement;
-toggleCurrentLocationButton.addEventListener('click', () => {
-    navigator.geolocation.getCurrentPosition((position) => {
-        display.value = `Lat: ${position.coords.latitude}, Lon: ${position.coords.longitude}`;
-    }, (error) => {
-        display.value = `Error getting location: ${error.message}`;
-    });
-});
-//Toggle Current Location with Accuracy
-const toggleCurrentLocationAccuracyButton = document.getElementById('current-location-accuracy') as HTMLButtonElement;
-toggleCurrentLocationAccuracyButton.addEventListener('click', () => {
-    navigator.geolocation.getCurrentPosition((position) => {
-        display.value = `Lat: ${position.coords.latitude}, Lon: ${position.coords.longitude}, Accuracy: ${position.coords.accuracy}`;
-    }, (error) => {
-        display.value = `Error getting location: ${error.message}`;
-    });
-});
-//Toggle Current Location with High Accuracy
-const toggleCurrentLocationHighAccuracyButton = document.getElementById('current-location-high-accuracy') as HTMLButtonElement;
-toggleCurrentLocationHighAccuracyButton.addEventListener('click', () => {
-    navigator.geolocation.getCurrentPosition((position) => {
-        display.value = `Lat: ${position.coords.latitude}, Lon: ${position.coords.longitude}, Accuracy: ${position.coords.accuracy}`;
-    }, (error) => {
-        display.value = `Error getting location: ${error.message}`;
-    }, { enableHighAccuracy: true });
-});
-const watchPositionButton = document.getElementById('watch-position') as HTMLButtonElement;
-let watchId = null;
-watchPositionButton.addEventListener('click', () => {
-    if (watchId) {
-        navigator.geolocation.clearWatch(watchId);
-        watchId = null;
-        display.value = "Stopped watching position.";
-    }
-    else {
-        watchId = navigator.geolocation.watchPosition((position) => {
-            display.value = `Lat: ${position.coords.latitude}, Lon: ${position.coords.longitude}, Accuracy: ${position.coords.accuracy}`;
-        }, (error) => {
-            display.value = `Error getting location: ${error.message}`;
+const geocodingButton = document.getElementById('geocoding') as HTMLButtonElement;
+geocodingButton.addEventListener('click', () => {
+    const address = prompt("Enter an address for geocoding:");
+    if (address) {
+        const geocoder = new google.maps.Geocoder();
+        geocoder.geocode({ 'address': address }, (results, status) => {
+            if (status === google.maps.GeocoderStatus.OK) {
+                const location = results[0].geometry.location;
+                display.value = `Lat: ${location.lat()}, Lon: ${location.lng()}`;
+            } else {
+                display.value = `Geocoding failed: ${status}`;
+            }
         });
-        display.value = "Started watching position.";
     }
-});
-const currentTimestampButton = document.getElementById('current-timestamp') as HTMLButtonElement;
-currentTimestampButton.addEventListener('click', () => {
-    display.value = Date.now().toString();
 });
