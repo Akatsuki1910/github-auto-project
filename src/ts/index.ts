@@ -16,6 +16,12 @@ floorButton.addEventListener('click', () => {
     currentExpression += 'Math.floor('; //Floor function
     currentExpressionDisplay.textContent = currentExpression;
 });
+//Ceil function
+const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
+ceilButton.addEventListener('click', () => {
+    currentExpression += 'Math.ceil('; //Ceil function
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... existing code
 // ... (Existing functions)
 // ... existing buttons
