@@ -11,6 +11,11 @@ let history: string[] = [];
 //Absolute Value
 // ... (Existing functions)
 //Floor function
+const floorButton = document.getElementById('floor') as HTMLButtonElement;
+floorButton.addEventListener('click', () => {
+    currentExpression += 'Math.floor('; //Floor function
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... existing code
 // ... (Existing functions)
 // ... existing buttons
@@ -21,56 +26,4 @@ let history: string[] = [];
 // ... (Existing functions)
 // ... existing event listeners
 // ... existing button event listeners
-const powerButton = document.getElementById('power') as HTMLButtonElement;
-powerButton.addEventListener('click', () => {
-    currentExpression += '**';
-    currentExpressionDisplay.textContent = currentExpression;
-});
-const ansButton = document.getElementById('ans') as HTMLButtonElement;
-ansButton.addEventListener('click', () => {
-    currentExpression += lastAnswer;
-    currentExpressionDisplay.textContent = currentExpression;
-});
-// ... existing sin, cos, tan, abs, open-paren, close-paren, e button event listeners
-const lnButton = document.getElementById('ln') as HTMLButtonElement;
-lnButton.addEventListener('click', () => {
-    currentExpression += 'Math.log('; //Natural log
-    currentExpressionDisplay.textContent = currentExpression;
-});
-const tenPowerButton = document.getElementById('ten-power') as HTMLButtonElement;
-tenPowerButton.addEventListener('click', () => {
-    currentExpression += '10**';
-    currentExpressionDisplay.textContent = currentExpression;
-});
-const randomButton = document.getElementById('random') as HTMLButtonElement;
-randomButton.addEventListener('click', () => {
-    currentExpression += Math.random();
-    currentExpressionDisplay.textContent = currentExpression;
-});
-const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
-duplicateButton.addEventListener('click', () => {
-if (currentExpression) {
-        currentExpression += currentExpression;
-        currentExpressionDisplay.textContent = currentExpression;
-    }
-});
-const resetButton = document.getElementById('reset') as HTMLButtonElement;
-resetButton.addEventListener('click', () => {
-    currentExpression = '';
-    currentExpressionDisplay.textContent = currentExpression;
-    display.value = '';
-    lastAnswer = 0;
-    history = [];
-    historyDisplay.innerHTML = '';
-});
-const toggleDisplayButton = document.getElementById('toggle-display') as HTMLButtonElement;
-toggleDisplayButton.addEventListener('click', () => {
-    const currentExpressionDisplayStyle = currentExpressionDisplay.style;
-    currentExpressionDisplayStyle.display = currentExpressionDisplayStyle.display === 'none' ? 'block' : 'none';
-});
-const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
-cbrtButton.addEventListener('click', () => {
-    currentExpression += 'Math.cbrt('; //Cube root
-    currentExpressionDisplay.textContent = currentExpression;
-});
 // ... existing code
