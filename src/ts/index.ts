@@ -22,6 +22,12 @@ ceilButton.addEventListener('click', () => {
     currentExpression += 'Math.ceil('; //Ceil function
     currentExpressionDisplay.textContent = currentExpression;
 });
+//Max function
+const maxButton = document.getElementById('max') as HTMLButtonElement;
+maxButton.addEventListener('click', () => {
+    currentExpression += 'Math.max('; //Max function
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... existing code
 // ... (Existing functions)
 // ... existing buttons
