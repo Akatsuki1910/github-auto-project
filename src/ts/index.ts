@@ -34,6 +34,12 @@ minButton.addEventListener('click', () => {
     currentExpression += 'Math.min('; //Min function
     currentExpressionDisplay.textContent = currentExpression;
 });
+//Truncate function
+const truncButton = document.getElementById('trunc') as HTMLButtonElement;
+truncButton.addEventListener('click', () => {
+    currentExpression += 'Math.trunc('; //Trunc function
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... existing code
 // ... (Existing functions)
 // ... existing buttons
