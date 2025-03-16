@@ -12,3 +12,9 @@ currentDayButton.addEventListener('click', () => {
     const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     display.value = weekdays[day];
 });
+const currentYearButton = document.getElementById('current-year') as HTMLButtonElement;
+currentYearButton.addEventListener('click', () => {
+    const now = new Date();
+    const year = now.getFullYear();
+    display.value = year.toString();
+});
