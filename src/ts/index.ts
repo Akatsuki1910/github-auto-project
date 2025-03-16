@@ -40,3 +40,8 @@ const toggleFontsizeButton = document.getElementById('toggle-fontsize') as HTMLB
 toggleFontsizeButton.addEventListener('click', () => {
     display.classList.toggle('large-display');
 });
+const calculatorContainer = document.getElementById('calculator') as HTMLDivElement;
+const toggleCalculatorVisibilityButton = document.getElementById('toggle-calculator-visibility') as HTMLButtonElement;
+toggleCalculatorVisibilityButton.addEventListener('click', () => {
+  calculatorContainer.style.display = calculatorContainer.style.display === 'none' ? 'block' : 'none';
+});
