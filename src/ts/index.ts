@@ -15,6 +15,15 @@ toggleCurrentLocationButton.addEventListener('click', () => {
         display.value = `Error getting location: ${error.message}`;
     });
 });
+//Toggle Current Location with Accuracy
+const toggleCurrentLocationAccuracyButton = document.getElementById('current-location-accuracy') as HTMLButtonElement;
+toggleCurrentLocationAccuracyButton.addEventListener('click', () => {
+    navigator.geolocation.getCurrentPosition((position) => {
+        display.value = `Lat: ${position.coords.latitude}, Lon: ${position.coords.longitude}, Accuracy: ${position.coords.accuracy}`;
+    }, (error) => {
+        display.value = `Error getting location: ${error.message}`;
+    });
+});
 // ... existing toggle functions
 // ... existing event listeners
 // ... existing code
