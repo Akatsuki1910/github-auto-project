@@ -68,4 +68,9 @@ toggleDisplayButton.addEventListener('click', () => {
     const currentExpressionDisplayStyle = currentExpressionDisplay.style;
     currentExpressionDisplayStyle.display = currentExpressionDisplayStyle.display === 'none' ? 'block' : 'none';
 });
+const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
+cbrtButton.addEventListener('click', () => {
+    currentExpression += 'Math.cbrt('; //Cube root
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... existing code
