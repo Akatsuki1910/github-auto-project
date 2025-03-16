@@ -1,8 +1,5 @@
 // ... (Existing code)
-const percentButton = document.getElementById('percent') as HTMLButtonElement;
-percentButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (currentValue / 100).toString();
-    }
+const piButton = document.getElementById('pi') as HTMLButtonElement;
+piButton.addEventListener('click', () => {
+    display.value = Math.PI.toString();
 });
