@@ -49,3 +49,8 @@ toggleDateDisplayButton.addEventListener('click', () => {
     const now = new Date();
     display.value = now.toLocaleDateString();
 });
+// Toggle Current Expression Visibility
+const toggleCurrentExpressionVisibilityButton = document.getElementById('toggle-current-expression-visibility') as HTMLButtonElement;
+toggleCurrentExpressionVisibilityButton.addEventListener('click', () => {
+    currentExpressionDisplay.style.display = currentExpressionDisplay.style.display === 'none' ? 'block' : 'none';
+});
