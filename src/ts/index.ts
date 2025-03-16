@@ -1,11 +1,8 @@
 // ... (Existing code)
-const cuberootButton = document.getElementById('cuberoot') as HTMLButtonElement;
-cuberootButton.addEventListener('click', () => {
+const signButton = document.getElementById('sign') as HTMLButtonElement;
+signButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.cbrt(currentValue).toString();
-    }
-    else {
-        display.value = 'Error';
+        display.value = (-currentValue).toString();
     }
 });
