@@ -51,3 +51,7 @@ negateButton.addEventListener('click', () => {
         display.value = (-parseFloat(display.value)).toString();
     }
 });
+const toggleHistoryVisibilityButton = document.getElementById('toggle-history-visibility') as HTMLButtonElement;
+toggleHistoryVisibilityButton.addEventListener('click', () => {
+    historyDisplay.style.display = historyDisplay.style.display === 'none' ? 'block' : 'none';
+});
