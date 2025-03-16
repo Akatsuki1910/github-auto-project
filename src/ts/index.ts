@@ -47,4 +47,11 @@ randomButton.addEventListener('click', () => {
     currentExpression += Math.random();
     currentExpressionDisplay.textContent = currentExpression;
 });
+const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
+duplicateButton.addEventListener('click', () => {
+if (currentExpression) {
+        currentExpression += currentExpression;
+        currentExpressionDisplay.textContent = currentExpression;
+    }
+});
 // ... existing code
