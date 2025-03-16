@@ -1,15 +1,16 @@
 // ... (Existing code)
-const geocodingButton = document.getElementById('geocoding') as HTMLButtonElement;
-geocodingButton.addEventListener('click', () => {
-    const address = prompt("Enter an address for geocoding:");
-    if (address) {
+const reverseGeocodingButton = document.getElementById('reverse-geocoding') as HTMLButtonElement;
+reverseGeocodingButton.addEventListener('click', () => {
+    const lat = prompt("Enter latitude:");
+    const lng = prompt("Enter longitude:");
+    if (lat && lng) {
         const geocoder = new google.maps.Geocoder();
-        geocoder.geocode({ 'address': address }, (results, status) => {
+        const latlng = new google.maps.LatLng(parseFloat(lat), parseFloat(lng));
+        geocoder.geocode({ 'location': latlng }, (results, status) => {
             if (status === google.maps.GeocoderStatus.OK) {
-                const location = results[0].geometry.location;
-                display.value = `Lat: ${location.lat()}, Lon: ${location.lng()}`;
+                display.value = results[0].formatted_address;
             } else {
-                display.value = `Geocoding failed: ${status}`;
+                display.value = `Reverse geocoding failed: ${status}`;
             }
         });
     }
