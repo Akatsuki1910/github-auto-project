@@ -42,4 +42,9 @@ tenPowerButton.addEventListener('click', () => {
     currentExpression += '10**';
     currentExpressionDisplay.textContent = currentExpression;
 });
+const randomButton = document.getElementById('random') as HTMLButtonElement;
+randomButton.addEventListener('click', () => {
+    currentExpression += Math.random();
+    currentExpressionDisplay.textContent = currentExpression;
+});
 // ... existing code
