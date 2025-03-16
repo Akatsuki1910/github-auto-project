@@ -54,4 +54,13 @@ if (currentExpression) {
         currentExpressionDisplay.textContent = currentExpression;
     }
 });
+const resetButton = document.getElementById('reset') as HTMLButtonElement;
+resetButton.addEventListener('click', () => {
+    currentExpression = '';
+    currentExpressionDisplay.textContent = currentExpression;
+    display.value = '';
+    lastAnswer = 0;
+    history = [];
+    historyDisplay.innerHTML = '';
+});
 // ... existing code
