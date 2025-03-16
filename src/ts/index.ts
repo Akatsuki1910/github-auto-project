@@ -11,34 +11,15 @@ let history: string[] = [];
 //Absolute Value
 // ... (Existing functions)
 //Floor function
-const floorButton = document.getElementById('floor') as HTMLButtonElement;
-floorButton.addEventListener('click', () => {
-    currentExpression += 'Math.floor('; //Floor function
-    currentExpressionDisplay.textContent = currentExpression;
-});
-//Ceil function
-const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
-ceilButton.addEventListener('click', () => {
-    currentExpression += 'Math.ceil('; //Ceil function
-    currentExpressionDisplay.textContent = currentExpression;
-});
-//Max function
-const maxButton = document.getElementById('max') as HTMLButtonElement;
-maxButton.addEventListener('click', () => {
-    currentExpression += 'Math.max('; //Max function
-    currentExpressionDisplay.textContent = currentExpression;
-});
-//Min function
-const minButton = document.getElementById('min') as HTMLButtonElement;
-minButton.addEventListener('click', () => {
-    currentExpression += 'Math.min('; //Min function
-    currentExpressionDisplay.textContent = currentExpression;
-});
-//Truncate function
-const truncButton = document.getElementById('trunc') as HTMLButtonElement;
-truncButton.addEventListener('click', () => {
-    currentExpression += 'Math.trunc('; //Trunc function
-    currentExpressionDisplay.textContent = currentExpression;
+// ... existing math functions
+//Copy to Clipboard
+const copyToClipboardButton = document.getElementById('copy-to-clipboard') as HTMLButtonElement;
+copyToClipboardButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(display.value).then(() => {
+        alert('Copied to clipboard!');
+    }).catch(err => {
+        console.error('Failed to copy: ', err);
+    });
 });
 // ... existing code
 // ... (Existing functions)
