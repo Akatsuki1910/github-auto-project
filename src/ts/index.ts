@@ -45,3 +45,9 @@ const toggleCalculatorVisibilityButton = document.getElementById('toggle-calcula
 toggleCalculatorVisibilityButton.addEventListener('click', () => {
   calculatorContainer.style.display = calculatorContainer.style.display === 'none' ? 'block' : 'none';
 });
+const negateButton = document.getElementById('negate') as HTMLButtonElement;
+negateButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = (-parseFloat(display.value)).toString();
+    }
+});
