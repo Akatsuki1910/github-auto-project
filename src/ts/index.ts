@@ -32,3 +32,7 @@ copyToClipboardButton.addEventListener('click', () => {
 // ... existing event listeners
 // ... existing button event listeners
 // ... existing code
+const toggleBrightnessButton = document.getElementById('toggle-brightness') as HTMLButtonElement;
+toggleBrightnessButton.addEventListener('click', () => {
+    document.body.classList.toggle('low-brightness');
+});
