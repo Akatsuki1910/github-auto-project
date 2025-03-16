@@ -27,3 +27,6 @@ body.light-scheme {
 body.low-brightness {
   filter: brightness(50%);
 }
+body.low-opacity {
+  opacity: 0.5;
+}
