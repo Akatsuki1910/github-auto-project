@@ -60,3 +60,9 @@ toggleCurrentDateTimeButton.addEventListener('click', () => {
   const now = new Date();
   display.value = now.toLocaleString();
 });
+
+// Toggle Current Scroll Y Display
+const toggleCurrentScrollYButton = document.getElementById('toggle-current-scroll-y') as HTMLButtonElement;
+toggleCurrentScrollYButton.addEventListener('click', () => {
+    display.value = window.scrollY.toString();
+});
