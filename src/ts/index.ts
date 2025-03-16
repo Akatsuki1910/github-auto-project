@@ -63,4 +63,9 @@ resetButton.addEventListener('click', () => {
     history = [];
     historyDisplay.innerHTML = '';
 });
+const toggleDisplayButton = document.getElementById('toggle-display') as HTMLButtonElement;
+toggleDisplayButton.addEventListener('click', () => {
+    const currentExpressionDisplayStyle = currentExpressionDisplay.style;
+    currentExpressionDisplayStyle.display = currentExpressionDisplayStyle.display === 'none' ? 'block' : 'none';
+});
 // ... existing code
