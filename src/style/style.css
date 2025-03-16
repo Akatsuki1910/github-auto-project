@@ -30,3 +30,8 @@ body.low-brightness {
 body.low-opacity {
   opacity: 0.5;
 }
+.main-pad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
