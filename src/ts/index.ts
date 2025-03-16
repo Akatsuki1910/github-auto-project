@@ -59,3 +59,15 @@ const toggleOpacityButton = document.getElementById('toggle-opacity') as HTMLBut
 toggleOpacityButton.addEventListener('click', () => {
     document.body.classList.toggle('low-opacity');
 });
+const toggleOscillatorButton = document.getElementById('toggle-oscillator') as HTMLButtonElement;
+let oscillatorInterval: number | undefined;
+toggleOscillatorButton.addEventListener('click', () => {
+    if (oscillatorInterval) {
+        clearInterval(oscillatorInterval);
+        oscillatorInterval = undefined;
+    } else {
+        oscillatorInterval = setInterval(() => {
+            display.value = Math.sin(Date.now() / 1000).toString();
+        }, 50);
+    }
+});
