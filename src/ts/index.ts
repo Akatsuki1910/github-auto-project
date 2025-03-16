@@ -36,3 +36,7 @@ const toggleBrightnessButton = document.getElementById('toggle-brightness') as H
 toggleBrightnessButton.addEventListener('click', () => {
     document.body.classList.toggle('low-brightness');
 });
+const toggleFontsizeButton = document.getElementById('toggle-fontsize') as HTMLButtonElement;
+toggleFontsizeButton.addEventListener('click', () => {
+    display.classList.toggle('large-display');
+});
