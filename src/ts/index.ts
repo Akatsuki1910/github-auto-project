@@ -43,3 +43,9 @@ const toggleMainPadVisibilityButton = document.getElementById('toggle-main-pad-v
 toggleMainPadVisibilityButton.addEventListener('click', () => {
     mainPad.style.display = mainPad.style.display === 'none' ? 'grid' : 'none';
 });
+//Toggle Date Display
+const toggleDateDisplayButton = document.getElementById('toggle-date-display') as HTMLButtonElement;
+toggleDateDisplayButton.addEventListener('click', () => {
+    const now = new Date();
+    display.value = now.toLocaleDateString();
+});
