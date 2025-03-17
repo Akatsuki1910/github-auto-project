@@ -1,5 +1,8 @@
 // ... (Existing code)
-const eButton = document.getElementById('e') as HTMLButtonElement;
-eButton.addEventListener('click', () => {
-    display.value = Math.E.toString();
+const tenPowerButton = document.getElementById('ten-power') as HTMLButtonElement;
+tenPowerButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.pow(10, currentValue).toString();
+    }
 });
