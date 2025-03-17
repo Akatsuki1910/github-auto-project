@@ -1,9 +1,5 @@
 // ... (Existing code)
-const tanButton = document.getElementById('tan') as HTMLButtonElement;
-
-tanButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.tan(currentValue).toString();
-    }
+const eButton = document.getElementById('e') as HTMLButtonElement;
+eButton.addEventListener('click', () => {
+    display.value = Math.E.toString();
 });
