@@ -1,4 +1,20 @@
 // ... (Existing code)
+const ansButton = document.getElementById('ans') as HTMLButtonElement;
+let lastAnswer = 0;
+ansButton.addEventListener('click', () => {
+    display.value += lastAnswer.toString();
+});
+const equalsButton = document.getElementById('equals') as HTMLButtonElement;
+equalsButton.addEventListener('click', () => {
+    try {
+        const result = eval(display.value);
+        lastAnswer = result;
+        display.value = result.toString();
+    }
+    catch (error) {
+        display.value = 'Error';
+    }
+});
 const parenthesisOpenButton = document.getElementById('parenthesis-open') as HTMLButtonElement;
 parenthesisOpenButton.addEventListener('click', () => {
     display.value += '(';
