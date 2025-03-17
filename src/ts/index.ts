@@ -1,12 +1,13 @@
 // ... (Existing code)
-const calculateCircleAreaButton = document.getElementById('calculate-circle-area') as HTMLButtonElement;
-calculateCircleAreaButton.addEventListener('click', () => {
-    const radius = parseFloat(prompt('Enter the radius:') || '0');
-    if (isNaN(radius)) {
+const calculateRectangleAreaButton = document.getElementById('calculate-rectangle-area') as HTMLButtonElement;
+calculateRectangleAreaButton.addEventListener('click', () => {
+    const length = parseFloat(prompt('Enter the length:') || '0');
+    const width = parseFloat(prompt('Enter the width:') || '0');
+    if (isNaN(length) || isNaN(width)) {
         display.value = 'Invalid input';
     }
     else {
-        const area = Math.PI * radius * radius;
+        const area = length * width;
         display.value = area.toString();
     }
 });
