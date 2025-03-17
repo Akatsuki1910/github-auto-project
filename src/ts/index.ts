@@ -1,9 +1,9 @@
 // ... (Existing code)
-const sinButton = document.getElementById('sin') as HTMLButtonElement;
+const cosButton = document.getElementById('cos') as HTMLButtonElement;
 
-sinButton.addEventListener('click', () => {
+cosButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.sin(currentValue).toString();
+        display.value = Math.cos(currentValue).toString();
     }
 });
