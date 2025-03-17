@@ -1,4 +1,10 @@
 // ... (Existing code)
+const negateButton = document.getElementById('negate') as HTMLButtonElement;
+negateButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = (-parseFloat(display.value)).toString();
+    }
+});
 const ansButton = document.getElementById('ans') as HTMLButtonElement;
 let lastAnswer = 0;
 ansButton.addEventListener('click', () => {
