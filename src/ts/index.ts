@@ -17,3 +17,7 @@ memoryStoreButton.addEventListener('click', () => {
         console.error("Invalid input for memory store");
     }
 });
+const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
+memoryRecallButton.addEventListener('click', () => {
+    display.value += memoryValue.toString();
+});
