@@ -1,4 +1,15 @@
 // ... (Existing code)
+const calculateAreaButton = document.getElementById('calculate-area') as HTMLButtonElement;
+calculateAreaButton.addEventListener('click', () => {
+    const radius = parseFloat(prompt('Enter the radius:') || '0');
+    if (isNaN(radius)) {
+        display.value = 'Invalid input';
+    }
+    else {
+        const area = Math.PI * radius * radius;
+        display.value = area.toString();
+    }
+});
 const display = document.getElementById('display') as HTMLInputElement;
 const dropButton = document.getElementById('drop') as HTMLButtonElement;
 dropButton.addEventListener('click', () => {
