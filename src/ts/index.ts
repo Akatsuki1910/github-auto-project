@@ -1,9 +1,9 @@
 // ... (Existing code)
-const lnButton = document.getElementById('ln') as HTMLButtonElement;
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
 
-lnButton.addEventListener('click', () => {
+inverseButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue > 0) {
-        display.value = Math.log(currentValue).toString();
+    if (!isNaN(currentValue) && currentValue !== 0) {
+        display.value = (1 / currentValue).toString();
     }
 });
