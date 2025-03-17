@@ -1,9 +1,9 @@
 // ... (Existing code)
-const roundButton = document.getElementById('round') as HTMLButtonElement;
+const absButton = document.getElementById('abs') as HTMLButtonElement;
 
-roundButton.addEventListener('click', () => {
+absButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.round(currentValue).toString();
+        display.value = Math.abs(currentValue).toString();
     }
 });
