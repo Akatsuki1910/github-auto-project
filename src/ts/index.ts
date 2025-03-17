@@ -21,3 +21,18 @@ signChangeButton.addEventListener('click', () => {
         }
     }
 });
+const reciprocalButton = document.getElementById('reciprocal') as HTMLButtonElement;
+reciprocalButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        if (currentValue === 0) {
+            display.value = 'Cannot divide by zero';
+        }
+        else {
+            display.value = (1 / currentValue).toString();
+        }
+    }
+    catch (error) {
+        display.value = 'Invalid input';
+    }
+});
