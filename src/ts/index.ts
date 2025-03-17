@@ -1,13 +1,14 @@
 // ... (Existing code)
-const calculateSphereSurfaceAreaButton = document.getElementById('calculate-sphere-surface-area') as HTMLButtonElement;
-calculateSphereSurfaceAreaButton.addEventListener('click', () => {
+const calculateCylinderVolumeButton = document.getElementById('calculate-cylinder-volume') as HTMLButtonElement;
+calculateCylinderVolumeButton.addEventListener('click', () => {
     const radius = parseFloat(prompt('Enter the radius:') || '0');
-    if (isNaN(radius)) {
+    const height = parseFloat(prompt('Enter the height:') || '0');
+    if (isNaN(radius) || isNaN(height)) {
         display.value = 'Invalid input';
     }
     else {
-        const surfaceArea = 4 * Math.PI * Math.pow(radius, 2);
-        display.value = surfaceArea.toString();
+        const volume = Math.PI * Math.pow(radius, 2) * height;
+        display.value = volume.toString();
     }
 });
 const display = document.getElementById('display') as HTMLInputElement;
