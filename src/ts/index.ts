@@ -1,8 +1,8 @@
 // ... (Existing code)
-const tenPowerButton = document.getElementById('ten-power') as HTMLButtonElement;
-tenPowerButton.addEventListener('click', () => {
+const squareRootButton = document.getElementById('square-root') as HTMLButtonElement;
+squareRootButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.pow(10, currentValue).toString();
+    if (!isNaN(currentValue) && currentValue >= 0) {
+        display.value = Math.sqrt(currentValue).toString();
     }
 });
