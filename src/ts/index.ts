@@ -1,8 +1,8 @@
 // ... (Existing code)
-const squareRootButton = document.getElementById('square-root') as HTMLButtonElement;
-squareRootButton.addEventListener('click', () => {
+const cubeButton = document.getElementById('cube') as HTMLButtonElement;
+cubeButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue >= 0) {
-        display.value = Math.sqrt(currentValue).toString();
+    if (!isNaN(currentValue)) {
+        display.value = Math.pow(currentValue, 3).toString();
     }
 });
