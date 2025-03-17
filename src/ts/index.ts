@@ -1,13 +1,12 @@
 // ... (Existing code)
-const calculateCylinderVolumeButton = document.getElementById('calculate-cylinder-volume') as HTMLButtonElement;
-calculateCylinderVolumeButton.addEventListener('click', () => {
+const calculateSphereVolumeButton = document.getElementById('calculate-sphere-volume') as HTMLButtonElement;
+calculateSphereVolumeButton.addEventListener('click', () => {
     const radius = parseFloat(prompt('Enter the radius:') || '0');
-    const height = parseFloat(prompt('Enter the height:') || '0');
-    if (isNaN(radius) || isNaN(height)) {
+    if (isNaN(radius)) {
         display.value = 'Invalid input';
     }
     else {
-        const volume = Math.PI * Math.pow(radius, 2) * height;
+        const volume = (4 / 3) * Math.PI * Math.pow(radius, 3);
         display.value = volume.toString();
     }
 });
