@@ -21,3 +21,7 @@ const memoryRecallButton = document.getElementById('memory-recall') as HTMLButto
 memoryRecallButton.addEventListener('click', () => {
     display.value += memoryValue.toString();
 });
+const memoryClearButton = document.getElementById('memory-clear') as HTMLButtonElement;
+memoryClearButton.addEventListener('click', () => {
+    memoryValue = 0;
+});
