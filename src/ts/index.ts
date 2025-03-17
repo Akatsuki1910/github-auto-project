@@ -1,9 +1,9 @@
 // ... (Existing code)
-const expButton = document.getElementById('exp') as HTMLButtonElement;
+const lnButton = document.getElementById('ln') as HTMLButtonElement;
 
-expButton.addEventListener('click', () => {
+lnButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.exp(currentValue).toString();
+    if (!isNaN(currentValue) && currentValue > 0) {
+        display.value = Math.log(currentValue).toString();
     }
 });
