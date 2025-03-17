@@ -1,9 +1,9 @@
 // ... (Existing code)
-const absButton = document.getElementById('abs') as HTMLButtonElement;
+const sinButton = document.getElementById('sin') as HTMLButtonElement;
 
-absButton.addEventListener('click', () => {
+sinButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.abs(currentValue).toString();
+        display.value = Math.sin(currentValue).toString();
     }
 });
