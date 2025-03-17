@@ -1,14 +1,15 @@
 // ... (Existing code)
-const calculateConeVolumeButton = document.getElementById('calculate-cone-volume') as HTMLButtonElement;
-calculateConeVolumeButton.addEventListener('click', () => {
-    const radius = parseFloat(prompt('Enter the radius:') || '0');
-    const height = parseFloat(prompt('Enter the height:') || '0');
-    if (isNaN(radius) || isNaN(height)) {
-        display.value = 'Invalid input';
+const baseConversionButton = document.getElementById('base-conversion') as HTMLButtonElement;
+baseConversionButton.addEventListener('click', () => {
+    const number = prompt('Enter the number:') || '0';
+    const fromBase = parseInt(prompt('Enter the from base:') || '10');
+    const toBase = parseInt(prompt('Enter the to base:') || '2');
+    try {
+        const convertedNumber = parseInt(number, fromBase).toString(toBase);
+        display.value = convertedNumber;
     }
-    else {
-        const volume = (1 / 3) * Math.PI * Math.pow(radius, 2) * height;
-        display.value = volume.toString();
+    catch (error) {
+        display.value = 'Invalid input';
     }
 });
 const display = document.getElementById('display') as HTMLInputElement;
