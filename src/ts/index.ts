@@ -6,3 +6,7 @@ dropButton.addEventListener('click', () => {
         display.value = display.value.slice(0, -1);
     }
 });
+const powerButton = document.getElementById('power') as HTMLButtonElement;
+powerButton.addEventListener('click', () => {
+    display.value += '**';
+});
