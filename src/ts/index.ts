@@ -1,13 +1,13 @@
 // ... (Existing code)
-const calculateAreaButton = document.getElementById('calculate-area') as HTMLButtonElement;
-calculateAreaButton.addEventListener('click', () => {
+const calculatePerimeterButton = document.getElementById('calculate-perimeter') as HTMLButtonElement;
+calculatePerimeterButton.addEventListener('click', () => {
     const radius = parseFloat(prompt('Enter the radius:') || '0');
     if (isNaN(radius)) {
         display.value = 'Invalid input';
     }
     else {
-        const area = Math.PI * radius * radius;
-        display.value = area.toString();
+        const perimeter = 2 * Math.PI * radius;
+        display.value = perimeter.toString();
     }
 });
 const display = document.getElementById('display') as HTMLInputElement;
