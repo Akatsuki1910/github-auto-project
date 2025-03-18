@@ -1,11 +1,12 @@
 // ... (Existing code)
-const avgButton = document.getElementById('avg') as HTMLButtonElement;
-avgButton.addEventListener('click', () => {
-    const num1 = parseInt(prompt('Enter the first number:') || '0');
-    const num2 = parseInt(prompt('Enter the second number:') || '0');
-    if (isNaN(num1) || isNaN(num2)) {
+const sumButton = document.getElementById('sum') as HTMLButtonElement;
+sumButton.addEventListener('click', () => {
+    const numbersString = prompt('Enter numbers separated by commas:') || '';
+    const numbers = numbersString.split(',').map(Number).filter(n => !isNaN(n));
+    if (numbers.length === 0) {
         display.value = 'Invalid input';
         return;
     }
-    display.value = ((num1 + num2) / 2).toString();
+    const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+    display.value = sum.toString();
 });
