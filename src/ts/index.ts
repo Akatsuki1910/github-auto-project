@@ -1,13 +1,13 @@
 // ... (Existing code)
-const calculateCylinderSurfaceAreaButton = document.getElementById('calculate-cylinder-surface-area') as HTMLButtonElement;
-calculateCylinderSurfaceAreaButton.addEventListener('click', () => {
+const calculateConeSurfaceAreaButton = document.getElementById('calculate-cone-surface-area') as HTMLButtonElement;
+calculateConeSurfaceAreaButton.addEventListener('click', () => {
     const radius = parseFloat(prompt('Enter the radius:') || '0');
-    const height = parseFloat(prompt('Enter the height:') || '0');
-    if (isNaN(radius) || isNaN(height)) {
+    const slantHeight = parseFloat(prompt('Enter the slant height:') || '0');
+    if (isNaN(radius) || isNaN(slantHeight)) {
         display.value = 'Invalid input';
     }
     else {
-        const area = 2 * Math.PI * radius * (radius + height);
+        const area = Math.PI * radius * (radius + slantHeight);
         display.value = area.toString();
     }
 });
