@@ -1,4 +1,8 @@
 // ... (Existing code)
+const eButton = document.getElementById('e') as HTMLButtonElement;
+eButton.addEventListener('click', () => {
+    display.value = Math.E.toString();
+});
 const piButton = document.getElementById('pi') as HTMLButtonElement;
 piButton.addEventListener('click', () => {
     display.value = Math.PI.toString();
