@@ -1,15 +1,10 @@
 // ... (Existing code)
-const modButton = document.getElementById('mod') as HTMLButtonElement;
-modButton.addEventListener('click', () => {
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
+inverseButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (isNaN(currentValue)) {
+    if (isNaN(currentValue) || currentValue === 0) {
         display.value = 'Invalid input';
         return;
     }
-    const divisor = parseFloat(prompt('Enter the divisor:') || '1');
-    if (isNaN(divisor)) {
-        display.value = 'Invalid divisor';
-        return;
-    }
-    display.value = (currentValue % divisor).toString();
+    display.value = (1 / currentValue).toString();
 });
