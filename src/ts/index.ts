@@ -10,3 +10,9 @@ duplicateButton.addEventListener('click', () => {
         display.value += display.value;
     }
 });
+const signChangeButton = document.getElementById('sign-change') as HTMLButtonElement;
+signChangeButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = (-parseFloat(display.value)).toString();
+    }
+});
