@@ -1,15 +1,15 @@
 // ... (Existing code)
-const nrootButton = document.getElementById('nroot') as HTMLButtonElement;
-nrootButton.addEventListener('click', () => {
+const modButton = document.getElementById('mod') as HTMLButtonElement;
+modButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (isNaN(currentValue)) {
         display.value = 'Invalid input';
         return;
     }
-    const root = parseFloat(prompt('Enter the root:') || '2');
-    if(isNaN(root)){
-        display.value = 'Invalid root';
+    const divisor = parseFloat(prompt('Enter the divisor:') || '1');
+    if (isNaN(divisor)) {
+        display.value = 'Invalid divisor';
         return;
     }
-    display.value = Math.pow(currentValue, 1/root).toString();
+    display.value = (currentValue % divisor).toString();
 });
