@@ -1,14 +1,10 @@
 // ... (Existing code)
-const logButton = document.getElementById('log') as HTMLButtonElement;
-logButton.addEventListener('click', () => {
+const expButton = document.getElementById('exp') as HTMLButtonElement;
+expButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (isNaN(currentValue)) {
         display.value = 'Invalid input';
         return;
     }
-    if (currentValue <= 0) {
-        display.value = 'Log not defined for non-positive numbers';
-        return;
-    }
-    display.value = Math.log10(currentValue).toString();
+    display.value = Math.exp(currentValue).toString();
 });
