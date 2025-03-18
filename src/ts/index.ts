@@ -1,18 +1,18 @@
 // ... (Existing code)
-const calculateFibonacciButton = document.getElementById('calculate-fibonacci') as HTMLButtonElement;
-calculateFibonacciButton.addEventListener('click', () => {
-    const n = parseInt(prompt('Enter the number of terms:') || '0');
-    if (isNaN(n) || n < 0) {
+const gcdButton = document.getElementById('gcd') as HTMLButtonElement;
+gcdButton.addEventListener('click', () => {
+    const num1 = parseInt(prompt('Enter the first number:') || '0');
+    const num2 = parseInt(prompt('Enter the second number:') || '0');
+    if (isNaN(num1) || isNaN(num2)) {
         display.value = 'Invalid input';
         return;
     }
-    let a = 0, b = 1, nextTerm;
-    let result = "";
-    for (let i = 1; i <= n; ++i) {
-        result += a + " ";
-        nextTerm = a + b;
-        a = b;
-        b = nextTerm;
+    let a = Math.abs(num1);
+    let b = Math.abs(num2);
+    while (b) {
+        const temp = b;
+        b = a % b;
+        a = temp;
     }
-    display.value = result;
+    display.value = a.toString();
 });
