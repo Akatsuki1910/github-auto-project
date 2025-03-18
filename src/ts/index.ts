@@ -1,14 +1,18 @@
 // ... (Existing code)
-const reciprocalButton = document.getElementById('reciprocal') as HTMLButtonElement;
-reciprocalButton.addEventListener('click', () => {
+const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
+factorialButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (isNaN(currentValue)) {
         display.value = 'Invalid input';
         return;
     }
-    if (currentValue === 0) {
-        display.value = 'Division by zero';
+    if (currentValue < 0) {
+        display.value = 'Factorial not defined for negative numbers';
         return;
     }
-    display.value = (1 / currentValue).toString();
+    let result = 1;
+    for (let i = 2; i <= currentValue; i++) {
+        result *= i;
+    }
+    display.value = result.toString();
 });
