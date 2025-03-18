@@ -1,6 +1,7 @@
 // ... (Existing code)
 const msButton = document.getElementById('ms') as HTMLButtonElement;
 const mrButton = document.getElementById('mr') as HTMLButtonElement;
+const mcButton = document.getElementById('mc') as HTMLButtonElement;
 let memoryStore: number = 0;
 msButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
@@ -12,4 +13,8 @@ msButton.addEventListener('click', () => {
 mrButton.addEventListener('click', () => {
     display.value = memoryStore.toString();
     console.log("Value recalled from memory:", memoryStore);
+});
+mcButton.addEventListener('click', () => {
+    memoryStore = 0;
+    console.log("Memory cleared");
 });
