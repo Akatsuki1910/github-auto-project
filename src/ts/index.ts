@@ -1,18 +1,9 @@
 // ... (Existing code)
-const randButton = document.getElementById('rand') as HTMLButtonElement;
-randButton.addEventListener('click', () => {
-    const randomNumber = Math.random();
-    display.value = randomNumber.toString();
-});
-const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
-duplicateButton.addEventListener('click', () => {
+const integerDivisionButton = document.getElementById('integer-division') as HTMLButtonElement;
+integerDivisionButton.addEventListener('click', () => {
     if (display.value) {
-        display.value += display.value;
-    }
-});
-const signChangeButton = document.getElementById('sign-change') as HTMLButtonElement;
-signChangeButton.addEventListener('click', () => {
-    if (display.value) {
-        display.value = (-parseFloat(display.value)).toString();
+        const currentValue = parseFloat(display.value);
+        const result = Math.floor(currentValue);
+        display.value = result.toString();
     }
 });
