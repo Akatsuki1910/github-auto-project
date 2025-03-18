@@ -1,9 +1,8 @@
 // ... (Existing code)
-const integerDivisionButton = document.getElementById('integer-division') as HTMLButtonElement;
-integerDivisionButton.addEventListener('click', () => {
+const signChangeButton = document.getElementById('sign-change') as HTMLButtonElement;
+signChangeButton.addEventListener('click', () => {
     if (display.value) {
         const currentValue = parseFloat(display.value);
-        const result = Math.floor(currentValue);
-        display.value = result.toString();
+        display.value = (-currentValue).toString();
     }
 });
