@@ -1,4 +1,8 @@
 // ... (Existing code)
+const copyBtn = document.getElementById('copy') as HTMLButtonElement;
+copyBtn.addEventListener('click', () => {
+    navigator.clipboard.writeText(display.value);
+});
 const ansBtn = document.getElementById('ans') as HTMLButtonElement;
 let lastAnswer = '';
 ansBtn.addEventListener('click', () => {
@@ -24,7 +28,8 @@ equalsButton.addEventListener('click', () => {
         const result = eval(display.value);
         display.value = result.toString();
         lastAnswer = result.toString();
-    } catch (error) {
+    }
+    catch (error) {
         display.value = 'Error';
     }
 });
