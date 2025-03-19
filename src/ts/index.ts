@@ -1,4 +1,10 @@
 // ... (Existing code)
+const percentageButton = document.getElementById('percentage') as HTMLButtonElement;
+percentageButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = (parseFloat(display.value) / 100).toString();
+    }
+});
 const copyBtn = document.getElementById('copy') as HTMLButtonElement;
 copyBtn.addEventListener('click', () => {
     navigator.clipboard.writeText(display.value);
