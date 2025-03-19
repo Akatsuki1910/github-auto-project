@@ -1,8 +1,8 @@
 // ... (Existing code)
-const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
-cubeRootButton.addEventListener('click', () => {
+const doubleButton = document.getElementById('double') as HTMLButtonElement;
+doubleButton.addEventListener('click', () => {
     if (display.value) {
         const num = parseFloat(display.value);
-        display.value = Math.cbrt(num).toString();
+        display.value = (num * 2).toString();
     }
 });
