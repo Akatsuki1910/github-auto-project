@@ -1,12 +1,8 @@
 // ... (Existing code)
-const squareRootButton = document.getElementById('square-root') as HTMLButtonElement;
-squareRootButton.addEventListener('click', () => {
+const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
+cubeRootButton.addEventListener('click', () => {
     if (display.value) {
         const num = parseFloat(display.value);
-        if (num >= 0) {
-            display.value = Math.sqrt(num).toString();
-        } else {
-            display.value = "Invalid Input";
-        }
+        display.value = Math.cbrt(num).toString();
     }
 });
