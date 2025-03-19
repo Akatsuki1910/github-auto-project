@@ -1,8 +1,8 @@
 // ... (Existing code)
-const logButton = document.getElementById('log') as HTMLButtonElement;
-logButton.addEventListener('click', () => {
+const lnButton = document.getElementById('ln') as HTMLButtonElement;
+lnButton.addEventListener('click', () => {
     if (display.value) {
         const num = parseFloat(display.value);
-        display.value = Math.log10(num).toString();
+        display.value = Math.log(num).toString();
     }
 });
