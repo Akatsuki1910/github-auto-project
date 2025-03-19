@@ -1,8 +1,5 @@
 // ... (Existing code)
-const lnButton = document.getElementById('ln') as HTMLButtonElement;
-lnButton.addEventListener('click', () => {
-    if (display.value) {
-        const num = parseFloat(display.value);
-        display.value = Math.log(num).toString();
-    }
+const eButton = document.getElementById('e') as HTMLButtonElement;
+eButton.addEventListener('click', () => {
+    display.value = Math.E.toString();
 });
