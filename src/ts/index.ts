@@ -1,7 +1,12 @@
 // ... (Existing code)
-const negateButton = document.getElementById('negate') as HTMLButtonElement;
-negateButton.addEventListener('click', () => {
+const squareRootButton = document.getElementById('square-root') as HTMLButtonElement;
+squareRootButton.addEventListener('click', () => {
     if (display.value) {
-        display.value = (-parseFloat(display.value)).toString();
+        const num = parseFloat(display.value);
+        if (num >= 0) {
+            display.value = Math.sqrt(num).toString();
+        } else {
+            display.value = "Invalid Input";
+        }
     }
 });
