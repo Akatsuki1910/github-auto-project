@@ -1,12 +1,16 @@
 // ... (Existing code)
-const piButton = document.getElementById('pi') as HTMLButtonElement;
-piButton.addEventListener('click', () => {
-    display.value = Math.PI.toString();
-});
-const percentageButton = document.getElementById('percentage') as HTMLButtonElement;
-percentageButton.addEventListener('click', () => {
+const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
+factorialButton.addEventListener('click', () => {
     if (display.value) {
-        const num = parseFloat(display.value);
-        display.value = (num / 100).toString();
+        const num = parseInt(display.value);
+        if (num < 0) {
+            display.value = "Error: Factorial of negative number";
+        } else {
+            let result = 1;
+            for (let i = 1; i <= num; i++) {
+                result *= i;
+            }
+            display.value = result.toString();
+        }
     }
 });
