@@ -1,4 +1,10 @@
 // ... (Existing code)
+const mcButton = document.getElementById('mc') as HTMLButtonElement;
+let memory = 0;
+mcButton.addEventListener('click', () => {
+    memory = 0;
+display.value = '0';
+});
 const parenthesesButton = document.getElementById('parentheses') as HTMLButtonElement;
 let parenthesesOpen = true;
 parenthesesButton.addEventListener('click', () => {
