@@ -1,16 +1,12 @@
 // ... (Existing code)
-const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
-factorialButton.addEventListener('click', () => {
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
+inverseButton.addEventListener('click', () => {
     if (display.value) {
-        const num = parseInt(display.value);
-        if (num < 0) {
-            display.value = "Error: Factorial of negative number";
+        const num = parseFloat(display.value);
+        if (num === 0) {
+            display.value = "Error: Division by zero";
         } else {
-            let result = 1;
-            for (let i = 1; i <= num; i++) {
-                result *= i;
-            }
-            display.value = result.toString();
+            display.value = (1 / num).toString();
         }
     }
 });
