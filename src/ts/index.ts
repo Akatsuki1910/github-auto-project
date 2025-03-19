@@ -1,8 +1,8 @@
 // ... (Existing code)
-const exp2Button = document.getElementById('exp2') as HTMLButtonElement;
-exp2Button.addEventListener('click', () => {
+const cubeButton = document.getElementById('cube') as HTMLButtonElement;
+cubeButton.addEventListener('click', () => {
     if (display.value) {
         const currentValue = parseFloat(display.value);
-        display.value = Math.pow(2, currentValue).toString();
+        display.value = Math.pow(currentValue, 3).toString();
     }
 });
