@@ -1,4 +1,8 @@
 // ... (Existing code)
+const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
+memoryRecallButton.addEventListener('click', () => {
+    display.value += memory.toString();
+});
 const memoryPlusButton = document.getElementById('memory-plus') as HTMLButtonElement;
 let memory = 0;
 memoryPlusButton.addEventListener('click', () => {
