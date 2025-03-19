@@ -50,3 +50,7 @@ equalsButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+const resetMemoryButton = document.getElementById('reset-memory') as HTMLButtonElement;
+resetMemoryButton.addEventListener('click', () => {
+    memory = 0;
+});
