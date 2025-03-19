@@ -1,4 +1,11 @@
 // ... (Existing code)
+const memoryPlusButton = document.getElementById('memory-plus') as HTMLButtonElement;
+let memory = 0;
+memoryPlusButton.addEventListener('click', () => {
+    if (display.value) {
+        memory += parseFloat(display.value);
+    }
+});
 const percentageButton = document.getElementById('percentage') as HTMLButtonElement;
 percentageButton.addEventListener('click', () => {
     if (display.value) {
