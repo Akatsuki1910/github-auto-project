@@ -1,7 +1,7 @@
 // ... (Existing code)
-const tanhButton = document.getElementById('tanh') as HTMLButtonElement;
-tanhButton.addEventListener('click', () => {
+const signButton = document.getElementById('sign') as HTMLButtonElement;
+signButton.addEventListener('click', () => {
     if (display.value) {
-        display.value = Math.tanh(parseFloat(display.value)).toString();
+        display.value = Math.sign(parseFloat(display.value)).toString();
     }
 });
