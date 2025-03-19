@@ -1,8 +1,8 @@
 // ... (Existing code)
-const doubleButton = document.getElementById('double') as HTMLButtonElement;
-doubleButton.addEventListener('click', () => {
+const tripleButton = document.getElementById('triple') as HTMLButtonElement;
+tripleButton.addEventListener('click', () => {
     if (display.value) {
         const num = parseFloat(display.value);
-        display.value = (num * 2).toString();
+        display.value = (num * 3).toString();
     }
 });
