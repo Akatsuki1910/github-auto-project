@@ -1,9 +1,9 @@
 // ... (Existing code)
-const cuberootButton = document.getElementById('cuberoot') as HTMLButtonElement;
-cuberootButton.addEventListener('click', () => {
+const absButton = document.getElementById('abs') as HTMLButtonElement;
+absButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.cbrt(currentValue).toString();
+        display.value = Math.abs(currentValue).toString();
     } else {
         display.value = "Error";
     }
