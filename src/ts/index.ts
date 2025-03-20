@@ -11,3 +11,10 @@ roundButton.addEventListener('click', () => {
         display.value = Math.round(currentValue).toString();
     }
 });
+const truncButton = document.getElementById('trunc') as HTMLButtonElement;
+truncButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.trunc(currentValue).toString();
+    }
+});
