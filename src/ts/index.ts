@@ -1,8 +1,8 @@
 // ... (Existing code)
-const reciprocalButton = document.getElementById('reciprocal') as HTMLButtonElement;
-reciprocalButton.addEventListener('click', () => {
+const plusMinusButton = document.getElementById('plus-minus') as HTMLButtonElement;
+plusMinusButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue !== 0) {
-        display.value = (1 / currentValue).toString();
+    if (!isNaN(currentValue)) {
+        display.value = (-currentValue).toString();
     }
 });
