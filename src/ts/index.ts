@@ -1,9 +1,9 @@
 // ... (Existing code)
-const modButton = document.getElementById('mod') as HTMLButtonElement;
-modButton.addEventListener('click', () => {
+const negateButton = document.getElementById('negate') as HTMLButtonElement;
+negateButton.addEventListener('click', () => {
     const currentValue = display.value;
     if (currentValue) {
-        display.value += '%';
+        display.value = (parseFloat(currentValue) * -1).toString();
     }
 });
 // ... (Existing Code)
