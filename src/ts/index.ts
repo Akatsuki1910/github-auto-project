@@ -1,12 +1,14 @@
 // ... (Existing code)
-const signButton = document.getElementById('sign') as HTMLButtonElement;
-signButton.addEventListener('click', () => {
+const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
+factorialButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (-currentValue).toString();
+    if (!isNaN(currentValue) && currentValue >= 0 && Number.isInteger(currentValue)) {
+        let result = 1;
+        for (let i = 1; i <= currentValue; i++) {
+            result *= i;
+        }
+        display.value = result.toString();
+    } else {
+        display.value = "Error";
     }
-});
-const piButton = document.getElementById('pi') as HTMLButtonElement;
-piButton.addEventListener('click', () => {
-    display.value = Math.PI.toString();
 });
