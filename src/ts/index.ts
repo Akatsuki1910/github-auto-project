@@ -1,9 +1,9 @@
 // ... (Existing code)
-const roundButton = document.getElementById('round') as HTMLButtonElement;
-roundButton.addEventListener('click', () => {
+const cuberootButton = document.getElementById('cuberoot') as HTMLButtonElement;
+cuberootButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.round(currentValue).toString();
+        display.value = Math.cbrt(currentValue).toString();
     } else {
         display.value = "Error";
     }
