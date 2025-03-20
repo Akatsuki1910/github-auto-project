@@ -1,4 +1,11 @@
 // ... (Existing code)
+const cubeButton = document.getElementById('cube') as HTMLButtonElement;
+cubeButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.pow(currentValue, 3).toString();
+    }
+});
 const ansButton = document.getElementById('ans') as HTMLButtonElement;
 let lastAnswer = 0;
 
