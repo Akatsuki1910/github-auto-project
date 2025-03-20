@@ -17,4 +17,9 @@ cosButton.addEventListener('click', () => {
     const currentValue = display.value;
     display.value = `cos(${currentValue || 0})`;
 });
+const tanButton = document.getElementById('tan') as HTMLButtonElement;
+tanButton.addEventListener('click', () => {
+    const currentValue = display.value;
+    display.value = `tan(${currentValue || 0})`;
+});
 // ... (Existing Code)
