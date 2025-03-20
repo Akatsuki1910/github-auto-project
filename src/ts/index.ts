@@ -12,4 +12,9 @@ sinButton.addEventListener('click', () => {
     display.value = `sin(${currentValue || 0})`;
     // Evaluate and update display.value here or upon pressing '='.
 });
+const cosButton = document.getElementById('cos') as HTMLButtonElement;
+cosButton.addEventListener('click', () => {
+    const currentValue = display.value;
+    display.value = `cos(${currentValue || 0})`;
+});
 // ... (Existing Code)
