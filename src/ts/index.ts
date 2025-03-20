@@ -10,4 +10,11 @@ absButton.addEventListener('click', () => {
         display.value = Math.abs(currentValue).toString();
     }
 });
+const floorButton = document.getElementById('floor') as HTMLButtonElement;
+floorButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.floor(currentValue).toString();
+    }
+});
 // ... (Existing Code)
