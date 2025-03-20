@@ -1,9 +1,9 @@
 // ... (Existing code)
-const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
-ceilButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.ceil(currentValue).toString();
+const powerButton = document.getElementById('power') as HTMLButtonElement;
+powerButton.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        display.value += '**';
     }
 });
 // ... (Existing Code)
