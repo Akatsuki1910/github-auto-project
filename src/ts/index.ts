@@ -1,9 +1,9 @@
 // ... (Existing code)
-const expButton = document.getElementById('exp') as HTMLButtonElement;
-expButton.addEventListener('click', () => {
+const sinButton = document.getElementById('sin') as HTMLButtonElement;
+sinButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.exp(currentValue).toString();
+        display.value = Math.sin(currentValue).toString();
     } else {
         display.value = "Error";
     }
