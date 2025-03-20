@@ -6,4 +6,10 @@ powerButton.addEventListener('click', () => {
         display.value += '**';
     }
 });
+const sinButton = document.getElementById('sin') as HTMLButtonElement;
+sinButton.addEventListener('click', () => {
+    const currentValue = display.value;
+    display.value = `sin(${currentValue || 0})`;
+    // Evaluate and update display.value here or upon pressing '='.
+});
 // ... (Existing Code)
