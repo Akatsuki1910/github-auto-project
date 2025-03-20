@@ -1,9 +1,10 @@
 // ... (Existing code)
-const negateButton = document.getElementById('negate') as HTMLButtonElement;
-negateButton.addEventListener('click', () => {
+const signButton = document.getElementById('sign') as HTMLButtonElement;
+signButton.addEventListener('click', () => {
     const currentValue = display.value;
     if (currentValue) {
-        display.value = (parseFloat(currentValue) * -1).toString();
+        const num = parseFloat(currentValue);
+        display.value = Math.sign(num).toString();
     }
 });
 // ... (Existing Code)
