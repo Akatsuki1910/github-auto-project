@@ -1,24 +1,6 @@
 // ... (Existing code)
-const mrButton = document.getElementById('mr') as HTMLButtonElement;
-const msButton = document.getElementById('ms') as HTMLButtonElement;
-const mcButton = document.getElementById('mc') as HTMLButtonElement;
-const mPlusButton = document.getElementById('m-plus') as HTMLButtonElement;
-const mMinusButton = document.getElementById('m-minus') as HTMLButtonElement;
-let memory = 0;
-mrButton.addEventListener('click', () => {
-    display.value = memory.toString();
+const rndButton = document.getElementById('rnd') as HTMLButtonElement;
+rndButton.addEventListener('click', () => {
+    display.value = Math.random().toString();
 });
-msButton.addEventListener('click', () => {
-    memory = parseFloat(display.value);
-});
-mcButton.addEventListener('click', () => {
-    memory = 0;
-    display.value = '0';
-});
-mPlusButton.addEventListener('click', () => {
-    memory += parseFloat(display.value);
-});
-mMinusButton.addEventListener('click', () => {
-    memory -= parseFloat(display.value);
-});
-// ... (Existing code)
+// ... (Existing Code)
