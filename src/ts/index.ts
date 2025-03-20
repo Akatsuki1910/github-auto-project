@@ -24,3 +24,10 @@ const closeParenButton = document.getElementById('close-paren') as HTMLButtonEle
 closeParenButton.addEventListener('click', () => {
     display.value += ')';
 });
+const squareRootButton = document.getElementById('square-root') as HTMLButtonElement;
+squareRootButton.addEventListener('click', () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = Math.sqrt(currentValue).toString();
+  }
+});
