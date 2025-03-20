@@ -1,9 +1,9 @@
 // ... (Existing code)
-const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
-inverseButton.addEventListener('click', () => {
+const roundButton = document.getElementById('round') as HTMLButtonElement;
+roundButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue !== 0) {
-        display.value = (1 / currentValue).toString();
+    if (!isNaN(currentValue)) {
+        display.value = Math.round(currentValue).toString();
     } else {
         display.value = "Error";
     }
