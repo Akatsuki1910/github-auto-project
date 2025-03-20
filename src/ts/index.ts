@@ -1,9 +1,9 @@
 // ... (Existing code)
-const tanButton = document.getElementById('tan') as HTMLButtonElement;
-tanButton.addEventListener('click', () => {
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
+inverseButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.tan(currentValue).toString();
+    if (!isNaN(currentValue) && currentValue !== 0) {
+        display.value = (1 / currentValue).toString();
     } else {
         display.value = "Error";
     }
