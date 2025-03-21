@@ -45,7 +45,11 @@ toggleDateTimeButton.addEventListener('click', () => {
 const equalsButton = document.getElementById('equals') as HTMLButtonElement;
 equalsButton.addEventListener('click', () => {
     try {
-        display.value = eval(display.value);
+        //Added history functionality
+        const expression = display.value;
+        const result = eval(display.value);
+        display.value = result.toString();
+        historyDisplay.innerHTML += `<p>${expression} = ${result}</p>`;
     } catch (error) {
         display.value = 'Error';
     }
