@@ -64,4 +64,8 @@ document.addEventListener('keydown', (event) => {
     } else if (key === '%') { // Added percentage calculation
         display.value = String(Number(display.value) / 100);
     }
+    // New Feature: Square root functionality using keyboard 's' key
+    else if (key.toLowerCase() === 's') {
+        display.value = String(Math.sqrt(Number(display.value)));
+    }
 });
