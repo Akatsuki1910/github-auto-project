@@ -18,3 +18,9 @@ const copyButton = document.getElementById('copy') as HTMLButtonElement;
 copyButton.addEventListener('click', () => {
     navigator.clipboard.writeText(display.value);
 });
+
+const mainPad = document.querySelector('.main-pad') as HTMLDivElement;
+const toggleMainPadButton = document.getElementById('toggle-main-pad') as HTMLButtonElement;
+toggleMainPadButton.addEventListener('click', () => {
+    mainPad.style.display = mainPad.style.display === 'none' ? 'grid' : 'none';
+});
