@@ -28,9 +28,7 @@ document.addEventListener('keydown', (event) => {
     }
 });
 //Added current date and time display
-const currentDateTimeDisplay = document.createElement('div');
-currentDateTimeDisplay.id = 'current-date-time';
-document.body.appendChild(currentDateTimeDisplay);
+const currentDateTimeDisplay = document.getElementById('current-date-time') as HTMLDivElement;
 
 function updateDateTime() {
     const now = new Date();
@@ -39,3 +37,7 @@ function updateDateTime() {
 
 setInterval(updateDateTime, 1000);
 updateDateTime();
+const toggleDateTimeButton = document.getElementById('toggle-date-time') as HTMLButtonElement;
+toggleDateTimeButton.addEventListener('click', () => {
+    currentDateTimeDisplay.style.display = currentDateTimeDisplay.style.display === 'none' ? 'block' : 'none';
+});
