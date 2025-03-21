@@ -50,3 +50,8 @@ equalsButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+//Added clear history functionality
+const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
+clearHistoryButton.addEventListener('click',()=>{
+  historyDisplay.textContent='';
+});
