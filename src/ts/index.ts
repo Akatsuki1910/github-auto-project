@@ -1,8 +1,6 @@
 // ... (Existing code)
-const negateButton = document.getElementById('negate') as HTMLButtonElement;
-negateButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (-currentValue).toString();
-    }
+const resetButton = document.getElementById('reset') as HTMLButtonElement;
+resetButton.addEventListener('click', () => {
+    display.value = '0';
+    currentExpressionDisplay.textContent = '';
 });
