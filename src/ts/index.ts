@@ -44,13 +44,18 @@ backspaceButton.addEventListener('click', () => {
 //Added keyboard support for digits and basic operators
 document.addEventListener('keydown', (event) => {
     const key = event.key;
-    if (/^[0-9]$/.test(key)) {
+    //Added last answer recall (Ans) feature using keyboard 'a' key
+    if(key.toLowerCase() === 'a'){
+        display.value = localStorage.getItem('lastAnswer') || '0';
+    } else    if (/^[0-9]$/.test(key)) {
       display.value = display.value === '0' ? key : display.value + key;
     } else if (key === '+' || key === '-' || key === '*' || key === '/') {
       display.value += key;
     } else if (key === 'Enter' || key === '=') {
         try {
-            display.value = eval(display.value); // Use eval for simplicity. Consider replacing with a safer calculation method in production.
+            const result = eval(display.value); // Use eval for simplicity. Consider replacing with a safer calculation method in production.
+            display.value = String(result);
+            localStorage.setItem('lastAnswer', display.value); // Store the last answer
         } catch (error) {
             display.value = 'Error';
         }
