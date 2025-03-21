@@ -13,3 +13,8 @@ negateButton.addEventListener('click', () => {
         display.value = String(Number(display.value) * -1);
     }
 });
+
+const copyButton = document.getElementById('copy') as HTMLButtonElement;
+copyButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(display.value);
+});
