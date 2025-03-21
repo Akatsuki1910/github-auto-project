@@ -24,3 +24,9 @@ const toggleMainPadButton = document.getElementById('toggle-main-pad') as HTMLBu
 toggleMainPadButton.addEventListener('click', () => {
     mainPad.style.display = mainPad.style.display === 'none' ? 'grid' : 'none';
 });
+
+//New Feature: Clear Entry (CE) button functionality
+const clearEntryButton = document.getElementById('clear') as HTMLButtonElement; // Reuse the 'C' button for CE
+clearEntryButton.addEventListener('click', () => {
+    display.value = '0'; // Clears the current entry/number being typed
+});
