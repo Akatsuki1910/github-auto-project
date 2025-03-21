@@ -20,4 +20,10 @@ copyButton.addEventListener('click', () => {
     navigator.clipboard.writeText(display.value);
 });
 
-// ... (Rest of the existing code)
+//Added Keyboard Support
+document.addEventListener('keydown', (event) => {
+    const key = event.key;
+    if (/^[0-9]$/.test(key)) {
+        display.value += key;
+    }
+});
