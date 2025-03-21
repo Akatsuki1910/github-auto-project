@@ -95,3 +95,9 @@ clearHistoryButton.addEventListener('click', () => {
     const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
     historyDisplay.innerHTML = ''; // Clear history display
 });
+
+//Added Dup button functionality (duplicates the current value in the display)
+const dupButton = document.getElementById('duplicate') as HTMLButtonElement;
+dupButton.addEventListener('click', () => {
+    display.value += display.value;
+});
