@@ -57,6 +57,8 @@ document.addEventListener('keydown', (event) => {
             const newEntry = document.createElement('p');
             newEntry.textContent = `${display.value}`;
             historyDisplay.prepend(newEntry);
+            // Store last answer
+            localStorage.setItem('lastAnswer', display.value);
         } catch (error) {
             display.value = 'Error';
         }
