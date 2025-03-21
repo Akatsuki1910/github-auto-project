@@ -101,3 +101,11 @@ const dupButton = document.getElementById('duplicate') as HTMLButtonElement;
 dupButton.addEventListener('click', () => {
     display.value += display.value;
 });
+//Added digit button click handlers
+const digits = document.querySelectorAll('.digit') as NodeListOf<HTMLButtonElement>;
+digits.forEach(digit => {
+  digit.addEventListener('click', () => {
+    display.value = display.value === '0' ? digit.textContent : display.value + digit.textContent;
+    currentExpressionDisplay.textContent = display.value;
+  });
+});
