@@ -57,7 +57,7 @@ document.addEventListener('keydown', (event) => {
             const newEntry = document.createElement('p');
             newEntry.textContent = `${display.value}`;
             historyDisplay.prepend(newEntry);
-            // Store last answer
+             // Store last answer
             localStorage.setItem('lastAnswer', display.value);
         } catch (error) {
             display.value = 'Error';
@@ -84,6 +84,14 @@ operators.forEach(operator => {
 //Added Ans button functionality
 const ansButton = document.getElementById('ans') as HTMLButtonElement;
 ansButton.addEventListener('click', () =>{
-    display.value = localStorage.getItem('lastAnswer') || '0';
+    const lastAnswer = localStorage.getItem('lastAnswer');
+    display.value = lastAnswer !== null ? lastAnswer : '0'; // Use 0 if no last answer
 });
 localStorage.setItem('lastAnswer','0');
+
+//Added Clear History Button
+const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
+clearHistoryButton.addEventListener('click', () => {
+    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+    historyDisplay.innerHTML = ''; // Clear history display
+});
