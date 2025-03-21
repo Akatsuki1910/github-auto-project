@@ -27,3 +27,15 @@ document.addEventListener('keydown', (event) => {
         display.value += key;
     }
 });
+//Added current date and time display
+const currentDateTimeDisplay = document.createElement('div');
+currentDateTimeDisplay.id = 'current-date-time';
+document.body.appendChild(currentDateTimeDisplay);
+
+function updateDateTime() {
+    const now = new Date();
+    currentDateTimeDisplay.textContent = now.toLocaleString();
+}
+
+setInterval(updateDateTime, 1000);
+updateDateTime();

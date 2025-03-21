@@ -6,3 +6,12 @@
     border: 1px solid #ccc;
     margin-top: 10px; /* Add some space above the history */
   }
+#current-date-time {
+    position: fixed; /* Fixed position */
+    bottom: 10px; /* 10px from the bottom */
+    right: 10px; /* 10px from the right */
+    padding: 5px 10px; /* Add some padding */
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    color: white; /* White text */
+    border-radius: 5px; /* Rounded corners */
+}
