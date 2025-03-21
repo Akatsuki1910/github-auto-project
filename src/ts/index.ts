@@ -15,5 +15,9 @@ const toggleHistoryButton = document.getElementById('toggle-history') as HTMLBut
 toggleHistoryButton.addEventListener('click', () => {
     historyDisplay.style.display = historyDisplay.style.display === 'none' ? 'block' : 'none';
 });
+const copyButton = document.getElementById('copy') as HTMLButtonElement;
+copyButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(display.value);
+});
 
 // ... (Rest of the existing code)
