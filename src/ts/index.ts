@@ -49,11 +49,13 @@ document.addEventListener('keydown', (event) => {
     } else if (key === '+' || key === '-' || key === '*' || key === '/') {
       display.value += key;
     } else if (key === 'Enter' || key === '=') {
-        //Evaluate expression logic (placeholder)
         try {
-            display.value = eval(display.value); // CAUTION: Using eval can be unsafe for user input. Ideal to use a dedicated expression parser.
+            display.value = eval(display.value);
         } catch (error) {
             display.value = 'Error';
         }
+    } else if (key === 'Escape') { // Added Escape key to clear the display
+        display.value = '0';
+        currentExpressionDisplay.textContent = '';
     }
 });
