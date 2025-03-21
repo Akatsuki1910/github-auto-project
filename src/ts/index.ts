@@ -49,13 +49,15 @@ document.addEventListener('keydown', (event) => {
     }
     else if (/^[0-9]$/.test(key)) {
       display.value = display.value === '0' ? key : display.value + key;
-    } else if (key === '+' || key === '-' || key === '*' || key === '/') {
-      display.value += key;
-    } else if (key === 'Enter' || key === '=') {
+    }
+     else if (key === '+' || key === '-' || key === '*' || key === '/') {
+      display.value += key; // Append operators directly
+    }
+     else if (key === 'Enter' || key === '=') {
         try {
             const result = eval(display.value); 
             display.value = String(result);
-            localStorage.setItem('lastAnswer', display.value);
+            localStorage.setItem('lastAnswer', display.value); // Store the last answer
         } catch (error) {
             display.value = 'Error';
         }
@@ -87,6 +89,13 @@ document.addEventListener('keydown', (event) => {
             }
         }
     }
-    //Added current expression display
-    currentExpressionDisplay.textContent = display.value;
+    currentExpressionDisplay.textContent = display.value; // Update expression display
+});
+//Added continuous operator support
+const operators = document.querySelectorAll('.operator') as NodeListOf<HTMLButtonElement>;
+operators.forEach(operator => {
+  operator.addEventListener('click', () => {
+      display.value += operator.textContent;
+      currentExpressionDisplay.textContent = display.value; 
+  });
 });
