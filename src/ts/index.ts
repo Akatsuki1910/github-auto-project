@@ -44,7 +44,6 @@ backspaceButton.addEventListener('click', () => {
 //Added keyboard support for digits and basic operators
 document.addEventListener('keydown', (event) => {
     const key = event.key;
-    // New Feature: Added 'Ans' key functionality (using 'a')
     if (key.toLowerCase() === 'a') {
         display.value = localStorage.getItem('lastAnswer') || '0';
     } else if (/^[0-9]$/.test(key)) {
@@ -56,6 +55,11 @@ document.addEventListener('keydown', (event) => {
             const result = eval(display.value);
             display.value = String(result);
             localStorage.setItem('lastAnswer', display.value); // Store the last answer
+            //New Feature: Append calculation to history
+            const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+            const newEntry = document.createElement('p');
+            newEntry.textContent = `${display.value}`;
+            historyDisplay.prepend(newEntry);
         } catch (error) {
             display.value = 'Error';
         }
@@ -68,28 +72,9 @@ document.addEventListener('keydown', (event) => {
         }
     } else if (key === '%') {
         display.value = String(Number(display.value) / 100);
-    } else if (key.toLowerCase() === 's') {
-      display.value = String(Math.sqrt(Number(display.value)));
-    } else if (key.toLowerCase() === 'c') {
-        display.value = String(Math.cbrt(Number(display.value)));
-    } else if (key === '^') {
-        const base = parseFloat(display.value);
-        display.value = "0";
-        document.addEventListener('keydown', exponentHandler);
-        function exponentHandler(event) {
-            const exponentKey = event.key;
-            if (/^[0-9]$/.test(exponentKey) || exponentKey === '.') {
-                display.value = display.value === '0' ? exponentKey : display.value + exponentKey;
-            } else if (exponentKey === 'Enter' || exponentKey === '=') {
-                const exponent = parseFloat(display.value);
-                display.value = String(Math.pow(base, exponent));
-                document.removeEventListener('keydown', exponentHandler);
-            }
-        }
-    } 
-    currentExpressionDisplay.textContent = display.value; // Update expression display
+    }
+        currentExpressionDisplay.textContent = display.value; // Update expression display
 });
-//Added continuous operator support
 const operators = document.querySelectorAll('.operator') as NodeListOf<HTMLButtonElement>;
 operators.forEach(operator => {
   operator.addEventListener('click', () => {
