@@ -50,12 +50,16 @@ document.addEventListener('keydown', (event) => {
       display.value += key;
     } else if (key === 'Enter' || key === '=') {
         try {
-            display.value = eval(display.value);
+            display.value = eval(display.value); // Use eval for simplicity. Consider replacing with a safer calculation method in production.
         } catch (error) {
             display.value = 'Error';
         }
     } else if (key === 'Escape') { // Added Escape key to clear the display
         display.value = '0';
         currentExpressionDisplay.textContent = '';
+    } else if (key === '.') {
+        if (!display.value.includes('.')) { //Added decimal point functionality
+            display.value += '.';
+        }
     }
 });
