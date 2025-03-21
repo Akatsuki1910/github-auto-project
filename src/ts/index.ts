@@ -41,3 +41,12 @@ const toggleDateTimeButton = document.getElementById('toggle-date-time') as HTML
 toggleDateTimeButton.addEventListener('click', () => {
     currentDateTimeDisplay.style.display = currentDateTimeDisplay.style.display === 'none' ? 'block' : 'none';
 });
+//Added a simple expression evaluator
+const equalsButton = document.getElementById('equals') as HTMLButtonElement;
+equalsButton.addEventListener('click', () => {
+    try {
+        display.value = eval(display.value);
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
