@@ -44,9 +44,7 @@ backspaceButton.addEventListener('click', () => {
 //Added keyboard support for digits and basic operators
 document.addEventListener('keydown', (event) => {
     const key = event.key;
-    if (key.toLowerCase() === 'a') {
-        display.value = localStorage.getItem('lastAnswer') || '0';
-    } else if (/^[0-9]$/.test(key)) {
+    if (/^[0-9]$/.test(key)) {
         display.value = display.value === '0' ? key : display.value + key;
     } else if (key === '+' || key === '-' || key === '*' || key === '/') {
         display.value += key; // Append operators directly
@@ -54,7 +52,6 @@ document.addEventListener('keydown', (event) => {
         try {
             const result = eval(display.value);
             display.value = String(result);
-            localStorage.setItem('lastAnswer', display.value); // Store the last answer
             //New Feature: Append calculation to history
             const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
             const newEntry = document.createElement('p');
@@ -82,3 +79,9 @@ operators.forEach(operator => {
       currentExpressionDisplay.textContent = display.value; 
   });
 });
+//Added Ans button functionality
+const ansButton = document.getElementById('ans') as HTMLButtonElement;
+ansButton.addEventListener('click', () =>{
+    display.value = localStorage.getItem('lastAnswer') || '0';
+});
+localStorage.setItem('lastAnswer','0');
