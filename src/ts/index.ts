@@ -44,18 +44,16 @@ backspaceButton.addEventListener('click', () => {
 //Added keyboard support for digits and basic operators
 document.addEventListener('keydown', (event) => {
     const key = event.key;
-    if(key.toLowerCase() === 'a'){
+    // New Feature: Added 'Ans' key functionality (using 'a')
+    if (key.toLowerCase() === 'a') {
         display.value = localStorage.getItem('lastAnswer') || '0';
-    }
-    else if (/^[0-9]$/.test(key)) {
-      display.value = display.value === '0' ? key : display.value + key;
-    }
-     else if (key === '+' || key === '-' || key === '*' || key === '/') {
-      display.value += key; // Append operators directly
-    }
-     else if (key === 'Enter' || key === '=') {
+    } else if (/^[0-9]$/.test(key)) {
+        display.value = display.value === '0' ? key : display.value + key;
+    } else if (key === '+' || key === '-' || key === '*' || key === '/') {
+        display.value += key; // Append operators directly
+    } else if (key === 'Enter' || key === '=') {
         try {
-            const result = eval(display.value); 
+            const result = eval(display.value);
             display.value = String(result);
             localStorage.setItem('lastAnswer', display.value); // Store the last answer
         } catch (error) {
@@ -71,10 +69,10 @@ document.addEventListener('keydown', (event) => {
     } else if (key === '%') {
         display.value = String(Number(display.value) / 100);
     } else if (key.toLowerCase() === 's') {
-        display.value = String(Math.sqrt(Number(display.value)));
-    } else if(key.toLowerCase() === 'c'){
+      display.value = String(Math.sqrt(Number(display.value)));
+    } else if (key.toLowerCase() === 'c') {
         display.value = String(Math.cbrt(Number(display.value)));
-    } else if(key === '^'){
+    } else if (key === '^') {
         const base = parseFloat(display.value);
         display.value = "0";
         document.addEventListener('keydown', exponentHandler);
@@ -88,7 +86,7 @@ document.addEventListener('keydown', (event) => {
                 document.removeEventListener('keydown', exponentHandler);
             }
         }
-    }
+    } 
     currentExpressionDisplay.textContent = display.value; // Update expression display
 });
 //Added continuous operator support
