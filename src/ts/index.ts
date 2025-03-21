@@ -40,3 +40,20 @@ backspaceButton.addEventListener('click', () => {
     display.value = '0';
   }
 });
+
+//Added keyboard support for digits and basic operators
+document.addEventListener('keydown', (event) => {
+    const key = event.key;
+    if (/^[0-9]$/.test(key)) {
+      display.value = display.value === '0' ? key : display.value + key;
+    } else if (key === '+' || key === '-' || key === '*' || key === '/') {
+      display.value += key;
+    } else if (key === 'Enter' || key === '=') {
+        //Evaluate expression logic (placeholder)
+        try {
+            display.value = eval(display.value); // CAUTION: Using eval can be unsafe for user input. Ideal to use a dedicated expression parser.
+        } catch (error) {
+            display.value = 'Error';
+        }
+    }
+});
