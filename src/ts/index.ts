@@ -61,5 +61,7 @@ document.addEventListener('keydown', (event) => {
         if (!display.value.includes('.')) { //Added decimal point functionality
             display.value += '.';
         }
+    } else if (key === '%') { // Added percentage calculation
+        display.value = String(Number(display.value) / 100);
     }
 });
