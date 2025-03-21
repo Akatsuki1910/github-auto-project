@@ -72,4 +72,20 @@ document.addEventListener('keydown', (event) => {
     else if(key.toLowerCase() === 'c'){
         display.value = String(Math.cbrt(Number(display.value)));
     }
+    //New Feature: Exponentiation functionality using keyboard '^' key
+    else if(key === '^'){
+        const base = parseFloat(display.value);
+        display.value = "0"; // Clear for exponent input
+        document.addEventListener('keydown', exponentHandler);
+        function exponentHandler(event: KeyboardEvent) {
+            const exponentKey = event.key;
+            if (/^[0-9]$/.test(exponentKey) || exponentKey === '.') {
+                display.value = display.value === '0' ? exponentKey : display.value + exponentKey;
+            } else if (exponentKey === 'Enter' || exponentKey === '=') {
+                const exponent = parseFloat(display.value);
+                display.value = String(Math.pow(base, exponent));
+                document.removeEventListener('keydown', exponentHandler); // Remove listener after calculation
+            }
+        }
+    }
 });
