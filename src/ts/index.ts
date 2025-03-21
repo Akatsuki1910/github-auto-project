@@ -30,3 +30,13 @@ const clearEntryButton = document.getElementById('clear') as HTMLButtonElement; 
 clearEntryButton.addEventListener('click', () => {
     display.value = '0'; // Clears the current entry/number being typed
 });
+
+//Added backspace functionality
+const backspaceButton = document.getElementById('backspace') as HTMLButtonElement;
+backspaceButton.addEventListener('click', () => {
+  if (display.value.length > 1) {
+    display.value = display.value.slice(0, -1); 
+  } else {
+    display.value = '0';
+  }
+});
