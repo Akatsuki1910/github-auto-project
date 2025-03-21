@@ -68,4 +68,8 @@ document.addEventListener('keydown', (event) => {
     else if (key.toLowerCase() === 's') {
         display.value = String(Math.sqrt(Number(display.value)));
     }
+    //New Feature: Cube root functionality using keyboard 'c' key
+    else if(key.toLowerCase() === 'c'){
+        display.value = String(Math.cbrt(Number(display.value)));
+    }
 });
