@@ -1,8 +1,8 @@
 // ... (Existing code)
-const exp2Button = document.getElementById('exp2') as HTMLButtonElement;
-exp2Button.addEventListener('click', () => {
+const powerButton = document.getElementById('power') as HTMLButtonElement;
+powerButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.pow(2, currentValue).toString();
+        display.value += '**'; // Use ** for power operation
     }
 });
