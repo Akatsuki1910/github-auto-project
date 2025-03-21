@@ -44,53 +44,49 @@ backspaceButton.addEventListener('click', () => {
 //Added keyboard support for digits and basic operators
 document.addEventListener('keydown', (event) => {
     const key = event.key;
-    //Added last answer recall (Ans) feature using keyboard 'a' key
     if(key.toLowerCase() === 'a'){
         display.value = localStorage.getItem('lastAnswer') || '0';
-    } else    if (/^[0-9]$/.test(key)) {
+    }
+    else if (/^[0-9]$/.test(key)) {
       display.value = display.value === '0' ? key : display.value + key;
     } else if (key === '+' || key === '-' || key === '*' || key === '/') {
       display.value += key;
     } else if (key === 'Enter' || key === '=') {
         try {
-            const result = eval(display.value); // Use eval for simplicity. Consider replacing with a safer calculation method in production.
+            const result = eval(display.value); 
             display.value = String(result);
-            localStorage.setItem('lastAnswer', display.value); // Store the last answer
+            localStorage.setItem('lastAnswer', display.value);
         } catch (error) {
             display.value = 'Error';
         }
-    } else if (key === 'Escape') { // Added Escape key to clear the display
+    } else if (key === 'Escape') {
         display.value = '0';
         currentExpressionDisplay.textContent = '';
     } else if (key === '.') {
-        if (!display.value.includes('.')) { //Added decimal point functionality
+        if (!display.value.includes('.')) {
             display.value += '.';
         }
-    } else if (key === '%') { // Added percentage calculation
+    } else if (key === '%') {
         display.value = String(Number(display.value) / 100);
-    }
-    // New Feature: Square root functionality using keyboard 's' key
-    else if (key.toLowerCase() === 's') {
+    } else if (key.toLowerCase() === 's') {
         display.value = String(Math.sqrt(Number(display.value)));
-    }
-    //New Feature: Cube root functionality using keyboard 'c' key
-    else if(key.toLowerCase() === 'c'){
+    } else if(key.toLowerCase() === 'c'){
         display.value = String(Math.cbrt(Number(display.value)));
-    }
-    //New Feature: Exponentiation functionality using keyboard '^' key
-    else if(key === '^'){
+    } else if(key === '^'){
         const base = parseFloat(display.value);
-        display.value = "0"; // Clear for exponent input
+        display.value = "0";
         document.addEventListener('keydown', exponentHandler);
-        function exponentHandler(event: KeyboardEvent) {
+        function exponentHandler(event) {
             const exponentKey = event.key;
             if (/^[0-9]$/.test(exponentKey) || exponentKey === '.') {
                 display.value = display.value === '0' ? exponentKey : display.value + exponentKey;
             } else if (exponentKey === 'Enter' || exponentKey === '=') {
                 const exponent = parseFloat(display.value);
                 display.value = String(Math.pow(base, exponent));
-                document.removeEventListener('keydown', exponentHandler); // Remove listener after calculation
+                document.removeEventListener('keydown', exponentHandler);
             }
         }
     }
+    //Added current expression display
+    currentExpressionDisplay.textContent = display.value;
 });
