@@ -34,6 +34,10 @@ document.addEventListener('keydown', (event) => {
     if (key === 'Backspace') {
         backspaceButton.click();
     }
+    if (key === 'Escape') { // Added Escape key functionality to clear the display
+        display.value = '0';
+        currentExpressionDisplay.textContent = '';
+    }
 });
 const currentDateTimeDisplay = document.getElementById('current-date-time') as HTMLDivElement;
 function updateDateTime() {
