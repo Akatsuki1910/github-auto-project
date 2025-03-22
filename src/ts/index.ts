@@ -33,11 +33,8 @@ document.addEventListener('keydown', (event) => {
     const key = event.key;
     const display = document.getElementById('display') as HTMLInputElement;
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
-    if (key === 'Escape') {
-        display.value = '';
-        currentExpressionDisplay.textContent = '';
-    }
-    if (key === 'Enter') {
+    // New Feature: Keyboard support for "=" (equals) key
+    if (key === 'Enter' || key === '=') {
         try {
             // Evaluate the expression and update the display
             const result = eval(display.value);
@@ -61,7 +58,7 @@ document.addEventListener('keydown', (event) => {
         display.value += key;
     }
     // New Feature: Store last result in 'Ans' variable and use it
-    if (key === 'Enter' && !display.value.includes('Error')) {
+    if ((key === 'Enter' || key === '=') && !display.value.includes('Error')) {
         window.Ans = display.value; // Store current result
     }
     if (display.value === 'Ans') {
