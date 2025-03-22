@@ -32,7 +32,6 @@ document.addEventListener('keydown', (event) => {
     // ... (rest of the code)
     const key = event.key;
     const display = document.getElementById('display') as HTMLInputElement;
-    const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
     // New Feature: Keyboard support for "=" (equals) key
     if (key === 'Enter' || key === '=') {
         try {
@@ -40,11 +39,11 @@ document.addEventListener('keydown', (event) => {
             const result = eval(display.value);
             display.value = result.toString();
             const historyEntry = document.createElement('p');
-            //Added current date and time to history on calculation
             const now = new Date();
             const dateTimeString = now.toLocaleString();
             historyEntry.textContent = `${display.value} (${dateTimeString})`;
             historyDisplay.appendChild(historyEntry);
+            // New Feature: Store history in local storage
             let history = localStorage.getItem('calculatorHistory') || '';
             history += `${display.value}\n`;
             localStorage.setItem('calculatorHistory', history);
@@ -57,7 +56,6 @@ document.addEventListener('keydown', (event) => {
     if (allowedKeys.includes(key)) {
         display.value += key;
     }
-    // New Feature: Store last result in 'Ans' variable and use it
     if ((key === 'Enter' || key === '=') && !display.value.includes('Error')) {
         window.Ans = display.value; // Store current result
     }
@@ -80,5 +78,8 @@ document.addEventListener('keydown', (event) => {
         if (savedValue) {
             display.value = savedValue;
         }
+        // New Feature: Load history from local storage
+        const savedHistory = localStorage.getItem('calculatorHistory') || '';
+        historyDisplay.textContent = savedHistory;
     });
 });
