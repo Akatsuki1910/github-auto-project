@@ -46,21 +46,35 @@ document.addEventListener('keydown', (event) => {
             errorAudio.play();
         }
     }
-    const allowedKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.', '(', ')'];
+        const allowedKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.', '(', ')'];
     if (allowedKeys.includes(key)) {
         display.value += key;
     }
 
     //New Feature: Implement a simple memory store (single value)
-    let memoryValue = 0;
+    let memoryValue = 0; // Initialize memoryValue outside the event listener
     const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
-    const memoryPlusButton = document.getElementById('memory-plus') as HTMLButtonElement;
+    const memoryPlusButton = document.getElementById('memory-plus') as HTMLButtonElement;    
+    const memoryMinusButton = document.getElementById('memory-minus') as HTMLButtonElement;
+    const memoryClearButton = document.getElementById('memory-clear') as HTMLButtonElement;
+
     memoryRecallButton.addEventListener('click', () => {
         display.value = memoryValue.toString();
     });
     memoryPlusButton.addEventListener('click', () => {
         memoryValue += parseFloat(display.value);
     });
+
+    //Added memory minus functionality
+    memoryMinusButton.addEventListener('click', () => {
+        memoryValue -= parseFloat(display.value);
+    });
+
+    //Added memory clear functionality
+    memoryClearButton.addEventListener('click', () => {
+        memoryValue = 0;
+    });
+
 
     if ((key === 'Enter' || key === '=') && !display.value.includes('Error')) {
         window.Ans = display.value; // Store current result
