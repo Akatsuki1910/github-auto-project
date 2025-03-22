@@ -54,6 +54,8 @@ document.addEventListener('keydown', (event) => {
             clearHistoryButton.addEventListener('click', () => {
                 localStorage.removeItem('calculatorHistory');
                 historyDisplay.innerHTML = ''; // Clear the display
+                // Added alert for history clearing confirmation
+                alert('Calculation history cleared!'); // New Feature
             });
         }
         catch (error) {
