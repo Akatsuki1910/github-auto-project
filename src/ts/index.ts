@@ -27,6 +27,9 @@ document.addEventListener('keydown', (event) => {
     if (key === 'Escape') { // Added Escape key functionality to clear the display
         display.value = '0';
     }
+    if (key === 'c' || key === 'C') { // Clear display with 'c' or 'C' key
+        clearButton.click();
+    }
 });
 const toggleDateTimeButton = document.getElementById('toggle-date-time') as HTMLButtonElement;
 toggleDateTimeButton.addEventListener('click', () => {
