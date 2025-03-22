@@ -26,6 +26,10 @@ document.addEventListener('keydown', (event) => {
     if (/^[0-9]$/.test(key)) {
         display.value += key;
     }
+    //Added keyboard support for operators
+    if (/^[+\-*/]$/.test(key)) {
+        display.value += key;
+    }
 });
 //Added current date and time display
 const currentDateTimeDisplay = document.getElementById('current-date-time') as HTMLDivElement;
