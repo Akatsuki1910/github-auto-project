@@ -50,6 +50,18 @@ document.addEventListener('keydown', (event) => {
     if (allowedKeys.includes(key)) {
         display.value += key;
     }
+
+    //New Feature: Implement a simple memory store (single value)
+    let memoryValue = 0;
+    const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
+    const memoryPlusButton = document.getElementById('memory-plus') as HTMLButtonElement;
+    memoryRecallButton.addEventListener('click', () => {
+        display.value = memoryValue.toString();
+    });
+    memoryPlusButton.addEventListener('click', () => {
+        memoryValue += parseFloat(display.value);
+    });
+
     if ((key === 'Enter' || key === '=') && !display.value.includes('Error')) {
         window.Ans = display.value; // Store current result
     }
