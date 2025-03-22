@@ -58,7 +58,7 @@ equalsButton.addEventListener('click', () => {
         let history = localStorage.getItem('calculatorHistory') || '';
         history += historyItem;
         localStorage.setItem('calculatorHistory', history);
-        historyDisplay.innerHTML = history;        
+        historyDisplay.innerHTML = history;
     }
     catch (error) {
         display.value = 'Error';
@@ -84,4 +84,13 @@ toggleThemeButton.addEventListener('click', () => {
     body.classList.toggle('light-scheme');
 });
 //Added current date and time display
-
+// Added functionality: Double click on history item to copy to display
+historyDisplay.addEventListener('dblclick', (event) => {
+    const target = event.target as HTMLElement;
+    if (target.tagName === 'P') {
+        const expression = target.textContent?.split('=')[0]?.trim();
+        if (expression) {
+            display.value = expression;
+        }
+    }
+});
