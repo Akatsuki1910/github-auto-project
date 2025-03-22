@@ -38,9 +38,12 @@ document.addEventListener('keydown', (event) => {
     if (key === 'Enter') {
         try {
             // Evaluate the expression and update the display
+            const result = eval(display.value); // Added eval for basic calculation
+            display.value = result.toString();
         }
         catch (error) {
             // Handle errors
+            display.value = 'Error';
         }
     }
 });
