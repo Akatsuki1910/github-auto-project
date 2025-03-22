@@ -23,3 +23,8 @@ body.light-scheme{
     background-color: white;
     color:black;
 }
+.main-pad {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+}
