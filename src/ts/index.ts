@@ -46,7 +46,7 @@ document.addEventListener('keydown', (event) => {
             errorAudio.play();
         }
     }
-        const allowedKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.', '(', ')'];
+    const allowedKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.', '(', ')'];
     if (allowedKeys.includes(key)) {
         display.value += key;
     }
@@ -60,6 +60,13 @@ document.addEventListener('keydown', (event) => {
     // New Feature: Add Vibration on Button Press
     if (allowedKeys.includes(key) || key === 'Enter' || key === 'Backspace' || key === 'Delete') {
         navigator.vibrate(50); // Vibrate for 50ms
+    }
+    //New Feature: Store History in Local Storage
+    if (key === 'Enter' && !display.value.includes('Error')) {
+        const savedHistory = localStorage.getItem('calculatorHistory') || '';
+        const newHistory = savedHistory + display.value + '\n';
+        localStorage.setItem('calculatorHistory', newHistory);
+        historyDisplay.textContent = newHistory;
     }
 
     localStorage.setItem('displayValue', display.value);
