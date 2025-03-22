@@ -34,19 +34,10 @@ document.addEventListener('keydown', (event) => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (key === 'Enter' || key === '=') {
         try {
-            const result = eval(display.value);
+            // New Feature: Evaluate expressions with mathjs
+            const result = math.evaluate(display.value);
             display.value = result.toString();
-            const historyEntry = document.createElement('p');
-            const now = new Date();
-            const dateTimeString = now.toLocaleString();
-            historyEntry.textContent = `${display.value} (${dateTimeString})`;
-            historyDisplay.appendChild(historyEntry);
-            let history = localStorage.getItem('calculatorHistory') || '';
-            history += `${display.value}\n`;
-            localStorage.setItem('calculatorHistory', history);
-            // Play sound on successful calculation
-            const audio = new Audio('success.mp3'); // Replace with your sound file
-            audio.play();
+            // ... (rest of the code)
         }
         catch (error) {
             display.value = 'Error';
@@ -55,7 +46,7 @@ document.addEventListener('keydown', (event) => {
             errorAudio.play();
         }
     }
-    const allowedKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.', '(', ')'];
+        const allowedKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.', '(', ')'];
     if (allowedKeys.includes(key)) {
         display.value += key;
     }
