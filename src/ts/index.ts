@@ -38,6 +38,9 @@ document.addEventListener('keydown', (event) => {
             const result = math.evaluate(display.value);
             display.value = result.toString();
             // ... (rest of the code)
+            //New Feature: Add evaluated expression and result to history
+            const expression = display.value;
+            historyDisplay.innerHTML += `${expression}<br>`;
         }
         catch (error) {
             display.value = 'Error';
