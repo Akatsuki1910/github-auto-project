@@ -98,3 +98,14 @@ historyDisplay.addEventListener('dblclick', (event) => {
         }
     }
 });
+//Added functionality: Percentage Button
+const percentButton = document.getElementById('percent') as HTMLButtonElement;
+percentButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const percentageValue = currentValue / 100;
+        display.value = percentageValue.toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
