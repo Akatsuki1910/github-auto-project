@@ -49,9 +49,12 @@ document.addEventListener('keydown', (event) => {
             let history = localStorage.getItem('calculatorHistory') || '';
             history += `${display.value}\n`;
             localStorage.setItem('calculatorHistory', history);
-            // Play a click sound after calculation
-            const clickSound = new Audio('click.wav'); // Assuming you have a click.wav file
-            clickSound.play();
+            //Added history clearing functionality
+            const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
+            clearHistoryButton.addEventListener('click', () => {
+                localStorage.removeItem('calculatorHistory');
+                historyDisplay.innerHTML = ''; // Clear the display
+            });
         }
         catch (error) {
             // Handle errors
