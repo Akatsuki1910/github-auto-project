@@ -35,4 +35,12 @@ document.addEventListener('keydown', (event) => {
         display.value = '';
         currentExpressionDisplay.textContent = '';
     }
+    if (key === 'Enter') {
+        try {
+            // Evaluate the expression and update the display
+        }
+        catch (error) {
+            // Handle errors
+        }
+    }
 });
