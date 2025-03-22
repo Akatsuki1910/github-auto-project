@@ -49,6 +49,8 @@ equalsButton.addEventListener('click', () => {
         const expression = display.value;
         const result = eval(display.value);
         display.value = result.toString();
+        //Added current expression display
+        currentExpressionDisplay.textContent = expression + '=';
         historyDisplay.innerHTML += `<p>${expression} = ${result}</p>`;
         //Added local storage to persist history
         let history = localStorage.getItem('calculatorHistory') || '';
