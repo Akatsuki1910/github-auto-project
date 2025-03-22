@@ -44,6 +44,11 @@ document.addEventListener('keydown', (event) => {
             const historyEntry = document.createElement('p');
             historyEntry.textContent = `${display.value}`;
             historyDisplay.appendChild(historyEntry);
+
+            // Added localStorage to save history
+            let history = localStorage.getItem('calculatorHistory') || '';
+            history += `${display.value}\n`;
+            localStorage.setItem('calculatorHistory', history);
         }
         catch (error) {
             // Handle errors
