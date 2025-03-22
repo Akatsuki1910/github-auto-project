@@ -1,4 +1,9 @@
 // ... (Existing code)
+const toggleThemeButton = document.getElementById('toggle-theme') as HTMLButtonElement;
+toggleThemeButton.addEventListener('click', () => {
+    document.body.classList.toggle('light-scheme');
+    document.body.classList.toggle('dark-scheme');
+});
 const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
 const toggleHistoryButton = document.getElementById('toggle-history') as HTMLButtonElement;
 toggleHistoryButton.addEventListener('click', () => {
