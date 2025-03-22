@@ -31,6 +31,8 @@ setInterval(() => {
 document.addEventListener('keydown', (event) => {
     // ... (rest of the code)
     const key = event.key;
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
     if (key === 'Escape') {
         display.value = '';
         currentExpressionDisplay.textContent = '';
@@ -77,4 +79,12 @@ backspaceButton.addEventListener('click', () => {
     if (allowedKeys.includes(key)) {
         display.value += key;
     }
+    //New Feature: LocalStorage for Display Value Persistence
+    localStorage.setItem('displayValue', display.value);
+    window.addEventListener('load', () => {
+        const savedValue = localStorage.getItem('displayValue');
+        if (savedValue) {
+            display.value = savedValue;
+        }
+    });
 });
