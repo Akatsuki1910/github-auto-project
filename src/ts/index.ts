@@ -55,12 +55,14 @@ equalsButton.addEventListener('click', () => {
         display.value = result.toString();
         //Added current expression display
         currentExpressionDisplay.textContent = expression + '=';
-        historyDisplay.innerHTML += `<p>${expression} = ${result}</p>`;
-        //Added local storage to persist history
+        //Added history to display and local storage
+        const historyItem = `<p>${expression} = ${result}</p>`;
+        historyDisplay.innerHTML += historyItem;
         let history = localStorage.getItem('calculatorHistory') || '';
-        history += `<p>${expression} = ${result}</p>`;
+        history += historyItem;
         localStorage.setItem('calculatorHistory', history);
-        historyDisplay.innerHTML = history;
+        historyDisplay.innerHTML = history;  // Update history display
+
     }
     catch (error) {
         display.value = 'Error';
@@ -81,4 +83,11 @@ window.addEventListener('load', () => {
 const backspaceButton = document.getElementById('backspace') as HTMLButtonElement;
 backspaceButton.addEventListener('click', () => {
     display.value = display.value.slice(0, -1);
+});
+//Added theme toggle functionality
+const toggleThemeButton = document.getElementById('toggle-theme') as HTMLButtonElement;
+const body = document.body;
+toggleThemeButton.addEventListener('click', () => {
+    body.classList.toggle('dark-scheme');
+    body.classList.toggle('light-scheme');
 });

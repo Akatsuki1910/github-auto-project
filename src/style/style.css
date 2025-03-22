@@ -15,3 +15,11 @@
     color: white; /* White text */
     border-radius: 5px; /* Rounded corners */
 }
+body.dark-scheme{
+    background-color: #333;
+    color:white;
+}
+body.light-scheme{
+    background-color: white;
+    color:black;
+}
