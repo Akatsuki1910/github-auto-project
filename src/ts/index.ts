@@ -40,46 +40,36 @@ document.addEventListener('keydown', (event) => {
     if (key === 'Enter') {
         try {
             // Evaluate the expression and update the display
-            const result = eval(display.value); // Added eval for basic calculation
+            const result = eval(display.value);
             display.value = result.toString();
-            //Append calculation to history
             const historyEntry = document.createElement('p');
-            historyEntry.textContent = `${display.value}`;
+            //Added current date and time to history on calculation
+            const now = new Date();
+            const dateTimeString = now.toLocaleString();
+            historyEntry.textContent = `${display.value} (${dateTimeString})`;
             historyDisplay.appendChild(historyEntry);
-
-            // Added localStorage to save history
             let history = localStorage.getItem('calculatorHistory') || '';
             history += `${display.value}\n`;
             localStorage.setItem('calculatorHistory', history);
-            //Added history clearing functionality
             const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
             clearHistoryButton.addEventListener('click', () => {
                 localStorage.removeItem('calculatorHistory');
-                historyDisplay.innerHTML = ''; // Clear the display
-                // Added alert for history clearing confirmation
-                alert('Calculation history cleared!'); // New Feature
-//Added current date and time to history on calculation
-                const now = new Date();
-                const dateTimeString = now.toLocaleString();
-                historyEntry.textContent += ` (${dateTimeString})`;
+                historyDisplay.innerHTML = '';
+                alert('Calculation history cleared!');
             });
-// Added backspace functionality
-const backspaceButton = document.getElementById('backspace') as HTMLButtonElement;
-backspaceButton.addEventListener('click', () => {
-    display.value = display.value.slice(0, -1);
-});
+            const backspaceButton = document.getElementById('backspace') as HTMLButtonElement;
+            backspaceButton.addEventListener('click', () => {
+                display.value = display.value.slice(0, -1);
+            });
         }
         catch (error) {
-            // Handle errors
             display.value = 'Error';
         }
     }
-    // New Feature: Keyboard support for digits and operators
     const allowedKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.', '(', ')'];
     if (allowedKeys.includes(key)) {
         display.value += key;
     }
-    //New Feature: LocalStorage for Display Value Persistence
     localStorage.setItem('displayValue', display.value);
     window.addEventListener('load', () => {
         const savedValue = localStorage.getItem('displayValue');
@@ -87,4 +77,11 @@ backspaceButton.addEventListener('click', () => {
             display.value = savedValue;
         }
     });
+    // New Feature: Store last result in 'Ans' variable
+    if (key === 'Enter' && !display.value.includes('Error')) {
+        window.Ans = display.value; // Store current result
+    }
+    if (display.value === 'Ans') {
+        display.value = window.Ans || '';
+    }
 });
