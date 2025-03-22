@@ -40,7 +40,6 @@ document.addEventListener('keydown', (event) => {
             // ... (rest of the code)
             //New Feature: Add evaluated expression and result to history
             const expression = display.value;
-            historyDisplay.innerHTML += `${expression}<br>`;
 
             //New Feature: Add to history with timestamps
             const timestamp = new Date().toLocaleString();
@@ -48,31 +47,24 @@ document.addEventListener('keydown', (event) => {
         }
         catch (error) {
             display.value = 'Error';
-            // Play error sound
-            const errorAudio = new Audio('error.mp3'); // Replace with your error sound file
-            errorAudio.play();
         }
     }
     const allowedKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.', '(', ')'];
     if (allowedKeys.includes(key)) {
         display.value += key;
     }
-    //New Feature: Implement a simple memory store (single value)
-    let memoryValue = 0; // Initialize memoryValue outside the event listener
-    // ... existing memory buttons code
-
-    //New Feature: Add last answer functionality
+    let memoryValue = 0; 
     if ((key === 'Enter' || key === '=') && !display.value.includes('Error')) {
-        window.Ans = display.value; // Store current result in global variable
+        window.Ans = display.value; 
     }
     if (display.value === 'Ans') {
-      display.value = window.Ans || ''; // Retrieve previous result from global variable
+      display.value = window.Ans || ''; 
     }
-    //New Feature: Add Vibration on Button Press
-        navigator.vibrate(50); // Vibrate for 50ms
-    //Added backspace key functionality
-        if (key === 'Backspace') {
+    navigator.vibrate(50);
+    if (key === 'Backspace') {
           display.value = display.value.slice(0, -1);
         }
-    // ... (rest of the code)
+    if (key === 'Escape') { // New Feature: Clear display with Escape key
+        display.value = '';
+    }
 });
