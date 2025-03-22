@@ -41,6 +41,10 @@ document.addEventListener('keydown', (event) => {
             //New Feature: Add evaluated expression and result to history
             const expression = display.value;
             historyDisplay.innerHTML += `${expression}<br>`;
+
+            //New Feature: Add to history with timestamps
+            const timestamp = new Date().toLocaleString();
+            historyDisplay.innerHTML += `${timestamp}: ${expression}<br>`;
         }
         catch (error) {
             display.value = 'Error';
