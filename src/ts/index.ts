@@ -40,6 +40,10 @@ document.addEventListener('keydown', (event) => {
             // Evaluate the expression and update the display
             const result = eval(display.value); // Added eval for basic calculation
             display.value = result.toString();
+            //Append calculation to history
+            const historyEntry = document.createElement('p');
+            historyEntry.textContent = `${display.value}`;
+            historyDisplay.appendChild(historyEntry);
         }
         catch (error) {
             // Handle errors
