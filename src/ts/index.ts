@@ -49,6 +49,9 @@ document.addEventListener('keydown', (event) => {
             let history = localStorage.getItem('calculatorHistory') || '';
             history += `${display.value}\n`;
             localStorage.setItem('calculatorHistory', history);
+            // Play a click sound after calculation
+            const clickSound = new Audio('click.wav'); // Assuming you have a click.wav file
+            clickSound.play();
         }
         catch (error) {
             // Handle errors
