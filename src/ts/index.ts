@@ -59,10 +59,13 @@ document.addEventListener('keydown', (event) => {
         window.Ans = display.value; // Store current result in global variable
     }
     if (display.value === 'Ans') {
-        display.value = window.Ans || ''; // Retrieve previous result from global variable
+      display.value = window.Ans || ''; // Retrieve previous result from global variable
     }
-
     //New Feature: Add Vibration on Button Press
         navigator.vibrate(50); // Vibrate for 50ms
+    //Added backspace key functionality
+        if (key === 'Backspace') {
+          display.value = display.value.slice(0, -1);
+        }
     // ... (rest of the code)
 });
