@@ -47,6 +47,9 @@ document.addEventListener('keydown', (event) => {
             let history = localStorage.getItem('calculatorHistory') || '';
             history += `${display.value}\n`;
             localStorage.setItem('calculatorHistory', history);
+            //New Feature: Play a sound on successful calculation
+            const audio = new Audio('success.mp3'); // Replace 'success.mp3' with your sound file
+            audio.play();
         }
         catch (error) {
             display.value = 'Error';
