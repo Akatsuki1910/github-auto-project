@@ -50,23 +50,29 @@ equalsButton.addEventListener('click', () => {
         const result = eval(display.value);
         display.value = result.toString();
         historyDisplay.innerHTML += `<p>${expression} = ${result}</p>`;
-                //Added local storage to persist history
+        //Added local storage to persist history
         let history = localStorage.getItem('calculatorHistory') || '';
         history += `<p>${expression} = ${result}</p>`;
         localStorage.setItem('calculatorHistory', history);
         historyDisplay.innerHTML = history;
-    } catch (error) {
+    }
+    catch (error) {
         display.value = 'Error';
     }
 });
 //Added clear history functionality
 const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
-clearHistoryButton.addEventListener('click',()=>{
-  historyDisplay.textContent='';
-  localStorage.removeItem('calculatorHistory');
+clearHistoryButton.addEventListener('click', () => {
+    historyDisplay.textContent = '';
+    localStorage.removeItem('calculatorHistory');
 });
 // Load history from localStorage on page load
 window.addEventListener('load', () => {
     const history = localStorage.getItem('calculatorHistory') || '';
     historyDisplay.innerHTML = history;
+});
+//Added backspace functionality
+const backspaceButton = document.getElementById('backspace') as HTMLButtonElement;
+backspaceButton.addEventListener('click', () => {
+    display.value = display.value.slice(0, -1);
 });
