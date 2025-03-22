@@ -51,16 +51,6 @@ document.addEventListener('keydown', (event) => {
             let history = localStorage.getItem('calculatorHistory') || '';
             history += `${display.value}\n`;
             localStorage.setItem('calculatorHistory', history);
-            const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
-            clearHistoryButton.addEventListener('click', () => {
-                localStorage.removeItem('calculatorHistory');
-                historyDisplay.innerHTML = '';
-                alert('Calculation history cleared!');
-            });
-            const backspaceButton = document.getElementById('backspace') as HTMLButtonElement;
-            backspaceButton.addEventListener('click', () => {
-                display.value = display.value.slice(0, -1);
-            });
         }
         catch (error) {
             display.value = 'Error';
@@ -70,18 +60,28 @@ document.addEventListener('keydown', (event) => {
     if (allowedKeys.includes(key)) {
         display.value += key;
     }
-    localStorage.setItem('displayValue', display.value);
-    window.addEventListener('load', () => {
-        const savedValue = localStorage.getItem('displayValue');
-        if (savedValue) {
-            display.value = savedValue;
-        }
-    });
-    // New Feature: Store last result in 'Ans' variable
+    // New Feature: Store last result in 'Ans' variable and use it
     if (key === 'Enter' && !display.value.includes('Error')) {
         window.Ans = display.value; // Store current result
     }
     if (display.value === 'Ans') {
         display.value = window.Ans || '';
     }
+    localStorage.setItem('displayValue', display.value);
+    const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
+    clearHistoryButton.addEventListener('click', () => {
+        localStorage.removeItem('calculatorHistory');
+        historyDisplay.innerHTML = '';
+        alert('Calculation history cleared!');
+    });
+    const backspaceButton = document.getElementById('backspace') as HTMLButtonElement;
+    backspaceButton.addEventListener('click', () => {
+        display.value = display.value.slice(0, -1);
+    });
+    window.addEventListener('load', () => {
+        const savedValue = localStorage.getItem('displayValue');
+        if (savedValue) {
+            display.value = savedValue;
+        }
+    });
 });
