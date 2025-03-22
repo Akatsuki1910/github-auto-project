@@ -56,6 +56,10 @@ document.addEventListener('keydown', (event) => {
                 historyDisplay.innerHTML = ''; // Clear the display
                 // Added alert for history clearing confirmation
                 alert('Calculation history cleared!'); // New Feature
+//Added current date and time to history on calculation
+                const now = new Date();
+                const dateTimeString = now.toLocaleString();
+                historyEntry.textContent += ` (${dateTimeString})`;
             });
         }
         catch (error) {
