@@ -61,6 +61,11 @@ document.addEventListener('keydown', (event) => {
                 const dateTimeString = now.toLocaleString();
                 historyEntry.textContent += ` (${dateTimeString})`;
             });
+// Added backspace functionality
+const backspaceButton = document.getElementById('backspace') as HTMLButtonElement;
+backspaceButton.addEventListener('click', () => {
+    display.value = display.value.slice(0, -1);
+});
         }
         catch (error) {
             // Handle errors
