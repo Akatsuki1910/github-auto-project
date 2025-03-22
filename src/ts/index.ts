@@ -72,4 +72,9 @@ backspaceButton.addEventListener('click', () => {
             display.value = 'Error';
         }
     }
+    // New Feature: Keyboard support for digits and operators
+    const allowedKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.', '(', ')'];
+    if (allowedKeys.includes(key)) {
+        display.value += key;
+    }
 });
