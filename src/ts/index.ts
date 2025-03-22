@@ -25,4 +25,9 @@ setInterval(() => {
 }, 1000);
 document.addEventListener('keydown', (event) => {
     // ... (rest of the code)
+    const key = event.key;
+    if (key === 'Escape') {
+        display.value = '';
+        currentExpressionDisplay.textContent = '';
+    }
 });
