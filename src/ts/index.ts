@@ -44,11 +44,15 @@ document.addEventListener('keydown', (event) => {
             let history = localStorage.getItem('calculatorHistory') || '';
             history += `${display.value}\n`;
             localStorage.setItem('calculatorHistory', history);
-            const audio = new Audio('success.mp3');
+            // Play sound on successful calculation
+            const audio = new Audio('success.mp3'); // Replace with your sound file
             audio.play();
         }
         catch (error) {
             display.value = 'Error';
+            // Play error sound
+            const errorAudio = new Audio('error.mp3'); // Replace with your error sound file
+            errorAudio.play();
         }
     }
     const allowedKeys = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '+', '-', '*', '/', '.', '(', ')'];
