@@ -58,7 +58,7 @@ equalsButton.addEventListener('click', () => {
         let history = localStorage.getItem('calculatorHistory') || '';
         history += historyItem;
         localStorage.setItem('calculatorHistory', history);
-        historyDisplay.innerHTML = history;
+        historyDisplay.innerHTML = history;        
     }
     catch (error) {
         display.value = 'Error';
@@ -83,3 +83,5 @@ toggleThemeButton.addEventListener('click', () => {
     body.classList.toggle('dark-scheme');
     body.classList.toggle('light-scheme');
 });
+//Added current date and time display
+
