@@ -30,6 +30,9 @@ document.addEventListener('keydown', (event) => {
     if (/^[+\-*/]$/.test(key)) {
         display.value += key;
     }
+    if (key === 'Enter') {
+        equalsButton.click();
+    }
 });
 //Added current date and time display
 const currentDateTimeDisplay = document.getElementById('current-date-time') as HTMLDivElement;
