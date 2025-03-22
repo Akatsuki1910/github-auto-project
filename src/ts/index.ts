@@ -32,10 +32,8 @@ document.addEventListener('keydown', (event) => {
     // ... (rest of the code)
     const key = event.key;
     const display = document.getElementById('display') as HTMLInputElement;
-    // New Feature: Keyboard support for "=" (equals) key
     if (key === 'Enter' || key === '=') {
         try {
-            // Evaluate the expression and update the display
             const result = eval(display.value);
             display.value = result.toString();
             const historyEntry = document.createElement('p');
@@ -43,12 +41,10 @@ document.addEventListener('keydown', (event) => {
             const dateTimeString = now.toLocaleString();
             historyEntry.textContent = `${display.value} (${dateTimeString})`;
             historyDisplay.appendChild(historyEntry);
-            // New Feature: Store history in local storage
             let history = localStorage.getItem('calculatorHistory') || '';
             history += `${display.value}\n`;
             localStorage.setItem('calculatorHistory', history);
-            //New Feature: Play a sound on successful calculation
-            const audio = new Audio('success.mp3'); // Replace 'success.mp3' with your sound file
+            const audio = new Audio('success.mp3');
             audio.play();
         }
         catch (error) {
@@ -63,8 +59,14 @@ document.addEventListener('keydown', (event) => {
         window.Ans = display.value; // Store current result
     }
     if (display.value === 'Ans') {
-        display.value = window.Ans || '';
+        display.value = window.Ans || ''; // Retrieve previous result
     }
+
+    // New Feature: Add Vibration on Button Press
+    if (allowedKeys.includes(key) || key === 'Enter' || key === 'Backspace' || key === 'Delete') {
+        navigator.vibrate(50); // Vibrate for 50ms
+    }
+
     localStorage.setItem('displayValue', display.value);
     const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
     clearHistoryButton.addEventListener('click', () => {
@@ -81,7 +83,6 @@ document.addEventListener('keydown', (event) => {
         if (savedValue) {
             display.value = savedValue;
         }
-        // New Feature: Load history from local storage
         const savedHistory = localStorage.getItem('calculatorHistory') || '';
         historyDisplay.textContent = savedHistory;
     });
