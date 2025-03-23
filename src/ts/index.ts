@@ -40,7 +40,6 @@ document.addEventListener('keydown', (event) => {
             // ... (rest of the code)
             //New Feature: Add evaluated expression and result to history
             const expression = display.value;
-
             //New Feature: Add to history with timestamps
             const timestamp = new Date().toLocaleString();
             historyDisplay.innerHTML += `${timestamp}: ${expression}<br>`;
@@ -49,6 +48,9 @@ document.addEventListener('keydown', (event) => {
 			clearHistoryButton.addEventListener('click', () => {
 				historyDisplay.innerHTML = ''; // Clear the history display
 			});
+            // New Feature: Add current expression to history
+            const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
+            currentExpressionDisplay.textContent = display.value;
         }
         catch (error) {
             display.value = 'Error';
@@ -58,17 +60,17 @@ document.addEventListener('keydown', (event) => {
     if (allowedKeys.includes(key)) {
         display.value += key;
     }
-    let memoryValue = 0; 
+    let memoryValue = 0;
     if ((key === 'Enter' || key === '=') && !display.value.includes('Error')) {
-        window.Ans = display.value; 
+        window.Ans = display.value;
     }
     if (display.value === 'Ans') {
-      display.value = window.Ans || ''; 
+        display.value = window.Ans || '';
     }
     navigator.vibrate(50);
     if (key === 'Backspace') {
-          display.value = display.value.slice(0, -1);
-        }
+        display.value = display.value.slice(0, -1);
+    }
     if (key === 'Escape') { // New Feature: Clear display with Escape key
         display.value = '';
     }
