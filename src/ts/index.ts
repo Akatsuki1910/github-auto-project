@@ -45,3 +45,9 @@ roundButton.addEventListener('click', () => {
         display.value = Math.round(parseFloat(display.value)).toString();
     }
 });
+const signButton = document.getElementById('sign');
+signButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = math.sign(parseFloat(display.value)).toString();
+    }
+});
