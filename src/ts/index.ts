@@ -37,4 +37,9 @@ fullscreenButton.addEventListener('click', () => {
         }
     }
 });
+const copyButton = document.getElementById('copy') as HTMLButtonElement;
+copyButton.addEventListener('click', () => {
+    const displayValue = (document.getElementById('display') as HTMLInputElement).value;
+    navigator.clipboard.writeText(displayValue);
+});
 // ... (Rest of the existing code)
