@@ -44,6 +44,11 @@ document.addEventListener('keydown', (event) => {
             //New Feature: Add to history with timestamps
             const timestamp = new Date().toLocaleString();
             historyDisplay.innerHTML += `${timestamp}: ${expression}<br>`;
+			//New Feature: Clear history button functionality
+			const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
+			clearHistoryButton.addEventListener('click', () => {
+				historyDisplay.innerHTML = ''; // Clear the history display
+			});
         }
         catch (error) {
             display.value = 'Error';
