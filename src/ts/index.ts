@@ -1,4 +1,13 @@
 // ... (Existing code)
+const exportHistoryButton = document.getElementById('export-history') as HTMLButtonElement;
+exportHistoryButton.addEventListener('click', () => {
+    const historyText = historyDisplay.innerText.replace(/<br>/g, '\n');
+    const blob = new Blob([historyText], { type: 'text/plain' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'calculator_history.txt';
+    link.click();
+});
 const toggleThemeButton = document.getElementById('toggle-theme') as HTMLButtonElement;
 toggleThemeButton.addEventListener('click', () => {
     document.body.classList.toggle('light-scheme');
