@@ -1,4 +1,10 @@
 // ... (Existing code)
+const squareRootButton = document.getElementById('squareRoot');
+squareRootButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = math.nthRoot(parseFloat(display.value), 2).toString();
+    }
+});
 const cubeButton = document.getElementById('cube');
 cubeButton.addEventListener('click', () => {
     if (display.value) {
