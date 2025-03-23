@@ -1,4 +1,10 @@
 // ... (Existing code)
+let memory = 0;
+const MCButton = document.getElementById('MC');
+MCButton.addEventListener('click', () => {
+    memory = 0;
+display.value = memory.toString();
+});
 const toggleThemeButton = document.getElementById('toggle-theme') as HTMLButtonElement;
 toggleThemeButton.addEventListener('click', () => {
     document.body.classList.toggle('light-scheme');
@@ -15,6 +21,7 @@ equalsButton.addEventListener('click', () => {
     try {
         const result = math.evaluate(display.value);
         display.value = result.toString();
+        memory = result;
     }
     catch (error) {
         display.value = 'Error';
