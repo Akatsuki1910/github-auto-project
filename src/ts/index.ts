@@ -3,7 +3,11 @@ let memory = 0;
 const MCButton = document.getElementById('MC');
 MCButton.addEventListener('click', () => {
     memory = 0;
-display.value = memory.toString();
+    display.value = memory.toString();
+});
+const MRButton = document.getElementById('MR');
+MRButton.addEventListener('click', () => {
+    display.value = memory.toString();
 });
 const toggleThemeButton = document.getElementById('toggle-theme') as HTMLButtonElement;
 toggleThemeButton.addEventListener('click', () => {
@@ -21,7 +25,7 @@ equalsButton.addEventListener('click', () => {
     try {
         const result = math.evaluate(display.value);
         display.value = result.toString();
-        memory = result;
+        memory = result; // Store result in memory
     }
     catch (error) {
         display.value = 'Error';
