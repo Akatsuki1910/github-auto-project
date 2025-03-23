@@ -39,3 +39,9 @@ inverseButton.addEventListener('click', () => {
         display.value = (1 / parseFloat(display.value)).toString();
     }
 });
+const roundButton = document.getElementById('round');
+roundButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = Math.round(parseFloat(display.value)).toString();
+    }
+});
