@@ -9,4 +9,10 @@ setInterval(() => {
     const now = new Date();
     currentDateTime.textContent = now.toLocaleString();
 }, 1000);
+const display = document.getElementById('display') as HTMLInputElement;
+document.querySelectorAll('.digit').forEach(button => {
+    button.addEventListener('click', () => {
+        display.value += button.textContent;
+    });
+});
 // ... (Rest of the existing code)
