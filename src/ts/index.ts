@@ -26,4 +26,18 @@ toggleKeyboardButton.addEventListener('click', () => {
     // This is a placeholder, actual implementation would involve showing/hiding an on-screen keyboard
     alert(`Keyboard visibility: ${keyboardVisible}`);
 });
+//Added current date time display toggle functionality
+const toggleDateTimeButton = document.getElementById('toggle-date-time') as HTMLButtonElement;
+const currentDateTimeDisplay = document.getElementById('current-date-time') as HTMLDivElement;
+let dateTimeVisible = true;
+toggleDateTimeButton.addEventListener('click', () => {
+    dateTimeVisible = !dateTimeVisible;
+    currentDateTimeDisplay.style.display = dateTimeVisible ? 'block' : 'none';
+});
+setInterval(() => {
+    if (dateTimeVisible) {
+        const now = new Date();
+        currentDateTimeDisplay.textContent = now.toLocaleString();
+    }
+}, 1000);
 // ... (Rest of the existing code)
