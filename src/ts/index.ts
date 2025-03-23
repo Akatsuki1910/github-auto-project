@@ -33,3 +33,9 @@ absButton.addEventListener('click', () => {
         display.value = math.abs(parseFloat(display.value)).toString();
     }
 });
+const inverseButton = document.getElementById('inverse');
+inverseButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = (1 / parseFloat(display.value)).toString();
+    }
+});
