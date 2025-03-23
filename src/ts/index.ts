@@ -58,6 +58,11 @@ document.addEventListener('keydown', (event) => {
 			//New Feature: Play a sound on successful calculation
 			const audio = new Audio('https://soundbible.com/mp3/Electronic_Chime-KevanGC-495939813.mp3'); // Replace with your sound file
             audio.play();
+			// New Feature: Display calculation duration
+            const startTime = performance.now();
+            const endTime = performance.now();
+            const duration = endTime - startTime;
+            currentExpressionDisplay.textContent += ` (${duration.toFixed(2)}ms)`;
         }
         catch (error) {
             display.value = 'Error';
