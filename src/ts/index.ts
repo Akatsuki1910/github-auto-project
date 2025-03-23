@@ -87,3 +87,8 @@ document.addEventListener('keydown', (event) => {
         display.value = '';
     }
 });
+//New Feature: Theme color picker
+const themeColorPicker = document.getElementById('theme-color-picker') as HTMLInputElement;
+themeColorPicker.addEventListener('input', () => {
+    document.body.style.backgroundColor = themeColorPicker.value;
+});
