@@ -80,3 +80,9 @@ cosButton.addEventListener('click', () => {
         display.value = math.cos(parseFloat(display.value)).toString();
     }
 });
+const tanButton = document.getElementById('tan');
+tanButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = math.tan(parseFloat(display.value)).toString();
+    }
+});
