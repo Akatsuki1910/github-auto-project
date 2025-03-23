@@ -66,3 +66,9 @@ signButton.addEventListener('click', () => {
         display.value = math.sign(parseFloat(display.value)).toString();
     }
 });
+const exp10Button = document.getElementById('exp10');
+exp10Button.addEventListener('click', () => {
+    if (display.value) {
+        display.value = math.pow(10, parseFloat(display.value)).toString();
+    }
+});
