@@ -51,6 +51,8 @@ document.addEventListener('keydown', (event) => {
             // New Feature: Add current expression to history
             const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
             currentExpressionDisplay.textContent = display.value;
+            // New Feature: Store result in local storage
+            localStorage.setItem('calculatorResult', result.toString());
         }
         catch (error) {
             display.value = 'Error';
