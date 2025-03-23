@@ -56,3 +56,9 @@ factorialButton.addEventListener('click', () => {
         }
     }
 });
+const lnButton = document.getElementById('ln');
+lnButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = math.log(parseFloat(display.value)).toString();
+    }
+});
