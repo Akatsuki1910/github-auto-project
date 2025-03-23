@@ -15,4 +15,14 @@ document.querySelectorAll('.digit').forEach(button => {
         display.value += button.textContent;
     });
 });
+const equalsButton = document.querySelector('.equals');
+equalsButton.addEventListener('click', () => {
+    try {
+        const result = math.evaluate(display.value);
+        display.value = result.toString();
+    }
+    catch (error) {
+        display.value = 'Error';
+    }
+});
 // ... (Rest of the existing code)
