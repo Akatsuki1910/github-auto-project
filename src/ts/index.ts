@@ -20,69 +20,10 @@ equalsButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
-const backspaceButton = document.getElementById('backspace');
-backspaceButton.addEventListener('click', () => {
-    display.value = display.value.slice(0, -1);
-});
-const clearButton = document.getElementById('clear');
-clearButton.addEventListener('click', () => {
-    display.value = '';
-});
-const negateButton = document.getElementById('negate');
-negateButton.addEventListener('click', () => {
+// ... (Other existing event listeners)
+const logButton = document.getElementById('log');
+logButton.addEventListener('click', () => {
     if (display.value) {
-        display.value = (parseFloat(display.value) * -1).toString();
-    }
-});
-const percentButton = document.getElementById('percent');
-percentButton.addEventListener('click', () => {
-    if (display.value) {
-        display.value = (parseFloat(display.value) / 100).toString();
-    }
-});
-const piButton = document.getElementById('pi');
-piButton.addEventListener('click', () => {
-    display.value += Math.PI;
-});
-const factorialButton = document.getElementById('factorial');
-factorialButton.addEventListener('click', () => {
-    if (display.value) {
-        const num = parseFloat(display.value);
-        if (Number.isInteger(num) && num >= 0) {
-            display.value = math.factorial(num).toString();
-        }
-        else {
-            display.value = 'Error';
-        }
-    }
-});
-const lnButton = document.getElementById('ln');
-lnButton.addEventListener('click', () => {
-    if (display.value) {
-        display.value = math.log(parseFloat(display.value)).toString();
-    }
-});
-const expButton = document.getElementById('exp');
-expButton.addEventListener('click', () => {
-    if (display.value) {
-        display.value = math.exp(parseFloat(display.value)).toString();
-    }
-});
-const sinButton = document.getElementById('sin');
-sinButton.addEventListener('click', () => {
-    if (display.value) {
-        display.value = math.sin(parseFloat(display.value)).toString();
-    }
-});
-const cosButton = document.getElementById('cos');
-cosButton.addEventListener('click', () => {
-    if (display.value) {
-        display.value = math.cos(parseFloat(display.value)).toString();
-    }
-});
-const tanButton = document.getElementById('tan');
-tanButton.addEventListener('click', () => {
-    if (display.value) {
-        display.value = math.tan(parseFloat(display.value)).toString();
+        display.value = math.log10(parseFloat(display.value)).toString();
     }
 });
