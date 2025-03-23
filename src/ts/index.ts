@@ -27,3 +27,9 @@ logButton.addEventListener('click', () => {
         display.value = math.log10(parseFloat(display.value)).toString();
     }
 });
+const absButton = document.getElementById('abs');
+absButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = math.abs(parseFloat(display.value)).toString();
+    }
+});
