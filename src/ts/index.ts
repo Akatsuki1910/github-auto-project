@@ -28,3 +28,9 @@ const clearButton = document.getElementById('clear');
 clearButton.addEventListener('click', () => {
     display.value = '';
 });
+const negateButton = document.getElementById('negate');
+negateButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = (parseFloat(display.value) * -1).toString();
+    }
+});
