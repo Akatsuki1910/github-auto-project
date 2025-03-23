@@ -1,4 +1,10 @@
 // ... (Existing code)
+const cubeButton = document.getElementById('cube');
+cubeButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = math.pow(parseFloat(display.value), 3).toString();
+    }
+});
 let memory = 0;
 const MCButton = document.getElementById('MC');
 MCButton.addEventListener('click', () => {
