@@ -9,12 +9,16 @@ const MRButton = document.getElementById('MR');
 MRButton.addEventListener('click', () => {
     display.value = memory.toString();
 });
-const toggleThemeButton = document.getElementById('toggle-theme') as HTMLButtonElement;
+const MSButton = document.getElementById('ms');
+MSButton.addEventListener('click', () => {
+    memory = parseFloat(display.value);
+});
+const toggleThemeButton = document.getElementById('toggle-theme');
 toggleThemeButton.addEventListener('click', () => {
     document.body.classList.toggle('light-scheme');
     document.body.classList.toggle('dark-scheme');
 });
-const display = document.getElementById('display') as HTMLInputElement;
+const display = document.getElementById('display');
 document.querySelectorAll('.digit').forEach(button => {
     button.addEventListener('click', () => {
         display.value += button.textContent;
