@@ -34,3 +34,9 @@ negateButton.addEventListener('click', () => {
         display.value = (parseFloat(display.value) * -1).toString();
     }
 });
+const percentButton = document.getElementById('percent');
+percentButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = (parseFloat(display.value) / 100).toString();
+    }
+});
