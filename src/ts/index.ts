@@ -53,6 +53,8 @@ document.addEventListener('keydown', (event) => {
             currentExpressionDisplay.textContent = display.value;
             // New Feature: Store result in local storage
             localStorage.setItem('calculatorResult', result.toString());
+ //New Feature: Add Vibration on Successful Calculation
+            navigator.vibrate(200); // Vibrate for 200ms
         }
         catch (error) {
             display.value = 'Error';
