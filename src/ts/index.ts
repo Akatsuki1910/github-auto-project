@@ -44,3 +44,15 @@ const piButton = document.getElementById('pi');
 piButton.addEventListener('click', () => {
     display.value += Math.PI;
 });
+const factorialButton = document.getElementById('factorial');
+factorialButton.addEventListener('click', () => {
+    if (display.value) {
+        const num = parseFloat(display.value);
+        if (Number.isInteger(num) && num >= 0) {
+            display.value = math.factorial(num).toString();
+        }
+        else {
+            display.value = 'Error';
+        }
+    }
+});
