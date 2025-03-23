@@ -53,8 +53,11 @@ document.addEventListener('keydown', (event) => {
             currentExpressionDisplay.textContent = display.value;
             // New Feature: Store result in local storage
             localStorage.setItem('calculatorResult', result.toString());
- //New Feature: Add Vibration on Successful Calculation
+            //New Feature: Add Vibration on Successful Calculation
             navigator.vibrate(200); // Vibrate for 200ms
+			//New Feature: Play a sound on successful calculation
+			const audio = new Audio('https://soundbible.com/mp3/Electronic_Chime-KevanGC-495939813.mp3'); // Replace with your sound file
+            audio.play();
         }
         catch (error) {
             display.value = 'Error';
