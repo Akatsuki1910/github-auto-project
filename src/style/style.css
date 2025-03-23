@@ -28,3 +28,7 @@ body.light-scheme{
     grid-template-columns: repeat(4, 1fr);
     gap: 5px;
 }
+#currentExpressionDisplay{
+    min-height: 20px; /* Ensure it takes up some space even when empty */
+    margin-bottom: 10px; /* Add some space below the current expression */
+}
