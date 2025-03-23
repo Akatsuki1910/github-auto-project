@@ -62,3 +62,9 @@ lnButton.addEventListener('click', () => {
         display.value = math.log(parseFloat(display.value)).toString();
     }
 });
+const expButton = document.getElementById('exp');
+expButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = math.exp(parseFloat(display.value)).toString();
+    }
+});
