@@ -18,4 +18,12 @@ toggleBasicButton.addEventListener('click', () => {
     });
     mainPad.style.display = 'grid'; // Show the main pad
 });
+const toggleKeyboardButton = document.getElementById('toggle-keyboard') as HTMLButtonElement;
+let keyboardVisible = false;
+toggleKeyboardButton.addEventListener('click', () => {
+    keyboardVisible = !keyboardVisible;
+    // Implement keyboard show/hide logic here
+    // This is a placeholder, actual implementation would involve showing/hiding an on-screen keyboard
+    alert(`Keyboard visibility: ${keyboardVisible}`);
+});
 // ... (Rest of the existing code)
