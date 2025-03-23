@@ -4,11 +4,6 @@ toggleThemeButton.addEventListener('click', () => {
     document.body.classList.toggle('light-scheme');
     document.body.classList.toggle('dark-scheme');
 });
-const currentDateTime = document.getElementById('current-date-time');
-setInterval(() => {
-    const now = new Date();
-    currentDateTime.textContent = now.toLocaleString();
-}, 1000);
 const display = document.getElementById('display') as HTMLInputElement;
 document.querySelectorAll('.digit').forEach(button => {
     button.addEventListener('click', () => {
@@ -25,4 +20,11 @@ equalsButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
-// ... (Rest of the existing code)
+const backspaceButton = document.getElementById('backspace');
+backspaceButton.addEventListener('click', () => {
+    display.value = display.value.slice(0, -1);
+});
+const clearButton = document.getElementById('clear');
+clearButton.addEventListener('click', () => {
+    display.value = '';
+});
