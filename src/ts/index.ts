@@ -68,3 +68,9 @@ expButton.addEventListener('click', () => {
         display.value = math.exp(parseFloat(display.value)).toString();
     }
 });
+const sinButton = document.getElementById('sin');
+sinButton.addEventListener('click', () => {
+    if (display.value) {
+        display.value = math.sin(parseFloat(display.value)).toString();
+    }
+});
