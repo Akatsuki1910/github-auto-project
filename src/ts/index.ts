@@ -1,6 +1,5 @@
 // ... (Existing code)
-const floorButton = document.getElementById('floor');
-floorButton.addEventListener('click', () => {
-    display.value = Math.floor(parseFloat(display.value)).toString();
+const ceilButton = document.getElementById('ceil');
+ceilButton.addEventListener('click', () => {
+    display.value = Math.ceil(parseFloat(display.value)).toString();
 });
-// ... (rest of the code)
