@@ -1,4 +1,8 @@
 // ... (Existing code)
+const exitButton = document.getElementById('exit');
+exitButton.addEventListener('click', () => {
+    window.close();
+});
 const percentageButton = document.getElementById('percentage');
 percentageButton.addEventListener('click', () => {
     const display = document.getElementById('display');
