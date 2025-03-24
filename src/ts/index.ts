@@ -1,4 +1,10 @@
 // ... (Existing code)
+const currentDateButton = document.getElementById('current-date');
+currentDateButton.addEventListener('click', () => {
+    const display = document.getElementById('display');
+    const currentDate = new Date().toLocaleDateString();
+    display.value += currentDate;
+});
 const leftParenthesisButton = document.getElementById('left-parenthesis');
 leftParenthesisButton.addEventListener('click', () => {
     const display = document.getElementById('display');
@@ -28,6 +34,6 @@ copyButton.addEventListener('click', () => {
 const ansButton = document.getElementById('ans');
 let lastAnswer = '';
 ansButton.addEventListener('click', () => {
-  const display = document.getElementById('display');
-  display.value += lastAnswer;  
+    const display = document.getElementById('display');
+    display.value += lastAnswer;
 });
