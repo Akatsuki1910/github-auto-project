@@ -13,3 +13,19 @@ duplicateButton.addEventListener('click', () => {
     const display = document.getElementById('display');
     display.value = display.value + display.value;
 });
+let history = [];
+const historyButton = document.getElementById('history');
+historyButton.addEventListener('click', () => {
+    alert(history.join('\n'));
+});
+// Add history tracking to equals button
+const equalsButton = document.querySelector('.equals');
+equalsButton.addEventListener('click', () => {
+    try {
+        // ... (Existing calculation logic)
+        history.push(display.value);
+    }
+    catch (error) {
+        // ... (Existing error handling)
+    }
+});
