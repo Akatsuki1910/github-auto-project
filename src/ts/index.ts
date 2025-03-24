@@ -1,4 +1,14 @@
 // ... (Existing code)
+const toggleVisibilityButton = document.getElementById('toggle-visibility');
+toggleVisibilityButton.addEventListener('click', () => {
+    const calculator = document.getElementById('calculator');
+    if (calculator.style.display === 'none') {
+        calculator.style.display = 'grid';
+    }
+    else {
+        calculator.style.display = 'none';
+    }
+});
 const toggleColorSchemeButton = document.getElementById('toggle-color-scheme');
 toggleColorSchemeButton.addEventListener('click', () => {
     document.body.classList.toggle('light-scheme');
