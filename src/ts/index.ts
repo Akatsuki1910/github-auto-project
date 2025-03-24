@@ -29,3 +29,13 @@ equalsButton.addEventListener('click', () => {
         // ... (Existing error handling)
     }
 });
+const expm1Button = document.getElementById('expm1');
+expm1Button.addEventListener('click', () => {
+    const display = document.getElementById('display');
+    try {
+        display.value = math.expm1(eval(display.value)).toString();
+    }
+    catch (e) {
+        display.value = "Error";
+    }
+});
