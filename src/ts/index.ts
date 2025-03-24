@@ -1,4 +1,8 @@
 // ... (Existing code)
+const duplicateButton = document.getElementById('duplicate');
+duplicateButton.addEventListener('click', () => {
+    display.value = display.value + display.value;
+});
 const toggleSignButton = document.getElementById('toggleSign');
 toggleSignButton.addEventListener('click', () => {
     try {
