@@ -15,3 +15,8 @@ clearHistoryButton.addEventListener('click', () => {
     console.log('Clear history clicked');
     localStorage.removeItem('calculatorHistory');
 });
+const toggleThemeButton = document.getElementById('toggle-theme');
+toggleThemeButton.addEventListener('click', () => {
+    document.body.classList.toggle('light-scheme');
+    document.body.classList.toggle('dark-scheme');
+});
