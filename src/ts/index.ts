@@ -18,3 +18,10 @@ function fibonacci(n) {
     }
     return fibonacci(n - 1) + fibonacci(n - 2);
 }
+const currentTimeButton = document.getElementById('current-time');
+currentTimeButton.addEventListener('click', () => {
+    const display = document.getElementById('display');
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
+    display.value = timeString;
+});
