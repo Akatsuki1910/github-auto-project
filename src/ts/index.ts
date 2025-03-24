@@ -5,3 +5,8 @@ clearHistoryButton.addEventListener('click', () => {
     history = [];
     // Implement logic to visually clear history if displayed
 });
+const toggleThemeButton = document.getElementById('toggle-theme');
+toggleThemeButton.addEventListener('click', () => {
+    document.body.classList.toggle('light-scheme');
+    document.body.classList.toggle('dark-scheme');
+});
