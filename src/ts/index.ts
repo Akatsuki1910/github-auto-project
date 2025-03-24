@@ -10,3 +10,7 @@ toggleThemeButton.addEventListener('click', () => {
     document.body.classList.toggle('light-scheme');
     document.body.classList.toggle('dark-scheme');
 });
+const openNewTabButton = document.getElementById('open-new-tab');
+openNewTabButton.addEventListener('click', () => {
+    window.open('https://www.google.com', '_blank');
+});
