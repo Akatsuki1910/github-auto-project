@@ -1,4 +1,13 @@
 // ... (Existing code)
+const evalButton = document.getElementById('eval');
+evalButton?.addEventListener('click', () => {
+    const display = document.getElementById('display');
+    try {
+        display.value = math.evaluate(display.value);
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
 const exitButton = document.getElementById('exit');
 exitButton.addEventListener('click', () => {
     window.close();
