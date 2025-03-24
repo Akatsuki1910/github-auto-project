@@ -1,10 +1,16 @@
 // ... (Existing code)
+const loadExampleButton = document.getElementById('load-example');
+loadExampleButton.addEventListener('click', () => {
+    const display = document.getElementById('display');
+    display.value = '2+3*sin(pi/2)';
+});
 const evalButton = document.getElementById('eval');
 evalButton?.addEventListener('click', () => {
     const display = document.getElementById('display');
     try {
         display.value = math.evaluate(display.value);
-    } catch (error) {
+    }
+    catch (error) {
         display.value = 'Error';
     }
 });
