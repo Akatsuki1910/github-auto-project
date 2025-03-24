@@ -1,4 +1,9 @@
 // ... (Existing code)
+const resetButton = document.getElementById('reset');
+resetButton.addEventListener('click', () => {
+    const display = document.getElementById('display');
+    display.value = '0';
+});
 const toggleVisibilityButton = document.getElementById('toggle-visibility');
 toggleVisibilityButton.addEventListener('click', () => {
     const calculator = document.getElementById('calculator');
