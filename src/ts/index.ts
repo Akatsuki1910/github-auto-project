@@ -25,3 +25,9 @@ copyButton.addEventListener('click', () => {
     const display = document.getElementById('display');
     navigator.clipboard.writeText(display.value);
 });
+const ansButton = document.getElementById('ans');
+let lastAnswer = '';
+ansButton.addEventListener('click', () => {
+  const display = document.getElementById('display');
+  display.value += lastAnswer;  
+});
