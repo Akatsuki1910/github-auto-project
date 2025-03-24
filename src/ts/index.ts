@@ -1,4 +1,9 @@
 // ... (Existing code)
+const toggleColorSchemeButton = document.getElementById('toggle-color-scheme');
+toggleColorSchemeButton.addEventListener('click', () => {
+    document.body.classList.toggle('light-scheme');
+    document.body.classList.toggle('dark-scheme');
+});
 const fibonacciButton = document.getElementById('fibonacci');
 fibonacciButton.addEventListener('click', () => {
     const display = document.getElementById('display');
