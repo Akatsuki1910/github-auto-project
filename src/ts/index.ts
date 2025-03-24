@@ -1,5 +1,5 @@
 // ... (Existing code)
-const ceilButton = document.getElementById('ceil');
-ceilButton.addEventListener('click', () => {
-    display.value = Math.ceil(parseFloat(display.value)).toString();
+const randomButton = document.getElementById('random');
+randomButton.addEventListener('click', () => {
+    display.value = Math.random().toString();
 });
