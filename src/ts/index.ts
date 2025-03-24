@@ -1,4 +1,14 @@
 // ... (Existing code)
+const toggleSignButton = document.getElementById('toggleSign');
+toggleSignButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = (-currentValue).toString();
+    }
+    catch (error) {
+        display.value = "Error";
+    }
+});
 const memoryPlusButton = document.getElementById('memory-plus');
 let memoryValue = 0;
 memoryPlusButton.addEventListener('click', () => {
