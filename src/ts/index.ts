@@ -1,4 +1,10 @@
 // ... (Existing code)
+let ans = 0;
+const ansButton = document.getElementById('ans');
+ansButton.addEventListener('click', () => {
+    const display = document.getElementById('display');
+    display.value += ans.toString();
+});
 const toggleThemeButton = document.getElementById('toggle-theme');
 toggleThemeButton.addEventListener('click', () => {
     document.body.classList.toggle('light-scheme');
@@ -22,11 +28,14 @@ historyButton.addEventListener('click', () => {
 const equalsButton = document.querySelector('.equals');
 equalsButton.addEventListener('click', () => {
     try {
-        // ... (Existing calculation logic)
+        const display = document.getElementById('display');
+        let result = eval(display.value); // Calculate the result
+        ans = result; // Store the result in 'ans'
+        display.value = result.toString(); // Update display
         history.push(display.value);
     }
     catch (error) {
-        // ... (Existing error handling)
+        display.value = "Error";
     }
 });
 const expm1Button = document.getElementById('expm1');
