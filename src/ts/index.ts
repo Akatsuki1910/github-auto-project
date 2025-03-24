@@ -1,6 +1,6 @@
 // ... (Existing code)
-const sumButton = document.getElementById('sum');
-sumButton.addEventListener('click', () => {
+const averageButton = document.getElementById('average');
+averageButton.addEventListener('click', () => {
     const display = document.getElementById('display');
     const numbers = display.value.split('+').map(Number);
     if (numbers.some(isNaN)) {
@@ -8,6 +8,7 @@ sumButton.addEventListener('click', () => {
     }
     else {
         const sum = numbers.reduce((a, b) => a + b, 0);
-        display.value = sum.toString();
+        const average = sum / numbers.length;
+        display.value = average.toString();
     }
 });
