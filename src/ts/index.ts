@@ -1,4 +1,10 @@
 // ... (Existing code)
+const memoryStoreButton = document.getElementById('memory-store');
+let memory = 0;
+memoryStoreButton.addEventListener('click', () => {
+    const display = document.getElementById('display');
+    memory = parseFloat(display.value);
+});
 const loadExampleButton = document.getElementById('load-example');
 loadExampleButton.addEventListener('click', () => {
     const display = document.getElementById('display');
