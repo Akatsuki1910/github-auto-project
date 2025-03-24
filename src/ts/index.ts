@@ -5,6 +5,11 @@ memoryStoreButton.addEventListener('click', () => {
     const display = document.getElementById('display');
     memory = parseFloat(display.value);
 });
+const memoryRecallButton = document.getElementById('memory-recall');
+memoryRecallButton.addEventListener('click', () => {
+    const display = document.getElementById('display');
+    display.value = memory.toString();
+});
 const loadExampleButton = document.getElementById('load-example');
 loadExampleButton.addEventListener('click', () => {
     const display = document.getElementById('display');
