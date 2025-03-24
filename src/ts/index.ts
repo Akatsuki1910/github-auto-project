@@ -20,3 +20,8 @@ toggleThemeButton.addEventListener('click', () => {
     document.body.classList.toggle('light-scheme');
     document.body.classList.toggle('dark-scheme');
 });
+const copyButton = document.getElementById('copy');
+copyButton.addEventListener('click', () => {
+    const display = document.getElementById('display');
+    navigator.clipboard.writeText(display.value);
+});
