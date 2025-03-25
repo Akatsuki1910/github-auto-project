@@ -1,9 +1,10 @@
 // ... (Existing code)
-const tauButton = document.getElementById('tau');
-if (tauButton) {
-    tauButton.addEventListener('click', () => {
+const sinButton = document.getElementById('sin');
+if (sinButton) {
+    sinButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
-        display.value = (2 * Math.PI).toString();
+        const currentValue = parseFloat(display.value);
+        display.value = Math.sin(currentValue).toString();
     });
 }
 // ... (Existing code)
