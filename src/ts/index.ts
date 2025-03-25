@@ -1,4 +1,12 @@
 // ... (Existing code)
+const switchLayoutButton = document.getElementById('switch-layout');
+let isVertical = false;
+switchLayoutButton.addEventListener('click', () => {
+    isVertical = !isVertical;
+    const calculator = document.getElementById('calculator');
+    calculator.style.display = isVertical ? 'block' : 'grid';
+    calculator.style.gridTemplateColumns = isVertical ? 'none' : 'repeat(4, 1fr)';
+});
 const toggleMainPadButton = document.getElementById('toggle-main-pad');
 const mainPad = document.querySelector('.main-pad');
 toggleMainPadButton.addEventListener('click', () => {
