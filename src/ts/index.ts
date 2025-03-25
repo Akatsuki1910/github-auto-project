@@ -1,4 +1,9 @@
 // ... (Existing code)
+const toggleMainPadButton = document.getElementById('toggle-main-pad');
+const mainPad = document.querySelector('.main-pad');
+toggleMainPadButton.addEventListener('click', () => {
+    mainPad.style.display = mainPad.style.display === 'none' ? 'grid' : 'none';
+});
 const clearHistoryButton = document.getElementById('clear-history');
 let history = [];
 clearHistoryButton.addEventListener('click', () => {
