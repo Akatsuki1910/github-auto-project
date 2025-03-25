@@ -1,10 +1,10 @@
 // ... (Existing code)
-const atanButton = document.getElementById('atan');
-if (atanButton) {
-    atanButton.addEventListener('click', () => {
+const asecButton = document.getElementById('asec');
+if (asecButton) {
+    asecButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
         const currentValue = parseFloat(display.value);
-        display.value = Math.atan(currentValue).toString();
+        display.value = (1 / Math.cos(currentValue)).toString();
     });
 }
 // ... (Existing code)
