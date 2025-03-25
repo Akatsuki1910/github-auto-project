@@ -14,3 +14,9 @@ const openNewTabButton = document.getElementById('open-new-tab');
 openNewTabButton.addEventListener('click', () => {
     window.open('https://www.google.com', '_blank');
 });
+const currentDateButton = document.getElementById('current-date');
+currentDateButton.addEventListener('click', () => {
+    const currentDate = new Date().toLocaleDateString();
+    const display = document.getElementById('display');
+    display.value = currentDate;
+});
