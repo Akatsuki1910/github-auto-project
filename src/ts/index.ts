@@ -1,10 +1,9 @@
 // ... (Existing code)
-const truncButton = document.getElementById('trunc');
-if (truncButton) {
-    truncButton.addEventListener('click', () => {
+const duplicateButton = document.getElementById('duplicate');
+if (duplicateButton) {
+    duplicateButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
-        const currentValue = parseFloat(display.value);
-        display.value = Math.trunc(currentValue).toString();
+        display.value = display.value + display.value;
     });
 }
 // ... (Existing code)
