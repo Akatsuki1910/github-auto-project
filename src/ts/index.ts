@@ -20,3 +20,7 @@ currentDateButton.addEventListener('click', () => {
     const display = document.getElementById('display');
     display.value = currentDate;
 });
+const exitButton = document.getElementById('exit');
+exitButton.addEventListener('click', () => {
+    window.close();
+});
