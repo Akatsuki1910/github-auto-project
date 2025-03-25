@@ -1,9 +1,9 @@
 // ... (Existing code)
-const memDivideButton = document.getElementById('mem-divide');
-memDivideButton.addEventListener('click', () => {
-    const displayValue = parseFloat(document.getElementById('display').value);
-    if (!isNaN(displayValue) && displayValue !== 0) {
-        memory /= displayValue;
-    }
-});
+const eButton = document.getElementById('e');
+if (eButton) {
+    eButton.addEventListener('click', () => {
+        const display = document.getElementById('display') as HTMLInputElement;
+        display.value += 'e';
+    });
+}
 // ... (Existing code)
