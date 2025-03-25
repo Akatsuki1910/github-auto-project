@@ -24,3 +24,9 @@ const exitButton = document.getElementById('exit');
 exitButton.addEventListener('click', () => {
     window.close();
 });
+const changeFontSizeButton = document.getElementById('change-font-size');
+let fontSize = 16;
+changeFontSizeButton.addEventListener('click', () => {
+    fontSize += 2;
+    document.body.style.fontSize = fontSize + 'px';
+});
