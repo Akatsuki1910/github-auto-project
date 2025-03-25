@@ -1,10 +1,10 @@
 // ... (Existing code)
-const cosButton = document.getElementById('cos');
-if (cosButton) {
-    cosButton.addEventListener('click', () => {
+const tanButton = document.getElementById('tan');
+if (tanButton) {
+    tanButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
         const currentValue = parseFloat(display.value);
-        display.value = Math.cos(currentValue).toString();
+        display.value = Math.tan(currentValue).toString();
     });
 }
 // ... (Existing code)
