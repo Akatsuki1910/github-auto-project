@@ -1,12 +1,9 @@
 // ... (Existing code)
-const inverseButton = document.getElementById('inverse');
-if (inverseButton) {
-    inverseButton.addEventListener('click', () => {
+const piButton = document.getElementById('pi');
+if (piButton) {
+    piButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue) && currentValue !== 0) {
-            display.value = (1 / currentValue).toString();
-        }
+        display.value = Math.PI.toString();
     });
 }
 // ... (Existing code)
