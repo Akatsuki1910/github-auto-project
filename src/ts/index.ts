@@ -1,4 +1,9 @@
 // ... (Existing code)
+const resetButton = document.getElementById('reset');
+resetButton.addEventListener('click', () => {
+    const display = document.getElementById('display');
+    display.value = '';
+});
 const switchLayoutButton = document.getElementById('switch-layout');
 let isVertical = false;
 switchLayoutButton.addEventListener('click', () => {
