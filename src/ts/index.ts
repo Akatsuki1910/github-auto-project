@@ -1,4 +1,12 @@
 // ... (Existing code)
+const memAddButton = document.getElementById('mem-add');
+let memory = 0;
+memAddButton.addEventListener('click', () => {
+    const displayValue = parseFloat(document.getElementById('display').value);
+    if (!isNaN(displayValue)) {
+        memory += displayValue;
+    }
+});
 const resetButton = document.getElementById('reset');
 resetButton.addEventListener('click', () => {
     const display = document.getElementById('display');
