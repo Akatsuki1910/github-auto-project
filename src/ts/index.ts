@@ -1,10 +1,10 @@
 // ... (Existing code)
-const acscButton = document.getElementById('acsc');
-if (acscButton) {
-    acscButton.addEventListener('click', () => {
+const cotButton = document.getElementById('cot');
+if (cotButton) {
+    cotButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
         const currentValue = parseFloat(display.value);
-        display.value = (1 / Math.sin(currentValue)).toString();
+        display.value = (1 / Math.tan(currentValue)).toString();
     });
 }
 // ... (Existing code)
