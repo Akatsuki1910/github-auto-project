@@ -1,9 +1,9 @@
 // ... (Existing code)
-const memSubtractButton = document.getElementById('mem-subtract');
-memSubtractButton.addEventListener('click', () => {
+const memMultiplyButton = document.getElementById('mem-multiply');
+memMultiplyButton.addEventListener('click', () => {
     const displayValue = parseFloat(document.getElementById('display').value);
     if (!isNaN(displayValue)) {
-        memory -= displayValue;
+        memory *= displayValue;
     }
 });
 // ... (Existing code)
