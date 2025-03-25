@@ -1,10 +1,10 @@
 // ... (Existing code)
-const asinButton = document.getElementById('asin');
-if (asinButton) {
-    asinButton.addEventListener('click', () => {
+const acosButton = document.getElementById('acos');
+if (acosButton) {
+    acosButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
         const currentValue = parseFloat(display.value);
-        display.value = Math.asin(currentValue).toString();
+        display.value = Math.acos(currentValue).toString();
     });
 }
 // ... (Existing code)
