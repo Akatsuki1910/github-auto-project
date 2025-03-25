@@ -1,11 +1,11 @@
 // ... (Existing code)
-const cubeRootButton = document.getElementById('cube-root');
-if (cubeRootButton) {
-    cubeRootButton.addEventListener('click', () => {
+const tenPowerButton = document.getElementById('ten-power');
+if (tenPowerButton) {
+    tenPowerButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
         const currentValue = parseFloat(display.value);
         if (!isNaN(currentValue)) {
-            display.value = Math.cbrt(currentValue).toString();
+            display.value = Math.pow(10, currentValue).toString();
         }
     });
 }
