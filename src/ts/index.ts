@@ -1,7 +1,7 @@
 // ... (Existing code)
-const sinButton = document.getElementById('sin');
-if (sinButton) {
-    sinButton.addEventListener('click', () => {
+const cosButton = document.getElementById('cos');
+if (cosButton) {
+    cosButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
         if (display) {
             try {
@@ -9,7 +9,7 @@ if (sinButton) {
                 if (isNaN(num)) {
                     display.value = 'Error';
                 } else {
-                    const result = math.sin(num);
+                    const result = math.cos(num);
                     display.value = result.toString();
                 }
             } catch (error) {
