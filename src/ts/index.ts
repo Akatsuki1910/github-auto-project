@@ -15,4 +15,13 @@ if (doubleButton) {
         }
     });
 }
+const tripleButton = document.getElementById('triple');
+if (tripleButton) {
+    tripleButton.addEventListener('click', () => {
+        const display = document.getElementById('display') as HTMLInputElement;
+        if (display && display.value) {
+            display.value = (parseFloat(display.value) * 3).toString();
+        }
+    });
+}
 // ... (Existing code)
