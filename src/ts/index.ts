@@ -1,20 +1,18 @@
 // ... (Existing code)
-const fibonacciButton = document.getElementById('fibonacci');
-if (fibonacciButton) {
-    fibonacciButton.addEventListener('click', () => {
+const factorialButton = document.getElementById('factorial');
+if (factorialButton) {
+    factorialButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
         const n = parseInt(display.value);
         if (isNaN(n) || n < 0) {
             display.value = 'Error';
             return;
         }
-        let a = 0, b = 1;
-        for (let i = 0; i < n; i++) {
-            const temp = a;
-            a = b;
-            b += temp;
+        let result = 1;
+        for (let i = 2; i <= n; i++) {
+            result *= i;
         }
-        display.value = a.toString();
+        display.value = result.toString();
     });
 }
 // ... (Existing code)
