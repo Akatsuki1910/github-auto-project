@@ -43,4 +43,11 @@ if (duplicateButton) {
         display.value = display.value + display.value;
     });
 }
+const log2Button = document.getElementById('log2');
+if (log2Button) {
+    log2Button.addEventListener('click', () => {
+        const display = document.getElementById('display') as HTMLInputElement;
+        display.value = (Math.log2(parseFloat(display.value))).toString();
+    });
+}
 // ... (Existing code)
