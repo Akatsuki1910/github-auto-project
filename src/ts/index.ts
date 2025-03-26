@@ -1,38 +1,23 @@
 // ... (Existing code)
-const signChangeButton = document.getElementById('sign-change');
-if (signChangeButton) {
-    signChangeButton.addEventListener('click', () => {
+const calculateExpressionButton = document.getElementById('calculate-expression');
+if (calculateExpressionButton) {
+    calculateExpressionButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
+        const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
         try {
-            const currentValue = parseFloat(display.value);
-            display.value = (-currentValue).toString();
+            const result = math.evaluate(display.value);
+            display.value = result.toString();
+            if (currentExpressionDisplay) {
+                currentExpressionDisplay.textContent = display.value;
+            }
+            lastAnswer = result;
+            history.push(display.value);
         } catch (error) {
             display.value = 'Error';
+            if (currentExpressionDisplay) {
+                currentExpressionDisplay.textContent = 'Error';
+            }
         }
-    });
-}
-const clearHistoryButton = document.getElementById('clear-history');
-if (clearHistoryButton) {
-    clearHistoryButton.addEventListener('click', () => {
-        const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
-        if (currentExpressionDisplay) {
-            currentExpressionDisplay.textContent = '';
-        }
-    });
-}
-const historyButton = document.getElementById('history');
-let history = [];
-if (historyButton) {
-    historyButton.addEventListener('click', () => {
-        alert(history.join('\n'));
-    });
-}
-const ansButton = document.getElementById('ans');
-let lastAnswer = 0;
-if (ansButton) {
-    ansButton.addEventListener('click', () => {
-        const display = document.getElementById('display') as HTMLInputElement;
-        display.value = lastAnswer.toString();
     });
 }
 // ... (Existing code)
