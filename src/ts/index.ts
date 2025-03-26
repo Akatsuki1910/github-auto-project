@@ -4,6 +4,7 @@ const memoryStoreButton = document.getElementById('memory-store');
 const memoryRecallButton = document.getElementById('memory-recall');
 const memoryClearButton = document.getElementById('memory-clear');
 const memoryPlusButton = document.getElementById('m-plus');
+const memoryMinusButton = document.getElementById('m-minus');
 if (memoryStoreButton) {
     memoryStoreButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
@@ -25,6 +26,13 @@ if (memoryPlusButton) {
     memoryPlusButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
         memoryValue += parseFloat(display.value);
+        display.value = memoryValue.toString();
+    });
+}
+if (memoryMinusButton) {
+    memoryMinusButton.addEventListener('click', () => {
+        const display = document.getElementById('display') as HTMLInputElement;
+        memoryValue -= parseFloat(display.value);
         display.value = memoryValue.toString();
     });
 }
