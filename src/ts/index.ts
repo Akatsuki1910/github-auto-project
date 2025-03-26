@@ -1,7 +1,7 @@
 // ... (Existing code)
-const expButton = document.getElementById('exp');
-if (expButton) {
-    expButton.addEventListener('click', () => {
+const tenPowerButton = document.getElementById('ten-power');
+if (tenPowerButton) {
+    tenPowerButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
         if (display) {
             try {
@@ -9,7 +9,7 @@ if (expButton) {
                 if (isNaN(num)) {
                     display.value = 'Error';
                 } else {
-                    const result = math.exp(num);
+                    const result = math.pow(10, num);
                     display.value = result.toString();
                 }
             } catch (error) {
