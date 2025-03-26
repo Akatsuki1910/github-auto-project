@@ -33,4 +33,13 @@ if (halfButton) {
         }
     });
 }
+const quarterButton = document.getElementById('quarter');
+if (quarterButton) {
+    quarterButton.addEventListener('click', () => {
+        const display = document.getElementById('display') as HTMLInputElement;
+        if (display && display.value) {
+            display.value = (parseFloat(display.value) / 4).toString();
+        }
+    });
+}
 // ... (Existing code)
