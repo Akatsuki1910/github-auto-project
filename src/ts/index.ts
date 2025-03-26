@@ -1,10 +1,10 @@
 // ... (Existing code)
-const medianButton = document.getElementById('median');
-if (medianButton) {
-    medianButton.addEventListener('click', () => {
+const modeButton = document.getElementById('mode');
+if (modeButton) {
+    modeButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
         try {
-            const result = math.evaluate('median(' + display.value + ')');
+            const result = math.evaluate('mode(' + display.value + ')');
             display.value = result.toString();
         } catch (error) {
             display.value = 'Error';
