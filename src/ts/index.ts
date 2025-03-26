@@ -1,10 +1,20 @@
 // ... (Existing code)
-const piButton = document.getElementById('pi');
-if (piButton) {
-    piButton.addEventListener('click', () => {
+const factorialButton = document.getElementById('factorial');
+if (factorialButton) {
+    factorialButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
         if (display) {
-            display.value = Math.PI.toString();
+            try {
+                const num = parseFloat(display.value);
+                if (isNaN(num)) {
+                    display.value = 'Error';
+                } else {
+                    const result = math.factorial(num);
+                    display.value = result.toString();
+                }
+            } catch (error) {
+                display.value = 'Error';
+            }
         }
     });
 }
