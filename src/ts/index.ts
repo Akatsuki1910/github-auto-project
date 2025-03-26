@@ -1,7 +1,7 @@
 // ... (Existing code)
-const logButton = document.getElementById('log');
-if (logButton) {
-    logButton.addEventListener('click', () => {
+const sinButton = document.getElementById('sin');
+if (sinButton) {
+    sinButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
         if (display) {
             try {
@@ -9,7 +9,7 @@ if (logButton) {
                 if (isNaN(num)) {
                     display.value = 'Error';
                 } else {
-                    const result = math.log10(num);
+                    const result = math.sin(num);
                     display.value = result.toString();
                 }
             } catch (error) {
