@@ -1,7 +1,7 @@
 // ... (Existing code)
-const cosButton = document.getElementById('cos');
-if (cosButton) {
-    cosButton.addEventListener('click', () => {
+const tanButton = document.getElementById('tan');
+if (tanButton) {
+    tanButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
         if (display) {
             try {
@@ -9,7 +9,7 @@ if (cosButton) {
                 if (isNaN(num)) {
                     display.value = 'Error';
                 } else {
-                    const result = math.cos(num);
+                    const result = math.tan(num);
                     display.value = result.toString();
                 }
             } catch (error) {
