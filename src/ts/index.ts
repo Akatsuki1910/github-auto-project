@@ -27,4 +27,12 @@ if (historyButton) {
         alert(history.join('\n'));
     });
 }
+const ansButton = document.getElementById('ans');
+let lastAnswer = 0;
+if (ansButton) {
+    ansButton.addEventListener('click', () => {
+        const display = document.getElementById('display') as HTMLInputElement;
+        display.value = lastAnswer.toString();
+    });
+}
 // ... (Existing code)
