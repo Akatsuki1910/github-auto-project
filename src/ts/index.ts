@@ -11,4 +11,13 @@ if (signChangeButton) {
         }
     });
 }
+const clearHistoryButton = document.getElementById('clear-history');
+if (clearHistoryButton) {
+    clearHistoryButton.addEventListener('click', () => {
+        const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
+        if (currentExpressionDisplay) {
+            currentExpressionDisplay.textContent = '';
+        }
+    });
+}
 // ... (Existing code)
