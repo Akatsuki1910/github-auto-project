@@ -20,4 +20,11 @@ if (clearHistoryButton) {
         }
     });
 }
+const historyButton = document.getElementById('history');
+let history = [];
+if (historyButton) {
+    historyButton.addEventListener('click', () => {
+        alert(history.join('\n'));
+    });
+}
 // ... (Existing code)
