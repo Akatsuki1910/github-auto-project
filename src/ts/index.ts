@@ -1,18 +1,12 @@
 // ... (Existing code)
-const roundButton = document.getElementById('round');
-if (roundButton) {
-    roundButton.addEventListener('click', () => {
+const powerButton = document.getElementById('power');
+if (powerButton) {
+    powerButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
         if (display) {
             try {
-                const num = parseFloat(display.value);
-                if (isNaN(num)) {
-                    display.value = 'Error';
-                }
-                else {
-                    const result = Math.round(num);
-                    display.value = result.toString();
-                }
+                const currentExpression = display.value;
+                display.value += '**';
             }
             catch (error) {
                 display.value = 'Error';
