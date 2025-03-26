@@ -1,11 +1,11 @@
 // ... (Existing code)
-const squared2Button = document.getElementById('squared2');
-if (squared2Button) {
-    squared2Button.addEventListener('click', () => {
+const signChangeButton = document.getElementById('sign-change');
+if (signChangeButton) {
+    signChangeButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
         try {
-            const result = math.pow(parseFloat(display.value), 2);
-            display.value = result.toString();
+            const currentValue = parseFloat(display.value);
+            display.value = (-currentValue).toString();
         } catch (error) {
             display.value = 'Error';
         }
