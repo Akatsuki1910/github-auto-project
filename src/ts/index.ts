@@ -24,4 +24,13 @@ if (tripleButton) {
         }
     });
 }
+const halfButton = document.getElementById('half');
+if (halfButton) {
+    halfButton.addEventListener('click', () => {
+        const display = document.getElementById('display') as HTMLInputElement;
+        if (display && display.value) {
+            display.value = (parseFloat(display.value) / 2).toString();
+        }
+    });
+}
 // ... (Existing code)
