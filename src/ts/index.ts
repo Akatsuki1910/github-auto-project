@@ -1,4 +1,13 @@
 // ... (Existing code)
+const backspaceButton = document.getElementById('backspace');
+if (backspaceButton) {
+    backspaceButton.addEventListener('click', () => {
+        const display = document.getElementById('display') as HTMLInputElement;
+        if (display) {
+            display.value = display.value.slice(0, -1);
+        }
+    });
+}
 const negateButton = document.getElementById('negate');
 if (negateButton) {
     negateButton.addEventListener('click', () => {
