@@ -19,6 +19,17 @@ if (equalsButton && display) {
             if (currentExpressionDisplay) {
                 currentExpressionDisplay.textContent = display.value;
             }
+            // 追加機能：コピーボタンの実装
+            const copyButton = document.getElementById('copy');
+            if (copyButton) {
+                copyButton.addEventListener('click', () => {
+                    navigator.clipboard.writeText(display.value).then(() => {
+                        alert('Copied to clipboard: ' + display.value);
+                    }, () => {
+                        alert('Failed to copy to clipboard.');
+                    });
+                });
+            }
         }
         catch (error) {
             display.value = 'Error';
