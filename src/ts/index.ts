@@ -19,3 +19,12 @@ if (historyDiv) {
 clearHistoryButton?.addEventListener('click', () => {
     historyDiv.innerHTML = '';
 });
+const toggleSciModeButton = document.getElementById('toggleSciMode');
+const calculatorDiv = document.getElementById('calculator');
+toggleSciModeButton?.addEventListener('click', () => {
+    calculatorDiv?.classList.toggle('scientific-mode');
+    const scientificButtons = document.querySelectorAll('.scientific');
+    scientificButtons.forEach(button => {
+        button.style.display = button.style.display === 'none' ? 'inline-block' : 'none';
+    });
+});
