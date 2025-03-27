@@ -1,4 +1,15 @@
 // ... (Existing code)
+const negateButton = document.getElementById('negate');
+if (negateButton) {
+    negateButton.addEventListener('click', () => {
+        const display = document.getElementById('display') as HTMLInputElement;
+        if (display) {
+            if (display.value) {
+                display.value = (-parseFloat(display.value)).toString();
+            }
+        }
+    });
+}
 let lastAnswer: string = '0';
 const lastAnswerButton = document.getElementById('last-answer');
 if (lastAnswerButton) {
