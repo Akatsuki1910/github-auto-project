@@ -4,8 +4,10 @@ const calculator = document.getElementById('calculator');
 const scientificButtons = document.querySelectorAll('.scientific'); // Scientific mode buttons
 const switchThemeButton = document.getElementById('switch-theme');
 const body = document.body;
-const dummyButton = document.getElementById('dummy');
-
+dummyButton?.addEventListener('click',()=>{
+    alert('Dummy button clicked!');
+});
+const dateButton = document.getElementById('date');
 if (toggleScientificButton && calculator) {
     let isScientificMode = false;
     toggleScientificButton.addEventListener('click', () => {
@@ -38,8 +40,8 @@ if (switchThemeButton) {
         }
     });
 }
-if (dummyButton) {
-    dummyButton.addEventListener('click', () => {
-        alert('Dummy button clicked!');
-    });
-}
+dateButton?.addEventListener('click', () => {
+    const today = new Date();
+    const dateString = today.toLocaleDateString();
+    alert(dateString);
+});
