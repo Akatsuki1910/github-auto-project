@@ -1,4 +1,13 @@
 // ... (Existing code)
+const currentDateButton = document.getElementById('current-date');
+currentDateButton?.addEventListener('click', () => {
+    const today = new Date();
+    const dateString = today.toLocaleDateString();
+    const display = document.getElementById('display');
+    if (display) {
+        display.value = dateString;
+    }
+});
 const toggleThemeButton = document.getElementById('toggle-theme');
 toggleThemeButton?.addEventListener('click', () => {
     document.body.classList.toggle('light-scheme');
