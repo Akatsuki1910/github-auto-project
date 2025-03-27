@@ -6,6 +6,7 @@ toggleThemeButton?.addEventListener('click', () => {
 });
 const toggleHistoryButton = document.getElementById('toggle-history');
 const historyDiv = document.getElementById('history-display');
+const clearHistoryButton = document.getElementById('clear-history');
 // Ensure historyDiv exists before adding event listener
 if (historyDiv) {
     historyDiv.style.display = 'none'; // Initially hidden
@@ -15,3 +16,6 @@ if (historyDiv) {
         }
     });
 }
+clearHistoryButton?.addEventListener('click', () => {
+    historyDiv.innerHTML = '';
+});
