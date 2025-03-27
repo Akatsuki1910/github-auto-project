@@ -1,4 +1,20 @@
 // ... (Existing code)
+const toggleAudioButton = document.getElementById('toggle-audio');
+let isAudioOn = true;
+toggleAudioButton?.addEventListener('click', () => {
+    isAudioOn = !isAudioOn;
+    toggleAudioButton.textContent = isAudioOn ? 'Audio On' : 'Audio Off';
+    // Add logic to actually control audio output (e.g., using the Web Audio API)
+});
+const randomNumberButton = document.getElementById('random-number');
+randomNumberButton?.addEventListener('click', () => {
+    const randomNumber = Math.random();
+    const display = document.getElementById('display');
+    if (display) {
+        display.value = randomNumber.toString();
+    }
+});
+//Existing Code
 const clearAllButton = document.getElementById('clear-all');
 clearAllButton?.addEventListener('click', () => {
     const display = document.getElementById('display');
