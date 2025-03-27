@@ -4,6 +4,7 @@ const calculator = document.getElementById('calculator');
 const scientificButtons = document.querySelectorAll('.scientific'); // Scientific mode buttons
 const switchThemeButton = document.getElementById('switch-theme');
 const body = document.body;
+const dummyButton = document.getElementById('dummy');
 
 if (toggleScientificButton && calculator) {
     let isScientificMode = false;
@@ -26,14 +27,19 @@ if (toggleScientificButton && calculator) {
     });
 }
 if (switchThemeButton) {
-  switchThemeButton.addEventListener('click', () => {
-    if (body.classList.contains('light-scheme')) {
-      body.classList.remove('light-scheme');
-      body.classList.add('dark-scheme');
-    }
-    else {
-      body.classList.remove('dark-scheme');
-      body.classList.add('light-scheme');
-    }
-  });
+    switchThemeButton.addEventListener('click', () => {
+        if (body.classList.contains('light-scheme')) {
+            body.classList.remove('light-scheme');
+            body.classList.add('dark-scheme');
+        }
+        else {
+            body.classList.remove('dark-scheme');
+            body.classList.add('light-scheme');
+        }
+    });
+}
+if (dummyButton) {
+    dummyButton.addEventListener('click', () => {
+        alert('Dummy button clicked!');
+    });
 }
