@@ -17,9 +17,19 @@ if (equalsButton) {
             try {
                 lastAnswer = math.evaluate(display.value).toString();
                 display.value = lastAnswer;
-            } catch (error) {
+            }
+            catch (error) {
                 display.value = 'Error';
             }
+        }
+    });
+}
+const clearButton = document.getElementById('clear');
+if (clearButton) {
+    clearButton.addEventListener('click', () => {
+        const display = document.getElementById('display') as HTMLInputElement;
+        if (display) {
+            display.value = '';
         }
     });
 }
