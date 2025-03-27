@@ -1,41 +1,25 @@
 // ... (Existing code)
-const mrcValue: string[] = [];
-let msValue: string = '0'; // Initialize msValue
-const mrcButton = document.getElementById('mrc');
-const msButton = document.getElementById('ms');
-const mrButton = document.getElementById('mr');
-const mcButton = document.getElementById('mc');
-if (mrcButton) {
-    mrcButton.addEventListener('click', () => {
+let lastAnswer: string = '0';
+const lastAnswerButton = document.getElementById('last-answer');
+if (lastAnswerButton) {
+    lastAnswerButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
         if (display) {
-            if (mrcValue.length === 0) {
-                mrcValue.push(display.value);
-                display.value = '';
-            } else {
-                display.value = mrcValue.pop() || '';
+            display.value += lastAnswer;
+        }
+    });
+}
+const equalsButton = document.getElementById('equals');
+if (equalsButton) {
+    equalsButton.addEventListener('click', () => {
+        const display = document.getElementById('display') as HTMLInputElement;
+        if (display) {
+            try {
+                lastAnswer = math.evaluate(display.value).toString();
+                display.value = lastAnswer;
+            } catch (error) {
+                display.value = 'Error';
             }
         }
-    });
-}
-if (msButton) {
-    msButton.addEventListener('click', () => {
-        const display = document.getElementById('display') as HTMLInputElement;
-        if (display) {
-            msValue = display.value;
-        }
-    });
-}
-if (mrButton) {
-    mrButton.addEventListener('click', () => {
-        const display = document.getElementById('display') as HTMLInputElement;
-        if (display) {
-            display.value = msValue;
-        }
-    });
-}
-if (mcButton) {
-    mcButton.addEventListener('click', () => {
-        msValue = '0'; // Clear stored value
     });
 }
