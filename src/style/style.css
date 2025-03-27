@@ -1,1 +1,7 @@
 /* ... (Existing styles) */
+#calculator.scientific-mode {
+    width: 600px; /* Adjust as needed */
+}
+.scientific {
+    display: none; /* Initially hidden */
+}
