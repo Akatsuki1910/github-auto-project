@@ -1,45 +1,25 @@
 // ... (Existing code)
-const clearAllHistoryButton = document.getElementById('clearAllHistory');
-if (clearAllHistoryButton) {
-    clearAllHistoryButton.addEventListener('click', () => {
-        history.length = 0; // clear history array
-        alert('History cleared!');
-    });
-}
-let history: string[] = [];
-const historyButton = document.getElementById('history');
-if (historyButton) {
-    historyButton.addEventListener('click', () => {
-        alert(history.join('\n'));
-    });
-}
-const display = document.getElementById('display') as HTMLInputElement;
-const equalsButton = document.querySelector('.equals');
-if (equalsButton && display) {
-    equalsButton.addEventListener('click', () => {
-        try {
-            const result = math.evaluate(display.value);
-            display.value = result.toString();
-            history.push(display.value);
-            // 追加機能：計算結果をcurrentExpressionDisplayに表示
-            const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
-            if (currentExpressionDisplay) {
-                currentExpressionDisplay.textContent = display.value;
+const toggleScientificButton = document.getElementById('toggleScientific');
+const calculator = document.getElementById('calculator');
+const scientificButtons = document.querySelectorAll('.scientific'); // Scientific mode buttons
+
+if (toggleScientificButton && calculator) {
+    let isScientificMode = false;
+    toggleScientificButton.addEventListener('click', () => {
+        isScientificMode = !isScientificMode;
+        scientificButtons.forEach(button => {
+            if (isScientificMode) {
+                button.style.display = 'inline-block';
             }
-            // 追加機能：コピーボタンの実装
-            const copyButton = document.getElementById('copy');
-            if (copyButton) {
-                copyButton.addEventListener('click', () => {
-                    navigator.clipboard.writeText(display.value).then(() => {
-                        alert('Copied to clipboard: ' + display.value);
-                    }, () => {
-                        alert('Failed to copy to clipboard.');
-                    });
-                });
+            else {
+                button.style.display = 'none';
             }
+        });
+        if (isScientificMode) {
+            calculator.classList.add('scientific-mode');
         }
-        catch (error) {
-            display.value = 'Error';
+        else {
+            calculator.classList.remove('scientific-mode');
         }
     });
 }
