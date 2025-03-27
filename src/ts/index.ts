@@ -4,10 +4,9 @@ const calculator = document.getElementById('calculator');
 const scientificButtons = document.querySelectorAll('.scientific'); // Scientific mode buttons
 const switchThemeButton = document.getElementById('switch-theme');
 const body = document.body;
-dummyButton?.addEventListener('click',()=>{
-    alert('Dummy button clicked!');
-});
+dummyButton?.addEventListener('click',()=>{alert('Dummy button clicked!');});
 const dateButton = document.getElementById('date');
+const currentTimeButton = document.getElementById('currentTime');
 if (toggleScientificButton && calculator) {
     let isScientificMode = false;
     toggleScientificButton.addEventListener('click', () => {
@@ -40,8 +39,9 @@ if (switchThemeButton) {
         }
     });
 }
-dateButton?.addEventListener('click', () => {
+dateButton?.addEventListener('click', () => {const today = new Date(); const dateString = today.toLocaleDateString(); alert(dateString);});
+currentTimeButton?.addEventListener('click', () => {
     const today = new Date();
-    const dateString = today.toLocaleDateString();
-    alert(dateString);
+    const timeString = today.toLocaleTimeString();
+    alert(timeString);
 });
