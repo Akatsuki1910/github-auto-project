@@ -1,4 +1,15 @@
 // ... (Existing code)
+const copyDisplayButton = document.getElementById('copy-display');
+copyDisplayButton?.addEventListener('click', () => {
+    const displayValue = display.value;
+    navigator.clipboard.writeText(displayValue)
+        .then(() => {
+        alert('Copied to clipboard: ' + displayValue);
+    })
+        .catch(err => {
+        console.error('Failed to copy: ', err);
+    });
+});
 const duplicateDisplayButton = document.getElementById('duplicate-display');
 duplicateDisplayButton?.addEventListener('click', () => {
     navigator.clipboard.writeText(display.value);
