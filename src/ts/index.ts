@@ -1,4 +1,8 @@
 // ... (Existing code)
+const duplicateDisplayButton = document.getElementById('duplicate-display');
+duplicateDisplayButton?.addEventListener('click', () => {
+    navigator.clipboard.writeText(display.value);
+});
 const toggleAudioButton = document.getElementById('toggle-audio');
 let isAudioOn = true;
 toggleAudioButton?.addEventListener('click', () => {
