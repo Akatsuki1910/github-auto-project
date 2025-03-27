@@ -15,6 +15,15 @@ currentDateButton?.addEventListener('click', () => {
         display.value = dateString;
     }
 });
+const currentTimeButton = document.getElementById('current-time');
+currentTimeButton?.addEventListener('click', () => {
+    const today = new Date();
+    const timeString = today.toLocaleTimeString();
+    const display = document.getElementById('display');
+    if (display) {
+        display.value = timeString;
+    }
+});
 const toggleThemeButton = document.getElementById('toggle-theme');
 toggleThemeButton?.addEventListener('click', () => {
     document.body.classList.toggle('light-scheme');
