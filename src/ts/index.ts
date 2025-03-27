@@ -1,4 +1,11 @@
 // ... (Existing code)
+const clearDisplayButton = document.getElementById('clear-display');
+clearDisplayButton?.addEventListener('click', () => {
+    const display = document.getElementById('display');
+    if (display) {
+        display.value = '';
+    }
+});
 const currentDateButton = document.getElementById('current-date');
 currentDateButton?.addEventListener('click', () => {
     const today = new Date();
