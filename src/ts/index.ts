@@ -1,9 +1,17 @@
 // ... (Existing code)
+const clearAllButton = document.getElementById('clear-all');
+clearAllButton?.addEventListener('click', () => {
+    const display = document.getElementById('display');
+    if (display) {
+        display.value = '0'; // Clear all and reset to 0
+    }
+    // Add any other actions needed for 'Clear All'
+});
 const degRadButton = document.getElementById('deg-rad');
 let isDegree = true;
 degRadButton?.addEventListener('click', () => {
     isDegree = !isDegree;
-degRadButton.textContent = isDegree ? 'Deg' : 'Rad';
+    degRadButton.textContent = isDegree ? 'Deg' : 'Rad';
 });
 const clearDisplayButton = document.getElementById('clear-display');
 clearDisplayButton?.addEventListener('click', () => {
