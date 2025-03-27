@@ -1,8 +1,9 @@
 // ... (Existing code)
 const mrcValue: string[] = [];
-const msValue: string = '0'; // Initialize msValue
+let msValue: string = '0'; // Initialize msValue
 const mrcButton = document.getElementById('mrc');
 const msButton = document.getElementById('ms');
+const mrButton = document.getElementById('mr');
 if (mrcButton) {
     mrcButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
@@ -21,6 +22,14 @@ if (msButton) {
         const display = document.getElementById('display') as HTMLInputElement;
         if (display) {
             msValue = display.value;
+        }
+    });
+}
+if (mrButton) {
+    mrButton.addEventListener('click', () => {
+        const display = document.getElementById('display') as HTMLInputElement;
+        if (display) {
+            display.value = msValue;
         }
     });
 }
