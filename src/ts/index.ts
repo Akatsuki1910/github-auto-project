@@ -8,6 +8,7 @@ dummyButton?.addEventListener('click',()=>{alert('Dummy button clicked!');});
 const dateButton = document.getElementById('date');
 const currentTimeButton = document.getElementById('currentTime');
 const randomNumberButton = document.getElementById('randomNumber');
+const exitButton = document.getElementById('exit');
 if (toggleScientificButton && calculator) {
     let isScientificMode = false;
     toggleScientificButton.addEventListener('click', () => {
@@ -49,4 +50,7 @@ currentTimeButton?.addEventListener('click', () => {
 randomNumberButton?.addEventListener('click', () => {
   const randomNumber = Math.random();
   alert(randomNumber);
+});
+exitButton?.addEventListener('click', () => {
+    window.close();
 });
