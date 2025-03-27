@@ -14,3 +14,12 @@ if (memoryPlusButton) {
         }
     });
 }
+const memoryRecallButton = document.getElementById('memory-recall');
+if (memoryRecallButton) {
+    memoryRecallButton.addEventListener('click', () => {
+        const display = document.getElementById('display') as HTMLInputElement;
+        if (display) {
+            display.value = memoryValue.toString();
+        }
+    });
+}
