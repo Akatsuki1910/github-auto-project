@@ -1,4 +1,11 @@
 // ... (Existing code)
+const clearAllHistoryButton = document.getElementById('clearAllHistory');
+if (clearAllHistoryButton) {
+    clearAllHistoryButton.addEventListener('click', () => {
+        history.length = 0; // clear history array
+        alert('History cleared!');
+    });
+}
 let history: string[] = [];
 const historyButton = document.getElementById('history');
 if (historyButton) {
