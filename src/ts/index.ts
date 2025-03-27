@@ -1,4 +1,10 @@
 // ... (Existing code)
+const degRadButton = document.getElementById('deg-rad');
+let isDegree = true;
+degRadButton?.addEventListener('click', () => {
+    isDegree = !isDegree;
+degRadButton.textContent = isDegree ? 'Deg' : 'Rad';
+});
 const clearDisplayButton = document.getElementById('clear-display');
 clearDisplayButton?.addEventListener('click', () => {
     const display = document.getElementById('display');
