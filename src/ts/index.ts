@@ -4,6 +4,7 @@ let msValue: string = '0'; // Initialize msValue
 const mrcButton = document.getElementById('mrc');
 const msButton = document.getElementById('ms');
 const mrButton = document.getElementById('mr');
+const mcButton = document.getElementById('mc');
 if (mrcButton) {
     mrcButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
@@ -31,5 +32,10 @@ if (mrButton) {
         if (display) {
             display.value = msValue;
         }
+    });
+}
+if (mcButton) {
+    mcButton.addEventListener('click', () => {
+        msValue = '0'; // Clear stored value
     });
 }
