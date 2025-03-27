@@ -23,3 +23,9 @@ if (memoryRecallButton) {
         }
     });
 }
+const memoryClearButton = document.getElementById('memory-clear');
+if (memoryClearButton) {
+    memoryClearButton.addEventListener('click', () => {
+        memoryValue = 0;
+    });
+}
