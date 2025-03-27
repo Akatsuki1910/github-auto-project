@@ -5,3 +5,11 @@
 .scientific {
     display: none; /* Initially hidden */
 }
+body.dark-scheme{
+    background-color: #333;
+    color: white;
+}
+body.light-scheme{
+    background-color: white;
+    color: black;
+}
