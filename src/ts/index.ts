@@ -1,15 +1,19 @@
 // ... (Existing code)
-const tripleButton = document.getElementById('triple');
-if (tripleButton) {
-    tripleButton.addEventListener('click', () => {
+const parenthesesButton = document.getElementById('parentheses');
+if (parenthesesButton) {
+    parenthesesButton.addEventListener('click', () => {
         const display = document.getElementById('display') as HTMLInputElement;
         if (display) {
-            try {
-                const currentValue = parseFloat(display.value);
-                display.value = (currentValue * 3).toString();
+            if (!display.value.includes('(')) {
+                display.value += '(';
             }
-            catch (error) {
-                display.value = 'Error';
+            else if (display.value.includes('(') && !display.value.includes(')')) {
+                display.value += ')';
+            }
+            else if (display.value.includes('(') && display.value.includes(')')) {
+
+                display.value += '(';
+
             }
         }
     });
