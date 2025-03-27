@@ -28,3 +28,12 @@ toggleSciModeButton?.addEventListener('click', () => {
         button.style.display = button.style.display === 'none' ? 'inline-block' : 'none';
     });
 });
+const fullscreenButton = document.getElementById('fullscreen');
+fullscreenButton?.addEventListener('click', () => {
+    if (document.fullscreenElement) {
+        document.exitFullscreen();
+    }
+    else {
+        document.documentElement.requestFullscreen();
+    }
+});
