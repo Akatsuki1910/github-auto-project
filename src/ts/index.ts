@@ -1,12 +1,12 @@
 // ... (Existing code)
-const percentButton = document.getElementById('percent');
-percentButton?.addEventListener('click', () => {
+const doubleButton = document.getElementById('double');
+doubleButton?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (isNaN(currentValue)) {
         display.value = 'Invalid input';
         return;
     }
-    const percentValue = currentValue / 100;
-    display.value = percentValue.toString();
+    const doubledValue = currentValue * 2;
+    display.value = doubledValue.toString();
 });
 //...(rest of the code)
