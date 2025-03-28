@@ -1,11 +1,11 @@
 // ... (Existing code)
-const hexConverterButton = document.getElementById('hex-converter') as HTMLButtonElement;
-hexConverterButton?.addEventListener('click', () => {
+const octalConverterButton = document.getElementById('octal-converter-button') as HTMLButtonElement;
+octalConverterButton?.addEventListener('click', () => {
     const number = parseFloat(display.value);
     if (isNaN(number)) {
         display.value = 'Invalid input';
         return;
     }
-    display.value = number.toString(16);
+    display.value = number.toString(8);
 });
 //...(rest of the code)
