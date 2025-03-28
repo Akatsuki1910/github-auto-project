@@ -1,12 +1,12 @@
 // ... (Existing code)
-const doubleButton = document.getElementById('double');
-doubleButton?.addEventListener('click', () => {
+const tripleButton = document.getElementById('triple');
+tripleButton?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (isNaN(currentValue)) {
         display.value = 'Invalid input';
         return;
     }
-    const doubledValue = currentValue * 2;
-    display.value = doubledValue.toString();
+    const tripledValue = currentValue * 3;
+    display.value = tripledValue.toString();
 });
 //...(rest of the code)
