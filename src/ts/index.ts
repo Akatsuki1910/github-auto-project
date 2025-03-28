@@ -1,12 +1,12 @@
 // ... (Existing code)
-const floorButton = document.getElementById('floor');
-floorButton?.addEventListener('click', () => {
+const ceilButton = document.getElementById('ceil');
+ceilButton?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (isNaN(currentValue)) {
         display.value = 'Invalid input';
         return;
     }
-    const floorValue = Math.floor(currentValue);
-    display.value = floorValue.toString();
+    const ceilValue = Math.ceil(currentValue);
+    display.value = ceilValue.toString();
 });
 //...(rest of the code)
