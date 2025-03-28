@@ -14,4 +14,13 @@ halfButton?.addEventListener('click', () => {
     const halvedValue = currentValue * 0.5;
     display.value = halvedValue.toString();
 });
+const doubleButton = document.getElementById('double-display');
+doubleButton?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (isNaN(currentValue)) {
+        display.value = 'Invalid Input';
+    }
+    const doubledValue = currentValue * 2;
+    display.value = doubledValue.toString();
+});
 //...(rest of the code)
