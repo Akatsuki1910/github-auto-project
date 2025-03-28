@@ -1,18 +1,13 @@
 // ... (Existing code)
-const nthRootButton = document.getElementById('nth-root') as HTMLButtonElement;
-nthRootButton?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (isNaN(currentValue)) {
-        display.value = 'Invalid Input';
+const randomIntegerButton = document.getElementById('random-integer') as HTMLButtonElement;
+randomIntegerButton?.addEventListener('click', () => {
+    const min = parseFloat(prompt('Enter the minimum value:', '0') || '0');
+    const max = parseFloat(prompt('Enter the maximum value:', '100') || '100');
+    if (isNaN(min) || isNaN(max)) {
+        display.value = 'Invalid input';
         return;
     }
-    // Prompt the user for the nth root they want to calculate
-    const n = parseFloat(prompt('Enter the root value (e.g., 2 for square root, 3 for cube root):', '2') || '2');
-    if (isNaN(n)) {
-        display.value = 'Invalid root value';
-        return;
-    }
-    const nthRootValue = Math.pow(currentValue, 1 / n);
-    display.value = nthRootValue.toString();
+    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+    display.value = randomNumber.toString();
 });
 //...(rest of the code)
