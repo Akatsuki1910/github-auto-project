@@ -53,4 +53,13 @@ quarterButton?.addEventListener('click', () => {
     const quarteredValue = currentValue * 0.25;
     display.value = quarteredValue.toString();
 });
+const signFlipButton = document.getElementById('sign-flip');
+signFlipButton?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (isNaN(currentValue)) {
+        display.value = 'Invalid input';
+        return;
+    }
+    display.value = (-currentValue).toString();
+});
 //...(rest of the code)
