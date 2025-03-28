@@ -1,4 +1,14 @@
 // ... (Existing code)
+const cubeButton = document.getElementById('cube');
+cubeButton?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (isNaN(currentValue)) {
+        display.value = 'Invalid input';
+        return;
+    }
+    const cubeValue = currentValue * currentValue * currentValue;
+    display.value = cubeValue.toString();
+});
 const fibonacciButton = document.getElementById('fibonacci');
 fibonacciButton?.addEventListener('click', () => {
     const n = parseInt(display.value);
