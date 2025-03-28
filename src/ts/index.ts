@@ -1,12 +1,12 @@
 // ... (Existing code)
-const tripleButton = document.getElementById('triple');
-tripleButton?.addEventListener('click', () => {
+const halfButton = document.getElementById('half');
+halfButton?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (isNaN(currentValue)) {
         display.value = 'Invalid input';
         return;
     }
-    const tripledValue = currentValue * 3;
-    display.value = tripledValue.toString();
+    const halvedValue = currentValue * 0.5;
+    display.value = halvedValue.toString();
 });
 //...(rest of the code)
