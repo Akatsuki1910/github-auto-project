@@ -23,4 +23,13 @@ oneOverXButton?.addEventListener('click', () => {
     }
     display.value = (1 / number).toString();
 });
+const percentageOfButton = document.getElementById('percentage-of') as HTMLButtonElement;
+percentageOfButton.addEventListener('click', () => {
+  const [percentage, total] = display.value.split(',').map(Number);
+  if (isNaN(percentage) || isNaN(total)) {
+    display.value = 'Invalid Input';
+    return;
+  }
+  display.value = ((percentage / 100) * total).toString();
+});
 //...(rest of the code)
