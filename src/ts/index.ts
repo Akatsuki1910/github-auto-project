@@ -1,65 +1,16 @@
 // ... (Existing code)
-const toggleThemeButton = document.getElementById('toggle-theme');
-toggleThemeButton?.addEventListener('click', () => {
-    document.body.classList.toggle('light-scheme');
-    document.body.classList.toggle('dark-scheme');
-});
-const halfButton = document.getElementById('half');
-halfButton?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (isNaN(currentValue)) {
-        display.value = 'Invalid input';
-        return;
-    }
-    const halvedValue = currentValue * 0.5;
-    display.value = halvedValue.toString();
-});
-const doubleButton = document.getElementById('double-display');
-doubleButton?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (isNaN(currentValue)) {
-        display.value = 'Invalid Input';
-    }
-    const doubledValue = currentValue * 2;
-    display.value = doubledValue.toString();
-});
-const tripleButton = document.getElementById('triple-display');
-tripleButton?.addEventListener('click', () => {
+const squareRootDisplayButton = document.getElementById('square-root-display');
+squareRootDisplayButton?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (isNaN(currentValue)) {
         display.value = 'Invalid Input';
         return;
     }
-    const tripledValue = currentValue * 3;
-    display.value = tripledValue.toString();
-});
-const exp10Button = document.getElementById('exp10');
-exp10Button?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (isNaN(currentValue)) {
-        display.value = 'Invalid input';
+    if (currentValue < 0) {
+        display.value = 'Invalid Input (Negative Number)';
         return;
     }
-    const result = 10 ** currentValue;
-    display.value = result.toString();
-});
-const quarterButton = document.getElementById('quarter');
-quarterButton?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (isNaN(currentValue)) {
-        display.value = 'Invalid input';
-        return;
-    }
-    const quarteredValue = currentValue * 0.25;
-    display.value = quarteredValue.toString();
-});
-const signFlipButton = document.getElementById('sign-flip');
-signFlipButton?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (isNaN(currentValue)) {
-        display.value = 'Invalid input';
-        return;
-    }
-    display.value = (-currentValue).toString();
+    const squareRootValue = Math.sqrt(currentValue);
+    display.value = squareRootValue.toString();
 });
 //...(rest of the code)
