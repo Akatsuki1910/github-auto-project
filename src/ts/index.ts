@@ -1,40 +1,18 @@
 // ... (Existing code)
-const reciprocalButton = document.getElementById('reciprocal') as HTMLButtonElement;
-reciprocalButton?.addEventListener('click', () => {
+const nthRootButton = document.getElementById('nth-root') as HTMLButtonElement;
+nthRootButton?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (isNaN(currentValue)) {
         display.value = 'Invalid Input';
         return;
     }
-    if (currentValue === 0) {
-        display.value = 'Cannot divide by zero';
+    // Prompt the user for the nth root they want to calculate
+    const n = parseFloat(prompt('Enter the root value (e.g., 2 for square root, 3 for cube root):', '2') || '2');
+    if (isNaN(n)) {
+        display.value = 'Invalid root value';
         return;
     }
-    const reciprocalValue = 1 / currentValue;
-    display.value = reciprocalValue.toString();
-});
-const cubeButton = document.getElementById('cube') as HTMLButtonElement;
-cubeButton?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (isNaN(currentValue)) {
-        display.value = 'Invalid Input';
-        return;
-    }
-    const cubeValue = currentValue * currentValue * currentValue;
-    display.value = cubeValue.toString();
-});
-const squareRootDisplayButton = document.getElementById('square-root-display');
-squareRootDisplayButton?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (isNaN(currentValue)) {
-        display.value = 'Invalid Input';
-        return;
-    }
-    if (currentValue < 0) {
-        display.value = 'Invalid Input (Negative Number)';
-        return;
-    }
-    const squareRootValue = Math.sqrt(currentValue);
-    display.value = squareRootValue.toString();
+    const nthRootValue = Math.pow(currentValue, 1 / n);
+    display.value = nthRootValue.toString();
 });
 //...(rest of the code)
