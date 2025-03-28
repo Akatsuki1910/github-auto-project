@@ -33,4 +33,14 @@ tripleButton?.addEventListener('click', () => {
     const tripledValue = currentValue * 3;
     display.value = tripledValue.toString();
 });
+const exp10Button = document.getElementById('exp10');
+exp10Button?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (isNaN(currentValue)) {
+        display.value = 'Invalid input';
+        return;
+    }
+    const result = 10 ** currentValue;
+    display.value = result.toString();
+});
 //...(rest of the code)
