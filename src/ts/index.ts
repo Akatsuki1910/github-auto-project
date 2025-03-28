@@ -1,4 +1,9 @@
 // ... (Existing code)
+const toggleThemeButton = document.getElementById('toggle-theme');
+toggleThemeButton?.addEventListener('click', () => {
+    document.body.classList.toggle('light-scheme');
+    document.body.classList.toggle('dark-scheme');
+});
 const halfButton = document.getElementById('half');
 halfButton?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
