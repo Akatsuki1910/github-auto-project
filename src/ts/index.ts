@@ -6,7 +6,7 @@ calculateFactorialButton?.addEventListener('click', () => {
         display.value = 'Invalid input';
         return;
     }
-    const factorial = (n: number): number => {
+    const factorial = (n) => {
         if (n === 0) {
             return 1;
         }
@@ -23,7 +23,6 @@ binaryToDecimalButton?.addEventListener('click', () => {
     }
     display.value = parseInt(binaryString, 2).toString();
 });
-
 const decimalToBinaryButton = document.getElementById('decimal-to-binary') as HTMLButtonElement;
 decimalToBinaryButton?.addEventListener('click', () => {
     const number = parseFloat(display.value);
@@ -40,5 +39,14 @@ invertButton?.addEventListener('click', () => {
 const clearEntryButton = document.getElementById('clear-entry') as HTMLButtonElement;
 clearEntryButton?.addEventListener('click', () => {
     display.value = ''; // Clear the current entry
+});
+const calculateLog10Button = document.getElementById('calculate-log10') as HTMLButtonElement;
+calculateLog10Button?.addEventListener('click', () => {
+    const number = parseFloat(display.value);
+    if (isNaN(number)) {
+        display.value = 'Invalid input';
+        return;
+    }
+    display.value = Math.log10(number).toString();
 });
 //...(rest of the code)
