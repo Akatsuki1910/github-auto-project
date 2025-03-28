@@ -22,4 +22,8 @@ const invertButton = document.getElementById('invert') as HTMLButtonElement;
 invertButton?.addEventListener('click', () => {
     document.body.classList.toggle('invert-colors');
 });
+const clearEntryButton = document.getElementById('clear-entry') as HTMLButtonElement;
+clearEntryButton?.addEventListener('click', () => {
+    display.value = ''; // Clear the current entry
+});
 //...(rest of the code)
