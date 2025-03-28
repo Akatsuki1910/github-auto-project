@@ -1,13 +1,18 @@
 // ... (Existing code)
-const randomIntegerButton = document.getElementById('random-integer') as HTMLButtonElement;
-randomIntegerButton?.addEventListener('click', () => {
-    const min = parseFloat(prompt('Enter the minimum value:', '0') || '0');
-    const max = parseFloat(prompt('Enter the maximum value:', '100') || '100');
-    if (isNaN(min) || isNaN(max)) {
+const baseConverterButton = document.getElementById('base-converter') as HTMLButtonElement;
+baseConverterButton?.addEventListener('click', () => {
+    const number = prompt('Enter the number to convert:', display.value);
+    const fromBase = parseInt(prompt('Enter the source base:', '10') || '10');
+    const toBase = parseInt(prompt('Enter the target base:', '2') || '2');
+    if (isNaN(fromBase) || isNaN(toBase) || isNaN(parseFloat(number))) {
         display.value = 'Invalid input';
         return;
     }
-    const randomNumber = Math.floor(Math.random() * (max - min + 1)) + min;
-    display.value = randomNumber.toString();
+    try {
+        const convertedNumber = math.baseToString(math.parse(number).evaluate(), toBase, fromBase);
+        display.value = convertedNumber.toString();
+    } catch (error) {
+        display.value = 'Invalid input';
+    }
 });
 //...(rest of the code)
