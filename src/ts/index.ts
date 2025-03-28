@@ -1,4 +1,14 @@
 // ... (Existing code)
+const calculateExpressionButton = document.getElementById('calculate-expression') as HTMLButtonElement;
+calculateExpressionButton.addEventListener('click', () => {
+    const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
+    try {
+        const result = math.evaluate(currentExpressionDisplay.textContent);
+        display.value = result.toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
 const clearExpressionButton = document.getElementById('clear-expression') as HTMLButtonElement;
 clearExpressionButton.addEventListener('click', () => {
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
