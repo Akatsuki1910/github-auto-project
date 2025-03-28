@@ -1,4 +1,13 @@
 // ... (Existing code)
+const powerOfTwoButton = document.getElementById('power-of-two') as HTMLButtonElement;
+powerOfTwoButton?.addEventListener('click', () => {
+    const number = parseFloat(display.value);
+    if (isNaN(number)) {
+        display.value = 'Invalid input';
+        return;
+    }
+    display.value = Math.pow(number, 2).toString();
+});
 const calculateFactorialButton = document.getElementById('calculate-factorial') as HTMLButtonElement;
 calculateFactorialButton?.addEventListener('click', () => {
     const number = parseFloat(display.value);
