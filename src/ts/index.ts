@@ -1,11 +1,11 @@
 // ... (Existing code)
-const octalConverterButton = document.getElementById('octal-converter-button') as HTMLButtonElement;
-octalConverterButton?.addEventListener('click', () => {
+const decimalToBinaryButton = document.getElementById('decimal-to-binary') as HTMLButtonElement;
+decimalToBinaryButton?.addEventListener('click', () => {
     const number = parseFloat(display.value);
     if (isNaN(number)) {
         display.value = 'Invalid input';
         return;
     }
-    display.value = number.toString(8);
+    display.value = Math.floor(number).toString(2);
 });
 //...(rest of the code)
