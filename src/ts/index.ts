@@ -1,4 +1,18 @@
 // ... (Existing code)
+const reciprocalButton = document.getElementById('reciprocal') as HTMLButtonElement;
+reciprocalButton?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (isNaN(currentValue)) {
+        display.value = 'Invalid Input';
+        return;
+    }
+    if (currentValue === 0) {
+        display.value = 'Cannot divide by zero';
+        return;
+    }
+    const reciprocalValue = 1 / currentValue;
+    display.value = reciprocalValue.toString();
+});
 const cubeButton = document.getElementById('cube') as HTMLButtonElement;
 cubeButton?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
