@@ -23,3 +23,6 @@ body.light-scheme{
     max-height: 200px;
     overflow-y: auto;
 }
+body.invert-colors {
+    filter: invert(100%);
+}

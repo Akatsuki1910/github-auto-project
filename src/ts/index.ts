@@ -18,4 +18,8 @@ decimalToBinaryButton?.addEventListener('click', () => {
     }
     display.value = Math.floor(number).toString(2);
 });
+const invertButton = document.getElementById('invert') as HTMLButtonElement;
+invertButton?.addEventListener('click', () => {
+    document.body.classList.toggle('invert-colors');
+});
 //...(rest of the code)
