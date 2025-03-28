@@ -43,4 +43,14 @@ exp10Button?.addEventListener('click', () => {
     const result = 10 ** currentValue;
     display.value = result.toString();
 });
+const quarterButton = document.getElementById('quarter');
+quarterButton?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (isNaN(currentValue)) {
+        display.value = 'Invalid input';
+        return;
+    }
+    const quarteredValue = currentValue * 0.25;
+    display.value = quarteredValue.toString();
+});
 //...(rest of the code)
