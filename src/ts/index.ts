@@ -1,4 +1,10 @@
 // ... (Existing code)
+const percentageCalculationButton = document.getElementById('percentage-calculation');
+percentageCalculationButton?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    const percentageValue = currentValue / 100;
+    display.value = percentageValue.toString();
+});
 const copyDisplayButton = document.getElementById('copy-display');
 copyDisplayButton?.addEventListener('click', () => {
     const displayValue = display.value;
