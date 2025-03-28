@@ -1,12 +1,12 @@
 // ... (Existing code)
-const roundNearestButton = document.getElementById('round-nearest');
-roundNearestButton?.addEventListener('click', () => {
+const cubeRootButton = document.getElementById('cube-root');
+cubeRootButton?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (isNaN(currentValue)) {
         display.value = 'Invalid input';
         return;
     }
-    const roundedValue = Math.round(currentValue);
-    display.value = roundedValue.toString();
+    const cubeRootValue = Math.cbrt(currentValue);
+    display.value = cubeRootValue.toString();
 });
 //...(rest of the code)
