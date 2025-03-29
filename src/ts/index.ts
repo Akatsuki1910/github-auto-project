@@ -1,9 +1,9 @@
 // ... (Existing code)
-const roundDownButton = document.getElementById('round-down') as HTMLButtonElement;
-roundDownButton.addEventListener('click', () => {
+const roundNearestButton = document.getElementById('round-nearest') as HTMLButtonElement;
+roundNearestButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        const roundedValue = Math.floor(currentValue);
+        const roundedValue = Math.round(currentValue);
         display.value = roundedValue.toString();
     }
 });
