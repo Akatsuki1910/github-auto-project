@@ -8,6 +8,7 @@ const modulusButton = document.getElementById('modulus') as HTMLButtonElement;
 const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
 const switchSignButton = document.getElementById('switch-sign') as HTMLButtonElement;
 const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
+const calculatePowerOfTwoButton = document.getElementById('calculate-power-of-two') as HTMLButtonElement;
 memoryPlusButton.addEventListener('click', () => {
     memory += parseFloat(display.value);
     console.log("Memory:", memory);
@@ -45,5 +46,11 @@ cubeRootButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
         display.value = Math.cbrt(currentValue).toString();
+    }
+});
+calculatePowerOfTwoButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.pow(2, currentValue).toString();
     }
 });
