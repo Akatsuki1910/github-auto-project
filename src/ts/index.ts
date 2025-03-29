@@ -1,10 +1,10 @@
 // ... (Existing code)
-const cubedButton = document.getElementById('cubed') as HTMLButtonElement;
+const powerOfFourButton = document.getElementById('power-of-four') as HTMLButtonElement;
 const display = document.getElementById('display') as HTMLInputElement;
-cubedButton.addEventListener('click', () => {
+powerOfFourButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = (currentValue * currentValue * currentValue).toString();
+        display.value = Math.pow(currentValue, 4).toString();
     }
 });
 //...(rest of the code)
