@@ -5,6 +5,7 @@ const memoryPlusButton = document.getElementById('memory-plus') as HTMLButtonEle
 const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
 const memoryClearButton = document.getElementById('memory-clear') as HTMLButtonElement;
 const modulusButton = document.getElementById('modulus') as HTMLButtonElement;
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
 memoryPlusButton.addEventListener('click', () => {
     memory += parseFloat(display.value);
     console.log("Memory:", memory);
@@ -21,5 +22,14 @@ modulusButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
         display.value = (currentValue / 100).toString();
+    }
+});
+inverseButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue !== 0) {
+        display.value = (1 / currentValue).toString();
+    }
+    else if (currentValue === 0) {
+        display.value = "Cannot divide by zero";
     }
 });
