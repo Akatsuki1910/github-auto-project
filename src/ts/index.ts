@@ -1,25 +1,9 @@
 // ... (Existing code)
-const powerButton = document.getElementById('power') as HTMLButtonElement;
+const expButton = document.getElementById('exp') as HTMLButtonElement;
 const display = document.getElementById('display') as HTMLInputElement;
-powerButton.addEventListener('click', () => {
-    display.value += '**';
-});
-const cubeButton = document.getElementById('cube') as HTMLButtonElement;
-cubeButton.addEventListener('click', () => {
+expButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        const result = Math.pow(currentValue, 3);
-        display.value = result.toString();
-    }
-});
-const piButton = document.getElementById('pi') as HTMLButtonElement;
-piButton.addEventListener('click', () => {
-    display.value += Math.PI;
-});
-const tenPowerButton = document.getElementById('ten-power') as HTMLButtonElement;
-tenPowerButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.pow(10, currentValue).toString();
+        display.value = Math.exp(currentValue).toString();
     }
 });
