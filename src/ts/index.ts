@@ -1,4 +1,11 @@
 // ... (Existing code)
+const powerOfTenButton = document.getElementById('power-of-ten') as HTMLButtonElement;
+powerOfTenButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.pow(10, currentValue).toString();
+    }
+});
 const calculateExpressionButton = document.getElementById('calculate-expression') as HTMLButtonElement;
 calculateExpressionButton.addEventListener('click', () => {
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
