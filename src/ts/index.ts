@@ -7,6 +7,7 @@ const memoryClearButton = document.getElementById('memory-clear') as HTMLButtonE
 const modulusButton = document.getElementById('modulus') as HTMLButtonElement;
 const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
 const switchSignButton = document.getElementById('switch-sign') as HTMLButtonElement;
+const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
 memoryPlusButton.addEventListener('click', () => {
     memory += parseFloat(display.value);
     console.log("Memory:", memory);
@@ -38,5 +39,11 @@ switchSignButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
         display.value = (-currentValue).toString();
+    }
+});
+cubeRootButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.cbrt(currentValue).toString();
     }
 });
