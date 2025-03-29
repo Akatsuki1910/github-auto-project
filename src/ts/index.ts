@@ -1,10 +1,10 @@
 // ... (Existing code)
-const floorButton = document.getElementById('calculate-floor') as HTMLButtonElement;
-floorButton.addEventListener('click', () => {
+const ceilButton = document.getElementById('ceil-button') as HTMLButtonElement;
+ceilButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        const floorValue = Math.floor(currentValue);
-        display.value = floorValue.toString();
+        const ceilValue = Math.ceil(currentValue);
+        display.value = ceilValue.toString();
     }
 });
 //...(rest of the code)
