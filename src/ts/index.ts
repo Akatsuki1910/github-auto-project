@@ -1,9 +1,9 @@
 // ... (Existing code)
-const lnButton = document.getElementById('ln') as HTMLButtonElement;
+const absButton = document.getElementById('abs') as HTMLButtonElement;
 const display = document.getElementById('display') as HTMLInputElement;
-lnButton.addEventListener('click', () => {
+absButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue > 0) {
-        display.value = Math.log(currentValue).toString();
+    if (!isNaN(currentValue)) {
+        display.value = Math.abs(currentValue).toString();
     }
 });
