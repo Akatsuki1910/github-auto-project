@@ -1,8 +1,11 @@
 // ... (Existing code)
-const randomIntButton = document.getElementById('random-int') as HTMLButtonElement;
+const sinDegreesButton = document.getElementById('sin-degrees') as HTMLButtonElement;
 const display = document.getElementById('display') as HTMLInputElement;
-randomIntButton.addEventListener('click', () => {
-    const randomNumber = Math.floor(Math.random() * 101);
-    display.value = randomNumber.toString();
+sinDegreesButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.sin(currentValue * Math.PI / 180);
+        display.value = result.toString();
+    }
 });
 //...(rest of the code)
