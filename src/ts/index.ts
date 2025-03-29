@@ -1,9 +1,9 @@
 // ... (Existing code)
-const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
+const roundButton = document.getElementById('round') as HTMLButtonElement;
 const display = document.getElementById('display') as HTMLInputElement;
-cbrtButton.addEventListener('click', () => {
+roundButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.cbrt(currentValue).toString();
+        display.value = Math.round(currentValue).toString();
     }
 });
