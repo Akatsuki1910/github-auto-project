@@ -1,10 +1,10 @@
 // ... (Existing code)
-const ceilButton = document.getElementById('ceil-button') as HTMLButtonElement;
-ceilButton.addEventListener('click', () => {
+const roundUpButton = document.getElementById('round-up') as HTMLButtonElement;
+roundUpButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        const ceilValue = Math.ceil(currentValue);
-        display.value = ceilValue.toString();
+        const roundedValue = Math.ceil(currentValue);
+        display.value = roundedValue.toString();
     }
 });
 //...(rest of the code)
