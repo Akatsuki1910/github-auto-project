@@ -1,10 +1,10 @@
 // ... (Existing code)
-const expButton = document.getElementById('calculate-exp') as HTMLButtonElement;
-expButton.addEventListener('click', () => {
+const absButton = document.getElementById('calculate-absolute') as HTMLButtonElement;
+absButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        const expValue = Math.exp(currentValue);
-        display.value = expValue.toString();
+        const absValue = Math.abs(currentValue);
+        display.value = absValue.toString();
     }
 });
 //...(rest of the code)
