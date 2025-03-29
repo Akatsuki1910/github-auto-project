@@ -1,12 +1,10 @@
 // ... (Existing code)
-const roundToDecimalButton = document.getElementById('round-to-decimal') as HTMLButtonElement;
-roundToDecimalButton.addEventListener('click', () => {
+const log2Button = document.getElementById('calculate-log2') as HTMLButtonElement;
+log2Button.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    const decimalPlacesInput = prompt('Enter the number of decimal places:', '2');
-    const decimalPlaces = parseInt(decimalPlacesInput || '2', 10);
-    if (!isNaN(currentValue) && !isNaN(decimalPlaces)) {
-        const roundedValue = parseFloat(currentValue.toFixed(decimalPlaces));
-        display.value = roundedValue.toString();
+    if (!isNaN(currentValue)) {
+        const log2Value = Math.log2(currentValue);
+        display.value = log2Value.toString();
     }
 });
 //...(rest of the code)
