@@ -1,10 +1,10 @@
 // ... (Existing code)
-const roundToTwoDecimalsButton = document.getElementById('round-to-two-decimals') as HTMLButtonElement;
-roundToTwoDecimalsButton.addEventListener('click', () => {
+const cubedButton = document.getElementById('cubed') as HTMLButtonElement;
+const display = document.getElementById('display') as HTMLInputElement;
+cubedButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        const roundedValue = parseFloat(currentValue.toFixed(2));
-        display.value = roundedValue.toString();
+        display.value = (currentValue * currentValue * currentValue).toString();
     }
 });
 //...(rest of the code)
