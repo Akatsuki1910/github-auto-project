@@ -1,10 +1,10 @@
 // ... (Existing code)
-const absButton = document.getElementById('calculate-absolute') as HTMLButtonElement;
-absButton.addEventListener('click', () => {
+const floorButton = document.getElementById('calculate-floor') as HTMLButtonElement;
+floorButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        const absValue = Math.abs(currentValue);
-        display.value = absValue.toString();
+        const floorValue = Math.floor(currentValue);
+        display.value = floorValue.toString();
     }
 });
 //...(rest of the code)
