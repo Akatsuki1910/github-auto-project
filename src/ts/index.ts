@@ -1,10 +1,10 @@
 // ... (Existing code)
-const cosDegreesButton = document.getElementById('cos-degrees') as HTMLButtonElement;
+const cubeButton = document.getElementById('cube') as HTMLButtonElement;
 const display = document.getElementById('display') as HTMLInputElement;
-cosDegreesButton.addEventListener('click', () => {
+cubeButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        const result = Math.cos(currentValue * Math.PI / 180);
+        const result = Math.pow(currentValue, 3);
         display.value = result.toString();
     }
 });
