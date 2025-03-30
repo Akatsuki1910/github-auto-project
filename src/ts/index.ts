@@ -1,11 +1,11 @@
 // ... (Existing code)
-const signDisplayButton = document.getElementById('sign-display') as HTMLButtonElement;
-signDisplayButton.addEventListener('click', () => {
+const roundToTwoButton = document.getElementById('round-to-two') as HTMLButtonElement;
+roundToTwoButton.addEventListener('click', () => {
     const currentValue = display.value;
     const number = Number(currentValue);
     if (isNaN(number)) {
         display.value = "Invalid input";
         return;
     }
-    display.value = Math.sign(number).toString();
+    display.value = number.toFixed(2);
 });
