@@ -1,13 +1,13 @@
 // ... (Existing code)
-const sumButton = document.getElementById('sum') as HTMLButtonElement;
-sumButton.addEventListener('click', () => {
+const productButton = document.getElementById('product') as HTMLButtonElement;
+productButton.addEventListener('click', () => {
     const currentValue = display.value;
-    const numbers = currentValue.split('+').map(Number);
+    const numbers = currentValue.split('*').map(Number);
     if (numbers.some(isNaN)) {
-        display.value = "Invalid input for sum";
+        display.value = "Invalid input for product";
     }
     else {
-        const sum = numbers.reduce((a, b) => a + b, 0);
-        display.value = sum.toString();
+        const product = numbers.reduce((a, b) => a * b, 1);
+        display.value = product.toString();
     }
 });
