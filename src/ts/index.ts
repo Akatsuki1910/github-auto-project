@@ -1,11 +1,12 @@
 // ... (Existing code)
-const maxArrayButton = document.getElementById('max-array') as HTMLButtonElement;
-maxArrayButton.addEventListener('click', () => {
+const sumArrayButton = document.getElementById('sum-array') as HTMLButtonElement;
+sumArrayButton.addEventListener('click', () => {
     const currentValue = display.value;
     const numbers = currentValue.split(',').map(Number);
     if (numbers.some(isNaN)) {
-        display.value = "Invalid input for max-array";
+        display.value = "Invalid input for sum-array";
         return;
     }
-    display.value = Math.max(...numbers).toString();
+    const sum = numbers.reduce((acc, num) => acc + num, 0);
+    display.value = sum.toString();
 });
