@@ -1,14 +1,14 @@
 // ... (Existing code)
-const averageButton = document.getElementById('average') as HTMLButtonElement;
-averageButton.addEventListener('click', () => {
+const medianButton = document.getElementById('median') as HTMLButtonElement;
+medianButton.addEventListener('click', () => {
     const currentValue = display.value;
-    const numbers = currentValue.split(',').map(Number);
+    const numbers = currentValue.split(',').map(Number).sort((a, b) => a - b);
     if (numbers.some(isNaN)) {
-        display.value = "Invalid input for average";
+        display.value = "Invalid input for median";
     }
     else {
-        const sum = numbers.reduce((a, b) => a + b, 0);
-        const average = sum / numbers.length;
-        display.value = average.toString();
+        const mid = Math.floor(numbers.length / 2);
+        const median = numbers.length % 2 === 0 ? (numbers[mid - 1] + numbers[mid]) / 2 : numbers[mid];
+        display.value = median.toString();
     }
 });
