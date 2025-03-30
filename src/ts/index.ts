@@ -12,7 +12,12 @@ equalsButton.addEventListener('click', () => {
         const result = math.evaluate(display.value);
         display.value = result.toString();
         ans = result;
-    } catch (error) {
+    }
+    catch (error) {
         display.value = 'Error';
     }
+});
+const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
+duplicateButton.addEventListener('click', () => {
+    display.value += display.value;
 });
