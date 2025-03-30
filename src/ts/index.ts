@@ -1,11 +1,11 @@
 // ... (Existing code)
-const roundToTrillionButton = document.getElementById('round-to-trillion') as HTMLButtonElement;
-roundToTrillionButton.addEventListener('click', () => {
+const calculateSineButton = document.getElementById('calculate-sine') as HTMLButtonElement;
+calculateSineButton.addEventListener('click', () => {
     const currentValue = display.value;
     const number = Number(currentValue);
     if (isNaN(number)) {
         display.value = "Invalid input";
         return;
     }
-    display.value = (Math.round(number / 1000000000000) * 1000000000000).toString();
+    display.value = Math.sin(number).toString();
 });
