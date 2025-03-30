@@ -1,11 +1,11 @@
 // ... (Existing code)
-const calculateSecantButton = document.getElementById('calculate-secant') as HTMLButtonElement;
-calculateSecantButton.addEventListener('click', () => {
+const calculateCosecantButton = document.getElementById('calculate-cosecant') as HTMLButtonElement;
+calculateCosecantButton.addEventListener('click', () => {
     const currentValue = display.value;
     const number = Number(currentValue);
     if (isNaN(number)) {
         display.value = "Invalid input";
         return;
     }
-    display.value = (1 / Math.cos(number)).toString();
+    display.value = (1 / Math.sin(number)).toString();
 });
