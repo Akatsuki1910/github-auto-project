@@ -1,11 +1,11 @@
 // ... (Existing code)
-const calculateCotangentButton = document.getElementById('calculate-cotangent') as HTMLButtonElement;
-calculateCotangentButton.addEventListener('click', () => {
+const calculateSecantButton = document.getElementById('calculate-secant') as HTMLButtonElement;
+calculateSecantButton.addEventListener('click', () => {
     const currentValue = display.value;
     const number = Number(currentValue);
     if (isNaN(number)) {
         display.value = "Invalid input";
         return;
     }
-    display.value = (1 / Math.tan(number)).toString();
+    display.value = (1 / Math.cos(number)).toString();
 });
