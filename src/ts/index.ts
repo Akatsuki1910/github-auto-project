@@ -1,11 +1,11 @@
 // ... (Existing code)
-const calculateCosineButton = document.getElementById('calculate-cosine') as HTMLButtonElement;
-calculateCosineButton.addEventListener('click', () => {
+const calculateTangentButton = document.getElementById('calculate-tangent') as HTMLButtonElement;
+calculateTangentButton.addEventListener('click', () => {
     const currentValue = display.value;
     const number = Number(currentValue);
     if (isNaN(number)) {
         display.value = "Invalid input";
         return;
     }
-    display.value = Math.cos(number).toString();
+    display.value = Math.tan(number).toString();
 });
