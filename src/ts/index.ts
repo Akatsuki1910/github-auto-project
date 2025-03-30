@@ -1,13 +1,14 @@
 // ... (Existing code)
-const productButton = document.getElementById('product') as HTMLButtonElement;
-productButton.addEventListener('click', () => {
+const averageButton = document.getElementById('average') as HTMLButtonElement;
+averageButton.addEventListener('click', () => {
     const currentValue = display.value;
-    const numbers = currentValue.split('*').map(Number);
+    const numbers = currentValue.split(',').map(Number);
     if (numbers.some(isNaN)) {
-        display.value = "Invalid input for product";
+        display.value = "Invalid input for average";
     }
     else {
-        const product = numbers.reduce((a, b) => a * b, 1);
-        display.value = product.toString();
+        const sum = numbers.reduce((a, b) => a + b, 0);
+        const average = sum / numbers.length;
+        display.value = average.toString();
     }
 });
