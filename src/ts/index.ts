@@ -1,11 +1,11 @@
 // ... (Existing code)
-const minButton = document.getElementById('min') as HTMLButtonElement;
-minButton.addEventListener('click', () => {
+const maxButton = document.getElementById('max') as HTMLButtonElement;
+maxButton.addEventListener('click', () => {
     const currentValue = display.value;
     const numbers = currentValue.split(',').map(Number);
     if (numbers.some(isNaN)) {
-        display.value = "Invalid input for min";
+        display.value = "Invalid input for max";
         return;
     }
-    display.value = Math.min(...numbers).toString();
+    display.value = Math.max(...numbers).toString();
 });
