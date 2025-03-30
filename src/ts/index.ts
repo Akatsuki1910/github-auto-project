@@ -21,3 +21,14 @@ const duplicateButton = document.getElementById('duplicate') as HTMLButtonElemen
 duplicateButton.addEventListener('click', () => {
     display.value += display.value;
 });
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
+inverseButton.addEventListener('click', () => {
+    try {
+        const result = 1 / math.evaluate(display.value);
+        display.value = result.toString();
+        ans = result;
+    }
+    catch (error) {
+        display.value = 'Error';
+    }
+});
