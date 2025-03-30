@@ -1,15 +1,13 @@
 // ... (Existing code)
-const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
-factorialButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue >= 0 && Number.isInteger(currentValue)) {
-        let result = 1;
-        for (let i = 1; i <= currentValue; i++) {
-            result *= i;
-        }
-        display.value = result.toString();
+const sumButton = document.getElementById('sum') as HTMLButtonElement;
+sumButton.addEventListener('click', () => {
+    const currentValue = display.value;
+    const numbers = currentValue.split('+').map(Number);
+    if (numbers.some(isNaN)) {
+        display.value = "Invalid input for sum";
     }
     else {
-        display.value = "Invalid input for factorial";
+        const sum = numbers.reduce((a, b) => a + b, 0);
+        display.value = sum.toString();
     }
 });
