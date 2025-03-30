@@ -1,11 +1,11 @@
 // ... (Existing code)
-const roundToTwoButton = document.getElementById('round-to-two') as HTMLButtonElement;
-roundToTwoButton.addEventListener('click', () => {
+const roundToNearestIntButton = document.getElementById('round-to-nearest-int') as HTMLButtonElement;
+roundToNearestIntButton.addEventListener('click', () => {
     const currentValue = display.value;
     const number = Number(currentValue);
     if (isNaN(number)) {
         display.value = "Invalid input";
         return;
     }
-    display.value = number.toFixed(2);
+    display.value = Math.round(number).toString();
 });
