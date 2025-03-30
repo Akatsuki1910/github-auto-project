@@ -1,11 +1,11 @@
 // ... (Existing code)
-const roundToHundredButton = document.getElementById('round-to-hundred') as HTMLButtonElement;
-roundToHundredButton.addEventListener('click', () => {
+const roundToThousandButton = document.getElementById('round-to-thousand') as HTMLButtonElement;
+roundToThousandButton.addEventListener('click', () => {
     const currentValue = display.value;
     const number = Number(currentValue);
     if (isNaN(number)) {
         display.value = "Invalid input";
         return;
     }
-    display.value = (Math.round(number / 100) * 100).toString();
+    display.value = (Math.round(number / 1000) * 1000).toString();
 });
