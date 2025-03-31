@@ -41,4 +41,9 @@ clearDisplayButton.addEventListener('click', () => {
   const display = document.getElementById('display') as HTMLInputElement;
   display.value = '';
 });
+const toggleKeypadButton = document.getElementById('toggle-keypad') as HTMLButtonElement;
+toggleKeypadButton.addEventListener('click', () => {
+    const mainPad = document.querySelector('.main-pad') as HTMLDivElement;
+    mainPad.style.display = mainPad.style.display === 'none' ? 'grid' : 'none';
+});
 // ... (Rest of the code)
