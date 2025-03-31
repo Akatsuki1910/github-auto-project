@@ -1,5 +1,7 @@
 // ... (Existing code)
 let memoryValue = 0;
+let ans = 0;
+//Memory Buttons
 const memoryStoreButton = document.getElementById('memory-store') as HTMLButtonElement;
 memoryStoreButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
@@ -28,5 +30,10 @@ const modButton = document.getElementById('mod') as HTMLButtonElement;
 modButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value += '%';
+});
+const ansButton = document.getElementById('ans') as HTMLButtonElement;
+ansButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = ans.toString();
 });
 // ... (Rest of the code)
