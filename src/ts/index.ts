@@ -57,4 +57,9 @@ signChangeButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = (-parseFloat(display.value)).toString();
 });
+const percentageButton = document.getElementById('percentage') as HTMLButtonElement;
+percentageButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = (parseFloat(display.value) / 100).toString();
+});
 // ... (Rest of the code)
