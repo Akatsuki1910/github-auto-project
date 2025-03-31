@@ -1,4 +1,14 @@
 // ... (Existing code)
+const log10Button = document.getElementById('log10') as HTMLButtonElement;
+log10Button.addEventListener('click', () => {
+    try {
+        const result = math.log10(parseFloat(display.value));
+        display.value = result.toString();
+        ans = result;
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
 const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
 expm1Button.addEventListener('click', () => {
     try {
