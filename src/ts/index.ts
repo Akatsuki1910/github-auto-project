@@ -25,4 +25,9 @@ currentDatetimeButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = currentDatetime;
 });
+const clearDisplayButton = document.getElementById('clear-display') as HTMLButtonElement;
+clearDisplayButton.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  display.value = '';
+});
 // ... (Rest of the code)
