@@ -36,4 +36,15 @@ ansButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = ans.toString();
 });
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
+inverseButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    if (currentValue !== 0) {
+        display.value = (1 / currentValue).toString();
+    }
+    else {
+        display.value = "Cannot divide by zero";
+    }
+});
 // ... (Rest of the code)
