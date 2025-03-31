@@ -44,5 +44,11 @@ window.addEventListener('load', () => {
         const display = document.getElementById('display') as HTMLInputElement;
         display.value = today.toLocaleTimeString();
     });
+    const currentDatetimeButton = document.getElementById('current-datetime') as HTMLButtonElement;
+    currentDatetimeButton.addEventListener('click', () => {
+        const today = new Date();
+        const display = document.getElementById('display') as HTMLInputElement;
+        display.value = today.toLocaleString();
+    });
 });
 // ... (Rest of the code)
