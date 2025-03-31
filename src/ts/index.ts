@@ -10,4 +10,9 @@ clearHistoryButton.addEventListener('click', () => {
     history = [];
     historyDisplay.innerHTML = '';
 });
+const currentDateButton = document.getElementById('current-date') as HTMLButtonElement;
+currentDateButton.addEventListener('click', () => {
+    const currentDate = new Date().toLocaleDateString();
+    display.value = currentDate;
+});
 // ... (Rest of the code)
