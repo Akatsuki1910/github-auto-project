@@ -14,4 +14,9 @@ const memoryClearButton = document.getElementById('memory-clear') as HTMLButtonE
 memoryClearButton.addEventListener('click', () => {
     memoryValue = 0;
 });
+const memoryPlusButton = document.getElementById('memory-plus') as HTMLButtonElement;
+memoryPlusButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    memoryValue += parseFloat(display.value);
+});
 // ... (Rest of the code)
