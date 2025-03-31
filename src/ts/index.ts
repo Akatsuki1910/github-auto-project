@@ -52,4 +52,9 @@ duplicateButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value += display.value;
 });
+const signChangeButton = document.getElementById('sign-change') as HTMLButtonElement;
+signChangeButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = (-parseFloat(display.value)).toString();
+});
 // ... (Rest of the code)
