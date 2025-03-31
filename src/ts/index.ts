@@ -15,4 +15,14 @@ currentDateButton.addEventListener('click', () => {
     const currentDate = new Date().toLocaleDateString();
     display.value = currentDate;
 });
+const toggleHistoryButton = document.getElementById('toggle-history') as HTMLButtonElement;
+const historyDisplayDiv = document.getElementById('history-display') as HTMLDivElement;
+toggleHistoryButton.addEventListener('click', () => {
+    if (historyDisplayDiv.style.display === 'none' || historyDisplayDiv.style.display === '') {
+        historyDisplayDiv.style.display = 'block';
+    }
+    else {
+        historyDisplayDiv.style.display = 'none';
+    }
+});
 // ... (Rest of the code)
