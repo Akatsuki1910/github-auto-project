@@ -1,10 +1,6 @@
 // ... (Existing code)
-const openParenthesisButton = document.getElementById('parentheses-open') as HTMLButtonElement;
-openParenthesisButton.addEventListener('click', () => {
-    display.value += '(';
-});
-const closeParenthesisButton = document.getElementById('parentheses-close') as HTMLButtonElement;
-closeParenthesisButton.addEventListener('click', () => {
-    display.value += ')';
+const deleteLastCharButton = document.getElementById('delete-last-char') as HTMLButtonElement;
+deleteLastCharButton.addEventListener('click', () => {
+    display.value = display.value.slice(0, -1);
 });
 // ... (Rest of the code)
