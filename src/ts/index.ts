@@ -47,4 +47,9 @@ inverseButton.addEventListener('click', () => {
         display.value = "Cannot divide by zero";
     }
 });
+const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
+duplicateButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value += display.value;
+});
 // ... (Rest of the code)
