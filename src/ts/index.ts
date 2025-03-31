@@ -19,4 +19,9 @@ memoryPlusButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     memoryValue += parseFloat(display.value);
 });
+const memoryMinusButton = document.getElementById('memory-minus') as HTMLButtonElement;
+memoryMinusButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    memoryValue -= parseFloat(display.value);
+});
 // ... (Rest of the code)
