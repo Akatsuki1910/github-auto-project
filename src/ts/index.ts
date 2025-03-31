@@ -23,10 +23,6 @@ window.addEventListener('load', () => {
         document.body.classList.remove(savedTheme === 'dark-scheme' ? 'light-scheme' : 'dark-scheme');
         toggleColorSchemeButton.textContent = savedTheme === 'dark-scheme' ? 'Light Mode' : 'Dark Mode';
     }
-    if (savedScheme === 'dark') {
-    }
-    else {
-    }
     const display = document.getElementById('display') as HTMLInputElement;
     display.style.backgroundColor = document.body.classList.contains('dark-scheme') ? '#555' : '#fff';
     display.style.color = document.body.classList.contains('dark-scheme') ? '#eee' : '#333';
@@ -37,11 +33,16 @@ window.addEventListener('load', () => {
     });
     //Added feature: Display current date on load
     const currentDateButton = document.getElementById('current-date') as HTMLButtonElement;
-    currentDateButton.addEventListener('click',()=>{
+    currentDateButton.addEventListener('click', () => {
         const today = new Date();
         const display = document.getElementById('display') as HTMLInputElement;
-
         display.value = today.toLocaleDateString();
+    });
+    const currentTimeButton = document.getElementById('current-time') as HTMLButtonElement;
+    currentTimeButton.addEventListener('click', () => {
+        const today = new Date();
+        const display = document.getElementById('display') as HTMLInputElement;
+        display.value = today.toLocaleTimeString();
     });
 });
 // ... (Rest of the code)
