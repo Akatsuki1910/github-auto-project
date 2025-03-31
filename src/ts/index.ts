@@ -1,13 +1,17 @@
 // ... (Existing code)
-const percentageButton = document.getElementById('percentage') as HTMLButtonElement;
-percentageButton.addEventListener('click', () => {
+const modButton = document.getElementById('mod') as HTMLButtonElement;
+modButton.addEventListener('click', () => {
     try {
         const currentValue = parseFloat(display.value);
-        const percentageValue = currentValue / 100;
-        display.value = percentageValue.toString();
-        ans = percentageValue;
-    }
-    catch (error) {
+        if (display.value.includes('%')) {
+            const percentageValue = currentValue / 100;
+            const baseValue = parseFloat(display.value.split('%')[0]);
+            display.value = (baseValue * percentageValue).toString();
+            ans = baseValue * percentageValue;
+        } else {
+            display.value += '%';
+        }
+    } catch (error) {
         display.value = 'Error';
     }
 });
@@ -24,8 +28,7 @@ equalsButton.addEventListener('click', () => {
         const result = math.evaluate(display.value);
         display.value = result.toString();
         ans = result;
-    }
-    catch (error) {
+    } catch (error) {
         display.value = 'Error';
     }
 });
