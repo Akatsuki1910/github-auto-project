@@ -46,4 +46,9 @@ toggleKeypadButton.addEventListener('click', () => {
     const mainPad = document.querySelector('.main-pad') as HTMLDivElement;
     mainPad.style.display = mainPad.style.display === 'none' ? 'grid' : 'none';
 });
+const toggleHistoryButton = document.getElementById('toggle-history') as HTMLButtonElement;
+const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+toggleHistoryButton.addEventListener('click', () => {
+  historyDisplay.style.display = historyDisplay.style.display === 'none' ? 'block' : 'none';
+});
 // ... (Rest of the code)
