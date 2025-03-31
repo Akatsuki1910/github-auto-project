@@ -1,16 +1,10 @@
 // ... (Existing code)
-const modButton = document.getElementById('mod') as HTMLButtonElement;
-modButton.addEventListener('click', () => {
+const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
+expm1Button.addEventListener('click', () => {
     try {
-        const currentValue = parseFloat(display.value);
-        if (display.value.includes('%')) {
-            const percentageValue = currentValue / 100;
-            const baseValue = parseFloat(display.value.split('%')[0]);
-            display.value = (baseValue * percentageValue).toString();
-            ans = baseValue * percentageValue;
-        } else {
-            display.value += '%';
-        }
+        const result = math.expm1(parseFloat(display.value));
+        display.value = result.toString();
+        ans = result;
     } catch (error) {
         display.value = 'Error';
     }
@@ -44,6 +38,22 @@ inverseButton.addEventListener('click', () => {
         ans = result;
     }
     catch (error) {
+        display.value = 'Error';
+    }
+});
+const modButton = document.getElementById('mod') as HTMLButtonElement;
+modButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        if (display.value.includes('%')) {
+            const percentageValue = currentValue / 100;
+            const baseValue = parseFloat(display.value.split('%')[0]);
+            display.value = (baseValue * percentageValue).toString();
+            ans = baseValue * percentageValue;
+        } else {
+            display.value += '%';
+        }
+    } catch (error) {
         display.value = 'Error';
     }
 });
