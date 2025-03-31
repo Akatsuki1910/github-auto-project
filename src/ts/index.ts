@@ -1,8 +1,8 @@
 // ... (Existing code)
-const log1pButton = document.getElementById('log1p') as HTMLButtonElement;
-log1pButton.addEventListener('click', () => {
+const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
+expm1Button.addEventListener('click', () => {
     try {
-        const result = math.log1p(parseFloat(display.value));
+        const result = math.expm1(parseFloat(display.value));
         display.value = result.toString();
         ans = result;
     } catch (error) {
