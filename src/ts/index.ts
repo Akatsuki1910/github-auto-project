@@ -14,18 +14,22 @@ toggleColorSchemeButton.addEventListener('click', () => {
         button.style.backgroundColor = document.body.classList.contains('dark-scheme') ? '#777' : '#ddd';
         button.style.color = document.body.classList.contains('dark-scheme') ? '#eee' : '#333';
     });
+    //Added localStorage for theme
+     localStorage.setItem('theme', document.body.classList.contains('dark-scheme') ? 'dark-scheme' : 'light-scheme');
 });
 window.addEventListener('load', () => {
     const savedScheme = localStorage.getItem('color-scheme');
+    const savedTheme = localStorage.getItem('theme'); // Retrieve saved theme
+        if (savedTheme) {
+            document.body.classList.add(savedTheme);
+             document.body.classList.remove(savedTheme === 'dark-scheme' ? 'light-scheme' : 'dark-scheme');
+            toggleColorSchemeButton.textContent = savedTheme === 'dark-scheme' ? 'Light Mode' : 'Dark Mode';
+        }
     if (savedScheme === 'dark') {
-        document.body.classList.add('dark-scheme');
-        document.body.classList.remove('light-scheme');
-        toggleColorSchemeButton.textContent = 'Light Mode';
+        // ...
     }
     else {
-        document.body.classList.add('light-scheme');
-        document.body.classList.remove('dark-scheme');
-        toggleColorSchemeButton.textContent = 'Dark Mode';
+       // ...
     }
     const display = document.getElementById('display') as HTMLInputElement;
     display.style.backgroundColor = document.body.classList.contains('dark-scheme') ? '#555' : '#fff';
