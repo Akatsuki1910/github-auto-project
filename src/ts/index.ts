@@ -24,4 +24,9 @@ memoryMinusButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     memoryValue -= parseFloat(display.value);
 });
+const modButton = document.getElementById('mod') as HTMLButtonElement;
+modButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value += '%';
+});
 // ... (Rest of the code)
