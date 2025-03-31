@@ -1,4 +1,15 @@
 // ... (Existing code)
+const toggleBasicScientificButton = document.getElementById('toggle-basic-scientific') as HTMLButtonElement;
+toggleBasicScientificButton.addEventListener('click', () => {
+    const scientificPad = document.getElementById('scientific-pad') as HTMLDivElement;
+    if (scientificPad.style.display === 'none') {
+        scientificPad.style.display = 'grid';
+        toggleBasicScientificButton.textContent = 'Basic';
+    } else {
+        scientificPad.style.display = 'none';
+        toggleBasicScientificButton.textContent = 'Scientific';
+    }
+});
 const toggleFullscreenButton = document.getElementById('toggle-fullscreen') as HTMLButtonElement;
 toggleFullscreenButton.addEventListener('click', () => {
     if (document.fullscreenElement) {
