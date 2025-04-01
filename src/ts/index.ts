@@ -1,4 +1,12 @@
 // ... (Existing code)
+const avgButton = document.getElementById('avg') as HTMLButtonElement;
+avgButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const numbers = display.value.split(',').map(Number);
+    const sum = numbers.reduce((a, b) => a + b, 0);
+    const avg = sum / numbers.length;
+    display.value = avg.toString();
+});
 const sumButton = document.getElementById('sum') as HTMLButtonElement;
 sumButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
