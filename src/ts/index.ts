@@ -1,7 +1,7 @@
 // ... (Existing code)
-const eButton = document.getElementById('e') as HTMLButtonElement;
-eButton.addEventListener('click', () => {
+const goldenRatioButton = document.getElementById('golden-ratio') as HTMLButtonElement;
+goldenRatioButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    display.value += Math.E;
+    display.value += (1 + Math.sqrt(5)) / 2;
 });
 // ... (Rest of the code)
