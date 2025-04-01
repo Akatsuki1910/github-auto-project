@@ -1,4 +1,11 @@
 // ... (Existing code)
+const sumButton = document.getElementById('sum') as HTMLButtonElement;
+sumButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const numbers = display.value.split(',').map(Number);
+    const sum = numbers.reduce((a, b) => a + b, 0);
+    display.value = sum.toString();
+});
 const fibButton = document.getElementById('fib') as HTMLButtonElement;
 fibButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
@@ -8,7 +15,7 @@ fibButton.addEventListener('click', () => {
     }
     display.value = fibonacci(n).toString();
 });
-function fibonacci(n: number): number {
+function fibonacci(n) {
     if (n <= 1) {
         return n;
     }
