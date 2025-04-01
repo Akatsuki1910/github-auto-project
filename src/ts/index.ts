@@ -1,13 +1,13 @@
 // ... (Existing code)
-const roundToNButton = document.getElementById('round-to-n') as HTMLButtonElement;
-roundToNButton.addEventListener('click', () => {
+const truncateButton = document.getElementById('truncate') as HTMLButtonElement;
+truncateButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const [number, decimalPlaces] = display.value.split(',').map(Number);
-    if (isNaN(number) || isNaN(decimalPlaces)) {
-        display.value = 'Error: Enter number,decimalPlaces';
+    const number = parseFloat(display.value);
+    if (isNaN(number)) {
+        display.value = 'Error: Invalid number';
         return;
     }
-    const roundedNumber = math.round(number, decimalPlaces);
-    display.value = roundedNumber.toString();
+    const truncatedNumber = math.trunc(number);
+    display.value = truncatedNumber.toString();
 });
 // ... (Rest of the code)
