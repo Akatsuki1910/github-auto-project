@@ -1,14 +1,13 @@
 // ... (Existing code)
-const calculateTriangleAreaButton = document.getElementById('calculate-triangle-area') as HTMLButtonElement;
-calculateTriangleAreaButton.addEventListener('click', () => {
+const calculateCircleCircumferenceButton = document.getElementById('calculate-circle-circumference') as HTMLButtonElement;
+calculateCircleCircumferenceButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const base = parseFloat(prompt('Enter the base:', '1'));
-    const height = parseFloat(prompt('Enter the height:', '1'));
-    if (isNaN(base) || isNaN(height)) {
+    const radius = parseFloat(prompt('Enter the radius:', '1'));
+    if (isNaN(radius)) {
         display.value = 'Error: Invalid input';
         return;
     }
-    const area = 0.5 * base * height;
-    display.value = area.toString();
+    const circumference = 2 * Math.PI * radius;
+    display.value = circumference.toString();
 });
 // ... (Rest of the code)
