@@ -1,4 +1,15 @@
 // ... (Existing code)
+const maxButton = document.getElementById('max') as HTMLButtonElement;
+maxButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const numbers = display.value.split(',').map(Number);
+    if (numbers.length < 2) {
+        display.value = 'Error: Enter at least two numbers separated by commas.';
+        return;
+    }
+    display.value = Math.max(...numbers).toString();
+});
+
 const minButton = document.getElementById('min') as HTMLButtonElement;
 minButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
