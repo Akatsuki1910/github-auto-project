@@ -1,13 +1,13 @@
 // ... (Existing code)
-const productAllButton = document.getElementById('product-all') as HTMLButtonElement;
-productAllButton.addEventListener('click', () => {
+const roundToNButton = document.getElementById('round-to-n') as HTMLButtonElement;
+roundToNButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const numbers = display.value.split(',').map(Number);
-    if (numbers.length < 1) {
-        display.value = 'Error: Enter at least one number separated by commas.';
+    const [number, decimalPlaces] = display.value.split(',').map(Number);
+    if (isNaN(number) || isNaN(decimalPlaces)) {
+        display.value = 'Error: Enter number,decimalPlaces';
         return;
     }
-    const product = numbers.reduce((acc, curr) => acc * curr, 1);
-    display.value = product.toString();
+    const roundedNumber = math.round(number, decimalPlaces);
+    display.value = roundedNumber.toString();
 });
 // ... (Rest of the code)
