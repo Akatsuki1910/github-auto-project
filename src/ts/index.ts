@@ -1,12 +1,7 @@
 // ... (Existing code)
-const absButton = document.getElementById('abs') as HTMLButtonElement;
-absButton.addEventListener('click', () => {
+const eButton = document.getElementById('e') as HTMLButtonElement;
+eButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    try {
-        const result = math.abs(eval(display.value));
-        display.value = result.toString();
-    } catch (error) {
-        display.value = 'Error';
-    }
+    display.value += Math.E;
 });
 // ... (Rest of the code)
