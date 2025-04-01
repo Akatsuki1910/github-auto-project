@@ -1,14 +1,14 @@
 // ... (Existing code)
-const calculateRectangleAreaButton = document.getElementById('calculate-rectangle-area') as HTMLButtonElement;
-calculateRectangleAreaButton.addEventListener('click', () => {
+const calculateTriangleAreaButton = document.getElementById('calculate-triangle-area') as HTMLButtonElement;
+calculateTriangleAreaButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const length = parseFloat(prompt('Enter the length:', '1'));
-    const width = parseFloat(prompt('Enter the width:', '1'));
-    if (isNaN(length) || isNaN(width)) {
+    const base = parseFloat(prompt('Enter the base:', '1'));
+    const height = parseFloat(prompt('Enter the height:', '1'));
+    if (isNaN(base) || isNaN(height)) {
         display.value = 'Error: Invalid input';
         return;
     }
-    const area = length * width;
+    const area = 0.5 * base * height;
     display.value = area.toString();
 });
 // ... (Rest of the code)
