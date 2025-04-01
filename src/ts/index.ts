@@ -1,15 +1,14 @@
 // ... (Existing code)
-const calculateCuboidVolumeButton = document.getElementById('calculate-cuboid-volume') as HTMLButtonElement;
-calculateCuboidVolumeButton.addEventListener('click', () => {
+const calculatePyramidVolumeButton = document.getElementById('calculate-pyramid-volume') as HTMLButtonElement;
+calculatePyramidVolumeButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const length = parseFloat(prompt('Enter the length:', '1'));
-    const width = parseFloat(prompt('Enter the width:', '1'));
+    const baseArea = parseFloat(prompt('Enter the base area:', '1'));
     const height = parseFloat(prompt('Enter the height:', '1'));
-    if (isNaN(length) || isNaN(width) || isNaN(height)) {
+    if (isNaN(baseArea) || isNaN(height)) {
         display.value = 'Error: Invalid input';
         return;
     }
-    const volume = length * width * height;
+    const volume = (1/3) * baseArea * height;
     display.value = volume.toString();
 });
 // ... (Rest of the code)
