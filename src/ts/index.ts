@@ -7,4 +7,8 @@ const toggleItalicButton = document.getElementById('toggle-italic') as HTMLButto
 toggleItalicButton.addEventListener('click', () => {
     document.body.classList.toggle('italic-text');
 });
+const toggleUnderlineButton = document.getElementById('toggle-underline') as HTMLButtonElement;
+toggleUnderlineButton.addEventListener('click', () => {
+    document.body.classList.toggle('underline-text');
+});
 // ... (Rest of the code)
