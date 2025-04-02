@@ -7,3 +7,12 @@ body.dark-scheme button {
     background-color: #555;
     color: #eee;
 }
+body.high-contrast {
+    background-color: black;
+    color: white;
+}
+body.high-contrast button {
+    background-color: #007bff; /* Example high contrast button color */
+    color: white;
+    border: 2px solid yellow; /* Example high contrast border */
+}
