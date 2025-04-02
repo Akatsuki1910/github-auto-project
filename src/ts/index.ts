@@ -1,12 +1,12 @@
 // ... (Existing code)
-const quarterButton = document.getElementById('quarter') as HTMLButtonElement;
-quarterButton.addEventListener('click', () => {
+const reciprocalButton = document.getElementById('inverse') as HTMLButtonElement;
+reciprocalButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const num = parseFloat(display.value);
-    if (isNaN(num)) {
+    const currentValue = parseFloat(display.value);
+    if (isNaN(currentValue) || currentValue === 0) {
         display.value = 'Error: Invalid input';
         return;
     }
-    display.value = (num * 0.25).toString();
+    display.value = (1 / currentValue).toString();
 });
 // ... (Rest of the code)
