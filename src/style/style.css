@@ -19,3 +19,6 @@ body.high-contrast button {
 body.dyslexia-mode {
     font-family: 'OpenDyslexic', sans-serif;
 }
+body.large-font {
+    font-size: 2em;
+}
