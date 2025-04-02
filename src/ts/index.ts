@@ -1,4 +1,9 @@
 // ... (Existing code)
+const toggleThemeButton = document.getElementById('toggle-light-dark') as HTMLButtonElement;
+toggleThemeButton.addEventListener('click', () => {
+    document.body.classList.toggle('light-scheme');
+    document.body.classList.toggle('dark-scheme');
+});
 const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
 duplicateButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
