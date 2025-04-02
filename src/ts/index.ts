@@ -19,4 +19,14 @@ isOddButton.addEventListener('click', () => {
     }
     display.value = (num % 2 !== 0).toString();
 });
+const tripleButton = document.getElementById('triple') as HTMLButtonElement;
+tripleButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = 'Error: Invalid input';
+        return;
+    }
+    display.value = (num * 3).toString();
+});
 // ... (Rest of the code)
