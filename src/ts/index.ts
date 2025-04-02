@@ -23,4 +23,8 @@ const toggleDyslexiaModeButton = document.getElementById('toggle-dyslexia-mode')
 toggleDyslexiaModeButton.addEventListener('click', () => {
     document.body.classList.toggle('dyslexia-mode');
 });
+const toggleLargeFontButton = document.getElementById('toggle-large-font') as HTMLButtonElement;
+toggleLargeFontButton.addEventListener('click', () => {
+    document.body.classList.toggle('large-font');
+});
 // ... (Rest of the code)
