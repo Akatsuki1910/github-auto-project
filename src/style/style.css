@@ -1,4 +1,4 @@
 /* ... (Existing styles) */
-body.italic-mode {
-    font-style: italic;
+body.bold-text {
+    font-weight: bold;
 }

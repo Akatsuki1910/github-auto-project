@@ -1,6 +1,6 @@
 // ... (Existing code)
-const toggleItalicModeButton = document.getElementById('toggle-italic-mode') as HTMLButtonElement;
-toggleItalicModeButton.addEventListener('click', () => {
-    document.body.classList.toggle('italic-mode');
+const toggleBoldButton = document.getElementById('toggle-bold') as HTMLButtonElement;
+toggleBoldButton.addEventListener('click', () => {
+    document.body.classList.toggle('bold-text');
 });
 // ... (Rest of the code)
