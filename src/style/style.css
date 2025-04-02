@@ -1,4 +1,4 @@
 /* ... (Existing styles) */
-body.underline-mode {
-    text-decoration: underline;
+body.italic-mode {
+    font-style: italic;
 }
