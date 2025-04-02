@@ -19,4 +19,14 @@ toggleCurrentExpressionDisplayButton.addEventListener('click', () => {
         currentExpressionDisplay.style.display = 'none';
     }
 });
+const toggleMainPadButton = document.getElementById('toggle-main-pad') as HTMLButtonElement;
+const mainPad = document.querySelector('.main-pad') as HTMLDivElement;
+toggleMainPadButton.addEventListener('click', () => {
+    if (mainPad.style.display === 'none') {
+        mainPad.style.display = 'grid';
+    }
+    else {
+        mainPad.style.display = 'none';
+    }
+});
 // ... (Rest of the code)
