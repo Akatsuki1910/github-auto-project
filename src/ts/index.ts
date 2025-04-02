@@ -19,4 +19,8 @@ const toggleHighContrastButton = document.getElementById('toggle-high-contrast')
 toggleHighContrastButton.addEventListener('click', () => {
     document.body.classList.toggle('high-contrast');
 });
+const toggleDyslexiaModeButton = document.getElementById('toggle-dyslexia-mode') as HTMLButtonElement;
+toggleDyslexiaModeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dyslexia-mode');
+});
 // ... (Rest of the code)

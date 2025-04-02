@@ -16,3 +16,6 @@ body.high-contrast button {
     color: white;
     border: 2px solid yellow; /* Example high contrast border */
 }
+body.dyslexia-mode {
+    font-family: 'OpenDyslexic', sans-serif;
+}
