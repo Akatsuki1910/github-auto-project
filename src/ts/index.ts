@@ -1,6 +1,6 @@
 // ... (Existing code)
-const toggleInvertedModeButton = document.getElementById('toggle-inverted-mode') as HTMLButtonElement;
-toggleInvertedModeButton.addEventListener('click', () => {
-    document.body.classList.toggle('inverted-mode');
+const toggleUnderlineModeButton = document.getElementById('toggle-underline-mode') as HTMLButtonElement;
+toggleUnderlineModeButton.addEventListener('click', () => {
+    document.body.classList.toggle('underline-mode');
 });
 // ... (Rest of the code)
