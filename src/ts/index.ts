@@ -1,4 +1,19 @@
 // ... (Existing code)
+const squareRootButton = document.getElementById('square-root') as HTMLButtonElement;
+squareRootButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = 'Error: Invalid input';
+        return;
+    }
+    if (num < 0) {
+        display.value = 'Error: Cannot calculate square root of negative number';
+    }
+    else {
+        display.value = Math.sqrt(num).toString();
+    }
+});
 const halfButton = document.getElementById('half') as HTMLButtonElement;
 halfButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
