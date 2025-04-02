@@ -1,32 +1,12 @@
 // ... (Existing code)
-const toggleThemeButton = document.getElementById('toggle-light-dark') as HTMLButtonElement;
-toggleThemeButton.addEventListener('click', () => {
-    document.body.classList.toggle('light-scheme');
-    document.body.classList.toggle('dark-scheme');
-});
-const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
-duplicateButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
-    const currentValue = display.value;
-    if (currentValue) {
-        currentExpressionDisplay.textContent = currentValue;
-        display.value = currentValue;
-    }
-});
-const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
-clearHistoryButton.addEventListener('click', () => {
-    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
-    historyDisplay.innerHTML = '';
-});
-const toggleCalculatorButton = document.getElementById('toggle-calculator') as HTMLButtonElement;
-const calculatorDiv = document.getElementById('calculator') as HTMLDivElement;
-toggleCalculatorButton.addEventListener('click', () => {
-    if (calculatorDiv.style.display === 'none') {
-        calculatorDiv.style.display = 'block';
+const toggleDisplayButton = document.getElementById('toggle-display') as HTMLButtonElement;
+const displayInput = document.getElementById('display') as HTMLInputElement;
+toggleDisplayButton.addEventListener('click', () => {
+    if (displayInput.style.display === 'none') {
+        displayInput.style.display = 'block';
     }
     else {
-        calculatorDiv.style.display = 'none';
+        displayInput.style.display = 'none';
     }
 });
 // ... (Rest of the code)
