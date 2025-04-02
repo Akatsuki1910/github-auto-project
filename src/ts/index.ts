@@ -1,10 +1,7 @@
 // ... (Existing code)
-const absButton = document.getElementById('abs') as HTMLButtonElement;
-absButton.addEventListener('click', () => {
+const powerButton = document.getElementById('power') as HTMLButtonElement;
+powerButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.abs(currentValue).toString();
-    }
+    // Implement power functionality (x^y)
 });
 // ... (Rest of the code)
