@@ -14,4 +14,9 @@ duplicateButton.addEventListener('click', () => {
         display.value = currentValue;
     }
 });
+const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
+clearHistoryButton.addEventListener('click', () => {
+    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+    historyDisplay.innerHTML = '';
+});
 // ... (Rest of the code)
