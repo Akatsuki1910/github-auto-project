@@ -1,1 +1,9 @@
 /* ... (Existing styles) */
+body.dark-scheme {
+    background-color: #333;
+    color: #eee;
+}
+body.dark-scheme button {
+    background-color: #555;
+    color: #eee;
+}
