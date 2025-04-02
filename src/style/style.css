@@ -1,4 +1,4 @@
 /* ... (Existing styles) */
-body.inverted-mode {
-    filter: invert(100%);
+body.underline-mode {
+    text-decoration: underline;
 }
