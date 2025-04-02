@@ -9,4 +9,10 @@ toggleScientificPadButton.addEventListener('click', () => {
         scientificPad.style.display = 'none';
     }
 });
+const toggleDarkModeButton = document.getElementById('toggle-dark-mode') as HTMLButtonElement;
+document.body.classList.add('light-scheme'); // Initial theme
+toggleDarkModeButton.addEventListener('click', () => {
+    document.body.classList.toggle('light-scheme');
+    document.body.classList.toggle('dark-scheme');
+});
 // ... (Rest of the code)
