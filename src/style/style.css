@@ -1,24 +1,4 @@
 /* ... (Existing styles) */
-body.dark-scheme {
-    background-color: #333;
-    color: #eee;
-}
-body.dark-scheme button {
-    background-color: #555;
-    color: #eee;
-}
-body.high-contrast {
-    background-color: black;
-    color: white;
-}
-body.high-contrast button {
-    background-color: #007bff; /* Example high contrast button color */
-    color: white;
-    border: 2px solid yellow; /* Example high contrast border */
-}
-body.dyslexia-mode {
-    font-family: 'OpenDyslexic', sans-serif;
-}
-body.large-font {
-    font-size: 2em;
+body.colorblind-mode {
+    filter: grayscale(100%); /* Example colorblind filter */
 }
