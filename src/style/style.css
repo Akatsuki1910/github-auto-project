@@ -1,4 +1,4 @@
 /* ... (Existing styles) */
-body.sepia-mode {
-    filter: sepia(100%);
+body.vibrant-mode {
+    filter: saturate(150%);
 }
