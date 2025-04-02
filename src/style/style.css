@@ -2,3 +2,6 @@
 body.bold-text {
     font-weight: bold;
 }
+body.italic-text {
+    font-style: italic;
+}
