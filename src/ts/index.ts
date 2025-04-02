@@ -1,4 +1,14 @@
 // ... (Existing code)
+const halfButton = document.getElementById('half') as HTMLButtonElement;
+halfButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const num = parseFloat(display.value);
+    if (isNaN(num)) {
+        display.value = 'Error: Invalid input';
+        return;
+    }
+    display.value = (num * 0.5).toString();
+});
 const doubleButton = document.getElementById('double') as HTMLButtonElement;
 doubleButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
