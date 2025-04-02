@@ -1,6 +1,6 @@
 // ... (Existing code)
-const toggleUnderlineModeButton = document.getElementById('toggle-underline-mode') as HTMLButtonElement;
-toggleUnderlineModeButton.addEventListener('click', () => {
-    document.body.classList.toggle('underline-mode');
+const toggleItalicModeButton = document.getElementById('toggle-italic-mode') as HTMLButtonElement;
+toggleItalicModeButton.addEventListener('click', () => {
+    document.body.classList.toggle('italic-mode');
 });
 // ... (Rest of the code)
