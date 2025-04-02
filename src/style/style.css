@@ -1,4 +1,4 @@
 /* ... (Existing styles) */
-body.grayscale-mode {
-    filter: grayscale(100%);
+body.inverted-mode {
+    filter: invert(100%);
 }
