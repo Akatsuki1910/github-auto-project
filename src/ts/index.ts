@@ -19,4 +19,14 @@ clearHistoryButton.addEventListener('click', () => {
     const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
     historyDisplay.innerHTML = '';
 });
+const toggleCalculatorButton = document.getElementById('toggle-calculator') as HTMLButtonElement;
+const calculatorDiv = document.getElementById('calculator') as HTMLDivElement;
+toggleCalculatorButton.addEventListener('click', () => {
+    if (calculatorDiv.style.display === 'none') {
+        calculatorDiv.style.display = 'block';
+    }
+    else {
+        calculatorDiv.style.display = 'none';
+    }
+});
 // ... (Rest of the code)
