@@ -1,6 +1,6 @@
 // ... (Existing code)
-const toggleColorblindModeButton = document.getElementById('toggle-colorblind-mode') as HTMLButtonElement;
-toggleColorblindModeButton.addEventListener('click', () => {
-    document.body.classList.toggle('colorblind-mode');
+const toggleSepiaModeButton = document.getElementById('toggle-sepia-mode') as HTMLButtonElement;
+toggleSepiaModeButton.addEventListener('click', () => {
+    document.body.classList.toggle('sepia-mode');
 });
 // ... (Rest of the code)

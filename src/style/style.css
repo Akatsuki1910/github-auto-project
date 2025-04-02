@@ -1,4 +1,4 @@
 /* ... (Existing styles) */
-body.colorblind-mode {
-    filter: grayscale(100%); /* Example colorblind filter */
+body.sepia-mode {
+    filter: sepia(100%);
 }
