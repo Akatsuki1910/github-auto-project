@@ -1,4 +1,4 @@
 /* ... (Existing styles) */
-body.vibrant-mode {
-    filter: saturate(150%);
+body.grayscale-mode {
+    filter: grayscale(100%);
 }
