@@ -15,4 +15,8 @@ toggleDarkModeButton.addEventListener('click', () => {
     document.body.classList.toggle('light-scheme');
     document.body.classList.toggle('dark-scheme');
 });
+const toggleHighContrastButton = document.getElementById('toggle-high-contrast') as HTMLButtonElement;
+toggleHighContrastButton.addEventListener('click', () => {
+    document.body.classList.toggle('high-contrast');
+});
 // ... (Rest of the code)
