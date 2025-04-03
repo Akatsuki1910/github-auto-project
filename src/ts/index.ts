@@ -1,4 +1,10 @@
 // ... (Existing code)
+const currentTimestampButton = document.getElementById('current-timestamp') as HTMLButtonElement;
+currentTimestampButton.addEventListener('click', () => {
+    const timestamp = Date.now();
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = timestamp.toString();
+});
 const currentMillisecondButton = document.getElementById('current-millisecond') as HTMLButtonElement;
 currentMillisecondButton.addEventListener('click', () => {
     const today = new Date();
