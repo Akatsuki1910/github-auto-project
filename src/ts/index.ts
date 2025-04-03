@@ -38,4 +38,11 @@ currentDayButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = day.toString();
 });
+const currentWeekButton = document.getElementById('current-week') as HTMLButtonElement;
+currentWeekButton.addEventListener('click', () => {
+  const today = new Date();
+  const week = today.getDay();
+  const display = document.getElementById('display') as HTMLInputElement;
+  display.value = week.toString();
+});
 // ... (Rest of the code)
