@@ -1,26 +1,12 @@
 // ... (Existing code)
-const currentTime24hButton = document.getElementById('current-time-24h') as HTMLButtonElement;
-currentTime24hButton.addEventListener('click', () => {
+const dayOfYearButton = document.getElementById('current-day-of-year') as HTMLButtonElement;
+dayOfYearButton.addEventListener('click', () => {
     const now = new Date();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
+    const start = new Date(now.getFullYear(), 0, 0);
+    const diff = now - start;
+    const oneDay = 1000 * 60 * 60 * 24;
+    const dayOfYear = Math.floor(diff / oneDay);
     const display = document.getElementById('display') as HTMLInputElement;
-    display.value = `${hours}:${minutes}`;
-});
-
-const secondsSinceEpochButton = document.getElementById('current-seconds-since-epoch') as HTMLButtonElement;
-secondsSinceEpochButton.addEventListener('click', () => {
-  const now = new Date();
-  const seconds = Math.floor(now.getTime() / 1000);
-  const display = document.getElementById('display') as HTMLInputElement;
-  display.value = seconds.toString();
-});
-
-const millisecondsSinceEpochButton = document.getElementById('current-time-milliseconds-since-epoch') as HTMLButtonElement;
-millisecondsSinceEpochButton.addEventListener('click', () => {
-    const now = new Date();
-    const milliseconds = now.getTime();
-    const display = document.getElementById('display') as HTMLInputElement;
-    display.value = milliseconds.toString();
+    display.value = dayOfYear.toString();
 });
 // ... (Rest of the code)
