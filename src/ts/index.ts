@@ -31,4 +31,11 @@ currentMonthButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = month.toString();
 });
+const currentDayButton = document.getElementById('current-day') as HTMLButtonElement;
+currentDayButton.addEventListener('click', () => {
+    const today = new Date();
+    const day = today.getDate();
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = day.toString();
+});
 // ... (Rest of the code)
