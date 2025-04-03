@@ -24,4 +24,8 @@ memoryMinusButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     memoryValue -= parseFloat(display.value);
 });
+const memoryDisplayButton = document.getElementById('memory-display') as HTMLButtonElement;
+memoryDisplayButton.addEventListener('click', () => {
+    alert(`Memory: ${memoryValue}`);
+});
 // ... (Rest of the code)
