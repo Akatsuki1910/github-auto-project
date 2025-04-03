@@ -1,4 +1,10 @@
 // ... (Existing code)
+const percentageButton = document.getElementById('percentage') as HTMLButtonElement;
+percentageButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = (currentValue / 100).toString();
+});
 let memoryValue = 0;
 const memoryStoreButton = document.getElementById('memory-store') as HTMLButtonElement;
 memoryStoreButton.addEventListener('click', () => {
