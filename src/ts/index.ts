@@ -14,9 +14,16 @@ currentMillisecondButton.addEventListener('click', () => {
 });
 const timezoneButton = document.getElementById('current-timezone') as HTMLButtonElement;
 timezoneButton.addEventListener('click', () => {
-  const today = new Date();
-  const timezoneOffset = today.getTimezoneOffset();
-  const display = document.getElementById('display') as HTMLInputElement;
-  display.value = timezoneOffset.toString();
+    const today = new Date();
+    const timezoneOffset = today.getTimezoneOffset();
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = timezoneOffset.toString();
+});
+const currentDayOfWeekButton = document.getElementById('current-day-of-week') as HTMLButtonElement;
+currentDayOfWeekButton.addEventListener('click', () => {
+    const today = new Date();
+    const dayOfWeek = today.getDay();
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = dayOfWeek.toString();
 });
 // ... (Rest of the code)
