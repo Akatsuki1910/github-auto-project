@@ -15,4 +15,12 @@ secondsSinceEpochButton.addEventListener('click', () => {
   const display = document.getElementById('display') as HTMLInputElement;
   display.value = seconds.toString();
 });
+
+const millisecondsSinceEpochButton = document.getElementById('current-time-milliseconds-since-epoch') as HTMLButtonElement;
+millisecondsSinceEpochButton.addEventListener('click', () => {
+    const now = new Date();
+    const milliseconds = now.getTime();
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = milliseconds.toString();
+});
 // ... (Rest of the code)
