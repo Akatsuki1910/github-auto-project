@@ -8,3 +8,6 @@ body.italic-text {
 body.underline-text {
     text-decoration: underline;
 }
+body.strikethrough-text {
+    text-decoration: line-through;
+}

@@ -11,4 +11,8 @@ const toggleUnderlineButton = document.getElementById('toggle-underline') as HTM
 toggleUnderlineButton.addEventListener('click', () => {
     document.body.classList.toggle('underline-text');
 });
+const toggleStrikethroughButton = document.getElementById('toggle-strikethrough') as HTMLButtonElement;
+toggleStrikethroughButton.addEventListener('click', () => {
+    document.body.classList.toggle('strikethrough-text');
+});
 // ... (Rest of the code)
