@@ -40,9 +40,16 @@ currentDayButton.addEventListener('click', () => {
 });
 const currentWeekButton = document.getElementById('current-week') as HTMLButtonElement;
 currentWeekButton.addEventListener('click', () => {
-  const today = new Date();
-  const week = today.getDay();
-  const display = document.getElementById('display') as HTMLInputElement;
-  display.value = week.toString();
+    const today = new Date();
+    const week = today.getDay();
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = week.toString();
+});
+const currentHourButton = document.getElementById('current-hour') as HTMLButtonElement;
+currentHourButton.addEventListener('click', () => {
+    const today = new Date();
+    const hour = today.getHours();
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = hour.toString();
 });
 // ... (Rest of the code)
