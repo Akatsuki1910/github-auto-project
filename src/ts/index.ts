@@ -1,12 +1,12 @@
 // ... (Existing code)
-const dayOfYearButton = document.getElementById('current-day-of-year') as HTMLButtonElement;
-dayOfYearButton.addEventListener('click', () => {
+const weekNumberButton = document.getElementById('current-week-number') as HTMLButtonElement;
+weekNumberButton.addEventListener('click', () => {
     const now = new Date();
-    const start = new Date(now.getFullYear(), 0, 0);
-    const diff = now - start;
-    const oneDay = 1000 * 60 * 60 * 24;
-    const dayOfYear = Math.floor(diff / oneDay);
+    const startOfYear = new Date(now.getFullYear(), 0, 1);
+    const diff = now.getTime() - startOfYear.getTime();
+    const oneWeek = 1000 * 60 * 60 * 24 * 7;
+    const weekNumber = Math.ceil(diff / oneWeek);
     const display = document.getElementById('display') as HTMLInputElement;
-    display.value = dayOfYear.toString();
+    display.value = weekNumber.toString();
 });
 // ... (Rest of the code)
