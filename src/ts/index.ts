@@ -16,4 +16,12 @@ currentDateButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = dateString;
 });
+
+const currentYearButton = document.getElementById('current-year') as HTMLButtonElement;
+currentYearButton.addEventListener('click', () => {
+    const today = new Date();
+    const year = today.getFullYear();
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = year.toString();
+});
 // ... (Rest of the code)
