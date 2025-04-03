@@ -24,4 +24,11 @@ currentYearButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = year.toString();
 });
+const currentMonthButton = document.getElementById('current-month') as HTMLButtonElement;
+currentMonthButton.addEventListener('click', () => {
+    const today = new Date();
+    const month = today.getMonth() + 1; // getMonth()は0から始まる
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = month.toString();
+});
 // ... (Rest of the code)
