@@ -7,4 +7,12 @@ currentTime24hButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = `${hours}:${minutes}`;
 });
+
+const secondsSinceEpochButton = document.getElementById('current-seconds-since-epoch') as HTMLButtonElement;
+secondsSinceEpochButton.addEventListener('click', () => {
+  const now = new Date();
+  const seconds = Math.floor(now.getTime() / 1000);
+  const display = document.getElementById('display') as HTMLInputElement;
+  display.value = seconds.toString();
+});
 // ... (Rest of the code)
