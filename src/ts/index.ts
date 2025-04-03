@@ -1,9 +1,9 @@
 // ... (Existing code)
-const currentSecondButton = document.getElementById('current-second') as HTMLButtonElement;
-currentSecondButton.addEventListener('click', () => {
+const currentMillisecondButton = document.getElementById('current-millisecond') as HTMLButtonElement;
+currentMillisecondButton.addEventListener('click', () => {
     const today = new Date();
-    const second = today.getSeconds();
+    const millisecond = today.getMilliseconds();
     const display = document.getElementById('display') as HTMLInputElement;
-    display.value = second.toString();
+    display.value = millisecond.toString();
 });
 // ... (Rest of the code)
