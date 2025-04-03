@@ -1,8 +1,8 @@
 // ... (Existing code)
-const currentDateISOButton = document.getElementById('current-date-iso') as HTMLButtonElement;
-currentDateISOButton.addEventListener('click', () => {
+const currentDateUTCButton = document.getElementById('current-date-utc') as HTMLButtonElement;
+currentDateUTCButton.addEventListener('click', () => {
     const now = new Date();
     const display = document.getElementById('display') as HTMLInputElement;
-    display.value = now.toISOString();
+    display.value = now.toUTCString();
 });
 // ... (Rest of the code)
