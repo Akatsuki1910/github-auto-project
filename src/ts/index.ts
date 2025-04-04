@@ -1,10 +1,10 @@
 // ... (Existing code)
-const cubedButton = document.getElementById('cubed') as HTMLButtonElement;
-cubedButton.addEventListener('click', () => {
+const fourthButton = document.getElementById('fourth') as HTMLButtonElement;
+fourthButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
         const currentValue = parseFloat(display.value);
-        display.value = (currentValue * currentValue * currentValue).toString();
+        display.value = (currentValue * currentValue * currentValue * currentValue).toString();
     } catch (error) {
         display.value = "Error";
     }
