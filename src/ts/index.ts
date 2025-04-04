@@ -1,15 +1,17 @@
 // ... (Existing code)
-const averageButton = document.getElementById('average') as HTMLButtonElement;
-averageButton.addEventListener('click', () => {
+const medianButton = document.getElementById('median') as HTMLButtonElement;
+medianButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
     try {
-        // For simplicity, we'll average a fixed array of numbers. In a real application, you would likely get these from user input.
-        const numbers = [1, 2, 3, 4, 5];
-        const sum = numbers.reduce((a, b) => a + b, 0);
-        const average = sum / numbers.length;
-        currentExpressionDisplay.textContent = `avg(${numbers.join(', ')})`;
-        display.value = average.toString();
+        // Example array of numbers
+        const numbers = [5, 2, 8, 1, 9, 4];
+        // Sort the array to find the median
+        const sortedNumbers = numbers.slice().sort((a, b) => a - b);
+        const mid = Math.floor(sortedNumbers.length / 2);
+        const median = sortedNumbers.length % 2 === 0 ? (sortedNumbers[mid - 1] + sortedNumbers[mid]) / 2 : sortedNumbers[mid];
+        currentExpressionDisplay.textContent = `median(${numbers.join(', ')})`;
+        display.value = median.toString();
     }
     catch (error) {
         display.value = "Error";
