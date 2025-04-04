@@ -1,13 +1,13 @@
 // ... (Existing code)
-const minButton = document.getElementById('min') as HTMLButtonElement;
-minButton.addEventListener('click', () => {
+const sumButton = document.getElementById('sum') as HTMLButtonElement;
+sumButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
     try {
-        const currentValue = parseFloat(display.value);
-        // Min requires at least two arguments. For simplicity, we'll use the current value and a fixed value (e.g., 5).
-        const result = Math.min(currentValue, 5);
-        currentExpressionDisplay.textContent = `min(${currentValue}, 5)`;
+        // For simplicity, we'll sum a fixed array of numbers.  In a real application, you would likely get these from user input.
+        const numbers = [1, 2, 3, 4, 5];
+        const result = numbers.reduce((a, b) => a + b, 0);
+        currentExpressionDisplay.textContent = `sum(${numbers.join(', ')})`;
         display.value = result.toString();
     }
     catch (error) {
