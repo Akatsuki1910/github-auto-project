@@ -1,10 +1,10 @@
 // ... (Existing code)
-const fourthButton = document.getElementById('fourth') as HTMLButtonElement;
-fourthButton.addEventListener('click', () => {
+const fifthButton = document.getElementById('fifth') as HTMLButtonElement;
+fifthButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
         const currentValue = parseFloat(display.value);
-        display.value = (currentValue * currentValue * currentValue * currentValue).toString();
+        display.value = Math.pow(currentValue, 5).toString();
     } catch (error) {
         display.value = "Error";
     }
