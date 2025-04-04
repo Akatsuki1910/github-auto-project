@@ -1,15 +1,13 @@
 // ... (Existing code)
-const harmonicMeanButton = document.getElementById('harmonic-mean') as HTMLButtonElement;
-harmonicMeanButton.addEventListener('click', () => {
+const gcdButton = document.getElementById('gcd') as HTMLButtonElement;
+gcdButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
     try {
-        const numbers = [2, 4, 8];
-        currentExpressionDisplay.textContent = `harmonic mean(${numbers.join(', ')})`;
-        const n = numbers.length;
-        const sumOfReciprocals = numbers.reduce((acc, num) => acc + (1 / num), 0);
-        const harmonicMean = n / sumOfReciprocals;
-        display.value = harmonicMean.toString();
+        const numbers = [12, 18, 24];
+        currentExpressionDisplay.textContent = `gcd(${numbers.join(', ')})`;
+        const gcdResult = math.gcd(...numbers);
+        display.value = gcdResult.toString();
     } catch (error) {
         display.value = "Error";
     }
