@@ -1,12 +1,12 @@
 // ... (Existing code)
-const log1pButton = document.getElementById('log1p') as HTMLButtonElement;
-log1pButton.addEventListener('click', () => {
+const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
+expm1Button.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
     try {
         const x = parseFloat(display.value);
-        const result = Math.log1p(x);
-        currentExpressionDisplay.textContent = `log1p(${x})`;
+        const result = Math.expm1(x);
+        currentExpressionDisplay.textContent = `expm1(${x})`;
         display.value = result.toString();
     }
     catch (error) {
