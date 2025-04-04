@@ -1,13 +1,12 @@
 // ... (Existing code)
-const modButton = document.getElementById('mod') as HTMLButtonElement;
-modButton.addEventListener('click', () => {
+const absButton = document.getElementById('abs') as HTMLButtonElement;
+absButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
     try {
         const currentValue = parseFloat(display.value);
-        const modulo = parseFloat(prompt("Enter the modulo value:", "2") || "2");
-        const result = currentValue % modulo;
-        currentExpressionDisplay.textContent = `${currentValue} % ${modulo}`;
+        const result = Math.abs(currentValue);
+        currentExpressionDisplay.textContent = `abs(${currentValue})`;
         display.value = result.toString();
     }
     catch (error) {
