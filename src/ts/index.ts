@@ -1,12 +1,12 @@
 // ... (Existing code)
-const asinhButton = document.getElementById('asinh') as HTMLButtonElement;
-asinhButton.addEventListener('click', () => {
+const acoshButton = document.getElementById('acosh') as HTMLButtonElement;
+acoshButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
     try {
         const x = parseFloat(display.value);
-        const result = Math.asinh(x);
-        currentExpressionDisplay.textContent = `asinh(${x})`;
+        const result = Math.acosh(x);
+        currentExpressionDisplay.textContent = `acosh(${x})`;
         display.value = result.toString();
     }
     catch (error) {
