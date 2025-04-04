@@ -1,13 +1,10 @@
 // ... (Existing code)
-const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
-inverseButton.addEventListener('click', () => {
+const doubleButton = document.getElementById('double') as HTMLButtonElement;
+doubleButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
     try {
         const currentValue = parseFloat(display.value);
-        currentExpressionDisplay.textContent = `1/(${currentValue})`;
-        const inverseResult = 1 / currentValue;
-        display.value = inverseResult.toString();
+        display.value = (currentValue * 2).toString();
     } catch (error) {
         display.value = "Error";
     }
