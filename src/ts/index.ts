@@ -1,17 +1,25 @@
 // ... (Existing code)
-const medianButton = document.getElementById('median') as HTMLButtonElement;
-medianButton.addEventListener('click', () => {
+const modeButton = document.getElementById('mode') as HTMLButtonElement;
+modeButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
     try {
-        // Example array of numbers
-        const numbers = [5, 2, 8, 1, 9, 4];
-        // Sort the array to find the median
-        const sortedNumbers = numbers.slice().sort((a, b) => a - b);
-        const mid = Math.floor(sortedNumbers.length / 2);
-        const median = sortedNumbers.length % 2 === 0 ? (sortedNumbers[mid - 1] + sortedNumbers[mid]) / 2 : sortedNumbers[mid];
-        currentExpressionDisplay.textContent = `median(${numbers.join(', ')})`;
-        display.value = median.toString();
+        const numbers = [1, 2, 2, 3, 3, 3, 4, 4, 4, 4];
+        const counts = {};
+        let maxCount = 0;
+        let modes = [];
+        for (const num of numbers) {
+            counts[num] = (counts[num] || 0) + 1;
+            if (counts[num] > maxCount) {
+                maxCount = counts[num];
+                modes = [num];
+            }
+            else if (counts[num] === maxCount) {
+                modes.push(num);
+            }
+        }
+        currentExpressionDisplay.textContent = `mode(${numbers.join(', ')})`;
+        display.value = modes.join(', ');
     }
     catch (error) {
         display.value = "Error";
