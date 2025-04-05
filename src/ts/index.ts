@@ -1,10 +1,7 @@
 // ... (Existing code)
-const roundButton = document.getElementById('round') as HTMLButtonElement;
-roundButton.addEventListener('click', () => {
+const randomButton = document.getElementById('random') as HTMLButtonElement;
+randomButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.round(currentValue).toString();
-    }
+    display.value = Math.random().toString();
 });
 // ... (Rest of the code)
