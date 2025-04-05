@@ -1,10 +1,10 @@
 // ... (Existing code)
-const signChangeButton = document.getElementById('sign-change') as HTMLButtonElement;
-signChangeButton.addEventListener('click', () => {
+const percentageButton = document.getElementById('percentage') as HTMLButtonElement;
+percentageButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
         const currentValue = parseFloat(display.value);
-        display.value = (-currentValue).toString();
+        display.value = (currentValue / 100).toString();
     } catch (error) {
         display.value = "Error";
     }
