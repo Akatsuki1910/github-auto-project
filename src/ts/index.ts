@@ -1,4 +1,10 @@
 // ... (Existing code)
+const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
+cubeRootButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = Math.cbrt(currentValue).toString();
+});
 const dupButton = document.getElementById('dup') as HTMLButtonElement;
 dupButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
