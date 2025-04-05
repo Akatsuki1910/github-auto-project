@@ -1,4 +1,16 @@
 // ... (Existing code)
+const logBaseButton = document.getElementById('logBase') as HTMLButtonElement;
+logBaseButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    try {
+        const base = parseFloat(prompt('Enter base:', '10'));
+        const value = parseFloat(display.value);
+        const result = Math.log(value) / Math.log(base);
+        display.value = result.toString();
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 const minButton = document.getElementById('min') as HTMLButtonElement;
 minButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
