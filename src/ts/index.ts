@@ -22,4 +22,15 @@ pow10Button.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+const exp2Button = document.getElementById('exp2') as HTMLButtonElement;
+exp2Button.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    try {
+        const value = parseFloat(display.value);
+        const result = Math.pow(2, value);
+        display.value = result.toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
 // ... (Rest of the code)
