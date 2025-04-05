@@ -17,4 +17,12 @@ tenPowerButton.addEventListener('click', () => {
         display.value = Math.pow(10, currentValue).toString();
     }
 });
+const logButton = document.getElementById('log') as HTMLButtonElement;
+logButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.log10(currentValue).toString();
+    }
+});
 // ... (Rest of the code)
