@@ -11,4 +11,15 @@ minButton.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+const pow10Button = document.getElementById('pow10') as HTMLButtonElement;
+pow10Button.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    try {
+        const value = parseFloat(display.value);
+        const result = Math.pow(10, value);
+        display.value = result.toString();
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 // ... (Rest of the code)
