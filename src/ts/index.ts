@@ -1,12 +1,12 @@
 // ... (Existing code)
-const avgButton = document.getElementById('average') as HTMLButtonElement;
-avgButton.addEventListener('click', () => {
+const medianButton = document.getElementById('median') as HTMLButtonElement;
+medianButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
-        const numbers = prompt('Enter numbers separated by commas:', '1,2,3').split(',').map(Number);
-        const sum = numbers.reduce((a, b) => a + b, 0);
-        const avg = sum / numbers.length;
-        display.value = avg.toString();
+        const numbers = prompt('Enter numbers separated by commas:', '1,2,3').split(',').map(Number).sort((a, b) => a - b);
+        const mid = Math.floor(numbers.length / 2);
+        const median = numbers.length % 2 === 0 ? (numbers[mid - 1] + numbers[mid]) / 2 : numbers[mid];
+        display.value = median.toString();
     } catch (error) {
         display.value = "Error";
     }
