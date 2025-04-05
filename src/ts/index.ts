@@ -1,8 +1,12 @@
 // ... (Existing code)
-const modButton = document.getElementById('mod') as HTMLButtonElement;
-modButton.addEventListener('click', () => {
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
+inverseButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentValue = parseFloat(display.value);
-    display.value = (currentValue % 2).toString();
+    if (currentValue !== 0) {
+        display.value = (1 / currentValue).toString();
+    } else {
+        display.value = "Error: Division by zero";
+    }
 });
 // ... (Rest of the code)
