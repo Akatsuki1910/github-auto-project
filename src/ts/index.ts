@@ -1,14 +1,14 @@
 // ... (Existing code)
-const nthRootButton = document.getElementById('nth-root') as HTMLButtonElement;
-nthRootButton.addEventListener('click', () => {
+const modButton = document.getElementById('mod') as HTMLButtonElement;
+modButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
         const currentValue = parseFloat(display.value);
-        const root = parseFloat(prompt('Enter the root (n):', '2')); // Default root is 2
-        if (isNaN(root)) {
-            display.value = "Invalid root";
+        const divisor = parseFloat(prompt('Enter the divisor:', '2'));
+        if (isNaN(divisor)) {
+            display.value = "Invalid divisor";
         } else {
-            display.value = math.nthRoot(currentValue, root).toString();
+            display.value = (currentValue % divisor).toString();
         }
     } catch (error) {
         display.value = "Error";
