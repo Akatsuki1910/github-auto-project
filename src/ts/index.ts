@@ -1,10 +1,10 @@
 // ... (Existing code)
-const tenthButton = document.getElementById('tenth') as HTMLButtonElement;
-tenthButton.addEventListener('click', () => {
+const signChangeButton = document.getElementById('sign-change') as HTMLButtonElement;
+signChangeButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
         const currentValue = parseFloat(display.value);
-        display.value = Math.pow(currentValue, 10).toString();
+        display.value = (-currentValue).toString();
     } catch (error) {
         display.value = "Error";
     }
