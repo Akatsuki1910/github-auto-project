@@ -1,6 +1,6 @@
 // ... (Existing code)
-const squaredButton = document.getElementById('squared') as HTMLButtonElement;
-squaredButton.addEventListener('click', () => {
+const cubedButton = document.getElementById('cubed') as HTMLButtonElement;
+cubedButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
         const value = parseFloat(display.value);
