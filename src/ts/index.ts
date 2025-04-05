@@ -1,9 +1,15 @@
 // ... (Existing code)
+const signChangeButton = document.getElementById('sign-change') as HTMLButtonElement;
+signChangeButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    display.value = (-currentValue).toString();
+});
 const powerButton = document.getElementById('power') as HTMLButtonElement;
 powerButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentValue = parseFloat(display.value);
-    display.value = Math.pow(currentValue,2).toString(); //とりあえず2乗
+    display.value = Math.pow(currentValue,2).toString(); 
 });
 const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
 cubeRootButton.addEventListener('click', () => {
