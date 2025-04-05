@@ -1,26 +1,10 @@
 // ... (Existing code)
-const signButton = document.getElementById('sign') as HTMLButtonElement;
-signButton.addEventListener('click', () => {
+const absButton = document.getElementById('abs') as HTMLButtonElement;
+absButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.sign(currentValue).toString();
-    }
-});
-const expButton = document.getElementById('exp') as HTMLButtonElement;
-expButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.exp(currentValue).toString();
-    }
-});
-const lnButton = document.getElementById('ln') as HTMLButtonElement;
-lnButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue > 0) {
-        display.value = Math.log(currentValue).toString();
+        display.value = Math.abs(currentValue).toString();
     }
 });
 // ... (Rest of the code)
