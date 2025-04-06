@@ -19,4 +19,12 @@ nthRootButton.addEventListener('click', () => {
     // For now, just calculate the square root.
     display.value = Math.sqrt(currentValue).toString();
 });
+const percentChangeButton = document.getElementById('percent-change') as HTMLButtonElement;
+percentChangeButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const currentValue = parseFloat(display.value);
+    // Calculate percentage change (assuming previous value is 100)
+    const percentageChange = ((currentValue - 100) / 100) * 100;
+    display.value = percentageChange.toString();
+});
 // ... (Rest of the code)
