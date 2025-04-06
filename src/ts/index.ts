@@ -1,6 +1,6 @@
 // ... (Existing code)
-const fourthPowerButton = document.getElementById('fourth-power') as HTMLButtonElement;
-fourthPowerButton.addEventListener('click', () => {
+const fifthPowerButton = document.getElementById('fifth-power') as HTMLButtonElement;
+fifthPowerButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const input = display.value;
     const number = Number(input);
@@ -8,7 +8,7 @@ fourthPowerButton.addEventListener('click', () => {
         display.value = 'Error';
         return;
     }
-    const fourthPower = number * number * number * number; // Added fourth power functionality
-    display.value = fourthPower.toString();
+    const fifthPower = Math.pow(number, 5);
+    display.value = fifthPower.toString();
 });
 // ... (Rest of the code)
