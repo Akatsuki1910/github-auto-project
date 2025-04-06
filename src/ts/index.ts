@@ -1,18 +1,20 @@
 // ... (Existing code)
-const fibonacciButton = document.getElementById('fibonacci') as HTMLButtonElement;
-fibonacciButton.addEventListener('click', () => {
+const gcdButton = document.getElementById('gcd') as HTMLButtonElement;
+gcdButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const n = parseInt(display.value);
-    if (isNaN(n) || n < 0) {
+    const input = display.value;
+    const numbers = input.split(',').map(Number);
+    if (numbers.some(isNaN)) {
         display.value = 'Error';
         return;
     }
-    let a = 0, b = 1;
-    for (let i = 0; i < n; i++) {
-        const temp = b;
-        b = a + b;
-        a = temp;
+    const gcd = (a: number, b: number): number => {
+        return b === 0 ? a : gcd(b, a % b);
+    };
+    let result = numbers[0];
+    for (let i = 1; i < numbers.length; i++) {
+        result = gcd(result, numbers[i]);
     }
-    display.value = a.toString();
+    display.value = result.toString();
 });
 // ... (Rest of the code)
