@@ -1,13 +1,13 @@
 // ... (Existing code)
-const logButton = document.getElementById('log') as HTMLButtonElement;
-logButton.addEventListener('click', () => {
+const naturalLogButton = document.getElementById('natural-log') as HTMLButtonElement;
+naturalLogButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
     try {
         const inputValue = display.value;
         if (inputValue) {
-            currentExpressionDisplay.textContent = `log(${inputValue})`;
-            const result = math.log10(Number(inputValue));
+            currentExpressionDisplay.textContent = `ln(${inputValue})`;
+            const result = math.log(Number(inputValue));
             display.value = result.toString();
         }
     }
