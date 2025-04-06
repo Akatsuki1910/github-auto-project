@@ -1,14 +1,14 @@
 // ... (Existing code)
-const halfButton = document.getElementById('half') as HTMLButtonElement;
-halfButton.addEventListener('click', () => {
+const inversePercentageButton = document.getElementById('inverse-percentage') as HTMLButtonElement;
+inversePercentageButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const input = display.value;
     const number = Number(input);
-    if (isNaN(number)) {
+    if (isNaN(number) || number === 0) {
         display.value = 'Error';
         return;
     }
-    const result = number * 0.5;
+    const result = 1 / (number /100);
     display.value = result.toString();
 });
 // ... (Rest of the code)
