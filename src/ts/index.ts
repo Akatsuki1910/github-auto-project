@@ -1,6 +1,6 @@
 // ... (Existing code)
-const truncButton = document.getElementById('trunc') as HTMLButtonElement;
-truncButton.addEventListener('click', () => {
+const roundToDecimalButton = document.getElementById('round-to-decimal') as HTMLButtonElement;
+roundToDecimalButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const input = display.value;
     const number = Number(input);
@@ -8,6 +8,11 @@ truncButton.addEventListener('click', () => {
         display.value = 'Error';
         return;
     }
-    display.value = Math.trunc(number).toString();
+    const decimalPlaces = prompt('Enter the number of decimal places:', '2');
+    if (decimalPlaces === null || isNaN(Number(decimalPlaces))) {
+        return;
+    }
+    const roundedNumber = number.toFixed(Number(decimalPlaces));
+    display.value = roundedNumber;
 });
 // ... (Rest of the code)
