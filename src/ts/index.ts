@@ -1,6 +1,6 @@
 // ... (Existing code)
-const gcdButton = document.getElementById('gcd') as HTMLButtonElement;
-gcdButton.addEventListener('click', () => {
+const lcmButton = document.getElementById('lcm') as HTMLButtonElement;
+lcmButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const input = display.value;
     const numbers = input.split(',').map(Number);
@@ -11,9 +11,12 @@ gcdButton.addEventListener('click', () => {
     const gcd = (a: number, b: number): number => {
         return b === 0 ? a : gcd(b, a % b);
     };
+    const lcm = (a: number, b: number): number => {
+        return (a * b) / gcd(a, b);
+    };
     let result = numbers[0];
     for (let i = 1; i < numbers.length; i++) {
-        result = gcd(result, numbers[i]);
+        result = lcm(result, numbers[i]);
     }
     display.value = result.toString();
 });
