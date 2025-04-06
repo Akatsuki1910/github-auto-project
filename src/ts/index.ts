@@ -36,4 +36,16 @@ cuberootButton.addEventListener('click', () => {
     const result = Math.cbrt(number);
     display.value = result.toString();
 });
+const inverseSquaredButton = document.getElementById('inverse-squared') as HTMLButtonElement;
+inverseSquaredButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const input = display.value;
+    const number = Number(input);
+    if (isNaN(number) || number === 0) {
+        display.value = 'Error';
+        return;
+    }
+    const result = 1 / (number * number);
+    display.value = result.toString();
+});
 // ... (Rest of the code)
