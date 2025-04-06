@@ -1,6 +1,6 @@
 // ... (Existing code)
-const maxArrayButton = document.getElementById('max-array') as HTMLButtonElement;
-maxArrayButton.addEventListener('click', () => {
+const minMaxButton = document.getElementById('min-max') as HTMLButtonElement;
+minMaxButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const input = display.value;
     const numbers = input.split(',').map(Number);
@@ -8,6 +8,6 @@ maxArrayButton.addEventListener('click', () => {
         display.value = 'Error';
         return;
     }
-    display.value = Math.max(...numbers).toString();
+    display.value = `Min: ${Math.min(...numbers)}, Max: ${Math.max(...numbers)}`;
 });
 // ... (Rest of the code)
