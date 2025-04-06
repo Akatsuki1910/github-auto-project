@@ -1,6 +1,6 @@
 // ... (Existing code)
-const fifthPowerButton = document.getElementById('fifth-power') as HTMLButtonElement;
-fifthPowerButton.addEventListener('click', () => {
+const tenthPowerButton = document.getElementById('tenth-power') as HTMLButtonElement;
+tenthPowerButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const input = display.value;
     const number = Number(input);
@@ -8,7 +8,7 @@ fifthPowerButton.addEventListener('click', () => {
         display.value = 'Error';
         return;
     }
-    const fifthPower = Math.pow(number, 5);
-    display.value = fifthPower.toString();
+    const tenthPower = Math.pow(number, 10);
+    display.value = tenthPower.toString();
 });
 // ... (Rest of the code)
