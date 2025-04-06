@@ -1,13 +1,13 @@
 // ... (Existing code)
-const minMaxButton = document.getElementById('min-max') as HTMLButtonElement;
-minMaxButton.addEventListener('click', () => {
+const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
+ceilButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const input = display.value;
-    const numbers = input.split(',').map(Number);
-    if (numbers.some(isNaN)) {
+    const number = Number(input);
+    if (isNaN(number)) {
         display.value = 'Error';
         return;
     }
-    display.value = `Min: ${Math.min(...numbers)}, Max: ${Math.max(...numbers)}`;
+    display.value = Math.ceil(number).toString();
 });
 // ... (Rest of the code)
