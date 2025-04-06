@@ -1,6 +1,6 @@
 // ... (Existing code)
-const squaredNegativeButton = document.getElementById('squared-negative') as HTMLButtonElement;
-squaredNegativeButton.addEventListener('click', () => {
+const squareRootNegativeButton = document.getElementById('square-root-negative') as HTMLButtonElement;
+squareRootNegativeButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const input = display.value;
     const number = Number(input);
@@ -8,7 +8,12 @@ squaredNegativeButton.addEventListener('click', () => {
         display.value = 'Error';
         return;
     }
-    const result = -Math.pow(number, 2);
+    if (number < 0) {
+        display.value = 'Error: Negative Input';
+        return;
+    }
+    const result = -Math.sqrt(number);
     display.value = result.toString();
 });
+
 // ... (Rest of the code)
