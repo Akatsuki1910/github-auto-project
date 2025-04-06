@@ -1,6 +1,6 @@
 // ... (Existing code)
-const tenthPowerButton = document.getElementById('tenth-power') as HTMLButtonElement;
-tenthPowerButton.addEventListener('click', () => {
+const log10Button = document.getElementById('log10') as HTMLButtonElement;
+log10Button.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const input = display.value;
     const number = Number(input);
@@ -8,7 +8,7 @@ tenthPowerButton.addEventListener('click', () => {
         display.value = 'Error';
         return;
     }
-    const tenthPower = Math.pow(number, 10);
-    display.value = tenthPower.toString();
+    const log10 = Math.log10(number);
+    display.value = log10.toString();
 });
 // ... (Rest of the code)
