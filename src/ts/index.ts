@@ -1,6 +1,6 @@
 // ... (Existing code)
-const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
-ceilButton.addEventListener('click', () => {
+const truncButton = document.getElementById('trunc') as HTMLButtonElement;
+truncButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const input = display.value;
     const number = Number(input);
@@ -8,6 +8,6 @@ ceilButton.addEventListener('click', () => {
         display.value = 'Error';
         return;
     }
-    display.value = Math.ceil(number).toString();
+    display.value = Math.trunc(number).toString();
 });
 // ... (Rest of the code)
