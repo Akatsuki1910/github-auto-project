@@ -1,10 +1,10 @@
 // ... (Existing code)
-const calculateCubeVolumeButton = document.getElementById('calculate-cube-volume') as HTMLButtonElement;
-calculateCubeVolumeButton.addEventListener('click', () => {
+const calculateSquareButton = document.getElementById('calculate-square') as HTMLButtonElement;
+calculateSquareButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
-        const side = parseFloat(prompt('Enter the side length:') || '0');
-        display.value = Math.pow(side, 3).toString();
+        const num = parseFloat(display.value);
+        display.value = Math.pow(num, 2).toString();
     } catch (e) {
         display.value = 'Error';
     }
