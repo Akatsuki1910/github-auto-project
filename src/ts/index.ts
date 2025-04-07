@@ -1,13 +1,12 @@
 // ... (Existing code)
-const calculateHypotenuseButton = document.getElementById('calculate-hypotenuse') as HTMLButtonElement;
-calculateHypotenuseButton.addEventListener('click', () => {
+const calculateCircleAreaButton = document.getElementById('calculate-circle-area') as HTMLButtonElement;
+calculateCircleAreaButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const a = parseFloat(prompt('Enter side a:') || '0');
-    const b = parseFloat(prompt('Enter side b:') || '0');
-    if (isNaN(a) || isNaN(b)) {
+    const radius = parseFloat(prompt('Enter the radius:') || '0');
+    if (isNaN(radius)) {
         display.value = 'Error';
     } else {
-        display.value = Math.sqrt(a * a + b * b).toString();
+        display.value = (Math.PI * radius * radius).toString();
     }
 });
 // ... (Rest of the code)
