@@ -9,4 +9,14 @@ calculateAreaButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+const calculateCircumferenceButton = document.getElementById('calculate-circumference') as HTMLButtonElement;
+calculateCircumferenceButton.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  try {
+    const radius = parseFloat(display.value);
+    display.value = (2 * Math.PI * radius).toString();
+  } catch (e) {
+    display.value = 'Error';
+  }
+});
 // ... (Rest of the code)
