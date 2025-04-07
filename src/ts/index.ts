@@ -42,4 +42,15 @@ percentButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
+inverseButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = (1 / currentValue).toString();
+    }
+    catch (e) {
+        display.value = 'Error';
+    }
+});
 // ... (Rest of the code)
