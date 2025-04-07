@@ -11,4 +11,15 @@ modButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+const doubleButton = document.getElementById('double') as HTMLButtonElement;
+doubleButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = (currentValue * 2).toString();
+    }
+    catch (e) {
+        display.value = 'Error';
+    }
+});
 // ... (Rest of the code)
