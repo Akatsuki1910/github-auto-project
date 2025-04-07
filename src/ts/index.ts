@@ -1,17 +1,12 @@
 // ... (Existing code)
-const powerButton = document.getElementById('power') as HTMLButtonElement;
-powerButton.addEventListener('click', () => {
+const parenthesisOpenButton = document.getElementById('parenthesis-open') as HTMLButtonElement;
+parenthesisOpenButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
-    try {
-        const inputValue = display.value;
-        if (inputValue) {
-            currentExpressionDisplay.textContent = `${inputValue}^`;
-            display.value += '^';
-        }
-    }
-    catch (error) {
-        display.value = 'Error';
-    }
+    display.value += '(';
+});
+const parenthesisCloseButton = document.getElementById('parenthesis-close') as HTMLButtonElement;
+parenthesisCloseButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value += ')';
 });
 // ... (Rest of the code)
