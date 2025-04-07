@@ -1,11 +1,10 @@
 // ... (Existing code)
-const calculateCylinderVolumeButton = document.getElementById('calculate-cylinder-volume') as HTMLButtonElement;
-calculateCylinderVolumeButton.addEventListener('click', () => {
+const calculateSphereSurfaceAreaButton = document.getElementById('calculate-sphere-surface-area') as HTMLButtonElement;
+calculateSphereSurfaceAreaButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
         const radius = parseFloat(prompt('Enter the radius:') || '0');
-        const height = parseFloat(prompt('Enter the height:') || '0');
-        display.value = (Math.PI * Math.pow(radius, 2) * height).toString();
+        display.value = (4 * Math.PI * Math.pow(radius, 2)).toString();
     } catch (e) {
         display.value = 'Error';
     }
