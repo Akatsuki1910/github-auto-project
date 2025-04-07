@@ -14,4 +14,21 @@ deleteButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = display.value.slice(0, -1);
 });
+let ans = 0;
+const equalsButton = document.getElementById('equals') as HTMLButtonElement;
+equalsButton?.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    try {
+        ans = math.evaluate(display.value);
+        display.value = ans.toString();
+    }
+    catch (e) {
+        display.value = 'Error';
+    }
+});
+const ansButton = document.getElementById('ans') as HTMLButtonElement;
+ansButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value += ans.toString();
+});
 // ... (Rest of the code)
