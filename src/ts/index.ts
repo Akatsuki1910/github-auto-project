@@ -31,4 +31,15 @@ ansButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value += ans.toString();
 });
+const percentButton = document.getElementById('percent') as HTMLButtonElement;
+percentButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = (currentValue / 100).toString();
+    }
+    catch (e) {
+        display.value = 'Error';
+    }
+});
 // ... (Rest of the code)
