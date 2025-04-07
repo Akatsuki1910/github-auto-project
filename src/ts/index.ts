@@ -19,4 +19,14 @@ calculateCircumferenceButton.addEventListener('click', () => {
     display.value = 'Error';
   }
 });
+const calculateVolumeButton = document.getElementById('calculate-volume') as HTMLButtonElement;
+calculateVolumeButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    try {
+        const sideLength = parseFloat(display.value);
+        display.value = (sideLength * sideLength * sideLength).toString();
+    } catch (e) {
+        display.value = 'Error';
+    }
+});
 // ... (Rest of the code)
