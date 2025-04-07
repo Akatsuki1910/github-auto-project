@@ -1,12 +1,13 @@
 // ... (Existing code)
-const calculateCubeButton = document.getElementById('calculate-cube') as HTMLButtonElement;
-calculateCubeButton.addEventListener('click', () => {
+const calculateHypotenuseButton = document.getElementById('calculate-hypotenuse') as HTMLButtonElement;
+calculateHypotenuseButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    try {
-        const num = parseFloat(display.value);
-        display.value = Math.pow(num, 3).toString();
-    } catch (e) {
+    const a = parseFloat(prompt('Enter side a:') || '0');
+    const b = parseFloat(prompt('Enter side b:') || '0');
+    if (isNaN(a) || isNaN(b)) {
         display.value = 'Error';
+    } else {
+        display.value = Math.sqrt(a * a + b * b).toString();
     }
 });
 // ... (Rest of the code)
