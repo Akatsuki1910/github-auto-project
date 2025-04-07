@@ -1,10 +1,10 @@
 // ... (Existing code)
-const doubleInverseButton = document.getElementById('double-inverse') as HTMLButtonElement;
-doubleInverseButton.addEventListener('click', () => {
+const calculateAreaButton = document.getElementById('calculate-area') as HTMLButtonElement;
+calculateAreaButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
-        const currentValue = parseFloat(display.value);
-        display.value = (1 / (2 * currentValue)).toString();
+        const sideLength = parseFloat(display.value);
+        display.value = (sideLength * sideLength).toString();
     } catch (e) {
         display.value = 'Error';
     }
