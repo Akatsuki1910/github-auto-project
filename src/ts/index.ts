@@ -33,4 +33,15 @@ tripleButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+const halfButton = document.getElementById('half') as HTMLButtonElement;
+halfButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = (currentValue / 2).toString();
+    }
+    catch (e) {
+        display.value = 'Error';
+    }
+});
 // ... (Rest of the code)
