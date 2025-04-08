@@ -1,6 +1,6 @@
 // ... (Existing code)
-const calculateModeButton = document.getElementById('mode') as HTMLButtonElement;
-calculateModeButton.addEventListener('click', () => {
+const calculateRangeButton = document.getElementById('range') as HTMLButtonElement;
+calculateRangeButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const numCount = parseInt(prompt('Enter the number of values:', '0') || '0', 10);
     if (isNaN(numCount) || numCount <= 0) {
@@ -16,16 +16,8 @@ calculateModeButton.addEventListener('click', () => {
         }
         numbers.push(num);
     }
-    const counts = {};
-    let mode = null;
-    let maxCount = 0;
-    for (const num of numbers) {
-        counts[num] = (counts[num] || 0) + 1;
-        if (counts[num] > maxCount) {
-            mode = num;
-            maxCount = counts[num];
-        }
-    }
-    display.value = mode.toString();
+    numbers.sort((a, b) => a - b);
+    const range = numbers[numbers.length - 1] - numbers[0];
+    display.value = range.toString();
 });
 // ... (Rest of the code)
