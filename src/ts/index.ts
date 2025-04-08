@@ -17,6 +17,7 @@ const currentMonthButton = document.getElementById('current-month') as HTMLButto
 const currentDayButton = document.getElementById('current-day') as HTMLButtonElement;
 const currentWeekButton = document.getElementById('current-week') as HTMLButtonElement;
 const currentSecondButton = document.getElementById('current-second') as HTMLButtonElement;
+const currentMillisecondButton = document.getElementById('current-millisecond') as HTMLButtonElement;
 
 toggleHistoryButton.addEventListener('click', () => {
     historyVisible = !historyVisible;
@@ -62,5 +63,11 @@ currentSecondButton.addEventListener('click', () => {
     const currentDate = new Date();
     const currentSecond = currentDate.getSeconds();
     display.value = currentSecond.toString();
+});
+
+currentMillisecondButton.addEventListener('click', () => {
+    const currentDate = new Date();
+    const currentMillisecond = currentDate.getMilliseconds();
+    display.value = currentMillisecond.toString();
 });
 // ... (Rest of the code)
