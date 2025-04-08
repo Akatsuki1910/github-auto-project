@@ -60,5 +60,10 @@ const currentDateMillisecondsButton = document.getElementById('current-date-mill
 currentDateMillisecondsButton.addEventListener('click', () => {
   display.value = new Date().getTime().toString();
 });
+const currentMicrosecondButton = document.getElementById('current-microsecond') as HTMLButtonElement;
+currentMicrosecondButton.addEventListener('click', () => {
+    const now = new Date();
+    display.value = (now.getTime() * 1000 + now.getMilliseconds() * 1000).toString();
+});
 
 // ... (Rest of the code)
