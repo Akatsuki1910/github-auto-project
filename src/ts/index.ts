@@ -14,4 +14,12 @@ currentMinuteButton.addEventListener('click', () => {
     display.value = currentMinute.toString();
 });
 
+const currentHourButton = document.getElementById('current-hour') as HTMLButtonElement;
+
+currentHourButton.addEventListener('click', () => {
+    const currentDate = new Date();
+    const currentHour = currentDate.getHours();
+    display.value = currentHour.toString();
+});
+
 // ... (Rest of the code)
