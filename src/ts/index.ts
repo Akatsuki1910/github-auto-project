@@ -13,6 +13,7 @@ let lastCalculation: string = '';
 const lastCalculationButton = document.getElementById('last-calculation') as HTMLButtonElement;
 const display = document.getElementById('display') as HTMLInputElement;
 const toggleDarkModeButton = document.getElementById('toggle-dark-mode') as HTMLButtonElement;
+const currentMonthButton = document.getElementById('current-month') as HTMLButtonElement;
 
 toggleHistoryButton.addEventListener('click', () => {
     historyVisible = !historyVisible;
@@ -34,5 +35,11 @@ lastCalculationButton.addEventListener('click',()=>{
 toggleDarkModeButton.addEventListener('click', () => {
     document.body.classList.toggle('dark-scheme');
     document.body.classList.toggle('light-scheme');
+});
+
+currentMonthButton.addEventListener('click', () => {
+  const currentDate = new Date();
+  const currentMonth = currentDate.toLocaleString('default', { month: 'long' });
+  display.value = currentMonth;
 });
 // ... (Rest of the code)
