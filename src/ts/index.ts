@@ -90,5 +90,9 @@ const currentDateISOButton = document.getElementById('current-date-iso') as HTML
 currentDateISOButton.addEventListener('click', () => {
   display.value = new Date().toISOString();
 });
+const currentNanosecondButton = document.getElementById('current-nanosecond') as HTMLButtonElement;
+currentNanosecondButton.addEventListener('click', () => {
+  display.value = process.hrtime.bigint().toString();
+});
 
 // ... (Rest of the code)
