@@ -11,3 +11,7 @@ const currentUnixTimestampButton = document.getElementById('current-unix-timesta
 currentUnixTimestampButton.addEventListener('click', () => {
     display.value = Math.floor(Date.now() / 1000).toString();
 });
+const currentEpochTimeButton = document.getElementById('current-epoch-time') as HTMLButtonElement;
+currentEpochTimeButton.addEventListener('click', () => {
+    display.value = Date.now().toString();
+});
