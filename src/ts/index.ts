@@ -4,70 +4,14 @@ calculateMedianButton.addEventListener('click', () => {
     // ... (median calculation logic)
 });
 
-const toggleHistoryButton = document.getElementById('toggle-history') as HTMLButtonElement;
-const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
-let historyVisible = false;
-const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
-let history: string[] = [];
-let lastCalculation: string = '';
-const lastCalculationButton = document.getElementById('last-calculation') as HTMLButtonElement;
-const display = document.getElementById('display') as HTMLInputElement;
-const toggleDarkModeButton = document.getElementById('toggle-dark-mode') as HTMLButtonElement;
-const currentMonthButton = document.getElementById('current-month') as HTMLButtonElement;
-const currentDayButton = document.getElementById('current-day') as HTMLButtonElement;
-const currentWeekButton = document.getElementById('current-week') as HTMLButtonElement;
-const currentSecondButton = document.getElementById('current-second') as HTMLButtonElement;
-const currentMillisecondButton = document.getElementById('current-millisecond') as HTMLButtonElement;
+// ... other code ...
 
-toggleHistoryButton.addEventListener('click', () => {
-    historyVisible = !historyVisible;
-    historyDisplay.style.display = historyVisible ? 'block' : 'none';
-});
+const currentMinuteButton = document.getElementById('current-minute') as HTMLButtonElement;
 
-clearHistoryButton.addEventListener('click', () => {
-    history = [];
-    historyDisplay.innerHTML = '';
-});
-
-lastCalculationButton.addEventListener('click',()=>{
-    if(lastCalculation){
-        display.value = lastCalculation;
-        console.log(lastCalculation);
-    }
-});
-
-toggleDarkModeButton.addEventListener('click', () => {
-    document.body.classList.toggle('dark-scheme');
-    document.body.classList.toggle('light-scheme');
-});
-
-currentMonthButton.addEventListener('click', () => {
-  const currentDate = new Date();
-  const currentMonth = currentDate.toLocaleString('default', { month: 'long' });
-  display.value = currentMonth;
-});
-
-currentDayButton.addEventListener('click', () => {
+currentMinuteButton.addEventListener('click', () => {
     const currentDate = new Date();
-    const currentDay = currentDate.getDate();
-    display.value = currentDay.toString();
+    const currentMinute = currentDate.getMinutes();
+    display.value = currentMinute.toString();
 });
 
-currentWeekButton.addEventListener('click', () => {
-    const currentDate = new Date();
-    const currentWeek = currentDate.toLocaleString('default', { weekday: 'long' });
-    display.value = currentWeek;
-});
-
-currentSecondButton.addEventListener('click', () => {
-    const currentDate = new Date();
-    const currentSecond = currentDate.getSeconds();
-    display.value = currentSecond.toString();
-});
-
-currentMillisecondButton.addEventListener('click', () => {
-    const currentDate = new Date();
-    const currentMillisecond = currentDate.getMilliseconds();
-    display.value = currentMillisecond.toString();
-});
 // ... (Rest of the code)
