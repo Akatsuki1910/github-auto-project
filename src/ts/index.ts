@@ -15,3 +15,7 @@ const currentEpochTimeButton = document.getElementById('current-epoch-time') as 
 currentEpochTimeButton.addEventListener('click', () => {
     display.value = Date.now().toString();
 });
+const currentDateTimeIsoButton = document.getElementById('current-date-time-iso') as HTMLButtonElement;
+currentDateTimeIsoButton.addEventListener('click', () => {
+  display.value = new Date().toISOString();
+});
