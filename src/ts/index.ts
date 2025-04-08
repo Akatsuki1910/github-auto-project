@@ -1,16 +1,13 @@
 // ... (Existing code)
-const calculateFactorialButton = document.getElementById('calculate-factorial') as HTMLButtonElement;
-calculateFactorialButton.addEventListener('click', () => {
+const calculateSumButton = document.getElementById('calculate-sum') as HTMLButtonElement;
+calculateSumButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const n = parseInt(prompt('Enter a non-negative integer:') || '0');
-    if (isNaN(n) || n < 0) {
+    const num1 = parseFloat(prompt('Enter the first number:') || '0');
+    const num2 = parseFloat(prompt('Enter the second number:') || '0');
+    if (isNaN(num1) || isNaN(num2)) {
         display.value = 'Error: Invalid input';
         return;
     }
-    let result = 1;
-    for (let i = 2; i <= n; i++) {
-        result *= i;
-    }
-    display.value = result.toString();
+    display.value = (num1 + num2).toString();
 });
 // ... (Rest of the code)
