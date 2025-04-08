@@ -24,7 +24,7 @@ currentHourButton.addEventListener('click', () => {
 
 const currentSecondsButton = document.getElementById('current-seconds') as HTMLButtonElement;
 currentSecondsButton.addEventListener('click', () => {
-  display.value = Math.floor(Date.now() / 1000).toString();
+    display.value = Math.floor(Date.now() / 1000).toString();
 });
 const currentMillisecondsButton = document.getElementById('current-milliseconds') as HTMLButtonElement;
 currentMillisecondsButton.addEventListener('click', () => {
@@ -33,8 +33,15 @@ currentMillisecondsButton.addEventListener('click', () => {
 const currentTimezoneButton = document.getElementById('current-timezone') as HTMLButtonElement;
 currentTimezoneButton.addEventListener('click', () => {
     const currentDate = new Date();
-    display.value = currentDate.toLocaleDateString(undefined, {timeZoneName: 'long'}).split(', ')[1];
+    display.value = currentDate.toLocaleDateString(undefined, { timeZoneName: 'long' }).split(', ')[1];
 
+});
+const currentDayOfWeekButton = document.getElementById('current-day-of-week') as HTMLButtonElement;
+currentDayOfWeekButton.addEventListener('click', () => {
+    const currentDate = new Date();
+    const dayOfWeek = currentDate.getDay();
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    display.value = days[dayOfWeek];
 });
 
 // ... (Rest of the code)
