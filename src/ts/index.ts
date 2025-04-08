@@ -56,5 +56,9 @@ const currentTimestampButton = document.getElementById('current-timestamp') as H
 currentTimestampButton.addEventListener('click', () => {
     display.value = Date.now().toString();
 });
+const currentDateMillisecondsButton = document.getElementById('current-date-milliseconds') as HTMLButtonElement;
+currentDateMillisecondsButton.addEventListener('click', () => {
+  display.value = new Date().getTime().toString();
+});
 
 // ... (Rest of the code)
