@@ -16,6 +16,7 @@ const toggleDarkModeButton = document.getElementById('toggle-dark-mode') as HTML
 const currentMonthButton = document.getElementById('current-month') as HTMLButtonElement;
 const currentDayButton = document.getElementById('current-day') as HTMLButtonElement;
 const currentWeekButton = document.getElementById('current-week') as HTMLButtonElement;
+const currentSecondButton = document.getElementById('current-second') as HTMLButtonElement;
 
 toggleHistoryButton.addEventListener('click', () => {
     historyVisible = !historyVisible;
@@ -55,5 +56,11 @@ currentWeekButton.addEventListener('click', () => {
     const currentDate = new Date();
     const currentWeek = currentDate.toLocaleString('default', { weekday: 'long' });
     display.value = currentWeek;
+});
+
+currentSecondButton.addEventListener('click', () => {
+    const currentDate = new Date();
+    const currentSecond = currentDate.getSeconds();
+    display.value = currentSecond.toString();
 });
 // ... (Rest of the code)
