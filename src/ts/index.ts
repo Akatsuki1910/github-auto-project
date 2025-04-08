@@ -11,6 +11,7 @@ const clearHistoryButton = document.getElementById('clear-history') as HTMLButto
 let history: string[] = [];
 let lastCalculation: string = '';
 const lastCalculationButton = document.getElementById('last-calculation') as HTMLButtonElement;
+const display = document.getElementById('display') as HTMLInputElement;
 
 toggleHistoryButton.addEventListener('click', () => {
     historyVisible = !historyVisible;
@@ -24,7 +25,7 @@ clearHistoryButton.addEventListener('click', () => {
 
 lastCalculationButton.addEventListener('click',()=>{
     if(lastCalculation){
-        // ここに何かしらの処理
+        display.value = lastCalculation;
         console.log(lastCalculation);
     }
 });
