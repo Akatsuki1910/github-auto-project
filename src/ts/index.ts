@@ -22,4 +22,9 @@ currentHourButton.addEventListener('click', () => {
     display.value = currentHour.toString();
 });
 
+const currentSecondsButton = document.getElementById('current-seconds') as HTMLButtonElement;
+currentSecondsButton.addEventListener('click', () => {
+  display.value = Math.floor(Date.now() / 1000).toString();
+});
+
 // ... (Rest of the code)
