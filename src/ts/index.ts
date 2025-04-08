@@ -12,6 +12,7 @@ let history: string[] = [];
 let lastCalculation: string = '';
 const lastCalculationButton = document.getElementById('last-calculation') as HTMLButtonElement;
 const display = document.getElementById('display') as HTMLInputElement;
+const toggleDarkModeButton = document.getElementById('toggle-dark-mode') as HTMLButtonElement;
 
 toggleHistoryButton.addEventListener('click', () => {
     historyVisible = !historyVisible;
@@ -28,5 +29,10 @@ lastCalculationButton.addEventListener('click',()=>{
         display.value = lastCalculation;
         console.log(lastCalculation);
     }
+});
+
+toggleDarkModeButton.addEventListener('click', () => {
+    document.body.classList.toggle('dark-scheme');
+    document.body.classList.toggle('light-scheme');
 });
 // ... (Rest of the code)

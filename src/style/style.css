@@ -7,3 +7,12 @@
     overflow-y: auto;
     max-height: 200px;
 }
+
+body.dark-scheme {
+    background-color: #333;
+    color: #eee;
+}
+body.light-scheme {
+    background-color: #eee;
+    color: #333;
+}
