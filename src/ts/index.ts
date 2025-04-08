@@ -80,5 +80,11 @@ currentLocalTimeButton.addEventListener('click', () => {
   const localTimeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
   display.value = localTimeString;
 });
+const currentDateLocaleButton = document.getElementById('current-date-locale') as HTMLButtonElement;
+currentDateLocaleButton.addEventListener('click', () => {
+  const now = new Date();
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  display.value = now.toLocaleDateString(undefined, options);
+});
 
 // ... (Rest of the code)
