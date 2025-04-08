@@ -43,5 +43,14 @@ currentDayOfWeekButton.addEventListener('click', () => {
     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
     display.value = days[dayOfWeek];
 });
+const currentWeekNumberButton = document.getElementById('current-week-number') as HTMLButtonElement;
+currentWeekNumberButton.addEventListener('click',()=>{
+    const currentDate=new Date();
+    const startDate = new Date(currentDate.getFullYear(), 0, 1);
+    const days = Math.floor((currentDate.getTime() - startDate.getTime()) / (24 * 60 * 60 * 1000));
+
+    const weekNumber = Math.ceil(days / 7);
+    display.value = weekNumber.toString();
+});
 
 // ... (Rest of the code)
