@@ -30,5 +30,11 @@ const currentMillisecondsButton = document.getElementById('current-milliseconds'
 currentMillisecondsButton.addEventListener('click', () => {
     display.value = Date.now().toString();
 });
+const currentTimezoneButton = document.getElementById('current-timezone') as HTMLButtonElement;
+currentTimezoneButton.addEventListener('click', () => {
+    const currentDate = new Date();
+    display.value = currentDate.toLocaleDateString(undefined, {timeZoneName: 'long'}).split(', ')[1];
+
+});
 
 // ... (Rest of the code)
