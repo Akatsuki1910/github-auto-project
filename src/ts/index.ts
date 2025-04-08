@@ -14,6 +14,7 @@ const lastCalculationButton = document.getElementById('last-calculation') as HTM
 const display = document.getElementById('display') as HTMLInputElement;
 const toggleDarkModeButton = document.getElementById('toggle-dark-mode') as HTMLButtonElement;
 const currentMonthButton = document.getElementById('current-month') as HTMLButtonElement;
+const currentDayButton = document.getElementById('current-day') as HTMLButtonElement;
 
 toggleHistoryButton.addEventListener('click', () => {
     historyVisible = !historyVisible;
@@ -41,5 +42,11 @@ currentMonthButton.addEventListener('click', () => {
   const currentDate = new Date();
   const currentMonth = currentDate.toLocaleString('default', { month: 'long' });
   display.value = currentMonth;
+});
+
+currentDayButton.addEventListener('click', () => {
+    const currentDate = new Date();
+    const currentDay = currentDate.getDate();
+    display.value = currentDay.toString();
 });
 // ... (Rest of the code)
