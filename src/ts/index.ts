@@ -86,5 +86,9 @@ currentDateLocaleButton.addEventListener('click', () => {
   const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
   display.value = now.toLocaleDateString(undefined, options);
 });
+const currentDateISOButton = document.getElementById('current-date-iso') as HTMLButtonElement;
+currentDateISOButton.addEventListener('click', () => {
+  display.value = new Date().toISOString();
+});
 
 // ... (Rest of the code)
