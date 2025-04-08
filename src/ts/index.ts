@@ -1,17 +1,21 @@
 // ... (Existing code)
-const calculateRemainderButton = document.getElementById('calculate-remainder') as HTMLButtonElement;
-calculateRemainderButton.addEventListener('click', () => {
+const calculateAverageButton = document.getElementById('calculate-average') as HTMLButtonElement;
+calculateAverageButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const num1 = parseFloat(prompt('Enter the first number:') || '0');
-    const num2 = parseFloat(prompt('Enter the second number:') || '0');
-    if (isNaN(num1) || isNaN(num2)) {
+    const numCount = parseInt(prompt('Enter the number of values:', '0') || '0', 10);
+    if (isNaN(numCount) || numCount <= 0) {
         display.value = 'Error: Invalid input';
         return;
     }
-    if (num2 === 0) {
-        display.value = 'Error: Division by zero';
-        return;
+    let sum = 0;
+    for (let i = 0; i < numCount; i++) {
+        const num = parseFloat(prompt(`Enter number ${i + 1}:`, '0') || '0');
+        if (isNaN(num)) {
+            display.value = 'Error: Invalid input';
+            return;
+        }
+        sum += num;
     }
-    display.value = (num1 % num2).toString();
+    display.value = (sum / numCount).toString();
 });
 // ... (Rest of the code)
