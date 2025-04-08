@@ -52,5 +52,9 @@ currentWeekNumberButton.addEventListener('click',()=>{
     const weekNumber = Math.ceil(days / 7);
     display.value = weekNumber.toString();
 });
+const currentTimestampButton = document.getElementById('current-timestamp') as HTMLButtonElement;
+currentTimestampButton.addEventListener('click', () => {
+    display.value = Date.now().toString();
+});
 
 // ... (Rest of the code)
