@@ -74,5 +74,11 @@ const currentMicrosecondsButton = document.getElementById('current-microseconds'
 currentMicrosecondsButton.addEventListener('click', () => {
     display.value = (Date.now() * 1000).toString();
 });
+const currentLocalTimeButton = document.getElementById('current-local-time') as HTMLButtonElement;
+currentLocalTimeButton.addEventListener('click', () => {
+  const now = new Date();
+  const localTimeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+  display.value = localTimeString;
+});
 
 // ... (Rest of the code)
