@@ -1,20 +1,16 @@
 // ... (Existing code)
-const calculateFibonacciButton = document.getElementById('calculate-fibonacci') as HTMLButtonElement;
-calculateFibonacciButton.addEventListener('click', () => {
+const calculateFactorialButton = document.getElementById('calculate-factorial') as HTMLButtonElement;
+calculateFactorialButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const n = parseInt(prompt('Enter the number of terms:') || '0');
+    const n = parseInt(prompt('Enter a non-negative integer:') || '0');
     if (isNaN(n) || n < 0) {
-        display.value = 'Error';
+        display.value = 'Error: Invalid input';
         return;
     }
-    let a = 0, b = 1, nextTerm;
-    let result = '';
-    for (let i = 1; i <= n; ++i) {
-        result += a + ' ';
-        nextTerm = a + b;
-        a = b;
-        b = nextTerm;
+    let result = 1;
+    for (let i = 2; i <= n; i++) {
+        result *= i;
     }
-    display.value = result.trim();
+    display.value = result.toString();
 });
 // ... (Rest of the code)
