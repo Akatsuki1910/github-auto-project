@@ -26,5 +26,9 @@ const currentSecondsButton = document.getElementById('current-seconds') as HTMLB
 currentSecondsButton.addEventListener('click', () => {
   display.value = Math.floor(Date.now() / 1000).toString();
 });
+const currentMillisecondsButton = document.getElementById('current-milliseconds') as HTMLButtonElement;
+currentMillisecondsButton.addEventListener('click', () => {
+    display.value = Date.now().toString();
+});
 
 // ... (Rest of the code)
