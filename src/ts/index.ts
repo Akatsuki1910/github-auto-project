@@ -32,3 +32,11 @@ currentDayOfYearButton.addEventListener('click', () => {
   const dayOfYear = Math.floor(diff / oneDay);
   display.value = dayOfYear.toString();
 });
+const currentWeekOfYearButton = document.getElementById('current-week-of-year') as HTMLButtonElement;
+currentWeekOfYearButton.addEventListener('click', () => {
+    const now = new Date();
+    const onejan = new Date(now.getFullYear(), 0, 1);
+    const millisecsInDay = 86400000;
+    const weekNumber = Math.ceil((((now.getTime() - onejan.getTime()) / millisecsInDay) + onejan.getDay() + 1) / 7);
+    display.value = weekNumber.toString();
+});
