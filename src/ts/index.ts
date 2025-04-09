@@ -80,3 +80,7 @@ currentYearOfWeekButton.addEventListener('click',()=>{
   const now = new Date();
   display.value = now.getFullYear().toString();
 });
+const currentDateUTCButton = document.getElementById('current-date-utc') as HTMLButtonElement;
+currentDateUTCButton.addEventListener('click', () => {
+  display.value = new Date().toUTCString();
+});
