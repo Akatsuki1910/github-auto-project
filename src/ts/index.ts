@@ -1,11 +1,11 @@
 // ... (Existing code)
-const calculateHalfButton = document.getElementById('calculate-half') as HTMLButtonElement;
-calculateHalfButton.addEventListener('click', () => {
+const calculateQuarterButton = document.getElementById('calculate-quarter') as HTMLButtonElement;
+calculateQuarterButton.addEventListener('click', () => {
     const numberString = prompt('Enter a number:');
     if (numberString) {
         const number = Number(numberString);
-        const halvedValue = number / 2;
-        display.value = halvedValue.toString();
+        const quarteredValue = number / 4;
+        display.value = quarteredValue.toString();
     }
 });
 // ... (Rest of the code)
