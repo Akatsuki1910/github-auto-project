@@ -1,11 +1,13 @@
 // ... (Existing code)
-const calculateTenPowerButton = document.getElementById('calculate-ten-power') as HTMLButtonElement;
-calculateTenPowerButton.addEventListener('click', () => {
+const calculateLogarithmButton = document.getElementById('calculate-logarithm') as HTMLButtonElement;
+calculateLogarithmButton.addEventListener('click', () => {
     const valueString = prompt('Enter the value:');
-    if (valueString) {
+    const baseString = prompt('Enter the base:');
+    if (valueString && baseString) {
         const value = Number(valueString);
-        const tenPower = Math.pow(10, value);
-        display.value = tenPower.toString();
+        const base = Number(baseString);
+        const logarithm = Math.log(value) / Math.log(base);
+        display.value = logarithm.toString();
     }
 });
 // ... (Rest of the code)
