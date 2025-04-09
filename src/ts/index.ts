@@ -75,3 +75,8 @@ const currentTimeMillisecondsButton = document.getElementById('current-time-mill
 currentTimeMillisecondsButton.addEventListener('click', () => {
   display.value = new Date().getMilliseconds().toString();
 });
+const currentYearOfWeekButton = document.getElementById('current-year-of-week') as HTMLButtonElement;
+currentYearOfWeekButton.addEventListener('click',()=>{
+  const now = new Date();
+  display.value = now.getFullYear().toString();
+});
