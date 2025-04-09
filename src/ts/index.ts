@@ -92,3 +92,7 @@ const currentGMTTimeButton = document.getElementById('current-gmt-time') as HTML
 currentGMTTimeButton.addEventListener('click', () => {
   display.value = new Date().toGMTString();
 });
+const currentDateTimeUTCButton = document.getElementById('current-date-time-utc') as HTMLButtonElement;
+currentDateTimeUTCButton.addEventListener('click', () => {
+    display.value = new Date().toUTCString();
+});
