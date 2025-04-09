@@ -1,11 +1,11 @@
 // ... (Existing code)
-const calculateGeometricMeanButton = document.getElementById('calculate-geometric-mean') as HTMLButtonElement;
-calculateGeometricMeanButton.addEventListener('click', () => {
+const calculateHarmonicMeanButton = document.getElementById('calculate-harmonic-mean') as HTMLButtonElement;
+calculateHarmonicMeanButton.addEventListener('click', () => {
     const numbersString = prompt('Enter numbers separated by commas:');
     if (numbersString) {
         const numbers = numbersString.split(',').map(Number);
-        const geometricMean = math.geometricMean(numbers);
-        display.value = geometricMean.toString();
+        const harmonicMean = math.harmonicMean(numbers);
+        display.value = harmonicMean.toString();
     }
 });
 // ... (Rest of the code)
