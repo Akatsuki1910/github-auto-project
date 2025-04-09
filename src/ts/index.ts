@@ -1,11 +1,11 @@
 // ... (Existing code)
-const calculatePowerOfFourButton = document.getElementById('calculate-power-of-four') as HTMLButtonElement;
-calculatePowerOfFourButton.addEventListener('click', () => {
+const calculatePowerOfFiveButton = document.getElementById('calculate-power-of-five') as HTMLButtonElement;
+calculatePowerOfFiveButton.addEventListener('click', () => {
     const valueString = prompt('Enter the value:');
     if (valueString) {
         const value = Number(valueString);
-        const powerOfFour = Math.pow(4, value);
-        display.value = powerOfFour.toString();
+        const powerOfFive = Math.pow(5, value);
+        display.value = powerOfFive.toString();
     }
 });
 // ... (Rest of the code)
