@@ -1,13 +1,13 @@
 // ... (Existing code)
-const calculatePercentChangeButton = document.getElementById('calculate-percent-change') as HTMLButtonElement;
-calculatePercentChangeButton.addEventListener('click', () => {
-    const originalValueString = prompt('Enter the original value:');
-    const newValueString = prompt('Enter the new value:');
-    if (originalValueString && newValueString) {
-        const originalValue = Number(originalValueString);
-        const newValue = Number(newValueString);
-        const percentChange = ((newValue - originalValue) / originalValue) * 100;
-        display.value = percentChange.toString() + '%';
+const calculateLogarithmBaseButton = document.getElementById('calculate-logarithm-base') as HTMLButtonElement;
+calculateLogarithmBaseButton.addEventListener('click', () => {
+    const valueString = prompt('Enter the value:');
+    const baseString = prompt('Enter the base:');
+    if (valueString && baseString) {
+        const value = Number(valueString);
+        const base = Number(baseString);
+        const logarithm = Math.log(value) / Math.log(base);
+        display.value = logarithm.toString();
     }
 });
 // ... (Rest of the code)
