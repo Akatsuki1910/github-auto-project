@@ -1,11 +1,11 @@
 // ... (Existing code)
-const calculateTripleButton = document.getElementById('calculate-triple') as HTMLButtonElement;
-calculateTripleButton.addEventListener('click', () => {
+const calculateHalfButton = document.getElementById('calculate-half') as HTMLButtonElement;
+calculateHalfButton.addEventListener('click', () => {
     const numberString = prompt('Enter a number:');
     if (numberString) {
         const number = Number(numberString);
-        const tripledValue = number * 3;
-        display.value = tripledValue.toString();
+        const halvedValue = number / 2;
+        display.value = halvedValue.toString();
     }
 });
 // ... (Rest of the code)
