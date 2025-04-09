@@ -71,3 +71,7 @@ const currentDateStringButton = document.getElementById('current-date-string') a
 currentDateStringButton.addEventListener('click', () => {
   display.value = new Date().toDateString();
 });
+const currentTimeMillisecondsButton = document.getElementById('current-time-milliseconds') as HTMLButtonElement;
+currentTimeMillisecondsButton.addEventListener('click', () => {
+  display.value = new Date().getMilliseconds().toString();
+});
