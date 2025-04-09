@@ -88,3 +88,7 @@ const currentDateTimeSecondsButton = document.getElementById('current-date-time-
 currentDateTimeSecondsButton.addEventListener('click', () => {
   display.value = Math.floor(Date.now()/1000).toString();
 });
+const currentGMTTimeButton = document.getElementById('current-gmt-time') as HTMLButtonElement;
+currentGMTTimeButton.addEventListener('click', () => {
+  display.value = new Date().toGMTString();
+});
