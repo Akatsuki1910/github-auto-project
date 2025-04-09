@@ -40,3 +40,8 @@ currentWeekOfYearButton.addEventListener('click', () => {
     const weekNumber = Math.ceil((((now.getTime() - onejan.getTime()) / millisecsInDay) + onejan.getDay() + 1) / 7);
     display.value = weekNumber.toString();
 });
+const currentMonthOfYearButton = document.getElementById('current-month-of-year') as HTMLButtonElement;
+currentMonthOfYearButton.addEventListener('click', () => {
+    const now = new Date();
+    display.value = (now.getMonth() + 1).toString();
+});
