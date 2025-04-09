@@ -1,13 +1,11 @@
 // ... (Existing code)
-const calculateLogarithmBaseButton = document.getElementById('calculate-logarithm-base') as HTMLButtonElement;
-calculateLogarithmBaseButton.addEventListener('click', () => {
+const calculateNaturalLogarithmButton = document.getElementById('calculate-natural-logarithm') as HTMLButtonElement;
+calculateNaturalLogarithmButton.addEventListener('click', () => {
     const valueString = prompt('Enter the value:');
-    const baseString = prompt('Enter the base:');
-    if (valueString && baseString) {
+    if (valueString) {
         const value = Number(valueString);
-        const base = Number(baseString);
-        const logarithm = Math.log(value) / Math.log(base);
-        display.value = logarithm.toString();
+        const naturalLogarithm = Math.log(value);
+        display.value = naturalLogarithm.toString();
     }
 });
 // ... (Rest of the code)
