@@ -1,13 +1,13 @@
 // ... (Existing code)
-const calculateNthRootButton = document.getElementById('calculate-nth-root') as HTMLButtonElement;
-calculateNthRootButton.addEventListener('click', () => {
-    const numberString = prompt('Enter the number:');
-    const rootString = prompt('Enter the root (e.g., 2 for square root, 3 for cube root):');
-    if (numberString && rootString) {
-        const number = Number(numberString);
-        const root = Number(rootString);
-        const nthRoot = Math.pow(number, 1 / root);
-        display.value = nthRoot.toString();
+const calculatePercentChangeButton = document.getElementById('calculate-percent-change') as HTMLButtonElement;
+calculatePercentChangeButton.addEventListener('click', () => {
+    const originalValueString = prompt('Enter the original value:');
+    const newValueString = prompt('Enter the new value:');
+    if (originalValueString && newValueString) {
+        const originalValue = Number(originalValueString);
+        const newValue = Number(newValueString);
+        const percentChange = ((newValue - originalValue) / originalValue) * 100;
+        display.value = percentChange.toString() + '%';
     }
 });
 // ... (Rest of the code)
