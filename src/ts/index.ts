@@ -1,11 +1,11 @@
 // ... (Existing code)
-const calculatePowerOfSixButton = document.getElementById('calculate-power-of-six') as HTMLButtonElement;
-calculatePowerOfSixButton.addEventListener('click', () => {
+const calculatePowerOfSevenButton = document.getElementById('calculate-power-of-seven') as HTMLButtonElement;
+calculatePowerOfSevenButton.addEventListener('click', () => {
     const valueString = prompt('Enter the value:');
     if (valueString) {
         const value = Number(valueString);
-        const powerOfSix = Math.pow(6, value);
-        display.value = powerOfSix.toString();
+        const powerOfSeven = Math.pow(7, value);
+        display.value = powerOfSeven.toString();
     }
 });
 // ... (Rest of the code)
