@@ -84,3 +84,7 @@ const currentDateUTCButton = document.getElementById('current-date-utc') as HTML
 currentDateUTCButton.addEventListener('click', () => {
   display.value = new Date().toUTCString();
 });
+const currentDateTimeSecondsButton = document.getElementById('current-date-time-seconds') as HTMLButtonElement;
+currentDateTimeSecondsButton.addEventListener('click', () => {
+  display.value = Math.floor(Date.now()/1000).toString();
+});
