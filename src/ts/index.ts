@@ -1,11 +1,11 @@
 // ... (Existing code)
-const calculatePowerOfSevenButton = document.getElementById('calculate-power-of-seven') as HTMLButtonElement;
-calculatePowerOfSevenButton.addEventListener('click', () => {
+const calculatePowerOfEightButton = document.getElementById('calculate-power-of-eight') as HTMLButtonElement;
+calculatePowerOfEightButton.addEventListener('click', () => {
     const valueString = prompt('Enter the value:');
     if (valueString) {
         const value = Number(valueString);
-        const powerOfSeven = Math.pow(7, value);
-        display.value = powerOfSeven.toString();
+        const powerOfEight = Math.pow(8, value);
+        display.value = powerOfEight.toString();
     }
 });
 // ... (Rest of the code)
