@@ -1,11 +1,11 @@
 // ... (Existing code)
-const calculateHarmonicMeanButton = document.getElementById('calculate-harmonic-mean') as HTMLButtonElement;
-calculateHarmonicMeanButton.addEventListener('click', () => {
-    const numbersString = prompt('Enter numbers separated by commas:');
-    if (numbersString) {
-        const numbers = numbersString.split(',').map(Number);
-        const harmonicMean = math.harmonicMean(numbers);
-        display.value = harmonicMean.toString();
+const calculateAbsoluteValueButton = document.getElementById('calculate-absolute-value') as HTMLButtonElement;
+calculateAbsoluteValueButton.addEventListener('click', () => {
+    const numberString = prompt('Enter a number:');
+    if (numberString) {
+        const number = Number(numberString);
+        const absoluteValue = Math.abs(number);
+        display.value = absoluteValue.toString();
     }
 });
 // ... (Rest of the code)
