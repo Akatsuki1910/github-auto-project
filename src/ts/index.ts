@@ -50,3 +50,8 @@ currentQuarterOfYearButton.addEventListener('click', () => {
     const now = new Date();
     display.value = (Math.floor(now.getMonth() / 3) + 1).toString();
 });
+const currentWeekDayButton = document.getElementById('current-week-day') as HTMLButtonElement;
+currentWeekDayButton.addEventListener('click', () => {
+    const now = new Date();
+    display.value = now.getDay().toString();
+});
