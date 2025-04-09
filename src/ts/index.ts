@@ -55,3 +55,15 @@ currentWeekDayButton.addEventListener('click', () => {
     const now = new Date();
     display.value = now.getDay().toString();
 });
+const currentDateStructureButton = document.getElementById('current-date-structure') as HTMLButtonElement;
+currentDateStructureButton.addEventListener('click', () => {
+    const now = new Date();
+    display.value = JSON.stringify({
+        year: now.getFullYear(),
+        month: now.getMonth() + 1,
+        day: now.getDate(),
+        hours: now.getHours(),
+        minutes: now.getMinutes(),
+        seconds: now.getSeconds()
+    });
+});
