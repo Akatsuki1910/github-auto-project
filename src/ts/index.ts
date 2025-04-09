@@ -45,3 +45,8 @@ currentMonthOfYearButton.addEventListener('click', () => {
     const now = new Date();
     display.value = (now.getMonth() + 1).toString();
 });
+const currentQuarterOfYearButton = document.getElementById('current-quarter-of-year') as HTMLButtonElement;
+currentQuarterOfYearButton.addEventListener('click', () => {
+    const now = new Date();
+    display.value = (Math.floor(now.getMonth() / 3) + 1).toString();
+});
