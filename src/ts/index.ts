@@ -1,11 +1,11 @@
 // ... (Existing code)
-const calculateSumOfSquaresButton = document.getElementById('calculate-sum-of-squares') as HTMLButtonElement;
-calculateSumOfSquaresButton.addEventListener('click', () => {
+const calculateSumOfCubesButton = document.getElementById('calculate-sum-of-cubes') as HTMLButtonElement;
+calculateSumOfCubesButton.addEventListener('click', () => {
     const numbersString = prompt('Enter numbers separated by commas:');
     if (numbersString) {
         const numbers = numbersString.split(',').map(Number);
-        const sumOfSquares = numbers.reduce((acc, curr) => acc + curr * curr, 0);
-        display.value = sumOfSquares.toString();
+        const sumOfCubes = numbers.reduce((acc, curr) => acc + curr * curr * curr, 0);
+        display.value = sumOfCubes.toString();
     }
 });
 // ... (Rest of the code)
