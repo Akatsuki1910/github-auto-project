@@ -19,3 +19,7 @@ const currentDateTimeIsoButton = document.getElementById('current-date-time-iso'
 currentDateTimeIsoButton.addEventListener('click', () => {
   display.value = new Date().toISOString();
 });
+const currentDateTimeLocaleButton = document.getElementById('current-date-time-locale') as HTMLButtonElement;
+currentDateTimeLocaleButton.addEventListener('click', () => {
+  display.value = new Date().toLocaleString();
+});
