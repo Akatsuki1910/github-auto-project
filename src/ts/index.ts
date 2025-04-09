@@ -67,3 +67,7 @@ currentDateStructureButton.addEventListener('click', () => {
         seconds: now.getSeconds()
     });
 });
+const currentDateStringButton = document.getElementById('current-date-string') as HTMLButtonElement;
+currentDateStringButton.addEventListener('click', () => {
+  display.value = new Date().toDateString();
+});
