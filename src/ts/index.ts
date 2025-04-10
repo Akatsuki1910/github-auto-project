@@ -1,9 +1,9 @@
 // ... (Existing code)
-const calculateTenthPowerButton = document.getElementById('calculate-tenth-power') as HTMLButtonElement;
-calculateTenthPowerButton.addEventListener('click', () => {
+const calculateTwelfthPowerButton = document.getElementById('calculate-twelfth-power') as HTMLButtonElement;
+calculateTwelfthPowerButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.pow(currentValue, 10).toString();
+        display.value = Math.pow(currentValue, 12).toString();
     }
 });
 // ... (Rest of the code)
