@@ -1,12 +1,12 @@
 // ... (Existing code)
-const calculateRoundButton = document.getElementById('calculate-round') as HTMLButtonElement;
-calculateRoundButton.addEventListener('click', () => {
+const calculateTruncButton = document.getElementById('calculate-trunc') as HTMLButtonElement;
+calculateTruncButton.addEventListener('click', () => {
     const value = parseFloat(display.value);
     if (isNaN(value)) {
         display.value = 'Error';
     }
     else {
-        display.value = Math.round(value).toString();
+        display.value = Math.trunc(value).toString();
     }
 });
 // ... (Rest of the code)
