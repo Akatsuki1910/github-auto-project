@@ -1,4 +1,15 @@
 // ... (Existing code)
+const calculateNthPowerButton = document.getElementById('calculate-nth-power') as HTMLButtonElement;
+calculateNthPowerButton.addEventListener('click', () => {
+    const base = parseFloat(display.value);
+    const exponent = parseFloat(prompt('Enter the exponent (n):', '2'));
+    if (isNaN(base) || isNaN(exponent)) {
+        display.value = 'Error';
+    }
+    else {
+        display.value = Math.pow(base, exponent).toString();
+    }
+});
 let memoryValue = 0;
 const calculateMemoryStoreButton = document.getElementById('calculate-memory-store') as HTMLButtonElement;
 calculateMemoryStoreButton.addEventListener('click', () => {
@@ -29,5 +40,4 @@ calculatePercentOfTotalButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     display.value = (currentValue / 100).toString();
 });
-
 // ... (Rest of the code)
