@@ -1,9 +1,9 @@
 // ... (Existing code)
-const calculateTripleButton = document.getElementById('calculate-triple') as HTMLButtonElement;
-calculateTripleButton.addEventListener('click', () => {
+const calculateHalfButton = document.getElementById('calculate-half') as HTMLButtonElement;
+calculateHalfButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = (currentValue * 3).toString();
+        display.value = (currentValue / 2).toString();
     }
 });
 // ... (Rest of the code)
