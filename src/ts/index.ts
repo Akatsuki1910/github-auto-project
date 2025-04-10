@@ -1,9 +1,9 @@
 // ... (Existing code)
-const calculateInverseButton = document.getElementById('calculate-inverse') as HTMLButtonElement;
-calculateInverseButton.addEventListener('click', () => {
+const calculateSquareButton = document.getElementById('calculate-square') as HTMLButtonElement;
+calculateSquareButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue !== 0) {
-        display.value = (1 / currentValue).toString();
+    if (!isNaN(currentValue)) {
+        display.value = (currentValue * currentValue).toString();
     }
 });
 // ... (Rest of the code)
