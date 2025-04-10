@@ -20,5 +20,9 @@ const calculateMemoryMinusButton = document.getElementById('calculate-memory-min
 calculateMemoryMinusButton.addEventListener('click', () => {
     memoryValue -= parseFloat(display.value);
 });
+const calculateSignChangeButton = document.getElementById('calculate-sign-change') as HTMLButtonElement;
+calculateSignChangeButton.addEventListener('click', () => {
+    display.value = (-parseFloat(display.value)).toString();
+});
 
 // ... (Rest of the code)
