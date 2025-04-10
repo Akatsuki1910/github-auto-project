@@ -1,6 +1,9 @@
 // ... (Existing code)
-const calculateRandomButton = document.getElementById('calculate-random') as HTMLButtonElement;
-calculateRandomButton.addEventListener('click', () => {
-    display.value = math.random().toString();
+const calculateDoubleButton = document.getElementById('calculate-double') as HTMLButtonElement;
+calculateDoubleButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (currentValue * 2).toString();
+    }
 });
 // ... (Rest of the code)
