@@ -1,9 +1,9 @@
 // ... (Existing code)
-const calculateCubeButton = document.getElementById('calculate-cube') as HTMLButtonElement;
-calculateCubeButton.addEventListener('click', () => {
+const calculateFourthPowerButton = document.getElementById('calculate-fourth-power') as HTMLButtonElement;
+calculateFourthPowerButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = (currentValue * currentValue * currentValue).toString();
+        display.value = (currentValue * currentValue * currentValue * currentValue).toString();
     }
 });
 // ... (Rest of the code)
