@@ -1,12 +1,12 @@
 // ... (Existing code)
-const calculateCbrtButton = document.getElementById('calculate-cbrt') as HTMLButtonElement;
-calculateCbrtButton.addEventListener('click', () => {
+const calculateAbsButton = document.getElementById('calculate-abs') as HTMLButtonElement;
+calculateAbsButton.addEventListener('click', () => {
     const value = parseFloat(display.value);
     if (isNaN(value)) {
         display.value = 'Error';
     }
     else {
-        display.value = math.cbrt(value).toString();
+        display.value = math.abs(value).toString();
     }
 });
 // ... (Rest of the code)
