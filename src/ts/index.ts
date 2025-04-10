@@ -1,12 +1,12 @@
 // ... (Existing code)
-const calculateLog10Button = document.getElementById('calculate-log10') as HTMLButtonElement;
-calculateLog10Button.addEventListener('click', () => {
+const calculateExpButton = document.getElementById('calculate-exp') as HTMLButtonElement;
+calculateExpButton.addEventListener('click', () => {
     const value = parseFloat(display.value);
     if (isNaN(value)) {
         display.value = 'Error';
     }
     else {
-        display.value = Math.log10(value).toString();
+        display.value = Math.exp(value).toString();
     }
 });
 // ... (Rest of the code)
