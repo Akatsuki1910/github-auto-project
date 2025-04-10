@@ -1,12 +1,12 @@
 // ... (Existing code)
-const calculateTenToThePowerOfXButton = document.getElementById('calculate-ten-to-the-power-of-x') as HTMLButtonElement;
-calculateTenToThePowerOfXButton.addEventListener('click', () => {
+const calculateCbrtButton = document.getElementById('calculate-cbrt') as HTMLButtonElement;
+calculateCbrtButton.addEventListener('click', () => {
     const value = parseFloat(display.value);
     if (isNaN(value)) {
         display.value = 'Error';
     }
     else {
-        display.value = math.pow(10, value).toString();
+        display.value = math.cbrt(value).toString();
     }
 });
 // ... (Rest of the code)
