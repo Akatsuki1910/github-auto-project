@@ -1,12 +1,12 @@
 // ... (Existing code)
-const calculateSignButton = document.getElementById('calculate-sign') as HTMLButtonElement;
-calculateSignButton.addEventListener('click', () => {
+const calculateLog10Button = document.getElementById('calculate-log10') as HTMLButtonElement;
+calculateLog10Button.addEventListener('click', () => {
     const value = parseFloat(display.value);
     if (isNaN(value)) {
         display.value = 'Error';
     }
     else {
-        display.value = Math.sign(value).toString();
+        display.value = Math.log10(value).toString();
     }
 });
 // ... (Rest of the code)
