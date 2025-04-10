@@ -1,13 +1,24 @@
 // ... (Existing code)
-const calculateLogarithmButton = document.getElementById('calculate-logarithm') as HTMLButtonElement;
-calculateLogarithmButton.addEventListener('click', () => {
-    const valueString = prompt('Enter the value:');
-    const baseString = prompt('Enter the base:');
-    if (valueString && baseString) {
-        const value = Number(valueString);
-        const base = Number(baseString);
-        const logarithm = Math.log(value) / Math.log(base);
-        display.value = logarithm.toString();
-    }
+let memoryValue = 0;
+const calculateMemoryStoreButton = document.getElementById('calculate-memory-store') as HTMLButtonElement;
+calculateMemoryStoreButton.addEventListener('click', () => {
+    memoryValue = parseFloat(display.value);
 });
+const calculateMemoryRecallButton = document.getElementById('calculate-memory-recall') as HTMLButtonElement;
+calculateMemoryRecallButton.addEventListener('click', () => {
+    display.value = memoryValue.toString();
+});
+const calculateMemoryClearButton = document.getElementById('calculate-memory-clear') as HTMLButtonElement;
+calculateMemoryClearButton.addEventListener('click', () => {
+    memoryValue = 0;
+});
+const calculateMemoryPlusButton = document.getElementById('calculate-memory-plus') as HTMLButtonElement;
+calculateMemoryPlusButton.addEventListener('click', () => {
+    memoryValue += parseFloat(display.value);
+});
+const calculateMemoryMinusButton = document.getElementById('calculate-memory-minus') as HTMLButtonElement;
+calculateMemoryMinusButton.addEventListener('click', () => {
+    memoryValue -= parseFloat(display.value);
+});
+
 // ... (Rest of the code)
