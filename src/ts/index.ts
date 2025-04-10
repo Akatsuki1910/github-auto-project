@@ -1,12 +1,12 @@
 // ... (Existing code)
-const calculateLnButton = document.getElementById('calculate-ln') as HTMLButtonElement;
-calculateLnButton.addEventListener('click', () => {
+const calculatePowerOfTwoButton = document.getElementById('calculate-power-of-two') as HTMLButtonElement;
+calculatePowerOfTwoButton.addEventListener('click', () => {
     const value = parseFloat(display.value);
-    if (isNaN(value) || value <= 0) {
+    if (isNaN(value)) {
         display.value = 'Error';
     }
     else {
-        display.value = Math.log(value).toString();
+        display.value = Math.pow(2, value).toString();
     }
 });
 // ... (Rest of the code)
