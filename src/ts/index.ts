@@ -24,5 +24,10 @@ const calculateSignChangeButton = document.getElementById('calculate-sign-change
 calculateSignChangeButton.addEventListener('click', () => {
     display.value = (-parseFloat(display.value)).toString();
 });
+const calculatePercentOfTotalButton = document.getElementById('calculate-percent-of-total') as HTMLButtonElement;
+calculatePercentOfTotalButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    display.value = (currentValue / 100).toString();
+});
 
 // ... (Rest of the code)
