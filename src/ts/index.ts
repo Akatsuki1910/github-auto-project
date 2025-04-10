@@ -1,9 +1,9 @@
 // ... (Existing code)
-const calculateSquareButton = document.getElementById('calculate-square') as HTMLButtonElement;
-calculateSquareButton.addEventListener('click', () => {
+const calculateCubeButton = document.getElementById('calculate-cube') as HTMLButtonElement;
+calculateCubeButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = (currentValue * currentValue).toString();
+        display.value = (currentValue * currentValue * currentValue).toString();
     }
 });
 // ... (Rest of the code)
