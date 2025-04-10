@@ -1,12 +1,12 @@
 // ... (Existing code)
-const calculatePowerOfTenButton = document.getElementById('calculate-power-of-ten') as HTMLButtonElement;
-calculatePowerOfTenButton.addEventListener('click', () => {
+const calculateFactorialButton = document.getElementById('calculate-factorial') as HTMLButtonElement;
+calculateFactorialButton.addEventListener('click', () => {
     const value = parseFloat(display.value);
     if (isNaN(value)) {
         display.value = 'Error';
     }
     else {
-        display.value = Math.pow(10, value).toString();
+        display.value = math.factorial(value).toString();
     }
 });
 // ... (Rest of the code)
