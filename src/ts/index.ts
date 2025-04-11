@@ -1,13 +1,13 @@
 // ... (Existing code)
-const calculateMemoryPlusButton = document.getElementById('calculate-memory-plus') as HTMLButtonElement;
+const calculateMemoryMinusButton = document.getElementById('calculate-memory-minus') as HTMLButtonElement;
 
-calculateMemoryPlusButton.addEventListener('click', () => {
+calculateMemoryMinusButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
         if (memoryValue === null) {
             memoryValue = 0;
         }
-        memoryValue += currentValue;
+        memoryValue -= currentValue;
     }
 });
 // ... (Rest of the code)
