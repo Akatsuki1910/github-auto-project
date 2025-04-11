@@ -31,7 +31,7 @@ const updateCurrentExpressionDisplay = () => {
 };
 
 // Example: Modify the number button event listeners
-document.querySelectorAll('.digit, .operator, .decimal, parentheses-open, parentheses-close').forEach(button => {
+document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
   button.addEventListener('click', () => {
     const buttonText = (button as HTMLButtonElement).textContent;
     currentExpression += buttonText;
@@ -39,3 +39,9 @@ document.querySelectorAll('.digit, .operator, .decimal, parentheses-open, parent
     updateCurrentExpressionDisplay();
   });
 });
+
+const currentdateButton = document.getElementById('current-date') as HTMLButtonElement;
+currentdateButton.addEventListener('click',()=>{
+    const date = new Date();
+    display.value = date.toLocaleDateString();
+})
