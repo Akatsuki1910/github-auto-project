@@ -23,3 +23,10 @@ const duplicateButton = document.getElementById('duplicate') as HTMLButtonElemen
 duplicateButton.addEventListener('click', () => {
     display.value = display.value + display.value;
 });
+const swapButton = document.getElementById('swap') as HTMLButtonElement;
+swapButton.addEventListener('click', () => {
+    if (display.value.length >= 2) {
+        const swappedValue = display.value.slice(-2) + display.value.slice(0, -2);
+        display.value = swappedValue;    
+    }
+});
