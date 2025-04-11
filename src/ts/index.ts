@@ -1,6 +1,11 @@
 // ... (Existing code)
-const calculateOneQuadrillionthButton = document.getElementById('calculate-one-quadrillionth') as HTMLButtonElement;
-calculateOneQuadrillionthButton.addEventListener('click', () => {
-    display.value = (1/1000000000000000).toString();
+const calculateMemoryStoreButton = document.getElementById('calculate-memory-store') as HTMLButtonElement;
+let memoryValue: number | null = null;
+
+calculateMemoryStoreButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        memoryValue = currentValue;
+    }
 });
 // ... (Rest of the code)
