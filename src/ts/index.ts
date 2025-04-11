@@ -1,4 +1,11 @@
 // ... (Existing code)
+const calculatePercentageButton = document.getElementById('calculate-percentage') as HTMLButtonElement;
+calculatePercentageButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (currentValue / 100).toString();
+    }
+});
 const currentdateButton = document.getElementById('current-date') as HTMLButtonElement;
 currentdateButton.addEventListener('click',()=>{
     const date = new Date();
