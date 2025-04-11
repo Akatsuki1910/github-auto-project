@@ -1,8 +1,8 @@
 // ... (Existing code)
-const calculateCbrtButton = document.getElementById('calculate-cbrt') as HTMLButtonElement;
-calculateCbrtButton.addEventListener('click', () => {
+const calculateExpm1Button = document.getElementById('calculate-expm1') as HTMLButtonElement;
+calculateExpm1Button.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = math.cbrt(currentValue).toString();
+        display.value = math.expm1(currentValue).toString();
     }
 });
