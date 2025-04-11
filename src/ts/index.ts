@@ -1,6 +1,6 @@
 // ... (Existing code)
-const calculateOneHundredthButton = document.getElementById('calculate-one-hundredth') as HTMLButtonElement;
-calculateOneHundredthButton.addEventListener('click', () => {
-    display.value = (1/100).toString();
+const calculateOneThousandthButton = document.getElementById('calculate-one-thousandth') as HTMLButtonElement;
+calculateOneThousandthButton.addEventListener('click', () => {
+    display.value = (1/1000).toString();
 });
 // ... (Rest of the code)
