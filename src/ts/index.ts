@@ -1,8 +1,8 @@
 // ... (Existing code)
-const calculateOneOverXButton = document.getElementById('calculate-one-over-x') as HTMLButtonElement;
-calculateOneOverXButton.addEventListener('click', () => {
+const calculateFactorialButton = document.getElementById('calculate-factorial') as HTMLButtonElement;
+calculateFactorialButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue !== 0) {
-        display.value = (1 / currentValue).toString();
+    if (!isNaN(currentValue)) {
+        display.value = math.factorial(currentValue).toString();
     }
 });
