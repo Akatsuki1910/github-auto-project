@@ -1,8 +1,8 @@
 // ... (Existing code)
-const calculateTenPowerXButton = document.getElementById('calculate-ten-power-x') as HTMLButtonElement;
-calculateTenPowerXButton.addEventListener('click', () => {
+const calculateLog10Button = document.getElementById('calculate-log10') as HTMLButtonElement;
+calculateLog10Button.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = math.pow(10, currentValue).toString();
+        display.value = math.log10(currentValue).toString();
     }
 });
