@@ -21,3 +21,21 @@ parenthesesOpenButton.addEventListener('click', () => {
 parenthesesCloseButton.addEventListener('click', () => {
     display.value += ')';
 });
+
+const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
+let currentExpression = '';
+
+// Update display with current expression
+const updateCurrentExpressionDisplay = () => {
+    currentExpressionDisplay.textContent = currentExpression;
+};
+
+// Example: Modify the number button event listeners
+document.querySelectorAll('.digit, .operator, .decimal, parentheses-open, parentheses-close').forEach(button => {
+  button.addEventListener('click', () => {
+    const buttonText = (button as HTMLButtonElement).textContent;
+    currentExpression += buttonText;
+    display.value += buttonText;
+    updateCurrentExpressionDisplay();
+  });
+});
