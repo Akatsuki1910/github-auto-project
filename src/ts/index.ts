@@ -15,3 +15,7 @@ currentDateTimeButton.addEventListener('click',()=>{
   const now = new Date();
   display.value = now.toLocaleString();
 });
+const clearDisplayButton = document.getElementById('clear-display') as HTMLButtonElement;
+clearDisplayButton.addEventListener('click', () => {
+    display.value = '';
+});
