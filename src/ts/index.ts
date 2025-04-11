@@ -30,3 +30,10 @@ swapButton.addEventListener('click', () => {
         display.value = swappedValue;    
     }
 });
+const roundToDecimalButton = document.getElementById('round-to-decimal') as HTMLButtonElement;
+roundToDecimalButton.addEventListener('click', () => {
+  const num = parseFloat(display.value);
+  if (!isNaN(num)) {
+    display.value = num.toFixed(2);
+  }
+});
