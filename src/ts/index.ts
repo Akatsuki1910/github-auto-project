@@ -19,3 +19,7 @@ const clearDisplayButton = document.getElementById('clear-display') as HTMLButto
 clearDisplayButton.addEventListener('click', () => {
     display.value = '';
 });
+const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
+duplicateButton.addEventListener('click', () => {
+    display.value = display.value + display.value;
+});
