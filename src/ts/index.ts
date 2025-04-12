@@ -1,9 +1,6 @@
 // ... (Existing code)
-const calculateXToThePowerOfYButton = document.getElementById('calculate-x-to-the-power-of-y') as HTMLButtonElement;
-calculateXToThePowerOfYButton.addEventListener('click', () => {
+const calculateInverseSineButton = document.getElementById('calculate-inverse-sine') as HTMLButtonElement;
+calculateInverseSineButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    currentExpressionDisplay.textContent = currentValue + "^";
-    isAwaitingSecondOperand = true;
-    pendingOperator = "^";
-    firstOperand = currentValue;
+    display.value = Math.asin(currentValue).toString();
 });
