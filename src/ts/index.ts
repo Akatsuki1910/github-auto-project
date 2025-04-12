@@ -1,6 +1,6 @@
 // ... (Existing code)
-const calculateDoubleButton = document.getElementById('calculate-double') as HTMLButtonElement;
-calculateDoubleButton.addEventListener('click', () => {
+const calculateTripleButton = document.getElementById('calculate-triple') as HTMLButtonElement;
+calculateTripleButton.addEventListener('click', () => {
     const value = parseFloat(prompt('Enter a value:') || '0');
-    display.value = (value * 2).toString();
+    display.value = (value * 3).toString();
 });
