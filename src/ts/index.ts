@@ -1,6 +1,6 @@
 // ... (Existing code)
-const calculateSecantButton = document.getElementById('calculate-secant') as HTMLButtonElement;
-calculateSecantButton.addEventListener('click', () => {
+const calculateCosecantButton = document.getElementById('calculate-cosecant') as HTMLButtonElement;
+calculateCosecantButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    display.value = (1 / Math.cos(currentValue)).toString();
+    display.value = (1 / Math.sin(currentValue)).toString();
 });
