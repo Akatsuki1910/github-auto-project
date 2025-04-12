@@ -1,4 +1,9 @@
 // ... (Existing code)
+const calculateCircleAreaButton = document.getElementById('calculate-circle-area') as HTMLButtonElement;
+calculateCircleAreaButton.addEventListener('click', () => {
+    const radius = parseFloat(prompt('Enter the radius of the circle:') || '0');
+    display.value = (Math.PI * radius * radius).toString();
+});
 const calculateSquareAreaButton = document.getElementById('calculate-square-area') as HTMLButtonElement;
 calculateSquareAreaButton.addEventListener('click', () => {
     const side = parseFloat(prompt('Enter the side length of the square:') || '0');
