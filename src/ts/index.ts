@@ -1,7 +1,7 @@
 // ... (Existing code)
-const calculateParallelogramAreaButton = document.getElementById('calculate-parallelogram-area') as HTMLButtonElement;
-calculateParallelogramAreaButton.addEventListener('click', () => {
-    const base = parseFloat(prompt('Enter the base of the parallelogram:') || '0');
-    const height = parseFloat(prompt('Enter the height of the parallelogram:') || '0');
-    display.value = (base * height).toString();
+const calculateRhombusAreaButton = document.getElementById('calculate-rhombus-area') as HTMLButtonElement;
+calculateRhombusAreaButton.addEventListener('click', () => {
+    const diagonal1 = parseFloat(prompt('Enter the length of the first diagonal:') || '0');
+    const diagonal2 = parseFloat(prompt('Enter the length of the second diagonal:') || '0');
+    display.value = (0.5 * diagonal1 * diagonal2).toString();
 });
