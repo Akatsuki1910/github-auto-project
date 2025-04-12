@@ -1,7 +1,6 @@
 // ... (Existing code)
-const calculateKiteAreaButton = document.getElementById('calculate-kite-area') as HTMLButtonElement;
-calculateKiteAreaButton.addEventListener('click', () => {
-    const diagonal1 = parseFloat(prompt('Enter the length of the first diagonal:') || '0');
-    const diagonal2 = parseFloat(prompt('Enter the length of the second diagonal:') || '0');
-    display.value = (0.5 * diagonal1 * diagonal2).toString();
+const calculateSquarePerimeterButton = document.getElementById('calculate-square-perimeter') as HTMLButtonElement;
+calculateSquarePerimeterButton.addEventListener('click', () => {
+    const side = parseFloat(prompt('Enter the side length of the square:') || '0');
+    display.value = (4 * side).toString();
 });
