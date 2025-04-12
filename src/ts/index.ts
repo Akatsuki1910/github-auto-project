@@ -1,6 +1,6 @@
 // ... (Existing code)
-const calculateInverseCosineButton = document.getElementById('calculate-inverse-cosine') as HTMLButtonElement;
-calculateInverseCosineButton.addEventListener('click', () => {
+const calculateInverseTangentButton = document.getElementById('calculate-inverse-tangent') as HTMLButtonElement;
+calculateInverseTangentButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    display.value = Math.acos(currentValue).toString();
+    display.value = Math.atan(currentValue).toString();
 });
