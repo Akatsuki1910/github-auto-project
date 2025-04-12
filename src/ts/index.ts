@@ -1,6 +1,6 @@
 // ... (Existing code)
-const calculateInverseTangentButton = document.getElementById('calculate-inverse-tangent') as HTMLButtonElement;
-calculateInverseTangentButton.addEventListener('click', () => {
+const calculateTangentButton = document.getElementById('calculate-tangent') as HTMLButtonElement;
+calculateTangentButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    display.value = Math.atan(currentValue).toString();
+    display.value = Math.tan(currentValue).toString();
 });
