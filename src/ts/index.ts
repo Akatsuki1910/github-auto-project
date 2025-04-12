@@ -1,7 +1,7 @@
 // ... (Existing code)
-const calculateExponentButton = document.getElementById('calculate-exponent') as HTMLButtonElement;
-calculateExponentButton.addEventListener('click', () => {
-    const base = parseFloat(prompt('Enter the base:') || '0');
-    const exponent = parseFloat(prompt('Enter the exponent:') || '0');
-    display.value = Math.pow(base, exponent).toString();
+const calculateLogButton = document.getElementById('calculate-log') as HTMLButtonElement;
+calculateLogButton.addEventListener('click', () => {
+    const value = parseFloat(prompt('Enter the value:') || '0');
+    const base = parseFloat(prompt('Enter the base (optional, default 10):') || '10');
+    display.value = Math.log(value) / Math.log(base).toString();
 });
