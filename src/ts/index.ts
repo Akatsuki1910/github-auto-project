@@ -1,8 +1,7 @@
 // ... (Existing code)
-const calculateTrapezoidAreaButton = document.getElementById('calculate-trapezoid-area') as HTMLButtonElement;
-calculateTrapezoidAreaButton.addEventListener('click', () => {
-    const base1 = parseFloat(prompt('Enter the first base of the trapezoid:') || '0');
-    const base2 = parseFloat(prompt('Enter the second base of the trapezoid:') || '0');
-    const height = parseFloat(prompt('Enter the height of the trapezoid:') || '0');
-    display.value = (0.5 * (base1 + base2) * height).toString();
+const calculateCylinderVolumeButton = document.getElementById('calculate-cylinder-volume') as HTMLButtonElement;
+calculateCylinderVolumeButton.addEventListener('click', () => {
+    const radius = parseFloat(prompt('Enter the radius of the cylinder:') || '0');
+    const height = parseFloat(prompt('Enter the height of the cylinder:') || '0');
+    display.value = (Math.PI * radius * radius * height).toString();
 });
