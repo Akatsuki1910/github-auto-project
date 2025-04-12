@@ -1,6 +1,6 @@
 // ... (Existing code)
-const calculateTangentButton = document.getElementById('calculate-tangent') as HTMLButtonElement;
-calculateTangentButton.addEventListener('click', () => {
+const calculateCotangentButton = document.getElementById('calculate-cotangent') as HTMLButtonElement;
+calculateCotangentButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    display.value = Math.tan(currentValue).toString();
+    display.value = (1 / Math.tan(currentValue)).toString();
 });
