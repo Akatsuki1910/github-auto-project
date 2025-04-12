@@ -1,7 +1,7 @@
 // ... (Existing code)
-const calculateRectangleAreaButton = document.getElementById('calculate-rectangle-area') as HTMLButtonElement;
-calculateRectangleAreaButton.addEventListener('click', () => {
-    const length = parseFloat(prompt('Enter the length of the rectangle:') || '0');
-    const width = parseFloat(prompt('Enter the width of the rectangle:') || '0');
-    display.value = (length * width).toString();
+const calculateTriangleAreaButton = document.getElementById('calculate-triangle-area') as HTMLButtonElement;
+calculateTriangleAreaButton.addEventListener('click', () => {
+    const base = parseFloat(prompt('Enter the base of the triangle:') || '0');
+    const height = parseFloat(prompt('Enter the height of the triangle:') || '0');
+    display.value = (0.5 * base * height).toString();
 });
