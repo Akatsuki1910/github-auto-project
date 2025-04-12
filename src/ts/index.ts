@@ -1,6 +1,7 @@
 // ... (Existing code)
-const calculateSquareAreaButton = document.getElementById('calculate-square-area') as HTMLButtonElement;
-calculateSquareAreaButton.addEventListener('click', () => {
-    const side = parseFloat(prompt('Enter the side length of the square:') || '0');
-    display.value = (side * side).toString();
+const calculateRectanglePerimeterButton = document.getElementById('calculate-rectangle-perimeter') as HTMLButtonElement;
+calculateRectanglePerimeterButton.addEventListener('click', () => {
+    const length = parseFloat(prompt('Enter the length of the rectangle:') || '0');
+    const width = parseFloat(prompt('Enter the width of the rectangle:') || '0');
+    display.value = (2 * (length + width)).toString();
 });
