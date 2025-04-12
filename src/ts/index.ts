@@ -1,6 +1,7 @@
 // ... (Existing code)
-const calculateCosecantButton = document.getElementById('calculate-cosecant') as HTMLButtonElement;
-calculateCosecantButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    display.value = (1 / Math.sin(currentValue)).toString();
+const calculateExponentButton = document.getElementById('calculate-exponent') as HTMLButtonElement;
+calculateExponentButton.addEventListener('click', () => {
+    const base = parseFloat(prompt('Enter the base:') || '0');
+    const exponent = parseFloat(prompt('Enter the exponent:') || '0');
+    display.value = Math.pow(base, exponent).toString();
 });
