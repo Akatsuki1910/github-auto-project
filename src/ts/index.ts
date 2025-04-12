@@ -1,6 +1,6 @@
 // ... (Existing code)
-const calculateSquareButton = document.getElementById('calculate-square') as HTMLButtonElement;
-calculateSquareButton.addEventListener('click', () => {
+const calculateCubeButton = document.getElementById('calculate-cube') as HTMLButtonElement;
+calculateCubeButton.addEventListener('click', () => {
     const value = parseFloat(prompt('Enter a value:') || '0');
-    display.value = (value * value).toString();
+    display.value = (value * value * value).toString();
 });
