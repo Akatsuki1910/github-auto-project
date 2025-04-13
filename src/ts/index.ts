@@ -1,14 +1,10 @@
 // ... (Existing code)
-const calculateFactorialButton = document.getElementById('calculate-factorial') as HTMLButtonElement;
-calculateFactorialButton.addEventListener('click', () => {
-    const value = parseInt(prompt('Enter the value for factorial:') || '0');
-    if (isNaN(value) || value < 0) {
-        alert('Invalid input for factorial. Please enter a non-negative integer.');
+const calculateTenToThePowerButton = document.getElementById('calculate-ten-to-the-power') as HTMLButtonElement;
+calculateTenToThePowerButton.addEventListener('click', () => {
+    const value = parseFloat(prompt('Enter the value for exponent (base 10):') || '0');
+    if (isNaN(value)) {
+        alert('Invalid input for exponent.');
         return;
     }
-    let result = 1;
-    for (let i = 1; i <= value; i++) {
-        result *= i;
-    }
-    display.value = result.toString();
+    display.value = Math.pow(10,value).toString();
 });
