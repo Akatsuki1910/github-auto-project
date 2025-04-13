@@ -1,8 +1,9 @@
 // ... (Existing code)
-const calculatePercentOfButton = document.getElementById('calculate-percent-of') as HTMLButtonElement;
-calculatePercentOfButton.addEventListener('click', () => {
+const calculateMemoryStoreButton = document.getElementById('calculate-memory-store') as HTMLButtonElement;
+let memoryValue = 0;
+calculateMemoryStoreButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = (currentValue / 100).toString();
+        memoryValue = currentValue;
     }
 });
