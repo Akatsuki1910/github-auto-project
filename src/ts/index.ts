@@ -7,6 +7,11 @@ calculateExponentButton.addEventListener('click', () => {
 });
 const calculateLogButton = document.getElementById('calculate-log') as HTMLButtonElement;
 calculateLogButton.addEventListener('click', () => {
-  const value = parseFloat(prompt('Enter the value for log (base 10):') || '0');
-  display.value = Math.log10(value).toString();
+    const value = parseFloat(prompt('Enter the value for log (base 10):') || '0');
+    display.value = Math.log10(value).toString();
+});
+const calculateNaturalLogButton = document.getElementById('calculate-natural-log') as HTMLButtonElement;
+calculateNaturalLogButton.addEventListener('click', () => {
+    const value = parseFloat(prompt('Enter the value for ln:') || '0');
+    display.value = Math.log(value).toString();
 });
