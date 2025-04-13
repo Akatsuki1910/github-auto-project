@@ -21,3 +21,11 @@ factorialButton.addEventListener('click', () => {
         display.value = result.toString();
     }
 });
+const logButton = document.getElementById('log') as HTMLButtonElement;
+logButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.log10(currentValue);
+        display.value = result.toString();
+    }
+});
