@@ -5,3 +5,8 @@ calculateExponentButton.addEventListener('click', () => {
     const exponent = parseFloat(prompt('Enter the exponent:') || '0');
     display.value = Math.pow(base, exponent).toString();
 });
+const calculateLogButton = document.getElementById('calculate-log') as HTMLButtonElement;
+calculateLogButton.addEventListener('click', () => {
+  const value = parseFloat(prompt('Enter the value for log (base 10):') || '0');
+  display.value = Math.log10(value).toString();
+});
