@@ -1,10 +1,10 @@
 // ... (Existing code)
-const calculateRoundButton = document.getElementById('calculate-round') as HTMLButtonElement;
-calculateRoundButton.addEventListener('click', () => {
+const calculateFloorButton = document.getElementById('calculate-floor') as HTMLButtonElement;
+calculateFloorButton.addEventListener('click', () => {
     const value = parseFloat(display.value);
     if (isNaN(value)) {
-        alert('Invalid input for round.');
+        alert('Invalid input for floor.');
         return;
     }
-    display.value = Math.round(value).toString();
+    display.value = Math.floor(value).toString();
 });
