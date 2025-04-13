@@ -1,8 +1,8 @@
 // ... (Existing code)
-const calculateFifthPowerButton = document.getElementById('calculate-fifth-power') as HTMLButtonElement;
-calculateFifthPowerButton.addEventListener('click', () => {
+const calculateSixthPowerButton = document.getElementById('calculate-sixth-power') as HTMLButtonElement;
+calculateSixthPowerButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = (currentValue * currentValue * currentValue * currentValue * currentValue).toString();
+        display.value = Math.pow(currentValue, 6).toString();
     }
 });
