@@ -1,6 +1,7 @@
 // ... (Existing code)
-const calculateCircleCircumferenceButton = document.getElementById('calculate-circle-circumference') as HTMLButtonElement;
-calculateCircleCircumferenceButton.addEventListener('click', () => {
-    const radius = parseFloat(prompt('Enter the radius of the circle:') || '0');
-    display.value = (2 * Math.PI * radius).toString();
+const calculateExponentButton = document.getElementById('calculate-exponent') as HTMLButtonElement;
+calculateExponentButton.addEventListener('click', () => {
+    const base = parseFloat(prompt('Enter the base:') || '0');
+    const exponent = parseFloat(prompt('Enter the exponent:') || '0');
+    display.value = Math.pow(base, exponent).toString();
 });
