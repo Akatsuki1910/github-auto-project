@@ -9,3 +9,7 @@ calculatePercentageChangeButton.addEventListener('click', () => {
     }
     previousValue = currentValue;
 });
+const piButton = document.getElementById('pi') as HTMLButtonElement;
+piButton.addEventListener('click', () => {
+    display.value = Math.PI.toString();
+});
