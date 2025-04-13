@@ -1,8 +1,8 @@
 // ... (Existing code)
-const calculateExpButton = document.getElementById('calculate-exp') as HTMLButtonElement;
-calculateExpButton.addEventListener('click', () => {
+const calculateModButton = document.getElementById('calculate-mod') as HTMLButtonElement;
+calculateModButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.exp(currentValue).toString();
+        display.value = (currentValue % 2).toString();
     }
 });
