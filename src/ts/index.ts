@@ -13,3 +13,11 @@ const piButton = document.getElementById('pi') as HTMLButtonElement;
 piButton.addEventListener('click', () => {
     display.value = Math.PI.toString();
 });
+const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
+factorialButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = math.factorial(currentValue);
+        display.value = result.toString();
+    }
+});
