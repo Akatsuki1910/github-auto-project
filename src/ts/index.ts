@@ -1,10 +1,10 @@
 // ... (Existing code)
-const calculateTenToThePowerButton = document.getElementById('calculate-ten-to-the-power') as HTMLButtonElement;
-calculateTenToThePowerButton.addEventListener('click', () => {
-    const value = parseFloat(prompt('Enter the value for exponent (base 10):') || '0');
+const calculateRoundButton = document.getElementById('calculate-round') as HTMLButtonElement;
+calculateRoundButton.addEventListener('click', () => {
+    const value = parseFloat(display.value);
     if (isNaN(value)) {
-        alert('Invalid input for exponent.');
+        alert('Invalid input for round.');
         return;
     }
-    display.value = Math.pow(10,value).toString();
+    display.value = Math.round(value).toString();
 });
