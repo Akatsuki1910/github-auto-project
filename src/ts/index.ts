@@ -29,3 +29,11 @@ logButton.addEventListener('click', () => {
         display.value = result.toString();
     }
 });
+const expButton = document.getElementById('exp') as HTMLButtonElement;
+expButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.exp(currentValue);
+        display.value = result.toString();
+    }
+});
