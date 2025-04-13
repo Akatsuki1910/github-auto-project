@@ -1,8 +1,8 @@
 // ... (Existing code)
-const calculateMemoryMultiplyButton = document.getElementById('calculate-memory-multiply') as HTMLButtonElement;
-calculateMemoryMultiplyButton.addEventListener('click', () => {
+const calculateMemoryDivideButton = document.getElementById('calculate-memory-divide') as HTMLButtonElement;
+calculateMemoryDivideButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        memoryValue *= currentValue;
+    if (!isNaN(currentValue) && currentValue !== 0) {
+        memoryValue /= currentValue;
     }
 });
