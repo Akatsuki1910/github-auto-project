@@ -1,8 +1,8 @@
 // ... (Existing code)
-const calculateTenthPowerButton = document.getElementById('calculate-tenth-power') as HTMLButtonElement;
-calculateTenthPowerButton.addEventListener('click', () => {
+const calculateExpButton = document.getElementById('calculate-exp') as HTMLButtonElement;
+calculateExpButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.pow(currentValue, 10).toString();
+        display.value = Math.exp(currentValue).toString();
     }
 });
