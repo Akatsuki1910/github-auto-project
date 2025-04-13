@@ -1,8 +1,8 @@
 // ... (Existing code)
-const calculateTripleButton = document.getElementById('calculate-triple') as HTMLButtonElement;
-calculateTripleButton.addEventListener('click', () => {
+const calculateInverseButton = document.getElementById('calculate-inverse') as HTMLButtonElement;
+calculateInverseButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (currentValue * 3).toString();
+    if (!isNaN(currentValue) && currentValue !== 0) {
+        display.value = (1 / currentValue).toString();
     }
 });
