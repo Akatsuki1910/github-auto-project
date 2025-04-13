@@ -1,10 +1,10 @@
 // ... (Existing code)
-const calculateCeilButton = document.getElementById('calculate-ceil') as HTMLButtonElement;
-calculateCeilButton.addEventListener('click', () => {
+const calculateSignButton = document.getElementById('calculate-sign') as HTMLButtonElement;
+calculateSignButton.addEventListener('click', () => {
     const value = parseFloat(display.value);
     if (isNaN(value)) {
-        alert('Invalid input for ceil.');
+        alert('Invalid input for sign.');
         return;
     }
-    display.value = Math.ceil(value).toString();
+    display.value = Math.sign(value).toString();
 });
