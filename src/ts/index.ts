@@ -14,7 +14,22 @@ acosButton.addEventListener('click', () => {
             result = result * 180 / Math.PI;
         }
         display.value = result.toString();
-    } else {
+    }
+    else {
+        display.value = 'Error';
+    }
+});
+const asinButton = document.getElementById('asin') as HTMLButtonElement;
+asinButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        let result = Math.asin(currentValue);
+        if (!isRadians) {
+            result = result * 180 / Math.PI;
+        }
+        display.value = result.toString();
+    }
+    else {
         display.value = 'Error';
     }
 });
