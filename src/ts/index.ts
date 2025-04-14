@@ -1,9 +1,9 @@
 // ... (Existing code)
-const tanButton = document.getElementById('tan') as HTMLButtonElement;
-tanButton.addEventListener('click', () => {
+const atanButton = document.getElementById('atan') as HTMLButtonElement;
+atanButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.tan(currentValue).toString();
+        display.value = Math.atan(currentValue).toString();
     } else {
         display.value = 'Error';
     }
