@@ -1,9 +1,9 @@
 // ... (Existing code)
-const exp10Button = document.getElementById('exp10') as HTMLButtonElement;
-exp10Button.addEventListener('click', () => {
+const exp2Button = document.getElementById('exp2') as HTMLButtonElement;
+exp2Button.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.pow(10, currentValue).toString();
+        display.value = Math.pow(2, currentValue).toString();
     } else {
         display.value = 'Error';
     }
