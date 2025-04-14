@@ -1,11 +1,11 @@
 // ... (Existing code)
-const squaredRootButton = document.getElementById('squared-root') as HTMLButtonElement;
-squaredRootButton.addEventListener('click', () => {
-    // Placeholder for squared root logic
+const powerButton = document.getElementById('power') as HTMLButtonElement;
+powerButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    currentExpressionDisplay.textContent = `${currentValue}√`;
+    currentExpressionDisplay.textContent = `${currentValue}^`;
     waitingForSecondOperand = true;
-    pendingOperator = 'squaredRoot';
+    pendingOperator = 'power';
+    firstOperand = currentValue;
 });
 
 const evaluate = () => {
@@ -13,9 +13,12 @@ const evaluate = () => {
     if (pendingOperator && !isNaN(secondOperand)) {
         switch (pendingOperator) {
             // ... other cases
+            case 'power':
+                display.value = Math.pow(firstOperand, secondOperand).toString();
+                break;
             case 'squaredRoot':
                 display.value = Math.pow(secondOperand, 1/firstOperand).toString();
-                break;
+                break;                
         }
         currentExpressionDisplay.textContent = '';
         pendingOperator = null;
