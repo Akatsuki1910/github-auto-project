@@ -1,6 +1,10 @@
 // ... (Existing code)
-const memorySubtractButton = document.getElementById('memory-subtract') as HTMLButtonElement;
-memorySubtractButton.addEventListener('click', () => {
-    memoryValue -= parseFloat(display.value);
-    display.value = memoryValue.toString();
+const lnButton = document.getElementById('ln') as HTMLButtonElement;
+lnButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue > 0) {
+        display.value = Math.log(currentValue).toString();
+    } else {
+        display.value = 'Error';
+    }
 });
