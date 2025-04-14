@@ -1,4 +1,8 @@
 // ... (Existing code)
+const eButton = document.getElementById('e') as HTMLButtonElement;
+eButton.addEventListener('click', () => {
+    display.value = Math.E.toString();
+});
 const nthRootButton = document.getElementById('nth-root') as HTMLButtonElement;
 nthRootButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
