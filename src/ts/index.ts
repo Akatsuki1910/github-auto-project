@@ -1,9 +1,9 @@
 // ... (Existing code)
-const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
-cbrtButton.addEventListener('click', () => {
+const exp10Button = document.getElementById('exp10') as HTMLButtonElement;
+exp10Button.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.cbrt(currentValue).toString();
+        display.value = Math.pow(10, currentValue).toString();
     } else {
         display.value = 'Error';
     }
