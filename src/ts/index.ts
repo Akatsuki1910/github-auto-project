@@ -33,6 +33,20 @@ asinButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+const atanButton = document.getElementById('atan') as HTMLButtonElement;
+atanButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        let result = Math.atan(currentValue);
+        if (!isRadians) {
+            result = result * 180 / Math.PI;
+        }
+        display.value = result.toString();
+    }
+    else {
+        display.value = 'Error';
+    }
+});
 const atanhButton = document.getElementById('atanh') as HTMLButtonElement;
 atanhButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
