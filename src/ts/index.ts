@@ -37,3 +37,11 @@ expButton.addEventListener('click', () => {
         display.value = result.toString();
     }
 });
+const powerOfTenButton = document.getElementById('powerOfTen') as HTMLButtonElement;
+powerOfTenButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.pow(10, currentValue);
+        display.value = result.toString();
+    }
+});
