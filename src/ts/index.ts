@@ -1,10 +1,8 @@
 // ... (Existing code)
-const modButton = document.getElementById('mod') as HTMLButtonElement;
-modButton.addEventListener('click', () => {
+const absButton = document.getElementById('abs') as HTMLButtonElement;
+absButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        currentOperator = '%';
-        firstOperand = currentValue;
-        display.value = '';
+        display.value = Math.abs(currentValue).toString();
     }
 });
