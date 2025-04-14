@@ -1,8 +1,8 @@
 // ... (Existing code)
-const halfButton = document.getElementById('half') as HTMLButtonElement;
-halfButton.addEventListener('click', () => {
+const thirdButton = document.getElementById('third') as HTMLButtonElement;
+thirdButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = (currentValue / 2).toString();
+        display.value = (currentValue / 3).toString();
     }
 });
