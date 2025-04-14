@@ -1,4 +1,8 @@
 // ... (Existing code)
+const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
+duplicateButton.addEventListener('click', () => {
+    navigator.clipboard.writeText(display.value);
+});
 const randomButton = document.getElementById('random') as HTMLButtonElement;
 randomButton.addEventListener('click', () => {
     display.value = Math.random().toString();
