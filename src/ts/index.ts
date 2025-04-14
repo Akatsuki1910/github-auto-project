@@ -33,3 +33,14 @@ asinButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+const atanhButton = document.getElementById('atanh') as HTMLButtonElement;
+atanhButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        const result = Math.atanh(currentValue);
+        display.value = result.toString();
+    }
+    else {
+        display.value = 'Error';
+    }
+});
