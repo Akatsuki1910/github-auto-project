@@ -1,11 +1,11 @@
 // ... (Existing code)
-const roundButton = document.getElementById('round') as HTMLButtonElement;
-roundButton.addEventListener('click', () => {
+const floorButton = document.getElementById('floor') as HTMLButtonElement;
+floorButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        ans = Math.round(currentValue);
+        ans = Math.floor(currentValue);
         display.value = ans.toString();
-        history.push(`round(${currentValue}) = ${ans}`);
+        history.push(`floor(${currentValue}) = ${ans}`);
     }
 });
 // ... (rest of the code)
