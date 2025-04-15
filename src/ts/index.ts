@@ -45,3 +45,13 @@ percentageButton.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+//New feature: Toggle History Display
+const historyButton = document.getElementById('history') as HTMLButtonElement;
+const historyDisplay = document.createElement('div');
+historyDisplay.id = 'history-display';
+document.body.appendChild(historyDisplay);
+let historyVisible = false;
+historyButton.addEventListener('click', () => {
+    historyVisible = !historyVisible;
+    historyDisplay.style.display = historyVisible ? 'block' : 'none';
+});
