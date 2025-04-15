@@ -1,9 +1,9 @@
 // ... (Existing code)
-const atanButton = document.getElementById('atan') as HTMLButtonElement;
-atanButton.addEventListener('click', () => {
+const absButton = document.getElementById('abs') as HTMLButtonElement;
+absButton.addEventListener('click', () => {
     try {
         const currentValue = parseFloat(display.value);
-        display.value = Math.atan(currentValue).toString();
+        display.value = Math.abs(currentValue).toString();
     }
     catch (error) {
         display.value = "Error";
