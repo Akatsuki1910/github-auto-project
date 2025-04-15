@@ -55,3 +55,14 @@ historyButton.addEventListener('click', () => {
     historyVisible = !historyVisible;
     historyDisplay.style.display = historyVisible ? 'block' : 'none';
 });
+//New feature: Cube root
+const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
+cbrtButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = Math.cbrt(currentValue).toString();
+    }
+    catch (error) {
+        display.value = "Error";
+    }
+});
