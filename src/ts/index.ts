@@ -12,3 +12,11 @@ expm1Button.addEventListener('click', () => {
         display.value = ans.toString();
     }
 });
+const parenthesesOpenButton = document.getElementById('parentheses-open') as HTMLButtonElement;
+const parenthesesCloseButton = document.getElementById('parentheses-close') as HTMLButtonElement;
+parenthesesOpenButton.addEventListener('click', () => {
+    display.value += '(';
+});
+parenthesesCloseButton.addEventListener('click', () => {
+    display.value += ')';
+});
