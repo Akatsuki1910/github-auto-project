@@ -1,9 +1,9 @@
 // ... (Existing code)
-const asinButton = document.getElementById('asin') as HTMLButtonElement;
-asinButton.addEventListener('click', () => {
+const acosButton = document.getElementById('acos') as HTMLButtonElement;
+acosButton.addEventListener('click', () => {
     try {
         const currentValue = parseFloat(display.value);
-        display.value = Math.asin(currentValue).toString();
+        display.value = Math.acos(currentValue).toString();
     }
     catch (error) {
         display.value = "Error";
