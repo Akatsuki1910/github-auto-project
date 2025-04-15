@@ -108,6 +108,17 @@ sinButton.addEventListener('click', () => {
     try {
         const currentValue = parseFloat(display.value);
         display.value = Math.sin(currentValue).toString();
+    }
+    catch (error) {
+        display.value = "Error";
+    }
+});
+// New Feature: Cosine function
+const cosButton = document.getElementById('cos') as HTMLButtonElement;
+cosButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = Math.cos(currentValue).toString();
     } catch (error) {
         display.value = "Error";
     }
