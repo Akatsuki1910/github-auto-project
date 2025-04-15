@@ -4,10 +4,14 @@ const historyButton = document.getElementById('history') as HTMLButtonElement;
 historyButton.addEventListener('click', () => {
     alert(history.join('\n'));
 });
+const ansButton = document.getElementById('ans') as HTMLButtonElement;
+let ans = 0;
 ansButton.addEventListener('click', () => {
     display.value = ans.toString();
     history.push(`Ans = ${ans}`);
 });
+const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
+const display = document.getElementById('display') as HTMLInputElement;
 expm1Button.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
@@ -17,3 +21,9 @@ expm1Button.addEventListener('click', () => {
     }
 });
 // ... (rest of the code)
+const clearHistoryButton = document.createElement('button');
+clearHistoryButton.textContent = 'Clear History';
+clearHistoryButton.addEventListener('click', () => {
+    history = [];
+});
+document.body.appendChild(clearHistoryButton);
