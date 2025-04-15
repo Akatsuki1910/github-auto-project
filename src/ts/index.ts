@@ -21,9 +21,7 @@ expm1Button.addEventListener('click', () => {
     }
 });
 // ... (rest of the code)
-const clearHistoryButton = document.createElement('button');
-clearHistoryButton.textContent = 'Clear History';
+const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
 clearHistoryButton.addEventListener('click', () => {
     history = [];
 });
-document.body.appendChild(clearHistoryButton);
