@@ -25,3 +25,11 @@ const clearHistoryButton = document.getElementById('clear-history') as HTMLButto
 clearHistoryButton.addEventListener('click', () => {
     history = [];
 });
+const parenthesesOpenButton = document.getElementById('parentheses-open') as HTMLButtonElement;
+parenthesesOpenButton.addEventListener('click', () => {
+    display.value += '(';
+});
+const parenthesesCloseButton = document.getElementById('parentheses-close') as HTMLButtonElement;
+parenthesesCloseButton.addEventListener('click', () => {
+    display.value += ')';
+});
