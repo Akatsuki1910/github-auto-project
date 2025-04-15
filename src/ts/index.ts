@@ -10,17 +10,16 @@ ansButton.addEventListener('click', () => {
     display.value = ans.toString();
     history.push(`Ans = ${ans}`);
 });
-const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
 const display = document.getElementById('display') as HTMLInputElement;
-expm1Button.addEventListener('click', () => {
+const expButton = document.getElementById('exp') as HTMLButtonElement;
+expButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        ans = math.expm1(currentValue);
+        ans = math.exp(currentValue);
         display.value = ans.toString();
-        history.push(`expm1(${currentValue}) = ${ans}`);
+        history.push(`exp(${currentValue}) = ${ans}`);
     }
 });
-// ... (rest of the code)
 const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
 clearHistoryButton.addEventListener('click', () => {
     history = [];
@@ -33,3 +32,4 @@ const parenthesesCloseButton = document.getElementById('parentheses-close') as H
 parenthesesCloseButton.addEventListener('click', () => {
     display.value += ')';
 });
+// ... (rest of the code)
