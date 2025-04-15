@@ -1,22 +1,19 @@
 // ... (Existing code)
-let ans = 0;
-const ansButton = document.getElementById('ans') as HTMLButtonElement;
+let history: string[] = [];
+const historyButton = document.getElementById('history') as HTMLButtonElement;
+historyButton.addEventListener('click', () => {
+    alert(history.join('\n'));
+});
 ansButton.addEventListener('click', () => {
     display.value = ans.toString();
+    history.push(`Ans = ${ans}`);
 });
-const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
 expm1Button.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
         ans = math.expm1(currentValue);
         display.value = ans.toString();
+        history.push(`expm1(${currentValue}) = ${ans}`);
     }
 });
-const parenthesesOpenButton = document.getElementById('parentheses-open') as HTMLButtonElement;
-const parenthesesCloseButton = document.getElementById('parentheses-close') as HTMLButtonElement;
-parenthesesOpenButton.addEventListener('click', () => {
-    display.value += '(';
-});
-parenthesesCloseButton.addEventListener('click', () => {
-    display.value += ')';
-});
+// ... (rest of the code)
