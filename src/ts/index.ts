@@ -1,4 +1,13 @@
 // ... (Existing code)
+const logButton = document.getElementById('log') as HTMLButtonElement;
+logButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        ans = math.log10(currentValue);
+        display.value = ans.toString();
+        history.push(`log(${currentValue}) = ${ans}`);
+    }
+});
 const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
 factorialButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
