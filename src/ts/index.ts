@@ -80,3 +80,14 @@ powerButton.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+// New Feature: Natural Logarithm (ln)
+const lnButton = document.getElementById('ln') as HTMLButtonElement;
+lnButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = Math.log(currentValue).toString();
+    }
+    catch (error) {
+        display.value = "Error";
+    }
+});
