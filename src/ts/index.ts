@@ -91,3 +91,13 @@ lnButton.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+// New Feature: expm1
+const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
+expm1Button.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = Math.expm1(currentValue).toString();
+    } catch (error) {
+        display.value = "Error";
+    }
+});
