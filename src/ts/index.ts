@@ -1,4 +1,8 @@
 // ... (Existing code)
+const piButton = document.getElementById('pi') as HTMLButtonElement;
+piButton.addEventListener('click', () => {
+    display.value += Math.PI.toString();
+});
 let history: string[] = [];
 const historyButton = document.getElementById('history') as HTMLButtonElement;
 historyButton.addEventListener('click', () => {
