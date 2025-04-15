@@ -1,57 +1,11 @@
 // ... (Existing code)
-const logButton = document.getElementById('log') as HTMLButtonElement;
-logButton.addEventListener('click', () => {
+const powerOfTenButton = document.getElementById('power-of-ten') as HTMLButtonElement;
+powerOfTenButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        ans = math.log10(currentValue);
+        ans = Math.pow(10, currentValue);
         display.value = ans.toString();
-        history.push(`log(${currentValue}) = ${ans}`);
+        history.push(`10^(${currentValue}) = ${ans}`);
     }
-});
-const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
-factorialButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        ans = math.factorial(currentValue);
-        display.value = ans.toString();
-        history.push(`${currentValue}! = ${ans}`);
-    }
-});
-const piButton = document.getElementById('pi') as HTMLButtonElement;
-piButton.addEventListener('click', () => {
-    display.value += Math.PI.toString();
-});
-let history: string[] = [];
-const historyButton = document.getElementById('history') as HTMLButtonElement;
-historyButton.addEventListener('click', () => {
-    alert(history.join('\n'));
-});
-const ansButton = document.getElementById('ans') as HTMLButtonElement;
-let ans = 0;
-ansButton.addEventListener('click', () => {
-    display.value = ans.toString();
-    history.push(`Ans = ${ans}`);
-});
-const display = document.getElementById('display') as HTMLInputElement;
-const expButton = document.getElementById('exp') as HTMLButtonElement;
-expButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        ans = math.exp(currentValue);
-        display.value = ans.toString();
-        history.push(`exp(${currentValue}) = ${ans}`);
-    }
-});
-const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
-clearHistoryButton.addEventListener('click', () => {
-    history = [];
-});
-const parenthesesOpenButton = document.getElementById('parentheses-open') as HTMLButtonElement;
-parenthesesOpenButton.addEventListener('click', () => {
-    display.value += '(';
-});
-const parenthesesCloseButton = document.getElementById('parentheses-close') as HTMLButtonElement;
-parenthesesCloseButton.addEventListener('click', () => {
-    display.value += ')';
 });
 // ... (rest of the code)
