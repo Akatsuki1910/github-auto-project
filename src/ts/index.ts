@@ -34,7 +34,7 @@ mMinusButton.addEventListener('click', () => {
 msButton.addEventListener('click', () => {
     memoryValue = parseFloat(display.value);
 });
-// New feature: Percentage calculation
+// Percentage calculation
 const percentageButton = document.getElementById('percentage') as HTMLButtonElement;
 percentageButton.addEventListener('click', () => {
     try {
@@ -45,7 +45,7 @@ percentageButton.addEventListener('click', () => {
         display.value = "Error";
     }
 });
-//New feature: Toggle History Display
+// Toggle History Display
 const historyButton = document.getElementById('history') as HTMLButtonElement;
 const historyDisplay = document.createElement('div');
 historyDisplay.id = 'history-display';
@@ -55,12 +55,26 @@ historyButton.addEventListener('click', () => {
     historyVisible = !historyVisible;
     historyDisplay.style.display = historyVisible ? 'block' : 'none';
 });
-//New feature: Cube root
+// Cube root
 const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
 cbrtButton.addEventListener('click', () => {
     try {
         const currentValue = parseFloat(display.value);
         display.value = Math.cbrt(currentValue).toString();
+    }
+    catch (error) {
+        display.value = "Error";
+    }
+});
+//New Feature: Power
+const powerButton = document.getElementById('power') as HTMLButtonElement;
+powerButton.addEventListener('click', () => {
+    try {
+        const base = parseFloat(display.value);
+        const exponent = prompt("Enter exponent:");
+        if (exponent !== null) {
+            display.value = Math.pow(base, parseFloat(exponent)).toString();
+        }
     }
     catch (error) {
         display.value = "Error";
