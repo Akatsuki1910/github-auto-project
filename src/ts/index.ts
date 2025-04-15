@@ -1,11 +1,11 @@
 // ... (Existing code)
-const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
-inverseButton.addEventListener('click', () => {
+const signButton = document.getElementById('sign') as HTMLButtonElement;
+signButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue !== 0) {
-        ans = 1 / currentValue;
+    if (!isNaN(currentValue)) {
+        ans = Math.sign(currentValue);
         display.value = ans.toString();
-        history.push(`1/${currentValue} = ${ans}`);
+        history.push(`sign(${currentValue}) = ${ans}`);
     }
 });
 // ... (rest of the code)
