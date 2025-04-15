@@ -97,6 +97,17 @@ expm1Button.addEventListener('click', () => {
     try {
         const currentValue = parseFloat(display.value);
         display.value = Math.expm1(currentValue).toString();
+    }
+    catch (error) {
+        display.value = "Error";
+    }
+});
+// New Feature: Sine function
+const sinButton = document.getElementById('sin') as HTMLButtonElement;
+sinButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = Math.sin(currentValue).toString();
     } catch (error) {
         display.value = "Error";
     }
