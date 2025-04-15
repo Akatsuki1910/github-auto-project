@@ -1,11 +1,11 @@
 // ... (Existing code)
-const absoluteButton = document.getElementById('absolute') as HTMLButtonElement;
-absoluteButton.addEventListener('click', () => {
+const roundButton = document.getElementById('round') as HTMLButtonElement;
+roundButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        ans = Math.abs(currentValue);
+        ans = Math.round(currentValue);
         display.value = ans.toString();
-        history.push(`abs(${currentValue}) = ${ans}`);
+        history.push(`round(${currentValue}) = ${ans}`);
     }
 });
 // ... (rest of the code)
