@@ -1,10 +1,10 @@
 // ... (Existing code)
-const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
-cbrtButton.addEventListener('click', () => {
+const modButton = document.getElementById('mod') as HTMLButtonElement;
+modButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        ans = Math.cbrt(currentValue);
-        display.value = ans.toString();
-        history.push(`cbrt(${currentValue}) = ${ans}`);
-    }
+        currentOperator = 'mod';
+        firstOperand = currentValue;
+        display.value = '';
+        currentExpressionDisplay.textContent = `${firstOperand} mod `;    }
 });
