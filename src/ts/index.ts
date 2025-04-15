@@ -1,9 +1,9 @@
 // ... (Existing code)
-const tanButton = document.getElementById('tan') as HTMLButtonElement;
-tanButton.addEventListener('click', () => {
+const asinButton = document.getElementById('asin') as HTMLButtonElement;
+asinButton.addEventListener('click', () => {
     try {
         const currentValue = parseFloat(display.value);
-        display.value = Math.tan(currentValue).toString();
+        display.value = Math.asin(currentValue).toString();
     }
     catch (error) {
         display.value = "Error";
