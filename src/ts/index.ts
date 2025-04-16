@@ -75,3 +75,12 @@ percentageButton.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+//New feature: Cube root
+const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
+cbrtButton.addEventListener('click', () => {
+  try {
+    display.value = Math.cbrt(parseFloat(display.value)).toString();
+  } catch (error) {
+    display.value = "Error";
+  }
+});
