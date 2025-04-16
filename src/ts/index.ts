@@ -29,3 +29,12 @@ absButton.addEventListener('click', () => {
         display.value = "Error";
     }
 });
+const historyButton = document.getElementById('history') as HTMLButtonElement;
+historyButton.addEventListener('click', () => {
+  const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+  if (historyDisplay.style.display === 'none') {
+    historyDisplay.style.display = 'block';
+  } else {
+    historyDisplay.style.display = 'none';
+  }
+});
