@@ -43,7 +43,6 @@ clearHistoryButton.addEventListener('click', () => {
     history.length = 0; // Clear the history array
     updateHistoryDisplay();
 });
-
 //Memory functions
 let memoryValue = 0;
 const mrButton = document.getElementById('mr') as HTMLButtonElement;
@@ -60,5 +59,9 @@ mPlusButton.addEventListener('click', () => {
 });
 const mMinusButton = document.getElementById('m-minus') as HTMLButtonElement;
 mMinusButton.addEventListener('click', () => {
-  memoryValue -= parseFloat(display.value);
+    memoryValue -= parseFloat(display.value);
+});
+const mcButton = document.getElementById('mc') as HTMLButtonElement;
+mcButton.addEventListener('click', () => {
+  memoryValue = 0;
 });
