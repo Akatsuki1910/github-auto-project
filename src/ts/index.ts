@@ -19,4 +19,13 @@ window.addEventListener('load', () => {
             }
         });
     }
+    // Memory Clear Button Functionality (MC)
+    const mcButton = document.getElementById('mc');
+    if (mcButton) {
+        mcButton.addEventListener('click', () => {
+            localStorage.removeItem('calculatorMemory');
+            // Optionally provide feedback to the user that memory has been cleared
+            console.log('Memory cleared');
+        });
+    }
 });
