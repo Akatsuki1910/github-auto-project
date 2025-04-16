@@ -1,6 +1,6 @@
 // ... (Existing code)
 const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
-const history: string[] = [];
+const history: { expression: string, result: string }[] = [];
 
 // ... other event listeners
 
@@ -9,7 +9,7 @@ equalsButton.addEventListener('click', () => {
     try {
         const result = math.evaluate(display.value);
         display.value = result.toString();
-        history.push(display.value);
+        history.push({ expression: display.value, result: result.toString() });
         updateHistoryDisplay();
     } catch (error) {
         display.value = "Error";
@@ -17,7 +17,7 @@ equalsButton.addEventListener('click', () => {
 });
 
 function updateHistoryDisplay() {
-    historyDisplay.innerHTML = history.map(item => `<div>${item}</div>`).join('');
+    historyDisplay.innerHTML = history.map(item => `<div>${item.expression} = ${item.result}</div>`).join('');
 }
 const absButton = document.getElementById('abs') as HTMLButtonElement;
 absButton.addEventListener('click', () => {
@@ -31,12 +31,12 @@ absButton.addEventListener('click', () => {
 });
 const historyButton = document.getElementById('history') as HTMLButtonElement;
 historyButton.addEventListener('click', () => {
-  const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
-  if (historyDisplay.style.display === 'none') {
-    historyDisplay.style.display = 'block';
-  } else {
-    historyDisplay.style.display = 'none';
-  }
+    const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+    if (historyDisplay.style.display === 'none') {
+        historyDisplay.style.display = 'block';
+    } else {
+        historyDisplay.style.display = 'none';
+    }
 });
 const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
 clearHistoryButton.addEventListener('click', () => {
