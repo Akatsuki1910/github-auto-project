@@ -30,9 +30,19 @@ equalsButton.addEventListener('click', () => {
         if (currentExpressionDisplay) {
             currentExpressionDisplay.textContent = expression;
         }
+        // Added Feature: Local Storage
+        localStorage.setItem('calculatorHistory', JSON.stringify(history));
     }
     catch (error) {
         display.value = "Error";
     }
 });
 // ... other functions
+// Retrieve history from localStorage on load
+window.addEventListener('load', () => {
+    const storedHistory = localStorage.getItem('calculatorHistory');
+    if (storedHistory) {
+        history = JSON.parse(storedHistory);
+        updateHistoryDisplay();
+    }
+});
