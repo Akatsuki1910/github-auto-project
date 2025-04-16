@@ -21,6 +21,10 @@ equalsButton.addEventListener('click', () => {
         });
         history.push({ expression: display.value, result: result.toString() });
         updateHistoryDisplay();
+        //Added Feature: Copy to clipboard
+        navigator.clipboard.writeText(result.toString()).then(() => {
+            console.log('Result copied to clipboard');
+        });
     }
     catch (error) {
         display.value = "Error";
