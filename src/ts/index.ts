@@ -24,4 +24,13 @@ window.addEventListener('load', () => {
             console.log(`Cube root calculated: ${cubeRootValue}`);
         });
     }
+    const reciprocalButton = document.getElementById('reciprocal');
+    if (reciprocalButton) {
+        reciprocalButton.addEventListener('click', () => {
+            const currentValue = parseFloat(display.value);
+            const reciprocalValue = 1 / currentValue;
+            display.value = reciprocalValue.toString();
+            console.log(`Reciprocal calculated: ${reciprocalValue}`);
+        });
+    }
 });
