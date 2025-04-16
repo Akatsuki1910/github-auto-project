@@ -9,4 +9,14 @@ window.addEventListener('load', () => {
     if (historyLengthDisplay) {
         historyLengthDisplay.textContent = `History Length: ${history.length}`;
     }
+    // Memory Recall Button Functionality(MR)
+    const mrButton = document.getElementById('mr');
+    if (mrButton) {
+        mrButton.addEventListener('click', () => {
+            const memory = localStorage.getItem('calculatorMemory');
+            if (memory) {
+                display.value = memory;
+            }
+        });
+    }
 });
