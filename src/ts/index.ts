@@ -84,3 +84,12 @@ cbrtButton.addEventListener('click', () => {
     display.value = "Error";
   }
 });
+//New Feature: Exponent
+const expButton = document.getElementById('exp') as HTMLButtonElement;
+expButton.addEventListener('click', () => {
+    try {
+        display.value = Math.exp(parseFloat(display.value)).toString();
+    } catch (error) {
+        display.value = "Error";
+    }
+});
