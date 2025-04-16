@@ -3,7 +3,6 @@ const historyDisplay = document.getElementById('history-display') as HTMLDivElem
 const history: { expression: string, result: string }[] = [];
 
 // ... other event listeners
-
 //New Feature: 10 to the power of x
 const tenToThePowerOfXButton = document.getElementById('ten-to-the-power-of-x') as HTMLButtonElement;
 tenToThePowerOfXButton.addEventListener('click', () => {
@@ -99,6 +98,16 @@ expButton.addEventListener('click', () => {
     try {
         display.value = Math.exp(parseFloat(display.value)).toString();
     } catch (error) {
+        display.value = "Error";
+    }
+});
+// New feature: 2 to the power of x
+const exp2Button = document.getElementById('exp2') as HTMLButtonElement;
+exp2Button.addEventListener('click', () => {
+    try {
+        display.value = Math.pow(2, parseFloat(display.value)).toString();
+    }
+    catch (error) {
         display.value = "Error";
     }
 });
