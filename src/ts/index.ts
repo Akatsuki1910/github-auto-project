@@ -32,8 +32,22 @@ equalsButton.addEventListener('click', () => {
         }
         // Added Feature: Local Storage
         localStorage.setItem('calculatorHistory', JSON.stringify(history));
-        //Added Feature: vibrate on error
+        //Added Feature: vibrate on success
         navigator.vibrate(200);
+        //Added Feature: Display a toast message on successful calculation
+        const toast = document.createElement('div');
+        toast.textContent = 'Calculated!';
+        toast.style.position = 'fixed';
+        toast.style.bottom = '20px';
+        toast.style.right = '20px';
+        toast.style.backgroundColor = '#4CAF50';
+        toast.style.color = 'white';
+        toast.style.padding = '10px 20px';
+        toast.style.borderRadius = '5px';
+        document.body.appendChild(toast);
+        setTimeout(() => {
+            document.body.removeChild(toast);
+        }, 2000);
     }
     catch (error) {
         display.value = "Error";
