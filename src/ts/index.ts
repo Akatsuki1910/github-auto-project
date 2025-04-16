@@ -14,4 +14,13 @@ window.addEventListener('load', () => {
             display.value = newMemory;
         });
     }
+    // Memory Clear Button Functionality (MC)
+    const mcButton = document.getElementById('mc');
+    if (mcButton) {
+        mcButton.addEventListener('click', () => {
+            localStorage.removeItem('calculatorMemory');
+            console.log('Memory cleared');
+            display.value = '0'; // Clear the display
+        });
+    }
 });
