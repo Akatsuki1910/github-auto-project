@@ -65,3 +65,13 @@ const mcButton = document.getElementById('mc') as HTMLButtonElement;
 mcButton.addEventListener('click', () => {
   memoryValue = 0;
 });
+// New feature: Percentage calculation
+const percentageButton = document.getElementById('percentage') as HTMLButtonElement;
+percentageButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = (currentValue / 100).toString();
+    } catch (error) {
+        display.value = "Error";
+    }
+});
