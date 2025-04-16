@@ -1,6 +1,15 @@
 // ... (Existing code)
 window.addEventListener('load', () => {
     // ... (Existing code)
+    // Memory Recall Button Functionality (MR)
+    const mrButton = document.getElementById('mr');
+    if (mrButton) {
+        mrButton.addEventListener('click', () => {
+            const memory = localStorage.getItem('calculatorMemory') || '0';
+            display.value = memory;
+            console.log(`Memory recalled: ${memory}`);
+        });
+    }
     // Memory Minus Button Functionality (M-)
     const mMinusButton = document.getElementById('m-minus');
     if (mMinusButton) {
@@ -10,8 +19,7 @@ window.addEventListener('load', () => {
             const newMemory = String(parseFloat(memory) - parseFloat(currentValue));
             localStorage.setItem('calculatorMemory', newMemory);
             console.log(`Memory updated: ${newMemory}`);
-            // Display the current memory value in the display
-            display.value = newMemory;
+            display.value = newMemory; // Display the current memory value in the display
         });
     }
     // Memory Clear Button Functionality (MC)
