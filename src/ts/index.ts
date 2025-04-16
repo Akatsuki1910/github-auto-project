@@ -13,9 +13,16 @@ equalsButton.addEventListener('click', () => {
         const expression = angleMode === 'rad' ? display.value : display.value.replace(/sin|cos|tan|asin|acos|atan/g, (match) => match + 'r');
         const result = math.evaluate(expression);
         display.value = result.toString();
+        // Added feature: Store result in Ans button
+        const ansButton = document.getElementById('ans') as HTMLButtonElement;
+        ansButton.textContent = 'Ans (' + result.toString() + ')';
+        ansButton.addEventListener('click', () => {
+            display.value += result.toString();
+        });
         history.push({ expression: display.value, result: result.toString() });
         updateHistoryDisplay();
-    } catch (error) {
+    }
+    catch (error) {
         display.value = "Error";
     }
 });
