@@ -1,4 +1,13 @@
 // ... (Existing code)
+const expm1InverseButton = document.getElementById('expm1-inverse') as HTMLButtonElement;
+expm1InverseButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = Math.log1p(currentValue).toString();
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 const truncateButton = document.getElementById('truncate') as HTMLButtonElement;
 truncateButton.addEventListener('click', () => {
     try {
