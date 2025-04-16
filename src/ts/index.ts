@@ -10,10 +10,8 @@ window.addEventListener('load', () => {
             const newMemory = String(parseFloat(memory) - parseFloat(currentValue));
             localStorage.setItem('calculatorMemory', newMemory);
             console.log(`Memory updated: ${newMemory}`);
-            // Display the current memory value
-            const memoryDisplay = document.createElement('div');
-            memoryDisplay.textContent = `Memory: ${newMemory}`;
-            document.body.appendChild(memoryDisplay);
+            // Display the current memory value in the display
+            display.value = newMemory;
         });
     }
 });
