@@ -31,4 +31,16 @@ window.addEventListener('load', () => {
             display.value = '0'; // Clear the display
         });
     }
+    // Memory Plus Button Functionality (M+)
+    const mPlusButton = document.getElementById('m-plus');
+    if (mPlusButton) {
+        mPlusButton.addEventListener('click', () => {
+            const currentValue = display.value;
+            const memory = localStorage.getItem('calculatorMemory') || '0';
+            const newMemory = String(parseFloat(memory) + parseFloat(currentValue));
+            localStorage.setItem('calculatorMemory', newMemory);
+            console.log(`Memory updated: ${newMemory}`);
+            display.value = newMemory;
+        });
+    }
 });
