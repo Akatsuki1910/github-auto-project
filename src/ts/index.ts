@@ -14,4 +14,14 @@ window.addEventListener('load', () => {
             console.log(`Percentage calculated: ${percentageValue}`);
         });
     }
+
+    const cubeButton = document.getElementById('cuberoot');
+    if (cubeButton) {
+        cubeButton.addEventListener('click', () => {
+            const currentValue = parseFloat(display.value);
+            const cubeRootValue = Math.cbrt(currentValue);
+            display.value = cubeRootValue.toString();
+            console.log(`Cube root calculated: ${cubeRootValue}`);
+        });
+    }
 });
