@@ -43,3 +43,14 @@ clearHistoryButton.addEventListener('click', () => {
     history.length = 0; // Clear the history array
     updateHistoryDisplay();
 });
+
+//New Feature: Memory Recall Button
+const mrButton = document.getElementById('mr') as HTMLButtonElement;
+let memoryValue = 0;
+mrButton.addEventListener('click', () => {
+    display.value = memoryValue.toString();
+});
+const msButton = document.getElementById('ms') as HTMLButtonElement;
+msButton.addEventListener('click', () => {
+  memoryValue = parseFloat(display.value);
+});
