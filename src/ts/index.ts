@@ -26,7 +26,6 @@ equalsButton.addEventListener('click', () => {
             currentExpressionDisplay.textContent = expression;
         }
         localStorage.setItem('calculatorHistory', JSON.stringify(history));
-
         // Timestamp feature: Add timestamp to history
         const timestamp = new Date().toLocaleString();
         history[history.length - 1].timestamp = timestamp;
@@ -47,6 +46,11 @@ equalsButton.addEventListener('click', () => {
             document.body.removeChild(toast);
         }, 2000);
         console.log(`Calculation performed: ${expression} = ${result}`);
+                // Added feature: Display calculation history length
+        const historyLengthDisplay = document.getElementById('history-length');
+        if (historyLengthDisplay) {
+            historyLengthDisplay.textContent = `History Length: ${history.length}`;
+        }
     }
     catch (error) {
         display.value = "Error";
