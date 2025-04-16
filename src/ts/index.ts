@@ -25,6 +25,11 @@ equalsButton.addEventListener('click', () => {
         navigator.clipboard.writeText(result.toString()).then(() => {
             console.log('Result copied to clipboard');
         });
+        // Added feature: Current expression display
+        const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
+        if (currentExpressionDisplay) {
+            currentExpressionDisplay.textContent = expression;
+        }
     }
     catch (error) {
         display.value = "Error";
