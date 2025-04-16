@@ -1,4 +1,14 @@
 // ... (Existing code)
+const truncateButton = document.getElementById('truncate') as HTMLButtonElement;
+truncateButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = Math.trunc(currentValue).toString();
+    }
+    catch (error) {
+        display.value = "Error";
+    }
+});
 const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
 const history: { expression: string, result: string }[] = [];
 
