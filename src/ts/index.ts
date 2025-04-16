@@ -32,9 +32,13 @@ equalsButton.addEventListener('click', () => {
         }
         // Added Feature: Local Storage
         localStorage.setItem('calculatorHistory', JSON.stringify(history));
+        //Added Feature: vibrate on error
+        navigator.vibrate(200);
     }
     catch (error) {
         display.value = "Error";
+        //Added Feature: vibrate on error
+        navigator.vibrate([100, 50, 100]);
     }
 });
 // ... other functions
