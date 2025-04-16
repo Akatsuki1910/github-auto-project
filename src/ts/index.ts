@@ -4,6 +4,15 @@ const history: { expression: string, result: string }[] = [];
 
 // ... other event listeners
 
+//New Feature: 10 to the power of x
+const tenToThePowerOfXButton = document.getElementById('ten-to-the-power-of-x') as HTMLButtonElement;
+tenToThePowerOfXButton.addEventListener('click', () => {
+    try {
+        display.value = Math.pow(10, parseFloat(display.value)).toString();
+    } catch (error) {
+        display.value = "Error";
+    }
+});
 const equalsButton = document.getElementById('equals') as HTMLButtonElement;
 equalsButton.addEventListener('click', () => {
     try {
