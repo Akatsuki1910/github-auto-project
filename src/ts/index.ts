@@ -38,3 +38,8 @@ historyButton.addEventListener('click', () => {
     historyDisplay.style.display = 'none';
   }
 });
+const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
+clearHistoryButton.addEventListener('click', () => {
+    history.length = 0; // Clear the history array
+    updateHistoryDisplay();
+});
