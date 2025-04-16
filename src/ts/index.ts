@@ -40,9 +40,10 @@ equalsButton.addEventListener('click', () => {
         setTimeout(() => {
             document.body.removeChild(toast);
         }, 2000);
-
         // Added Feature: Log calculation to console
         console.log(`Calculation performed: ${expression} = ${result}`);
+
+        //Added Feature: Display toast on successful calculation
     }
     catch (error) {
         display.value = "Error";
