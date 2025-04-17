@@ -40,4 +40,12 @@ window.addEventListener('load', () => {
             display.value = (-currentValue).toString();
         });
     }
+    const doubleButton = document.getElementById('double');
+    if (doubleButton) {
+        doubleButton.addEventListener('click', () => {
+            const currentValue = parseFloat(display.value);
+            const doubledValue = currentValue * 2;
+            display.value = doubledValue.toString();
+        });
+    }
 });
