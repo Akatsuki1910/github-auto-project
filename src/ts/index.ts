@@ -13,14 +13,25 @@ window.addEventListener('load', () => {
     const historyLengthSpan = document.getElementById('history-length');
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
     const copyButton = document.getElementById('copy');
-    // ... existing code
     const toggleThemeButton = document.getElementById('toggle-theme');
 
     if (toggleThemeButton) {
         toggleThemeButton.addEventListener('click', () => {
             document.body.classList.toggle('dark-scheme');
             document.body.classList.toggle('light-scheme');
+            // Save theme preference to localStorage
+            localStorage.setItem('theme', document.body.classList.contains('dark-scheme') ? 'dark' : 'light');
         });
+    }
+
+    // Load theme preference from localStorage on page load
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'dark') {
+        document.body.classList.add('dark-scheme');
+        document.body.classList.remove('light-scheme');
+    } else {
+        document.body.classList.add('light-scheme');
+        document.body.classList.remove('dark-scheme');
     }
 
     if (copyButton) {
