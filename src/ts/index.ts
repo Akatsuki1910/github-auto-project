@@ -10,20 +10,9 @@ window.addEventListener('load', () => {
     const doubleButton = document.getElementById('double');
     const cubeButton = document.getElementById('cube');
     const clearHistoryButton = document.getElementById('clear-history');
-    const historyLengthSpan = document.getElementById('history-length'); // Get history length element
+    const historyLengthSpan = document.getElementById('history-length'); 
 
-    if (squaredButton) {
-        // ... existing code
-    }
-    if (cubeRootButton) {
-        // ... existing code
-    }
-    if (doubleButton) {
-        // ... existing code
-    }
-    if (cubeButton) {
-        // ... existing code
-    }
+    // ... existing code
 
     if (clearHistoryButton) {
         clearHistoryButton.addEventListener('click', () => {
@@ -31,6 +20,7 @@ window.addEventListener('load', () => {
             if (historyDisplay) {
                 historyDisplay.innerHTML = ''; // Clear history display
             }
+            localStorage.removeItem('calculatorHistory'); // Clear history from localStorage
             updateHistoryLength(0); // Update history length to 0
         });
     }
@@ -41,6 +31,9 @@ window.addEventListener('load', () => {
             const newEntry = document.createElement('p');
             newEntry.textContent = entry;
             historyDisplay.appendChild(newEntry);
+            let history = localStorage.getItem('calculatorHistory') || '';
+            history += entry + '\n';
+            localStorage.setItem('calculatorHistory', history);
             updateHistoryLength(historyDisplay.children.length); // Update history length
         }
     }
@@ -48,6 +41,16 @@ window.addEventListener('load', () => {
     function updateHistoryLength(length) {
         if (historyLengthSpan) {
             historyLengthSpan.textContent = `History Length: ${length}`;
+        }
+    }
+
+    // Load history from localStorage on page load
+    const savedHistory = localStorage.getItem('calculatorHistory');
+    if (savedHistory) {
+        const historyDisplay = document.getElementById('history-display');
+        if (historyDisplay) {
+            historyDisplay.innerHTML = savedHistory.replace(/\n/g, '<br>');
+            updateHistoryLength(historyDisplay.innerHTML.split('<br>').length - 1);
         }
     }
 });
