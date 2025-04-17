@@ -7,6 +7,7 @@ window.addEventListener('load', () => {
     const percentageButton = document.getElementById('percentage');
     const inverseButton = document.getElementById('inverse');
     const cuberootButton = document.getElementById('cuberoot');
+    const powerButton = document.getElementById('power');
 
     if (toggleThemeButton) {
         // ... (Existing theme toggle code)
@@ -25,11 +26,11 @@ window.addEventListener('load', () => {
         // ... (Existing inverse code)
     }
     if (cuberootButton) {
-        cuberootButton.addEventListener('click', () => {
-            const currentValue = parseFloat(display.value);
-            if (!isNaN(currentValue)) {
-                display.value = Math.cbrt(currentValue).toString();
-            }
+        // ... (Existing cuberoot code)
+    }
+    if (powerButton) {
+        powerButton.addEventListener('click', () => {
+            display.value += '**';
         });
     }
     // ... (rest of the code)
