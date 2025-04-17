@@ -12,6 +12,7 @@ window.addEventListener('load', () => {
     // ... (Existing tenPowerButton code)
     const absButton = document.getElementById('abs');
     const roundButton = document.getElementById('round');
+    const signButton = document.getElementById('sign');
     if (lnButton) {
         lnButton.addEventListener('click', () => {
             display.value += 'ln('; // Add ln function
@@ -25,6 +26,11 @@ window.addEventListener('load', () => {
     if (roundButton) {
         roundButton.addEventListener('click', () => {
             display.value += 'round('; // Add round function
+        });
+    }
+    if (signButton) {
+        signButton.addEventListener('click', () => {
+            display.value += 'sign('; // Add sign function
         });
     }
 
