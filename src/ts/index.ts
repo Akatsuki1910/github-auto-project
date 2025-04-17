@@ -3,13 +3,17 @@ window.addEventListener('load', () => {
     // ... (Existing code)
     const display = document.getElementById('display');
     // ... (Existing code)
-    const cubeButton = document.getElementById('cube');
-    if (cubeButton) {
-        cubeButton.addEventListener('click', () => {
+    const nthrootButton = document.getElementById('nthroot');
+    if (nthrootButton) {
+        nthrootButton.addEventListener('click', () => {
+            // Implement nth root logic. This is a placeholder.
             const currentValue = parseFloat(display.value);
-            const cubeValue = Math.pow(currentValue, 3);
-            display.value = cubeValue.toString();
-            console.log(`Cube calculated: ${cubeValue}`);
+            const root = prompt("Enter the root value:", "2"); // Default to square root
+            if (root !== null && !isNaN(parseInt(root))){
+                const nthrootValue = Math.pow(currentValue, 1/parseInt(root));
+                display.value = nthrootValue.toString();
+                console.log(`nth root calculated: ${nthrootValue}`);
+            }
         });
     }
 });
