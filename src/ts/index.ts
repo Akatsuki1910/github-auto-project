@@ -9,6 +9,8 @@ window.addEventListener('load', () => {
     const cubeRootButton = document.getElementById('cube-root');
     const doubleButton = document.getElementById('double');
     const cubeButton = document.getElementById('cube');
+    const clearHistoryButton = document.getElementById('clear-history');
+
     if (squaredButton) {
         squaredButton.addEventListener('click', () => {
             const currentValue = parseFloat(display.value);
@@ -41,6 +43,16 @@ window.addEventListener('load', () => {
             addToHistory(`${currentValue}^3 = ${cubedValue}`);
         });
     }
+
+    if (clearHistoryButton) {
+        clearHistoryButton.addEventListener('click', () => {
+            const historyDisplay = document.getElementById('history-display');
+            if (historyDisplay) {
+                historyDisplay.innerHTML = ''; // Clear history display
+            }
+        });
+    }
+
     function addToHistory(entry) {
         const historyDisplay = document.getElementById('history-display');
         if (historyDisplay) {
