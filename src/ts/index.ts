@@ -3,16 +3,6 @@ window.addEventListener('load', () => {
     // ... (Existing code)
     const display = document.getElementById('display');
     // ... (Existing code)
-    const nthrootButton = document.getElementById('nthroot');
-    // ... (Existing code)
-    const squaredButton = document.getElementById('squared');
-    const cubeRootButton = document.getElementById('cube-root');
-    const doubleButton = document.getElementById('double');
-    const cubeButton = document.getElementById('cube');
-    const clearHistoryButton = document.getElementById('clear-history');
-    const historyLengthSpan = document.getElementById('history-length');
-    const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
-    const copyButton = document.getElementById('copy');
     const toggleThemeButton = document.getElementById('toggle-theme');
 
     if (toggleThemeButton) {
@@ -21,6 +11,13 @@ window.addEventListener('load', () => {
             document.body.classList.toggle('light-scheme');
             // Save theme preference to localStorage
             localStorage.setItem('theme', document.body.classList.contains('dark-scheme') ? 'dark' : 'light');
+
+            // Added feature: Change display text color based on theme
+            if (document.body.classList.contains('dark-scheme')) {
+                display.style.color = '#eee';
+            } else {
+                display.style.color = '#333';
+            }
         });
     }
 
@@ -29,30 +26,11 @@ window.addEventListener('load', () => {
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-scheme');
         document.body.classList.remove('light-scheme');
+        display.style.color = '#eee'; // Set display text color on theme load
     } else {
         document.body.classList.add('light-scheme');
         document.body.classList.remove('dark-scheme');
+        display.style.color = '#333'; // Set display text color on theme load
     }
-
-    if (copyButton) {
-        // ... (copyButton logic)
-    }
-
-    if (clearHistoryButton) {
-        // ... (clearHistoryButton logic)
-    }
-
-    function addToHistory(entry, expression) {
-        // ... (addToHistory logic)
-    }
-
-    function updateHistoryLength(length) {
-       // ... (updateHistoryLength logic)
-    }
-
-    // Load history from localStorage on page load
-    const savedHistory = localStorage.getItem('calculatorHistory');
-    if (savedHistory) {
-        // ... (load history logic)
-    }
+    // ... (rest of the code)
 });

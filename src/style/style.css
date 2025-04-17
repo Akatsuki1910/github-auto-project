@@ -7,3 +7,6 @@ body.light-scheme {
     background-color: #eee;
     color: #333;
 }
+#display {
+    color: #333; /* Default display text color */
+}
