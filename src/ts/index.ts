@@ -11,13 +11,18 @@ window.addEventListener('load', () => {
             document.body.classList.toggle('light-scheme');
             // Save theme preference to localStorage
             localStorage.setItem('theme', document.body.classList.contains('dark-scheme') ? 'dark' : 'light');
-
             // Added feature: Change display text color based on theme
             if (document.body.classList.contains('dark-scheme')) {
                 display.style.color = '#eee';
             } else {
                 display.style.color = '#333';
             }
+//Added keyboard shortcut
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 't' && event.ctrlKey) {
+                    toggleThemeButton.click();
+                }
+            });
         });
     }
 
