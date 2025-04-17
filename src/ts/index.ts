@@ -11,7 +11,6 @@ window.addEventListener('load', () => {
             if (root !== null && !isNaN(parseInt(root))) {
                 const nthrootValue = Math.pow(currentValue, 1 / parseInt(root));
                 display.value = nthrootValue.toString();
-                console.log(`nth root calculated: ${nthrootValue}`);
                 const historyDisplay = document.getElementById('history-display');
                 if (historyDisplay) {
                     const newEntry = document.createElement('p');
@@ -27,11 +26,24 @@ window.addEventListener('load', () => {
             const currentValue = parseFloat(display.value);
             const cubedValue = Math.pow(currentValue, 3);
             display.value = cubedValue.toString();
-            // Add to history (for cube function)
             const historyDisplay = document.getElementById('history-display');
             if (historyDisplay) {
                 const newEntry = document.createElement('p');
                 newEntry.textContent = `${currentValue}^3 = ${cubedValue}`;
+                historyDisplay.appendChild(newEntry);
+            }
+        });
+    }
+    const log10Button = document.getElementById('log10');
+    if (log10Button) {
+        log10Button.addEventListener('click', () => {
+            const currentValue = parseFloat(display.value);
+            const log10Value = Math.log10(currentValue);
+            display.value = log10Value.toString();
+            const historyDisplay = document.getElementById('history-display');
+            if (historyDisplay) {
+                const newEntry = document.createElement('p');
+                newEntry.textContent = `log₁₀(${currentValue}) = ${log10Value}`;
                 historyDisplay.appendChild(newEntry);
             }
         });
