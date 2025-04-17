@@ -10,38 +10,19 @@ window.addEventListener('load', () => {
     const doubleButton = document.getElementById('double');
     const cubeButton = document.getElementById('cube');
     const clearHistoryButton = document.getElementById('clear-history');
+    const historyLengthSpan = document.getElementById('history-length'); // Get history length element
 
     if (squaredButton) {
-        squaredButton.addEventListener('click', () => {
-            const currentValue = parseFloat(display.value);
-            const squaredValue = Math.pow(currentValue, 2);
-            display.value = squaredValue.toString();
-            addToHistory(`${currentValue}^2 = ${squaredValue}`);
-        });
+        // ... existing code
     }
     if (cubeRootButton) {
-        cubeRootButton.addEventListener('click', () => {
-            const currentValue = parseFloat(display.value);
-            const cubeRootValue = Math.cbrt(currentValue);
-            display.value = cubeRootValue.toString();
-            addToHistory(`∛${currentValue} = ${cubeRootValue}`);
-        });
+        // ... existing code
     }
     if (doubleButton) {
-        doubleButton.addEventListener('click', () => {
-            const currentValue = parseFloat(display.value);
-            const doubledValue = currentValue * 2;
-            display.value = doubledValue.toString();
-            addToHistory(`${currentValue} * 2 = ${doubledValue}`);
-        });
+        // ... existing code
     }
     if (cubeButton) {
-        cubeButton.addEventListener('click', () => {
-            const currentValue = parseFloat(display.value);
-            const cubedValue = Math.pow(currentValue, 3);
-            display.value = cubedValue.toString();
-            addToHistory(`${currentValue}^3 = ${cubedValue}`);
-        });
+        // ... existing code
     }
 
     if (clearHistoryButton) {
@@ -50,6 +31,7 @@ window.addEventListener('load', () => {
             if (historyDisplay) {
                 historyDisplay.innerHTML = ''; // Clear history display
             }
+            updateHistoryLength(0); // Update history length to 0
         });
     }
 
@@ -59,6 +41,13 @@ window.addEventListener('load', () => {
             const newEntry = document.createElement('p');
             newEntry.textContent = entry;
             historyDisplay.appendChild(newEntry);
+            updateHistoryLength(historyDisplay.children.length); // Update history length
+        }
+    }
+
+    function updateHistoryLength(length) {
+        if (historyLengthSpan) {
+            historyLengthSpan.textContent = `History Length: ${length}`;
         }
     }
 });
