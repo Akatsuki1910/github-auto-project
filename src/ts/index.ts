@@ -23,4 +23,12 @@ window.addEventListener('load', () => {
             }
         });
     }
+    const cubeButton = document.getElementById('cube');
+    if (cubeButton) {
+        cubeButton.addEventListener('click', () => {
+            const currentValue = parseFloat(display.value);
+            const cubedValue = Math.pow(currentValue, 3);
+            display.value = cubedValue.toString();
+        });
+    }
 });
