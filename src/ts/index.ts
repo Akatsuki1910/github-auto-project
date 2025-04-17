@@ -8,6 +8,7 @@ window.addEventListener('load', () => {
     const inverseButton = document.getElementById('inverse');
     const cuberootButton = document.getElementById('cuberoot');
     const powerButton = document.getElementById('power');
+    const logButton = document.getElementById('log');
 
     if (toggleThemeButton) {
         // ... (Existing theme toggle code)
@@ -29,8 +30,11 @@ window.addEventListener('load', () => {
         // ... (Existing cuberoot code)
     }
     if (powerButton) {
-        powerButton.addEventListener('click', () => {
-            display.value += '**';
+        // ... (Existing power code)
+    }
+    if (logButton) {
+        logButton.addEventListener('click', () => {
+            display.value += 'log('; // Add log function to display
         });
     }
     // ... (rest of the code)
