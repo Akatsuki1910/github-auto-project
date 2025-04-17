@@ -33,5 +33,19 @@ window.addEventListener('load', () => {
             display.value = '0';
         });
     }
+    const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
+    const equalsButton = document.querySelector('.equals');
+    if (equalsButton) {
+        equalsButton.addEventListener('click', () => {
+            try {
+                const result = math.evaluate(display.value);
+                display.value = result.toString();
+                currentExpressionDisplay.innerText = display.value;
+            }
+            catch (error) {
+                display.value = 'Error';
+            }
+        });
+    }
     // ... (rest of the code)
 });
