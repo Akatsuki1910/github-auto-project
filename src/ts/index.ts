@@ -27,5 +27,11 @@ window.addEventListener('load', () => {
             });
         });
     }
+    const resetButton = document.getElementById('reset');
+    if (resetButton) {
+        resetButton.addEventListener('click', () => {
+            display.value = '0';
+        });
+    }
     // ... (rest of the code)
 });
