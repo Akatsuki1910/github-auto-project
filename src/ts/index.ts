@@ -16,8 +16,15 @@ window.addEventListener('load', () => {
     if (clearAllButton) {
         clearAllButton.addEventListener('click', () => {
             display.value = '';
-            // Add this line to clear currentExpressionDisplay as well
             document.getElementById('currentExpressionDisplay').innerText = '';
+        });
+    }
+    const copyButton = document.getElementById('copy');
+    if (copyButton) {
+        copyButton.addEventListener('click', () => {
+            navigator.clipboard.writeText(display.value).then(() => {
+                alert('Copied to clipboard!');
+            });
         });
     }
     // ... (rest of the code)
