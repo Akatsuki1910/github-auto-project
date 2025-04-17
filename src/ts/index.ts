@@ -12,8 +12,20 @@ window.addEventListener('load', () => {
     const clearHistoryButton = document.getElementById('clear-history');
     const historyLengthSpan = document.getElementById('history-length');
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
+    const copyButton = document.getElementById('copy');
 
     // ... existing code
+
+    if (copyButton) {
+        copyButton.addEventListener('click', () => {
+            const displayValue = display.value;
+            navigator.clipboard.writeText(displayValue).then(() => {
+                alert('Copied to clipboard: ' + displayValue);
+            }, () => {
+                alert('Failed to copy to clipboard.');
+            });
+        });
+    }
 
     if (clearHistoryButton) {
         clearHistoryButton.addEventListener('click', () => {
@@ -39,11 +51,11 @@ window.addEventListener('load', () => {
         }
     }
 
-        function updateHistoryLength(length) {
-            if (historyLengthSpan) {
-                historyLengthSpan.textContent = `History Length: ${length}`;
-            }
+    function updateHistoryLength(length) {
+        if (historyLengthSpan) {
+            historyLengthSpan.textContent = `History Length: ${length}`;
         }
+    }
 
     // Load history from localStorage on page load
     const savedHistory = localStorage.getItem('calculatorHistory');
@@ -51,7 +63,7 @@ window.addEventListener('load', () => {
         const historyDisplay = document.getElementById('history-display');
         if (historyDisplay) {
             historyDisplay.innerHTML = savedHistory.replace(/\n/g, '<br>');
-            updateHistoryLength(historyDisplay.innerHTML.split('<br>').length - 1);    
+            updateHistoryLength(historyDisplay.innerHTML.split('<br>').length - 1);
         }
     }
 });
