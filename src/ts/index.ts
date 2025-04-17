@@ -16,6 +16,7 @@ window.addEventListener('load', () => {
     const floorButton = document.getElementById('floor');
     const maxButton = document.getElementById('max');
     const minButton = document.getElementById('min');
+    const ceilButton = document.getElementById('ceil');
     if (lnButton) {
         lnButton.addEventListener('click', () => {
             display.value += 'ln('; // Add ln function
@@ -49,6 +50,11 @@ window.addEventListener('load', () => {
     if (minButton) {
         minButton.addEventListener('click', () => {
             display.value += 'min('; // Add min function
+        });
+    }
+    if (ceilButton) {
+        ceilButton.addEventListener('click', () => {
+            display.value += 'ceil('; // Add ceil function
         });
     }
 
