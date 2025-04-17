@@ -33,4 +33,11 @@ window.addEventListener('load', () => {
             console.log(`Reciprocal calculated: ${reciprocalValue}`);
         });
     }
+    const signChangeButton = document.getElementById('sign-change');
+    if (signChangeButton) {
+        signChangeButton.addEventListener('click', () => {
+            const currentValue = parseFloat(display.value);
+            display.value = (-currentValue).toString();
+        });
+    }
 });
