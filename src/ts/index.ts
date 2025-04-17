@@ -6,6 +6,7 @@ window.addEventListener('load', () => {
     const toggleThemeButton = document.getElementById('toggle-theme');
     const percentageButton = document.getElementById('percentage');
     const inverseButton = document.getElementById('inverse');
+    const cuberootButton = document.getElementById('cuberoot');
 
     if (toggleThemeButton) {
         // ... (Existing theme toggle code)
@@ -21,12 +22,13 @@ window.addEventListener('load', () => {
         // ... (Existing percentage code)
     }
     if (inverseButton) {
-        inverseButton.addEventListener('click', () => {
+        // ... (Existing inverse code)
+    }
+    if (cuberootButton) {
+        cuberootButton.addEventListener('click', () => {
             const currentValue = parseFloat(display.value);
-            if (!isNaN(currentValue) && currentValue !== 0) {
-                display.value = (1 / currentValue).toString();
-            } else if (currentValue === 0) {
-              display.value = "Cannot divide by zero";
+            if (!isNaN(currentValue)) {
+                display.value = Math.cbrt(currentValue).toString();
             }
         });
     }
