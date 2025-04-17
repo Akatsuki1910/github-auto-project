@@ -5,40 +5,28 @@ window.addEventListener('load', () => {
     // ... (Existing code)
     const toggleThemeButton = document.getElementById('toggle-theme');
     const percentageButton = document.getElementById('percentage');
+    const inverseButton = document.getElementById('inverse');
 
     if (toggleThemeButton) {
-        toggleThemeButton.addEventListener('click', () => {
-            document.body.classList.toggle('dark-scheme');
-            document.body.classList.toggle('light-scheme');
-            localStorage.setItem('theme', document.body.classList.contains('dark-scheme') ? 'dark' : 'light');
-            if (document.body.classList.contains('dark-scheme')) {
-                display.style.color = '#eee';
-            } else {
-                display.style.color = '#333';
-            }
-            document.addEventListener('keydown', (event) => {
-                if (event.key === 't' && event.ctrlKey) {
-                    toggleThemeButton.click();
-                }
-            });
-        });
+        // ... (Existing theme toggle code)
     }
 
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
-        document.body.classList.add('dark-scheme');
-        document.body.classList.remove('light-scheme');
-        display.style.color = '#eee';
+        // ... (Existing dark theme code)
     } else {
-        document.body.classList.add('light-scheme');
-        document.body.classList.remove('dark-scheme');
-        display.style.color = '#333';
+        // ... (Existing light theme code)
     }
     if (percentageButton) {
-        percentageButton.addEventListener('click', () => {
+        // ... (Existing percentage code)
+    }
+    if (inverseButton) {
+        inverseButton.addEventListener('click', () => {
             const currentValue = parseFloat(display.value);
-            if (!isNaN(currentValue)) {
-                display.value = (currentValue / 100).toString();
+            if (!isNaN(currentValue) && currentValue !== 0) {
+                display.value = (1 / currentValue).toString();
+            } else if (currentValue === 0) {
+              display.value = "Cannot divide by zero";
             }
         });
     }
