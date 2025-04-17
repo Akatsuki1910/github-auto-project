@@ -15,6 +15,7 @@ window.addEventListener('load', () => {
     const signButton = document.getElementById('sign');
     const floorButton = document.getElementById('floor');
     const maxButton = document.getElementById('max');
+    const minButton = document.getElementById('min');
     if (lnButton) {
         lnButton.addEventListener('click', () => {
             display.value += 'ln('; // Add ln function
@@ -43,6 +44,11 @@ window.addEventListener('load', () => {
     if (maxButton) {
         maxButton.addEventListener('click', () => {
             display.value += 'max('; // Add max function
+        });
+    }
+    if (minButton) {
+        minButton.addEventListener('click', () => {
+            display.value += 'min('; // Add min function
         });
     }
 
