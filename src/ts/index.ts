@@ -12,5 +12,13 @@ window.addEventListener('load', () => {
             display.value += currentValue;
         });
     }
+    const clearAllButton = document.getElementById('clear-all');
+    if (clearAllButton) {
+        clearAllButton.addEventListener('click', () => {
+            display.value = '';
+            // Add this line to clear currentExpressionDisplay as well
+            document.getElementById('currentExpressionDisplay').innerText = '';
+        });
+    }
     // ... (rest of the code)
 });
