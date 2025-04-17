@@ -13,6 +13,7 @@ window.addEventListener('load', () => {
     const absButton = document.getElementById('abs');
     const roundButton = document.getElementById('round');
     const signButton = document.getElementById('sign');
+    const floorButton = document.getElementById('floor');
     if (lnButton) {
         lnButton.addEventListener('click', () => {
             display.value += 'ln('; // Add ln function
@@ -31,6 +32,11 @@ window.addEventListener('load', () => {
     if (signButton) {
         signButton.addEventListener('click', () => {
             display.value += 'sign('; // Add sign function
+        });
+    }
+    if (floorButton) {
+        floorButton.addEventListener('click', () => {
+            display.value += 'floor('; // Add floor function
         });
     }
 
