@@ -10,6 +10,7 @@ window.addEventListener('load', () => {
     const powerButton = document.getElementById('power');
     const logButton = document.getElementById('log');
     const tenPowerButton = document.getElementById('ten-power');
+    const lnButton = document.getElementById('ln');
 
     if (toggleThemeButton) {
         // ... (Existing theme toggle code)
@@ -34,13 +35,14 @@ window.addEventListener('load', () => {
         // ... (Existing power code)
     }
     if (logButton) {
-        logButton.addEventListener('click', () => {
-            display.value += 'log('; // Add log function to display
-        });
+        // ... (Existing log code)
     }
     if (tenPowerButton) {
-        tenPowerButton.addEventListener('click', () => {
-            display.value += '10^('; // Add 10 to the power of x function
+       // ... (Existing tenPowerButton code)
+    }
+    if (lnButton) {
+        lnButton.addEventListener('click', () => {
+            display.value += 'ln('; // Add ln function
         });
     }
     // ... (rest of the code)
