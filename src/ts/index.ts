@@ -51,5 +51,14 @@ window.addEventListener('load', () => {
             }
         });
     }
+    const percentButton = document.getElementById('percent');
+    if (percentButton) {
+        percentButton.addEventListener('click', () => {
+            const currentValue = parseFloat(display.value);
+            if (!isNaN(currentValue)) {
+                display.value = (currentValue / 100).toString();
+            }
+        });
+    }
     // ... (rest of the code)
 });
