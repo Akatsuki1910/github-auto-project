@@ -16,8 +16,20 @@ window.addEventListener('load', () => {
             }
         });
     }
-    //Added cube function
-    // ... existing functions
+    //Added nthRoot function
+    const nthRootButton = document.getElementById('nthRoot');
+    if (nthRootButton) {
+        nthRootButton.addEventListener('click', () => {
+            const currentValue = parseFloat(display.value);
+            if (!isNaN(currentValue)) {
+                // Get the nth root (e.g., cube root, 4th root, etc.)
+                const root = parseFloat(prompt('Enter the root (e.g., 3 for cube root):', '3'));
+                if (!isNaN(root)) {
+                    display.value = Math.pow(currentValue, 1 / root).toString();
+                }
+            }
+        });
+    }
     const powerOfFourButton = document.getElementById('power-of-four');
     if (powerOfFourButton) {
         powerOfFourButton.addEventListener('click', () => {
