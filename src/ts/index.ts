@@ -30,5 +30,18 @@ window.addEventListener('load', () => {
             }
         });
     }
+    const powerOfTenButton = document.getElementById('power-of-ten');
+    if (powerOfTenButton) {
+        powerOfTenButton.addEventListener('click', () => {
+            const currentValue = display.value;
+            try {
+                const result = math.pow(10, parseFloat(currentValue));
+                display.value = result.toString();
+            }
+            catch (error) {
+                display.value = 'Error';
+            }
+        });
+    }
     // ... (rest of the code)
 });
