@@ -15,3 +15,7 @@ body.light-scheme {
     padding: 10px;
     border-radius: 5px;
 }
+#currentExpressionDisplay{
+    height:20px;
+    margin-bottom: 10px;
+}
