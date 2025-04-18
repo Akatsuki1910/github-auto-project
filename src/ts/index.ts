@@ -40,7 +40,7 @@ window.addEventListener('load', () => {
             try {
                 const result = math.evaluate(display.value);
                 display.value = result.toString();
-                currentExpressionDisplay.innerText = display.value;
+                currentExpressionDisplay.innerText = display.value;                
                 //Added history feature
                 const historyDisplay = document.getElementById('history-display');
                 if (historyDisplay) {
@@ -55,6 +55,19 @@ window.addEventListener('load', () => {
             }
             catch (error) {
                 display.value = 'Error';
+            }
+        });
+    }
+    const clearHistoryButton = document.getElementById('clear-history');
+    if(clearHistoryButton){
+        clearHistoryButton.addEventListener('click', () => {
+            const historyDisplay = document.getElementById('history-display');
+            if (historyDisplay) {
+                historyDisplay.innerHTML = ''; // Clear history display
+                const historyLengthSpan = document.getElementById('history-length');
+                if (historyLengthSpan) {
+                    historyLengthSpan.textContent = `History Length: 0`; //Reset history length
+                }
             }
         });
     }
