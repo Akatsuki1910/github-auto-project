@@ -32,6 +32,18 @@ window.addEventListener('load', () => {
             currentExpression += memoryValue.toString();
             currentExpressionDisplay.textContent = currentExpression;
         }
+        // Added logic for +/- key to negate the current number
+        if (key === '+/-') {
+            if (currentExpression) {
+                if (currentExpression.startsWith('-')) {
+                    currentExpression = currentExpression.slice(1);
+                }
+                else {
+                    currentExpression = '-' + currentExpression;
+                }
+                currentExpressionDisplay.textContent = currentExpression;
+            }
+        }
     });
     // ... (Existing code)
 });
