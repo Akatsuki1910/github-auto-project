@@ -16,14 +16,13 @@ window.addEventListener('load', () => {
             }
         });
     }
-    //Added sin function
-    // ... (Existing sin, cos, tan functions)
-    const powerOfTwoButton = document.getElementById('power-of-two');
-    if (powerOfTwoButton) {
-        powerOfTwoButton.addEventListener('click', () => {
+    //Added cube function
+    const cubeButton = document.getElementById('cube');
+    if (cubeButton) {
+        cubeButton.addEventListener('click', () => {
             const currentValue = display.value;
             try {
-                const result = math.pow(2, parseFloat(currentValue));
+                const result = math.pow(parseFloat(currentValue), 3);
                 display.value = result.toString();
             }
             catch (error) {
