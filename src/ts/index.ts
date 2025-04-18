@@ -2,9 +2,13 @@
 window.addEventListener('load', () => {
     // ... (Existing code)
     const display = document.getElementById('display');
-    // ... (Existing code)
     const toggleThemeButton = document.getElementById('toggle-theme');
-    // ... (Existing code)
+    if (toggleThemeButton) {
+        toggleThemeButton.addEventListener('click', () => {
+            document.body.classList.toggle('light-scheme');
+            document.body.classList.toggle('dark-scheme');
+        });
+    }
     const duplicateButton = document.getElementById('duplicate');
     if (duplicateButton) {
         duplicateButton.addEventListener('click', () => {
@@ -40,7 +44,7 @@ window.addEventListener('load', () => {
             try {
                 const result = math.evaluate(display.value);
                 display.value = result.toString();
-                currentExpressionDisplay.innerText = display.value;                
+                currentExpressionDisplay.innerText = display.value;
                 //Added history feature
                 const historyDisplay = document.getElementById('history-display');
                 if (historyDisplay) {
@@ -59,7 +63,7 @@ window.addEventListener('load', () => {
         });
     }
     const clearHistoryButton = document.getElementById('clear-history');
-    if(clearHistoryButton){
+    if (clearHistoryButton) {
         clearHistoryButton.addEventListener('click', () => {
             const historyDisplay = document.getElementById('history-display');
             if (historyDisplay) {
@@ -71,5 +75,11 @@ window.addEventListener('load', () => {
             }
         });
     }
-    // ... (rest of the code)
+    // Keyboard support
+    document.addEventListener('keydown', (event) => {
+        const key = event.key;
+        if (/^[0-9]$/.test(key)) {
+            display.value += key;
+        }
+    });
 });
