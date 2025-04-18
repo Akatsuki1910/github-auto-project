@@ -6,6 +6,16 @@ window.addEventListener('load', () => {
     //Added a keyboard support
     document.addEventListener('keydown', (event) => {
         const key = event.key;
+        if (key === 'Enter') {
+            try {
+                const result = math.evaluate(currentExpression);
+                display.value = result;
+                currentExpression = result.toString();
+            }
+            catch (error) {
+                display.value = 'Error';
+            }
+        }
         // ... (Existing keyboard handling logic)
         if (key === 'c' || key === 'C') {
             currentExpression = '';
