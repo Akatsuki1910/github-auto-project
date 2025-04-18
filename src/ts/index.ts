@@ -22,6 +22,12 @@ window.addEventListener('load', () => {
             currentExpression = '';
             currentExpressionDisplay.textContent = '';
         }
+        // Add keyboard support for operators
+        const operators = ['+', '-', '*', '/', '.'];
+        if (operators.includes(key)) {
+            currentExpression += key;
+            currentExpressionDisplay.textContent = currentExpression;
+        }
     });
     const memoryStoreButton = document.getElementById('memory-store');
     // ... (Memory buttons event listeners)
