@@ -17,6 +17,11 @@ window.addEventListener('load', () => {
             }
         }
         // ... (Existing keyboard handling logic)
+        //Added logic for 'Escape' key to clear the display
+        if (key === 'Escape') {
+            display.value = '';
+            currentExpression = ''; // Also clear the current expression
+        }
         if (key === 'c' || key === 'C') {
             currentExpression = '';
             currentExpressionDisplay.textContent = '';
@@ -46,11 +51,6 @@ window.addEventListener('load', () => {
                 display.value = 'Error';
             }
         }
-        //Added logic for 'Escape' key to clear the display
-        if (key === 'Escape') {
-            display.value = '';
-            currentExpression = ''; // Also clear the current expression
-        }
         // Add keyboard support for memory clear
         if (key.toLowerCase() === 'k') {
             memoryValue = 0;
@@ -58,6 +58,11 @@ window.addEventListener('load', () => {
         // Add keyboard support for pi
         if (key === 'p' || key === 'P') {
             currentExpression += Math.PI;
+            currentExpressionDisplay.textContent = currentExpression;
+        }
+        // Add keyboard support for Euler's number (e)
+        if (key.toLowerCase() === 'e') {
+            currentExpression += Math.E;
             currentExpressionDisplay.textContent = currentExpression;
         }
     });
