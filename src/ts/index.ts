@@ -1,5 +1,6 @@
 // ... (Existing code)
 let memoryValue = 0;
+let currentExpression = '';
 window.addEventListener('load', () => {
     // ... (Existing code)
     const memoryStoreButton = document.getElementById('memory-store');
@@ -27,5 +28,21 @@ window.addEventListener('load', () => {
             document.body.classList.toggle('dark-scheme');
         });
     }
+    //Current Expression Display
+    const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
+    const operatorButtons = document.querySelectorAll('.operator');
+    const digitButtons = document.querySelectorAll('.digit');
+    digitButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            currentExpression += button.textContent;
+            currentExpressionDisplay.textContent = currentExpression;
+        });
+    });
+    operatorButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            currentExpression += button.textContent;
+            currentExpressionDisplay.textContent = currentExpression;
+        });
+    });
     // ... (rest of the code)
 });
