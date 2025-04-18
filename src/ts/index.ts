@@ -33,5 +33,14 @@ window.addEventListener('load', () => {
             }
         });
     }
+    const tripleButton = document.getElementById('triple');
+    if (tripleButton) {
+        tripleButton.addEventListener('click', () => {
+            const currentValue = parseFloat(display.value);
+            if (!isNaN(currentValue)) {
+                display.value = (currentValue * 3).toString();
+            }
+        });
+    }
     // ... (rest of the code)
 });
