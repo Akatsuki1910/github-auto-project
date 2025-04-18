@@ -32,7 +32,6 @@ window.addEventListener('load', () => {
             currentExpression += memoryValue.toString();
             currentExpressionDisplay.textContent = currentExpression;
         }
-        // Added logic for +/- key to negate the current number
         if (key === '+/-') {
             try {
                 if (currentExpression) {
@@ -46,6 +45,10 @@ window.addEventListener('load', () => {
                 console.error("Error parsing expression:", error);
                 display.value = 'Error';
             }
+        }
+        //Added logic for 'Escape' key to clear the display
+        if (key === 'Escape') {
+            display.value = '';
         }
     });
     // ... (Existing code)
