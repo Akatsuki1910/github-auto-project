@@ -56,9 +56,17 @@ window.addEventListener('load', () => {
             currentExpressionDisplay.textContent = currentExpression;
         });
     });
-        decimalButton.addEventListener('click', () => {
-            currentExpression += decimalButton.textContent;
-            currentExpressionDisplay.textContent = currentExpression;
+    decimalButton.addEventListener('click', () => {
+        currentExpression += decimalButton.textContent;
+        currentExpressionDisplay.textContent = currentExpression;
+    });
+    //Added current expression clear functionality to CE button
+    const clearButton = document.getElementById('clear');
+    if (clearButton) {
+        clearButton.addEventListener('click', () => {
+            currentExpression = '';
+            currentExpressionDisplay.textContent = '';
         });
+    }
     // ... (rest of the code)
 });
