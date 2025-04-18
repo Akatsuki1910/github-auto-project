@@ -40,13 +40,17 @@ window.addEventListener('load', () => {
             try {
                 const result = math.evaluate(display.value);
                 display.value = result.toString();
-                currentExpressionDisplay.innerText = display.value;                
+                currentExpressionDisplay.innerText = display.value;
                 //Added history feature
                 const historyDisplay = document.getElementById('history-display');
                 if (historyDisplay) {
                     const newEntry = document.createElement('p');
                     newEntry.textContent = `${display.value}`;
                     historyDisplay.appendChild(newEntry);
+                    const historyLengthSpan = document.getElementById('history-length');
+                    if (historyLengthSpan) {
+                        historyLengthSpan.textContent = `History Length: ${historyDisplay.children.length}`;
+                    }
                 }
             }
             catch (error) {
