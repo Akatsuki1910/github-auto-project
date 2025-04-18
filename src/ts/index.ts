@@ -28,6 +28,11 @@ window.addEventListener('load', () => {
             currentExpression += key;
             currentExpressionDisplay.textContent = currentExpression;
         }
+        //Added backspace Key functionality
+        if (key === 'Backspace') {
+            currentExpression = currentExpression.slice(0, -1);
+            currentExpressionDisplay.textContent = currentExpression;
+        }
     });
     const memoryStoreButton = document.getElementById('memory-store');
     // ... (Memory buttons event listeners)
