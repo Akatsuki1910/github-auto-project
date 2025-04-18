@@ -30,5 +30,19 @@ window.addEventListener('load', () => {
             }
         });
     }
+    //Added cos function
+    const cosButton = document.getElementById('cos');
+    if (cosButton) {
+        cosButton.addEventListener('click', () => {
+            const currentValue = display.value;
+            try {
+                const result = math.cos(parseFloat(currentValue));
+                display.value = result.toString();
+            }
+            catch (error) {
+                display.value = 'Error';
+            }
+        });
+    }
     // ... (rest of the code)
 });
