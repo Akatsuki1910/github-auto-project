@@ -18,45 +18,12 @@ window.addEventListener('load', () => {
     }
     //Added cube function
     // ... existing functions
-    const randomButton = document.getElementById('random');
-    if (randomButton) {
-        randomButton.addEventListener('click', () => {
-            display.value = Math.random().toString();
-        });
-    }
-    const doubleButton = document.getElementById('double');
-    if (doubleButton) {
-        doubleButton.addEventListener('click', () => {
+    const powerOfFourButton = document.getElementById('power-of-four');
+    if (powerOfFourButton) {
+        powerOfFourButton.addEventListener('click', () => {
             const currentValue = parseFloat(display.value);
             if (!isNaN(currentValue)) {
-                display.value = (currentValue * 2).toString();
-            }
-        });
-    }
-    const tripleButton = document.getElementById('triple');
-    if (tripleButton) {
-        tripleButton.addEventListener('click', () => {
-            const currentValue = parseFloat(display.value);
-            if (!isNaN(currentValue)) {
-                display.value = (currentValue * 3).toString();
-            }
-        });
-    }
-    const halfButton = document.getElementById('half');
-    if (halfButton) {
-        halfButton.addEventListener('click', () => {
-            const currentValue = parseFloat(display.value);
-            if (!isNaN(currentValue)) {
-                display.value = (currentValue / 2).toString();
-            }
-        });
-    }
-    const percentButton = document.getElementById('percent');
-    if (percentButton) {
-        percentButton.addEventListener('click', () => {
-            const currentValue = parseFloat(display.value);
-            if (!isNaN(currentValue)) {
-                display.value = (currentValue / 100).toString();
+                display.value = Math.pow(currentValue, 4).toString();
             }
         });
     }
