@@ -34,14 +34,17 @@ window.addEventListener('load', () => {
         }
         // Added logic for +/- key to negate the current number
         if (key === '+/-') {
-            if (currentExpression) {
-                if (currentExpression.startsWith('-')) {
-                    currentExpression = currentExpression.slice(1);
+            try {
+                if (currentExpression) {
+                    const num = parseFloat(currentExpression);
+                    currentExpression = (-num).toString();
+                    currentExpressionDisplay.textContent = currentExpression;
                 }
-                else {
-                    currentExpression = '-' + currentExpression;
-                }
-                currentExpressionDisplay.textContent = currentExpression;
+            }
+            catch (error) {
+                // Handle any parsing errors (e.g., if currentExpression is not a number)
+                console.error("Error parsing expression:", error);
+                display.value = 'Error';
             }
         }
     });
