@@ -20,5 +20,12 @@ window.addEventListener('load', () => {
             memoryValue = 0;
         });
     }
+    const toggleThemeButton = document.getElementById('toggle-theme');
+    if (toggleThemeButton) {
+        toggleThemeButton.addEventListener('click', () => {
+            document.body.classList.toggle('light-scheme');
+            document.body.classList.toggle('dark-scheme');
+        });
+    }
     // ... (rest of the code)
 });
