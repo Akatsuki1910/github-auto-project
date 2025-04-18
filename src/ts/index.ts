@@ -17,40 +17,13 @@ window.addEventListener('load', () => {
         });
     }
     //Added sin function
-    const sinButton = document.getElementById('sin');
-    if (sinButton) {
-        sinButton.addEventListener('click', () => {
+    // ... (Existing sin, cos, tan functions)
+    const powerOfTwoButton = document.getElementById('power-of-two');
+    if (powerOfTwoButton) {
+        powerOfTwoButton.addEventListener('click', () => {
             const currentValue = display.value;
             try {
-                const result = math.sin(parseFloat(currentValue));
-                display.value = result.toString();
-            }
-            catch (error) {
-                display.value = 'Error';
-            }
-        });
-    }
-    //Added cos function
-    const cosButton = document.getElementById('cos');
-    if (cosButton) {
-        cosButton.addEventListener('click', () => {
-            const currentValue = display.value;
-            try {
-                const result = math.cos(parseFloat(currentValue));
-                display.value = result.toString();
-            }
-            catch (error) {
-                display.value = 'Error';
-            }
-        });
-    }
-    //Added tan function
-    const tanButton = document.getElementById('tan');
-    if (tanButton) {
-        tanButton.addEventListener('click', () => {
-            const currentValue = display.value;
-            try {
-                const result = math.tan(parseFloat(currentValue));
+                const result = math.pow(2, parseFloat(currentValue));
                 display.value = result.toString();
             }
             catch (error) {
