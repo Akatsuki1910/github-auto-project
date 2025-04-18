@@ -10,3 +10,8 @@ body.light-scheme {
 #display {
     color: #333; /* Default display text color */
 }
+#calculator {
+    background-color: #fff; /* Default calculator background color */
+    padding: 10px;
+    border-radius: 5px;
+}

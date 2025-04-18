@@ -9,6 +9,11 @@ window.addEventListener('load', () => {
             document.body.classList.toggle('dark-scheme');
             // Change display text color based on theme
             display.style.color = document.body.classList.contains('dark-scheme') ? '#eee' : '#333';
+            // Change calculator background based on theme
+            const calculator = document.getElementById('calculator');
+            if (calculator) {
+                calculator.style.backgroundColor = document.body.classList.contains('dark-scheme') ? '#555' : '#fff';
+            }
         });
     }
     // ... (rest of the code)
