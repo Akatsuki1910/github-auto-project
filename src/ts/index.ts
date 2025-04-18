@@ -17,40 +17,11 @@ window.addEventListener('load', () => {
         });
     }
     //Added cube function
-    const cubeButton = document.getElementById('cube');
-    if (cubeButton) {
-        cubeButton.addEventListener('click', () => {
-            const currentValue = display.value;
-            try {
-                const result = math.pow(parseFloat(currentValue), 3);
-                display.value = result.toString();
-            }
-            catch (error) {
-                display.value = 'Error';
-            }
-        });
-    }
-    const powerOfTenButton = document.getElementById('power-of-ten');
-    if (powerOfTenButton) {
-        powerOfTenButton.addEventListener('click', () => {
-            const currentValue = display.value;
-            try {
-                const result = math.pow(10, parseFloat(currentValue));
-                display.value = result.toString();
-            }
-            catch (error) {
-                display.value = 'Error';
-            }
-        });
-    }
-    const modButton = document.getElementById('mod');
-    if (modButton) {
-        modButton.addEventListener('click', () => {
-            const currentValue = display.value;
-            if (currentValue) {
-                currentExpression += '%';
-                display.value = currentExpression;
-            }
+    // ... existing functions
+    const randomButton = document.getElementById('random');
+    if (randomButton) {
+        randomButton.addEventListener('click', () => {
+            display.value = Math.random().toString();
         });
     }
     // ... (rest of the code)
