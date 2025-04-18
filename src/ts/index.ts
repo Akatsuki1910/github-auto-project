@@ -43,5 +43,15 @@ window.addEventListener('load', () => {
             }
         });
     }
+    const modButton = document.getElementById('mod');
+    if (modButton) {
+        modButton.addEventListener('click', () => {
+            const currentValue = display.value;
+            if (currentValue) {
+                currentExpression += '%';
+                display.value = currentExpression;
+            }
+        });
+    }
     // ... (rest of the code)
 });
