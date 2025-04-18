@@ -42,5 +42,14 @@ window.addEventListener('load', () => {
             }
         });
     }
+    const halfButton = document.getElementById('half');
+    if (halfButton) {
+        halfButton.addEventListener('click', () => {
+            const currentValue = parseFloat(display.value);
+            if (!isNaN(currentValue)) {
+                display.value = (currentValue / 2).toString();
+            }
+        });
+    }
     // ... (rest of the code)
 });
