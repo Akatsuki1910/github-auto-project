@@ -26,6 +26,17 @@ window.addEventListener('load', () => {
         toggleThemeButton.addEventListener('click', () => {
             document.body.classList.toggle('light-scheme');
             document.body.classList.toggle('dark-scheme');
+            //Added logic to change display and calculator colors with theme
+            const display = document.getElementById('display');
+            const calculator = document.getElementById('calculator');
+            if (document.body.classList.contains('dark-scheme')) {
+                display.style.color = '#eee';
+                calculator.style.backgroundColor = '#333';
+            }
+            else {
+                display.style.color = '#333';
+                calculator.style.backgroundColor = '#fff';
+            }
         });
     }
     //Current Expression Display
