@@ -49,6 +49,7 @@ window.addEventListener('load', () => {
         //Added logic for 'Escape' key to clear the display
         if (key === 'Escape') {
             display.value = '';
+            currentExpression = ''; // Also clear the current expression
         }
     });
     // ... (Existing code)
