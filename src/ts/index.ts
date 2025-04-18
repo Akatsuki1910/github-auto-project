@@ -21,6 +21,10 @@ window.addEventListener('load', () => {
             currentExpression = '';
             currentExpressionDisplay.textContent = '';
         }
+        if (key === 'Backspace') {
+            currentExpression = currentExpression.slice(0, -1);
+            currentExpressionDisplay.textContent = currentExpression;
+        }
     });
     // ... (Existing code)
 });
