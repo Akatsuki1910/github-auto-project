@@ -16,5 +16,19 @@ window.addEventListener('load', () => {
             }
         });
     }
+    //Added sin function
+    const sinButton = document.getElementById('sin');
+    if (sinButton) {
+        sinButton.addEventListener('click', () => {
+            const currentValue = display.value;
+            try {
+                const result = math.sin(parseFloat(currentValue));
+                display.value = result.toString();
+            }
+            catch (error) {
+                display.value = 'Error';
+            }
+        });
+    }
     // ... (rest of the code)
 });
