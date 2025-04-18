@@ -52,8 +52,13 @@ window.addEventListener('load', () => {
             currentExpression = ''; // Also clear the current expression
         }
         // Add keyboard support for memory clear
-        if (key.toLowerCase() === 'k') { // Use 'k' for memory clear
+        if (key.toLowerCase() === 'k') {
             memoryValue = 0;
+        }
+        // Add keyboard support for pi
+        if (key === 'p' || key === 'P') {
+            currentExpression += Math.PI;
+            currentExpressionDisplay.textContent = currentExpression;
         }
     });
     // ... (Existing code)
