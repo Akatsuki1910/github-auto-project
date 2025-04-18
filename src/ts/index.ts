@@ -10,6 +10,13 @@ window.addEventListener('load', () => {
             currentExpression += key;
             currentExpressionDisplay.textContent = currentExpression;
         }
+        //Added Enter key support to trigger equals button
+        if (key === 'Enter') {
+            const equalsButton = document.querySelector('.equals');
+            if (equalsButton) {
+                equalsButton.click();
+            }
+        }
     });
     const memoryStoreButton = document.getElementById('memory-store');
     // ... (Memory buttons event listeners)
