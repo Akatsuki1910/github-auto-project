@@ -25,6 +25,13 @@ window.addEventListener('load', () => {
             currentExpression = currentExpression.slice(0, -1);
             currentExpressionDisplay.textContent = currentExpression;
         }
+        if (key === 'm' || key === 'M') {
+            memoryValue = Number(display.value);
+        }
+        if (key === 'r' || key === 'R') {
+            currentExpression += memoryValue.toString();
+            currentExpressionDisplay.textContent = currentExpression;
+        }
     });
     // ... (Existing code)
 });
