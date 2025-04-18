@@ -24,5 +24,14 @@ window.addEventListener('load', () => {
             display.value = Math.random().toString();
         });
     }
+    const doubleButton = document.getElementById('double');
+    if (doubleButton) {
+        doubleButton.addEventListener('click', () => {
+            const currentValue = parseFloat(display.value);
+            if (!isNaN(currentValue)) {
+                display.value = (currentValue * 2).toString();
+            }
+        });
+    }
     // ... (rest of the code)
 });
