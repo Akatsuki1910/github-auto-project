@@ -51,6 +51,10 @@ window.addEventListener('load', () => {
             display.value = '';
             currentExpression = ''; // Also clear the current expression
         }
+        // Add keyboard support for memory clear
+        if (key.toLowerCase() === 'k') { // Use 'k' for memory clear
+            memoryValue = 0;
+        }
     });
     // ... (Existing code)
 });
