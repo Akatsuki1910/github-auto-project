@@ -44,5 +44,19 @@ window.addEventListener('load', () => {
             }
         });
     }
+    //Added tan function
+    const tanButton = document.getElementById('tan');
+    if (tanButton) {
+        tanButton.addEventListener('click', () => {
+            const currentValue = display.value;
+            try {
+                const result = math.tan(parseFloat(currentValue));
+                display.value = result.toString();
+            }
+            catch (error) {
+                display.value = 'Error';
+            }
+        });
+    }
     // ... (rest of the code)
 });
