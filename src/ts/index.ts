@@ -17,6 +17,11 @@ window.addEventListener('load', () => {
                 equalsButton.click();
             }
         }
+        // Add Escape key support to clear current expression
+        if (key === 'Escape') {
+            currentExpression = '';
+            currentExpressionDisplay.textContent = '';
+        }
     });
     const memoryStoreButton = document.getElementById('memory-store');
     // ... (Memory buttons event listeners)
