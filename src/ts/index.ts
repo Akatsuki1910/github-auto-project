@@ -43,6 +43,7 @@ window.addEventListener('load', () => {
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
     const operatorButtons = document.querySelectorAll('.operator');
     const digitButtons = document.querySelectorAll('.digit');
+    const decimalButton = document.querySelector('.decimal');
     digitButtons.forEach(button => {
         button.addEventListener('click', () => {
             currentExpression += button.textContent;
@@ -55,5 +56,9 @@ window.addEventListener('load', () => {
             currentExpressionDisplay.textContent = currentExpression;
         });
     });
+        decimalButton.addEventListener('click', () => {
+            currentExpression += decimalButton.textContent;
+            currentExpressionDisplay.textContent = currentExpression;
+        });
     // ... (rest of the code)
 });
