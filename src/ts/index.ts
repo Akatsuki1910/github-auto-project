@@ -3,6 +3,14 @@ let memoryValue = 0;
 let currentExpression = '';
 window.addEventListener('load', () => {
     // ... (Existing code)
+    //Added a keyboard support
+    document.addEventListener('keydown', (event) => {
+        const key = event.key;
+        if (/^[0-9]$/.test(key)) {
+            currentExpression += key;
+            currentExpressionDisplay.textContent = currentExpression;
+        }
+    });
     const memoryStoreButton = document.getElementById('memory-store');
     if (memoryStoreButton) {
         memoryStoreButton.addEventListener('click', () => {
@@ -26,7 +34,6 @@ window.addEventListener('load', () => {
         toggleThemeButton.addEventListener('click', () => {
             document.body.classList.toggle('light-scheme');
             document.body.classList.toggle('dark-scheme');
-            //Added logic to change display and calculator colors with theme
             const display = document.getElementById('display');
             const calculator = document.getElementById('calculator');
             if (document.body.classList.contains('dark-scheme')) {
@@ -60,7 +67,6 @@ window.addEventListener('load', () => {
         currentExpression += decimalButton.textContent;
         currentExpressionDisplay.textContent = currentExpression;
     });
-    //Added current expression clear functionality to CE button
     const clearButton = document.getElementById('clear');
     if (clearButton) {
         clearButton.addEventListener('click', () => {
