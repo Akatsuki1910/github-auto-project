@@ -32,6 +32,13 @@ window.addEventListener('load', () => {
         if (key === 'Escape') {
             clearAll.click(); //Added Escape key to clear all
         }
+        // Added keyboard support for basic arithmetic operations
+        if (key === '+' || key === '-' || key === '*' || key === '/') {
+            const operator = document.querySelector(`button.operator[data-key='${key}']`);
+            if (operator) {
+                operator.click();
+            }
+        }
     });
     // ... (Existing code)
 });
