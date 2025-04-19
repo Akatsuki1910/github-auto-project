@@ -41,6 +41,7 @@ window.addEventListener('load', () => {
     const sign = document.getElementById('sign'); // Sign change button
     const logButton = document.getElementById('log');
     const expButton = document.getElementById('exp'); // Exponential function button
+    const powButton = document.getElementById('pow');
     memoryStore.addEventListener('click', () => {
         memoryValue = parseFloat(display.value);
     });
@@ -74,5 +75,9 @@ window.addEventListener('load', () => {
     expButton.addEventListener('click', () => {
         display.value = Math.exp(parseFloat(display.value)).toString();
     });
+    powButton.addEventListener('click', () => {
+        currentExpression = `${display.value}^`;
+        display.value = '';
+        document.getElementById('currentExpressionDisplay').innerText = currentExpression;    });
     // ... (Existing code)
 });
