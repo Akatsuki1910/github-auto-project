@@ -44,4 +44,9 @@ window.addEventListener('load', () => {
         const num = parseFloat(display.value);
         display.value = Math.acos(num).toString();
     });
+    const atanButton = document.getElementById('atan');
+    atanButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        display.value = Math.atan(num).toString();
+    });
 });
