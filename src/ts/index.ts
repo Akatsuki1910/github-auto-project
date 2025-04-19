@@ -39,6 +39,7 @@ window.addEventListener('load', () => {
     const pi = document.getElementById('pi');
     const factorial = document.getElementById('factorial');
     const sign = document.getElementById('sign'); // Sign change button
+    const logButton = document.getElementById('log');
     memoryStore.addEventListener('click', () => {
         memoryValue = parseFloat(display.value);
     });
@@ -63,8 +64,11 @@ window.addEventListener('load', () => {
             display.value = "Error: Invalid input for factorial";
         }
     });
-    sign.addEventListener('click', () => { // Sign change functionality
+    sign.addEventListener('click', () => {
         display.value = (-parseFloat(display.value)).toString();
+    });
+    logButton.addEventListener('click', () => {
+        display.value = Math.log10(parseFloat(display.value)).toString();
     });
     // ... (Existing code)
 });
