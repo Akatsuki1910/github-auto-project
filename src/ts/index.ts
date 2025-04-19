@@ -8,29 +8,10 @@ window.addEventListener('load', () => {
         const num = parseFloat(display.value);
         display.value = Math.pow(10, num).toString();
     });
-    const lnButton = document.getElementById('ln');
-    lnButton.addEventListener('click', () => {
+    // ... (Other existing code)
+    const expm1Button = document.getElementById('expm1');
+    expm1Button.addEventListener('click', () => {
         const num = parseFloat(display.value);
-        display.value = Math.log(num).toString();
+        display.value = Math.expm1(num).toString();
     });
-    const eButton = document.getElementById('e');
-    eButton.addEventListener('click', () => {
-        display.value = Math.E.toString();
-    });
-    const cubeButton = document.getElementById('cube');
-    cubeButton.addEventListener('click', () => {
-        const num = parseFloat(display.value);
-        display.value = Math.pow(num, 3).toString();
-    });
-    const doubleButton = document.getElementById('double');
-    doubleButton.addEventListener('click', () => {
-        const num = parseFloat(display.value);
-        display.value = (num * 2).toString();
-    });
-    const modButton = document.getElementById('mod');
-    modButton.addEventListener('click', () => {
-        currentExpression += '%';
-        currentExpressionDisplay.textContent = currentExpression;
-    });
-    // ... (Existing code)
 });
