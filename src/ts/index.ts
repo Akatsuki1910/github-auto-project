@@ -37,6 +37,7 @@ window.addEventListener('load', () => {
     const memoryClear = document.getElementById('memory-clear');
     const percentage = document.getElementById('percentage');
     const pi = document.getElementById('pi');
+    const factorial = document.getElementById('factorial');
     memoryStore.addEventListener('click', () => {
         memoryValue = parseFloat(display.value);
     });
@@ -51,6 +52,15 @@ window.addEventListener('load', () => {
     });
     pi.addEventListener('click', () => {
         display.value = Math.PI.toString();
+    });
+    factorial.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        if (Number.isInteger(num) && num >= 0) {
+            display.value = math.factorial(num).toString();
+        }
+        else {
+            display.value = "Error: Invalid input for factorial";
+        }
     });
     // ... (Existing code)
 });
