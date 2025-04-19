@@ -13,5 +13,10 @@ window.addEventListener('load', () => {
         const num = parseFloat(display.value);
         display.value = Math.floor(num).toString();
     });
+    const ceilButton = document.getElementById('ceil');
+    ceilButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        display.value = Math.ceil(num).toString();
+    });
     // ... (Existing code)
 });
