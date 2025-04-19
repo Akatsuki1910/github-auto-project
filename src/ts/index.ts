@@ -27,6 +27,10 @@ window.addEventListener('load', () => {
                 decimal.click();
             }
         }
+        // Add backspace key support
+        if (key === 'Backspace') {
+            backspace.click();
+        }
     });
     // ... (Existing code)
 });
