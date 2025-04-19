@@ -39,6 +39,10 @@ window.addEventListener('load', () => {
                 operator.click();
             }
         }
+        //Added Enter Key support for equals button
+        if (key === 'Enter') {
+            equals.click();
+        }
     });
     // ... (Existing code)
 });
