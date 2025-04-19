@@ -14,6 +14,16 @@ window.addEventListener('load', () => {
         if (key === 'Delete') {
             display.value = '0'; // Clear the current display value
         }
+        //Added keyboard support for Memory operations
+        if (key === 'm' || key === 'M') {
+            memoryValue = parseFloat(display.value);
+        }
+        if (key === 'r' || key === 'R') {
+            display.value = memoryValue.toString();
+        }
+        if (key === 'c' || key === 'C') {
+            memoryValue = 0; // Clear memory
+        }
     });
     // ... (Existing code)
 });
