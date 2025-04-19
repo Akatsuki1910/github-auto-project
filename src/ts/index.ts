@@ -38,6 +38,7 @@ window.addEventListener('load', () => {
     const percentage = document.getElementById('percentage');
     const pi = document.getElementById('pi');
     const factorial = document.getElementById('factorial');
+    const sign = document.getElementById('sign'); // Sign change button
     memoryStore.addEventListener('click', () => {
         memoryValue = parseFloat(display.value);
     });
@@ -61,6 +62,9 @@ window.addEventListener('load', () => {
         else {
             display.value = "Error: Invalid input for factorial";
         }
+    });
+    sign.addEventListener('click', () => { // Sign change functionality
+        display.value = (-parseFloat(display.value)).toString();
     });
     // ... (Existing code)
 });
