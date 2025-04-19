@@ -13,5 +13,9 @@ window.addEventListener('load', () => {
         const num = parseFloat(display.value);
         display.value = Math.log(num).toString();
     });
+    const eButton = document.getElementById('e');
+    eButton.addEventListener('click', () => {
+        display.value = Math.E.toString();
+    });
     // ... (Existing code)
 });
