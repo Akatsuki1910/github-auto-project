@@ -36,6 +36,7 @@ window.addEventListener('load', () => {
     const memoryRecall = document.getElementById('memory-recall');
     const memoryClear = document.getElementById('memory-clear');
     const percentage = document.getElementById('percentage');
+    const pi = document.getElementById('pi');
     memoryStore.addEventListener('click', () => {
         memoryValue = parseFloat(display.value);
     });
@@ -47,6 +48,9 @@ window.addEventListener('load', () => {
     });
     percentage.addEventListener('click', () => {
         display.value = (parseFloat(display.value) / 100).toString();
+    });
+    pi.addEventListener('click', () => {
+        display.value = Math.PI.toString();
     });
     // ... (Existing code)
 });
