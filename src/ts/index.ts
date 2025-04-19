@@ -14,5 +14,10 @@ window.addEventListener('load', () => {
             display.value = "Error: Division by zero";
         }
     });
+    const cuberootButton = document.getElementById('cuberoot');
+    cuberootButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        display.value = Math.cbrt(num).toString();
+    });
     // ... Existing code
 });
