@@ -65,6 +65,10 @@ window.addEventListener('load', () => {
             currentExpression += Math.E;
             currentExpressionDisplay.textContent = currentExpression;
         }
+        //Added "=" key functionality
+        if (key === '=') {
+            equals.click();
+        }
     });
     // ... (Existing code)
 });
