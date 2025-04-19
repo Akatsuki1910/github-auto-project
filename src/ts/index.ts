@@ -27,5 +27,10 @@ window.addEventListener('load', () => {
         const num = parseFloat(display.value);
         display.value = (num * 2).toString();
     });
+    const modButton = document.getElementById('mod');
+    modButton.addEventListener('click', () => {
+        currentExpression += '%';
+        currentExpressionDisplay.textContent = currentExpression;
+    });
     // ... (Existing code)
 });
