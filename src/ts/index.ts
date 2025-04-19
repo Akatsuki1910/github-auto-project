@@ -14,4 +14,9 @@ window.addEventListener('load', () => {
         const num = parseFloat(display.value);
         display.value = Math.expm1(num).toString();
     });
+    const cbrtButton = document.getElementById('cbrt');
+    cbrtButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        display.value = Math.cbrt(num).toString();
+    });
 });
