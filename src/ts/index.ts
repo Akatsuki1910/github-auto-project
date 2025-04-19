@@ -32,5 +32,17 @@ window.addEventListener('load', () => {
             backspace.click();
         }
     });
+    const memoryStore = document.getElementById('memory-store');
+    const memoryRecall = document.getElementById('memory-recall');
+    const memoryClear = document.getElementById('memory-clear');
+    memoryStore.addEventListener('click', () => {
+        memoryValue = parseFloat(display.value);
+    });
+    memoryRecall.addEventListener('click', () => {
+        display.value = memoryValue.toString();
+    });
+    memoryClear.addEventListener('click', () => {
+        memoryValue = 0;
+    });
     // ... (Existing code)
 });
