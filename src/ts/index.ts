@@ -29,4 +29,9 @@ window.addEventListener('load', () => {
         const num = parseFloat(display.value);
         display.value = Math.cos(num).toString();
     });
+    const tanButton = document.getElementById('tan');
+    tanButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        display.value = Math.tan(num).toString();
+    });
 });
