@@ -22,5 +22,10 @@ window.addEventListener('load', () => {
         const num = parseFloat(display.value);
         display.value = Math.pow(num, 3).toString();
     });
+    const doubleButton = document.getElementById('double');
+    doubleButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        display.value = (num * 2).toString();
+    });
     // ... (Existing code)
 });
