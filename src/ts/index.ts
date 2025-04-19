@@ -24,6 +24,10 @@ window.addEventListener('load', () => {
         if (key === 'c' || key === 'C') {
             memoryValue = 0; // Clear memory
         }
+        //Added Backspace Key support for backspace button
+        if (key === 'Backspace') {
+            backspace.click();
+        }
     });
     // ... (Existing code)
 });
