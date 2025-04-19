@@ -5,41 +5,26 @@ window.addEventListener('load', () => {
     // ... (Existing code)
     document.addEventListener('keydown', (event) => {
         const key = event.key;
-        if (key === '=') {
-            equals.click();
-        }
-        if (key === 'Delete') {
-            display.value = '0';
-        }
-        if (key === 'm' || key === 'M') {
-            memoryValue = parseFloat(display.value);
-        }
-        if (key === 'r' || key === 'R') {
-            display.value = memoryValue.toString();
-        }
-        if (key === 'c' || key === 'C') {
-            memoryValue = 0;
-        }
-        if (key === 'Backspace') {
-            backspace.click();
-        }
-        if (key === 'Escape') {
-            clearAll.click();
-        }
-        if (key === '+' || key === '-' || key === '*' || key === '/') {
-            const operator = document.querySelector(`button.operator[data-key='${key}']`);
-            if (operator) {
-                operator.click();
-            }
-        }
+        // ... existing code
         if (key === 'Enter') {
             equals.click();
         }
-        //Added keypress support for digits
+        //Added keypress support for digits and operators
         if (!isNaN(parseInt(key))) {
             const digit = document.querySelector(`button.digit[data-key='${key}']`);
             if (digit) {
                 digit.click();
+            }
+        }
+        const operators = ['+', '-', '*', '/', '.'];
+        if (operators.includes(key)) {
+            const operator = document.querySelector(`button.operator[data-key='${key}']`);
+            if (operator) {
+                operator.click();
+            }
+            const decimal = document.querySelector(`button.decimal[data-key='${key}']`);
+            if (decimal) {
+                decimal.click();
             }
         }
     });
