@@ -34,4 +34,9 @@ window.addEventListener('load', () => {
         const num = parseFloat(display.value);
         display.value = Math.tan(num).toString();
     });
+    const asinButton = document.getElementById('asin');
+    asinButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        display.value = Math.asin(num).toString();
+    });
 });
