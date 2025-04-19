@@ -14,5 +14,11 @@ window.addEventListener('load', () => {
     ansButton.addEventListener('click', () => {
         display.value = lastAnswer.toString();
     });
+    const doubleButton = document.getElementById('double');
+    doubleButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        display.value = (num * 2).toString();
+        lastAnswer = parseFloat(display.value);
+    });
     // ... (Other existing code)
 });
