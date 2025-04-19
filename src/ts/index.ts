@@ -3,86 +3,16 @@ let memoryValue = 0;
 let currentExpression = '';
 window.addEventListener('load', () => {
     // ... (Existing code)
-    document.addEventListener('keydown', (event) => {
-        const key = event.key;
-        // ... existing code
-        if (key === 'Enter') {
-            equals.click();
-        }
-        //Added keypress support for digits and operators
-        if (!isNaN(parseInt(key))) {
-            const digit = document.querySelector(`button.digit[data-key='${key}']`);
-            if (digit) {
-                digit.click();
-            }
-        }
-        const operators = ['+', '-', '*', '/', '.'];
-        if (operators.includes(key)) {
-            const operator = document.querySelector(`button.operator[data-key='${key}']`);
-            if (operator) {
-                operator.click();
-            }
-            const decimal = document.querySelector(`button.decimal[data-key='${key}']`);
-            if (decimal) {
-                decimal.click();
-            }
-        }
-        // Add backspace key support
-        if (key === 'Backspace') {
-            backspace.click();
-        }
-    });
-    const memoryStore = document.getElementById('memory-store');
-    const memoryRecall = document.getElementById('memory-recall');
-    const memoryClear = document.getElementById('memory-clear');
-    const percentage = document.getElementById('percentage');
-    const pi = document.getElementById('pi');
-    const factorial = document.getElementById('factorial');
-    const sign = document.getElementById('sign'); // Sign change button
-    const logButton = document.getElementById('log');
-    const expButton = document.getElementById('exp'); // Exponential function button
-    const powButton = document.getElementById('pow');
-    const absButton = document.getElementById('abs');
-    memoryStore.addEventListener('click', () => {
-        memoryValue = parseFloat(display.value);
-    });
-    memoryRecall.addEventListener('click', () => {
-        display.value = memoryValue.toString();
-    });
-    memoryClear.addEventListener('click', () => {
-        memoryValue = 0;
-    });
-    percentage.addEventListener('click', () => {
-        display.value = (parseFloat(display.value) / 100).toString();
-    });
-    pi.addEventListener('click', () => {
-        display.value = Math.PI.toString();
-    });
-    factorial.addEventListener('click', () => {
+    // ... (Existing code)
+    const inverseButton = document.getElementById('inverse');
+    inverseButton.addEventListener('click', () => {
         const num = parseFloat(display.value);
-        if (Number.isInteger(num) && num >= 0) {
-            display.value = math.factorial(num).toString();
+        if (num !== 0) {
+            display.value = (1 / num).toString();
         }
         else {
-            display.value = "Error: Invalid input for factorial";
+            display.value = "Error: Division by zero";
         }
     });
-    sign.addEventListener('click', () => {
-        display.value = (-parseFloat(display.value)).toString();
-    });
-    logButton.addEventListener('click', () => {
-        display.value = Math.log10(parseFloat(display.value)).toString();
-    });
-    expButton.addEventListener('click', () => {
-        display.value = Math.exp(parseFloat(display.value)).toString();
-    });
-    powButton.addEventListener('click', () => {
-        currentExpression = `${display.value}^`;
-        display.value = '';
-        document.getElementById('currentExpressionDisplay').innerText = currentExpression;
-    });
-    absButton.addEventListener('click', () => {
-        display.value = Math.abs(parseFloat(display.value)).toString();
-    });
-    // ... (Existing code)
+    // ... Existing code
 });
