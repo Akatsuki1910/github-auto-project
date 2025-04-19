@@ -40,6 +40,7 @@ window.addEventListener('load', () => {
     const factorial = document.getElementById('factorial');
     const sign = document.getElementById('sign'); // Sign change button
     const logButton = document.getElementById('log');
+    const expButton = document.getElementById('exp'); // Exponential function button
     memoryStore.addEventListener('click', () => {
         memoryValue = parseFloat(display.value);
     });
@@ -69,6 +70,9 @@ window.addEventListener('load', () => {
     });
     logButton.addEventListener('click', () => {
         display.value = Math.log10(parseFloat(display.value)).toString();
+    });
+    expButton.addEventListener('click', () => {
+        display.value = Math.exp(parseFloat(display.value)).toString();
     });
     // ... (Existing code)
 });
