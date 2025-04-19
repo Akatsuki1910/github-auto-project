@@ -18,5 +18,9 @@ window.addEventListener('load', () => {
         const num = parseFloat(display.value);
         display.value = Math.ceil(num).toString();
     });
+    const randomButton = document.getElementById('random');
+    randomButton.addEventListener('click', () => {
+        display.value = Math.random().toString();
+    });
     // ... (Existing code)
 });
