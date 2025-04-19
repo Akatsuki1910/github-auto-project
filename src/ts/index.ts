@@ -17,5 +17,10 @@ window.addEventListener('load', () => {
     eButton.addEventListener('click', () => {
         display.value = Math.E.toString();
     });
+    const cubeButton = document.getElementById('cube');
+    cubeButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        display.value = Math.pow(num, 3).toString();
+    });
     // ... (Existing code)
 });
