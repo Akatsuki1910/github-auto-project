@@ -39,4 +39,9 @@ window.addEventListener('load', () => {
         const num = parseFloat(display.value);
         display.value = Math.asin(num).toString();
     });
+    const acosButton = document.getElementById('acos');
+    acosButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        display.value = Math.acos(num).toString();
+    });
 });
