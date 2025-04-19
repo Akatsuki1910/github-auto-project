@@ -22,5 +22,10 @@ window.addEventListener('load', () => {
     randomButton.addEventListener('click', () => {
         display.value = Math.random().toString();
     });
+    const truncButton = document.getElementById('trunc');
+    truncButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        display.value = Math.trunc(num).toString();
+    });
     // ... (Existing code)
 });
