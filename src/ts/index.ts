@@ -24,4 +24,9 @@ window.addEventListener('load', () => {
         const num = parseFloat(display.value);
         display.value = Math.sin(num).toString();
     });
+    const cosButton = document.getElementById('cos');
+    cosButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        display.value = Math.cos(num).toString();
+    });
 });
