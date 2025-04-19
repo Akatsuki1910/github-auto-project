@@ -3,18 +3,14 @@ let memoryValue = 0;
 let currentExpression = '';
 window.addEventListener('load', () => {
     // ... (Existing code)
-    //Added a keyboard support
     document.addEventListener('keydown', (event) => {
         const key = event.key;
-        // ... (Existing code)
         if (key === '=') {
             equals.click();
         }
-        // Added keyboard support for the 'Delete' key to clear the current input
         if (key === 'Delete') {
-            display.value = '0'; // Clear the current display value
+            display.value = '0';
         }
-        //Added keyboard support for Memory operations
         if (key === 'm' || key === 'M') {
             memoryValue = parseFloat(display.value);
         }
@@ -22,26 +18,29 @@ window.addEventListener('load', () => {
             display.value = memoryValue.toString();
         }
         if (key === 'c' || key === 'C') {
-            memoryValue = 0; // Clear memory
+            memoryValue = 0;
         }
-        //Added Backspace Key support for backspace button
         if (key === 'Backspace') {
             backspace.click();
         }
-        //Added Escape key support for AC button
         if (key === 'Escape') {
-            clearAll.click(); //Added Escape key to clear all
+            clearAll.click();
         }
-        // Added keyboard support for basic arithmetic operations
         if (key === '+' || key === '-' || key === '*' || key === '/') {
             const operator = document.querySelector(`button.operator[data-key='${key}']`);
             if (operator) {
                 operator.click();
             }
         }
-        //Added Enter Key support for equals button
         if (key === 'Enter') {
             equals.click();
+        }
+        //Added keypress support for digits
+        if (!isNaN(parseInt(key))) {
+            const digit = document.querySelector(`button.digit[data-key='${key}']`);
+            if (digit) {
+                digit.click();
+            }
         }
     });
     // ... (Existing code)
