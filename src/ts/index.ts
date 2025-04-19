@@ -28,6 +28,10 @@ window.addEventListener('load', () => {
         if (key === 'Backspace') {
             backspace.click();
         }
+        //Added Escape key support for AC button
+        if (key === 'Escape') {
+            clearAll.click(); //Added Escape key to clear all
+        }
     });
     // ... (Existing code)
 });
