@@ -10,6 +10,7 @@ window.addEventListener('load', () => {
     const equalsButton = document.querySelector('.equals');
     const clearHistoryButton = document.getElementById('clear-history');
     const ansButton = document.getElementById('ans');
+    const copyButton = document.getElementById('copy');
     if (equalsButton) {
         equalsButton.addEventListener('click', () => {
             try {
@@ -44,6 +45,11 @@ window.addEventListener('load', () => {
     if (ansButton) {
         ansButton.addEventListener('click', () => {
             display.value += lastAnswer;
+        });
+    }
+    if (copyButton && display) {
+        copyButton.addEventListener('click', () => {
+            navigator.clipboard.writeText(display.value);
         });
     }
     // ... (Other existing code)
