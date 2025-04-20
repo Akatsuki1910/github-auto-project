@@ -32,6 +32,15 @@ window.addEventListener('load', () => {
             }
         });
     }
+    if (ansButton && display) {
+        ansButton.addEventListener('click', () => {
+            if (display) {
+                display.value += lastAnswer;
+                currentExpression += lastAnswer;
+                currentExpressionDisplay.textContent = currentExpression; // Update current expression display
+            }
+        });
+    }
     // ... existing event listeners for ansButton, copyButton, memory buttons
     if (clearHistoryButton && historyDisplay) {
         clearHistoryButton.addEventListener('click', () => {
@@ -42,9 +51,10 @@ window.addEventListener('load', () => {
     // History length display
     const historyLengthSpan = document.getElementById('history-length');
     if (historyLengthSpan) {
-        historyLengthSpan.textContent = `History Length: ${history.length}`;
-        setInterval(() => {
+        const updateHistoryLength = () => {
             historyLengthSpan.textContent = `History Length: ${history.length}`;
-        }, 100);
+        };
+        updateHistoryLength(); // Initial update
+        setInterval(updateHistoryLength, 100); // Update every 100ms
     }
 });
