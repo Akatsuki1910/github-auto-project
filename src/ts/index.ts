@@ -48,13 +48,23 @@ window.addEventListener('load', () => {
             historyDisplay.innerHTML = '';
         });
     }
-    // History length display
     const historyLengthSpan = document.getElementById('history-length');
     if (historyLengthSpan) {
         const updateHistoryLength = () => {
             historyLengthSpan.textContent = `History Length: ${history.length}`;
         };
-        updateHistoryLength(); // Initial update
-        setInterval(updateHistoryLength, 100); // Update every 100ms
+        updateHistoryLength();
+        setInterval(updateHistoryLength, 100);
     }
+    // Add current expression display update on digit/operator button clicks
+    const digitsAndOperators = document.querySelectorAll('.digit, .operator, .decimal');
+    digitsAndOperators.forEach(button => {
+        button.addEventListener('click', () => {
+            const key = button.getAttribute('data-key');
+            if (key) {
+                currentExpression += key;
+                currentExpressionDisplay.textContent = currentExpression;
+            }
+        });
+    });
 });
