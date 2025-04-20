@@ -62,5 +62,11 @@ window.addEventListener('load', () => {
             display.value = (parseFloat(display.value) / 2).toString();
         });
     }
+    const signChangeButton = document.getElementById('sign-change');
+    if (signChangeButton) {
+        signChangeButton.addEventListener('click', () => {
+            display.value = (-parseFloat(display.value)).toString();
+        });
+    }
     // ... (Other existing code)
 });
