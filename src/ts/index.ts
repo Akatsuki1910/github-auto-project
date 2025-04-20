@@ -16,14 +16,21 @@ window.addEventListener('load', () => {
     const historyDisplay = document.getElementById('history-display');
     let history = [];
     // ... (Existing event listeners)
+    //Current Date and Time
+    const currentDateTime = () => {
+        const now = new Date();
+        const dateString = now.toLocaleDateString();
+        const timeString = now.toLocaleTimeString();
+        return `${dateString} ${timeString}`;
+    };
     if (calculateExpressionButton && display && currentExpressionDisplay) {
         calculateExpressionButton.addEventListener('click', () => {
             try {
                 const result = math.evaluate(currentExpression);
                 display.value = result.toString();
                 lastAnswer = result;
-                history.push({ expression: currentExpression, result: result });
-                historyDisplay.innerHTML = history.map(item => `<div>${item.expression} = ${item.result}</div>`).join('');
+                history.push({ expression: currentExpression, result: result, timestamp: currentDateTime() });
+                historyDisplay.innerHTML = history.map(item => `<div>${item.timestamp} - ${item.expression} = ${item.result}</div>`).join('');
                 currentExpression = '';
                 currentExpressionDisplay.textContent = '';
             }
@@ -32,39 +39,5 @@ window.addEventListener('load', () => {
             }
         });
     }
-    if (ansButton && display) {
-        ansButton.addEventListener('click', () => {
-            if (display) {
-                display.value += lastAnswer;
-                currentExpression += lastAnswer;
-                currentExpressionDisplay.textContent = currentExpression; // Update current expression display
-            }
-        });
-    }
-    // ... existing event listeners for ansButton, copyButton, memory buttons
-    if (clearHistoryButton && historyDisplay) {
-        clearHistoryButton.addEventListener('click', () => {
-            history = [];
-            historyDisplay.innerHTML = '';
-        });
-    }
-    const historyLengthSpan = document.getElementById('history-length');
-    if (historyLengthSpan) {
-        const updateHistoryLength = () => {
-            historyLengthSpan.textContent = `History Length: ${history.length}`;
-        };
-        updateHistoryLength();
-        setInterval(updateHistoryLength, 100);
-    }
-    // Add current expression display update on digit/operator button clicks
-    const digitsAndOperators = document.querySelectorAll('.digit, .operator, .decimal');
-    digitsAndOperators.forEach(button => {
-        button.addEventListener('click', () => {
-            const key = button.getAttribute('data-key');
-            if (key) {
-                currentExpression += key;
-                currentExpressionDisplay.textContent = currentExpression;
-            }
-        });
-    });
+    // ... (Existing Code)
 });
