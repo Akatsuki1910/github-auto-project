@@ -17,27 +17,34 @@ window.addEventListener('load', () => {
     let history = [];
     // ... (Existing event listeners)
     if (calculateExpressionButton && display && currentExpressionDisplay) {
-        // ... existing calculateExpressionButton event listener
+        calculateExpressionButton.addEventListener('click', () => {
+            try {
+                const result = math.evaluate(currentExpression);
+                display.value = result.toString();
+                lastAnswer = result;
+                history.push({ expression: currentExpression, result: result });
+                historyDisplay.innerHTML = history.map(item => `<div>${item.expression} = ${item.result}</div>`).join('');
+                currentExpression = '';
+                currentExpressionDisplay.textContent = '';
+            }
+            catch (error) {
+                display.value = 'Error';
+            }
+        });
     }
-    if (ansButton && display) {
-        // ... existing ansButton event listener
-    }
-    if (copyButton && display) {
-        // ... existing copyButton event listener
-    }
-    if (memoryStoreButton && display) {
-        // ... existing memoryStoreButton event listener
-    }
-    if (memoryRecallButton && display) {
-        // ... existing memoryRecallButton event listener
-    }
-    if (memoryClearButton) {
-        // ... existing memoryClearButton event listener
-    }
+    // ... existing event listeners for ansButton, copyButton, memory buttons
     if (clearHistoryButton && historyDisplay) {
         clearHistoryButton.addEventListener('click', () => {
             history = [];
             historyDisplay.innerHTML = '';
         });
+    }
+    // History length display
+    const historyLengthSpan = document.getElementById('history-length');
+    if (historyLengthSpan) {
+        historyLengthSpan.textContent = `History Length: ${history.length}`;
+        setInterval(() => {
+            historyLengthSpan.textContent = `History Length: ${history.length}`;
+        }, 100);
     }
 });
