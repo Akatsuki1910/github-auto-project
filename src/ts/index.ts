@@ -12,6 +12,9 @@ window.addEventListener('load', () => {
     const memoryStoreButton = document.getElementById('memory-store');
     const memoryRecallButton = document.getElementById('memory-recall');
     const memoryClearButton = document.getElementById('memory-clear');
+    const clearHistoryButton = document.getElementById('clear-history');
+    const historyDisplay = document.getElementById('history-display');
+    let history = [];
     // ... (Existing event listeners)
     if (calculateExpressionButton && display && currentExpressionDisplay) {
         // ... existing calculateExpressionButton event listener
@@ -23,22 +26,18 @@ window.addEventListener('load', () => {
         // ... existing copyButton event listener
     }
     if (memoryStoreButton && display) {
-        memoryStoreButton.addEventListener('click', () => {
-            memoryValue = parseFloat(display.value);
-        });
+        // ... existing memoryStoreButton event listener
     }
     if (memoryRecallButton && display) {
-        memoryRecallButton.addEventListener('click', () => {
-            display.value = memoryValue.toString();
-            currentExpression += memoryValue.toString();
-            if (currentExpressionDisplay) {
-                currentExpressionDisplay.textContent = currentExpression;
-            }
-        });
+        // ... existing memoryRecallButton event listener
     }
     if (memoryClearButton) {
-        memoryClearButton.addEventListener('click', () => {
-            memoryValue = 0;
+        // ... existing memoryClearButton event listener
+    }
+    if (clearHistoryButton && historyDisplay) {
+        clearHistoryButton.addEventListener('click', () => {
+            history = [];
+            historyDisplay.innerHTML = '';
         });
     }
 });
