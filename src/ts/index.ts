@@ -26,5 +26,11 @@ window.addEventListener('load', () => {
         display.value = (num / 2).toString();
         lastAnswer = parseFloat(display.value);
     });
+    const signChangeButton = document.getElementById('sign-change');
+    signChangeButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        display.value = (num * -1).toString();
+        lastAnswer = parseFloat(display.value);
+    });
     // ... (Other existing code)
 });
