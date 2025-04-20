@@ -12,6 +12,7 @@ window.addEventListener('load', () => {
     const copyButton = document.getElementById('copy');
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
     const backspaceButton = document.getElementById('backspace');
+    const memoryRecallButton = document.getElementById('memory-recall'); //Memory Recall button
     if (equalsButton) {
         // ... (Existing equalsButton event listener)
     }
@@ -28,9 +29,12 @@ window.addEventListener('load', () => {
         // ... (Existing digit/operator/decimal event listener)
     });
     if (backspaceButton && display) {
-        backspaceButton.addEventListener('click', () => {
-            display.value = display.value.slice(0, -1);
-            currentExpression = currentExpression.slice(0, -1);
+        // ... (Existing backspaceButton event listener)
+    }
+    if (memoryRecallButton && display) {
+        memoryRecallButton.addEventListener('click', () => {
+            display.value += memoryValue;
+            currentExpression += memoryValue;
             if (currentExpressionDisplay) {
                 currentExpressionDisplay.textContent = currentExpression;
             }
