@@ -68,5 +68,18 @@ window.addEventListener('load', () => {
             display.value = (-parseFloat(display.value)).toString();
         });
     }
+    const calculateExpressionButton = document.getElementById('calculate-expression');
+    if (calculateExpressionButton) {
+        calculateExpressionButton.addEventListener('click', () => {
+            try {
+                const result = math.evaluate(currentExpression);
+                display.value = result.toString();
+                lastAnswer = result;
+            }
+            catch (error) {
+                display.value = 'Error';
+            }
+        });
+    }
     // ... (Other existing code)
 });
