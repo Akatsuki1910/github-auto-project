@@ -4,33 +4,16 @@ let currentExpression = '';
 let lastAnswer = 0;
 window.addEventListener('load', () => {
     // ... (Existing code)
-    const powerOfTwoButton = document.getElementById('power-of-two');
-    powerOfTwoButton.addEventListener('click', () => {
-        const num = parseFloat(display.value);
-        display.value = Math.pow(2, num).toString();
-        lastAnswer = parseFloat(display.value);
-    });
-    const ansButton = document.getElementById('ans');
-    ansButton.addEventListener('click', () => {
-        display.value = lastAnswer.toString();
-    });
-    const doubleButton = document.getElementById('double');
-    doubleButton.addEventListener('click', () => {
-        const num = parseFloat(display.value);
-        display.value = (num * 2).toString();
-        lastAnswer = parseFloat(display.value);
-    });
-    const halfButton = document.getElementById('half');
-    halfButton.addEventListener('click', () => {
-        const num = parseFloat(display.value);
-        display.value = (num / 2).toString();
-        lastAnswer = parseFloat(display.value);
-    });
-    const signChangeButton = document.getElementById('sign-change');
-    signChangeButton.addEventListener('click', () => {
-        const num = parseFloat(display.value);
-        display.value = (num * -1).toString();
-        lastAnswer = parseFloat(display.value);
+    const calculateExpressionButton = document.getElementById('calculate-expression');
+    calculateExpressionButton.addEventListener('click', () => {
+        try {
+            const result = math.evaluate(currentExpression);
+            display.value = result.toString();
+            lastAnswer = result;
+        }
+        catch (error) {
+            display.value = 'Error';
+        }
     });
     // ... (Other existing code)
 });
