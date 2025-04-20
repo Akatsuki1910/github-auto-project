@@ -14,6 +14,7 @@ window.addEventListener('load', () => {
     const backspaceButton = document.getElementById('backspace');
     const memoryRecallButton = document.getElementById('memory-recall'); //Memory Recall button
     const memoryStoreButton = document.getElementById('memory-store');
+    const memoryClearButton = document.getElementById('memory-clear'); // Memory Clear button
     if (equalsButton) {
         // ... (Existing equalsButton event listener)
     }
@@ -36,8 +37,11 @@ window.addEventListener('load', () => {
         // ... (Existing memoryRecallButton event listener)
     }
     if (memoryStoreButton && display) {
-        memoryStoreButton.addEventListener('click', () => {
-            memoryValue = parseFloat(display.value);
+        // ... (Existing memoryStoreButton event listener)
+    }
+    if (memoryClearButton) {
+        memoryClearButton.addEventListener('click', () => {
+            memoryValue = 0;
         });
     }
     // ... (Other existing code)
