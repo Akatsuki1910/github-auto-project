@@ -19,5 +19,11 @@ window.addEventListener('load', () => {
             });
         });
     }
+    const ansButton = document.getElementById('ans');
+    if (ansButton) {
+        ansButton.addEventListener('click', () => {
+            display.value += lastAnswer;
+        });
+    }
     // ... (Other existing code)
 });
