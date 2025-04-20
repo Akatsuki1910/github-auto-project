@@ -19,6 +19,11 @@ window.addEventListener('load', () => {
                     historyItem.textContent = `${display.value}`;
                     historyDisplay.appendChild(historyItem);
                 }
+                // Add to history length display
+                const historyLengthSpan = document.getElementById('history-length');
+                if (historyLengthSpan) {
+                    historyLengthSpan.textContent = `History Length: ${historyDisplay.children.length}`;
+                }
             }
             catch (error) {
                 display.value = 'Error';
