@@ -40,10 +40,23 @@ window.addEventListener('load', () => {
         }
     });
     const clearHistoryButton = document.getElementById('clear-history');
-    if (clearHistoryButton && historyDisplay) { //null check
+    const historyDisplay = document.getElementById('history-display');
+    const historyLengthSpan = document.getElementById('history-length');
+    if (clearHistoryButton && historyDisplay && historyLengthSpan) { //null check
         clearHistoryButton.addEventListener('click', () => {
             historyDisplay.innerHTML = '';
             historyLengthSpan.textContent = `History Length: 0`;
+        });
+    }
+    const copyButton = document.getElementById('copy');
+    if (copyButton) {
+        copyButton.addEventListener('click', () => {
+            navigator.clipboard.writeText(display.value).then(() => {
+                // Optional: Provide feedback to the user
+                console.log('Copied to clipboard');
+            }, (err) => {
+                console.error('Failed to copy: ', err);
+            });
         });
     }
     // ... (Other existing code)
