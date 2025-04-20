@@ -20,6 +20,11 @@ window.addEventListener('load', () => {
             if (historyLengthSpan) {
                 historyLengthSpan.textContent = `History Length: ${historyDisplay.children.length}`;
             }
+            currentExpression = ''; // Clear current expression after evaluation
+            const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
+            if (currentExpressionDisplay) {
+                currentExpressionDisplay.textContent = currentExpression;
+            }
         }
         catch (error) {
             display.value = 'Error';
