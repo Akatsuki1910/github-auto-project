@@ -20,5 +20,11 @@ window.addEventListener('load', () => {
         display.value = (num * 2).toString();
         lastAnswer = parseFloat(display.value);
     });
+    const halfButton = document.getElementById('half');
+    halfButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        display.value = (num / 2).toString();
+        lastAnswer = parseFloat(display.value);
+    });
     // ... (Other existing code)
 });
