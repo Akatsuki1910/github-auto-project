@@ -9,6 +9,17 @@ window.addEventListener('load', () => {
     const calculateExpressionButton = document.getElementById('calculate-expression');
     const ansButton = document.getElementById('ans');
     const copyButton = document.getElementById('copy');
+    // Added copy functionality
+    if (copyButton && display) {
+        copyButton.addEventListener('click', () => {
+            navigator.clipboard.writeText(display.value).then(() => {
+                alert('Copied to clipboard: ' + display.value);
+            })
+                .catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        });
+    }
     const memoryStoreButton = document.getElementById('memory-store');
     const memoryRecallButton = document.getElementById('memory-recall');
     const memoryClearButton = document.getElementById('memory-clear');
