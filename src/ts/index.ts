@@ -7,6 +7,7 @@ window.addEventListener('load', () => {
     const display = document.getElementById('display');
     // ... other existing const declarations
     const calculateExpressionButton = document.getElementById('calculate-expression');
+    const ansButton = document.getElementById('ans');
     // ... (Existing event listeners)
     if (calculateExpressionButton && display && currentExpressionDisplay) {
         calculateExpressionButton.addEventListener('click', () => {
@@ -20,6 +21,15 @@ window.addEventListener('load', () => {
             }
             catch (error) {
                 display.value = 'Error';
+            }
+        });
+    }
+    if (ansButton && display) {
+        ansButton.addEventListener('click', () => {
+            display.value = lastAnswer.toString();
+            currentExpression += lastAnswer.toString();
+            if (currentExpressionDisplay) {
+                currentExpressionDisplay.textContent = currentExpression;
             }
         });
     }
