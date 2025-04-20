@@ -39,5 +39,10 @@ window.addEventListener('load', () => {
             }
         });
     }
+    if (ansButton && display) {
+        ansButton.addEventListener('click', () => {
+            display.value = lastAnswer.toString();
+        });
+    }
     // ... (Existing Code)
 });
