@@ -5,9 +5,10 @@ let lastAnswer = 0;
 window.addEventListener('load', () => {
     // ... (Existing code)
     const display = document.getElementById('display');
-    // ... other existing const declarations
+    const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
     const calculateExpressionButton = document.getElementById('calculate-expression');
     const ansButton = document.getElementById('ans');
+    const copyButton = document.getElementById('copy');
     // ... (Existing event listeners)
     if (calculateExpressionButton && display && currentExpressionDisplay) {
         calculateExpressionButton.addEventListener('click', () => {
@@ -31,6 +32,11 @@ window.addEventListener('load', () => {
             if (currentExpressionDisplay) {
                 currentExpressionDisplay.textContent = currentExpression;
             }
+        });
+    }
+    if (copyButton && display) {
+        copyButton.addEventListener('click', () => {
+            navigator.clipboard.writeText(display.value);
         });
     }
 });
