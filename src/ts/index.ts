@@ -16,6 +16,7 @@ window.addEventListener('load', () => {
     const memoryStoreButton = document.getElementById('memory-store');
     const memoryClearButton = document.getElementById('memory-clear'); // Memory Clear button
     const percentageButton = document.getElementById('percentage');
+    const signChangeButton = document.getElementById('sign-change'); // Sign Change button
     if (equalsButton) {
         // ... (Existing equalsButton event listener)
     }
@@ -44,16 +45,11 @@ window.addEventListener('load', () => {
         // ... (Existing memoryClearButton event listener)
     }
     if (percentageButton && display) {
-        percentageButton.addEventListener('click', () => {
-            try {
-                const currentValue = parseFloat(display.value);
-                const percentageValue = currentValue / 100;
-                display.value = percentageValue.toString();
-                currentExpression = display.value;
-            }
-            catch (error) {
-                display.value = 'Error';
-            }
+        // ... (Existing percentageButton event listener)
+    }
+    if (signChangeButton && display) { // Sign Change
+        signChangeButton.addEventListener('click', () => {
+            display.value = (-parseFloat(display.value)).toString();
         });
     }
     // ... (Other existing code)
