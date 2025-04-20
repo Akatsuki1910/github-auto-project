@@ -11,6 +11,7 @@ window.addEventListener('load', () => {
     const clearHistoryButton = document.getElementById('clear-history');
     const ansButton = document.getElementById('ans');
     const copyButton = document.getElementById('copy');
+    const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
     if (equalsButton) {
         equalsButton.addEventListener('click', () => {
             try {
@@ -26,6 +27,10 @@ window.addEventListener('load', () => {
                 const historyLengthSpan = document.getElementById('history-length');
                 if (historyLengthSpan) {
                     historyLengthSpan.textContent = `History Length: ${historyDisplay.children.length}`;
+                }
+                currentExpression = '';
+                if (currentExpressionDisplay) {
+                    currentExpressionDisplay.textContent = currentExpression;
                 }
             }
             catch (error) {
@@ -52,5 +57,17 @@ window.addEventListener('load', () => {
             navigator.clipboard.writeText(display.value);
         });
     }
+    document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
+        button.addEventListener('click', () => {
+            const key = button.getAttribute('data-key');
+            if (key) {
+                display.value += key;
+                currentExpression += key;
+                if (currentExpressionDisplay) {
+                    currentExpressionDisplay.textContent = currentExpression;
+                }
+            }
+        });
+    });
     // ... (Other existing code)
 });
