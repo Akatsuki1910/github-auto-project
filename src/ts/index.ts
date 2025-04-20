@@ -25,5 +25,11 @@ window.addEventListener('load', () => {
             display.value += lastAnswer;
         });
     }
+    const memoryStoreButton = document.getElementById('memory-store');
+    if (memoryStoreButton) {
+        memoryStoreButton.addEventListener('click', () => {
+            memoryValue = parseFloat(display.value);
+        });
+    }
     // ... (Other existing code)
 });
