@@ -9,6 +9,7 @@ window.addEventListener('load', () => {
     const historyDisplay = document.getElementById('history-display');
     const equalsButton = document.querySelector('.equals');
     const clearHistoryButton = document.getElementById('clear-history');
+    const ansButton = document.getElementById('ans');
     if (equalsButton) {
         equalsButton.addEventListener('click', () => {
             try {
@@ -38,6 +39,11 @@ window.addEventListener('load', () => {
             if (historyLengthSpan) {
                 historyLengthSpan.textContent = `History Length: 0`;
             }
+        });
+    }
+    if (ansButton) {
+        ansButton.addEventListener('click', () => {
+            display.value += lastAnswer;
         });
     }
     // ... (Other existing code)
