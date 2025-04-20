@@ -10,6 +10,11 @@ window.addEventListener('load', () => {
             const result = math.evaluate(currentExpression);
             display.value = result.toString();
             lastAnswer = result;
+            // Add to history
+            const historyDisplay = document.getElementById('history-display');
+            const newEntry = document.createElement('p');
+            newEntry.textContent = `${currentExpression} = ${result}`;
+            historyDisplay.appendChild(newEntry);
         }
         catch (error) {
             display.value = 'Error';
