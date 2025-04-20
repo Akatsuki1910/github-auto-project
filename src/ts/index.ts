@@ -39,5 +39,12 @@ window.addEventListener('load', () => {
             currentExpressionDisplay.textContent = currentExpression;
         }
     });
+    const clearHistoryButton = document.getElementById('clear-history');
+    if (clearHistoryButton && historyDisplay) { //null check
+        clearHistoryButton.addEventListener('click', () => {
+            historyDisplay.innerHTML = '';
+            historyLengthSpan.textContent = `History Length: 0`;
+        });
+    }
     // ... (Other existing code)
 });
