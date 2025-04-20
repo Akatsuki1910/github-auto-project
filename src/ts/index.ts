@@ -44,5 +44,11 @@ window.addEventListener('load', () => {
             // Optional: Provide feedback
         });
     }
+    const percentageButton = document.getElementById('percentage');
+    if (percentageButton) {
+        percentageButton.addEventListener('click', () => {
+            display.value = (parseFloat(display.value) / 100).toString();
+        });
+    }
     // ... (Other existing code)
 });
