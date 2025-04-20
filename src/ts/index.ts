@@ -15,6 +15,11 @@ window.addEventListener('load', () => {
             const newEntry = document.createElement('p');
             newEntry.textContent = `${currentExpression} = ${result}`;
             historyDisplay.appendChild(newEntry);
+            // Update history length display
+            const historyLengthSpan = document.getElementById('history-length');
+            if (historyLengthSpan) {
+                historyLengthSpan.textContent = `History Length: ${historyDisplay.children.length}`;
+            }
         }
         catch (error) {
             display.value = 'Error';
