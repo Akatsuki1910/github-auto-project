@@ -50,5 +50,11 @@ window.addEventListener('load', () => {
             display.value = (parseFloat(display.value) / 100).toString();
         });
     }
+    const doubleButton = document.getElementById('double');
+    if (doubleButton) {
+        doubleButton.addEventListener('click', () => {
+            display.value = (parseFloat(display.value) * 2).toString();
+        });
+    }
     // ... (Other existing code)
 });
