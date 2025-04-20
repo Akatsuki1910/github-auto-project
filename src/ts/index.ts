@@ -30,5 +30,14 @@ window.addEventListener('load', () => {
             display.value = 'Error';
         }
     });
+    const ansButton = document.getElementById('ans');
+    ansButton.addEventListener('click', () => {
+        display.value += lastAnswer;
+        currentExpression += lastAnswer;
+        const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
+        if (currentExpressionDisplay) {
+            currentExpressionDisplay.textContent = currentExpression;
+        }
+    });
     // ... (Other existing code)
 });
