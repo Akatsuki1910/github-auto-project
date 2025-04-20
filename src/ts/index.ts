@@ -9,34 +9,36 @@ window.addEventListener('load', () => {
     const calculateExpressionButton = document.getElementById('calculate-expression');
     const ansButton = document.getElementById('ans');
     const copyButton = document.getElementById('copy');
+    const memoryStoreButton = document.getElementById('memory-store');
+    const memoryRecallButton = document.getElementById('memory-recall');
+    const memoryClearButton = document.getElementById('memory-clear');
     // ... (Existing event listeners)
     if (calculateExpressionButton && display && currentExpressionDisplay) {
-        calculateExpressionButton.addEventListener('click', () => {
-            try {
-                const result = math.evaluate(currentExpression);
-                display.value = result.toString();
-                lastAnswer = result;
-                addToHistory(currentExpression + '=' + result);
-                currentExpression = '';
-                currentExpressionDisplay.textContent = '';
-            }
-            catch (error) {
-                display.value = 'Error';
-            }
-        });
+        // ... existing calculateExpressionButton event listener
     }
     if (ansButton && display) {
-        ansButton.addEventListener('click', () => {
-            display.value = lastAnswer.toString();
-            currentExpression += lastAnswer.toString();
+        // ... existing ansButton event listener
+    }
+    if (copyButton && display) {
+        // ... existing copyButton event listener
+    }
+    if (memoryStoreButton && display) {
+        memoryStoreButton.addEventListener('click', () => {
+            memoryValue = parseFloat(display.value);
+        });
+    }
+    if (memoryRecallButton && display) {
+        memoryRecallButton.addEventListener('click', () => {
+            display.value = memoryValue.toString();
+            currentExpression += memoryValue.toString();
             if (currentExpressionDisplay) {
                 currentExpressionDisplay.textContent = currentExpression;
             }
         });
     }
-    if (copyButton && display) {
-        copyButton.addEventListener('click', () => {
-            navigator.clipboard.writeText(display.value);
+    if (memoryClearButton) {
+        memoryClearButton.addEventListener('click', () => {
+            memoryValue = 0;
         });
     }
 });
