@@ -31,5 +31,11 @@ window.addEventListener('load', () => {
             memoryValue = parseFloat(display.value);
         });
     }
+    const memoryRecallButton = document.getElementById('memory-recall');
+    if (memoryRecallButton) {
+        memoryRecallButton.addEventListener('click', () => {
+            display.value += memoryValue;
+        });
+    }
     // ... (Other existing code)
 });
