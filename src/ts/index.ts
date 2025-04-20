@@ -8,6 +8,7 @@ window.addEventListener('load', () => {
     // ... other existing code ...
     const historyDisplay = document.getElementById('history-display');
     const equalsButton = document.querySelector('.equals');
+    const clearHistoryButton = document.getElementById('clear-history');
     if (equalsButton) {
         equalsButton.addEventListener('click', () => {
             try {
@@ -27,6 +28,15 @@ window.addEventListener('load', () => {
             }
             catch (error) {
                 display.value = 'Error';
+            }
+        });
+    }
+    if (clearHistoryButton && historyDisplay) {
+        clearHistoryButton.addEventListener('click', () => {
+            historyDisplay.innerHTML = ''; // Clear history display
+            const historyLengthSpan = document.getElementById('history-length');
+            if (historyLengthSpan) {
+                historyLengthSpan.textContent = `History Length: 0`;
             }
         });
     }
