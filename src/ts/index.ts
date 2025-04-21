@@ -27,5 +27,9 @@ window.addEventListener('load', () => {
         display.value = '';
         currentExpressionDisplay.textContent = '';
     });
+    const copyDisplayButton = document.getElementById('copy-display');
+    copyDisplayButton.addEventListener('click', () => {
+        navigator.clipboard.writeText(display.value);
+    });
     // ... (Rest of existing code)
 });
