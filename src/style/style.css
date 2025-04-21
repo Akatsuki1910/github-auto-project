@@ -18,3 +18,11 @@
     min-height: 20px;
     margin-bottom: 10px;
 }
+body.dark-scheme {
+    background-color: #333;
+    color: white;
+}
+body.light-scheme {
+    background-color: white;
+    color: black;
+}
