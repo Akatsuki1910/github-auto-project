@@ -28,5 +28,11 @@ window.addEventListener('load', () => {
         display.value += lastAnswer;
         currentExpression += lastAnswer;
     });
+    const copyButton = document.getElementById('copy');
+    copyButton.addEventListener('click', () => {
+        navigator.clipboard.writeText(display.value).then(() => {
+            alert('Copied to clipboard!');
+        });
+    });
     // ... (Rest of the existing code)
 });
