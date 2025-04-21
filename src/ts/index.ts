@@ -22,7 +22,7 @@ window.addEventListener('load', () => {
         catch (error) {
             display.value = 'Error';
         }
-    });    
+    });
     function updateHistoryDisplay() {
         historyDisplay.innerHTML = '';
         historyPanel.innerHTML = '';
@@ -44,17 +44,22 @@ window.addEventListener('load', () => {
     display.addEventListener('dblclick', () => {
         display.value = '';
     });
-    //Added feature: Keyboard support for digits, operators, and equals
     document.addEventListener('keydown', (event) => {
         if (/^[0-9]$/.test(event.key) ||
-            ['+', '-', '*', '/', '.', 'Enter'].includes(event.key)) {
+            ['+', '-', '*', '/', '.', 'Enter', 'Backspace'].includes(event.key)) {
             if (event.key === 'Enter') {
                 document.querySelector('.equals').click();
+            }
+            else if (event.key === 'Backspace') {
+                display.value = display.value.slice(0, -1);
+                currentExpression = currentExpression.slice(0, -1);
+                currentExpressionDisplay.textContent = currentExpression;
             }
             else {
                 display.value += event.key;
                 currentExpression += event.key;
-                currentExpressionDisplay.textContent = currentExpression;            }
+                currentExpressionDisplay.textContent = currentExpression;
+            }
         }
     });
 });
