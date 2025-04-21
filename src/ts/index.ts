@@ -69,5 +69,11 @@ window.addEventListener('load', () => {
         });
         historyLengthObserver.observe(historyDisplay, { childList: true });
     }
+    document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
+        button.addEventListener('click', () => {
+            currentExpression += button.getAttribute('data-key');
+            currentExpressionDisplay.textContent = currentExpression;
+        });
+    });
     // ... (Existing Code)
 });
