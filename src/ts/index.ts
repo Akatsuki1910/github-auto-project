@@ -40,6 +40,24 @@ window.addEventListener('load', () => {
             });
         });
     }
+    const memoryStoreButton = document.getElementById('memory-store');
+    const memoryRecallButton = document.getElementById('memory-recall');
+    const memoryClearButton = document.getElementById('memory-clear');
+    if (memoryStoreButton && display) {
+        memoryStoreButton.addEventListener('click', () => {
+            memoryValue = parseFloat(display.value);
+        });
+    }
+    if (memoryRecallButton && display) {
+        memoryRecallButton.addEventListener('click', () => {
+            display.value = memoryValue.toString();
+        });
+    }
+    if (memoryClearButton) {
+        memoryClearButton.addEventListener('click', () => {
+            memoryValue = 0;
+        });
+    }
     // Added Ans button functionality
     if (ansButton && display) {
         ansButton.addEventListener('click', () => {
