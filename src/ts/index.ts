@@ -7,6 +7,7 @@ window.addEventListener('load', () => {
     // ... (Existing code)
     const display = document.getElementById('display');
     const historyDisplay = document.getElementById('history-display');
+    const historyLengthSpan = document.getElementById('history-length');  // Added
     //Added keyboard support
     document.addEventListener('keydown', (event) => {
         // ... (Existing keyboard support code)
@@ -37,6 +38,7 @@ window.addEventListener('load', () => {
             historyItem.textContent = `${item.expression} = ${item.result}`;
             historyDisplay.appendChild(historyItem);
         });
+        historyLengthSpan.textContent = `History Length: ${history.length}`; // Added
     }
     // ... (Rest of existing code)
 });
