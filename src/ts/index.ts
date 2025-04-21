@@ -32,6 +32,15 @@ window.addEventListener('load', () => {
         document.body.classList.toggle('dark-scheme');
         document.body.classList.toggle('light-scheme');
     });
+    const fullscreenToggle = document.getElementById('fullscreen-toggle');
+    fullscreenToggle.addEventListener('click', () => {
+        if (document.fullscreenElement) {
+            document.exitFullscreen();
+        }
+        else {
+            document.documentElement.requestFullscreen();
+        }
+    });
     document.addEventListener('keydown', (event) => {
         if (!keyboardInputEnabled || calculatorLocked) {
             return;
