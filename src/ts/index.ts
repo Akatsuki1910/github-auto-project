@@ -6,34 +6,9 @@ let history = [];
 window.addEventListener('load', () => {
     // ... (Existing code)
     const display = document.getElementById('display');
-    const historyDisplay = document.getElementById('history-display');
-    const historyLengthSpan = document.getElementById('history-length');
-    const clearHistoryButton = document.getElementById('clear-history');
-    const openHistoryButton = document.getElementById('open-history');
-    const historyPanel = document.getElementById('history-panel');
-    const copyButton = document.getElementById('copy');
-    const ansButton = document.getElementById('ans');
-    const calculateExpressionButton = document.getElementById('calculate-expression');
+    // ... other existing const declarations
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
-    copyButton.addEventListener('click', () => {
-        navigator.clipboard.writeText(display.value);
-    });
-    ansButton.addEventListener('click', () => {
-        display.value += lastAnswer;
-    });
-
-    clearHistoryButton.addEventListener('click', () => {
-        history = [];
-        updateHistoryDisplay();
-    });
-    openHistoryButton.addEventListener('click', () => {
-        historyPanel.style.display = historyPanel.style.display === 'none' ? 'block' : 'none';
-    });
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') {
-            historyPanel.style.display = 'none';
-        }
-    });
+    // ... (Existing event listeners)
     calculateExpressionButton.addEventListener('click', () => {
         try {
             const result = math.evaluate(currentExpression);
@@ -47,7 +22,7 @@ window.addEventListener('load', () => {
         catch (error) {
             display.value = 'Error';
         }
-    });
+    });    
     function updateHistoryDisplay() {
         historyDisplay.innerHTML = '';
         historyPanel.innerHTML = '';
@@ -58,7 +33,7 @@ window.addEventListener('load', () => {
             const panelItem = document.createElement('div');
             panelItem.textContent = `${item.expression} = ${item.result}`;
             historyPanel.appendChild(panelItem);
-        });    
+        });
         historyLengthSpan.textContent = `History Length: ${history.length}`;
         historyPanel.querySelectorAll('div').forEach(item => {
             item.addEventListener('click', () => {
@@ -66,8 +41,20 @@ window.addEventListener('load', () => {
             });
         });
     }
-    // ... (Rest of existing code)
     display.addEventListener('dblclick', () => {
         display.value = '';
+    });
+    //Added feature: Keyboard support for digits, operators, and equals
+    document.addEventListener('keydown', (event) => {
+        if (/^[0-9]$/.test(event.key) ||
+            ['+', '-', '*', '/', '.', 'Enter'].includes(event.key)) {
+            if (event.key === 'Enter') {
+                document.querySelector('.equals').click();
+            }
+            else {
+                display.value += event.key;
+                currentExpression += event.key;
+                currentExpressionDisplay.textContent = currentExpression;            }
+        }
     });
 });
