@@ -16,5 +16,9 @@ window.addEventListener('load', () => {
     duplicateButton.addEventListener('click', () => {
         display.value = display.value + display.value;
     });
+    const tripleButton = document.getElementById('triple');
+    tripleButton.addEventListener('click', () => {
+        display.value = display.value + display.value + display.value;
+    });    
     // ... (Rest of existing code)
 });
