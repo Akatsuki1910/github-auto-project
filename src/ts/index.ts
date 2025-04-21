@@ -8,10 +8,15 @@ window.addEventListener('load', () => {
     const display = document.getElementById('display');
     const historyDisplay = document.getElementById('history-display');
     const historyLengthSpan = document.getElementById('history-length');
-    const clearHistoryButton = document.getElementById('clear-history'); // Added
-    clearHistoryButton.addEventListener('click', () => { // Added
+    const clearHistoryButton = document.getElementById('clear-history');
+    const openHistoryButton = document.getElementById('open-history');
+    const historyPanel = document.getElementById('history-panel');
+    clearHistoryButton.addEventListener('click', () => {
         history = [];
         updateHistoryDisplay();
+    });
+    openHistoryButton.addEventListener('click', () => {
+        historyPanel.style.display = historyPanel.style.display === 'none' ? 'block' : 'none';
     });
     //Added keyboard support
     document.addEventListener('keydown', (event) => {
@@ -38,10 +43,15 @@ window.addEventListener('load', () => {
     });
     function updateHistoryDisplay() {
         historyDisplay.innerHTML = '';
+        historyPanel.innerHTML = ''; // Clear history panel
         history.forEach(item => {
             const historyItem = document.createElement('div');
             historyItem.textContent = `${item.expression} = ${item.result}`;
             historyDisplay.appendChild(historyItem);
+            // Add history items to the panel as well
+            const panelItem = document.createElement('div');
+            panelItem.textContent = `${item.expression} = ${item.result}`;
+            historyPanel.appendChild(panelItem);
         });
         historyLengthSpan.textContent = `History Length: ${history.length}`;
     }
