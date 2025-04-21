@@ -33,36 +33,14 @@ window.addEventListener('load', () => {
     if (copyButton && display) {
         copyButton.addEventListener('click', () => {
             navigator.clipboard.writeText(display.value).then(() => {
-                alert('Copied to clipboard: ' + display.value);
+                // Added visual feedback on successful copy
+                copyButton.textContent = 'Copied!';
+                setTimeout(() => { copyButton.textContent = 'Copy'; }, 1000);
             })
                 .catch(err => {
                 console.error('Failed to copy: ', err);
             });
         });
     }
-    const memoryStoreButton = document.getElementById('memory-store');
-    const memoryRecallButton = document.getElementById('memory-recall');
-    const memoryClearButton = document.getElementById('memory-clear');
-    if (memoryStoreButton && display) {
-        memoryStoreButton.addEventListener('click', () => {
-            memoryValue = parseFloat(display.value);
-        });
-    }
-    if (memoryRecallButton && display) {
-        memoryRecallButton.addEventListener('click', () => {
-            display.value = memoryValue.toString();
-        });
-    }
-    if (memoryClearButton) {
-        memoryClearButton.addEventListener('click', () => {
-            memoryValue = 0;
-        });
-    }
-    // Added Ans button functionality
-    if (ansButton && display) {
-        ansButton.addEventListener('click', () => {
-            display.value = lastAnswer.toString();
-        });
-    }
-    // ... (Rest of the existing code)
+    // ... (Rest of existing code)
 });
