@@ -60,5 +60,14 @@ window.addEventListener('load', () => {
             display.value = lastAnswer.toString();
         });
     }
+    const historyLengthSpan = document.getElementById('history-length');
+    if (historyLengthSpan) {
+        historyLengthSpan.textContent = `History Length: ${history.length}`;
+        // Update history length display whenever history changes
+        const historyLengthObserver = new MutationObserver(() => {
+            historyLengthSpan.textContent = `History Length: ${history.length}`;
+        });
+        historyLengthObserver.observe(historyDisplay, { childList: true });
+    }
     // ... (Existing Code)
 });
