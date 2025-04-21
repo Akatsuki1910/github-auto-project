@@ -11,32 +11,10 @@ window.addEventListener('load', () => {
     const lockButton = document.getElementById('lock-calculator');
     // ... (Lock button logic)
     const currentTimeButton = document.getElementById('current-time');
-    currentTimeButton.addEventListener('click', () => {
-        const now = new Date();
-        const timeString = now.toLocaleTimeString();
-        display.value = timeString;
-    });
-    const currentDateButton = document.getElementById('current-date');
-    currentDateButton.addEventListener('click', () => {
-        const now = new Date();
-        const dateString = now.toLocaleDateString();
-        display.value = dateString;
-    });
-    const clearDisplayButton = document.getElementById('clear-display');
-    clearDisplayButton.addEventListener('click', () => {
-        display.value = '';
-        currentExpressionDisplay.textContent = '';
-    });
-    const copyDisplayButton = document.getElementById('copy-display');
-    copyDisplayButton.addEventListener('click', () => {
-        navigator.clipboard.writeText(display.value);
-    });
-    const roundDisplayButton = document.getElementById('round-display');
-    roundDisplayButton.addEventListener('click', () => {
-        const num = parseFloat(display.value);
-        if (!isNaN(num)) {
-            display.value = Math.round(num).toString();
-        }
+    // ... (Existing code)
+    const duplicateButton = document.getElementById('duplicate');
+    duplicateButton.addEventListener('click', () => {
+        display.value = display.value + display.value;
     });
     // ... (Rest of existing code)
 });
