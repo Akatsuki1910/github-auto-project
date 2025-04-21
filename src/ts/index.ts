@@ -8,6 +8,19 @@ window.addEventListener('load', () => {
     const display = document.getElementById('display');
     // ... other existing const declarations
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
+    const historyDisplay = document.getElementById('history-display');
+    const historyPanel = document.getElementById('history-panel');
+    const historyLengthSpan = document.getElementById('history-length');
+    const openHistoryButton = document.getElementById('open-history');
+    const calculateExpressionButton = document.getElementById('calculate-expression');
+    openHistoryButton.addEventListener('click', () => {
+        if (historyPanel.style.display === 'none') {
+            historyPanel.style.display = 'block';
+        }
+        else {
+            historyPanel.style.display = 'none';
+        }
+    });
     // ... (Existing event listeners)
     calculateExpressionButton.addEventListener('click', () => {
         try {
@@ -67,5 +80,10 @@ window.addEventListener('load', () => {
                 currentExpressionDisplay.textContent = currentExpression;
             }
         }
+    });
+    const clearHistoryButton = document.getElementById('clear-history');
+    clearHistoryButton.addEventListener('click', () => {
+        history = [];
+        updateHistoryDisplay();
     });
 });
