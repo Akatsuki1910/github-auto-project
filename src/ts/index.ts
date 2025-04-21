@@ -23,6 +23,12 @@ window.addEventListener('load', () => {
             display.value = 'Error';
         }
     });
+    const ansButton = document.getElementById('ans');
+    ansButton.addEventListener('click', () => {
+        display.value += lastAnswer;
+        currentExpression += lastAnswer;
+        currentExpressionDisplay.textContent = currentExpression;
+    });
     function updateHistoryDisplay() {
         historyDisplay.innerHTML = '';
         historyPanel.innerHTML = '';
