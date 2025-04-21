@@ -26,14 +26,19 @@ window.addEventListener('load', () => {
     const clearHistoryButton = document.getElementById('clear-history');
     const historyDisplay = document.getElementById('history-display');
     let history = [];
-    // ... (Existing event listeners)
-    //Current Date and Time
     const currentDateTime = () => {
         const now = new Date();
         const dateString = now.toLocaleDateString();
         const timeString = now.toLocaleTimeString();
         return `${dateString} ${timeString}`;
     };
+    // Clear History button functionality
+    if (clearHistoryButton && historyDisplay) {
+        clearHistoryButton.addEventListener('click', () => {
+            history = [];
+            historyDisplay.innerHTML = '';
+        });
+    }
     if (calculateExpressionButton && display && currentExpressionDisplay) {
         calculateExpressionButton.addEventListener('click', () => {
             try {
