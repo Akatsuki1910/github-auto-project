@@ -40,5 +40,11 @@ window.addEventListener('load', () => {
             });
         });
     }
+    // Added Ans button functionality
+    if (ansButton && display) {
+        ansButton.addEventListener('click', () => {
+            display.value = lastAnswer.toString();
+        });
+    }
     // ... (Rest of the existing code)
 });
