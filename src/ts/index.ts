@@ -19,7 +19,6 @@ window.addEventListener('load', () => {
         historyPanel.style.display = historyPanel.style.display === 'none' ? 'block' : 'none';
     });
     document.addEventListener('keydown', (event) => {
-        //Existing keyboard support code with added Escape key functionality to close history panel
         if (event.key === 'Escape') {
             historyPanel.style.display = 'none';
         }
@@ -28,6 +27,9 @@ window.addEventListener('load', () => {
     const calculateExpressionButton = document.getElementById('calculate-expression');
     const ansButton = document.getElementById('ans');
     const copyButton = document.getElementById('copy');
+    ansButton.addEventListener('click', () => {
+        display.value += lastAnswer;
+    });
     calculateExpressionButton.addEventListener('click', () => {
         try {
             const result = math.evaluate(currentExpression);
