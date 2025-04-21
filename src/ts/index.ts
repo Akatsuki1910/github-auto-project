@@ -18,15 +18,16 @@ window.addEventListener('load', () => {
     openHistoryButton.addEventListener('click', () => {
         historyPanel.style.display = historyPanel.style.display === 'none' ? 'block' : 'none';
     });
-    //Added keyboard support
     document.addEventListener('keydown', (event) => {
-        // ... (Existing keyboard support code)
+        //Existing keyboard support code with added Escape key functionality to close history panel
+        if (event.key === 'Escape') {
+            historyPanel.style.display = 'none';
+        }
     });
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
     const calculateExpressionButton = document.getElementById('calculate-expression');
     const ansButton = document.getElementById('ans');
     const copyButton = document.getElementById('copy');
-    // ... (Existing copy functionality code)
     calculateExpressionButton.addEventListener('click', () => {
         try {
             const result = math.evaluate(currentExpression);
@@ -43,12 +44,11 @@ window.addEventListener('load', () => {
     });
     function updateHistoryDisplay() {
         historyDisplay.innerHTML = '';
-        historyPanel.innerHTML = ''; // Clear history panel
+        historyPanel.innerHTML = '';
         history.forEach(item => {
             const historyItem = document.createElement('div');
             historyItem.textContent = `${item.expression} = ${item.result}`;
             historyDisplay.appendChild(historyItem);
-            // Add history items to the panel as well
             const panelItem = document.createElement('div');
             panelItem.textContent = `${item.expression} = ${item.result}`;
             historyPanel.appendChild(panelItem);
