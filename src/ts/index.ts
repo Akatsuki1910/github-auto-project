@@ -15,6 +15,12 @@ window.addEventListener('load', () => {
         const now = new Date();
         const timeString = now.toLocaleTimeString();
         display.value = timeString;
-    });    
+    });
+    const currentDateButton = document.getElementById('current-date');
+    currentDateButton.addEventListener('click', () => {
+        const now = new Date();
+        const dateString = now.toLocaleDateString();
+        display.value = dateString;
+    });
     // ... (Rest of existing code)
 });
