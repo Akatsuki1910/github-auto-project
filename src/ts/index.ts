@@ -6,13 +6,17 @@ let history = [];
 window.addEventListener('load', () => {
     // ... (Existing code)
     const display = document.getElementById('display');
-    // ... other existing const declarations
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
     const historyDisplay = document.getElementById('history-display');
     const historyPanel = document.getElementById('history-panel');
     const historyLengthSpan = document.getElementById('history-length');
     const openHistoryButton = document.getElementById('open-history');
     const calculateExpressionButton = document.getElementById('calculate-expression');
+    //Added feature: copy to clipboard functionality for history items
+    function copyToClipboard(text) {
+        navigator.clipboard.writeText(text);
+        alert("Copied to clipboard: " + text);
+    }
     openHistoryButton.addEventListener('click', () => {
         if (historyPanel.style.display === 'none') {
             historyPanel.style.display = 'block';
@@ -21,7 +25,6 @@ window.addEventListener('load', () => {
             historyPanel.style.display = 'none';
         }
     });
-    // ... (Existing event listeners)
     calculateExpressionButton.addEventListener('click', () => {
         try {
             const result = math.evaluate(currentExpression);
@@ -57,6 +60,9 @@ window.addEventListener('load', () => {
         historyPanel.querySelectorAll('div').forEach(item => {
             item.addEventListener('click', () => {
                 display.value = item.textContent.split('=')[1].trim();
+            });
+            item.addEventListener('dblclick', () => {
+                copyToClipboard(item.textContent);
             });
         });
     }
