@@ -1,28 +1,16 @@
 /* ... (Existing styles) */
 #history-panel{
-    position: absolute;
-    top:100px;
-    right:20px;
-    width:200px;
-    height:300px;
-    border:1px solid #ccc;
-    padding:10px;
-    overflow-y:scroll;
-    background-color:white;
-    display:none
+    /* ... existing styles */
 }
 #history-panel div {
-    cursor: pointer;
+    /* ... existing styles */
 }
 #currentExpressionDisplay {
-    min-height: 20px;
-    margin-bottom: 10px;
+    /* ... existing styles */
 }
 body.dark-scheme {
-    background-color: #333;
-    color: white;
+    /* ... existing styles */
 }
 body.light-scheme {
-    background-color: white;
-    color: black;
+    /* ... existing styles */
 }
