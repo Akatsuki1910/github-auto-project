@@ -31,5 +31,12 @@ window.addEventListener('load', () => {
     copyDisplayButton.addEventListener('click', () => {
         navigator.clipboard.writeText(display.value);
     });
+    const roundDisplayButton = document.getElementById('round-display');
+    roundDisplayButton.addEventListener('click', () => {
+        const num = parseFloat(display.value);
+        if (!isNaN(num)) {
+            display.value = Math.round(num).toString();
+        }
+    });
     // ... (Rest of existing code)
 });
