@@ -23,5 +23,10 @@ window.addEventListener('load', () => {
             }
         }
     });
+    const ansButton = document.getElementById('ans');
+    ansButton.addEventListener('click', () => {
+        display.value += lastAnswer;
+        currentExpression += lastAnswer;
+    });
     // ... (Rest of the existing code)
 });
