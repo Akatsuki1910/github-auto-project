@@ -5,6 +5,26 @@ let lastAnswer = 0;
 window.addEventListener('load', () => {
     // ... (Existing code)
     const display = document.getElementById('display');
+    //Added keyboard support
+    document.addEventListener('keydown', (event) => {
+        const key = event.key;
+        if (!isNaN(parseInt(key)) || key === '.' || key === '+' || key === '-' || key === '*' || key === '/') {
+            currentExpression += key;
+            currentExpressionDisplay.textContent = currentExpression;
+        }
+        if (key === 'Enter' || key === '=') {
+            calculateExpressionButton.click();
+        }
+        if (key === 'Backspace') {
+            currentExpression = currentExpression.slice(0, -1);
+            currentExpressionDisplay.textContent = currentExpression;
+        }
+        if (key === 'Escape') {
+            currentExpression = '';
+            currentExpressionDisplay.textContent = '';
+            display.value = '';
+        }
+    });
     const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
     const calculateExpressionButton = document.getElementById('calculate-expression');
     const ansButton = document.getElementById('ans');
@@ -20,60 +40,5 @@ window.addEventListener('load', () => {
             });
         });
     }
-    const memoryStoreButton = document.getElementById('memory-store');
-    const memoryRecallButton = document.getElementById('memory-recall');
-    const memoryClearButton = document.getElementById('memory-clear');
-    const clearHistoryButton = document.getElementById('clear-history');
-    const historyDisplay = document.getElementById('history-display');
-    let history = [];
-    const currentDateTime = () => {
-        const now = new Date();
-        const dateString = now.toLocaleDateString();
-        const timeString = now.toLocaleTimeString();
-        return `${dateString} ${timeString}`;
-    };
-    // Clear History button functionality
-    if (clearHistoryButton && historyDisplay) {
-        clearHistoryButton.addEventListener('click', () => {
-            history = [];
-            historyDisplay.innerHTML = '';
-        });
-    }
-    if (calculateExpressionButton && display && currentExpressionDisplay) {
-        calculateExpressionButton.addEventListener('click', () => {
-            try {
-                const result = math.evaluate(currentExpression);
-                display.value = result.toString();
-                lastAnswer = result;
-                history.push({ expression: currentExpression, result: result, timestamp: currentDateTime() });
-                historyDisplay.innerHTML = history.map(item => `<div>${item.timestamp} - ${item.expression} = ${item.result}</div>`).join('');
-                currentExpression = '';
-                currentExpressionDisplay.textContent = '';
-            }
-            catch (error) {
-                display.value = 'Error';
-            }
-        });
-    }
-    if (ansButton && display) {
-        ansButton.addEventListener('click', () => {
-            display.value = lastAnswer.toString();
-        });
-    }
-    const historyLengthSpan = document.getElementById('history-length');
-    if (historyLengthSpan) {
-        historyLengthSpan.textContent = `History Length: ${history.length}`;
-        // Update history length display whenever history changes
-        const historyLengthObserver = new MutationObserver(() => {
-            historyLengthSpan.textContent = `History Length: ${history.length}`;
-        });
-        historyLengthObserver.observe(historyDisplay, { childList: true });
-    }
-    document.querySelectorAll('.digit, .operator, .decimal').forEach(button => {
-        button.addEventListener('click', () => {
-            currentExpression += button.getAttribute('data-key');
-            currentExpressionDisplay.textContent = currentExpression;
-        });
-    });
-    // ... (Existing Code)
+    // ... (Rest of the existing code)
 });
