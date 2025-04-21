@@ -18,16 +18,19 @@ window.addEventListener('load', () => {
                 button.disabled = calculatorLocked;
             }
         });
-        // Lock/unlock keyboard input based on calculator lock
         keyboardInputEnabled = !calculatorLocked;
         keyboardToggleButton.textContent = keyboardInputEnabled ? 'Disable Keyboard Input' : 'Enable Keyboard Input';
         if (calculatorLocked) {
             display.value = 'Locked';
         }
         else {
-            // Restore previous display value if available. If not, set to 0.
             display.value = historyState?.currentValue || '0';
         }
+    });
+    const darkModeToggle = document.getElementById('dark-mode-toggle');
+    darkModeToggle.addEventListener('click', () => {
+        document.body.classList.toggle('dark-scheme');
+        document.body.classList.toggle('light-scheme');
     });
     document.addEventListener('keydown', (event) => {
         if (!keyboardInputEnabled || calculatorLocked) {
