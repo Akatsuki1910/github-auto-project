@@ -42,5 +42,11 @@ window.addEventListener('load', () => {
             currentExpressionDisplay.textContent = currentExpression;
         }
     });
+    // Added feature: Clear current expression button
+    const clearButton = document.getElementById('clear');
+    clearButton.addEventListener('click', () => {
+        currentExpression = '';
+        currentExpressionDisplay.textContent = currentExpression;
+    });
     // ... (Rest of the existing code)
 });
