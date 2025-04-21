@@ -48,5 +48,14 @@ window.addEventListener('load', () => {
         currentExpression = '';
         currentExpressionDisplay.textContent = currentExpression;
     });
+    // Added feature: Disable scientific buttons when scientific mode is off
+    const toggleScientificButton = document.getElementById('toggleScientific');
+    const scientificPad = document.getElementById('scientific-pad');
+    toggleScientificButton.addEventListener('click', () => {
+        const isScientific = scientificPad.style.display === 'block';
+        scientificPad.style.display = isScientific ? 'none' : 'block';
+        const scientificButtons = scientificPad.querySelectorAll('button');
+        scientificButtons.forEach(button => button.disabled = isScientific);
+    });
     // ... (Rest of the existing code)
 });
