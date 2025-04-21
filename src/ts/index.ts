@@ -22,5 +22,10 @@ window.addEventListener('load', () => {
         const dateString = now.toLocaleDateString();
         display.value = dateString;
     });
+    const clearDisplayButton = document.getElementById('clear-display');
+    clearDisplayButton.addEventListener('click', () => {
+        display.value = '';
+        currentExpressionDisplay.textContent = '';
+    });
     // ... (Rest of existing code)
 });
