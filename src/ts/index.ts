@@ -27,6 +27,9 @@ window.addEventListener('load', () => {
     const calculateExpressionButton = document.getElementById('calculate-expression');
     const ansButton = document.getElementById('ans');
     const copyButton = document.getElementById('copy');
+    copyButton.addEventListener('click', () => {
+        navigator.clipboard.writeText(display.value);
+    });
     ansButton.addEventListener('click', () => {
         display.value += lastAnswer;
     });
