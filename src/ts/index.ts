@@ -59,6 +59,13 @@ window.addEventListener('load', () => {
             historyPanel.appendChild(panelItem);
         });
         historyLengthSpan.textContent = `History Length: ${history.length}`;
+
+        // Add click event listener to history items in the panel
+        historyPanel.querySelectorAll('div').forEach(item => {
+            item.addEventListener('click', () => {
+                display.value = item.textContent.split('=')[1].trim();
+            });
+        });
     }
     // ... (Rest of existing code)
 });
