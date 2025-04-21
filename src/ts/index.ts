@@ -7,7 +7,12 @@ window.addEventListener('load', () => {
     // ... (Existing code)
     const display = document.getElementById('display');
     const historyDisplay = document.getElementById('history-display');
-    const historyLengthSpan = document.getElementById('history-length');  // Added
+    const historyLengthSpan = document.getElementById('history-length');
+    const clearHistoryButton = document.getElementById('clear-history'); // Added
+    clearHistoryButton.addEventListener('click', () => { // Added
+        history = [];
+        updateHistoryDisplay();
+    });
     //Added keyboard support
     document.addEventListener('keydown', (event) => {
         // ... (Existing keyboard support code)
@@ -38,7 +43,7 @@ window.addEventListener('load', () => {
             historyItem.textContent = `${item.expression} = ${item.result}`;
             historyDisplay.appendChild(historyItem);
         });
-        historyLengthSpan.textContent = `History Length: ${history.length}`; // Added
+        historyLengthSpan.textContent = `History Length: ${history.length}`;
     }
     // ... (Rest of existing code)
 });
