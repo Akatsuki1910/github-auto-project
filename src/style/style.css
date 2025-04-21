@@ -14,3 +14,7 @@
 #history-panel div {
     cursor: pointer;
 }
+#currentExpressionDisplay {
+    min-height: 20px;
+    margin-bottom: 10px;
+}

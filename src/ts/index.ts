@@ -34,5 +34,13 @@ window.addEventListener('load', () => {
             alert('Copied to clipboard!');
         });
     });
+    // Added feature: Current expression display
+    const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
+    document.addEventListener('click', (event) => {
+        if (event.target instanceof HTMLButtonElement && event.target.classList.contains('digit')) {
+            currentExpression += event.target.dataset.key;
+            currentExpressionDisplay.textContent = currentExpression;
+        }
+    });
     // ... (Rest of the existing code)
 });
