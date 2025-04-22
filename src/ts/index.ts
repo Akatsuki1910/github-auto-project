@@ -15,4 +15,12 @@ const truncButton = document.getElementById('trunc');
 truncButton?.addEventListener('click', () => {
     display.value = math.trunc(parseFloat(display.value)).toString();
 });
+const toFixedButton = document.getElementById('toFixed');
+toFixedButton?.addEventListener('click', () => {
+    const input = display.value;
+    const digits = prompt("Enter the number of digits to appear after the decimal point:", "2");
+    if (digits !== null) {
+    display.value = parseFloat(input).toFixed(parseInt(digits));
+    }
+});
 //rest of code
