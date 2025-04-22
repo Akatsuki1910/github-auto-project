@@ -11,4 +11,8 @@ const ceilButton = document.getElementById('ceil');
 ceilButton?.addEventListener('click', () => {
     display.value = math.ceil(parseFloat(display.value)).toString();
 });
+const truncButton = document.getElementById('trunc');
+truncButton?.addEventListener('click', () => {
+    display.value = math.trunc(parseFloat(display.value)).toString();
+});
 //rest of code
