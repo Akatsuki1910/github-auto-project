@@ -19,6 +19,13 @@ window.addEventListener('load', () => {
     const tripleButton = document.getElementById('triple');
     tripleButton.addEventListener('click', () => {
         display.value = display.value + display.value + display.value;
-    });    
+    });
+    const squareRootButton = document.getElementById('square-root');
+    squareRootButton.addEventListener('click', () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            display.value = Math.sqrt(currentValue).toString();
+        }
+    });
     // ... (Rest of existing code)
 });
