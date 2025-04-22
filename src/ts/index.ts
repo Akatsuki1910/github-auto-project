@@ -1,4 +1,9 @@
 // ... (Existing code)
+const absButton = document.getElementById('abs');
+absButton.addEventListener('click', () => {
+    const input = display.value;
+    display.value = Math.abs(Number(input)).toString();
+});
 const medianButton = document.getElementById('median');
 medianButton.addEventListener('click', () => {
     const input = display.value;
