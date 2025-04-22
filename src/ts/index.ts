@@ -1,9 +1,7 @@
 // ... (Existing code)
-const clampButton = document.getElementById('clamp');
-clampButton?.addEventListener('click', () => {
-    const input = parseFloat(display.value);
-    const min = parseFloat(prompt("Enter the minimum value:", "0") || "0");
-    const max = parseFloat(prompt("Enter the maximum value:", "1") || "1");
-    display.value = math.clamp(input, min, max).toString();
+const maxButton = document.getElementById('max');
+maxButton?.addEventListener('click', () => {
+    const values = prompt("Enter comma-separated values:", "1,2,3").split(',').map(Number);
+    display.value = math.max(values).toString();
 });
 //rest of code
