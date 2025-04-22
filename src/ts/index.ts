@@ -27,5 +27,12 @@ window.addEventListener('load', () => {
             display.value = Math.sqrt(currentValue).toString();
         }
     });
+    const oneOverXButton = document.getElementById('one-over-x');
+    oneOverXButton.addEventListener('click', () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue) && currentValue !== 0) {
+            display.value = (1 / currentValue).toString();
+        }
+    });
     // ... (Rest of existing code)
 });
