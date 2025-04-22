@@ -34,5 +34,12 @@ window.addEventListener('load', () => {
             display.value = (1 / currentValue).toString();
         }
     });
+    const percentCalculationButton = document.getElementById('percent-calculation');
+    percentCalculationButton.addEventListener('click', () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue)) {
+            display.value = (currentValue / 100).toString();
+        }
+    });
     // ... (Rest of existing code)
 });
