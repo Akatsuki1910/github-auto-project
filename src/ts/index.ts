@@ -41,5 +41,12 @@ window.addEventListener('load', () => {
             display.value = (currentValue / 100).toString();
         }
     });
+    const log10Button = document.getElementById('log10');
+    log10Button.addEventListener('click', () => {
+        const currentValue = parseFloat(display.value);
+        if (!isNaN(currentValue) && currentValue > 0) {
+            display.value = Math.log10(currentValue).toString();
+        }
+    });
     // ... (Rest of existing code)
 });
