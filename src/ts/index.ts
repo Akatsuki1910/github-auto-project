@@ -1,7 +1,11 @@
 // ... (Existing code)
-const cubeButton = document.getElementById('cube');
-cubeButton?.addEventListener('click', () => {
+const oneOverXButton = document.getElementById('one-over-x');
+oneOverXButton?.addEventListener('click', () => {
     const input = display.value;
-    display.value = Math.pow(Number(input), 3).toString();
+    if (input === '0') {
+        display.value = 'Error: Division by zero';
+    } else {
+        display.value = (1 / Number(input)).toString();
+    }
 });
 // ... (Rest of existing code)
