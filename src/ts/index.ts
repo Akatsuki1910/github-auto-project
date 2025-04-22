@@ -12,4 +12,11 @@ const duplicateButton = document.getElementById('duplicate');
 duplicateButton?.addEventListener('click', () => {
     display.value = display.value + display.value;
 });
+const percentToValueButton = document.getElementById('percentToValue');
+percentToValueButton?.addEventListener('click', () => {
+    const input = parseFloat(display.value);
+    if (!isNaN(input)) {
+        display.value = (input / 100).toString();
+    }
+});
 // ... (Rest of existing code)
