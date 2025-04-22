@@ -1,14 +1,7 @@
 // ... (Existing code)
-const modButton = document.getElementById('mod');
-modButton?.addEventListener('click', () => {
+const sinButton = document.getElementById('sin');
+sinButton?.addEventListener('click', () => {
     const input = display.value;
-    currentOperator = '%';
-    firstOperand = parseFloat(input);
-    display.value = '';
+    display.value = Math.sin(parseFloat(input)).toString();
 });
-
-//In equals button logic
-if (currentOperator === '%') {
-    display.value = (firstOperand % parseFloat(display.value)).toString();
-}
 // ... (Rest of existing code)
