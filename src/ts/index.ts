@@ -1,4 +1,9 @@
 // ... (Existing code)
+const floorButton = document.getElementById('floor');
+floorButton?.addEventListener('click', () => {
+    const input = display.value;
+    display.value = Math.floor(Number(input)).toString();
+});
 const powButton = document.getElementById('pow');
 powButton?.addEventListener('click', () => {
     const input = display.value;
