@@ -4,4 +4,9 @@ sinButton?.addEventListener('click', () => {
     const input = display.value;
     display.value = Math.sin(parseFloat(input)).toString();
 });
+const cosButton = document.getElementById('cos');
+cosButton?.addEventListener('click', () => {
+    const input = display.value;
+    display.value = Math.cos(parseFloat(input)).toString();
+});
 // ... (Rest of existing code)
