@@ -24,4 +24,9 @@ acosButton?.addEventListener('click', () => {
     const input = display.value;
     display.value = Math.acos(parseFloat(input)).toString();
 });
+const atanButton = document.getElementById('atan');
+atanButton?.addEventListener('click', () => {
+    const input = display.value;
+    display.value = Math.atan(parseFloat(input)).toString();
+});
 // ... (Rest of existing code)
