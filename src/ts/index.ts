@@ -30,5 +30,17 @@ window.addEventListener('load', () => {
         }
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
+    const sumButton = document.getElementById('sum');
+    sumButton.addEventListener('click', () => {
+        const input = display.value;
+        const numbers = input.split(',').map(Number);
+        if (numbers.some(isNaN)) {
+            display.value = 'Invalid input';
+        }
+        else {
+            const sum = numbers.reduce((a, b) => a + b, 0);
+            display.value = sum.toString();
+        }
+    });
     // ... (Rest of existing code)
 });
