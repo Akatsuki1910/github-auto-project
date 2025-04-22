@@ -10,42 +10,12 @@ window.addEventListener('load', () => {
     });
     const lockButton = document.getElementById('lock-calculator');
     // ... (Lock button logic)
-    const currentTimeButton = document.getElementById('current-time');
     // ... (Existing code)
-    const duplicateButton = document.getElementById('duplicate');
-    duplicateButton.addEventListener('click', () => {
-        display.value = display.value + display.value;
-    });
-    const tripleButton = document.getElementById('triple');
-    tripleButton.addEventListener('click', () => {
-        display.value = display.value + display.value + display.value;
-    });
-    const squareRootButton = document.getElementById('square-root');
-    squareRootButton.addEventListener('click', () => {
+    const exp2Button = document.getElementById('exp2');
+    exp2Button.addEventListener('click', () => {
         const currentValue = parseFloat(display.value);
         if (!isNaN(currentValue)) {
-            display.value = Math.sqrt(currentValue).toString();
-        }
-    });
-    const oneOverXButton = document.getElementById('one-over-x');
-    oneOverXButton.addEventListener('click', () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue) && currentValue !== 0) {
-            display.value = (1 / currentValue).toString();
-        }
-    });
-    const percentCalculationButton = document.getElementById('percent-calculation');
-    percentCalculationButton.addEventListener('click', () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue)) {
-            display.value = (currentValue / 100).toString();
-        }
-    });
-    const log10Button = document.getElementById('log10');
-    log10Button.addEventListener('click', () => {
-        const currentValue = parseFloat(display.value);
-        if (!isNaN(currentValue) && currentValue > 0) {
-            display.value = Math.log10(currentValue).toString();
+            display.value = Math.pow(2, currentValue).toString();
         }
     });
     // ... (Rest of existing code)
