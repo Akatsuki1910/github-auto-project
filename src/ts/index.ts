@@ -17,4 +17,9 @@ medianButton.addEventListener('click', () => {
         display.value = median.toString();
     }
 });
+const roundButton = document.getElementById('round');
+roundButton?.addEventListener('click', () => {
+    const input = display.value;
+    display.value = Math.round(Number(input)).toString();
+});
 // ... (Rest of existing code)
