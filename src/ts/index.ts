@@ -1,4 +1,16 @@
 // ... (Existing code)
+const powButton = document.getElementById('pow');
+powButton?.addEventListener('click', () => {
+    const input = display.value;
+    const base = parseFloat(input);
+    const exponent = prompt("Enter the exponent:");
+    if (exponent !== null && !isNaN(parseFloat(exponent))) {
+        display.value = Math.pow(base, parseFloat(exponent)).toString();
+    }
+    else {
+        display.value = 'Invalid input';
+    }
+});
 const absButton = document.getElementById('abs');
 absButton.addEventListener('click', () => {
     const input = display.value;
