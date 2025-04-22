@@ -1,18 +1,14 @@
 // ... (Existing code)
-const doubleButton = document.getElementById('double');
-doubleButton?.addEventListener('click', () => {
+const modButton = document.getElementById('mod');
+modButton?.addEventListener('click', () => {
     const input = display.value;
-    display.value = (Number(input) * 2).toString();
+    currentOperator = '%';
+    firstOperand = parseFloat(input);
+    display.value = '';
 });
-const tripleButton = document.getElementById('triple');
-tripleButton?.addEventListener('click', () => {
-    const input = display.value;
-    display.value = (Number(input) * 3).toString();
-});
-const inverseButton = document.getElementById('inverse');
-inverseButton?.addEventListener('click', () => {
-    const input = display.value;
-    const result = 1 / Number(input);
-    display.value = isFinite(result) ? result.toString() : "Error";
-});
+
+//In equals button logic
+if (currentOperator === '%') {
+    display.value = (firstOperand % parseFloat(display.value)).toString();
+}
 // ... (Rest of existing code)
