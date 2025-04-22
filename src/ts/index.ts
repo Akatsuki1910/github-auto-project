@@ -9,4 +9,9 @@ cosButton?.addEventListener('click', () => {
     const input = display.value;
     display.value = Math.cos(parseFloat(input)).toString();
 });
+const tanButton = document.getElementById('tan');
+tanButton?.addEventListener('click', () => {
+    const input = display.value;
+    display.value = Math.tan(parseFloat(input)).toString();
+});
 // ... (Rest of existing code)
