@@ -19,4 +19,9 @@ asinButton?.addEventListener('click', () => {
     const input = display.value;
     display.value = Math.asin(parseFloat(input)).toString();
 });
+const acosButton = document.getElementById('acos');
+acosButton?.addEventListener('click', () => {
+    const input = display.value;
+    display.value = Math.acos(parseFloat(input)).toString();
+});
 // ... (Rest of existing code)
