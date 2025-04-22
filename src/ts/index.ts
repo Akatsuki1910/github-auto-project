@@ -1,4 +1,8 @@
 // ... (Existing code)
+const eButton = document.getElementById('e');
+eButton?.addEventListener('click', () => {
+    display.value = Math.E.toString();
+});
 const sinButton = document.getElementById('sin');
 sinButton?.addEventListener('click', () => {
     const input = display.value;
