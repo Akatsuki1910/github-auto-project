@@ -7,4 +7,8 @@ nthRootButton?.addEventListener('click', () => {
         display.value = math.nthRoot(parseFloat(input), parseFloat(root)).toString();
     }
 });
+const ceilButton = document.getElementById('ceil');
+ceilButton?.addEventListener('click', () => {
+    display.value = math.ceil(parseFloat(display.value)).toString();
+});
 //rest of code
