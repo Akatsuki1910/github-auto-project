@@ -1,7 +1,7 @@
 // ... (Existing code)
-const geometricMeanButton = document.getElementById('geometricMean');
-geometricMeanButton?.addEventListener('click', () => {
-    const values = prompt("Enter comma-separated values for geometric mean:", "1,2,3").split(',').map(Number);
-    display.value = math.geometricMean(values).toString();
+const harmonicMeanButton = document.getElementById('harmonicMean');
+harmonicMeanButton?.addEventListener('click', () => {
+    const values = prompt("Enter comma-separated values for harmonic mean:", "1,2,3").split(',').map(Number);
+    display.value = math.harmonicMean(values).toString();
 });
 //rest of code
