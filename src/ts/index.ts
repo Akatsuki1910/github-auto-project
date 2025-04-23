@@ -25,4 +25,11 @@ powerOfTenButton?.addEventListener('click', () => {
         display.value = Math.pow(10, Number(currentValue)).toString();
     }
 });
+const log10Button = document.getElementById('log10');
+log10Button?.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        display.value = Math.log10(Number(currentValue)).toString();
+    }
+});
 //rest of code
