@@ -19,4 +19,9 @@ modeButton?.addEventListener('click', () => {
     const values = prompt("Enter comma-separated values for mode:", "1,2,3,2").split(',').map(Number);
     display.value = math.mode(values).toString();
 });
+const varianceButton = document.getElementById('variance');
+varianceButton?.addEventListener('click', () => {
+    const values = prompt("Enter comma-separated values for variance:", "1,2,3").split(',').map(Number);
+    display.value = math.variance(values).toString();
+});
 //rest of code
