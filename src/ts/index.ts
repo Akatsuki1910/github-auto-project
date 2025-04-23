@@ -1,9 +1,9 @@
 // ... (Existing code)
-const log10Button = document.getElementById('log10');
-log10Button?.addEventListener('click', () => {
+const powerOfTenButton = document.getElementById('powerOfTen');
+powerOfTenButton?.addEventListener('click', () => {
     const currentValue = display.value;
-    if (currentValue && Number(currentValue) > 0) {
-        const result = math.log10(Number(currentValue));
+    if (currentValue) {
+        const result = math.pow(10, Number(currentValue));
         display.value = result.toString();
     }
 });
