@@ -1,4 +1,11 @@
 // ... (Existing code)
+const changeSignButton = document.getElementById('changeSign');
+changeSignButton?.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        display.value = (Number(currentValue) * -1).toString();
+    }
+});
 const flipButton = document.getElementById('flip');
 flipButton?.addEventListener('click', () => {
     const num = Number(display.value);
