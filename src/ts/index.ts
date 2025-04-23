@@ -10,3 +10,10 @@ floorButton?.addEventListener('click', () => {
         display.value = Math.floor(currentValue).toString();
     }
 });
+const ceilButton = document.getElementById('ceil');
+ceilButton?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.ceil(currentValue).toString();
+    }
+});
