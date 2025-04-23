@@ -9,4 +9,9 @@ averageButton?.addEventListener('click', () => {
     const values = prompt("Enter comma-separated values for average:", "1,2,3").split(',').map(Number);
     display.value = math.mean(values).toString();
 });
+const productButton = document.getElementById('product');
+productButton?.addEventListener('click', () => {
+    const values = prompt("Enter comma-separated values for product:", "1,2,3").split(',').map(Number);
+    display.value = math.prod(values).toString();
+});
 //rest of code
