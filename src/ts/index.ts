@@ -1,9 +1,9 @@
 // ... (Existing code)
-const cuberootButton = document.getElementById('cuberoot');
-cuberootButton?.addEventListener('click', () => {
+const expButton = document.getElementById('exp');
+expButton?.addEventListener('click', () => {
     const currentValue = display.value;
     if (currentValue) {
-        const result = math.cbrt(Number(currentValue));
+        const result = math.exp(Number(currentValue));
         display.value = result.toString();
     }
 });
