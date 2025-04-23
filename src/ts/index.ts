@@ -1,9 +1,9 @@
 // ... (Existing code)
-const signButton = document.getElementById('sign');
-signButton?.addEventListener('click', () => {
+const cubeButton = document.getElementById('cube');
+cubeButton?.addEventListener('click', () => {
     const currentValue = display.value;
     if (currentValue) {
-        const result = Math.sign(Number(currentValue));
+        const result = Math.pow(Number(currentValue), 3);
         display.value = result.toString();
     }
 });
