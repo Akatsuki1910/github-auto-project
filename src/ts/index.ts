@@ -1,7 +1,7 @@
 // ... (Existing code)
-const lcmButton = document.getElementById('lcm');
-lcmButton?.addEventListener('click', () => {
-    const values = prompt("Enter comma-separated values for lcm:", "12,18").split(',').map(Number);
-    display.value = math.lcm(values).toString();
+const powerOfTwoButton = document.getElementById('powerOfTwo');
+powerOfTwoButton?.addEventListener('click', () => {
+    const value = Number(prompt("Enter a value for 2^x", "2"));
+    display.value = math.pow(2, value).toString();
 });
 //rest of code
