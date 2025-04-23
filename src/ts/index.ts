@@ -1,17 +1,16 @@
 // ... (Existing code)
-const fibonacciButton = document.getElementById('fibonacci');
-fibonacciButton?.addEventListener('click', () => {
-    const n = Number(prompt("Enter the nth Fibonacci number you want", "5"));
-    if (isNaN(n) || !Number.isInteger(n) || n < 0) {
+const isPrimeButton = document.getElementById('isprime');
+isPrimeButton?.addEventListener('click', () => {
+    const num = Number(prompt("Enter a number to check if it's prime", "7"));
+    if (isNaN(num) || !Number.isInteger(num) || num < 2) {
         display.value = "Invalid input";
         return;
     }
-    function fibonacci(n: number): number {
-        if (n <= 1) {
-            return n;
-        }
-        return fibonacci(n - 1) + fibonacci(n - 2);
+    function isPrime(num: number): boolean {
+        for (let i = 2, s = Math.sqrt(num); i <= s; i++)
+            if (num % i === 0) return false;
+        return num > 1;
     }
-    display.value = fibonacci(n).toString();
+    display.value = isPrime(num).toString();
 });
 //rest of code
