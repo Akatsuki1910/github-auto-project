@@ -1,10 +1,11 @@
 // ... (Existing code)
-const inverseButton = document.getElementById('inverse');
-inverseButton?.addEventListener('click', () => {
+const modButton = document.getElementById('mod');
+modButton?.addEventListener('click', () => {
     const currentValue = display.value;
     if (currentValue) {
-        const result = 1 / Number(currentValue);
-        display.value = result.toString();
+        currentOperator = '%';
+        firstOperand = Number(currentValue);
+        currentExpressionDisplay.textContent = `${firstOperand} % `;
+        display.value = '';
     }
 });
-//rest of code
