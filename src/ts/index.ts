@@ -1,9 +1,9 @@
 // ... (Existing code)
-const roundButton = document.getElementById('round');
-roundButton?.addEventListener('click', () => {
+const signButton = document.getElementById('sign');
+signButton?.addEventListener('click', () => {
     const currentValue = display.value;
     if (currentValue) {
-        const result = Math.round(Number(currentValue));
+        const result = Math.sign(Number(currentValue));
         display.value = result.toString();
     }
 });
