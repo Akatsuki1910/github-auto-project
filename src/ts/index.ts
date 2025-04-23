@@ -24,4 +24,9 @@ varianceButton?.addEventListener('click', () => {
     const values = prompt("Enter comma-separated values for variance:", "1,2,3").split(',').map(Number);
     display.value = math.variance(values).toString();
 });
+const stdButton = document.getElementById('std');
+stdButton?.addEventListener('click', () => {
+    const values = prompt("Enter comma-separated values for standard deviation:", "1,2,3").split(',').map(Number);
+    display.value = math.std(values).toString();
+});
 //rest of code
