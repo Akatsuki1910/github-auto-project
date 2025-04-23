@@ -6,4 +6,11 @@ todegreesButton?.addEventListener('click', () => {
         display.value = (Number(currentValue) * (180 / Math.PI)).toString();
     }
 });
+const toRadiansButton = document.getElementById('toRadians');
+toradiansButton?.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        display.value = (Number(currentValue) * (Math.PI / 180)).toString();
+    }
+});
 //rest of code
