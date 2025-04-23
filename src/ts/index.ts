@@ -1,9 +1,9 @@
 // ... (Existing code)
-const powerOfTenButton = document.getElementById('powerOfTen');
-powerOfTenButton?.addEventListener('click', () => {
+const roundButton = document.getElementById('round');
+roundButton?.addEventListener('click', () => {
     const currentValue = display.value;
     if (currentValue) {
-        const result = math.pow(10, Number(currentValue));
+        const result = Math.round(Number(currentValue));
         display.value = result.toString();
     }
 });
