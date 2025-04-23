@@ -1,9 +1,9 @@
 // ... (Existing code)
-const absButton = document.getElementById('abs');
-absButton?.addEventListener('click', () => {
+const cuberootButton = document.getElementById('cuberoot');
+cuberootButton?.addEventListener('click', () => {
     const currentValue = display.value;
     if (currentValue) {
-        const result = math.abs(Number(currentValue));
+        const result = math.cbrt(Number(currentValue));
         display.value = result.toString();
     }
 });
