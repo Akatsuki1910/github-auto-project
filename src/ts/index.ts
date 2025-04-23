@@ -60,4 +60,11 @@ percentChangeButton?.addEventListener('click', () => {
         display.value = (Number(currentValue) / 100).toString();
     }
 });
+const squaredCubedButton = document.getElementById('squaredCubed');
+squaredCubedButton?.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        display.value = (Math.pow(Number(currentValue), 2) * Math.pow(Number(currentValue), 3)).toString();
+    }
+});
 //rest of code
