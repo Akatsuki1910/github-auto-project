@@ -14,4 +14,9 @@ productButton?.addEventListener('click', () => {
     const values = prompt("Enter comma-separated values for product:", "1,2,3").split(',').map(Number);
     display.value = math.prod(values).toString();
 });
+const modeButton = document.getElementById('mode');
+modeButton?.addEventListener('click', () => {
+    const values = prompt("Enter comma-separated values for mode:", "1,2,3,2").split(',').map(Number);
+    display.value = math.mode(values).toString();
+});
 //rest of code
