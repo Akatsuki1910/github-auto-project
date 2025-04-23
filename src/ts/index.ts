@@ -53,4 +53,11 @@ reciprocalButton?.addEventListener('click', () => {
         display.value = (1 / Number(currentValue)).toString();
     }
 });
+const percentChangeButton = document.getElementById('percentChange');
+percentChangeButton?.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        display.value = (Number(currentValue) / 100).toString();
+    }
+});
 //rest of code
