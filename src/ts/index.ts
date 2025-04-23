@@ -39,4 +39,11 @@ expm1Button?.addEventListener('click', () => {
         display.value = Math.expm1(Number(currentValue)).toString();
     }
 });
+const signFlipButton = document.getElementById('signFlip');
+signFlipButton?.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        display.value = (Number(currentValue) * -1).toString();
+    }
+});
 //rest of code
