@@ -1,4 +1,9 @@
 // ... (Existing code)
+let ans = 0;
+const AnsButton = document.getElementById('Ans');
+AnsButton?.addEventListener('click', () => {
+    display.value = ans.toString();
+});
 const toDegreesButton = document.getElementById('toDegrees');
 todegreesButton?.addEventListener('click', () => {
     const currentValue = display.value;
