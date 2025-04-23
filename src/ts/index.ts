@@ -1,11 +1,11 @@
 // ... (Existing code)
-const modButton = document.getElementById('mod');
-modButton?.addEventListener('click', () => {
+const powerButton = document.getElementById('power');
+powerButton?.addEventListener('click', () => {
     const currentValue = display.value;
     if (currentValue) {
-        currentOperator = '%';
+        currentOperator = '^';
         firstOperand = Number(currentValue);
-        currentExpressionDisplay.textContent = `${firstOperand} % `;
+        currentExpressionDisplay.textContent = `${firstOperand} ^ `;
         display.value = '';
     }
 });
