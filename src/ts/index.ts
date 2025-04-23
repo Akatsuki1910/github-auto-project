@@ -46,4 +46,11 @@ signFlipButton?.addEventListener('click', () => {
         display.value = (Number(currentValue) * -1).toString();
     }
 });
+const reciprocalButton = document.getElementById('reciprocal');
+reciprocalButton?.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        display.value = (1 / Number(currentValue)).toString();
+    }
+});
 //rest of code
