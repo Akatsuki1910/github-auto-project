@@ -1,9 +1,9 @@
 // ... (Existing code)
-const expButton = document.getElementById('exp');
-expButton?.addEventListener('click', () => {
+const lnButton = document.getElementById('ln');
+lnButton?.addEventListener('click', () => {
     const currentValue = display.value;
-    if (currentValue) {
-        const result = math.exp(Number(currentValue));
+    if (currentValue && Number(currentValue) > 0) {
+        const result = math.log(Number(currentValue));
         display.value = result.toString();
     }
 });
