@@ -32,4 +32,11 @@ log10Button?.addEventListener('click', () => {
         display.value = Math.log10(Number(currentValue)).toString();
     }
 });
+const expm1Button = document.getElementById('expm1');
+expm1Button?.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        display.value = Math.expm1(Number(currentValue)).toString();
+    }
+});
 //rest of code
