@@ -17,3 +17,10 @@ ceilButton?.addEventListener('click', () => {
         display.value = Math.ceil(currentValue).toString();
     }
 });
+const truncButton = document.getElementById('trunc');
+truncButton?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.trunc(currentValue).toString();
+    }
+});
