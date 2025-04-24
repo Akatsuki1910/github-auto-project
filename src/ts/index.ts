@@ -1,4 +1,5 @@
 // ... (Existing code)
+const display = document.getElementById('display') as HTMLInputElement;
 const copyButton = document.getElementById('copy');
 copyButton?.addEventListener('click', () => {
     navigator.clipboard.writeText(display.value).then(() => {
@@ -69,4 +70,11 @@ toggleThemeButton.addEventListener('click', () => {
         body.classList.remove('dark-scheme');
         body.classList.add('light-scheme');
     }
+});
+// 숫자 버튼 클릭 이벤트 추가
+const digitButtons = document.querySelectorAll('.digit');
+digitButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        display.value += button.textContent;
+    });
 });
