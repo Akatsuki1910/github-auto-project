@@ -1,9 +1,18 @@
 // ... (Existing code)
 const display = document.getElementById('display') as HTMLInputElement;
+const toggleScientific = document.getElementById('toggleScientific');
+const scientificPad = document.getElementById('scientific-pad');
+toggleScientific.addEventListener('click', () => {
+    if (scientificPad.style.display === 'none') {
+        scientificPad.style.display = 'grid';
+    }
+    else {
+        scientificPad.style.display = 'none';
+    }
+});
 const copyButton = document.getElementById('copy');
 copyButton?.addEventListener('click', () => {
     navigator.clipboard.writeText(display.value).then(() => {
-        // Optional: Show a notification that the value was copied
         console.log('Copied to clipboard:', display.value);
     }, (err) => {
         console.error('Failed to copy: ', err);
@@ -28,7 +37,7 @@ equalsButton?.addEventListener('click', () => {
 });
 function displayHistory() {
     const historyContainer = document.getElementById('currentExpressionDisplay');
-    historyContainer.innerHTML = ''; // Clear existing history before displaying new history
+    historyContainer.innerHTML = '';
     const history = sessionStorage.getItem('calculatorHistory') || '';
     history.split('\n').forEach(item => {
         if (item) {
@@ -73,14 +82,13 @@ digitButtons.forEach(button => {
 document.getElementById('clear-all').addEventListener('click', () => {
     display.value = '';
 });
-// Backspace button functionality
 document.getElementById('backspace').addEventListener('click', () => {
     display.value = display.value.slice(0, -1);
 });
 document.getElementById('eval').addEventListener('click', () => {
     try {
         display.value = math.evaluate(display.value).toString();
-        addToHistory(display.value); // Add evaluated result to history
+        addToHistory(display.value);
     }
     catch (e) {
         display.value = "Error";
@@ -90,7 +98,6 @@ const openParen = document.querySelector('.main-pad > button:nth-last-child(2)')
 openParen.addEventListener('click', () => display.value += '(');
 const closeParen = document.querySelector('.main-pad > button:last-child');
 closeParen.addEventListener('click', () => display.value += ')');
-//Added Percentage button functionality
 const percentageButton = document.getElementById('percentage');
 percentageButton?.addEventListener('click', () => {
     try {
@@ -101,7 +108,6 @@ percentageButton?.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
-// Added memory functionality
 let memory = 0;
 document.getElementById('memory-store')?.addEventListener('click', () => {
     memory = parseFloat(display.value);
@@ -112,15 +118,12 @@ document.getElementById('memory-recall')?.addEventListener('click', () => {
 document.getElementById('memory-clear')?.addEventListener('click', () => {
     memory = 0;
 });
-// Added negate button functionality
 document.getElementById('negate')?.addEventListener('click', () => {
     display.value = (-parseFloat(display.value)).toString();
 });
-//Added Square root functionality
 document.getElementById('sqrt')?.addEventListener('click', () => {
     display.value = Math.sqrt(parseFloat(display.value)).toString();
 });
-//Added Square functionality
-document.getElementById('square')?.addEventListener('click',()=>{
-    display.value = Math.pow(parseFloat(display.value),2).toString();
+document.getElementById('square')?.addEventListener('click', () => {
+    display.value = Math.pow(parseFloat(display.value), 2).toString();
 });
