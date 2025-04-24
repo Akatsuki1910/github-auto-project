@@ -22,9 +22,23 @@ document.getElementById('hypot')?.addEventListener('click', () => {
     try {
         //Hypot needs at least two arguments
         const values = display.value.split(',');
-        if(values.length < 2) throw new Error("Hypot needs two or more arguments separated by commas");
+        if (values.length < 2)
+            throw new Error("Hypot needs two or more arguments separated by commas");
         display.value = math.hypot(...values.map(parseFloat)).toString();
-    } catch (error) {
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
+// Added max functionality
+document.getElementById('max')?.addEventListener('click', () => {
+    try {
+        const values = display.value.split(',');
+        if (values.length < 2)
+            throw new Error("Max needs two or more arguments separated by commas");
+        display.value = math.max(...values.map(parseFloat)).toString();
+    }
+    catch (error) {
         display.value = 'Error: ' + error.message;
     }
 });
