@@ -19,9 +19,7 @@ equalsButton?.addEventListener('click', () => {
     try {
         ans = math.evaluate(display.value);
         display.value = ans.toString();
-        // Store history in sessionStorage
-        const history = sessionStorage.getItem('calculatorHistory') || '';
-        sessionStorage.setItem('calculatorHistory', history + display.value + '\n');
+        addToHistory(display.value);
         displayHistory();
     }
     catch (error) {
@@ -41,6 +39,10 @@ function displayHistory() {
     });
 }
 displayHistory();
+function addToHistory(value) {
+    const history = sessionStorage.getItem('calculatorHistory') || '';
+    sessionStorage.setItem('calculatorHistory', history + value + '\n');
+}
 const clearHistoryButton = document.createElement('button');
 clearHistoryButton.textContent = 'Clear History';
 clearHistoryButton.addEventListener('click', () => {
@@ -78,6 +80,7 @@ document.getElementById('backspace').addEventListener('click', () => {
 document.getElementById('eval').addEventListener('click', () => {
     try {
         display.value = math.evaluate(display.value).toString();
+        addToHistory(display.value); // Add evaluated result to history
     }
     catch (e) {
         display.value = "Error";
