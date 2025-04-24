@@ -38,3 +38,11 @@ function displayHistory() {
     });
 }
 displayHistory(); // 初期表示
+// 履歴クリアボタンの追加
+const clearHistoryButton = document.createElement('button');
+clearHistoryButton.textContent = 'Clear History';
+clearHistoryButton.addEventListener('click', () => {
+    sessionStorage.removeItem('calculatorHistory');
+    displayHistory();
+});
+document.body.appendChild(clearHistoryButton);
