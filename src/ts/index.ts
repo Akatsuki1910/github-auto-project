@@ -19,11 +19,9 @@ equalsButton?.addEventListener('click', () => {
     try {
         ans = math.evaluate(display.value);
         display.value = ans.toString();
-        // Add calculation result to history
-        const historyItem = document.createElement('div');
-        historyItem.textContent = `${display.value}`;
-        const historyContainer = document.getElementById('currentExpressionDisplay');
-        historyContainer?.appendChild(historyItem);
+        // Store history in sessionStorage
+        const history = sessionStorage.getItem('calculatorHistory') || '';
+        sessionStorage.setItem('calculatorHistory', history + display.value + '\n');
         displayHistory();
     }
     catch (error) {
