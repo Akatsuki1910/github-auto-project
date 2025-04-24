@@ -9,7 +9,13 @@ equalsButton?.addEventListener('click', () => {
     try {
         ans = math.evaluate(display.value);
         display.value = ans.toString();
-    } catch (error) {
+        // 追加機能：計算結果を履歴に追加
+        const historyItem = document.createElement('div');
+        historyItem.textContent = `${display.value}`;
+        const historyContainer = document.getElementById('currentExpressionDisplay');
+        historyContainer?.appendChild(historyItem);
+    }
+    catch (error) {
         display.value = 'Error';
     }
 });
