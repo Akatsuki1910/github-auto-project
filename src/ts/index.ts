@@ -1,4 +1,13 @@
 // ... (Existing code)
+const copyButton = document.getElementById('copy');
+copyButton?.addEventListener('click', () => {
+    navigator.clipboard.writeText(display.value).then(() => {
+        // Optional: Show a notification that the value was copied
+        console.log('Copied to clipboard:', display.value);
+    }, (err) => {
+        console.error('Failed to copy: ', err);
+    });
+});
 let ans = 0;
 const ansButton = document.getElementById('ans');
 ansButton?.addEventListener('click', () => {
