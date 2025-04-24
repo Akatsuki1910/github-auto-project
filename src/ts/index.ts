@@ -47,7 +47,7 @@ const clearHistoryButton = document.createElement('button');
 clearHistoryButton.textContent = 'Clear History';
 clearHistoryButton.addEventListener('click', () => {
     sessionStorage.removeItem('calculatorHistory');
-displayHistory();
+    displayHistory();
 });
 document.body.appendChild(clearHistoryButton);
 const toggleThemeButton = document.getElementById('toggle-theme');
@@ -111,4 +111,8 @@ document.getElementById('memory-recall')?.addEventListener('click', () => {
 });
 document.getElementById('memory-clear')?.addEventListener('click', () => {
     memory = 0;
+});
+// Added negate button functionality
+document.getElementById('negate')?.addEventListener('click', () => {
+    display.value = (-parseFloat(display.value)).toString();
 });
