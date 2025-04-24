@@ -93,10 +93,22 @@ closeParen.addEventListener('click', () => display.value += ')');
 //Added Percentage button functionality
 const percentageButton = document.getElementById('percentage');
 percentageButton?.addEventListener('click', () => {
-  try {
-    const currentValue = parseFloat(display.value);
-    display.value = (currentValue / 100).toString();
-  } catch (error) {
-    display.value = 'Error';
-  }
+    try {
+        const currentValue = parseFloat(display.value);
+        display.value = (currentValue / 100).toString();
+    }
+    catch (error) {
+        display.value = 'Error';
+    }
+});
+// Added memory functionality
+let memory = 0;
+document.getElementById('memory-store')?.addEventListener('click', () => {
+    memory = parseFloat(display.value);
+});
+document.getElementById('memory-recall')?.addEventListener('click', () => {
+    display.value += memory.toString();
+});
+document.getElementById('memory-clear')?.addEventListener('click', () => {
+    memory = 0;
 });
