@@ -24,10 +24,6 @@ equalsButton?.addEventListener('click', () => {
         historyItem.textContent = `${display.value}`;
         const historyContainer = document.getElementById('currentExpressionDisplay');
         historyContainer?.appendChild(historyItem);
-        // Store history in sessionStorage
-        let history = sessionStorage.getItem('calculatorHistory') || '';
-        history += `${display.value}\n`;
-        sessionStorage.setItem('calculatorHistory', history);
         displayHistory();
     }
     catch (error) {
@@ -36,7 +32,7 @@ equalsButton?.addEventListener('click', () => {
 });
 function displayHistory() {
     const historyContainer = document.getElementById('currentExpressionDisplay');
-    historyContainer.innerHTML = '';
+    historyContainer.innerHTML = ''; // Clear existing history before displaying new history
     const history = sessionStorage.getItem('calculatorHistory') || '';
     history.split('\n').forEach(item => {
         if (item) {
@@ -81,20 +77,15 @@ document.getElementById('clear-all').addEventListener('click', () => {
 document.getElementById('backspace').addEventListener('click', () => {
     display.value = display.value.slice(0, -1);
 });
-// New feature: parentheses buttons
 document.getElementById('eval').addEventListener('click', () => {
-  try{
-    display.value = math.evaluate(display.value).toString();
-  }
-  catch(e){
-    display.value = "Error";
-  }
+    try {
+        display.value = math.evaluate(display.value).toString();
+    }
+    catch (e) {
+        display.value = "Error";
+    }
 });
-const openParen = document.createElement('button');
-openParen.textContent = '(';
+const openParen = document.querySelector('.main-pad > button:nth-last-child(2)');
 openParen.addEventListener('click', () => display.value += '(');
-document.querySelector('.main-pad')?.appendChild(openParen);
-const closeParen = document.createElement('button');
-closeParen.textContent = ')';
+const closeParen = document.querySelector('.main-pad > button:last-child');
 closeParen.addEventListener('click', () => display.value += ')');
-document.querySelector('.main-pad')?.appendChild(closeParen);
