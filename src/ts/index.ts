@@ -116,3 +116,7 @@ document.getElementById('memory-clear')?.addEventListener('click', () => {
 document.getElementById('negate')?.addEventListener('click', () => {
     display.value = (-parseFloat(display.value)).toString();
 });
+//Added Square root functionality
+document.getElementById('sqrt')?.addEventListener('click', () => {
+    display.value = Math.sqrt(parseFloat(display.value)).toString();
+});
