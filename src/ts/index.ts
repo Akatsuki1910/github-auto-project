@@ -46,3 +46,18 @@ clearHistoryButton.addEventListener('click', () => {
     displayHistory();
 });
 document.body.appendChild(clearHistoryButton);
+// テーマ切り替え機能の追加
+const toggleThemeButton = document.getElementById('toggle-theme');
+const body = document.body;
+let isDarkTheme = false;
+toggleThemeButton.addEventListener('click', () => {
+    isDarkTheme = !isDarkTheme;
+    if (isDarkTheme) {
+        body.classList.remove('light-scheme');
+        body.classList.add('dark-scheme');
+    }
+    else {
+        body.classList.remove('dark-scheme');
+        body.classList.add('light-scheme');
+    }
+});
