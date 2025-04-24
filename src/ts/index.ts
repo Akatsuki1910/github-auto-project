@@ -47,7 +47,7 @@ const clearHistoryButton = document.createElement('button');
 clearHistoryButton.textContent = 'Clear History';
 clearHistoryButton.addEventListener('click', () => {
     sessionStorage.removeItem('calculatorHistory');
-    displayHistory();
+displayHistory();
 });
 document.body.appendChild(clearHistoryButton);
 const toggleThemeButton = document.getElementById('toggle-theme');
@@ -90,3 +90,13 @@ const openParen = document.querySelector('.main-pad > button:nth-last-child(2)')
 openParen.addEventListener('click', () => display.value += '(');
 const closeParen = document.querySelector('.main-pad > button:last-child');
 closeParen.addEventListener('click', () => display.value += ')');
+//Added Percentage button functionality
+const percentageButton = document.getElementById('percentage');
+percentageButton?.addEventListener('click', () => {
+  try {
+    const currentValue = parseFloat(display.value);
+    display.value = (currentValue / 100).toString();
+  } catch (error) {
+    display.value = 'Error';
+  }
+});
