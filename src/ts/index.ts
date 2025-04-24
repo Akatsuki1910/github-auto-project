@@ -127,3 +127,24 @@ document.getElementById('sqrt')?.addEventListener('click', () => {
 document.getElementById('square')?.addEventListener('click', () => {
     display.value = Math.pow(parseFloat(display.value), 2).toString();
 });
+//Added factorial functionality
+document.getElementById('factorial')?.addEventListener('click', () => {
+    try {
+        const num = parseFloat(display.value);
+        if (Number.isInteger(num) && num >= 0) {
+            display.value = factorial(num).toString();
+        }
+        else {
+            display.value = 'Error: Input must be a non-negative integer.';
+        }
+    }
+    catch (error) {
+        display.value = 'Error';
+    }
+});
+function factorial(n) {
+    if (n === 0) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
