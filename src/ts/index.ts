@@ -18,8 +18,23 @@ equalsButton?.addEventListener('click', () => {
         let history = sessionStorage.getItem('calculatorHistory') || '';
         history += `${display.value}\n`;
         sessionStorage.setItem('calculatorHistory', history);
+        // 履歴表示を更新
+        displayHistory();
     }
     catch (error) {
         display.value = 'Error';
     }
 });
+function displayHistory() {
+    const historyContainer = document.getElementById('currentExpressionDisplay');
+    historyContainer.innerHTML = ''; // 履歴表示をクリア
+    const history = sessionStorage.getItem('calculatorHistory') || '';
+    history.split('\n').forEach(item => {
+        if (item) {
+            const historyItem = document.createElement('div');
+            historyItem.textContent = item;
+            historyContainer.appendChild(historyItem);
+        }
+    });
+}
+displayHistory(); // 初期表示
