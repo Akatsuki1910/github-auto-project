@@ -24,12 +24,13 @@ equalsButton?.addEventListener('click', () => {
         historyItem.textContent = `${display.value}`;
         const historyContainer = document.getElementById('currentExpressionDisplay');
         historyContainer?.appendChild(historyItem);
+
         // 履歴をsessionStorageに保存
         let history = sessionStorage.getItem('calculatorHistory') || '';
         history += `${display.value}\n`;
         sessionStorage.setItem('calculatorHistory', history);
-        // 履歴表示を更新
-        displayHistory();
+
+        displayHistory(); // 履歴表示を更新
     }
     catch (error) {
         display.value = 'Error';
@@ -77,4 +78,8 @@ digitButtons.forEach(button => {
     button.addEventListener('click', () => {
         display.value += button.textContent;
     });
+});
+// Clear All button functionality
+document.getElementById('clear-all').addEventListener('click', () => {
+    display.value = '';
 });
