@@ -54,3 +54,13 @@ document.getElementById('min')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added mode functionality
+document.getElementById('mode')?.addEventListener('click', () => {
+    try {
+        const values = display.value.split(',');
+        display.value = math.mode(...values.map(parseFloat)).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
