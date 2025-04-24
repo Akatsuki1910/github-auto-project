@@ -64,3 +64,15 @@ document.getElementById('mode')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added gcd functionality
+document.getElementById('gcd')?.addEventListener('click', () => {
+    try {
+        const values = display.value.split(',');
+        if (values.length < 2)
+            throw new Error("gcd needs two or more arguments separated by commas");
+        display.value = math.gcd(...values.map(parseFloat)).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
