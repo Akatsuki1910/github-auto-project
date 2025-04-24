@@ -120,3 +120,7 @@ document.getElementById('negate')?.addEventListener('click', () => {
 document.getElementById('sqrt')?.addEventListener('click', () => {
     display.value = Math.sqrt(parseFloat(display.value)).toString();
 });
+//Added Square functionality
+document.getElementById('square')?.addEventListener('click',()=>{
+    display.value = Math.pow(parseFloat(display.value),2).toString();
+});
