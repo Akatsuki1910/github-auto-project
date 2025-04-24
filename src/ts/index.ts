@@ -5,9 +5,13 @@ duplicateButton?.addEventListener('click', () => {
     display.value += currentValue;
 });
 const toFixedButton = document.getElementById('toFixed');
-tFixedButton?.addEventListener('click', () => {
+toFixedButton?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
         display.value = currentValue.toFixed(2);
     }
+});
+const eButton = document.getElementById('e');
+eButton?.addEventListener('click', () => {
+    display.value += Math.E;
 });
