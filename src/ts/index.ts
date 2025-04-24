@@ -1,8 +1,8 @@
 // ... (Existing code)
-const atanButton = document.getElementById('atan');
-atanButton?.addEventListener('click', () => {
+const tenXButton = document.getElementById('tenX');
+tenXButton?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.atan(currentValue).toString();
+        display.value = Math.pow(10, currentValue).toString();
     }
 });
