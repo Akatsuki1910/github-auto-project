@@ -1,4 +1,11 @@
 // ... (Existing code)
+const cosButton = document.getElementById('cos');
+cosButton?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.cos(currentValue).toString();
+    }
+});
 const sinButton = document.getElementById('sin');
 sinButton?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
