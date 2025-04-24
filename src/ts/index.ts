@@ -19,18 +19,16 @@ equalsButton?.addEventListener('click', () => {
     try {
         ans = math.evaluate(display.value);
         display.value = ans.toString();
-        // 計算結果を履歴に追加
+        // Add calculation result to history
         const historyItem = document.createElement('div');
         historyItem.textContent = `${display.value}`;
         const historyContainer = document.getElementById('currentExpressionDisplay');
         historyContainer?.appendChild(historyItem);
-
-        // 履歴をsessionStorageに保存
+        // Store history in sessionStorage
         let history = sessionStorage.getItem('calculatorHistory') || '';
         history += `${display.value}\n`;
         sessionStorage.setItem('calculatorHistory', history);
-
-        displayHistory(); // 履歴表示を更新
+        displayHistory();
     }
     catch (error) {
         display.value = 'Error';
@@ -38,7 +36,7 @@ equalsButton?.addEventListener('click', () => {
 });
 function displayHistory() {
     const historyContainer = document.getElementById('currentExpressionDisplay');
-    historyContainer.innerHTML = ''; // 履歴表示をクリア
+    historyContainer.innerHTML = '';
     const history = sessionStorage.getItem('calculatorHistory') || '';
     history.split('\n').forEach(item => {
         if (item) {
@@ -48,8 +46,7 @@ function displayHistory() {
         }
     });
 }
-displayHistory(); // 初期表示
-// 履歴クリアボタンの追加
+displayHistory();
 const clearHistoryButton = document.createElement('button');
 clearHistoryButton.textContent = 'Clear History';
 clearHistoryButton.addEventListener('click', () => {
@@ -57,7 +54,6 @@ clearHistoryButton.addEventListener('click', () => {
     displayHistory();
 });
 document.body.appendChild(clearHistoryButton);
-// テーマ切り替え機能の追加
 const toggleThemeButton = document.getElementById('toggle-theme');
 const body = document.body;
 let isDarkTheme = false;
@@ -72,14 +68,16 @@ toggleThemeButton.addEventListener('click', () => {
         body.classList.add('light-scheme');
     }
 });
-// 숫자 버튼 클릭 이벤트 추가
 const digitButtons = document.querySelectorAll('.digit');
 digitButtons.forEach(button => {
     button.addEventListener('click', () => {
         display.value += button.textContent;
     });
 });
-// Clear All button functionality
 document.getElementById('clear-all').addEventListener('click', () => {
     display.value = '';
+});
+// Backspace button functionality
+document.getElementById('backspace').addEventListener('click', () => {
+    display.value = display.value.slice(0, -1);
 });
