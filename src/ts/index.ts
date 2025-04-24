@@ -1,8 +1,8 @@
 // ... (Existing code)
-const asinButton = document.getElementById('asin');
-asinButton?.addEventListener('click', () => {
+const acosButton = document.getElementById('acos');
+acosButton?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.asin(currentValue).toString();
+        display.value = Math.acos(currentValue).toString();
     }
 });
