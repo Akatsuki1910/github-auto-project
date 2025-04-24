@@ -1,8 +1,8 @@
 // ... (Existing code)
-const tenXButton = document.getElementById('tenX');
-tenXButton?.addEventListener('click', () => {
+const log2Button = document.getElementById('log2');
+log2Button?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.pow(10, currentValue).toString();
+        display.value = Math.log2(currentValue).toString();
     }
 });
