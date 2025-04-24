@@ -8,3 +8,12 @@ document.getElementById('expm1')?.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+//Added cbrt functionality
+document.getElementById('cbrt')?.addEventListener('click', () => {
+    try {
+        display.value = math.cbrt(parseFloat(display.value)).toString();
+    }
+    catch (error) {
+        display.value = 'Error';
+    }
+});
