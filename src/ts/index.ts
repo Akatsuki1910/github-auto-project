@@ -81,3 +81,20 @@ document.getElementById('clear-all').addEventListener('click', () => {
 document.getElementById('backspace').addEventListener('click', () => {
     display.value = display.value.slice(0, -1);
 });
+// New feature: parentheses buttons
+document.getElementById('eval').addEventListener('click', () => {
+  try{
+    display.value = math.evaluate(display.value).toString();
+  }
+  catch(e){
+    display.value = "Error";
+  }
+});
+const openParen = document.createElement('button');
+openParen.textContent = '(';
+openParen.addEventListener('click', () => display.value += '(');
+document.querySelector('.main-pad')?.appendChild(openParen);
+const closeParen = document.createElement('button');
+closeParen.textContent = ')';
+closeParen.addEventListener('click', () => display.value += ')');
+document.querySelector('.main-pad')?.appendChild(closeParen);
