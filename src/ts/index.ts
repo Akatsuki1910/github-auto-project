@@ -17,3 +17,14 @@ document.getElementById('cbrt')?.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+// Added hypot functionality
+document.getElementById('hypot')?.addEventListener('click', () => {
+    try {
+        //Hypot needs at least two arguments
+        const values = display.value.split(',');
+        if(values.length < 2) throw new Error("Hypot needs two or more arguments separated by commas");
+        display.value = math.hypot(...values.map(parseFloat)).toString();
+    } catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
