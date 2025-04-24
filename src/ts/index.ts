@@ -42,3 +42,15 @@ document.getElementById('max')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+// Added min functionality
+document.getElementById('min')?.addEventListener('click', () => {
+    try {
+        const values = display.value.split(',');
+        if (values.length < 2)
+            throw new Error("Min needs two or more arguments separated by commas");
+        display.value = math.min(...values.map(parseFloat)).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
