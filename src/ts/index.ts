@@ -1,4 +1,11 @@
 // ... (Existing code)
+const sinButton = document.getElementById('sin');
+sinButton?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.sin(currentValue).toString();
+    }
+});
 const duplicateButton = document.getElementById('duplicate');
 duplicateButton?.addEventListener('click', () => {
     const currentValue = display.value;
