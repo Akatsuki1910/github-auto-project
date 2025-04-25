@@ -39,3 +39,13 @@ document.getElementById('isPositive')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added isNumeric functionality
+document.getElementById('isNumeric')?.addEventListener('click', () => {
+    try {
+        const value = display.value;
+        display.value = math.isNumeric(value).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
