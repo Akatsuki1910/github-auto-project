@@ -30,3 +30,13 @@ document.getElementById('correlation')?.addEventListener('click', () => {
         display.value = "Error: " + error.message;
     }
 });
+//Added stddev functionality
+document.getElementById('stddev')?.addEventListener('click', () => {
+    try {
+        const values = display.value.split(',').map(Number);
+        display.value = math.std(values).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
