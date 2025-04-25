@@ -60,3 +60,12 @@ document.getElementById('cumulativeSum')?.addEventListener('click', () => {
     display.value = 'Error:' + error.message;
   }
 });
+//Added Gamma functionality
+document.getElementById('gamma')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = math.gamma(value).toString();
+    } catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
