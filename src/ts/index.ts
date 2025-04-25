@@ -69,3 +69,13 @@ document.getElementById('geometricMean')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+// Added harmonic mean functionality
+document.getElementById('harmonicMean')?.addEventListener('click', () => {
+    try {
+        const values = display.value.split(',');
+        display.value = math.harmonicMean(...values.map(parseFloat)).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
