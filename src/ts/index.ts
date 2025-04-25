@@ -19,3 +19,13 @@ document.getElementById('isEven')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added isSymbolic functionality
+document.getElementById('isSymbolic')?.addEventListener('click', () => {
+    try {
+        const value = display.value;
+        display.value = math.isSymbolic(value).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
