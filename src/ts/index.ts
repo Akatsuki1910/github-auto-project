@@ -29,3 +29,13 @@ document.getElementById('isInteger')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+// Added isPositive functionality
+document.getElementById('isPositive')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = math.isPositive(value).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
