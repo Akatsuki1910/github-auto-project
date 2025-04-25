@@ -20,3 +20,13 @@ document.getElementById('covariance')?.addEventListener('click', () => {
         display.value = "Error: " + error.message;
     }
 });
+//Added correlation functionality
+document.getElementById('correlation')?.addEventListener('click', () => {
+    try {
+        const [arr1, arr2] = display.value.split(';').map(s => s.split(',').map(Number));
+        display.value = math.correlation(arr1, arr2).toString();
+    }
+    catch (error) {
+        display.value = "Error: " + error.message;
+    }
+});
