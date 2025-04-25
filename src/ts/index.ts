@@ -40,3 +40,16 @@ document.getElementById('exp')?.addEventListener('click', () => {
         display.value = 'Error:' + error.message;
     }
 });
+//Added pow functionality
+document.getElementById('pow')?.addEventListener('click', () => {
+    try {
+        const base = parseFloat(display.value);
+        const exponent = prompt("Enter exponent:", "2");
+        if(exponent!==null){
+          display.value = math.pow(base,parseFloat(exponent)).toString();
+        }
+    }
+    catch (error) {
+      display.value = 'Error: ' + error.message;
+    }
+});
