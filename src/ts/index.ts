@@ -83,8 +83,19 @@ document.getElementById('harmonicMean')?.addEventListener('click', () => {
 document.getElementById('range')?.addEventListener('click', () => {
     try {
         const values = display.value.split(',').map(Number);
-        display.value = math.range(Math.min(...values), Math.max(...values)+1).toString();
-    } catch(error) {
+        display.value = math.range(Math.min(...values), Math.max(...values) + 1).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
+// Added mode functionality
+document.getElementById('mode')?.addEventListener('click', () => {
+    try {
+        const values = display.value.split(',').map(Number);
+        display.value = math.mode(...values).toString();
+    }
+    catch (error) {
         display.value = 'Error: ' + error.message;
     }
 });
