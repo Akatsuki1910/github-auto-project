@@ -50,3 +50,13 @@ document.getElementById('norm')?.addEventListener('click', () => {
         display.value = 'Error:' + error.message;
     }
 });
+//Added Cumulative Sum functionality
+document.getElementById('cumulativeSum')?.addEventListener('click', () => {
+  try {
+    const values = display.value.split(',').map(Number);
+    const cumulativeSum = math.cumsum(values);
+    display.value = cumulativeSum.toString();
+  } catch (error) {
+    display.value = 'Error:' + error.message;
+  }
+});
