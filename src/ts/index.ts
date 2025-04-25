@@ -19,3 +19,13 @@ document.getElementById('isNegative')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added isInteger functionality
+document.getElementById('isInteger')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = math.isInteger(value).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
