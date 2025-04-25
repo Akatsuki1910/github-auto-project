@@ -30,3 +30,13 @@ document.getElementById('log')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added exp functionality
+document.getElementById('exp')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = math.exp(value).toString();
+    }
+    catch (error) {
+        display.value = 'Error:' + error.message;
+    }
+});
