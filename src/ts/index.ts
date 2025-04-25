@@ -42,3 +42,12 @@ document.getElementById('expm1')?.addEventListener('click', () => {
 document.getElementById('random')?.addEventListener('click',()=>{
     display.value = math.random().toString();
 });
+//Added 10 to the power functionality
+document.getElementById('ten-to-the-power')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = math.pow(10,value).toString();
+    } catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
