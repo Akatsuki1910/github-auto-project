@@ -9,3 +9,14 @@ document.getElementById('simplify')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+// Added derivative functionality
+document.getElementById('derivative')?.addEventListener('click', () => {
+    try {
+        const expression = display.value;
+        const derivative = math.derivative(expression, 'x').toString(); // Assuming 'x' is the variable
+        display.value = derivative;
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
