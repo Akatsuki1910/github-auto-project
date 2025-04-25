@@ -1,29 +1,9 @@
 // ... (Existing code)
-//Added isOdd functionality
-document.getElementById('isOdd')?.addEventListener('click', () => {
-    try {
-        const value = parseInt(display.value);
-        display.value = math.isOdd(value).toString();
-    }
-    catch (error) {
-        display.value = 'Error: ' + error.message;
-    }
-});
-//Added isEven functionality
-document.getElementById('isEven')?.addEventListener('click', () => {
-    try {
-        const value = parseInt(display.value);
-        display.value = math.isEven(value).toString();
-    }
-    catch (error) {
-        display.value = 'Error: ' + error.message;
-    }
-});
-//Added isSymbolic functionality
-document.getElementById('isSymbolic')?.addEventListener('click', () => {
+//Added simplify functionality
+document.getElementById('simplify')?.addEventListener('click', () => {
     try {
         const value = display.value;
-        display.value = math.isSymbolic(value).toString();
+        display.value = math.simplify(value).toString();
     }
     catch (error) {
         display.value = 'Error: ' + error.message;
