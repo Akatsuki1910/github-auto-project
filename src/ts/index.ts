@@ -69,3 +69,12 @@ document.getElementById('isFinite')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added isNaN functionality
+document.getElementById('isNaN')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = math.isNaN(value).toString();
+    } catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
