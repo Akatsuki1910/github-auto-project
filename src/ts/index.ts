@@ -20,3 +20,13 @@ document.getElementById('derivative')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added log functionality
+document.getElementById('log')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = math.log10(value).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
