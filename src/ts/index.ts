@@ -45,11 +45,21 @@ document.getElementById('pow')?.addEventListener('click', () => {
     try {
         const base = parseFloat(display.value);
         const exponent = prompt("Enter exponent:", "2");
-        if(exponent!==null){
-          display.value = math.pow(base,parseFloat(exponent)).toString();
+        if (exponent !== null) {
+            display.value = math.pow(base, parseFloat(exponent)).toString();
         }
     }
     catch (error) {
-      display.value = 'Error: ' + error.message;
+        display.value = 'Error: ' + error.message;
+    }
+});
+//Added round functionality
+document.getElementById('round')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = math.round(value).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
     }
 });
