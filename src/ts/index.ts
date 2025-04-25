@@ -49,3 +49,13 @@ document.getElementById('std')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added Mean Absolute Deviation (MAD) functionality
+document.getElementById('mad')?.addEventListener('click', () => {
+    try {
+        const values = display.value.split(',');
+        display.value = math.mad(...values.map(parseFloat)).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
