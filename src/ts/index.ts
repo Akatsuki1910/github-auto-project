@@ -1,99 +1,10 @@
 // ... (Existing code)
-//Added sum functionality
-document.getElementById('sum')?.addEventListener('click', () => {
-    try {
-        const values = display.value.split(',');
-        display.value = math.sum(...values.map(parseFloat)).toString();
-    }
-    catch (error) {
-        display.value = 'Error: ' + error.message;
-    }
-});
-//Added product functionality
-document.getElementById('product')?.addEventListener('click', () => {
-    try {
-        const values = display.value.split(',');
-        display.value = math.prod(...values.map(parseFloat)).toString();
-    }
-    catch (error) {
-        display.value = 'Error: ' + error.message;
-    }
-});
-// Added mean functionality
-document.getElementById('mean')?.addEventListener('click', () => {
-    try {
-        const values = display.value.split(',');
-        display.value = math.mean(...values.map(parseFloat)).toString();
-    }
-    catch (error) {
-        display.value = 'Error: ' + error.message;
-    }
-});
-// Added variance functionality
-document.getElementById('variance')?.addEventListener('click', () => {
-    try {
-        const values = display.value.split(',');
-        display.value = math.variance(...values.map(parseFloat)).toString();
-    }
-    catch (error) {
-        display.value = 'Error: ' + error.message;
-    }
-});
-// Added standard deviation functionality
-document.getElementById('std')?.addEventListener('click', () => {
-    try {
-        const values = display.value.split(',');
-        display.value = math.std(...values.map(parseFloat)).toString();
-    }
-    catch (error) {
-        display.value = 'Error: ' + error.message;
-    }
-});
-//Added Mean Absolute Deviation (MAD) functionality
-document.getElementById('mad')?.addEventListener('click', () => {
-    try {
-        const values = display.value.split(',');
-        display.value = math.mad(...values.map(parseFloat)).toString();
-    }
-    catch (error) {
-        display.value = 'Error: ' + error.message;
-    }
-});
-// Added geometric mean functionality
-document.getElementById('geometricMean')?.addEventListener('click', () => {
-    try {
-        const values = display.value.split(',');
-        display.value = math.geometricMean(...values.map(parseFloat)).toString();
-    }
-    catch (error) {
-        display.value = 'Error: ' + error.message;
-    }
-});
-// Added harmonic mean functionality
-document.getElementById('harmonicMean')?.addEventListener('click', () => {
-    try {
-        const values = display.value.split(',');
-        display.value = math.harmonicMean(...values.map(parseFloat)).toString();
-    }
-    catch (error) {
-        display.value = 'Error: ' + error.message;
-    }
-});
-//Added range functionality
-document.getElementById('range')?.addEventListener('click', () => {
+//Added quantileSeq functionality
+document.getElementById('quantileSeq')?.addEventListener('click', () => {
     try {
         const values = display.value.split(',').map(Number);
-        display.value = math.range(Math.min(...values), Math.max(...values) + 1).toString();
-    }
-    catch (error) {
-        display.value = 'Error: ' + error.message;
-    }
-});
-// Added mode functionality
-document.getElementById('mode')?.addEventListener('click', () => {
-    try {
-        const values = display.value.split(',').map(Number);
-        display.value = math.mode(...values).toString();
+        const probability = 0.5; // Example probability value
+        display.value = math.quantileSeq(values, probability).toString();
     }
     catch (error) {
         display.value = 'Error: ' + error.message;
