@@ -52,20 +52,32 @@ document.getElementById('norm')?.addEventListener('click', () => {
 });
 //Added Cumulative Sum functionality
 document.getElementById('cumulativeSum')?.addEventListener('click', () => {
-  try {
-    const values = display.value.split(',').map(Number);
-    const cumulativeSum = math.cumsum(values);
-    display.value = cumulativeSum.toString();
-  } catch (error) {
-    display.value = 'Error:' + error.message;
-  }
+    try {
+        const values = display.value.split(',').map(Number);
+        const cumulativeSum = math.cumsum(values);
+        display.value = cumulativeSum.toString();
+    }
+    catch (error) {
+        display.value = 'Error:' + error.message;
+    }
 });
 //Added Gamma functionality
 document.getElementById('gamma')?.addEventListener('click', () => {
     try {
         const value = parseFloat(display.value);
         display.value = math.gamma(value).toString();
-    } catch (error) {
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
+//Added Combination functionality
+document.getElementById('combination')?.addEventListener('click', () => {
+    try {
+        const [n, k] = display.value.split(',').map(Number);
+        display.value = math.combinations(n, k).toString();
+    }
+    catch (error) {
         display.value = 'Error: ' + error.message;
     }
 });
