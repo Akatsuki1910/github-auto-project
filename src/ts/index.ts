@@ -38,3 +38,7 @@ document.getElementById('expm1')?.addEventListener('click', () => {
         display.value = "Error: " + error.message;
     }
 });
+//Added random number generation functionality
+document.getElementById('random')?.addEventListener('click',()=>{
+    display.value = math.random().toString();
+});
