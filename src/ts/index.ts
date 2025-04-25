@@ -28,3 +28,13 @@ document.getElementById('mode')?.addEventListener('click', () => {
     // Example:
     // const result = angleMode === 'rad' ? math.sin(value) : math.sin(math.unit(value, 'deg'));
 });
+//Added expm1 functionality
+document.getElementById('expm1')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = math.expm1(value).toString();
+    }
+    catch (error) {
+        display.value = "Error: " + error.message;
+    }
+});
