@@ -19,3 +19,12 @@ document.getElementById('sign')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added mode functionality to toggle between Radians and Degrees
+let angleMode = 'rad'; // Initial mode is radians
+document.getElementById('mode')?.addEventListener('click', () => {
+    angleMode = angleMode === 'rad' ? 'deg' : 'rad';
+    document.getElementById('mode').textContent = `Mode: ${angleMode.toUpperCase()}`;
+    // You'll need to update any trigonometric calculations to use the current angleMode
+    // Example:
+    // const result = angleMode === 'rad' ? math.sin(value) : math.sin(math.unit(value, 'deg'));
+});
