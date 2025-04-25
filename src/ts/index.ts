@@ -63,3 +63,13 @@ document.getElementById('round')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added floor functionality
+document.getElementById('floor')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = math.floor(value).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
