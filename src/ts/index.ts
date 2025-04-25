@@ -10,3 +10,13 @@ document.getElementById('quantileSeq')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+// Added covariance functionality
+document.getElementById('covariance')?.addEventListener('click', () => {
+    try {
+        const [arr1, arr2] = display.value.split(';').map(s => s.split(',').map(Number));
+        display.value = math.covariance(arr1, arr2).toString();
+    }
+    catch (error) {
+        display.value = "Error: " + error.message;
+    }
+});
