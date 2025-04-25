@@ -59,3 +59,13 @@ document.getElementById('isZero')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added isFinite functionality
+document.getElementById('isFinite')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = math.isFinite(value).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
