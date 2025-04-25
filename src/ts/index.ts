@@ -49,3 +49,13 @@ document.getElementById('isNumeric')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added isZero functionality
+document.getElementById('isZero')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = math.isZero(value).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
