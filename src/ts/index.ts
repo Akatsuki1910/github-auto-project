@@ -62,3 +62,14 @@ document.getElementById('twox')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+// Added percentage change functionality
+document.getElementById('percent-change')?.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        const previousValue = parseFloat(prompt('Enter previous value:'));
+        const percentageChange = ((currentValue - previousValue) / previousValue) * 100;
+        display.value = percentageChange.toString();
+    } catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
