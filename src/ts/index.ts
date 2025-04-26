@@ -1,5 +1,5 @@
 // ... (Existing code)
-let angleMode = 'deg'; // Initial mode is degrees
+let angleMode = 'deg';
 let ans = 0;
 document.getElementById('deg-rad')?.addEventListener('click', () => {
     angleMode = angleMode === 'deg' ? 'rad' : 'deg';
@@ -15,8 +15,7 @@ equalsButton?.addEventListener('click', () => {
     try {
         const result = math.evaluate(display.value);
         display.value = result.toString();
-        ans = result; // Store the result in the 'ans' variable
-        // Added feature: Display calculation history and clear button
+        ans = result;
         const historyItem = document.createElement('p');
         historyItem.textContent = `${display.value}`;
         const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
@@ -27,13 +26,20 @@ equalsButton?.addEventListener('click', () => {
             currentExpressionDisplay?.innerHTML = '';
         });
         currentExpressionDisplay?.appendChild(clearHistoryButton);
-        //Added feature: copy to clipboard
         navigator.clipboard.writeText(result.toString());
-        // Added feature: Local Storage saving history and timestamp and errors
         let history = localStorage.getItem('calculatorHistory') ? JSON.parse(localStorage.getItem('calculatorHistory')) : [];
-        const timestamp = new Date().toLocaleString(); // Get current timestamp
-        history.push({ expression: display.value, result: result.toString(), timestamp }); // Store expression, result, and timestamp
+        const timestamp = new Date().toLocaleString();
+        history.push({ expression: display.value, result: result.toString(), timestamp });
         localStorage.setItem('calculatorHistory', JSON.stringify(history));
+        //Added Feature: Displaying calculation history below the calculator
+        const historyDiv = document.createElement('div');
+        historyDiv.id = 'history';
+        history.forEach(item => {
+            const historyP = document.createElement('p');
+            historyP.textContent = `${item.timestamp}: ${item.expression} = ${item.result}`;
+            historyDiv.appendChild(historyP);
+        });
+        currentExpressionDisplay?.appendChild(historyDiv);
     }
     catch (error) {
         display.value = 'Error';
