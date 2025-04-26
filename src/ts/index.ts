@@ -95,3 +95,13 @@ document.getElementById('cos')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added tan functionality
+document.getElementById('tan')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = Math.tan(value).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
