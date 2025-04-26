@@ -27,6 +27,8 @@ equalsButton?.addEventListener('click', () => {
             currentExpressionDisplay?.innerHTML = '';
         });
         currentExpressionDisplay?.appendChild(clearHistoryButton);
+        //Added feature: copy to clipboard
+        navigator.clipboard.writeText(result.toString());
     }
     catch (error) {
         display.value = 'Error';
