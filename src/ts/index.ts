@@ -59,3 +59,13 @@ document.getElementById('tanh')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added 10^x functionality
+document.getElementById('powerOfTen')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = Math.pow(10, value).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
