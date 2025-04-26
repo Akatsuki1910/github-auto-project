@@ -34,11 +34,21 @@ equalsButton?.addEventListener('click', () => {
     else {
         localStorage.setItem('calculatorHistory', JSON.stringify([currentExpression]));
     }
-    // New Feature: Display last answer
+    // New Feature: Display last answer and add to history
     try {
         const result = math.evaluate(currentExpression);
         display.value = result.toString();
         localStorage.setItem('lastAnswer', result.toString());
+
+        // Add result to history
+        let history = localStorage.getItem('calculatorHistory')
+        if (history) {
+            let historyArray = JSON.parse(history);
+            historyArray.push(result.toString());  // Add the result to the history
+            localStorage.setItem('calculatorHistory', JSON.stringify(historyArray));
+        } else {
+            localStorage.setItem('calculatorHistory', JSON.stringify([result.toString()]));
+        }
     }
     catch (error) {
         display.value = 'Error';
