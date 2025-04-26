@@ -39,15 +39,26 @@ document.getElementById('expm1')?.addEventListener('click', () => {
     }
 });
 //Added random number generation functionality
-document.getElementById('random')?.addEventListener('click',()=>{
+document.getElementById('random')?.addEventListener('click', () => {
     display.value = math.random().toString();
 });
 //Added 10 to the power functionality
 document.getElementById('ten-to-the-power')?.addEventListener('click', () => {
     try {
         const value = parseFloat(display.value);
-        display.value = math.pow(10,value).toString();
-    } catch (error) {
+        display.value = math.pow(10, value).toString();
+    }
+    catch (error) {
         display.value = 'Error: ' + error.message;
+    }
+});
+//Added ln functionality
+document.getElementById('ln')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = math.log(value).toString();
+    }
+    catch (error) {
+        display.value = 'Error:' + error.message;
     }
 });
