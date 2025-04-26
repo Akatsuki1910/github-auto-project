@@ -29,10 +29,26 @@ equalsButton?.addEventListener('click', () => {
     } else {
         localStorage.setItem('calculatorHistory', JSON.stringify([currentExpression]));
     }
+    // New Feature: Display last answer
+    try {
+        const result = math.evaluate(currentExpression);
+        display.value = result.toString();
+        localStorage.setItem('lastAnswer', result.toString());
+    } catch (error) {
+        display.value = 'Error';
+    }
 });
 
 const clearHistoryButton = document.getElementById('clear-history');
 clearHistoryButton?.addEventListener('click', () => {
   localStorage.removeItem('calculatorHistory');
   alert('History cleared!');
+});
+
+const ansButton = document.getElementById('ans');
+ansButton?.addEventListener('click', () => {
+    const lastAnswer = localStorage.getItem('lastAnswer');
+    if (lastAnswer) {
+        display.value += lastAnswer;
+    }
 });
