@@ -29,3 +29,13 @@ document.getElementById('atan')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added sinh functionality
+document.getElementById('sinh')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = Math.sinh(value).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
