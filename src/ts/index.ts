@@ -56,8 +56,12 @@ ansButton?.addEventListener('click', () => {
         display.value += lastAnswer;
     }
 });
-// Added feature: Clear button clears the display
 const clearButton = document.getElementById('clear');
 clearButton?.addEventListener('click', () => {
     display.value = '';
+});
+// Added feature: Backspace button
+const backspaceButton = document.getElementById('backspace');
+backspaceButton?.addEventListener('click', () => {
+    display.value = display.value.slice(0, -1);
 });
