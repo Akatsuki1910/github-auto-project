@@ -9,3 +9,13 @@ document.getElementById('duplicate')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added inverse functionality
+document.getElementById('inverse')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = (1 / value).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
