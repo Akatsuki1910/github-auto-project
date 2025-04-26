@@ -20,27 +20,19 @@ equalsButton?.addEventListener('click', () => {
         historyItem.textContent = `${display.value}`;
         const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
         currentExpressionDisplay?.appendChild(historyItem);
-        const clearHistoryButton = document.createElement('button');
-        clearHistoryButton.textContent = 'Clear History';
-        clearHistoryButton.addEventListener('click', () => {
-            currentExpressionDisplay?.innerHTML = '';
+        // Added feature: Clear button for each history entry
+        const clearEntryButton = document.createElement('button');
+        clearEntryButton.textContent = 'Clear';
+        clearEntryButton.addEventListener('click', () => {
+            currentExpressionDisplay?.removeChild(historyItem);
+            currentExpressionDisplay?.removeChild(clearEntryButton); // Remove itself
         });
-        currentExpressionDisplay?.appendChild(clearHistoryButton);
+        currentExpressionDisplay?.appendChild(clearEntryButton);
         navigator.clipboard.writeText(result.toString());
         let history = localStorage.getItem('calculatorHistory') ? JSON.parse(localStorage.getItem('calculatorHistory')) : [];
         const timestamp = new Date().toLocaleString();
         history.push({ expression: display.value, result: result.toString(), timestamp });
         localStorage.setItem('calculatorHistory', JSON.stringify(history));
-
-        // Display history immediately after calculation
-        const historyDiv = document.createElement('div');
-        historyDiv.id = 'history';
-        history.forEach(item => {
-            const historyP = document.createElement('p');
-            historyP.textContent = `${item.timestamp}: ${item.expression} = ${item.result}`;
-            historyDiv.appendChild(historyP);
-        });
-        currentExpressionDisplay?.appendChild(historyDiv);
     }
     catch (error) {
         display.value = 'Error';
@@ -50,8 +42,7 @@ equalsButton?.addEventListener('click', () => {
         localStorage.setItem('calculatorHistory', JSON.stringify(history));
     }
 });
-//Added feature: immediate history
 const clearAllButton = document.getElementById('clear-all');
 clearAllButton?.addEventListener('click', () => {
-  localStorage.removeItem('calculatorHistory');
+    localStorage.removeItem('calculatorHistory');
 });
