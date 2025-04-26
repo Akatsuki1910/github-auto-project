@@ -20,7 +20,6 @@ equalsButton?.addEventListener('click', () => {
         historyItem.textContent = `${display.value}`;
         const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
         currentExpressionDisplay?.appendChild(historyItem);
-        // Clear history button (moved inside try block)
         const clearHistoryButton = document.createElement('button');
         clearHistoryButton.textContent = 'Clear History';
         clearHistoryButton.addEventListener('click', () => {
@@ -32,6 +31,8 @@ equalsButton?.addEventListener('click', () => {
         const timestamp = new Date().toLocaleString();
         history.push({ expression: display.value, result: result.toString(), timestamp });
         localStorage.setItem('calculatorHistory', JSON.stringify(history));
+
+        // Display history immediately after calculation
         const historyDiv = document.createElement('div');
         historyDiv.id = 'history';
         history.forEach(item => {
@@ -39,9 +40,7 @@ equalsButton?.addEventListener('click', () => {
             historyP.textContent = `${item.timestamp}: ${item.expression} = ${item.result}`;
             historyDiv.appendChild(historyP);
         });
-
         currentExpressionDisplay?.appendChild(historyDiv);
-        //Added feature: Displaying calculation history after each calculation
     }
     catch (error) {
         display.value = 'Error';
@@ -50,4 +49,9 @@ equalsButton?.addEventListener('click', () => {
         history.push({ expression: display.value, result: 'Error', timestamp, error: error.message });
         localStorage.setItem('calculatorHistory', JSON.stringify(history));
     }
+});
+//Added feature: immediate history
+const clearAllButton = document.getElementById('clear-all');
+clearAllButton?.addEventListener('click', () => {
+  localStorage.removeItem('calculatorHistory');
 });
