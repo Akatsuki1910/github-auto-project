@@ -43,3 +43,13 @@ document.getElementById('cube')?.addEventListener('click', () => {
 document.getElementById('e')?.addEventListener('click', () => {
     display.value = Math.E.toString();
 });
+// Added 10x functionality
+document.getElementById('tenx')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = (value * 10).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
