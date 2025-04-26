@@ -25,29 +25,19 @@ display.addEventListener('dblclick', () => {
 const equalsButton = document.querySelector('.equals');
 equalsButton?.addEventListener('click', () => {
     const currentExpression = display.value;
-    let history = localStorage.getItem('calculatorHistory');
-    if (history) {
-        let historyArray = JSON.parse(history);
-        historyArray.push(currentExpression);
-        localStorage.setItem('calculatorHistory', JSON.stringify(historyArray));
-    }
-    else {
-        localStorage.setItem('calculatorHistory', JSON.stringify([currentExpression]));
-    }
-    // New Feature: Display last answer and add to history
     try {
         const result = math.evaluate(currentExpression);
         display.value = result.toString();
         localStorage.setItem('lastAnswer', result.toString());
-
-        // Add result to history
-        let history = localStorage.getItem('calculatorHistory')
+        // Add to history
+        let history = localStorage.getItem('calculatorHistory');
         if (history) {
             let historyArray = JSON.parse(history);
-            historyArray.push(result.toString());  // Add the result to the history
+            historyArray.push({ expression: currentExpression, result: result.toString() });
             localStorage.setItem('calculatorHistory', JSON.stringify(historyArray));
-        } else {
-            localStorage.setItem('calculatorHistory', JSON.stringify([result.toString()]));
+        }
+        else {
+            localStorage.setItem('calculatorHistory', JSON.stringify([{ expression: currentExpression, result: result.toString() }]));
         }
     }
     catch (error) {
@@ -65,4 +55,9 @@ ansButton?.addEventListener('click', () => {
     if (lastAnswer) {
         display.value += lastAnswer;
     }
+});
+// Added feature: Clear button clears the display
+const clearButton = document.getElementById('clear');
+clearButton?.addEventListener('click', () => {
+    display.value = '';
 });
