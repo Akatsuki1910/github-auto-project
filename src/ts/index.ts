@@ -16,6 +16,10 @@ equalsButton?.addEventListener('click', () => {
         const result = math.evaluate(display.value);
         display.value = result.toString();
         ans = result; // Store the result in the 'ans' variable
+        // Added feature: Display calculation history
+        const historyItem = document.createElement('p');
+        historyItem.textContent = `${display.value}`;
+        document.getElementById('currentExpressionDisplay')?.appendChild(historyItem);
     }
     catch (error) {
         display.value = 'Error';
