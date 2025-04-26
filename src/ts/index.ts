@@ -85,3 +85,13 @@ document.getElementById('sin')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added cos functionality
+document.getElementById('cos')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = Math.cos(value).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
