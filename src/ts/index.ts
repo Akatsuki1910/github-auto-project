@@ -58,7 +58,8 @@ document.getElementById('twox')?.addEventListener('click', () => {
     try {
         const value = parseFloat(display.value);
         display.value = Math.pow(2, value).toString();
-    } catch (error) {
+    }
+    catch (error) {
         display.value = 'Error: ' + error.message;
     }
 });
@@ -69,7 +70,18 @@ document.getElementById('percent-change')?.addEventListener('click', () => {
         const previousValue = parseFloat(prompt('Enter previous value:'));
         const percentageChange = ((currentValue - previousValue) / previousValue) * 100;
         display.value = percentageChange.toString();
-    } catch (error) {
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
+//Added sin functionality
+document.getElementById('sin')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = Math.sin(value).toString();
+    }
+    catch (error) {
         display.value = 'Error: ' + error.message;
     }
 });
