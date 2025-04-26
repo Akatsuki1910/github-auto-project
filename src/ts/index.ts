@@ -30,3 +30,9 @@ equalsButton?.addEventListener('click', () => {
         localStorage.setItem('calculatorHistory', JSON.stringify([currentExpression]));
     }
 });
+
+const clearHistoryButton = document.getElementById('clear-history');
+clearHistoryButton?.addEventListener('click', () => {
+  localStorage.removeItem('calculatorHistory');
+  alert('History cleared!');
+});
