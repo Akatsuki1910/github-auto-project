@@ -1,4 +1,14 @@
 // ... (Existing code)
+//Added squared-negative functionality
+document.getElementById('squared-negative')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = -(value * value).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
 //Added duplicate functionality
 document.getElementById('duplicate')?.addEventListener('click', () => {
     try {
