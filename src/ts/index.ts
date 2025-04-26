@@ -29,6 +29,10 @@ equalsButton?.addEventListener('click', () => {
         currentExpressionDisplay?.appendChild(clearHistoryButton);
         //Added feature: copy to clipboard
         navigator.clipboard.writeText(result.toString());
+                // Added feature: Local Storage saving history
+        let history = localStorage.getItem('calculatorHistory') ? JSON.parse(localStorage.getItem('calculatorHistory')) : [];
+        history.push(display.value);
+        localStorage.setItem('calculatorHistory', JSON.stringify(history));
     }
     catch (error) {
         display.value = 'Error';
