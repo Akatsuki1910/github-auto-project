@@ -19,3 +19,13 @@ document.getElementById('acos')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added atan functionality
+document.getElementById('atan')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = Math.atan(value).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
