@@ -39,3 +39,7 @@ document.getElementById('cube')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+// Added e functionality
+document.getElementById('e')?.addEventListener('click', () => {
+    display.value = Math.E.toString();
+});
