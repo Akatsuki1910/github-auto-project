@@ -49,3 +49,13 @@ document.getElementById('cosh')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+// Added tanh functionality
+document.getElementById('tanh')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = Math.tanh(value).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
