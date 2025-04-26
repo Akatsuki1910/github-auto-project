@@ -9,3 +9,10 @@ historyButton?.addEventListener('click', () => {
         alert('No history yet.');
     }
 });
+
+const display = document.getElementById('display') as HTMLInputElement;
+display.addEventListener('dblclick', () => {
+    navigator.clipboard.writeText(display.value).then(() => {
+        alert('Copied to clipboard!');
+    });
+});
