@@ -16,10 +16,17 @@ equalsButton?.addEventListener('click', () => {
         const result = math.evaluate(display.value);
         display.value = result.toString();
         ans = result; // Store the result in the 'ans' variable
-        // Added feature: Display calculation history
+        // Added feature: Display calculation history and clear button
         const historyItem = document.createElement('p');
         historyItem.textContent = `${display.value}`;
-        document.getElementById('currentExpressionDisplay')?.appendChild(historyItem);
+        const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
+        currentExpressionDisplay?.appendChild(historyItem);
+        const clearHistoryButton = document.createElement('button');
+        clearHistoryButton.textContent = 'Clear History';
+        clearHistoryButton.addEventListener('click', () => {
+            currentExpressionDisplay?.innerHTML = '';
+        });
+        currentExpressionDisplay?.appendChild(clearHistoryButton);
     }
     catch (error) {
         display.value = 'Error';
