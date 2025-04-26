@@ -39,3 +39,13 @@ document.getElementById('sinh')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added cosh functionality
+document.getElementById('cosh')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = Math.cosh(value).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
