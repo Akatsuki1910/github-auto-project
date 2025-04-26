@@ -53,3 +53,12 @@ document.getElementById('tenx')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added 2^x functionality
+document.getElementById('twox')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = Math.pow(2, value).toString();
+    } catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
