@@ -1,4 +1,9 @@
 // ... (Existing code)
+const toggleThemeButton = document.getElementById('toggle-theme');
+toggleThemeButton?.addEventListener('click', () => {
+    document.body.classList.toggle('dark-scheme');
+    document.body.classList.toggle('light-scheme');
+});
 let angleMode = 'deg';
 let ans = 0;
 document.getElementById('deg-rad')?.addEventListener('click', () => {
@@ -20,12 +25,11 @@ equalsButton?.addEventListener('click', () => {
         historyItem.textContent = `${display.value}`;
         const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
         currentExpressionDisplay?.appendChild(historyItem);
-        // Added feature: Clear button for each history entry
         const clearEntryButton = document.createElement('button');
         clearEntryButton.textContent = 'Clear';
         clearEntryButton.addEventListener('click', () => {
             currentExpressionDisplay?.removeChild(historyItem);
-            currentExpressionDisplay?.removeChild(clearEntryButton); // Remove itself
+            currentExpressionDisplay?.removeChild(clearEntryButton);
         });
         currentExpressionDisplay?.appendChild(clearEntryButton);
         navigator.clipboard.writeText(result.toString());
