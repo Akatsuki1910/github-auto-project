@@ -39,7 +39,9 @@ equalsButton?.addEventListener('click', () => {
             historyP.textContent = `${item.timestamp}: ${item.expression} = ${item.result}`;
             historyDiv.appendChild(historyP);
         });
+
         currentExpressionDisplay?.appendChild(historyDiv);
+        //Added feature: Displaying calculation history after each calculation
     }
     catch (error) {
         display.value = 'Error';
