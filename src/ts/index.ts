@@ -1,4 +1,11 @@
 // ... (Existing code)
+const toggleScientificPadButton = document.getElementById('toggleScientific');
+toggleScientificPadButton?.addEventListener('click', () => {
+    const scientificPad = document.getElementById('scientific-pad');
+    if (scientificPad) {
+        scientificPad.style.display = scientificPad.style.display === 'none' ? 'grid' : 'none';
+    }
+});
 const toggleThemeButton = document.getElementById('toggle-theme');
 toggleThemeButton?.addEventListener('click', () => {
     document.body.classList.toggle('dark-scheme');
