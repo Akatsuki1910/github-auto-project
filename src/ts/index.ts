@@ -19,3 +19,13 @@ document.getElementById('inverse')?.addEventListener('click', () => {
         display.value = 'Error: ' + error.message;
     }
 });
+//Added cube functionality
+document.getElementById('cube')?.addEventListener('click', () => {
+    try {
+        const value = parseFloat(display.value);
+        display.value = (value * value * value).toString();
+    }
+    catch (error) {
+        display.value = 'Error: ' + error.message;
+    }
+});
