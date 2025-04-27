@@ -1,6 +1,15 @@
 // ... (Existing code)
-const clearDisplayButton = document.getElementById('clear-display');
+const calculateTaxButton = document.getElementById('calculate-tax');
 const display = document.getElementById('display') as HTMLInputElement;
+
+calculateTaxButton?.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (!isNaN(num)) {
+        const tax = num * 0.08;
+        display.value = (num + tax).toFixed(2).toString();
+    }
+});
+const clearDisplayButton = document.getElementById('clear-display');
 
 clearDisplayButton?.addEventListener('click', () => {
     display.value = '';
@@ -11,7 +20,7 @@ const importFileInput = document.getElementById('import-file');
 const historyDisplay = document.getElementById('history-display');
 const clearHistoryDisplayButton = document.getElementById('clear-history-display');
 const currentTimeButton = document.getElementById('current-time');
-const currentDateButton = document.getElementById('date');
+const date = document.getElementById('date');
 const roundToDecimalButton = document.getElementById('round-to-decimal');
 
 importHistoryButton?.addEventListener('click', () => {
