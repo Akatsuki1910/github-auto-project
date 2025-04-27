@@ -1,24 +1,12 @@
 // ... (Existing code)
-const percentageButton = document.getElementById('percentage-button');
+const compoundInterestButton = document.getElementById('calculate-compound-interest');
 const display = document.getElementById('display') as HTMLInputElement;
-percentageButton?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (currentValue / 100).toString();
-    }
-});
-const taxExcludedButton = document.getElementById('calculate-tax-excluded');
-taxExcludedButton?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (currentValue / 1.08).toFixed(2);
-    }
-});
-const profitMarginButton = document.getElementById('calculate-profit-margin');
-profitMarginButton?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (currentValue * 1.2).toFixed(2);
-    }
+compoundInterestButton?.addEventListener('click', () => {
+    const principal = parseFloat(prompt('Enter principal amount:') || '0');
+    const rate = parseFloat(prompt('Enter annual interest rate (%):') || '0') / 100;
+    const time = parseFloat(prompt('Enter time in years:') || '0');
+    const n = parseFloat(prompt('Enter number of times interest is compounded per year:') || '1');
+    const amount = principal * Math.pow(1 + (rate / n), n * time);
+    display.value = amount.toFixed(2);
 });
 // ... (Rest of the existing code)
