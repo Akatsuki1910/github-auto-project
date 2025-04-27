@@ -1,16 +1,18 @@
 // ... (Existing code)
-const fibonacciButton = document.getElementById('fibonacci');
+const gcdButton = document.getElementById('gcd');
 const display = document.getElementById('display') as HTMLInputElement;
-fibonacciButton?.addEventListener('click', () => {
-    const n = parseInt(prompt('Enter the number of terms:') || '0');
-    let a = 0, b = 1, nextTerm;
-    let result = "";
-    for (let i = 1; i <= n; i++) {
-        result += a + ", ";
-        nextTerm = a + b;
-        a = b;
-        b = nextTerm;
-    }
-    display.value = result.slice(0, -2);
+gcdButton?.addEventListener('click', () => {
+    const num1 = parseInt(prompt('Enter the first number:') || '0');
+    const num2 = parseInt(prompt('Enter the second number:') || '0');
+    let result = gcd(num1, num2);
+    display.value = result.toString();
 });
+function gcd(a: number, b: number): number {
+    while (b !== 0) {
+        let temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
 // ... (Rest of the existing code)
