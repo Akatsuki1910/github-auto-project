@@ -39,6 +39,11 @@ equalsButton?.addEventListener('click', () => {
         else {
             localStorage.setItem('calculatorHistory', JSON.stringify([{ expression: currentExpression, result: result.toString() }]));
         }
+        //Added feature: Displaying the current expression
+        const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
+        if (currentExpressionDisplay) {
+            currentExpressionDisplay.textContent = currentExpression;
+        }
     }
     catch (error) {
         display.value = 'Error';

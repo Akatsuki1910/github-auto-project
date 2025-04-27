@@ -12,3 +12,7 @@ body.light-scheme {
     grid-template-columns: repeat(5, 1fr);
     gap: 5px;
 }
+#currentExpressionDisplay{
+    min-height:1em;
+    text-align:right;
+}
