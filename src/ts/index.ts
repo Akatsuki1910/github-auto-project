@@ -1,46 +1,9 @@
 // ... (Existing code)
-const lcmButton = document.getElementById('lcm');
+const signButton = document.getElementById('sign');
 const display = document.getElementById('display') as HTMLInputElement;
-const expButton = document.getElementById('exp');
-const roundButton = document.getElementById('round');
-const powButton = document.getElementById('pow');
-const floorButton = document.getElementById('floor');
-lcmButton?.addEventListener('click', () => {
-    const num1 = parseInt(prompt('Enter the first number:') || '0');
-    const num2 = parseInt(prompt('Enter the second number:') || '0');
-    const result = lcm(num1, num2);
-    display.value = result.toString();
-});
-expButton?.addEventListener('click', () => {
+signButton?.addEventListener('click', () => {
     const num = parseFloat(prompt('Enter the number:') || '0');
-    const result = Math.exp(num);
+    const result = Math.sign(num);
     display.value = result.toString();
 });
-roundButton?.addEventListener('click', () => {
-    const num = parseFloat(prompt('Enter the number:') || '0');
-    const result = Math.round(num);
-    display.value = result.toString();
-});
-powButton?.addEventListener('click', () => {
-    const num1 = parseFloat(prompt('Enter the base number:') || '0');
-    const num2 = parseFloat(prompt('Enter the exponent:') || '0');
-    const result = Math.pow(num1, num2);
-    display.value = result.toString();
-});
-floorButton?.addEventListener('click', () => {
-    const num = parseFloat(prompt('Enter the number:') || '0');
-    const result = Math.floor(num);
-    display.value = result.toString();
-});
-function gcd(a, b) {
-    while (b !== 0) {
-        let temp = b;
-        b = a % b;
-        a = temp;
-    }
-    return a;
-}
-function lcm(a, b) {
-    return (a * b) / gcd(a, b);
-}
 // ... (Rest of the existing code)
