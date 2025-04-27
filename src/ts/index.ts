@@ -1,19 +1,24 @@
 // ... (Existing code)
-const exportHistoryButton = document.getElementById('export-history');
-exportHistoryButton?.addEventListener('click', () => {
-    const history = localStorage.getItem('calculatorHistory');
-    if (history) {
-        const historyData = JSON.parse(history);
-        const historyString = JSON.stringify(historyData, null, 2);
-        const blob = new Blob([historyString], { type: 'application/json' });
-        const url = URL.createObjectURL(blob);
-        const a = document.createElement('a');
-        a.href = url;
-        a.download = 'calculator_history.json';
-        a.click();
-        URL.revokeObjectURL(url);
-    }
-    else {
-        alert('No history to export.');
+const importHistoryButton = document.getElementById('import-history');
+const importFileInput = document.getElementById('import-file');
+
+importHistoryButton?.addEventListener('click', () => {
+    importFileInput?.click();
+});
+
+importFileInput?.addEventListener('change', (event) => {
+    const file = event.target.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+            try {
+                const historyData = JSON.parse(e.target.result);
+                localStorage.setItem('calculatorHistory', JSON.stringify(historyData));
+                alert('History imported successfully.');
+            } catch (error) {
+                alert('Invalid history file.');
+            }
+        };
+        reader.readAsText(file);
     }
 });
