@@ -1,90 +1,19 @@
 // ... (Existing code)
-const toggleScientificButton = document.getElementById('toggleScientific');
-toggleScientificButton?.addEventListener('click', () => {
-    const scientificPad = document.getElementById('scientific-pad');
-    if (scientificPad) {
-        if (scientificPad.style.display === 'none') {
-            scientificPad.style.display = 'grid';
-        }
-        else {
-            scientificPad.style.display = 'none';
-        }
-    }
-});
-const toggleThemeButton = document.getElementById('toggle-theme');
-toggleThemeButton?.addEventListener('click', () => {
-    document.body.classList.toggle('dark-scheme');
-    document.body.classList.toggle('light-scheme');
-});
-const historyButton = document.getElementById('history');
-historyButton?.addEventListener('click', () => {
+const exportHistoryButton = document.getElementById('export-history');
+exportHistoryButton?.addEventListener('click', () => {
     const history = localStorage.getItem('calculatorHistory');
     if (history) {
         const historyData = JSON.parse(history);
-        alert(JSON.stringify(historyData, null, 2));
+        const historyString = JSON.stringify(historyData, null, 2);
+        const blob = new Blob([historyString], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = 'calculator_history.json';
+        a.click();
+        URL.revokeObjectURL(url);
     }
     else {
-        alert('No history yet.');
+        alert('No history to export.');
     }
-});
-const display = document.getElementById('display');
-display.addEventListener('dblclick', () => {
-    navigator.clipboard.writeText(display.value).then(() => {
-        alert('Copied to clipboard!');
-    });
-});
-//New Feature: Store history in local storage
-const equalsButton = document.querySelector('.equals');
-equalsButton?.addEventListener('click', () => {
-    const currentExpression = display.value;
-    try {
-        const result = math.evaluate(currentExpression);
-        display.value = result.toString();
-        localStorage.setItem('lastAnswer', result.toString());
-        // Add to history
-        let history = localStorage.getItem('calculatorHistory');
-        if (history) {
-            let historyArray = JSON.parse(history);
-            historyArray.push({ expression: currentExpression, result: result.toString() });
-            localStorage.setItem('calculatorHistory', JSON.stringify(historyArray));
-        }
-        else {
-            localStorage.setItem('calculatorHistory', JSON.stringify([{ expression: currentExpression, result: result.toString() }]));
-        }
-        //Added feature: Displaying the current expression
-        const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
-        if (currentExpressionDisplay) {
-            currentExpressionDisplay.textContent = currentExpression;
-        }
-    }
-    catch (error) {
-        display.value = 'Error';
-    }
-});
-const clearHistoryButton = document.getElementById('clear-history');
-clearHistoryButton?.addEventListener('click', () => {
-    localStorage.removeItem('calculatorHistory');
-    alert('History cleared!');
-});
-const ansButton = document.getElementById('ans');
-ansButton?.addEventListener('click', () => {
-    const lastAnswer = localStorage.getItem('lastAnswer');
-    if (lastAnswer) {
-        display.value += lastAnswer;
-    }
-});
-const clearButton = document.getElementById('clear');
-clearButton?.addEventListener('click', () => {
-    display.value = '';
-});
-// Added feature: Backspace button
-const backspaceButton = document.getElementById('backspace');
-backspaceButton?.addEventListener('click', () => {
-    display.value = display.value.slice(0, -1);
-});
-//Added feature: Clear All button
-const clearAllButton = document.getElementById('clear-all');
-clearAllButton?.addEventListener('click', () => {
-    display.value = '';
-    localStorage.removeItem('lastAnswer');
 });
