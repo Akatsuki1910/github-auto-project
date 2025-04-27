@@ -14,6 +14,8 @@ importFileInput?.addEventListener('change', (event) => {
             try {
                 const historyData = JSON.parse(e.target.result);
                 localStorage.setItem('calculatorHistory', JSON.stringify(historyData));
+                // Display imported history in the console
+                console.log('Imported History:', historyData);
                 alert('History imported successfully.');
             } catch (error) {
                 alert('Invalid history file.');
