@@ -28,5 +28,12 @@ tripleButton?.addEventListener('click', () => {
     display.value = (currentValue * 3).toString();
   }
 });
+const halfButton = document.getElementById('half');
+halfButton?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (currentValue / 2).toString();
+    }
+});
 
 // ... (Rest of the existing code)
