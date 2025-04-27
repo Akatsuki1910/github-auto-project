@@ -3,6 +3,7 @@ const lcmButton = document.getElementById('lcm');
 const display = document.getElementById('display') as HTMLInputElement;
 const expButton = document.getElementById('exp');
 const roundButton = document.getElementById('round');
+const powButton = document.getElementById('pow');
 lcmButton?.addEventListener('click', () => {
     const num1 = parseInt(prompt('Enter the first number:') || '0');
     const num2 = parseInt(prompt('Enter the second number:') || '0');
@@ -17,6 +18,12 @@ expButton?.addEventListener('click', () => {
 roundButton?.addEventListener('click', () => {
     const num = parseFloat(prompt('Enter the number:') || '0');
     const result = Math.round(num);
+    display.value = result.toString();
+});
+powButton?.addEventListener('click', () => {
+    const num1 = parseFloat(prompt('Enter the base number:') || '0');
+    const num2 = parseFloat(prompt('Enter the exponent:') || '0');
+    const result = Math.pow(num1, num2);
     display.value = result.toString();
 });
 function gcd(a, b) {
