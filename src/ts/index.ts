@@ -70,3 +70,9 @@ const backspaceButton = document.getElementById('backspace');
 backspaceButton?.addEventListener('click', () => {
     display.value = display.value.slice(0, -1);
 });
+//Added feature: Clear All button
+const clearAllButton = document.getElementById('clear-all');
+clearAllButton?.addEventListener('click', () => {
+    display.value = '';
+    localStorage.removeItem('lastAnswer');
+});
