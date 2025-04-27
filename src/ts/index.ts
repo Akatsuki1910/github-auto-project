@@ -1,4 +1,11 @@
 // ... (Existing code)
+const clearDisplayButton = document.getElementById('clear-display');
+const display = document.getElementById('display') as HTMLInputElement;
+
+clearDisplayButton?.addEventListener('click', () => {
+    display.value = '';
+});
+
 const importHistoryButton = document.getElementById('import-history');
 const importFileInput = document.getElementById('import-file');
 const historyDisplay = document.getElementById('history-display');
