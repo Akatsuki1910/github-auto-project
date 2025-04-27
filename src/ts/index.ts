@@ -14,4 +14,11 @@ taxExcludedButton?.addEventListener('click', () => {
         display.value = (currentValue / 1.08).toFixed(2);
     }
 });
+const profitMarginButton = document.getElementById('calculate-profit-margin');
+profitMarginButton?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (currentValue * 1.2).toFixed(2);
+    }
+});
 // ... (Rest of the existing code)
