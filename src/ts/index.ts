@@ -1,10 +1,10 @@
 // ... (Existing code)
-const gcdButton = document.getElementById('gcd');
+const lcmButton = document.getElementById('lcm');
 const display = document.getElementById('display') as HTMLInputElement;
-gcdButton?.addEventListener('click', () => {
+lcmButton?.addEventListener('click', () => {
     const num1 = parseInt(prompt('Enter the first number:') || '0');
     const num2 = parseInt(prompt('Enter the second number:') || '0');
-    let result = gcd(num1, num2);
+    const result = lcm(num1, num2);
     display.value = result.toString();
 });
 function gcd(a: number, b: number): number {
@@ -14,5 +14,8 @@ function gcd(a: number, b: number): number {
         a = temp;
     }
     return a;
+}
+function lcm(a: number, b: number): number {
+    return (a * b) / gcd(a, b);
 }
 // ... (Rest of the existing code)
