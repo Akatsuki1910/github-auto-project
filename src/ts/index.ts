@@ -9,6 +9,7 @@ clearDisplayButton?.addEventListener('click', () => {
 const importHistoryButton = document.getElementById('import-history');
 const importFileInput = document.getElementById('import-file');
 const historyDisplay = document.getElementById('history-display');
+const clearHistoryDisplayButton = document.getElementById('clear-history-display');
 
 importHistoryButton?.addEventListener('click', () => {
     importFileInput?.click();
@@ -23,16 +24,18 @@ importFileInput?.addEventListener('change', (event) => {
                 const historyData = JSON.parse(e.target.result);
                 localStorage.setItem('calculatorHistory', JSON.stringify(historyData));
                 console.log('Imported History:', historyData);
-                const currentHistory = JSON.parse(localStorage.getItem('calculatorHistory')) || [];
-                localStorage.setItem('calculatorHistory', JSON.stringify(currentHistory));
-                alert('History imported successfully.');
                 displayHistory();
+                alert('History imported successfully.');
             } catch (error) {
                 alert('Invalid history file.');
             }
         };
         reader.readAsText(file);
     }
+});
+
+clearHistoryDisplayButton?.addEventListener('click', () => {
+    historyDisplay.innerHTML = '';
 });
 
 function displayHistory() {
