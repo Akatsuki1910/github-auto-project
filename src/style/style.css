@@ -1,18 +1,1 @@
 /* ... (Existing styles) */
-body.dark-scheme {
-    background-color: #333;
-    color: #eee;
-}
-body.light-scheme {
-    background-color: #eee;
-    color: #333;
-}
-#scientific-pad {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 5px;
-}
-#currentExpressionDisplay{
-    min-height:1em;
-    text-align:right;
-}
