@@ -12,6 +12,7 @@ const historyDisplay = document.getElementById('history-display');
 const clearHistoryDisplayButton = document.getElementById('clear-history-display');
 const currentTimeButton = document.getElementById('current-time');
 const currentDateButton = document.getElementById('date');
+const roundToDecimalButton = document.getElementById('round-to-decimal');
 
 importHistoryButton?.addEventListener('click', () => {
     importFileInput?.click();
@@ -46,10 +47,17 @@ currentTimeButton?.addEventListener('click',()=>{
   display.value = timeString;
 })
 
-currentDateButton?.addEventListener('click', () => {
+date.addEventListener('click', () => {
     const now = new Date();
     const dateString = now.toLocaleDateString();
     display.value = dateString;
+});
+
+roundToDecimalButton?.addEventListener('click', () => {
+    const num = parseFloat(display.value);
+    if (!isNaN(num)) {
+        display.value = num.toFixed(2).toString();
+    }
 });
 
 function displayHistory() {
