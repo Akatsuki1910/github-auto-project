@@ -1,12 +1,16 @@
 // ... (Existing code)
-const compoundInterestButton = document.getElementById('calculate-compound-interest');
+const fibonacciButton = document.getElementById('fibonacci');
 const display = document.getElementById('display') as HTMLInputElement;
-compoundInterestButton?.addEventListener('click', () => {
-    const principal = parseFloat(prompt('Enter principal amount:') || '0');
-    const rate = parseFloat(prompt('Enter annual interest rate (%):') || '0') / 100;
-    const time = parseFloat(prompt('Enter time in years:') || '0');
-    const n = parseFloat(prompt('Enter number of times interest is compounded per year:') || '1');
-    const amount = principal * Math.pow(1 + (rate / n), n * time);
-    display.value = amount.toFixed(2);
+fibonacciButton?.addEventListener('click', () => {
+    const n = parseInt(prompt('Enter the number of terms:') || '0');
+    let a = 0, b = 1, nextTerm;
+    let result = "";
+    for (let i = 1; i <= n; i++) {
+        result += a + ", ";
+        nextTerm = a + b;
+        a = b;
+        b = nextTerm;
+    }
+    display.value = result.slice(0, -2);
 });
 // ... (Rest of the existing code)
