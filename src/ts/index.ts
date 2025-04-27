@@ -21,5 +21,12 @@ doubleButton?.addEventListener('click', () => {
         display.value = (currentValue * 2).toString();
     }
 });
+const tripleButton = document.getElementById('triple');
+tripleButton?.addEventListener('click', () => {
+  const currentValue = parseFloat(display.value);
+  if (!isNaN(currentValue)) {
+    display.value = (currentValue * 3).toString();
+  }
+});
 
 // ... (Rest of the existing code)
