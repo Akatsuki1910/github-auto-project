@@ -1,10 +1,10 @@
 // ... (Existing code)
-const signChangeButton = document.getElementById('sign-change');
+const invertButton = document.getElementById('invert');
 const display = document.getElementById('display') as HTMLInputElement;
-signChangeButton?.addEventListener('click', () => {
+invertButton?.addEventListener('click', () => {
     const num = parseFloat(display.value);
-    if (!isNaN(num)) {
-        display.value = (-num).toString();
+    if (!isNaN(num) && num !== 0) {
+        display.value = (1 / num).toString();
     }
 });
 // ... (Rest of the existing code)
