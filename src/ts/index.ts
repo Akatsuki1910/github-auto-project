@@ -14,5 +14,12 @@ const clearDisplayButton = document.getElementById('clear-display');
 clearDisplayButton?.addEventListener('click', () => {
     display.value = '';
 });
+const doubleButton = document.getElementById('double');
+doubleButton?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (currentValue * 2).toString();
+    }
+});
 
 // ... (Rest of the existing code)
