@@ -11,6 +11,7 @@ const importFileInput = document.getElementById('import-file');
 const historyDisplay = document.getElementById('history-display');
 const clearHistoryDisplayButton = document.getElementById('clear-history-display');
 const currentTimeButton = document.getElementById('current-time');
+const currentDateButton = document.getElementById('date');
 
 importHistoryButton?.addEventListener('click', () => {
     importFileInput?.click();
@@ -44,6 +45,12 @@ currentTimeButton?.addEventListener('click',()=>{
   const timeString = now.toLocaleTimeString();
   display.value = timeString;
 })
+
+currentDateButton?.addEventListener('click', () => {
+    const now = new Date();
+    const dateString = now.toLocaleDateString();
+    display.value = dateString;
+});
 
 function displayHistory() {
     const history = JSON.parse(localStorage.getItem('calculatorHistory')) || [];
