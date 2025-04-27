@@ -1,10 +1,10 @@
 // ... (Existing code)
-const invertButton = document.getElementById('invert');
+const percentageButton = document.getElementById('percentage-button');
 const display = document.getElementById('display') as HTMLInputElement;
-invertButton?.addEventListener('click', () => {
-    const num = parseFloat(display.value);
-    if (!isNaN(num) && num !== 0) {
-        display.value = (1 / num).toString();
+percentageButton?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (currentValue / 100).toString();
     }
 });
 // ... (Rest of the existing code)
