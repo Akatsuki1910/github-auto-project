@@ -1,6 +1,7 @@
 // ... (Existing code)
 const importHistoryButton = document.getElementById('import-history');
 const importFileInput = document.getElementById('import-file');
+const historyDisplay = document.getElementById('history-display');
 
 importHistoryButton?.addEventListener('click', () => {
     importFileInput?.click();
@@ -14,12 +15,11 @@ importFileInput?.addEventListener('change', (event) => {
             try {
                 const historyData = JSON.parse(e.target.result);
                 localStorage.setItem('calculatorHistory', JSON.stringify(historyData));
-                // Display imported history in the console
                 console.log('Imported History:', historyData);
-                // Add imported history to the current history
                 const currentHistory = JSON.parse(localStorage.getItem('calculatorHistory')) || [];
-                localStorage.setItem('calculatorHistory', JSON.stringify(currentHistory.concat(historyData)));
+                localStorage.setItem('calculatorHistory', JSON.stringify(currentHistory));
                 alert('History imported successfully.');
+                displayHistory();
             } catch (error) {
                 alert('Invalid history file.');
             }
@@ -27,3 +27,10 @@ importFileInput?.addEventListener('change', (event) => {
         reader.readAsText(file);
     }
 });
+
+function displayHistory() {
+    const history = JSON.parse(localStorage.getItem('calculatorHistory')) || [];
+    historyDisplay.innerHTML = history.map(item => `<p>${item}</p>`).join('');
+}
+
+displayHistory();
