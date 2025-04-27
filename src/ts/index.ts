@@ -1,11 +1,10 @@
 // ... (Existing code)
-const calculateTipButton = document.getElementById('calculate-tip');
+const signChangeButton = document.getElementById('sign-change');
 const display = document.getElementById('display') as HTMLInputElement;
-calculateTipButton?.addEventListener('click', () => {
+signChangeButton?.addEventListener('click', () => {
     const num = parseFloat(display.value);
     if (!isNaN(num)) {
-        const tip = num * 0.15;
-        display.value = (num + tip).toFixed(2).toString();
+        display.value = (-num).toString();
     }
 });
 // ... (Rest of the existing code)
