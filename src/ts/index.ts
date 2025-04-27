@@ -2,6 +2,7 @@
 const display = document.getElementById('display') as HTMLInputElement;
 const powerOfTenButton = document.getElementById('powerOfTen');
 const inverseButton = document.getElementById('inverse');
+const sinButton = document.getElementById('sin');
 // ... (Existing event listeners)
 powerOfTenButton?.addEventListener('click', () => {
     const num = parseFloat(prompt('Enter the exponent:') || '0');
@@ -16,5 +17,9 @@ inverseButton?.addEventListener('click', () => {
     else {
         display.value = (1 / currentValue).toString();
     }
+});
+sinButton?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    display.value = Math.sin(currentValue).toString();
 });
 // ... (Rest of the existing code)
