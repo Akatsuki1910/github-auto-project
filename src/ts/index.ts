@@ -7,6 +7,7 @@ const clearLastHistoryButton = document.getElementById('clear-last-history');
 const exportHistoryButton = document.getElementById('export-history');
 const importHistoryButton = document.getElementById('import-history');
 const lastAnswerButton = document.getElementById('last-answer');
+const currentDateButton = document.getElementById('current-date');
 let history: string[] = [];
 let lastAnswer = '';
 
@@ -40,6 +41,10 @@ importHistoryButton?.addEventListener('click', () => {
 
 lastAnswerButton?.addEventListener('click', () => {
     display.value += lastAnswer;
+});
+
+currentDateButton?.addEventListener('click', () => {
+  display.value = new Date().toLocaleDateString();
 });
 
 // ... (Rest of the existing code)
