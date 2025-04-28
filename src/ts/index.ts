@@ -7,7 +7,14 @@ const cosButton = document.getElementById('cos');
 const tanButton = document.getElementById('tan');
 const log10Button = document.getElementById('log10');
 const cubeButton = document.getElementById('cube');
+const modButton = document.getElementById('mod');
 // ... (Existing event listeners)
+modButton?.addEventListener('click', () => {
+    const num1 = parseFloat(prompt('Enter the first number:') || '0');
+    const num2 = parseFloat(prompt('Enter the second number:') || '0');
+    const result = num1 % num2;
+    display.value = result.toString();
+});
 powerOfTenButton?.addEventListener('click', () => {
     const num = parseFloat(prompt('Enter the exponent:') || '0');
     const result = Math.pow(10, num);
