@@ -6,7 +6,9 @@ const historyButton = document.getElementById('history');
 const clearLastHistoryButton = document.getElementById('clear-last-history');
 const exportHistoryButton = document.getElementById('export-history');
 const importHistoryButton = document.getElementById('import-history');
+const lastAnswerButton = document.getElementById('last-answer');
 let history: string[] = [];
+let lastAnswer = '';
 
 // ... (Existing event listeners)
 
@@ -34,6 +36,10 @@ importHistoryButton?.addEventListener('click', () => {
         reader.readAsText(file);
     });
     input.click();
+});
+
+lastAnswerButton?.addEventListener('click', () => {
+    display.value += lastAnswer;
 });
 
 // ... (Rest of the existing code)
