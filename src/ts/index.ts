@@ -2,6 +2,7 @@
 const display = document.getElementById('display') as HTMLInputElement;
 const toggleDisplayButton = document.getElementById('toggle-display');
 const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
+const percentageButton = document.getElementById('percentage');
 
 // ... (Other existing variables)
 
@@ -17,6 +18,17 @@ toggleDisplayButton?.addEventListener('click', () => {
     display.style.display = 'none';
   }
 display.value = displayVisible ? display.value : ''; // Added feature: Clear display when hidden
+});
+
+percentageButton?.addEventListener('click', () => {
+    try {
+        const result = math.evaluate(currentExpression + '/100');
+        display.value = result.toString();
+        currentExpression = result.toString();
+        currentExpressionDisplay!.textContent = currentExpression;
+    } catch (error) {
+        display.value = 'Error';
+    }
 });
 
 //Example button click handling (replace with your actual logic)
