@@ -4,6 +4,7 @@ const randomButton = document.getElementById('random');
 const doubleButton = document.getElementById('double');
 const tripleButton = document.getElementById('triple');
 const halfButton = document.getElementById('half');
+const squaredButton = document.getElementById('squared');
 // ... (Existing event listeners)
 randomButton?.addEventListener('click', () => {
     display.value = Math.random().toString();
@@ -24,6 +25,12 @@ halfButton?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
         display.value = (currentValue * 0.5).toString();
+    }
+});
+squaredButton?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (currentValue * currentValue).toString();
     }
 });
 // ... (Rest of the existing code)
