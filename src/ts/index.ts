@@ -4,28 +4,18 @@ const signChangeButton = document.getElementById('sign-change');
 const historyDisplay = document.getElementById('history-display');
 const historyButton = document.getElementById('history');
 const clearLastHistoryButton = document.getElementById('clear-last-history');
+const exportHistoryButton = document.getElementById('export-history');
 let history: string[] = [];
 
 // ... (Existing event listeners)
-signChangeButton?.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = (-currentValue).toString();
-    }
-});
 
-historyButton?.addEventListener('click', () => {
-    if (historyDisplay) {
-        historyDisplay.innerHTML = history.join('<br>');
-        historyDisplay.style.display = 'block';
-    }
-});
-
-clearLastHistoryButton?.addEventListener('click', () => {
-    history.pop();
-    if (historyDisplay) {
-        historyDisplay.innerHTML = history.join('<br>');
-    }
+exportHistoryButton?.addEventListener('click', () => {
+    const historyText = history.join('\n');
+    const blob = new Blob([historyText], { type: 'text/plain' });
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(blob);
+    link.download = 'calculator_history.txt';
+    link.click();
 });
 
 // ... (Rest of the existing code)
