@@ -26,6 +26,17 @@ document.querySelectorAll('.digit, .operator').forEach(button => {
             currentExpression += key;
             currentExpressionDisplay!.textContent = currentExpression;
         }
+        // Added Feature: Evaluate expression when '=' is pressed
+        if(key === '='){
+            try{
+                const result = math.evaluate(currentExpression);
+                display.value = result.toString();
+                currentExpression = '';
+                currentExpressionDisplay!.textContent = '';
+            } catch (error) {
+                display.value = 'Error';
+            }
+        }
     });
 });
 
