@@ -22,9 +22,10 @@ display.value = displayVisible ? display.value : ''; // Added feature: Clear dis
 
 percentageButton?.addEventListener('click', () => {
     try {
-        const result = math.evaluate(currentExpression + '/100');
-        display.value = result.toString();
-        currentExpression = result.toString();
+        const currentValue = parseFloat(display.value);
+        const percentageValue = currentValue / 100;  // Calculate percentage value
+        display.value = percentageValue.toString();
+        currentExpression = percentageValue.toString();
         currentExpressionDisplay!.textContent = currentExpression;
     } catch (error) {
         display.value = 'Error';
