@@ -33,7 +33,7 @@ percentageButton?.addEventListener('click', () => {
 });
 
 //Example button click handling (replace with your actual logic)
-document.querySelectorAll('.digit, .operator, .equals').forEach(button => {
+document.querySelectorAll('.digit, .operator, .equals, #percentage').forEach(button => {
     button.addEventListener('click', () => {
         const key = (button as HTMLElement).dataset.key;
         if (key) {
