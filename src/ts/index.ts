@@ -12,6 +12,7 @@ toggleDisplayButton?.addEventListener('click', () => {
   } else {
     display.style.display = 'none';
   }
+display.value = displayVisible ? display.value : ''; // Added feature: Clear display when hidden
 });
 
 // ... (Rest of the existing code)
