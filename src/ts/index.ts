@@ -8,6 +8,7 @@ const exportHistoryButton = document.getElementById('export-history');
 const importHistoryButton = document.getElementById('import-history');
 const lastAnswerButton = document.getElementById('last-answer');
 const currentDateButton = document.getElementById('current-date');
+const currentTimeButton = document.getElementById('current-time');
 let history: string[] = [];
 let lastAnswer = '';
 
@@ -45,6 +46,10 @@ lastAnswerButton?.addEventListener('click', () => {
 
 currentDateButton?.addEventListener('click', () => {
   display.value = new Date().toLocaleDateString();
+});
+
+currentTimeButton?.addEventListener('click', () => {
+    display.value = new Date().toLocaleTimeString();
 });
 
 // ... (Rest of the existing code)
