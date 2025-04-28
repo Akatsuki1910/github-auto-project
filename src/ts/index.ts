@@ -5,6 +5,7 @@ const inverseButton = document.getElementById('inverse');
 const sinButton = document.getElementById('sin');
 const cosButton = document.getElementById('cos');
 const tanButton = document.getElementById('tan');
+const log10Button = document.getElementById('log10');
 // ... (Existing event listeners)
 powerOfTenButton?.addEventListener('click', () => {
     const num = parseFloat(prompt('Enter the exponent:') || '0');
@@ -31,5 +32,14 @@ cosButton?.addEventListener('click', () => {
 tanButton?.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     display.value = Math.tan(currentValue).toString();
+});
+log10Button?.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (currentValue <= 0) {
+        display.value = "Invalid input for log10";
+    }
+    else {
+        display.value = Math.log10(currentValue).toString();
+    }
 });
 // ... (Rest of the existing code)
