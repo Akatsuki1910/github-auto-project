@@ -19,22 +19,22 @@ display.value = displayVisible ? display.value : ''; // Added feature: Clear dis
 });
 
 //Example button click handling (replace with your actual logic)
-document.querySelectorAll('.digit, .operator').forEach(button => {
+document.querySelectorAll('.digit, .operator, .equals').forEach(button => {
     button.addEventListener('click', () => {
         const key = (button as HTMLElement).dataset.key;
         if (key) {
-            currentExpression += key;
-            currentExpressionDisplay!.textContent = currentExpression;
-        }
-        // Added Feature: Evaluate expression when '=' is pressed
-        if(key === '='){
-            try{
-                const result = math.evaluate(currentExpression);
-                display.value = result.toString();
-                currentExpression = '';
-                currentExpressionDisplay!.textContent = '';
-            } catch (error) {
-                display.value = 'Error';
+            if(key === '='){
+                try{
+                    const result = math.evaluate(currentExpression);
+                    display.value = result.toString();
+                    currentExpression = '';
+                    currentExpressionDisplay!.textContent = '';
+                } catch (error) {
+                    display.value = 'Error';
+                }
+            }else{
+              currentExpression += key;
+              currentExpressionDisplay!.textContent = currentExpression;          
             }
         }
     });
