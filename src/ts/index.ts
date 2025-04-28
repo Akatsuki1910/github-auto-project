@@ -55,4 +55,12 @@ document.querySelectorAll('.digit, .operator, .equals').forEach(button => {
     });
 });
 
+//Added feature: Clear last history entry button
+const clearLastHistory = document.getElementById('clear-last-history') as HTMLButtonElement;
+clearLastHistory.addEventListener('click', () => {
+    if (historyArr.length > 0) {
+        historyArr.pop(); //remove last history item
+    }
+});
+
 // ... (Rest of the existing code)
