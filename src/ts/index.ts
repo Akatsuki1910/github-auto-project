@@ -7,6 +7,7 @@ const currentExpressionDisplay = document.getElementById('currentExpressionDispl
 
 let displayVisible = true;
 let currentExpression = '';
+let historyArr:string[] = [];
 
 toggleDisplayButton?.addEventListener('click', () => {
   displayVisible = !displayVisible;
@@ -27,6 +28,7 @@ document.querySelectorAll('.digit, .operator, .equals').forEach(button => {
                 try{
                     const result = math.evaluate(currentExpression);
                     display.value = result.toString();
+                    historyArr.push(currentExpression + '=' + result.toString());
                     currentExpression = '';
                     currentExpressionDisplay!.textContent = '';
                 } catch (error) {
