@@ -5,6 +5,7 @@ const historyDisplay = document.getElementById('history-display');
 const historyButton = document.getElementById('history');
 const clearLastHistoryButton = document.getElementById('clear-last-history');
 const exportHistoryButton = document.getElementById('export-history');
+const importHistoryButton = document.getElementById('import-history');
 let history: string[] = [];
 
 // ... (Existing event listeners)
@@ -16,6 +17,23 @@ exportHistoryButton?.addEventListener('click', () => {
     link.href = URL.createObjectURL(blob);
     link.download = 'calculator_history.txt';
     link.click();
+});
+
+importHistoryButton?.addEventListener('click', () => {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.txt';
+    input.addEventListener('change', (event: any) => {
+        const file = event.target.files[0];
+        const reader = new FileReader();
+        reader.onload = (e: any) => {
+            const content = e.target.result;
+            history = content.split('\n');
+            historyDisplay!.textContent = history.join('\n');
+        };
+        reader.readAsText(file);
+    });
+    input.click();
 });
 
 // ... (Rest of the existing code)
