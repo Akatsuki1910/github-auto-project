@@ -6,6 +6,7 @@ const percentageButton = document.getElementById('percentage');
 const currentDatetButton = document.getElementById('current-date');
 const currentTimeButton = document.getElementById('current-time');
 const piButton = document.getElementById('pi') as HTMLButtonElement;
+const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
 
 // ... (Other existing variables)
 
@@ -20,13 +21,13 @@ toggleDisplayButton?.addEventListener('click', () => {
   } else {
     display.style.display = 'none';
   }
-display.value = displayVisible ? display.value : ''; // Added feature: Clear display when hidden
+display.value = displayVisible ? display.value : ''; 
 });
 
 percentageButton?.addEventListener('click', () => {
     try {
         const currentValue = parseFloat(display.value);
-        const percentageValue = currentValue / 100;  // Calculate percentage value
+        const percentageValue = currentValue / 100; 
         display.value = percentageValue.toString();
         currentExpression = percentageValue.toString();
         currentExpressionDisplay!.textContent = currentExpression;
@@ -37,7 +38,7 @@ percentageButton?.addEventListener('click', () => {
 currentDatetButton?.addEventListener('click', () => {
     const today = new Date();
     const dateString = today.toLocaleDateString();
-    display.value = dateString; // Show the date in the display
+    display.value = dateString;
     currentExpressionDisplay!.textContent = dateString; 
 });
 
@@ -47,7 +48,7 @@ currentTimeButton?.addEventListener('click', () => {
     display.value = timeString;
     currentExpressionDisplay!.textContent = timeString;
 });
-//Example button click handling (replace with your actual logic)
+
 document.querySelectorAll('.digit, .operator, .equals, #percentage').forEach(button => {
     button.addEventListener('click', () => {
         const key = (button as HTMLElement).dataset.key;
@@ -76,11 +77,26 @@ piButton.addEventListener('click', () => {
   display.value = currentExpression;
 });
 
-//Added feature: Clear last history entry button
+factorialButton.addEventListener('click', () => {
+    try {
+      const currentValue = parseFloat(display.value);
+      if (currentValue < 0) {
+        display.value = 'Error: Factorial of negative number';
+      } else {
+        const result = math.factorial(currentValue);  // Calculate factorial
+        display.value = result.toString();
+        currentExpression = result.toString();
+        currentExpressionDisplay!.textContent = currentExpression;
+      }
+    } catch (error) {
+      display.value = 'Error';
+    }
+  });
+
 const clearLastHistory = document.getElementById('clear-last-history') as HTMLButtonElement;
 clearLastHistory.addEventListener('click', () => {
     if (historyArr.length > 0) {
-        historyArr.pop(); //remove last history item
+        historyArr.pop();
     }
 });
 
