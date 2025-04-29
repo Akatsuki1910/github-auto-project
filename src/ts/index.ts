@@ -5,6 +5,7 @@ const currentExpressionDisplay = document.getElementById('currentExpressionDispl
 const percentageButton = document.getElementById('percentage');
 const currentDatetButton = document.getElementById('current-date');
 const currentTimeButton = document.getElementById('current-time');
+const piButton = document.getElementById('pi') as HTMLButtonElement;
 
 // ... (Other existing variables)
 
@@ -67,6 +68,12 @@ document.querySelectorAll('.digit, .operator, .equals, #percentage').forEach(but
             }
         }
     });
+});
+
+piButton.addEventListener('click', () => {
+  currentExpression += Math.PI;
+  currentExpressionDisplay!.textContent = currentExpression;
+  display.value = currentExpression;
 });
 
 //Added feature: Clear last history entry button
