@@ -3,6 +3,7 @@ const display = document.getElementById('display') as HTMLInputElement;
 const toggleDisplayButton = document.getElementById('toggle-display');
 const currentExpressionDisplay = document.getElementById('currentExpressionDisplay');
 const percentageButton = document.getElementById('percentage');
+const currentDatetButton = document.getElementById('current-date');
 
 // ... (Other existing variables)
 
@@ -31,7 +32,12 @@ percentageButton?.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
-
+currentDatetButton?.addEventListener('click', () => {
+    const today = new Date();
+    const dateString = today.toLocaleDateString();
+    display.value = dateString; // Show the date in the display
+    currentExpressionDisplay!.textContent = dateString; 
+});
 //Example button click handling (replace with your actual logic)
 document.querySelectorAll('.digit, .operator, .equals, #percentage').forEach(button => {
     button.addEventListener('click', () => {
