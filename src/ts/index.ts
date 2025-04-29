@@ -10,6 +10,7 @@ const factorialButton = document.getElementById('factorial') as HTMLButtonElemen
 const cuberootButton = document.getElementById('cuberoot') as HTMLButtonElement;
 const exponentButton = document.getElementById('exponent') as HTMLButtonElement;
 const absButton = document.getElementById('abs') as HTMLButtonElement;
+const floorButton = document.getElementById('floor') as HTMLButtonElement;
 
 // ... (Other existing variables)
 
@@ -117,6 +118,18 @@ absButton.addEventListener('click', () => {
     try {
       const currentValue = parseFloat(display.value);
       const result = Math.abs(currentValue);
+      display.value = result.toString();
+      currentExpression = result.toString();
+      currentExpressionDisplay!.textContent = currentExpression;
+    } catch (error) {
+      display.value = 'Error';
+    }
+});
+
+floorButton.addEventListener('click', () => {
+    try {
+      const currentValue = parseFloat(display.value);
+      const result = Math.floor(currentValue);
       display.value = result.toString();
       currentExpression = result.toString();
       currentExpressionDisplay!.textContent = currentExpression;
