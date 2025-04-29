@@ -1,9 +1,9 @@
 // ... (Existing code)
-const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
-ceilButton.addEventListener('click', () => {
+const fixButton = document.getElementById('fix') as HTMLButtonElement;
+fixButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
-        const result = math.ceil(parseFloat(display.value));
+        const result = math.fix(parseFloat(display.value));
         display.value = result.toString();
     } catch (error) {
         display.value = 'Error';
