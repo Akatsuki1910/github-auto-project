@@ -9,6 +9,7 @@ const piButton = document.getElementById('pi') as HTMLButtonElement;
 const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
 const cuberootButton = document.getElementById('cuberoot') as HTMLButtonElement;
 const exponentButton = document.getElementById('exponent') as HTMLButtonElement;
+const absButton = document.getElementById('abs') as HTMLButtonElement;
 
 // ... (Other existing variables)
 
@@ -110,6 +111,18 @@ cuberootButton.addEventListener('click', () => {
 exponentButton.addEventListener('click', () => {
     currentExpression += '**';
     currentExpressionDisplay!.textContent = currentExpression;
+});
+
+absButton.addEventListener('click', () => {
+    try {
+      const currentValue = parseFloat(display.value);
+      const result = Math.abs(currentValue);
+      display.value = result.toString();
+      currentExpression = result.toString();
+      currentExpressionDisplay!.textContent = currentExpression;
+    } catch (error) {
+      display.value = 'Error';
+    }
 });
 
 const clearLastHistory = document.getElementById('clear-last-history') as HTMLButtonElement;
