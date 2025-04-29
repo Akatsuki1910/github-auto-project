@@ -1,9 +1,9 @@
 // ... (Existing code)
-const cubeButton = document.getElementById('cube') as HTMLButtonElement;
-cubeButton.addEventListener('click', () => {
+const reciprocalButton = document.getElementById('reciprocal') as HTMLButtonElement;
+reciprocalButton.addEventListener('click', () => {
     try {
         const currentValue = parseFloat(display.value);
-        const result = Math.pow(currentValue, 3);
+        const result = 1 / currentValue;
         display.value = result.toString();
         currentExpression = result.toString();
         currentExpressionDisplay!.textContent = currentExpression;
