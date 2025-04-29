@@ -1,6 +1,6 @@
 // ... (Existing code)
-const gcdButton = document.getElementById('gcd') as HTMLButtonElement;
-gcdButton.addEventListener('click', () => {
+const lcmButton = document.getElementById('lcm') as HTMLButtonElement;
+lcmButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
         const values = display.value.split(',').map(Number);
@@ -8,7 +8,7 @@ gcdButton.addEventListener('click', () => {
             display.value = 'Error: Enter at least two numbers separated by commas';
             return;
         }
-        const result = values.reduce((a, b) => math.gcd(a, b));
+        const result = values.reduce((a, b) => math.lcm(a, b));
         display.value = result.toString();
     } catch (error) {
         display.value = 'Error';
