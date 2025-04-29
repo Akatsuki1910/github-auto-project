@@ -1,9 +1,9 @@
 // ... (Existing code)
-const log2Button = document.getElementById('log2') as HTMLButtonElement;
-log2Button.addEventListener('click', () => {
+const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
+cbrtButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
-        const result = math.log2(parseFloat(display.value));
+        const result = math.cbrt(parseFloat(display.value));
         display.value = result.toString();
     } catch (error) {
         display.value = 'Error';
