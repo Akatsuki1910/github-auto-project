@@ -1,9 +1,9 @@
 // ... (Existing code)
-const tanButton = document.getElementById('tan') as HTMLButtonElement;
-tanButton.addEventListener('click', () => {
+const lnButton = document.getElementById('ln') as HTMLButtonElement;
+lnButton.addEventListener('click', () => {
     try {
         const currentValue = parseFloat(display.value);
-        const result = Math.tan(currentValue);
+        const result = Math.log(currentValue);
         display.value = result.toString();
         currentExpression = result.toString();
         currentExpressionDisplay!.textContent = currentExpression;
