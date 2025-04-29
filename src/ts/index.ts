@@ -24,7 +24,6 @@ memoryMinusButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     memoryValue -= parseFloat(display.value);
 });
-
 const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
 expm1Button.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
@@ -32,7 +31,18 @@ expm1Button.addEventListener('click', () => {
         const value = Number(display.value);
         const result = math.expm1(value);
         display.value = result.toString();
-    } catch (error) {
+    }
+    catch (error) {
+        display.value = 'Error';
+    }
+});
+const log2eButton = document.getElementById('log2e') as HTMLButtonElement;
+log2eButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    try {
+        display.value = math.log2(Math.E).toString();
+    }
+    catch (error) {
         display.value = 'Error';
     }
 });
