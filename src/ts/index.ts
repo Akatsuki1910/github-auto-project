@@ -1,12 +1,14 @@
 // ... (Existing code)
-const reciprocalButton = document.getElementById('reciprocal') as HTMLButtonElement;
-reciprocalButton.addEventListener('click', () => {
+const modButton = document.getElementById('mod') as HTMLButtonElement;
+modButton.addEventListener('click', () => {
     try {
         const currentValue = parseFloat(display.value);
-        const result = 1 / currentValue;
-        display.value = result.toString();
-        currentExpression = result.toString();
-        currentExpressionDisplay!.textContent = currentExpression;
+        if (currentExpression) {
+            const result = math.mod(parseFloat(currentExpression), currentValue);
+            display.value = result.toString();
+            currentExpression = result.toString();
+            currentExpressionDisplay!.textContent = currentExpression;
+        }
     } catch (error) {
         display.value = 'Error';
     }
