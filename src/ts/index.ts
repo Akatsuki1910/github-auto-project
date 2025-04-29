@@ -1,9 +1,9 @@
 // ... (Existing code)
-const halfButton = document.getElementById('half') as HTMLButtonElement;
-halfButton.addEventListener('click', () => {
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
+inverseButton.addEventListener('click', () => {
     try {
         const currentValue = parseFloat(display.value);
-        display.value = (currentValue / 2).toString();
+        display.value = (1 / currentValue).toString();
     } catch (error) {
         display.value = 'Error';
     }
