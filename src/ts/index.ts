@@ -12,6 +12,7 @@ const exponentButton = document.getElementById('exponent') as HTMLButtonElement;
 const absButton = document.getElementById('abs') as HTMLButtonElement;
 const floorButton = document.getElementById('floor') as HTMLButtonElement;
 const roundButton = document.getElementById('round') as HTMLButtonElement;
+const signButton = document.getElementById('sign') as HTMLButtonElement;
 
 // ... (Other existing variables)
 
@@ -148,6 +149,16 @@ roundButton.addEventListener('click', () => {
       currentExpressionDisplay!.textContent = currentExpression;
     } catch (error) {
       display.value = 'Error';
+    }
+});
+signButton?.addEventListener('click', () => {
+    try{
+        const currentValue = parseFloat(display.value);
+        display.value = (-currentValue).toString();
+        currentExpression = (-currentValue).toString();
+        currentExpressionDisplay!.textContent = currentExpression;    
+    }catch(error){
+        display.value = 'Error';
     }
 });
 
