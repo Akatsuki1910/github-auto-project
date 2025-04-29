@@ -1,9 +1,9 @@
 // ... (Existing code)
-const tripleButton = document.getElementById('triple') as HTMLButtonElement;
-tripleButton.addEventListener('click', () => {
+const halfButton = document.getElementById('half') as HTMLButtonElement;
+halfButton.addEventListener('click', () => {
     try {
         const currentValue = parseFloat(display.value);
-        display.value = (currentValue * 3).toString();
+        display.value = (currentValue / 2).toString();
     } catch (error) {
         display.value = 'Error';
     }
