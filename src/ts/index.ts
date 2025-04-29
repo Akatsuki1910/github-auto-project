@@ -1,9 +1,9 @@
 // ... (Existing code)
-const logButton = document.getElementById('log') as HTMLButtonElement;
-logButton.addEventListener('click', () => {
+const expButton = document.getElementById('exp') as HTMLButtonElement;
+expButton.addEventListener('click', () => {
     try {
         const currentValue = parseFloat(display.value);
-        const result = Math.log10(currentValue);
+        const result = Math.exp(currentValue);
         display.value = result.toString();
         currentExpression = result.toString();
         currentExpressionDisplay!.textContent = currentExpression;
