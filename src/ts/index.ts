@@ -48,4 +48,10 @@ const openNewWindowButton = document.getElementById('open-new-window') as HTMLBu
 openNewWindowButton.addEventListener('click', () => {
     window.open('https://www.example.com', '_blank');
 });
+//Clear expression display
+const clearExpressionButton = document.getElementById('clear-expression') as HTMLButtonElement;
+clearExpressionButton.addEventListener('click', () => {
+  const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
+  currentExpressionDisplay.textContent='';
+});
 // ... (Rest of the existing code)
