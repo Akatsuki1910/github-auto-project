@@ -1,13 +1,13 @@
 // ... (Existing code)
-const sixthRootButton = document.getElementById('sixth-root') as HTMLButtonElement;
-sixthRootButton.addEventListener('click', () => {
+const seventhRootButton = document.getElementById('seventh-root') as HTMLButtonElement;
+seventhRootButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
         const num = parseFloat(display.value);
         if (isNaN(num)) {
             throw new Error("Invalid number");
         }
-        display.value = Math.pow(num, 1/6).toString();
+        display.value = Math.pow(num, 1/7).toString();
     }
     catch (e) {
         display.value = "Invalid input";
