@@ -26,4 +26,9 @@ currentTimeButton.addEventListener('click',()=>{
   const currentTime = new Date().toLocaleTimeString();
   display.value = currentTime;
 });
+//Added Exit Button Functionality
+const exitButton = document.getElementById('exit') as HTMLButtonElement;
+exitButton.addEventListener('click', () => {
+  window.close();
+});
 // ... (Rest of the existing code)
