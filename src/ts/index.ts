@@ -1,11 +1,6 @@
 // ... (Existing code)
-const modButton = document.getElementById('mod') as HTMLButtonElement;
-modButton.addEventListener('click', () => {
-    try {
-        const currentValue = parseFloat(display.value);
-        display.value = (currentValue % 1).toString();
-    } catch (e) {
-        display.value = "Invalid input";
-    }
+const randomButton = document.getElementById('random') as HTMLButtonElement;
+randomButton.addEventListener('click', () => {
+    display.value = Math.random().toString();
 });
 // ... (Rest of existing code)
