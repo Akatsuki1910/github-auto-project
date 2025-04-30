@@ -1,30 +1,21 @@
 // ... (Existing code)
-const calculateExpressionButton = document.getElementById('calculate-expression') as HTMLButtonElement;
+const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
+const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+let historyArr:string[] = [];
+const display = document.getElementById('display') as HTMLInputElement;
+clearHistoryButton.addEventListener('click', () => {
+    historyArr = [];
+    historyDisplay.innerHTML = '';
+});
 calculateExpressionButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
-        display.value = math.evaluate(display.value).toString();
+        const result = math.evaluate(display.value).toString();
+        display.value = result;
+        historyArr.push(display.value);
+        historyDisplay.innerHTML = historyArr.join('<br>');
     } catch (e) {
         display.value = "Invalid expression";
     }
-});
-const clearLastAnswerButton = document.getElementById('clear-last-answer') as HTMLButtonElement;
-let lastAnswer = '';
-clearLastAnswerButton.addEventListener('click', () => {
-    lastAnswer = '';
-});
-const lastExpressionButton = document.getElementById('last-expression') as HTMLButtonElement;
-let lastExpression = '';
-const display = document.getElementById('display') as HTMLInputElement;
-calculateExpressionButton.addEventListener('click',()=>{
- lastExpression = display.value;
-})
-lastExpressionButton.addEventListener('click', () => {
-    display.value = lastExpression;
-});
-const clearHistoryDisplayButton = document.getElementById('clear-history-display') as HTMLButtonElement;
-const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
-clearHistoryDisplayButton.addEventListener('click', () => {
-  historyDisplay.innerHTML = '';
 });
 // ... (Rest of existing code)
