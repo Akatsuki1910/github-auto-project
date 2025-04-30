@@ -22,4 +22,9 @@ calculateExpressionButton.addEventListener('click',()=>{
 lastExpressionButton.addEventListener('click', () => {
     display.value = lastExpression;
 });
+const clearHistoryDisplayButton = document.getElementById('clear-history-display') as HTMLButtonElement;
+const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
+clearHistoryDisplayButton.addEventListener('click', () => {
+  historyDisplay.innerHTML = '';
+});
 // ... (Rest of existing code)
