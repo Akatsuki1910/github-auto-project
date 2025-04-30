@@ -1,18 +1,21 @@
 // ... (Existing code)
-const randomButton = document.getElementById('random') as HTMLButtonElement;
-randomButton.addEventListener('click', () => {
-    display.value = Math.random().toString();
-});
-const integerDivisionButton = document.getElementById('integer-division') as HTMLButtonElement;
-integerDivisionButton.addEventListener('click', () => {
-  const currentValue = display.value;
-  if (currentValue) {
-    try {
-      const result = math.evaluate(currentValue + ' // 2');
-      display.value = result.toString();
-    } catch (error) {
-      display.value = 'Error';
+const gcdButton = document.getElementById('gcd') as HTMLButtonElement;
+gcdButton.addEventListener('click', () => {
+    const currentValue = display.value;
+    if (currentValue) {
+        try {
+            const numbers = currentValue.split(',').map(Number);
+            if (numbers.length === 2) {
+                const result = math.gcd(numbers[0], numbers[1]);
+                display.value = result.toString();
+            }
+            else {
+                display.value = 'Error: Enter two numbers separated by a comma.';
+            }
+        }
+        catch (error) {
+            display.value = 'Error';
+        }
     }
-  }
 });
 // ... (Rest of existing code)
