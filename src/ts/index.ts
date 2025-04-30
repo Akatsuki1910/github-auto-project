@@ -1,9 +1,9 @@
 // ... (Existing code)
-const logButton = document.getElementById('log') as HTMLButtonElement;
-logButton.addEventListener('click', () => {
+const lnButton = document.getElementById('ln') as HTMLButtonElement;
+lnButton.addEventListener('click', () => {
     try {
         const currentValue = parseFloat(display.value);
-        display.value = Math.log10(currentValue).toString();
+        display.value = Math.log(currentValue).toString();
     } catch (e) {
         display.value = "Invalid input";
     }
