@@ -1,10 +1,7 @@
 // ... (Existing code)
-const swapButton = document.getElementById('swap') as HTMLButtonElement;
-swapButton.addEventListener('click', () => {
+const dropButton = document.getElementById('drop') as HTMLButtonElement;
+dropButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    if (display.value.length >= 2) {
-        const swappedValue = display.value.slice(-2) + display.value.slice(0, -2);
-        display.value = swappedValue;
-    }
+    display.value = display.value.slice(0, -1);
 });
 // ... (Rest of the existing code)
