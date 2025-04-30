@@ -54,4 +54,10 @@ clearExpressionButton.addEventListener('click', () => {
   const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
   currentExpressionDisplay.textContent='';
 });
+//Insert x + y into display
+const insertExpressionButton = document.getElementById('insert-expression') as HTMLButtonElement;
+insertExpressionButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value += 'x + y';
+});
 // ... (Rest of the existing code)
