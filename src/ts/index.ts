@@ -1,13 +1,9 @@
 // ... (Existing code)
-const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
-inverseButton.addEventListener('click', () => {
+const cubeButton = document.getElementById('cube') as HTMLButtonElement;
+cubeButton.addEventListener('click', () => {
     try {
         const currentValue = parseFloat(display.value);
-        if (currentValue === 0) {
-            display.value = "Cannot divide by zero";
-        } else {
-            display.value = (1 / currentValue).toString();
-        }
+        display.value = Math.pow(currentValue, 3).toString();
     } catch (e) {
         display.value = "Invalid input";
     }
