@@ -43,4 +43,9 @@ deleteLastCharButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value = display.value.slice(0, -1);
 });
+//Open a new window button
+const openNewWindowButton = document.getElementById('open-new-window') as HTMLButtonElement;
+openNewWindowButton.addEventListener('click', () => {
+    window.open('https://www.example.com', '_blank');
+});
 // ... (Rest of the existing code)
