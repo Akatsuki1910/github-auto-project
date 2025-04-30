@@ -1,12 +1,12 @@
 // ... (Existing code)
-const gcdButton = document.getElementById('gcd') as HTMLButtonElement;
-gcdButton.addEventListener('click', () => {
+const lcmButton = document.getElementById('lcm') as HTMLButtonElement;
+lcmButton.addEventListener('click', () => {
     const currentValue = display.value;
     if (currentValue) {
         try {
             const numbers = currentValue.split(',').map(Number);
             if (numbers.length === 2) {
-                const result = math.gcd(numbers[0], numbers[1]);
+                const result = math.lcm(numbers[0], numbers[1]);
                 display.value = result.toString();
             }
             else {
