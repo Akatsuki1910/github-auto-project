@@ -8,4 +8,9 @@ calculateExpressionButton.addEventListener('click', () => {
         display.value = "Invalid expression";
     }
 });
+const clearLastAnswerButton = document.getElementById('clear-last-answer') as HTMLButtonElement;
+let lastAnswer = '';
+clearLastAnswerButton.addEventListener('click', () => {
+    lastAnswer = '';
+});
 // ... (Rest of existing code)
