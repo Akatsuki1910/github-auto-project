@@ -37,4 +37,10 @@ debugButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     console.log("Current display value:", display.value);
 });
+//Added delete last character button
+const deleteLastCharButton = document.getElementById('delete-last-char') as HTMLButtonElement;
+deleteLastCharButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = display.value.slice(0, -1);
+});
 // ... (Rest of the existing code)
