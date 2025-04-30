@@ -13,4 +13,13 @@ let lastAnswer = '';
 clearLastAnswerButton.addEventListener('click', () => {
     lastAnswer = '';
 });
+const lastExpressionButton = document.getElementById('last-expression') as HTMLButtonElement;
+let lastExpression = '';
+const display = document.getElementById('display') as HTMLInputElement;
+calculateExpressionButton.addEventListener('click',()=>{
+ lastExpression = display.value;
+})
+lastExpressionButton.addEventListener('click', () => {
+    display.value = lastExpression;
+});
 // ... (Rest of existing code)
