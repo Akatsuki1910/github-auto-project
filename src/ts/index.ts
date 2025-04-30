@@ -4,6 +4,7 @@ const clearLastHistoryButton = document.getElementById('clear-last-history') as 
 const historyDisplay = document.getElementById('history-display') as HTMLDivElement;
 let historyArr:string[] = [];
 const display = document.getElementById('display') as HTMLInputElement;
+const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
 clearHistoryButton.addEventListener('click', () => {
     historyArr = [];
     historyDisplay.innerHTML = '';
@@ -13,7 +14,6 @@ clearLastHistoryButton.addEventListener('click', () => {
     historyDisplay.innerHTML = historyArr.join('<br>');
 });
 calculateExpressionButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
     try {
         const result = math.evaluate(display.value).toString();
         display.value = result;
@@ -21,6 +21,11 @@ calculateExpressionButton.addEventListener('click', () => {
         historyDisplay.innerHTML = historyArr.join('<br>');
     } catch (e) {
         display.value = "Invalid expression";
+    }
+});
+duplicateButton.addEventListener('click', () => {
+    if (historyArr.length > 0) {
+        display.value = historyArr[historyArr.length - 1];
     }
 });
 // ... (Rest of existing code)
