@@ -60,4 +60,16 @@ insertExpressionButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     display.value += 'x + y';
 });
+//Squared Root Button
+const squaredRootButton = document.getElementById('squared-root') as HTMLButtonElement;
+squaredRootButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    try{
+    	const result = math.sqrt(parseFloat(display.value));
+	display.value = result.toString();
+    }catch(e){
+	console.error("Invalid input for squared root:",e);
+	display.value = "Invalid input";
+    }
+});
 // ... (Rest of the existing code)
