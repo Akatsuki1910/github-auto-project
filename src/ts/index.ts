@@ -31,4 +31,10 @@ const exitButton = document.getElementById('exit') as HTMLButtonElement;
 exitButton.addEventListener('click', () => {
   window.close();
 });
+//Added debug button to log display value to console
+const debugButton = document.getElementById('debug') as HTMLButtonElement;
+debugButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    console.log("Current display value:", display.value);
+});
 // ... (Rest of the existing code)
