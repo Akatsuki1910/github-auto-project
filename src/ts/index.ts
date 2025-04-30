@@ -72,4 +72,16 @@ squaredRootButton.addEventListener('click', () => {
 	display.value = "Invalid input";
     }
 });
+//Cubed Functionality
+const cubedButton = document.getElementById('cubed') as HTMLButtonElement;
+cubedButton.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  try {
+    const result = Math.pow(parseFloat(display.value), 3);
+    display.value = result.toString();
+  } catch (e) {
+    console.error("Invalid input for cubed:", e);
+    display.value = "Invalid input";
+  }
+});
 // ... (Rest of the existing code)
