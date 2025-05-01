@@ -22,4 +22,11 @@ memoryAddButton.addEventListener('click', () => {
         memoryValue += currentValue;
     }
 });
+const memorySubtractButton = document.getElementById('memory-subtract') as HTMLButtonElement;
+memorySubtractButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        memoryValue -= currentValue;
+    }
+});
 // ... (Rest of existing code)
