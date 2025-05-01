@@ -1,9 +1,18 @@
 // ... (Existing code)
-const flipSignButton = document.getElementById('flip-sign') as HTMLButtonElement;
-flipSignButton.addEventListener('click', () => {
+const memoryStoreButton = document.getElementById('memory-store') as HTMLButtonElement;
+let memoryValue = 0;
+memoryStoreButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = (-currentValue).toString();
+        memoryValue = currentValue;
     }
+});
+const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
+memoryRecallButton.addEventListener('click', () => {
+    display.value = memoryValue.toString();
+});
+const memoryClearButton = document.getElementById('memory-clear') as HTMLButtonElement;
+memoryClearButton.addEventListener('click', () => {
+    memoryValue = 0;
 });
 // ... (Rest of existing code)
