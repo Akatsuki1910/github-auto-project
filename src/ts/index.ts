@@ -1,4 +1,11 @@
 // ... (Existing code)
+const changeSignButton = document.getElementById('change-sign') as HTMLButtonElement;
+changeSignButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (-currentValue).toString();
+    }
+});
 const memoryStoreButton = document.getElementById('memory-store') as HTMLButtonElement;
 let memoryValue = 0;
 memoryStoreButton.addEventListener('click', () => {
