@@ -1,11 +1,10 @@
 // ... (Existing code)
-const calculateVolumeOfCuboidButton = document.getElementById('calculate-volume-of-cuboid') as HTMLButtonElement;
-calculateVolumeOfCuboidButton.addEventListener('click', () => {
-    const length = parseFloat(prompt('Enter length:'));
-    const width = parseFloat(prompt('Enter width:'));
-    const height = parseFloat(prompt('Enter height:'));
-    if (!isNaN(length) && !isNaN(width) && !isNaN(height)) {
-        const volume = length * width * height;
+const calculateVolumeOfPrismButton = document.getElementById('calculate-volume-of-prism') as HTMLButtonElement;
+calculateVolumeOfPrismButton.addEventListener('click', () => {
+    const baseArea = parseFloat(prompt('Enter base area:') || '0');
+    const height = parseFloat(prompt('Enter height:') || '0');
+    if (!isNaN(baseArea) && !isNaN(height)) {
+        const volume = baseArea * height;
         display.value = volume.toString();
     }
 });
