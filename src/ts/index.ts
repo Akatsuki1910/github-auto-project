@@ -1,10 +1,11 @@
 // ... (Existing code)
-const calculateCircumferenceOfCircleButton = document.getElementById('calculate-circumference-of-circle') as HTMLButtonElement;
-calculateCircumferenceOfCircleButton.addEventListener('click', () => {
-    const radius = parseFloat(display.value);
-    if (!isNaN(radius)) {
-        const circumference = 2 * Math.PI * radius;
-        display.value = circumference.toString();
+const calculateAreaOfRectangleButton = document.getElementById('calculate-area-of-rectangle') as HTMLButtonElement;
+calculateAreaOfRectangleButton.addEventListener('click', () => {
+    const length = parseFloat(prompt('Enter length:'));
+    const width = parseFloat(prompt('Enter width:'));
+    if (!isNaN(length) && !isNaN(width)) {
+        const area = length * width;
+        display.value = area.toString();
     }
 });
 // ... (Rest of existing code)
