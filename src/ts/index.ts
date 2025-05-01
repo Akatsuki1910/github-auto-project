@@ -41,4 +41,11 @@ mrcButton.addEventListener('click', () => {
     display.value = memoryValue.toString();
     memoryValue = 0;
 });
+const powerOfTenButton = document.getElementById('power_of_ten') as HTMLButtonElement;
+powerOfTenButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.pow(10, currentValue).toString();
+    }
+});
 // ... (Rest of existing code)
