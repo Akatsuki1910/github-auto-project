@@ -1,9 +1,9 @@
 // ... (Existing code)
-const truncButton = document.getElementById('trunc') as HTMLButtonElement;
-truncButton.addEventListener('click', () => {
+const signChangeButton = document.getElementById('sign-change') as HTMLButtonElement;
+signChangeButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.trunc(currentValue).toString();
+        display.value = (-currentValue).toString();
     }
 });
 // ... (Rest of existing code)
