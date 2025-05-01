@@ -1,17 +1,11 @@
 // ... (Existing code)
-const lcmButton = document.getElementById('lcm') as HTMLButtonElement;
-lcmButton.addEventListener('click', () => {
+const powerOfTwoButton = document.getElementById('power_of_two') as HTMLButtonElement;
+powerOfTwoButton.addEventListener('click', () => {
     const currentValue = display.value;
     if (currentValue) {
         try {
-            const numbers = currentValue.split(',').map(Number);
-            if (numbers.length === 2) {
-                const result = math.lcm(numbers[0], numbers[1]);
-                display.value = result.toString();
-            }
-            else {
-                display.value = 'Error: Enter two numbers separated by a comma.';
-            }
+            const result = math.pow(2, Number(currentValue));
+            display.value = result.toString();
         }
         catch (error) {
             display.value = 'Error';
