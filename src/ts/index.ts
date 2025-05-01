@@ -1,51 +1,9 @@
 // ... (Existing code)
-const changeSignButton = document.getElementById('change-sign') as HTMLButtonElement;
-changeSignButton.addEventListener('click', () => {
+const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
+expm1Button.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = (-currentValue).toString();
-    }
-});
-const memoryStoreButton = document.getElementById('memory-store') as HTMLButtonElement;
-let memoryValue = 0;
-memoryStoreButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        memoryValue = currentValue;
-    }
-});
-const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
-memoryRecallButton.addEventListener('click', () => {
-    display.value = memoryValue.toString();
-});
-const memoryClearButton = document.getElementById('memory-clear') as HTMLButtonElement;
-memoryClearButton.addEventListener('click', () => {
-    memoryValue = 0;
-});
-const memoryAddButton = document.getElementById('memory-add') as HTMLButtonElement;
-memoryAddButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        memoryValue += currentValue;
-    }
-});
-const memorySubtractButton = document.getElementById('memory-subtract') as HTMLButtonElement;
-memorySubtractButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        memoryValue -= currentValue;
-    }
-});
-const mrcButton = document.getElementById('mrc') as HTMLButtonElement;
-mrcButton.addEventListener('click', () => {
-    display.value = memoryValue.toString();
-    memoryValue = 0;
-});
-const powerOfTenButton = document.getElementById('power_of_ten') as HTMLButtonElement;
-powerOfTenButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.pow(10, currentValue).toString();
+        display.value = Math.expm1(currentValue).toString();
     }
 });
 // ... (Rest of existing code)
