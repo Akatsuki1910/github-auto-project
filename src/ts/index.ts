@@ -10,4 +10,14 @@ calculatePowerButton.addEventListener('click', () => {
         display.value = "Invalid input";
     }
 });
+const calculateLog10Button = document.getElementById('calculate-log10') as HTMLButtonElement;
+calculateLog10Button.addEventListener('click', () => {
+    const value = parseFloat(prompt('Enter value for log10:') || '0');
+    if (!isNaN(value)) {
+        display.value = Math.log10(value).toString();
+    }
+    else {
+        display.value = "Invalid input";
+    }
+});
 // ... (Rest of existing code)
