@@ -1,10 +1,9 @@
 // ... (Existing code)
-const calculateAreaOfTriangleButton = document.getElementById('calculate-area-of-triangle') as HTMLButtonElement;
-calculateAreaOfTriangleButton.addEventListener('click', () => {
-    const base = parseFloat(prompt('Enter base:'));
-    const height = parseFloat(prompt('Enter height:'));
-    if (!isNaN(base) && !isNaN(height)) {
-        const area = 0.5 * base * height;
+const calculateAreaOfSquareButton = document.getElementById('calculate-area-of-square') as HTMLButtonElement;
+calculateAreaOfSquareButton.addEventListener('click', () => {
+    const side = parseFloat(prompt('Enter side length:'));
+    if (!isNaN(side)) {
+        const area = side * side;
         display.value = area.toString();
     }
 });
