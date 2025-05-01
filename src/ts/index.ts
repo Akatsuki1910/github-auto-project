@@ -1,4 +1,11 @@
 // ... (Existing code)
+const squaredNegativeButton = document.getElementById('squared_negative') as HTMLButtonElement;
+squaredNegativeButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = (-Math.pow(currentValue,2)).toString();
+    }
+});
 const tripleButton = document.getElementById('triple') as HTMLButtonElement;
 tripleButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
