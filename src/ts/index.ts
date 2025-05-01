@@ -30,4 +30,14 @@ calculateLog2Button.addEventListener('click', () => {
         display.value = "Invalid input";
     }
 });
+const calculateNaturalLogButton = document.getElementById('calculate-natural-log') as HTMLButtonElement;
+calculateNaturalLogButton.addEventListener('click', () => {
+    const value = parseFloat(prompt('Enter value for ln:') || '0');
+    if (!isNaN(value)) {
+        display.value = Math.log(value).toString();
+    }
+    else {
+        display.value = "Invalid input";
+    }
+});
 // ... (Rest of existing code)
