@@ -15,4 +15,11 @@ const memoryClearButton = document.getElementById('memory-clear') as HTMLButtonE
 memoryClearButton.addEventListener('click', () => {
     memoryValue = 0;
 });
+const memoryAddButton = document.getElementById('memory-add') as HTMLButtonElement;
+memoryAddButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        memoryValue += currentValue;
+    }
+});
 // ... (Rest of existing code)
