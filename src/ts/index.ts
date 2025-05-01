@@ -65,4 +65,13 @@ calculatePermutationButton.addEventListener('click', () => {
         display.value = "Invalid input";
     }
 });
+const calculateAbsoluteButton = document.getElementById('calculate-absolute') as HTMLButtonElement;
+calculateAbsoluteButton.addEventListener('click', () => {
+  const num = parseFloat(prompt('Enter a number:') || '0');
+  if (!isNaN(num)) {
+    display.value = Math.abs(num).toString();
+  } else {
+    display.value = "Invalid input";
+  }
+});
 // ... (Rest of existing code)
