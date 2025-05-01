@@ -26,7 +26,8 @@ calculatePrimeButton.addEventListener('click', () => {
             }
         }
         display.value = isPrime ? 'Prime' : 'Not Prime';
-    } else {
+    }
+    else {
         display.value = 'Invalid input';
     }
 });
@@ -34,16 +35,34 @@ const calculateCombinationButton = document.getElementById('calculate-nCr') as H
 calculateCombinationButton.addEventListener('click', () => {
     const n = parseInt(prompt('Enter n:') || '0');
     const r = parseInt(prompt('Enter r:') || '0');
-    if (!isNaN(n) && !isNaN(r) && n >= r && r >=0) {
-      const fact = (num) => {
-          let res = 1;
-          for (let i = 2; i <= num; i++)
-              res = res * i;
-          return res;
-      }
-      display.value = (fact(n) / (fact(r) * fact(n - r))).toString();
-    } else {
-      display.value = "Invalid input";
+    if (!isNaN(n) && !isNaN(r) && n >= r && r >= 0) {
+        const fact = (num) => {
+            let res = 1;
+            for (let i = 2; i <= num; i++)
+                res = res * i;
+            return res;
+        };
+        display.value = (fact(n) / (fact(r) * fact(n - r))).toString();
+    }
+    else {
+        display.value = "Invalid input";
+    }
+});
+const calculatePermutationButton = document.getElementById('calculate-nPr') as HTMLButtonElement;
+calculatePermutationButton.addEventListener('click', () => {
+    const n = parseInt(prompt('Enter n:') || '0');
+    const r = parseInt(prompt('Enter r:') || '0');
+    if (!isNaN(n) && !isNaN(r) && n >= r && r >= 0) {
+        const fact = (num) => {
+            let res = 1;
+            for (let i = 2; i <= num; i++)
+                res = res * i;
+            return res;
+        };
+        display.value = (fact(n) / fact(n - r)).toString();
+    }
+    else {
+        display.value = "Invalid input";
     }
 });
 // ... (Rest of existing code)
