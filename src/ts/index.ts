@@ -29,4 +29,9 @@ memorySubtractButton.addEventListener('click', () => {
         memoryValue -= currentValue;
     }
 });
+const mrcButton = document.getElementById('mrc') as HTMLButtonElement;
+mrcButton.addEventListener('click', () => {
+    display.value = memoryValue.toString();
+    memoryValue = 0;
+});
 // ... (Rest of existing code)
