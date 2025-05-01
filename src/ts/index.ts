@@ -1,9 +1,9 @@
 // ... (Existing code)
-const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
-cbrtButton.addEventListener('click', () => {
+const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
+ceilButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.cbrt(currentValue).toString();
+        display.value = Math.ceil(currentValue).toString();
     }
 });
 // ... (Rest of existing code)
