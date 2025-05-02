@@ -1,9 +1,9 @@
 // ... (Existing code)
-const asinButton = document.getElementById('asin') as HTMLButtonElement;
-asinButton.addEventListener('click', () => {
+const acosButton = document.getElementById('acos') as HTMLButtonElement;
+acosButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.asin(currentValue).toString();
+        display.value = Math.acos(currentValue).toString();
     }
 });
 // ... (Rest of existing code)
