@@ -1,9 +1,9 @@
 // ... (Existing code)
-const calculateSeventhRootButton = document.getElementById('calculate-seventh-root') as HTMLButtonElement;
-calculateSeventhRootButton.addEventListener('click', () => {
-    const value = parseFloat(prompt('Enter value for x⅐:') || '0');
+const calculateEighthRootButton = document.getElementById('calculate-eighth-root') as HTMLButtonElement;
+calculateEighthRootButton.addEventListener('click', () => {
+    const value = parseFloat(prompt('Enter value for x⅛:') || '0');
     if (!isNaN(value)) {
-        display.value = Math.pow(value, 1/7).toString();
+        display.value = Math.pow(value, 1/8).toString();
     }
     else {
         display.value = "Invalid input";
