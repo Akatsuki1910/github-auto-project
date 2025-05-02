@@ -1,9 +1,9 @@
 // ... (Existing code)
-const lnButton = document.getElementById('ln') as HTMLButtonElement;
-lnButton.addEventListener('click', () => {
+const expButton = document.getElementById('exp') as HTMLButtonElement;
+expButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.log(currentValue).toString();
+        display.value = Math.exp(currentValue).toString();
     }
     else {
         display.value = 'Invalid Input';
