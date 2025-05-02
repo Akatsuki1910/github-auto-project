@@ -1,9 +1,9 @@
 // ... (Existing code)
-const powerOfTwoButton = document.getElementById('powerOfTwo') as HTMLButtonElement;
-powerOfTwoButton.addEventListener('click', () => {
+const sinButton = document.getElementById('sin') as HTMLButtonElement;
+sinButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.pow(2, currentValue).toString();
+        display.value = Math.sin(currentValue).toString();
     }
 });
 // ... (Rest of existing code)
