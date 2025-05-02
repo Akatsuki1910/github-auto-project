@@ -1,6 +1,6 @@
 // ... (Existing code)
-const eButton = document.getElementById('e') as HTMLButtonElement;
-eButton.addEventListener('click', () => {
-    display.value = Math.E.toString();
+const randomButton = document.getElementById('random') as HTMLButtonElement;
+randomButton.addEventListener('click', () => {
+    display.value = Math.random().toString();
 });
 // ... (Rest of existing code)
