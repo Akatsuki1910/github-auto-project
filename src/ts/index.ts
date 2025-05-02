@@ -24,4 +24,14 @@ tenPowerButton.addEventListener('click', () => {
         display.value = 'Invalid Input';
     }
 });
+const logButton = document.getElementById('log') as HTMLButtonElement;
+logButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.log10(currentValue).toString();
+    }
+    else {
+        display.value = 'Invalid Input';
+    }
+});
 // ... (Rest of existing code)
