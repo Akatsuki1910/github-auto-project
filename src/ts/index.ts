@@ -1,9 +1,9 @@
 // ... (Existing code)
-const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
-ceilButton.addEventListener('click', () => {
+const toFixedButton = document.getElementById('toFixed') as HTMLButtonElement;
+toFixedButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.ceil(currentValue).toString();
+        display.value = currentValue.toFixed(2);
     }
     else {
         display.value = 'Invalid Input';
