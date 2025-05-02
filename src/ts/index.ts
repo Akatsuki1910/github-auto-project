@@ -22,4 +22,19 @@ calculateAverageButton.addEventListener('click', () => {
         display.value = 'Invalid input';
     }
 });
+const calculateMedianButton = document.getElementById('calculate-median') as HTMLButtonElement;
+calculateMedianButton.addEventListener('click', () => {
+  const input = prompt('Enter numbers separated by commas:') || '';
+  const numbers = input.split(',').map(Number).filter(n => !isNaN(n)).sort((a, b) => a - b);
+  if (numbers.length > 0) {
+    const mid = Math.floor(numbers.length / 2);
+    if (numbers.length % 2 === 0) {
+      display.value = ((numbers[mid - 1] + numbers[mid]) / 2).toString();
+    } else {
+      display.value = numbers[mid].toString();
+    }
+  } else {
+    display.value = 'Invalid input';
+  }
+});
 // ... (Rest of existing code)
