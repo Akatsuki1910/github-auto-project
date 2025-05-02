@@ -1,20 +1,16 @@
 // ... (Existing code)
-const calculateProductButton = document.getElementById('calculate-product') as HTMLButtonElement;
-calculateProductButton.addEventListener('click', () => {
-    const input = prompt('Enter numbers separated by commas:') || '';
-    const numbers = input.split(',').map(Number).filter(n => !isNaN(n));
-    if (numbers.length > 0) {
-        display.value = numbers.reduce((product, num) => product * num, 1).toString();
+const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
+factorialButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue) && currentValue >= 0 && Number.isInteger(currentValue)) {
+        let result = 1;
+        for (let i = 1; i <= currentValue; i++) {
+            result *= i;
+        }
+        display.value = result.toString();
     }
     else {
         display.value = 'Invalid input';
-    }
-});
-const cubeButton = document.getElementById('cube') as HTMLButtonElement;
-cubeButton.addEventListener('click', () => {
-    const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.pow(currentValue, 3).toString();
     }
 });
 // ... (Rest of existing code)
