@@ -10,4 +10,11 @@ calculateProductButton.addEventListener('click', () => {
         display.value = 'Invalid input';
     }
 });
+const cubeButton = document.getElementById('cube') as HTMLButtonElement;
+cubeButton.addEventListener('click', () => {
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.pow(currentValue, 3).toString();
+    }
+});
 // ... (Rest of existing code)
