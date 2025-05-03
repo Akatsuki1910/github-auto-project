@@ -7,3 +7,12 @@
 #display.large-font {
     font-size: 2.5rem;
 }
+
+body.dark-scheme {
+    background-color: #333;
+    color: #eee;
+}
+body.light-scheme {
+    background-color: #eee;
+    color: #333;
+}
