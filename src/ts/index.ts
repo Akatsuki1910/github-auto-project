@@ -21,4 +21,9 @@ const mcButton = document.getElementById('mc') as HTMLButtonElement;
 mcButton.addEventListener('click', () => {
     memoryRecallValue = 0;
 });
+const mmultiplyButton = document.getElementById('m-multiply') as HTMLButtonElement;
+mmultiplyButton.addEventListener('click', () => {
+    memoryRecallValue *= parseFloat(display.value);
+    display.value = memoryRecallValue.toString();
+});
 // ... (Rest of existing code)
