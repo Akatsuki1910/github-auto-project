@@ -17,4 +17,8 @@ msButton.addEventListener('click', () => {
 mrButton.addEventListener('click', () => {
     display.value = memoryRecallValue.toString();
 });
+const mcButton = document.getElementById('mc') as HTMLButtonElement;
+mcButton.addEventListener('click', () => {
+    memoryRecallValue = 0;
+});
 // ... (Rest of existing code)
