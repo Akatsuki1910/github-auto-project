@@ -48,4 +48,14 @@ logButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+const expButton = document.getElementById('exp') as HTMLButtonElement;
+expButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    try {
+        const result = math.exp(parseFloat(display.value));
+        display.value = result.toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
 // ... (Rest of existing code)
