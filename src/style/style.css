@@ -1,13 +1,1 @@
 /* ... (Existing styles) */
-.main-pad {
-display: grid;
-grid-template-columns: repeat(4, 1fr);
-gap: 5px;
-}
-.main-pad button {
-padding: 10px;
-font-size: 1.2rem;
-border: 1px solid #ccc;
-border-radius: 5px;
-cursor: pointer;
-}
