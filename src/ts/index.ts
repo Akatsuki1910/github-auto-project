@@ -1,13 +1,17 @@
 // ... (Existing code)
-const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
-inverseButton.addEventListener('click', () => {
+let memoryRecallValue: number | null = null;
+const mrcButton = document.getElementById('mrc') as HTMLButtonElement;
+mrcButton.addEventListener('click', () => {
+    if (memoryRecallValue !== null) {
+        display.value = memoryRecallValue.toString();
+    }
+});
+const equalsButton = document.getElementById('equals') as HTMLButtonElement;
+equalsButton.addEventListener('click', () => {
     try {
-        const currentValue = parseFloat(display.value);
-        if (currentValue === 0) {
-            display.value = "Cannot divide by zero";
-        } else {
-            display.value = (1 / currentValue).toString();
-        }
+        const result = math.evaluate(display.value);
+        display.value = result.toString();
+        memoryRecallValue = result; // Store the result for MRC
     } catch (error) {
         display.value = "Invalid input";
     }
