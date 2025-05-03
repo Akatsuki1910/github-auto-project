@@ -27,4 +27,13 @@ signButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+const tenToThePowerButton = document.getElementById('ten-to-the-power') as HTMLButtonElement;
+tenToThePowerButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    try {
+        display.value = Math.pow(10, parseFloat(display.value)).toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
 // ... (Rest of existing code)
