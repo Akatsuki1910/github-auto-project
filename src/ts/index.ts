@@ -1,9 +1,11 @@
 // ... (Existing code)
-const asinhButton = document.getElementById('asinh') as HTMLButtonElement;
-asinhButton.addEventListener('click', () => {
+const acoshButton = document.getElementById('acosh') as HTMLButtonElement;
+acoshButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue)) {
-        display.value = Math.asinh(currentValue).toString();
+    if (!isNaN(currentValue) && currentValue >= 1) {
+        display.value = Math.acosh(currentValue).toString();
+    } else {
+        display.value = "Error: Input must be >= 1";
     }
 });
 // ... (Rest of existing code)
