@@ -8,12 +8,12 @@ toggleKeypadButton.addEventListener('click', () => {
         mainPad.style.display = 'none';
     }
 });
-// ... (Existing sin, cos, tan, log, exp, pow, abs button logic)
-const roundButton = document.getElementById('round') as HTMLButtonElement;
-roundButton.addEventListener('click', () => {
+// ... (Existing sin, cos, tan, log, exp, pow, abs, round button logic)
+const cuberootButton = document.getElementById('cuberoot') as HTMLButtonElement;
+cuberootButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
-        display.value = Math.round(parseFloat(display.value)).toString();
+        display.value = Math.cbrt(parseFloat(display.value)).toString();
     } catch (error) {
         display.value = 'Error';
     }
