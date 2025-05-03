@@ -9,6 +9,11 @@ toggleKeypadButton.addEventListener('click', () => {
     }
 });
 const mrButton = document.getElementById('mr') as HTMLButtonElement;
+let memoryRecallValue = 0;
+const msButton = document.getElementById('ms') as HTMLButtonElement;
+msButton.addEventListener('click', () => {
+    memoryRecallValue = parseFloat(display.value);
+});
 mrButton.addEventListener('click', () => {
     display.value = memoryRecallValue.toString();
 });
