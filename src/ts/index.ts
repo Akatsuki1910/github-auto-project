@@ -19,4 +19,13 @@ toggleColorSchemeButton.addEventListener('click', () => {
         bodyElement.classList.add('dark-scheme');
     }
 });
+const toggleHistoryDisplayButton = document.getElementById('toggle-history-display') as HTMLButtonElement;
+const historyDisplayElement = document.getElementById('history-display') as HTMLDivElement;
+toggleHistoryDisplayButton.addEventListener('click', () => {
+    if (historyDisplayElement.style.display === 'none') {
+        historyDisplayElement.style.display = 'block';
+    } else {
+        historyDisplayElement.style.display = 'none';
+    }
+});
 // ... (Rest of existing code)
