@@ -18,4 +18,13 @@ cuberootButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+const signButton = document.getElementById('sign') as HTMLButtonElement;
+signButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    try {
+        display.value = Math.sign(parseFloat(display.value)).toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
 // ... (Rest of existing code)
