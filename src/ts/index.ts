@@ -1,7 +1,8 @@
 // ... (Existing code)
-const ceilButton = document.getElementById('ceil') as HTMLButtonElement;
-ceilButton.addEventListener('click', () => {
+const toFixedButton = document.getElementById('toFixed') as HTMLButtonElement;
+toFixedButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    display.value = Math.ceil(Number(display.value)).toString();
+    const fixedNum = Number(display.value).toFixed(2);
+    display.value = fixedNum;
 });
 // ... (Rest of existing code)
