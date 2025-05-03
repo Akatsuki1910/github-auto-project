@@ -26,4 +26,9 @@ mmultiplyButton.addEventListener('click', () => {
     memoryRecallValue *= parseFloat(display.value);
     display.value = memoryRecallValue.toString();
 });
+const mdivideButton = document.getElementById('m-divide') as HTMLButtonElement;
+mdivideButton.addEventListener('click', () => {
+    memoryRecallValue /= parseFloat(display.value);
+    display.value = memoryRecallValue.toString();
+});
 // ... (Rest of existing code)
