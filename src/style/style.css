@@ -1,1 +1,18 @@
 /* ... (Existing styles) */
+#calculator {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    gap: 10px;
+    transition: width 0.3s ease-in-out; /* Add transition for smooth resizing */
+}
+
+#calculator.large {
+    width: 600px; /* Double the width when 'large' class is applied */
+}
+
+.main-pad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 5px;
+}
