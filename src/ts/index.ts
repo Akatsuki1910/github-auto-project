@@ -1,11 +1,11 @@
 // ... (Existing code)
-const atanhButton = document.getElementById('atanh') as HTMLButtonElement;
-atanhButton.addEventListener('click', () => {
+const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
+cbrtButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
-    if (!isNaN(currentValue) && currentValue > -1 && currentValue < 1) {
-        display.value = Math.atanh(currentValue).toString();
+    if (!isNaN(currentValue)) {
+        display.value = Math.cbrt(currentValue).toString();
     } else {
-        display.value = "Error: Input must be between -1 and 1";
+        display.value = "Error: Invalid input";
     }
 });
 // ... (Rest of existing code)
