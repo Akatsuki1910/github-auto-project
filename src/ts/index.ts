@@ -31,4 +31,14 @@ mdivideButton.addEventListener('click', () => {
     memoryRecallValue /= parseFloat(display.value);
     display.value = memoryRecallValue.toString();
 });
+const mplusButton = document.getElementById('m-plus') as HTMLButtonElement;
+mplusButton.addEventListener('click', () => {
+    memoryRecallValue += parseFloat(display.value);
+    display.value = memoryRecallValue.toString();
+});
+const mminusButton = document.getElementById('m-minus') as HTMLButtonElement;
+mminusButton.addEventListener('click', () => {
+    memoryRecallValue -= parseFloat(display.value);
+    display.value = memoryRecallValue.toString();
+});
 // ... (Rest of existing code)
