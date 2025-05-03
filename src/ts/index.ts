@@ -28,4 +28,14 @@ cosButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+const tanButton = document.getElementById('tan') as HTMLButtonElement;
+tanButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    try {
+        const result = math.tan(parseFloat(display.value));
+        display.value = result.toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
 // ... (Rest of existing code)
