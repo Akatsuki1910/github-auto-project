@@ -12,7 +12,8 @@ mPlusButton.addEventListener('click', () => {
     try {
         const currentValue = parseFloat(display.value);
         memoryPlusValue += currentValue;
-    } catch (error) {
+    }
+    catch (error) {
         display.value = "Invalid input";
     }
 });
@@ -32,8 +33,14 @@ equalsButton.addEventListener('click', () => {
         const result = math.evaluate(display.value);
         display.value = result.toString();
         memoryRecallValue = result; // Store the result for MRC
-    } catch (error) {
+    }
+    catch (error) {
         display.value = "Invalid input";
     }
+});
+const mcButton = document.getElementById('mc') as HTMLButtonElement;
+mcButton.addEventListener('click', () => {
+    memoryPlusValue = 0; // Clear memory
+    memoryRecallValue = null;
 });
 // ... (Rest of existing code)
