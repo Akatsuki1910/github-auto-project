@@ -28,4 +28,13 @@ toggleHistoryDisplayButton.addEventListener('click', () => {
         historyDisplayElement.style.display = 'none';
     }
 });
+const toggleCalculatorVisibilityButton = document.getElementById('toggle-calculator-visibility') as HTMLButtonElement;
+const calculatorElement = document.getElementById('calculator') as HTMLDivElement;
+toggleCalculatorVisibilityButton.addEventListener('click', () => {
+    if (calculatorElement.style.display === 'none') {
+        calculatorElement.style.display = 'block';
+    } else {
+        calculatorElement.style.display = 'none';
+    }
+});
 // ... (Rest of existing code)
