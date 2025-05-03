@@ -1,12 +1,6 @@
 // ... (Existing code)
-const msButton = document.getElementById('ms') as HTMLButtonElement;
-msButton.addEventListener('click', () => {
-    try {
-        const currentValue = parseFloat(display.value);
-        memoryRecallValue = currentValue; // Store the current value for MRC
-    }
-    catch (error) {
-        display.value = "Invalid input";
-    }
+const mrButton = document.getElementById('mr') as HTMLButtonElement;
+mrButton.addEventListener('click', () => {
+    display.value = memoryRecallValue.toString();
 });
 // ... (Rest of existing code)
