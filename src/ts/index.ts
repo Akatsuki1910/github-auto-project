@@ -8,15 +8,13 @@ toggleKeypadButton.addEventListener('click', () => {
         mainPad.style.display = 'none';
     }
 });
-// ... (Existing sin, cos, tan, log, exp button logic)
-const powButton = document.getElementById('pow') as HTMLButtonElement;
-powButton.addEventListener('click', () => {
+// ... (Existing sin, cos, tan, log, exp, pow button logic)
+const absButton = document.getElementById('abs') as HTMLButtonElement;
+absButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
-        const base = parseFloat(display.value);
-        display.value += '**'; // Use ** for exponentiation
-    }
-    catch (error) {
+        display.value = Math.abs(parseFloat(display.value)).toString();
+    } catch (error) {
         display.value = 'Error';
     }
 });
