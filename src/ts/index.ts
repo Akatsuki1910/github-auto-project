@@ -18,4 +18,14 @@ sinButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+const cosButton = document.getElementById('cos') as HTMLButtonElement;
+cosButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    try {
+        const result = math.cos(parseFloat(display.value));
+        display.value = result.toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
 // ... (Rest of existing code)
