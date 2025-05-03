@@ -16,6 +16,16 @@ mPlusButton.addEventListener('click', () => {
         display.value = "Invalid input";
     }
 });
+const mMinusButton = document.getElementById('m-minus') as HTMLButtonElement;
+mMinusButton.addEventListener('click', () => {
+    try {
+        const currentValue = parseFloat(display.value);
+        memoryPlusValue -= currentValue;
+    }
+    catch (error) {
+        display.value = "Invalid Input";
+    }
+});
 const equalsButton = document.getElementById('equals') as HTMLButtonElement;
 equalsButton.addEventListener('click', () => {
     try {
