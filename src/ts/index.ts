@@ -1,20 +1,11 @@
 // ... (Existing code)
-const toggleDisplaySizeButton = document.getElementById('toggle-display') as HTMLButtonElement;
-const calculatorContainer = document.getElementById('calculator') as HTMLDivElement;
-toggleDisplaySizeButton.addEventListener('click', () => {
-    if (calculatorContainer.classList.contains('large')) {
-        calculatorContainer.classList.remove('large');
+const toggleFontSizeButton = document.getElementById('toggle-fontSize') as HTMLButtonElement;
+const displayElement = document.getElementById('display') as HTMLInputElement;
+toggleFontSizeButton.addEventListener('click', () => {
+    if (displayElement.classList.contains('large-font')) {
+        displayElement.classList.remove('large-font');
     } else {
-        calculatorContainer.classList.add('large');
-    }
-});
-const toggleKeypadButton = document.getElementById('toggle-keypad') as HTMLButtonElement;
-const mainPad = document.querySelector('.main-pad') as HTMLDivElement;
-toggleKeypadButton.addEventListener('click', () => {
-    if (mainPad.style.display === 'none') {
-        mainPad.style.display = 'grid';
-    } else {
-        mainPad.style.display = 'none';
+        displayElement.classList.add('large-font');
     }
 });
 // ... (Rest of existing code)
