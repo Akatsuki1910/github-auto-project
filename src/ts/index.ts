@@ -1,9 +1,9 @@
 // ... (Existing code)
-const atanButton = document.getElementById('atan') as HTMLButtonElement;
-atanButton.addEventListener('click', () => {
+const asinhButton = document.getElementById('asinh') as HTMLButtonElement;
+asinhButton.addEventListener('click', () => {
     const currentValue = parseFloat(display.value);
     if (!isNaN(currentValue)) {
-        display.value = Math.atan(currentValue).toString();
+        display.value = Math.asinh(currentValue).toString();
     }
 });
 // ... (Rest of existing code)
