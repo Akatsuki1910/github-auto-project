@@ -38,4 +38,14 @@ tanButton.addEventListener('click', () => {
         display.value = 'Error';
     }
 });
+const logButton = document.getElementById('log') as HTMLButtonElement;
+logButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    try {
+        const result = math.log(parseFloat(display.value));
+        display.value = result.toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
+});
 // ... (Rest of existing code)
