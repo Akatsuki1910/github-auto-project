@@ -41,4 +41,9 @@ mminusButton.addEventListener('click', () => {
     memoryRecallValue -= parseFloat(display.value);
     display.value = memoryRecallValue.toString();
 });
+const mrcButton = document.getElementById('mrc') as HTMLButtonElement;
+mrcButton.addEventListener('click', () => {
+    display.value = memoryRecallValue.toString();
+    memoryRecallValue = 0;
+});
 // ... (Rest of existing code)
