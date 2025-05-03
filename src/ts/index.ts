@@ -1,8 +1,12 @@
 // ... (Existing code)
-const toFixedButton = document.getElementById('toFixed') as HTMLButtonElement;
-toFixedButton.addEventListener('click', () => {
+const oneOverXButton = document.getElementById('oneOverX') as HTMLButtonElement;
+oneOverXButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const fixedNum = Number(display.value).toFixed(2);
-    display.value = fixedNum;
+    try {
+        const result = 1 / parseFloat(display.value);
+        display.value = result.toString();
+    } catch (error) {
+        display.value = 'Error';
+    }
 });
 // ... (Rest of existing code)
