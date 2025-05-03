@@ -8,53 +8,15 @@ toggleKeypadButton.addEventListener('click', () => {
         mainPad.style.display = 'none';
     }
 });
-const sinButton = document.getElementById('sin') as HTMLButtonElement;
-sinButton.addEventListener('click', () => {
+// ... (Existing sin, cos, tan, log, exp button logic)
+const powButton = document.getElementById('pow') as HTMLButtonElement;
+powButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
-        const result = math.sin(parseFloat(display.value));
-        display.value = result.toString();
-    } catch (error) {
-        display.value = 'Error';
+        const base = parseFloat(display.value);
+        display.value += '**'; // Use ** for exponentiation
     }
-});
-const cosButton = document.getElementById('cos') as HTMLButtonElement;
-cosButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    try {
-        const result = math.cos(parseFloat(display.value));
-        display.value = result.toString();
-    } catch (error) {
-        display.value = 'Error';
-    }
-});
-const tanButton = document.getElementById('tan') as HTMLButtonElement;
-tanButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    try {
-        const result = math.tan(parseFloat(display.value));
-        display.value = result.toString();
-    } catch (error) {
-        display.value = 'Error';
-    }
-});
-const logButton = document.getElementById('log') as HTMLButtonElement;
-logButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    try {
-        const result = math.log(parseFloat(display.value));
-        display.value = result.toString();
-    } catch (error) {
-        display.value = 'Error';
-    }
-});
-const expButton = document.getElementById('exp') as HTMLButtonElement;
-expButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    try {
-        const result = math.exp(parseFloat(display.value));
-        display.value = result.toString();
-    } catch (error) {
+    catch (error) {
         display.value = 'Error';
     }
 });
