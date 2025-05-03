@@ -1,37 +1,9 @@
 // ... (Existing code)
-const toggleKeypadButton = document.getElementById('toggleKeypad') as HTMLButtonElement;
-const mainPad = document.querySelector('.main-pad') as HTMLDivElement;
-toggleKeypadButton.addEventListener('click', () => {
-    if (mainPad.style.display === 'none') {
-        mainPad.style.display = 'grid';
-    } else {
-        mainPad.style.display = 'none';
-    }
-});
-// ... (Existing sin, cos, tan, log, exp, pow, abs, round button logic)
-const cuberootButton = document.getElementById('cuberoot') as HTMLButtonElement;
-cuberootButton.addEventListener('click', () => {
+const lnButton = document.getElementById('ln') as HTMLButtonElement;
+lnButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
-        display.value = Math.cbrt(parseFloat(display.value)).toString();
-    } catch (error) {
-        display.value = 'Error';
-    }
-});
-const signButton = document.getElementById('sign') as HTMLButtonElement;
-signButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    try {
-        display.value = Math.sign(parseFloat(display.value)).toString();
-    } catch (error) {
-        display.value = 'Error';
-    }
-});
-const tenToThePowerButton = document.getElementById('ten-to-the-power') as HTMLButtonElement;
-tenToThePowerButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    try {
-        display.value = Math.pow(10, parseFloat(display.value)).toString();
+        display.value = Math.log(parseFloat(display.value)).toString();
     } catch (error) {
         display.value = 'Error';
     }
