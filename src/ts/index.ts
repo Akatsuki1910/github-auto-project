@@ -1,27 +1,23 @@
 // ... (Existing code)
-const calculateAverageButton = document.getElementById('calculate-average') as HTMLButtonElement;
-calculateAverageButton.addEventListener('click', () => {
+const calculateModeButton = document.getElementById('mode') as HTMLButtonElement;
+calculateModeButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display.value) {
         try {
             const numbers = display.value.split(',').map(Number);
-            const sum = numbers.reduce((acc, curr) => acc + curr, 0);
-            const average = sum / numbers.length;
-            display.value = average.toString();
-        } catch (error) {
-            display.value = 'Error';
-        }
-    }
-});
-const medianButton = document.getElementById('median') as HTMLButtonElement;
-medianButton.addEventListener('click', () => {
-    const display = document.getElementById('display') as HTMLInputElement;
-    if (display.value) {
-        try {
-            const numbers = display.value.split(',').map(Number).sort((a, b) => a - b);
-            const mid = Math.floor(numbers.length / 2);
-            const median = numbers.length % 2 === 0 ? (numbers[mid - 1] + numbers[mid]) / 2 : numbers[mid];
-            display.value = median.toString();
+            const counts = {};
+            let mode = [];
+            let maxCount = 0;
+            for (const num of numbers) {
+                counts[num] = (counts[num] || 0) + 1;
+                if (counts[num] > maxCount) {
+                    mode = [num];
+                    maxCount = counts[num];
+                } else if (counts[num] === maxCount) {
+                    mode.push(num);
+                }
+            }
+            display.value = mode.join(',');
         } catch (error) {
             display.value = 'Error';
         }
