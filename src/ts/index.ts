@@ -1,12 +1,12 @@
 // ... (Existing code)
-const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
+const isPrimeButton = document.getElementById('isPrime') as HTMLButtonElement;
 
-expm1Button.addEventListener('click', () => {
+isPrimeButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display.value) {
         try {
-            const x = parseFloat(display.value);
-            const result = math.expm1(x);
+            const num = parseInt(display.value);
+            const result = math.isPrime(num);
             display.value = result.toString();
         } catch (error) {
             display.value = 'Error';
