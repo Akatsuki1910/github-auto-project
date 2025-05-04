@@ -1,11 +1,11 @@
 // ... (Existing code)
-const log2Button = document.getElementById('log2') as HTMLButtonElement;
+const cbrtButton = document.getElementById('cbrt') as HTMLButtonElement;
 
-log2Button.addEventListener('click', () => {
+cbrtButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display.value) {
         try {
-            const result = math.log2(parseFloat(display.value));
+            const result = math.cbrt(parseFloat(display.value));
             display.value = result.toString();
         } catch (error) {
             display.value = 'Error';
