@@ -1,14 +1,14 @@
 // ... (Existing code)
-const memoryMinusButton = document.getElementById('memory-minus') as HTMLButtonElement;
+const log10Button = document.getElementById('log10') as HTMLButtonElement;
 
-memoryMinusButton.addEventListener('click', () => {
+log10Button.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display.value) {
-        const currentValue = parseFloat(display.value);
-        if (memoryValue !== null) {
-            memoryValue -= currentValue;
-        } else {
-            memoryValue = -currentValue;
+        try {
+            const result = math.log10(parseFloat(display.value));
+            display.value = result.toString();
+        } catch (error) {
+            display.value = 'Error';
         }
     }
 });
