@@ -1,11 +1,11 @@
 // ... (Existing code)
-const truncateButton = document.getElementById('truncate') as HTMLButtonElement;
+const powerOfTenButton = document.getElementById('power_of_ten') as HTMLButtonElement;
 
-truncateButton.addEventListener('click', () => {
+powerOfTenButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display.value) {
         try {
-            const result = Math.trunc(parseFloat(display.value));
+            const result = Math.pow(10, parseFloat(display.value));
             display.value = result.toString();
         } catch (error) {
             display.value = 'Error';
