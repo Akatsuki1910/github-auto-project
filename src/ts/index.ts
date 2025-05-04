@@ -1,13 +1,15 @@
 // ... (Existing code)
-const calculateRangeButton = document.getElementById('range') as HTMLButtonElement;
-calculateRangeButton.addEventListener('click', () => {
+const calculateStandardDeviationButton = document.getElementById('standard-deviation') as HTMLButtonElement;
+calculateStandardDeviationButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display.value) {
         try {
             const numbers = display.value.split(',').map(Number);
-            numbers.sort((a, b) => a - b);
-            const range = numbers[numbers.length - 1] - numbers[0];
-            display.value = range.toString();
+            const n = numbers.length;
+            const mean = numbers.reduce((sum, num) => sum + num, 0) / n;
+            const variance = numbers.reduce((sum, num) => sum + Math.pow(num - mean, 2), 0) / n;
+            const stdDev = Math.sqrt(variance);
+            display.value = stdDev.toString();
         } catch (error) {
             display.value = 'Error';
         }
