@@ -1,10 +1,10 @@
 // ... (Existing code)
-const tripleButton = document.getElementById('triple') as HTMLButtonElement;
-tripleButton.addEventListener('click', () => {
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
+inverseButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
         const currentValue = parseFloat(display.value);
-        display.value = (currentValue * 3).toString();
+        display.value = (1 / currentValue).toString();
     } catch (error) {
         display.value = 'Error';
     }
