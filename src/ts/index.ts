@@ -1,6 +1,7 @@
 // ... (Existing code)
 const memoryStoreButton = document.getElementById('memory-store') as HTMLButtonElement;
 const memoryRecallButton = document.getElementById('memory-recall') as HTMLButtonElement;
+const memoryClearButton = document.getElementById('memory-clear') as HTMLButtonElement;
 let memoryValue: number | null = null;
 
 memoryStoreButton.addEventListener('click', () => {
@@ -15,6 +16,10 @@ memoryRecallButton.addEventListener('click', () => {
     if (memoryValue !== null) {
         display.value = memoryValue.toString();
     }
+});
+
+memoryClearButton.addEventListener('click', () => {
+    memoryValue = null;
 });
 
 // ... (Rest of existing code)
