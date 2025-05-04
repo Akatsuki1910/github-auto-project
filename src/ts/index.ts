@@ -1,13 +1,12 @@
 // ... (Existing code)
-const nthRootButton = document.getElementById('nthRoot') as HTMLButtonElement;
+const expm1Button = document.getElementById('expm1') as HTMLButtonElement;
 
-nthRootButton.addEventListener('click', () => {
+expm1Button.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display.value) {
         try {
-            const n = parseFloat(prompt('Enter the root (n):', '2') || '2'); // Default to square root
             const x = parseFloat(display.value);
-            const result = math.nthRoot(x,n);
+            const result = math.expm1(x);
             display.value = result.toString();
         } catch (error) {
             display.value = 'Error';
