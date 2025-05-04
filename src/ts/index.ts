@@ -1,12 +1,13 @@
 // ... (Existing code)
-const isPrimeButton = document.getElementById('isPrime') as HTMLButtonElement;
+const gcdButton = document.getElementById('gcd') as HTMLButtonElement;
 
-isPrimeButton.addEventListener('click', () => {
+gcdButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display.value) {
         try {
             const num = parseInt(display.value);
-            const result = math.isPrime(num);
+            const num2 = parseInt(prompt('Enter second number:') || '0'); // Prompt for second number
+            const result = math.gcd(num, num2);
             display.value = result.toString();
         } catch (error) {
             display.value = 'Error';
