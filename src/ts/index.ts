@@ -38,4 +38,19 @@ nthPowerButton.addEventListener('click', () => {
         }
     }
 });
+
+const calculateAverageButton = document.getElementById('calculate-average') as HTMLButtonElement;
+calculateAverageButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    if (display.value) {
+        try {
+            const numbers = display.value.split(',').map(Number);
+            const sum = numbers.reduce((acc, curr) => acc + curr, 0);
+            const average = sum / numbers.length;
+            display.value = average.toString();
+        } catch (error) {
+            display.value = 'Error';
+        }
+    }
+});
 // ... (Rest of existing code)
