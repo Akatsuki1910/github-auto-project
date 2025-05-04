@@ -1,12 +1,11 @@
 // ... (Existing code)
-const gcdButton = document.getElementById('gcd') as HTMLButtonElement;
-gcdButton.addEventListener('click', () => {
+const absoluteButton = document.getElementById('absolute') as HTMLButtonElement;
+absoluteButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display.value) {
         try {
-            const num = parseInt(display.value);
-            const num2 = parseInt(prompt('Enter second number:') || '0');
-            const result = math.gcd(num, num2);
+            const num = parseFloat(display.value);
+            const result = math.abs(num);
             display.value = result.toString();
         } catch (error) {
             display.value = 'Error';
