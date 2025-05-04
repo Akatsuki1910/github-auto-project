@@ -1,10 +1,10 @@
 // ... (Existing code)
-const oneOverXButton = document.getElementById('oneOverX') as HTMLButtonElement;
-oneOverXButton.addEventListener('click', () => {
+const modButton = document.getElementById('mod') as HTMLButtonElement;
+modButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     try {
-        const result = 1 / parseFloat(display.value);
-        display.value = result.toString();
+        const currentValue = parseFloat(display.value);
+        display.value = (currentValue % 2).toString();
     } catch (error) {
         display.value = 'Error';
     }
