@@ -1,14 +1,23 @@
 // ... (Existing code)
-const cubeRootButton = document.getElementById('cube-root') as HTMLButtonElement;
-cubeRootButton.addEventListener('click', () => {
+const nthPowerButton = document.getElementById('nth-power') as HTMLButtonElement;
+nthPowerButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
+    const currentExpressionDisplay = document.getElementById('currentExpressionDisplay') as HTMLDivElement;
     if (display.value) {
         try {
-            const num = parseFloat(display.value);
-            const result = math.cbrt(num);
-            display.value = result.toString();
+            currentExpressionDisplay.textContent = display.value + '^';
+            display.value = '';
+            const powerInput = prompt('Enter the power (n):');
+            if (powerInput !== null) {
+                const n = parseFloat(powerInput);
+                const num = parseFloat(currentExpressionDisplay.textContent.slice(0,-1));
+                const result = math.pow(num, n);
+                display.value = result.toString();
+                currentExpressionDisplay.textContent='';
+            }
         } catch (error) {
             display.value = 'Error';
+            currentExpressionDisplay.textContent='';
         }
     }
 });
