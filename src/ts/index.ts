@@ -1,12 +1,12 @@
 // ... (Existing code)
-const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
-inverseButton.addEventListener('click', () => {
+const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
+factorialButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const currentValue = parseFloat(display.value);
-    if (currentValue !== 0) {
-        display.value = (1 / currentValue).toString();
+    if (currentValue < 0) {
+        display.value = "Error: Factorial of negative number";
     } else {
-        display.value = "Error: Division by zero";
+        display.value = math.factorial(currentValue).toString();
     }
 });
 // ... (Rest of existing code)
