@@ -27,4 +27,10 @@ const mcButton = document.getElementById('mc') as HTMLButtonElement;
 mcButton.addEventListener('click', () => {
     memoryValue = 0;
 });
+const msButton = document.getElementById('ms') as HTMLButtonElement;
+msButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    memoryValue = parseFloat(display.value);
+    display.value = '';
+});
 // ... (Rest of existing code)
