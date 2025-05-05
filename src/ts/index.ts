@@ -1,4 +1,27 @@
 // ... (Existing code)
+const gcdButton = document.getElementById('gcd') as HTMLButtonElement;
+gcdButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const numbers = display.value.split(',').map(Number);
+    if (numbers.some(isNaN)) {
+        display.value = "Invalid input";
+        return;
+    }
+    const gcd = (a, b) => (!b ? a : gcd(b, a % b));
+    display.value = numbers.reduce(gcd).toString();
+});
+const lcmButton = document.getElementById('lcm') as HTMLButtonElement;
+lcmButton.addEventListener('click', () => {
+  const display = document.getElementById('display') as HTMLInputElement;
+  const numbers = display.value.split(',').map(Number);
+  if (numbers.some(isNaN)) {
+      display.value = "Invalid input";
+      return;
+  }
+  const gcd = (a, b) => (!b ? a : gcd(b, a % b));
+  const lcm = (a, b) => (a * b) / gcd(a, b);
+  display.value = numbers.reduce(lcm).toString();
+});
 const factButton = document.getElementById('fact') as HTMLButtonElement;
 factButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
