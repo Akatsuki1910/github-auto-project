@@ -1,12 +1,7 @@
 // ... (Existing code)
-const factorialButton = document.getElementById('factorial') as HTMLButtonElement;
-factorialButton.addEventListener('click', () => {
+const piButton = document.getElementById('pi') as HTMLButtonElement;
+piButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const currentValue = parseFloat(display.value);
-    if (currentValue < 0) {
-        display.value = "Error: Factorial of negative number";
-    } else {
-        display.value = math.factorial(currentValue).toString();
-    }
+    display.value = math.pi.toString();
 });
 // ... (Rest of existing code)
