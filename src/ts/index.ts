@@ -37,4 +37,10 @@ factButton.addEventListener('click', () => {
         display.value = "Invalid input for factorial";
     }
 });
+const signButton = document.getElementById('sign') as HTMLButtonElement;
+signButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const num = parseFloat(display.value);
+    display.value = Math.sign(num).toString();
+});
 // ... (Rest of existing code)
