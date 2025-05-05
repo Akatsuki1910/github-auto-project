@@ -5,7 +5,8 @@ mrcButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     if (display.value === '') {
         display.value = memoryValue.toString();
-    } else {
+    }
+    else {
         memoryValue = parseFloat(display.value);
         display.value = '';
     }
@@ -14,6 +15,12 @@ const mPlusButton = document.getElementById('m-plus') as HTMLButtonElement;
 mPlusButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     memoryValue += parseFloat(display.value);
+    display.value = '';
+});
+const mMinusButton = document.getElementById('m-minus') as HTMLButtonElement;
+mMinusButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    memoryValue -= parseFloat(display.value);
     display.value = '';
 });
 // ... (Rest of existing code)
