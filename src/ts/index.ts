@@ -1,4 +1,11 @@
 // ... (Existing code)
+const currentTimeButton = document.getElementById('current-time') as HTMLButtonElement;
+currentTimeButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const now = new Date();
+    const timeString = now.toLocaleTimeString();
+    display.value = timeString;
+});
 let memoryValue = 0;
 const mrcButton = document.getElementById('mrc') as HTMLButtonElement;
 mrcButton.addEventListener('click', () => {
