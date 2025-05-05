@@ -10,4 +10,10 @@ mrcButton.addEventListener('click', () => {
         display.value = '';
     }
 });
+const mPlusButton = document.getElementById('m-plus') as HTMLButtonElement;
+mPlusButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    memoryValue += parseFloat(display.value);
+    display.value = '';
+});
 // ... (Rest of existing code)
