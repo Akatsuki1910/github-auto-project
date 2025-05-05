@@ -1,7 +1,12 @@
 // ... (Existing code)
-const signButton = document.getElementById('sign') as HTMLButtonElement;
-signButton.addEventListener('click', () => {
+const inverseButton = document.getElementById('inverse') as HTMLButtonElement;
+inverseButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    display.value = Math.sign(parseFloat(display.value)).toString();
+    const currentValue = parseFloat(display.value);
+    if (currentValue !== 0) {
+        display.value = (1 / currentValue).toString();
+    } else {
+        display.value = "Error: Division by zero";
+    }
 });
 // ... (Rest of existing code)
