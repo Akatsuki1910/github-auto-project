@@ -34,3 +34,9 @@ msButton.addEventListener('click', () => {
     display.value = '';
 });
 // ... (Rest of existing code)
+const exportHistoryButton = document.getElementById('export-history') as HTMLButtonElement;
+exportHistoryButton.addEventListener('click', () => {
+  // Implement export history functionality here. For example, you can
+  // copy the history to the clipboard or download it as a file.
+  alert('Export history functionality will be added soon!');
+});
