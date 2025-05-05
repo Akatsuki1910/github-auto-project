@@ -44,3 +44,13 @@ exportHistoryButton.addEventListener('click', () => {
         alert('Failed to copy history to clipboard.');
     });
 });
+const helpButton = document.getElementById('toggle-help');
+const helpDisplay = document.getElementById('help-display');
+helpButton.addEventListener('click', () => {
+    if (helpDisplay.style.display === 'none') {
+        helpDisplay.style.display = 'block';
+    }
+    else {
+        helpDisplay.style.display = 'none';
+    }
+});
