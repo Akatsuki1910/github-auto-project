@@ -23,4 +23,8 @@ mMinusButton.addEventListener('click', () => {
     memoryValue -= parseFloat(display.value);
     display.value = '';
 });
+const mcButton = document.getElementById('mc') as HTMLButtonElement;
+mcButton.addEventListener('click', () => {
+    memoryValue = 0;
+});
 // ... (Rest of existing code)
