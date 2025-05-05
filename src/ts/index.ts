@@ -13,4 +13,9 @@ roundToDecimalButton.addEventListener('click', () => {
         display.value = value.toFixed(2);
     }
 });
+const deleteLastDigitButton = document.getElementById('delete-last-digit') as HTMLButtonElement;
+deleteLastDigitButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    display.value = display.value.slice(0, -1);
+});
 // ... (Rest of existing code)
