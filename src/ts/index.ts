@@ -1,7 +1,10 @@
 // ... (Existing code)
-const piButton = document.getElementById('pi') as HTMLButtonElement;
-piButton.addEventListener('click', () => {
+const twoToThePowerXButton = document.getElementById('two-to-the-power-x') as HTMLButtonElement;
+twoToThePowerXButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    display.value = math.pi.toString();
+    const currentValue = parseFloat(display.value);
+    if (!isNaN(currentValue)) {
+        display.value = Math.pow(2, currentValue).toString();
+    }
 });
 // ... (Rest of existing code)
