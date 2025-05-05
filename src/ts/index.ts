@@ -1,7 +1,7 @@
 // ... (Existing code)
-const truncButton = document.getElementById('trunc') as HTMLButtonElement;
-truncButton.addEventListener('click', () => {
+const signButton = document.getElementById('sign') as HTMLButtonElement;
+signButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    display.value = Math.trunc(parseFloat(display.value)).toString();
+    display.value = Math.sign(parseFloat(display.value)).toString();
 });
 // ... (Rest of existing code)
