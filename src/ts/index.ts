@@ -1,7 +1,13 @@
 // ... (Existing code)
-const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
-duplicateButton.addEventListener('click', () => {
+let memoryValue = 0;
+const mrcButton = document.getElementById('mrc') as HTMLButtonElement;
+mrcButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    display.value = display.value + display.value;
+    if (display.value === '') {
+        display.value = memoryValue.toString();
+    } else {
+        memoryValue = parseFloat(display.value);
+        display.value = '';
+    }
 });
 // ... (Rest of existing code)
