@@ -1,7 +1,7 @@
 // ... (Existing code)
-const randomButton = document.getElementById('random') as HTMLButtonElement;
-randomButton.addEventListener('click', () => {
+const duplicateButton = document.getElementById('duplicate') as HTMLButtonElement;
+duplicateButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    display.value = math.random().toString();
+    display.value = display.value + display.value;
 });
 // ... (Rest of existing code)
