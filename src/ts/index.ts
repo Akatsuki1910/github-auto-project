@@ -20,5 +20,13 @@ const openNewWindowButton = document.getElementById('open-new-window') as HTMLBu
 openNewWindowButton.addEventListener('click', () => {
   window.open(window.location.href, '_blank');
 });
+const fullscreenToggle = document.getElementById('fullscreen-toggle') as HTMLButtonElement;
 
+fullscreenToggle.addEventListener('click', () => {
+    if (document.fullscreenElement) {
+        document.exitFullscreen();
+    } else {
+        document.documentElement.requestFullscreen();
+    }
+});
 // ... (Rest of existing code)
