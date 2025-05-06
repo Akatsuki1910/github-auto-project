@@ -1,8 +1,8 @@
 // ... (Existing code)
-const currentDateTimeMediumButton = document.getElementById('current-date-time-medium') as HTMLButtonElement;
-currentDateTimeMediumButton.addEventListener('click', () => {
+const currentDateTimeLongButton = document.getElementById('current-date-time-long') as HTMLButtonElement;
+currentDateTimeLongButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const now = new Date();
-    display.value = now.toLocaleString('en-US', { dateStyle: 'medium', timeStyle: 'medium' });
+    display.value = now.toLocaleString('en-US', { dateStyle: 'long', timeStyle: 'long' });
 });
 // ... (Rest of existing code)
