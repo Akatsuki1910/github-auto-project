@@ -1,9 +1,8 @@
 // ... (Existing code)
-const currentTimezoneButton = document.getElementById('current-timezone') as HTMLButtonElement;
-currentTimezoneButton.addEventListener('click', () => {
+const currentTimestampButton = document.getElementById('current-timestamp') as HTMLButtonElement;
+currentTimestampButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const now = new Date();
-    const timezone = now.toLocaleDateString(undefined, {timeZoneName: 'long' }).split(', ')[1];
-    display.value = timezone; 
+    const timestamp = Date.now();
+    display.value = timestamp.toString();
 });
 // ... (Rest of existing code)
