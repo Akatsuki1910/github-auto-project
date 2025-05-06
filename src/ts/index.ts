@@ -1,9 +1,9 @@
 // ... (Existing code)
-const currentWeekDayButton = document.getElementById('current-week-day') as HTMLButtonElement;
-currentWeekDayButton.addEventListener('click', () => {
+const currentSecondsButton = document.getElementById('current-seconds') as HTMLButtonElement;
+currentSecondsButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const now = new Date();
-    const weekday = now.toLocaleDateString('en-US', { weekday: 'long' });
-    display.value = weekday;
+    const seconds = now.getSeconds();
+    display.value = seconds.toString();
 });
 // ... (Rest of existing code)
