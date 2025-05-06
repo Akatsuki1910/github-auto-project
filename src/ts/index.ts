@@ -18,6 +18,13 @@ dateButton.addEventListener('click', () => {
     const dateString = now.toLocaleDateString();
     display.value = dateString;
 });
+const currentDateTimeButton = document.getElementById('current-datetime') as HTMLButtonElement;
+currentDateTimeButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const now = new Date();
+    const dateTimeString = now.toLocaleString();
+    display.value = dateTimeString;
+});
 let memoryValue = 0;
 const mrcButton = document.getElementById('mrc') as HTMLButtonElement;
 mrcButton.addEventListener('click', () => {
