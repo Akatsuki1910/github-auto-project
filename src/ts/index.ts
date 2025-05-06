@@ -7,4 +7,12 @@ clearHistoryButton.addEventListener('click', () => {
     localStorage.removeItem('calculatorHistory');
 });
 
+const keyboardInputToggle = document.getElementById('keyboard-input-toggle') as HTMLButtonElement;
+let keyboardInputEnabled = false;
+
+keyboardInputToggle.addEventListener('click', () => {
+    keyboardInputEnabled = !keyboardInputEnabled;
+    keyboardInputToggle.textContent = keyboardInputEnabled ? 'Disable Keyboard Input' : 'Enable Keyboard Input';
+});
+
 // ... (Rest of existing code)
