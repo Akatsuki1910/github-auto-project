@@ -1,4 +1,9 @@
 // ... (Existing code)
+const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
+clearHistoryButton.addEventListener('click', () => {
+    const historyDisplay = document.getElementById('history-display');
+    historyDisplay.innerText = '';
+});
 const currentTimeButton = document.getElementById('current-time') as HTMLButtonElement;
 currentTimeButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
