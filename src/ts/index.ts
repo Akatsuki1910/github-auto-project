@@ -1,9 +1,9 @@
 // ... (Existing code)
-const currentYearButton = document.getElementById('current-year') as HTMLButtonElement;
-currentYearButton.addEventListener('click', () => {
+const currentMonthButton = document.getElementById('current-month') as HTMLButtonElement;
+currentMonthButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const now = new Date();
-    const year = now.getFullYear();
-    display.value = year.toString();
+    const month = now.getMonth() + 1; // Month is 0-indexed
+    display.value = month.toString();
 });
 // ... (Rest of existing code)
