@@ -1,9 +1,9 @@
 // ... (Existing code)
-const currentMinutesButton = document.getElementById('current-minutes') as HTMLButtonElement;
-currentMinutesButton.addEventListener('click', () => {
+const currentHoursButton = document.getElementById('current-hours') as HTMLButtonElement;
+currentHoursButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const now = new Date();
-    const minutes = now.getMinutes();
-    display.value = minutes.toString();
+    const hours = now.getHours();
+    display.value = hours.toString();
 });
 // ... (Rest of existing code)
