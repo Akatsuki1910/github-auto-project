@@ -11,6 +11,13 @@ currentTimeButton.addEventListener('click', () => {
     const timeString = now.toLocaleTimeString();
     display.value = timeString;
 });
+const dateButton = document.getElementById('date') as HTMLButtonElement;
+dateButton.addEventListener('click', () => {
+    const display = document.getElementById('display') as HTMLInputElement;
+    const now = new Date();
+    const dateString = now.toLocaleDateString();
+    display.value = dateString;
+});
 let memoryValue = 0;
 const mrcButton = document.getElementById('mrc') as HTMLButtonElement;
 mrcButton.addEventListener('click', () => {
