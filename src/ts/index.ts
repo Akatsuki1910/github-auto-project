@@ -1,8 +1,8 @@
 // ... (Existing code)
-const currentDateTimeFullButton = document.getElementById('current-date-time-full') as HTMLButtonElement;
-currentDateTimeFullButton.addEventListener('click', () => {
+const currentDateTimeShortButton = document.getElementById('current-date-time-short') as HTMLButtonElement;
+currentDateTimeShortButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const now = new Date();
-    display.value = now.toString();
+    display.value = now.toLocaleString();
 });
 // ... (Rest of existing code)
