@@ -1,4 +1,14 @@
 // ... (Existing code)
+const toggleBasicOpsButton = document.getElementById('toggle-basic-operations') as HTMLButtonElement;
+const mainPad = document.querySelector('.main-pad') as HTMLDivElement;
+toggleBasicOpsButton.addEventListener('click', () => {
+    if (mainPad.style.display === 'none') {
+        mainPad.style.display = 'grid';
+    }
+    else {
+        mainPad.style.display = 'none';
+    }
+});
 const clearHistoryButton = document.getElementById('clear-history') as HTMLButtonElement;
 clearHistoryButton.addEventListener('click', () => {
     const historyDisplay = document.getElementById('history-display');
