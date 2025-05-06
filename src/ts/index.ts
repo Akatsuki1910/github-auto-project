@@ -15,4 +15,10 @@ keyboardInputToggle.addEventListener('click', () => {
     keyboardInputToggle.textContent = keyboardInputEnabled ? 'Disable Keyboard Input' : 'Enable Keyboard Input';
 });
 
+const openNewWindowButton = document.getElementById('open-new-window') as HTMLButtonElement;
+
+openNewWindowButton.addEventListener('click', () => {
+  window.open(window.location.href, '_blank');
+});
+
 // ... (Rest of existing code)
