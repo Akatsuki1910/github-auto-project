@@ -1,9 +1,9 @@
 // ... (Existing code)
-const currentMonthButton = document.getElementById('current-month') as HTMLButtonElement;
-currentMonthButton.addEventListener('click', () => {
+const currentDayButton = document.getElementById('current-day') as HTMLButtonElement;
+currentDayButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
     const now = new Date();
-    const month = now.getMonth() + 1; // Month is 0-indexed
-    display.value = month.toString();
+    const day = now.getDate();
+    display.value = day.toString();
 });
 // ... (Rest of existing code)
