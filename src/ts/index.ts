@@ -29,4 +29,11 @@ fullscreenToggle.addEventListener('click', () => {
         document.documentElement.requestFullscreen();
     }
 });
+const changeFontSizeButton = document.getElementById('change-font-size') as HTMLButtonElement;
+let fontSize = 16;
+
+changeFontSizeButton.addEventListener('click', () => {
+  fontSize += 2;
+  document.body.style.fontSize = fontSize + 'px';
+});
 // ... (Rest of existing code)
