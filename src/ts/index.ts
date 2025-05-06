@@ -1,4 +1,15 @@
 // ... (Existing code)
+const currentTimeButton = document.getElementById('current-time') as HTMLButtonElement;
+currentTimeButton.addEventListener('click', () => {
+    const now = new Date();
+    const currentTime = now.toLocaleTimeString();
+    navigator.clipboard.writeText(currentTime).then(() => {
+        alert('Current time copied to clipboard: ' + currentTime);
+    }, () => {
+        alert('Failed to copy time to clipboard.');
+    });
+});
+
 const currentDateButton = document.getElementById('current-date') as HTMLButtonElement;
 currentDateButton.addEventListener('click', () => {
     const now = new Date();
