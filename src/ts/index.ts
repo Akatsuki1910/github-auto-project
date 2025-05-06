@@ -1,8 +1,8 @@
 // ... (Existing code)
-const currentTimestampButton = document.getElementById('current-timestamp') as HTMLButtonElement;
-currentTimestampButton.addEventListener('click', () => {
+const currentDateTimeISOButton = document.getElementById('current-date-time-iso') as HTMLButtonElement;
+currentDateTimeISOButton.addEventListener('click', () => {
     const display = document.getElementById('display') as HTMLInputElement;
-    const timestamp = Date.now();
-    display.value = timestamp.toString();
+    const now = new Date();
+    display.value = now.toISOString();
 });
 // ... (Rest of existing code)
