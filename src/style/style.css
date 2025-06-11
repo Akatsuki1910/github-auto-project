@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
 
-/* General body styles */
+/* General body styles - Responsive */
 body {
   display: flex;
   flex-direction: column;
@@ -8,7 +8,7 @@ body {
   justify-content: flex-start; /* Align to top */
   min-height: 100vh;
   margin: 0;
-  padding: 20px; /* Add some padding around the calculator */
+  padding: clamp(10px, 4vw, 20px); /* Responsive padding around the calculator */
   font-family: Arial, sans-serif; /* Default fallback font */
   background-color: #f0f0f0; /* Light gray background for the page */
   box-sizing: border-box;
@@ -30,13 +30,15 @@ h1 {
   font-family: "Orbitron", sans-serif; /* Optional: style heading with Orbitron too */
 }
 
-/* Main Calculator Container */
+/* Main Calculator Container - Responsive */
 #calculator {
-  width: 360px; /* Defined width */
+  width: 100%; /* Full width on mobile */
+  max-width: 400px; /* Maximum width on larger screens */
+  min-width: 280px; /* Minimum usable width */
   border: 2px solid #333; /* Border */
   border-radius: 10px; /* Rounded corners */
   background-color: #d1d1d1; /* Light grey for calculator body */
-  padding: 20px; /* Internal spacing */
+  padding: 15px; /* Responsive internal spacing */
   display: grid; /* Using grid for overall layout */
   grid-template-areas:
     "display"
@@ -50,8 +52,9 @@ h1 {
     "utilityctrl"
     "helpdisp";
   grid-template-rows: auto; /* Each area takes height as needed */
-  gap: 15px; /* Gap between main areas */
+  gap: 10px; /* Responsive gap between main areas */
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 3D effect */
+  margin: 0 10px; /* Side margins for mobile */
 }
 
 /* Display Area */
@@ -77,13 +80,13 @@ h1 {
 }
 
 #display {
-  font-size: 2.8em; /* Larger for main display */
+  font-size: clamp(1.5em, 6vw, 2.8em); /* Responsive font size for main display */
   min-height: 1.5em; /* Ensure it has some height */
   color: #203020; /* Darker green for text */
 }
 
 #currentExpressionDisplay {
-  font-size: 1.2em; /* Smaller for expression */
+  font-size: clamp(0.8em, 3vw, 1.2em); /* Responsive font size for expression */
   min-height: 1.2em; /* Ensure it has some height */
   color: #506050; /* Lighter, less prominent green */
   margin-bottom: 5px; /* Space between expression and main display */
@@ -138,20 +141,20 @@ h1 {
 }
 .controls-main {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* AC, CE, Backspace, +/-, % */
-  gap: 8px; /* Gap between buttons in this group */
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Responsive columns */
+  gap: clamp(4px, 2vw, 8px); /* Responsive gap */
 }
 .controls-memory {
   display: grid;
-  grid-template-columns: repeat(5, 1fr); /* MRC, M+, M-, MC, MS */
-  gap: 8px;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Responsive columns */
+  gap: clamp(4px, 2vw, 8px); /* Responsive gap */
 }
 
 .keypad-main {
   grid-area: keypad;
   display: grid;
-  grid-template-columns: repeat(4, 1fr); /* 7-8-9-/, 4-5-6-*, etc. */
-  gap: 8px;
+  grid-template-columns: repeat(4, 1fr); /* 4 columns for main keypad */
+  gap: clamp(4px, 2vw, 8px); /* Responsive gap */
 }
 
 #scientific-pad {
@@ -165,15 +168,18 @@ h1 {
   display: none !important; /* Ensure JS toggle works */
 }
 
-/* === General Button Styling === */
+/* === General Button Styling - Responsive === */
 #calculator button {
   font-family: "Orbitron", sans-serif; /* Calculator font */
-  font-size: 1.1em; /* Adjusted for Orbitron */
+  font-size: clamp(0.9em, 2.5vw, 1.1em); /* Responsive font size */
   border-radius: 5px;
-  padding: 18px 12px; /* Generous padding for touch-friendly feel */
+  padding: clamp(12px, 4vw, 18px) clamp(8px, 3vw, 12px); /* Responsive padding for touch */
   cursor: pointer;
   transition: background-color 0.1s, box-shadow 0.1s;
   text-align: center; /* Ensure text (like operators) is centered */
+  min-height: 44px; /* Minimum touch target size for accessibility */
+  min-width: 44px; /* Minimum touch target size for accessibility */
+  border: 1px solid #999;
 }
 
 /* Light theme general button styles */
@@ -385,3 +391,145 @@ h1 {
    If it's inside one of the styled containers and is a <button>, it might pick up some styles.
    For now, this is acceptable as per instructions to prioritize calculator font.
 */
+
+/* === RESPONSIVE DESIGN MEDIA QUERIES === */
+
+/* Mobile devices (portrait) */
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: clamp(1.2em, 5vw, 1.8em);
+    margin-bottom: 15px;
+  }
+
+  #calculator {
+    margin: 0 5px;
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .calculator-display-area {
+    padding: 10px;
+  }
+
+  #calculator button {
+    font-size: clamp(0.8em, 2.8vw, 1em);
+    padding: clamp(10px, 3.5vw, 16px) clamp(6px, 2.5vw, 10px);
+  }
+
+  .controls-main {
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  }
+
+  .controls-memory {
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  }
+
+  #scientific-pad {
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+  }
+
+  .controls-history,
+  .controls-datetime,
+  .controls-utility {
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+}
+
+/* Mobile devices (landscape) */
+@media (max-width: 768px) and (orientation: landscape) {
+  body {
+    padding: 5px;
+  }
+
+  #calculator {
+    max-width: 95vw;
+    padding: 8px;
+  }
+
+  h1 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+  }
+
+  #calculator button {
+    padding: clamp(8px, 2vw, 12px) clamp(4px, 1.5vw, 8px);
+    font-size: clamp(0.7em, 2vw, 0.9em);
+  }
+}
+
+/* Tablet devices */
+@media (min-width: 481px) and (max-width: 768px) {
+  #calculator {
+    max-width: 450px;
+    padding: 18px;
+  }
+
+  #calculator button {
+    font-size: clamp(1em, 2.2vw, 1.2em);
+    padding: clamp(14px, 3.5vw, 20px) clamp(10px, 2.5vw, 14px);
+  }
+}
+
+/* Large tablets and small desktops */
+@media (min-width: 769px) and (max-width: 1024px) {
+  #calculator {
+    max-width: 500px;
+  }
+}
+
+/* Desktop and larger screens */
+@media (min-width: 1025px) {
+  body {
+    padding: 30px;
+  }
+
+  #calculator {
+    max-width: 550px;
+    padding: 25px;
+  }
+
+  #calculator button {
+    font-size: 1.1em;
+    padding: 18px 12px;
+  }
+}
+
+/* High DPI displays */
+@media (min-resolution: 2dppx) {
+  #calculator {
+    border-width: 1px; /* Thinner borders on high DPI */
+  }
+
+  #calculator button {
+    border-width: 0.5px;
+  }
+}
+
+/* Accessibility - Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  #calculator button {
+    transition: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+
+  #calculator {
+    box-shadow: none;
+    border: 2px solid black;
+  }
+
+  #toggle-theme {
+    display: none;
+  }
+}
