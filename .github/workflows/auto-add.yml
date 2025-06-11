@@ -5,7 +5,7 @@ on:
   workflow_call:
   workflow_dispatch:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '0 */4 * * *'  # Every 4 hours instead of every 30 minutes
 
 permissions:
   pull-requests: write
@@ -28,6 +28,17 @@ jobs:
       - name: Install packages
         run: bun install
 
+      - name: Validate environment variables
+        run: |
+          if [ -z "${{ secrets.GEMINI_API_KEY }}" ]; then
+            echo "::error::GEMINI_API_KEY secret is not set"
+            exit 1
+          fi
+          if [ -z "${{ secrets.GH_APPID }}" ]; then
+            echo "::error::GH_APPID secret is not set"
+            exit 1
+          fi
+
       - name: Run auto-add
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -36,4 +47,13 @@ jobs:
           GH_CLIENT_ID: ${{ secrets.GH_CLIENT_ID }}
           GH_CLIENT_SECRET: ${{ secrets.GH_CLIENT_SECRET }}
           GH_INSTALLATION_ID: ${{ secrets.GH_INSTALLATION_ID }}
-        run: bun run git.ts
+        run: |
+          echo "🚀 Starting automated feature generation..."
+          bun run git.ts
+        continue-on-error: true
+
+      - name: Handle failure
+        if: failure()
+        run: |
+          echo "::warning::Automated feature generation failed, but this is non-critical"
+          echo "Check logs above for details"

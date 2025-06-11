@@ -1,0 +1,10 @@
+[
+  {
+    "timestamp": 1749627844591,
+    "featureType": "Unknown",
+    "title": "Failed Generation",
+    "description": "Error: Error: Missing required environment variables: GEMINI_API_KEY, GH_APPID, GH_PRIVATE_KEY, GH_CLIENT_ID, GH_CLIENT_SECRET, GH_INSTALLATION_ID",
+    "branchName": "none",
+    "success": false
+  }
+]

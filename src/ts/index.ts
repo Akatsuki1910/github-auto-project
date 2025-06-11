@@ -223,7 +223,7 @@ class Calculator {
       const fullExpression = this.expression + this.currentInput;
       if (fullExpression) {
         // Use math.js for safe evaluation
-        const result = (window as any).math.evaluate(fullExpression);
+        const result = window.math.evaluate(fullExpression);
         this.addToHistory(`${fullExpression} = ${result}`);
         this.currentInput = result.toString();
         this.expression = "";
