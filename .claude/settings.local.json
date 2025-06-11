@@ -5,7 +5,9 @@
       "Bash(bunx biome check:*)",
       "Bash(cp:*)",
       "Bash(git add:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(node:*)",
+      "Bash(npx tsc:*)"
     ],
     "deny": []
   }
