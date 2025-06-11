@@ -324,18 +324,29 @@
 
             calculate() {
                 try {
-                    const fullExpression = this.expression + this.currentInput;
-                    if (fullExpression && window.math) {
-                        const result = window.math.evaluate(fullExpression);
-                        this.addToHistory(`${fullExpression} = ${result}`);
-                        this.currentInput = result.toString();
-                        this.expression = "";
-                        this.updateDisplay();
-                    }
+                    // Add calculating animation
+                    const displayArea = document.querySelector('.calculator-display-area');
+                    displayArea.classList.add('calculating');
+                    
+                    setTimeout(() => {
+                        const fullExpression = this.expression + this.currentInput;
+                        if (fullExpression && window.math) {
+                            const result = window.math.evaluate(fullExpression);
+                            this.addToHistory(`${fullExpression} = ${result}`);
+                            this.currentInput = result.toString();
+                            this.expression = "";
+                            this.updateDisplay();
+                            this.triggerValueChangeAnimation();
+                        }
+                        displayArea.classList.remove('calculating');
+                    }, 300);
                 } catch (error) {
                     this.display.value = "Error";
                     this.currentInput = "";
                     this.expression = "";
+                    this.triggerErrorAnimation();
+                    const displayArea = document.querySelector('.calculator-display-area');
+                    displayArea.classList.remove('calculating');
                 }
             }
 
@@ -471,15 +482,31 @@
             }
 
             toggleTheme() {
-                this.isDarkTheme = !this.isDarkTheme;
-                document.body.className = this.isDarkTheme ? "dark-scheme" : "light-scheme";
+                const themeButton = document.getElementById('toggle-theme');
+                themeButton.classList.add('switching');
+                
+                setTimeout(() => {
+                    this.isDarkTheme = !this.isDarkTheme;
+                    document.body.className = this.isDarkTheme ? "dark-scheme" : "light-scheme";
+                    themeButton.classList.remove('switching');
+                }, 300);
             }
 
             toggleScientific() {
                 const scientificPad = document.getElementById("scientific-pad");
                 if (scientificPad) {
                     const isHidden = scientificPad.style.display === "none";
-                    scientificPad.style.display = isHidden ? "grid" : "none";
+                    if (isHidden) {
+                        scientificPad.style.display = "grid";
+                        scientificPad.classList.add('show');
+                        setTimeout(() => scientificPad.classList.remove('show'), 400);
+                    } else {
+                        scientificPad.classList.add('hide');
+                        setTimeout(() => {
+                            scientificPad.style.display = "none";
+                            scientificPad.classList.remove('hide');
+                        }, 300);
+                    }
                 }
             }
 
@@ -543,11 +570,29 @@
                 this.display.value = this.currentInput || "0";
                 this.currentExpressionDisplay.textContent = this.expression;
             }
+
+            triggerValueChangeAnimation() {
+                this.display.classList.add('value-changed');
+                setTimeout(() => this.display.classList.remove('value-changed'), 300);
+            }
+
+            triggerErrorAnimation() {
+                this.display.classList.add('error');
+                setTimeout(() => this.display.classList.remove('error'), 500);
+            }
+
+            addButtonCascadeAnimation() {
+                const digits = document.querySelectorAll('.digit');
+                digits.forEach((button, index) => {
+                    button.style.setProperty('--index', index);
+                });
+            }
         }
 
         // Initialize calculator when DOM is loaded
         document.addEventListener("DOMContentLoaded", () => {
-            new Calculator();
+            const calculator = new Calculator();
+            calculator.addButtonCascadeAnimation();
         });
     </script>
 </body>
