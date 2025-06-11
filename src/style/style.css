@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap");
 
 /* General body styles */
 body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start; /* Align to top */
-    min-height: 100vh;
-    margin: 0;
-    padding: 20px; /* Add some padding around the calculator */
-    font-family: Arial, sans-serif; /* Default fallback font */
-    background-color: #f0f0f0; /* Light gray background for the page */
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start; /* Align to top */
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px; /* Add some padding around the calculator */
+  font-family: Arial, sans-serif; /* Default fallback font */
+  background-color: #f0f0f0; /* Light gray background for the page */
+  box-sizing: border-box;
 }
 
 /* Comment out OpenDyslexic font application to prioritize Orbitron for calculator elements */
@@ -25,208 +25,210 @@ body.font-opendyslexic {
 */
 
 h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: 'Orbitron', sans-serif; /* Optional: style heading with Orbitron too */
+  text-align: center;
+  margin-bottom: 20px;
+  font-family: "Orbitron", sans-serif; /* Optional: style heading with Orbitron too */
 }
 
 /* Main Calculator Container */
 #calculator {
-    width: 360px; /* Defined width */
-    border: 2px solid #333; /* Border */
-    border-radius: 10px; /* Rounded corners */
-    background-color: #D1D1D1; /* Light grey for calculator body */
-    padding: 20px; /* Internal spacing */
-    display: grid; /* Using grid for overall layout */
-    grid-template-areas:
-        "display"
-        "controls"
-        "keypad"
-        "scientific"
-        "historyctrl"
-        "historydisp"
-        "datetimectrl"
-        "datetimedisp"
-        "utilityctrl"
-        "helpdisp";
-    grid-template-rows: auto; /* Each area takes height as needed */
-    gap: 15px; /* Gap between main areas */
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /* 3D effect */
+  width: 360px; /* Defined width */
+  border: 2px solid #333; /* Border */
+  border-radius: 10px; /* Rounded corners */
+  background-color: #d1d1d1; /* Light grey for calculator body */
+  padding: 20px; /* Internal spacing */
+  display: grid; /* Using grid for overall layout */
+  grid-template-areas:
+    "display"
+    "controls"
+    "keypad"
+    "scientific"
+    "historyctrl"
+    "historydisp"
+    "datetimectrl"
+    "datetimedisp"
+    "utilityctrl"
+    "helpdisp";
+  grid-template-rows: auto; /* Each area takes height as needed */
+  gap: 15px; /* Gap between main areas */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* 3D effect */
 }
 
 /* Display Area */
 .calculator-display-area {
-    grid-area: display;
-    background-color: #C0E8C0; /* Greenish tint */
-    padding: 15px;
-    border: 1px solid #888; /* Darker border for display */
-    border-radius: 8px; /* Slightly more rounded display */
-    text-align: right;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
-    margin-bottom: 0; /* Gap is handled by #calculator grid-gap */
+  grid-area: display;
+  background-color: #c0e8c0; /* Greenish tint */
+  padding: 15px;
+  border: 1px solid #888; /* Darker border for display */
+  border-radius: 8px; /* Slightly more rounded display */
+  text-align: right;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 0; /* Gap is handled by #calculator grid-gap */
 }
 
-#display, #currentExpressionDisplay {
-    font-family: 'Orbitron', 'Courier New', monospace; /* Digital font */
-    background-color: transparent; /* Inherits from .calculator-display-area */
-    border: none;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 5px 0; /* Add some vertical padding */
+#display,
+#currentExpressionDisplay {
+  font-family: "Orbitron", "Courier New", monospace; /* Digital font */
+  background-color: transparent; /* Inherits from .calculator-display-area */
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 0; /* Add some vertical padding */
 }
 
 #display {
-    font-size: 2.8em; /* Larger for main display */
-    min-height: 1.5em; /* Ensure it has some height */
-    color: #203020; /* Darker green for text */
+  font-size: 2.8em; /* Larger for main display */
+  min-height: 1.5em; /* Ensure it has some height */
+  color: #203020; /* Darker green for text */
 }
 
 #currentExpressionDisplay {
-    font-size: 1.2em; /* Smaller for expression */
-    min-height: 1.2em; /* Ensure it has some height */
-    color: #506050; /* Lighter, less prominent green */
-    margin-bottom: 5px; /* Space between expression and main display */
+  font-size: 1.2em; /* Smaller for expression */
+  min-height: 1.2em; /* Ensure it has some height */
+  color: #506050; /* Lighter, less prominent green */
+  margin-bottom: 5px; /* Space between expression and main display */
 }
 
 /* Theme adjustments for display */
 .light-scheme .calculator-display-area {
-    background-color: #C0E8C0;
-    border-color: #888;
+  background-color: #c0e8c0;
+  border-color: #888;
 }
 .light-scheme #display {
-    color: #203020;
+  color: #203020;
 }
 .light-scheme #currentExpressionDisplay {
-    color: #506050;
+  color: #506050;
 }
 
 .dark-scheme {
-    background-color: #252525;
-    color: #f0f0f0;
+  background-color: #252525;
+  color: #f0f0f0;
 }
 
 .dark-scheme #calculator {
-    background-color: #2c2c2c;
-    border-color: #555;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+  background-color: #2c2c2c;
+  border-color: #555;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
 }
 
 .dark-scheme h1 {
-    color: #f0f0f0;
+  color: #f0f0f0;
 }
 
 .dark-scheme .calculator-display-area {
-    background-color: #1a2e1a; /* Dark green for display background */
-    border-color: #444;
-    box-shadow: inset 0 2px 4px rgba(0,0,0,0.4);
+  background-color: #1a2e1a; /* Dark green for display background */
+  border-color: #444;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
 }
 
 .dark-scheme #display {
-    color: #90EE90; /* Light green text for dark theme display */
+  color: #90ee90; /* Light green text for dark theme display */
 }
 
 .dark-scheme #currentExpressionDisplay {
-    color: #70C070; /* Slightly dimmer light green */
+  color: #70c070; /* Slightly dimmer light green */
 }
 
 /* === Button Groups Layout === */
 .calculator-controls {
-    grid-area: controls;
-    display: grid; /* This will be a container for other control groups */
-    gap: 10px; /* Gap between control sub-groups like main and memory */
+  grid-area: controls;
+  display: grid; /* This will be a container for other control groups */
+  gap: 10px; /* Gap between control sub-groups like main and memory */
 }
 .controls-main {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* AC, CE, Backspace, +/-, % */
-    gap: 8px; /* Gap between buttons in this group */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* AC, CE, Backspace, +/-, % */
+  gap: 8px; /* Gap between buttons in this group */
 }
 .controls-memory {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* MRC, M+, M-, MC, MS */
-    gap: 8px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* MRC, M+, M-, MC, MS */
+  gap: 8px;
 }
 
 .keypad-main {
-    grid-area: keypad;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); /* 7-8-9-/, 4-5-6-*, etc. */
-    gap: 8px;
+  grid-area: keypad;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 7-8-9-/, 4-5-6-*, etc. */
+  gap: 8px;
 }
 
 #scientific-pad {
-    grid-area: scientific;
-    display: grid; /* Will be 'none' initially via inline style, JS handles toggle */
-    grid-template-columns: repeat(5, 1fr); /* Default, can be adjusted */
-    gap: 8px;
+  grid-area: scientific;
+  display: grid; /* Will be 'none' initially via inline style, JS handles toggle */
+  grid-template-columns: repeat(5, 1fr); /* Default, can be adjusted */
+  gap: 8px;
 }
 /* Ensure elements hidden by JS (inline style display:none) are not overridden by grid display */
 #scientific-pad[style*="display:none"] {
-    display: none !important; /* Ensure JS toggle works */
+  display: none !important; /* Ensure JS toggle works */
 }
-
 
 /* === General Button Styling === */
 #calculator button {
-    font-family: 'Orbitron', sans-serif; /* Calculator font */
-    font-size: 1.1em; /* Adjusted for Orbitron */
-    border-radius: 5px;
-    padding: 18px 12px; /* Generous padding for touch-friendly feel */
-    cursor: pointer;
-    transition: background-color 0.1s, box-shadow 0.1s;
-    text-align: center; /* Ensure text (like operators) is centered */
+  font-family: "Orbitron", sans-serif; /* Calculator font */
+  font-size: 1.1em; /* Adjusted for Orbitron */
+  border-radius: 5px;
+  padding: 18px 12px; /* Generous padding for touch-friendly feel */
+  cursor: pointer;
+  transition: background-color 0.1s, box-shadow 0.1s;
+  text-align: center; /* Ensure text (like operators) is centered */
 }
 
 /* Light theme general button styles */
 .light-scheme #calculator button {
-    background-color: #F0F0F0; /* Light gray */
-    border: 1px solid #999;
-    color: #333; /* Dark text */
-    box-shadow: 0 3px 3px #AAA; /* Subtle 3D effect */
+  background-color: #f0f0f0; /* Light gray */
+  border: 1px solid #999;
+  color: #333; /* Dark text */
+  box-shadow: 0 3px 3px #aaa; /* Subtle 3D effect */
 }
 
 .light-scheme #calculator button:active {
-    background-color: #D5D5D5; /* Darker on click */
-    box-shadow: inset 0 2px 2px #888; /* Inset shadow on click */
+  background-color: #d5d5d5; /* Darker on click */
+  box-shadow: inset 0 2px 2px #888; /* Inset shadow on click */
 }
 
 /* Dark theme general button styles */
 .dark-scheme #calculator button {
-    background-color: #404040; /* Darker buttons */
-    border: 1px solid #555; /* Lighter border for dark theme */
-    color: #f0f0f0; /* Light text */
-    box-shadow: 0 3px 3px #222; /* Shadow for dark theme buttons */
+  background-color: #404040; /* Darker buttons */
+  border: 1px solid #555; /* Lighter border for dark theme */
+  color: #f0f0f0; /* Light text */
+  box-shadow: 0 3px 3px #222; /* Shadow for dark theme buttons */
 }
 
 .dark-scheme #calculator button:active {
-    background-color: #353535; /* Slightly lighter dark on click */
-    box-shadow: inset 0 2px 2px #111; /* Inset shadow for dark theme */
+  background-color: #353535; /* Slightly lighter dark on click */
+  box-shadow: inset 0 2px 2px #111; /* Inset shadow for dark theme */
 }
 
 /* === Specific Button Styling === */
 
 /* Light Theme Specific Button Styles */
 .light-scheme #calculator .digit {
-    background-color: #FAFAFA; /* Off-white */
-    font-weight: bold;
-    color: #333;
+  background-color: #fafafa; /* Off-white */
+  font-weight: bold;
+  color: #333;
 }
 
 .light-scheme #calculator .operator,
-.light-scheme #calculator button[data-key="("], /* Targeting parenthesis buttons */
+.light-scheme
+  #calculator
+  button[data-key="("] /* Targeting parenthesis buttons */,
 .light-scheme #calculator button[data-key=")"] {
-    background-color: #E0E0E0; /* Medium gray */
-    color: #000;
+  background-color: #e0e0e0; /* Medium gray */
+  color: #000;
 }
 
 .light-scheme #calculator .equals {
-    background-color: #FF8C00; /* Orange */
-    color: white;
+  background-color: #ff8c00; /* Orange */
+  color: white;
 }
 
 .light-scheme #calculator #clear-all,
 .light-scheme #calculator #clear {
-    background-color: #D32F2F; /* Red */
-    color: white;
+  background-color: #d32f2f; /* Red */
+  color: white;
 }
 
 .light-scheme #calculator #percentage,
@@ -236,32 +238,32 @@ h1 {
 .light-scheme #calculator #copy,
 .light-scheme #calculator #eval,
 .light-scheme #calculator #reset {
-    background-color: #d0d0d0; /* Slightly darker gray for special functions */
+  background-color: #d0d0d0; /* Slightly darker gray for special functions */
 }
 
 /* Dark Theme Specific Button Styles */
 .dark-scheme #calculator .digit {
-    background-color: #484848; /* Slightly lighter than other dark buttons */
-    color: #f0f0f0;
-    font-weight: bold;
+  background-color: #484848; /* Slightly lighter than other dark buttons */
+  color: #f0f0f0;
+  font-weight: bold;
 }
 
 .dark-scheme #calculator .operator,
 .dark-scheme #calculator button[data-key="("],
 .dark-scheme #calculator button[data-key=")"] {
-    background-color: #505050; /* Medium dark gray */
-    color: #f0f0f0;
+  background-color: #505050; /* Medium dark gray */
+  color: #f0f0f0;
 }
 
 .dark-scheme #calculator .equals {
-    background-color: #00A8CC; /* Brighter Cyan/Blue for dark theme */
-    color: white;
+  background-color: #00a8cc; /* Brighter Cyan/Blue for dark theme */
+  color: white;
 }
 
 .dark-scheme #calculator #clear-all,
 .dark-scheme #calculator #clear {
-    background-color: #C04040; /* Darker, less saturated red */
-    color: white;
+  background-color: #c04040; /* Darker, less saturated red */
+  color: white;
 }
 
 .dark-scheme #calculator #percentage,
@@ -271,95 +273,111 @@ h1 {
 .dark-scheme #calculator #copy,
 .dark-scheme #calculator #eval,
 .dark-scheme #calculator #reset {
-    background-color: #4a4a4a; /* Darker gray for special functions */
+  background-color: #4a4a4a; /* Darker gray for special functions */
 }
 
 /* Keypad-specific adjustments */
 .keypad-main .equals {
-    grid-column: span 2; /* Make equals button span 2 columns */
+  grid-column: span 2; /* Make equals button span 2 columns */
 }
 /* Ensure other buttons in keypad don't span if not intended, e.g. parentheses */
 .keypad-main button:not(.equals) {
-    grid-column: auto; /* Default behavior */
+  grid-column: auto; /* Default behavior */
 }
 
 /* === Styling for other UI elements (history, help, etc.) === */
-.controls-history { grid-area: historyctrl; }
-#history-display { grid-area: historydisp; }
+.controls-history {
+  grid-area: historyctrl;
+}
+#history-display {
+  grid-area: historydisp;
+}
 
-.controls-datetime { grid-area: datetimectrl; }
-#date-time-display { grid-area: datetimedisp; }
+.controls-datetime {
+  grid-area: datetimectrl;
+}
+#date-time-display {
+  grid-area: datetimedisp;
+}
 
-.controls-utility { grid-area: utilityctrl; }
-#help-display { grid-area: helpdisp; }
+.controls-utility {
+  grid-area: utilityctrl;
+}
+#help-display {
+  grid-area: helpdisp;
+}
 
 /* Styling for the container divs of history, help, date-time */
-#history-display, #help-display, #date-time-display {
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 0; /* Gap handled by #calculator grid-gap */
+#history-display,
+#help-display,
+#date-time-display {
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 0; /* Gap handled by #calculator grid-gap */
 }
 /* Ensure elements hidden by JS (inline style display:none) are not overridden by grid display */
 #history-display[style*="display:none"],
 #help-display[style*="display:none"],
 #date-time-display[style*="display:none"] {
-    display: none !important; /* Ensure JS toggle works */
+  display: none !important; /* Ensure JS toggle works */
 }
 
 /* Styling for the button groups for these sections */
 /* Buttons within these groups will inherit general #calculator button styles */
-.controls-history, .controls-datetime, .controls-utility {
-    display: flex; /* Simple row of buttons */
-    flex-wrap: wrap; /* Allow wrapping if too many buttons */
-    gap: 8px; /* Gap between buttons */
-    align-items: center; /* Align items nicely in a row */
+.controls-history,
+.controls-datetime,
+.controls-utility {
+  display: flex; /* Simple row of buttons */
+  flex-wrap: wrap; /* Allow wrapping if too many buttons */
+  gap: 8px; /* Gap between buttons */
+  align-items: center; /* Align items nicely in a row */
 }
 
 /* Theme specific styles for these containers */
 .light-scheme #history-display,
 .light-scheme #help-display,
 .light-scheme #date-time-display {
-    background-color: #f9f9f9; /* Very light gray */
-    border: 1px solid #CCC;
-    color: #333; /* Ensure text has contrast */
+  background-color: #f9f9f9; /* Very light gray */
+  border: 1px solid #ccc;
+  color: #333; /* Ensure text has contrast */
 }
 
 .dark-scheme #history-display,
 .dark-scheme #help-display,
 .dark-scheme #date-time-display {
-    background-color: #3a3a3a; /* Dark gray */
-    border: 1px solid #555;
-    color: #f0f0f0; /* Ensure text is light */
+  background-color: #3a3a3a; /* Dark gray */
+  border: 1px solid #555;
+  color: #f0f0f0; /* Ensure text is light */
 }
 
 /* Style for toggle-theme button - make it consistent */
 #toggle-theme {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 8px 12px;
-    cursor: pointer;
-    border-radius: 5px;
-    font-family: Arial, sans-serif; /* Keep it standard, not Orbitron */
-    font-size: 0.9em;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-family: Arial, sans-serif; /* Keep it standard, not Orbitron */
+  font-size: 0.9em;
 }
 
 .light-scheme #toggle-theme {
-    background-color: #e0e0e0;
-    border: 1px solid #ccc;
-    color: #333;
+  background-color: #e0e0e0;
+  border: 1px solid #ccc;
+  color: #333;
 }
 .light-scheme #toggle-theme:hover {
-    background-color: #d0d0d0;
+  background-color: #d0d0d0;
 }
 
 .dark-scheme #toggle-theme {
-    background-color: #505050;
-    border: 1px solid #777;
-    color: #f0f0f0;
+  background-color: #505050;
+  border: 1px solid #777;
+  color: #f0f0f0;
 }
 .dark-scheme #toggle-theme:hover {
-    background-color: #606060;
+  background-color: #606060;
 }
 
 /* Existing OpenDyslexic font styles are commented out, that's fine. */
