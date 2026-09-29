@@ -7,7 +7,7 @@
   "dependencies": {
     "@google/generative-ai": "^0.24.0",
     "octokit": "^5.0.2",
-    "simple-git": "^3.27.0",
+    "simple-git": "^4.0.1",
     "typescript": "^7.0.2"
   },
   "devDependencies": {
